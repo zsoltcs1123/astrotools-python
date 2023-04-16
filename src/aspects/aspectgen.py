@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, Tuple
+from typing import Optional, Tuple, List
 from angle import Angle
 
 
@@ -21,11 +21,11 @@ class Aspect:
         return f"{self.angle}, {self.asp_str} ({self.asp_diff})"
 
 
-def get_aspects(angles):
+def get_aspects(angles: List[Angle]):
     return filter(lambda asp: asp is not None, [get_aspect(angle) for angle in angles if angle])
 
 
-def get_aspect(angle) -> Optional[Aspect]:
+def get_aspect(angle: Angle) -> Optional[Aspect]:
     asp = calculate_aspect(angle.diff)
 
     if asp is None:
@@ -49,6 +49,7 @@ def calculate_aspect(diff: float) -> Optional[Tuple[str, int]]:
         240: "trine",
         270: "square",
         288: "quintile",
+        300: "sextile"
     }
 
     rounded = round(diff)

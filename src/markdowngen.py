@@ -5,6 +5,7 @@ from price import Price
 
 
 def aspect_map_to_markdown(aspect_map: Dict[Aspect, List[Price]]) -> str:
+    text = ""
     for aspect, prices in aspect_map.items():
         # Define the header row
         header = f'{aspect.__repr__()}\n'
@@ -20,12 +21,13 @@ def aspect_map_to_markdown(aspect_map: Dict[Aspect, List[Price]]) -> str:
         for row in zip(prices[0], prices[1], prices[2]):
             table += "|"
             for price in row:
-                table += f" **{price.level}** |" if price.harmonic == 0 else \
-                    f" *{price.level}* |" if price.harmonic == 3 else \
-                    f" {price.level} |"
+                table += f" **{price.level:.3f}** |" if price.harmonic == 0 else \
+                    f" *{price.level:.3f}* |" if price.harmonic == 3 else \
+                    f" {price.level:.3f} |"
             table += "\n"
+        text += header + separator + table + "\n<br/>"
 
-    return header + separator + table
+    return text
 
 
 def to_md_file(aspect_map: Dict[Aspect, List[Price]], file_name: str) -> None:

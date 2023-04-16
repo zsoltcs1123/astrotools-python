@@ -1,5 +1,8 @@
+from typing import Dict
+
+
 PLANETS = ["sun", "moon", "mercury", "venus", "mars",
-           "Jupiter barycenter", "Saturn barycenter", "Uranus barycenter", "Neptune barycenter", "Pluto barycenter"]
+           "jupiter", "saturn", "uranus", "neptune", "pluto"]
 
 
 PLANETS_MAP = {
@@ -14,8 +17,8 @@ PLANETS_MAP = {
 }
 
 
-def get_angle_targets(planet):
+def get_angle_targets(planet) -> Dict[str, int]:
     if planet == 'sun' or planet == 'moon':
         return PLANETS_MAP
     else:
-        return filter(PLANETS_MAP, lambda p: PLANETS_MAP[p] > PLANETS_MAP[planet])
+        return {k: v for k, v in PLANETS_MAP.items() if v > PLANETS_MAP[planet]}
