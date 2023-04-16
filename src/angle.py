@@ -2,13 +2,14 @@ from dataclasses import dataclass
 import datetime
 import multiprocessing
 from longitude import planet_longitude
+from planet import get_angle_targets
 from position import Position
 from timegen import calculate_intervals
 
 
 @dataclass
 class Angle:
-    time: datetime
+    time: datetime.datetime
     pos1: Position
     pos2: Position
     diff: float
@@ -22,17 +23,22 @@ class Angle:
         return self.time == other.time and self.pos1 == other.pos1 and self.pos2 == other.pos2 and self.diff == other.diff
 
     def __repr__(self):
-        return f"{self.time}, {self.pos1}, {self.pos2}, {self.diff:.3f})"
+        return f"{self.time}, {self.pos1}, {self.pos2}, {self.diff:.3f}"
 
 
-def get_angles(planet1, planet2, dt1, dt2, intervals):
-    datetimes = calculate_intervals(dt1, dt2, intervals)
+def get_all_angles_multi(planet, start, end, interval):
+    targets = get_angle_targets(planet)
+    return [angle for target in targets for angle in get_angles_multi(planet, target, start, end, interval)]
+
+
+def get_angles(planet1, planet2, start, end, interval):
+    datetimes = calculate_intervals(start, end, interval)
 
     return [get_angle(planet1, planet2, t) for t in datetimes]
 
 
-def get_angles_multi(planet1, planet2, dt1, dt2, intervals):
-    datetimes = calculate_intervals(dt1, dt2, intervals)
+def get_angles_multi(planet1, planet2, start, end, interval):
+    datetimes = calculate_intervals(start, end, interval)
 
     args = [(planet1, planet2, t) for t in datetimes]
 

@@ -17,4 +17,4 @@ class Position:
         return self.time == other.time and self.planet == other.planet and self.lon == other.lon
 
     def __repr__(self):
-        return f"[{self.planet}, {self.lon:.3f}])"
+        return f"[{self.planet}, {self.lon:.3f}]"

@@ -12,7 +12,7 @@ def planet_longitude(planet_name, date):
     eph = load('de421.bsp')
 
     # Get the position of planet at a specific time
-    planet = eph[planet_name]
+    planet = eph[convert_planet_name(planet_name)]
     earth = eph['earth']
 
     ts = load.timescale()
@@ -25,3 +25,8 @@ def planet_longitude(planet_name, date):
 
     # Return the longitude
     return lon
+
+
+def convert_planet_name(planet_name):
+    unchanged = ['sun', 'moon', 'mercury', 'venus', 'mars']
+    return planet_name if planet_name in unchanged else planet_name + ' barycenter'

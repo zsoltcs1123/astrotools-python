@@ -18,11 +18,7 @@ class PriceArgs:
     offset: int
 
 
-planets = ["sun", "moon", "mercury", "venus", "mars",
-           "Jupiter barycenter", "Saturn barycenter", "Uranus barycenter", "Neptune barycenter", "Pluto barycenter"]
-
-
-def aspect_to_prices(aspect, price_args):
+def aspects_to_prices(aspect, price_args):
     prices_planet1 = longitude_to_prices(
         aspect.angle.pos1.lon, aspect.angle.pos1.planet, price_args)
     prices_planet2 = longitude_to_prices(

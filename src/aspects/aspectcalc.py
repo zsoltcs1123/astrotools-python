@@ -1,5 +1,6 @@
 from itertools import groupby
 from aspects.aspectgen import get_aspects
+from planet import PLANETS_MAP
 
 
 def get_aspects_best_fit(angles):

@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from typing import Optional, Tuple
 from angle import Angle
-from itertools import groupby
 
 
 @dataclass
