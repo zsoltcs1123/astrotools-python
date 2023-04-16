@@ -1,12 +1,14 @@
 from dataclasses import dataclass
+from aspects.aspectgen import Aspect
 from longitude import planet_longitude_now
 import numpy as np
+from typing import List
 
 
 @dataclass
 class Price:
     planet: str
-    level: int
+    level: float
     harmonic: int
 
 
@@ -18,7 +20,7 @@ class PriceArgs:
     offset: int
 
 
-def aspects_to_prices(aspect, price_args):
+def aspects_to_prices(aspect: Aspect, price_args: PriceArgs) -> List[List[Price]]:
     prices_planet1 = longitude_to_prices(
         aspect.angle.pos1.lon, aspect.angle.pos1.planet, price_args)
     prices_planet2 = longitude_to_prices(
@@ -29,7 +31,7 @@ def aspects_to_prices(aspect, price_args):
     return [prices_planet1, prices_planet2, prices_diff]
 
 
-def longitude_to_prices(longitude, name, price_args):
+def longitude_to_prices(longitude: float, name: str, price_args: PriceArgs) -> List[Price]:
     prices = []
 
     step_size = (price_args.full_circle / price_args.harmonics)

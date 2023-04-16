@@ -35,4 +35,4 @@ def map_prices(aspects):
 
 if __name__ == "__main__":
     measure(lambda: generate_daily_reports(
-        datetime(2023, 4, 10), datetime(2023, 4, 17)))
+        datetime(2023, 4, 16), datetime(2023, 4, 17)))
