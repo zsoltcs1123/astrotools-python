@@ -8,8 +8,12 @@ from typing import List
 @dataclass
 class Price:
     planet: str
+    longitude: float
     level: float
     harmonic: int
+
+    def __repr__(self):
+        return f"Price(planet='{self.planet}', longitude={self.longitude:.3f}, level={self.level:.3f}, harmonic={self.harmonic})"
 
 
 @dataclass
@@ -37,12 +41,12 @@ def longitude_to_prices(longitude: float, name: str, price_args: PriceArgs) -> L
     step_size = (price_args.full_circle / price_args.harmonics)
 
     price = (round(longitude, 3) + price_args.offset)
-    prices.append(Price(name, price, 0))
+    prices.append(Price(name, longitude, price, 0))
 
     # Add step_size degrees to each longitude count times
     for i in range(1, price_args.count):
         prices.append(
-            Price(name, prices[i-1].level + step_size, i % price_args.harmonics))
+            Price(name, longitude, prices[i-1].level + step_size, i % price_args.harmonics))
 
     # Return the array of longitudes
     return prices

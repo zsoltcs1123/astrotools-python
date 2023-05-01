@@ -58,4 +58,4 @@ def get_angle(planet1: str, planet2: str, dt: datetime) -> Angle:
 
 
 def diff(lon1: float, lon2: float) -> float:
-    return (lon1 - lon2) % 360
+    return abs(lon1 - lon2)
