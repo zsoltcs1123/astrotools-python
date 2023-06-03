@@ -1,10 +1,23 @@
 from datetime import datetime
-from longitude import planet_longitude
+from core.longitude import planet_longitude
+from planet import PLANETS
 from price import PriceArgs, longitude_to_prices
+from timegen import calculate_intervals
 
 
-mars_lon = planet_longitude("mars", datetime(2023, 5, 1))
-prices = longitude_to_prices(
-    mars_lon.degrees, "mars", PriceArgs(1, 1, 360, 1800))
+dates = calculate_intervals(datetime(2023, 5, 1), datetime(2023, 6, 1), 1440)
+prices_per_day = {}
 
-print(prices)
+for date in dates:
+    lst = [(planet, longitude_to_prices(planet_longitude(planet, date).degrees, planet,
+            PriceArgs(1, 1, 360, 3960))[0].level) for planet in PLANETS if planet != 'moon']
+    prices_per_day[date] = lst
+
+
+with open('spx_prices_may.txt', 'w') as f:
+    for key, value in prices_per_day.items():
+        f.write(key.strftime('%Y-%m-%d %H:%M:%S\n'))
+        f.write("-----------------\n")
+        for v in prices_per_day[key]:
+            f.write(f'{v[0]}: {v[1]}\n')
+        f.write("\n")
