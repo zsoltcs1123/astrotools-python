@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 from datetime import datetime
 import multiprocessing
-from longitude import planet_longitude
+from core.longitude import get_tropical_longitude
 from planet import get_angle_targets
 from position import Position
-from timegen import calculate_intervals
+from time.timegen import calculate_intervals
 from typing import List
 
 
@@ -48,8 +48,8 @@ def get_angles_multi(planet1: str, planet2: str, start: datetime, end: datetime,
 
 
 def get_angle(planet1: str, planet2: str, dt: datetime) -> Angle:
-    lon1 = planet_longitude(planet1, dt).degrees
-    lon2 = planet_longitude(planet2, dt).degrees
+    lon1 = get_tropical_longitude(planet1, dt).degrees
+    lon2 = get_tropical_longitude(planet2, dt).degrees
 
     pos1 = Position(dt, planet1, lon1)
     pos2 = Position(dt, planet2, lon2)
