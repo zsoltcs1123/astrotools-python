@@ -17,4 +17,4 @@ def map_divisions(planet: str, date: datetime) -> MappedPosition:
     lon = get_tropical_longitude(planet, date)
     decan = get_decan(lon.degrees)
     term = get_term(lon.degrees)
-    return MappedPosition(date, planet, lon, decan, term)
+    return MappedPosition(date, planet, lon.degrees, decan, term)

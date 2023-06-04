@@ -1,13 +1,11 @@
 from datetime import datetime
 import multiprocessing
 from typing import List
-from core.longitude import get_tropical_longitude
 from core.util import measure
 from out.file import to_text_file
 from timegen.interval import calculate_intervals
-from tv.moon_decans import generate
-from zodiac.division import get_decan, get_term
-from zodiac.event import DecanChange, TermChange
+from tv.script import generate_decans_progressions
+from zodiac.event import get_decan_changes, get_progressions
 from zodiac.mapped_position import map_divisions
 
 
@@ -20,27 +18,31 @@ def map_multi(planet: str, dates: List[datetime]):
 
 def main():
     dates = calculate_intervals(
-        datetime(2023, 6, 1), datetime(2023, 6, 30), 1)
+        datetime(2023, 6, 1), datetime(2023, 6, 15), 1)
 
     lst = map_multi("moon", dates)
 
-    events = []
+    decans = get_decan_changes(lst)
+    progs = get_progressions(lst)
 
-    for index, element in enumerate(lst):
-        if index == 0:
-            continue
+    timestamps = decans + progs
 
-        if (element.decan.id != lst[index - 1].decan.id):
-            events.append(DecanChange(lst[index - 1], element))
+    lines = []
 
-    timestamps = []
-    for event in events:
-        timestamps.append(f'{event.tv_timestamp()},')
+    for d in decans:
+        lines.append(100)
 
-    joined = " ".join(timestamps)
-    joined = joined[:-1]
+    for p in progs:
+        lines.append(50)
 
-    script = generate(joined)
+    timestamps_joined = " ".join(
+        list(map(lambda x: f'{x.tv_timestamp()},', timestamps)))[:-1]
+
+    lines_joined = " ".join(
+        list(map(lambda x: f'{str(x)},', lines)))[:-1]
+
+    script = generate_decans_progressions(
+        "Moon Decans June 50", timestamps_joined, lines_joined)
 
     to_text_file("timestamps_moon_june.txt", script)
 
