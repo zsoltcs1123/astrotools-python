@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from aspects.aspectgen import Aspect
-from longitude import planet_longitude_now
+from core.longitude import get_tropical_longitude_now
 import numpy as np
 from typing import List
 

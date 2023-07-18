@@ -1,7 +1,7 @@
 from typing import Dict, List
 
 from aspects.aspectgen import Aspect
-from price import Price
+from price.price import Price
 
 
 def aspect_map_to_markdown(aspect_map: Dict[Aspect, List[Price]]) -> str:

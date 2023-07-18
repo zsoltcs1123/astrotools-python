@@ -1,9 +1,9 @@
 from datetime import datetime
-from angle import get_all_angles_multi
+from core.angle import get_all_angles_multi
 from aspects.aspectcalc import get_aspects_best_fit
 from planet import PLANETS
-from price import PriceArgs, aspects_to_prices
-from markdowngen import to_md_file
+from price.price import PriceArgs, aspects_to_prices
+from md.markdowngen import to_md_file
 from util import measure
 
 

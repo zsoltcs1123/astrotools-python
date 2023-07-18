@@ -3,7 +3,7 @@ from skyfield.api import load
 from typing import List
 
 
-def calculate_intervals(start_time, end_time, interval_minutes) -> List[datetime]:
+def calculate_intervals(start_time: datetime, end_time: datetime, interval_minutes: int) -> List[datetime]:
     intervals = []
     current_time = start_time
 

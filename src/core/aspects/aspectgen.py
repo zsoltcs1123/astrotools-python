@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import Optional, Tuple, List
-from angle import Angle
+from core.angle import Angle
 
 
 @dataclass

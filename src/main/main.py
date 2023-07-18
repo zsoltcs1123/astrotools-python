@@ -1,10 +1,10 @@
 import datetime
 
-from angle import get_all_angles_multi, get_angles, get_angles_multi
+from core.angle import get_all_angles_multi, get_angles, get_angles_multi
 from aspects.aspectcalc import get_aspects_best_fit
 from aspects.aspectgen import Aspect, get_aspects
-from markdowngen import to_md_file
-from price import PriceArgs, aspects_to_prices
+from md.markdowngen import to_md_file
+from price.price import PriceArgs, aspects_to_prices
 from util import measure
 
 start = datetime.datetime(2023, 4, 1, 0, 0, 0)
