@@ -18,7 +18,7 @@ def map_multi(planet: str, dates: List[datetime]):
 
 def main():
     dates = calculate_intervals(
-        datetime(2023, 6, 1), datetime(2023, 6, 15), 1)
+        datetime(2023, 7, 15), datetime(2023, 7, 31), 1)
 
     lst = map_multi("moon", dates)
 
@@ -44,7 +44,7 @@ def main():
     script = generate_decans_progressions(
         "Moon Decans June 50", timestamps_joined, lines_joined)
 
-    to_text_file("timestamps_moon_june.txt", script)
+    to_text_file("timestamps_moon_jul_1_15.txt", script)
 
 
 if __name__ == "__main__":

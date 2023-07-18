@@ -1,0 +1,11 @@
+//@version=5
+indicator("Moon Decans June 50", overlay = true)
+
+decans = array.from(timestamp("2023-07-15 17:13:00"), timestamp("2023-07-16 12:52:00"), timestamp("2023-07-17 08:41:00"), timestamp("2023-07-18 04:39:00"), timestamp("2023-07-19 00:45:00"), timestamp("2023-07-19 20:57:00"), timestamp("2023-07-20 17:13:00"), timestamp("2023-07-21 13:30:00"), timestamp("2023-07-22 09:45:00"), timestamp("2023-07-23 05:54:00"), timestamp("2023-07-24 01:52:00"), timestamp("2023-07-24 21:34:00"), timestamp("2023-07-25 16:56:00"), timestamp("2023-07-26 11:53:00"), timestamp("2023-07-27 06:23:00"), timestamp("2023-07-28 00:25:00"), timestamp("2023-07-28 17:58:00"), timestamp("2023-07-29 11:04:00"), timestamp("2023-07-30 03:45:00"), timestamp("2023-07-30 20:05:00"), timestamp("2023-07-15 07:28:00"), timestamp("2023-07-16 03:02:00"), timestamp("2023-07-16 22:46:00"), timestamp("2023-07-17 18:39:00"), timestamp("2023-07-18 14:41:00"), timestamp("2023-07-19 10:50:00"), timestamp("2023-07-20 07:04:00"), timestamp("2023-07-21 03:21:00"), timestamp("2023-07-21 23:38:00"), timestamp("2023-07-22 19:51:00"), timestamp("2023-07-23 15:55:00"), timestamp("2023-07-24 11:46:00"), timestamp("2023-07-25 07:18:00"), timestamp("2023-07-26 02:28:00"), timestamp("2023-07-26 21:12:00"), timestamp("2023-07-27 15:28:00"), timestamp("2023-07-28 09:15:00"), timestamp("2023-07-29 02:34:00"), timestamp("2023-07-29 19:27:00"), timestamp("2023-07-30 11:58:00"))
+lines = array.from(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50)
+
+for i = 0 to array.size(decans) - 1 
+    if array.get(lines, i) == 100
+        line.new(x1=array.get(decans, i), y1=low, x2=array.get(decans, i), y2=high, xloc=xloc.bar_time, extend=extend.both, color=color.new(#cfdef8, 10), style=line.style_solid, width=2)
+    else if array.get(lines, i) == 50
+        line.new(x1=array.get(decans, i), y1=low, x2=array.get(decans, i), y2=high, xloc=xloc.bar_time, extend=extend.both, color=color.new(#cfdef8, 30), style=line.style_dotted, width=1)
