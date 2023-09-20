@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from aspects.aspectgen import Aspect
+from core.aspects.aspectgen import Aspect
 from core.longitude import get_tropical_longitude_now
 import numpy as np
 from typing import List

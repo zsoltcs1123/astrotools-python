@@ -1,6 +1,6 @@
 from typing import Dict, List
 
-from aspects.aspectgen import Aspect
+from core.aspects.aspectgen import Aspect
 from price.price import Price
 
 

@@ -2,9 +2,9 @@ from dataclasses import dataclass
 from datetime import datetime
 import multiprocessing
 from core.longitude import get_tropical_longitude
-from planet import get_angle_targets
-from position import Position
-from time.timegen import calculate_intervals
+from core.planet import get_angle_targets
+from core.position import Position
+from timegen.interval import calculate_intervals
 from typing import List
 
 
