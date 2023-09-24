@@ -4,12 +4,12 @@ from typing import List
 from core.util import measure
 from out.file import to_text_file
 from timegen.interval import calculate_intervals
-from tv.script import generate_decans_progressions
+from out.tv import generate_decans_progressions
 from zodiac.event import get_decan_changes, get_progressions
 from zodiac.mapped_position import map_divisions
 
 
-def map_multi(planet: str, dates: List[datetime]):
+def map_multiproc(planet: str, dates: List[datetime]):
     args = [(planet, t) for t in dates]
 
     with multiprocessing.Pool() as pool:
@@ -18,9 +18,9 @@ def map_multi(planet: str, dates: List[datetime]):
 
 def main():
     dates = calculate_intervals(
-        datetime(2023, 6, 1), datetime(2023, 6, 15), 1)
+        datetime(2023, 10, 1), datetime(2023, 10, 15), 1)
 
-    lst = map_multi("moon", dates)
+    lst = map_multiproc("moon", dates)
 
     decans = get_decan_changes(lst)
     progs = get_progressions(lst)
@@ -42,9 +42,9 @@ def main():
         list(map(lambda x: f'{str(x)},', lines)))[:-1]
 
     script = generate_decans_progressions(
-        "Moon Decans Sep 15-30", timestamps_joined, lines_joined)
+        "Moon Decans Oct 1-15", timestamps_joined, lines_joined)
 
-    to_text_file("timestamps_moon_june.txt", script)
+    to_text_file("timestamps_moon_oct_1_15.txt", script)
 
 
 if __name__ == "__main__":

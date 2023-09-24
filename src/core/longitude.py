@@ -5,10 +5,6 @@ from skyfield.framelib import ecliptic_frame
 KP_AYANAMSA_CORRECTION = 23.77
 
 
-def get_tropical_longitude_now(planet_name: str) -> float:
-    return get_tropical_longitude(planet_name, datetime.now())
-
-
 def get_tropical_longitude(planet_name: str, dt: datetime):
     # Load the ephemeris file
     eph = load('de421.bsp')

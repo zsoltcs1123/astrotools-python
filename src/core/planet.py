@@ -17,7 +17,7 @@ PLANETS_MAP = {
 }
 
 
-def get_angle_targets(planet) -> Dict[str, int]:
+def get_outer_planets_map(planet) -> Dict[str, int]:
     if planet == 'sun' or planet == 'moon':
         return PLANETS_MAP
     else:

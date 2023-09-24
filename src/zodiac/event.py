@@ -21,8 +21,10 @@ class DecanChange(Event):
     previous: MappedPosition
 
     def __repr__(self) -> str:
-        f'{self.position.planet} Decan change at {self.position.time}: {self.previous.decan} -> {self.previous.decan}'
+        return f'{self.position.planet} Decan change at {self.position.time}: {self.previous.decan} -> {self.previous.decan}'
 
+    def __str__(self) -> str:
+        return f'Decan change at {self.position.time.strftime("%Y-%m-%d %H:%M:%S")}: {self.previous.decan.name} -> {self.position.decan.name}'
 
 @dataclass
 class TermChange(Event):

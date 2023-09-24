@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Position:
+class PlanetaryPosition:
     time: datetime
     planet: str
     lon: float
@@ -12,7 +12,7 @@ class Position:
         return hash((self.time, self.planet, self.lon))
 
     def __eq__(self, other):
-        if not isinstance(other, Position):
+        if not isinstance(other, PlanetaryPosition):
             return False
         return self.time == other.time and self.planet == other.planet and self.lon == other.lon
 
