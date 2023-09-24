@@ -3,12 +3,12 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import List
 from core.longitude import get_tropical_longitude
-from core.position import PlanetaryPosition
+from core.position import Position
 from zodiac.division import Decan, Term, get_decan, get_term
 
 
 @dataclass
-class MappedPosition(PlanetaryPosition):
+class MappedPosition(Position):
     decan: Decan
     term: Term
 

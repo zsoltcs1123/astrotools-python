@@ -5,8 +5,8 @@ from core.util import measure
 from out.file import to_text_file
 from timegen.interval import calculate_intervals
 from out.tv import generate_decans_progressions
-from zodiac.event import get_decan_changes, get_progressions
-from zodiac.mapped_position import map_divisions
+from core.astro_event import get_decan_changes, get_progressions
+from core.mapped_position import map_divisions
 
 
 def map_multiproc(planet: str, dates: List[datetime]):
