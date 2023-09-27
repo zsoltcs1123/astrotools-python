@@ -1,9 +1,9 @@
 from datetime import datetime
 from typing import List
-from core.mapped_position import map_divisions
-from core.astro_event import DecanChange, MappedPosition, get_decan_changes
+from zodiac.mapped_position import map_divisions
+from zodiac.astro_event import DecanChange, MappedPosition, get_decan_changes
+from zodiac.aspect import calculate_all_aspects
 from timegen.interval import calculate_intervals
-from core.aspect import calculate_all_aspects
 from core.util import measure
 
 def get_positions_for_planet_in_time_range(planet: str, start_time: datetime, end_time: datetime) -> List[MappedPosition]:
