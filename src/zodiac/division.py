@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import List, Optional
 
-from core.degree_range import DegreeRange
+from zodiac.degree_range import DegreeRange
 
 
 @dataclass

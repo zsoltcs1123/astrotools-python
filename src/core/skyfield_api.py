@@ -24,6 +24,23 @@ def get_tropical_longitude(planet_name: str, dt: datetime):
     # Return the longitude
     return lon
 
+def get_declination(planet_name:str, dt: datetime):
+    # Load the ephemeris file
+    eph = load('de421.bsp')
+
+    planet = eph[convert_planet_name(planet_name)]
+    earth = eph['earth']
+    
+    ts = load.timescale()
+    time = ts.utc(dt.year, dt.month, dt.day,
+                  dt.hour, dt.minute, dt.second)
+
+    astrometric = earth.at(time).observe(planet)
+    ra, dec, distance = astrometric.radec()
+
+    return dec
+
+# does not belong in here
 
 def convert_to_kp_ayanamsa(longitude: float) -> float:
     kp_ayanamsa = longitude - KP_AYANAMSA_CORRECTION

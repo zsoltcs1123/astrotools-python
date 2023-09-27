@@ -5,8 +5,6 @@ from zodiac.angle import Angle, get_all_angles_multiproc
 from zodiac.astro_event import AstroEvent
 from datetime import datetime
 
-
-
 @dataclass
 class Aspect(AstroEvent):
     angle: Angle
@@ -86,7 +84,7 @@ def get_aspects_best_fit(angles: List[Angle]) -> List[Aspect]:
 
     return aspects
 
-def calculate_all_aspects(planet: str, start: datetime, end: datetime, interval: int) -> List[Aspect]:
+def get_all_aspects(planet: str, start: datetime, end: datetime, interval: int) -> List[Aspect]:
     angles = get_all_angles_multiproc(planet, start, end, interval)
     aspects = get_aspects_best_fit(angles)
     return aspects

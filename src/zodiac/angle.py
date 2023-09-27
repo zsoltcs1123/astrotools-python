@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from datetime import datetime
 import multiprocessing
-from core.longitude import get_tropical_longitude
+from core.skyfield_api import get_tropical_longitude
 from core.planet import get_outer_planets_map
-from core.position import Position
+from core.planetary_position import PlanetaryPosition
 from timegen.interval import calculate_intervals
 from typing import List
 
@@ -11,8 +11,8 @@ from typing import List
 @dataclass
 class Angle:
     time: datetime
-    pos1: Position
-    pos2: Position
+    pos1: PlanetaryPosition
+    pos2: PlanetaryPosition
     diff: float
 
     def __hash__(self) -> int:
@@ -51,8 +51,8 @@ def get_angle(planet1: str, planet2: str, dt: datetime) -> Angle:
     lon1 = get_tropical_longitude(planet1, dt).degrees
     lon2 = get_tropical_longitude(planet2, dt).degrees
 
-    pos1 = Position(dt, planet1, lon1)
-    pos2 = Position(dt, planet2, lon2)
+    pos1 = PlanetaryPosition(dt, planet1, lon1)
+    pos2 = PlanetaryPosition(dt, planet2, lon2)
 
     return Angle(dt, pos1, pos2, diff(lon1, lon2))
 
