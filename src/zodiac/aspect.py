@@ -3,7 +3,7 @@ from itertools import groupby
 from typing import Optional, Tuple, List
 from zodiac.angle import Angle, get_all_angles
 from zodiac.astro_event import AstroEvent
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 @dataclass
@@ -13,7 +13,26 @@ class Aspect(AstroEvent):
     asp_diff: int
 
     def __repr__(self):
-        return f"aspect at {self.angle}, {self.asp_str} ({self.asp_diff})"
+        orb_start, orb_end = self.orb(2)
+        return f"aspect at {self.angle}, {self.asp_str} ({self.asp_diff})\n Orb of 2 starts at: {orb_start}, ends at: {orb_end}"
+    
+    def orb(self, orb_value: int) -> Tuple[datetime, datetime]:
+    # Determine the direction of movement for each planet
+        if self.angle.pos1.speed * self.angle.pos2.speed > 0:
+            # Both planets are moving in the same direction
+            combined_speed = abs(self.angle.pos1.speed - self.angle.pos2.speed)
+        else:
+            # Planets are moving in opposite directions
+            combined_speed = abs(self.angle.pos1.speed + self.angle.pos2.speed)
+        
+        # Calculate the number of days for the aspect to move out of orb
+        days_out_of_orb = orb_value / combined_speed
+        
+        # Calculate the start and end dates based on the exact aspect time
+        start_date = self.angle.time - timedelta(days=days_out_of_orb)
+        end_date = self.angle.time + timedelta(days=days_out_of_orb)
+        
+        return start_date, end_date
 
 
 def get_aspects(angles: List[Angle]):
