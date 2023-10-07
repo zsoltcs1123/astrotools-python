@@ -1,32 +1,19 @@
 from dataclasses import dataclass
 from itertools import groupby
 from typing import Optional, Tuple, List
-from zodiac.angle import Angle, get_all_angles_multiproc
+from zodiac.angle import Angle, get_all_angles
 from zodiac.astro_event import AstroEvent
 from datetime import datetime
+
 
 @dataclass
 class Aspect(AstroEvent):
     angle: Angle
     asp_str: str
     asp_diff: int
-    
-    def __init__(self, angle: Angle, asp_str: str, asp_diff: int):
-        self.time = angle.time
-        self.angle = angle
-        self.asp_str = asp_str
-        self.asp_diff = asp_diff
-
-    def __hash__(self):
-        return hash((self.angle, self.asp_str, self.asp_diff))
-
-    def __eq__(self, other):
-        if not isinstance(other, Aspect):
-            return False
-        return self.angle == other.angle and self.asp_str == other.asp_str and self.asp_diff == other.asp_diff
 
     def __repr__(self):
-        return f"{self.angle}, {self.asp_str} ({self.asp_diff})"
+        return f"aspect at {self.angle}, {self.asp_str} ({self.asp_diff})"
 
 
 def get_aspects(angles: List[Angle]):
@@ -40,7 +27,7 @@ def get_aspect(angle: Angle) -> Optional[Aspect]:
         return None
 
     asp_str, asp_diff = asp
-    return Aspect(angle, asp_str, asp_diff)
+    return Aspect(angle.time, angle, asp_str, asp_diff)
 
 
 def calculate_aspect(diff: float) -> Optional[Tuple[str, int]]:
@@ -60,6 +47,7 @@ def calculate_aspect(diff: float) -> Optional[Tuple[str, int]]:
         300: "sextile"
     }
 
+    # rounded is 1 orb
     rounded = round(diff)
     asp = ASPECTS.get(rounded, None)
 
@@ -84,7 +72,13 @@ def get_aspects_best_fit(angles: List[Angle]) -> List[Aspect]:
 
     return aspects
 
+
 def get_all_aspects(planet: str, start: datetime, end: datetime, interval: int) -> List[Aspect]:
-    angles = get_all_angles_multiproc(planet, start, end, interval)
+    angles = get_all_angles(planet, start, end, interval)
+    aspects = get_aspects_best_fit(angles)
+    return aspects
+
+
+def get_all_aspects(angles: List[Angle]) -> List[Aspect]:
     aspects = get_aspects_best_fit(angles)
     return aspects

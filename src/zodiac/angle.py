@@ -3,7 +3,7 @@ from datetime import datetime
 import multiprocessing
 from core.skyfield_api import get_tropical_longitude
 from core.planet import get_outer_planets_map
-from core.planetary_position import PlanetaryPosition
+from core.planetary_position import PlanetaryPosition as pp
 from timegen.interval import calculate_intervals
 from typing import List
 
@@ -11,9 +11,12 @@ from typing import List
 @dataclass
 class Angle:
     time: datetime
-    pos1: PlanetaryPosition
-    pos2: PlanetaryPosition
-    diff: float
+    pos1: pp
+    pos2: pp
+
+    @property
+    def diff(self):
+        return abs(self.pos1.lon - self.pos2.lon)
 
     def __hash__(self) -> int:
         return hash((self.time, self.pos1, self.pos2, self.diff))
@@ -24,12 +27,17 @@ class Angle:
         return self.time == other.time and self.pos1 == other.pos1 and self.pos2 == other.pos2 and self.diff == other.diff
 
     def __repr__(self) -> str:
-        return f"{self.time}, {self.pos1}, {self.pos2}, {self.diff:.3f}"
+        return f"{self.time}: {self.pos1.planet} [{self.pos1.lon:.3f}], {self.pos2.planet} [{self.pos2.lon:.3f}], {self.diff:.3f}"
 
 
 def get_all_angles_multiproc(planet: str, start: datetime, end: datetime, interval: int) -> List[Angle]:
     targets = get_outer_planets_map(planet)
     return [angle for target in targets for angle in get_angles_multiproc(planet, target, start, end, interval)]
+
+
+def get_all_angles(planet: str, start: datetime, end: datetime, interval: int) -> List[Angle]:
+    targets = get_outer_planets_map(planet)
+    return [angle for target in targets for angle in get_angles(planet, target, start, end, interval)]
 
 
 def get_angles(planet1: str, planet2: str, start: datetime, end: datetime, interval: int) -> List[Angle]:
@@ -48,14 +56,7 @@ def get_angles_multiproc(planet1: str, planet2: str, start: datetime, end: datet
 
 
 def get_angle(planet1: str, planet2: str, dt: datetime) -> Angle:
-    lon1 = get_tropical_longitude(planet1, dt).degrees
-    lon2 = get_tropical_longitude(planet2, dt).degrees
+    pos1 = pp.from_datetime(planet1, dt)
+    pos2 = pp.from_datetime(planet2, dt)
 
-    pos1 = PlanetaryPosition(dt, planet1, lon1)
-    pos2 = PlanetaryPosition(dt, planet2, lon2)
-
-    return Angle(dt, pos1, pos2, diff(lon1, lon2))
-
-
-def diff(lon1: float, lon2: float) -> float:
-    return abs(lon1 - lon2)
+    return Angle(dt, pos1, pos2)
