@@ -1,37 +1,29 @@
-from datetime import datetime
 from dataclasses import dataclass
-from typing import List
+from datetime import datetime as dt
 from timegen.interval import calculate_intervals
-from core.skyfield_api import get_tropical_longitude, get_declination
+import core.swisseph_api as swe_api
 
 
 @dataclass
 class PlanetaryPosition:
-    time: datetime
+    dt: dt
     planet: str
     lon: float
+    lat: float
+    speed: float
     dec: float
+    ra: float
 
-    def __hash__(self):
-        return hash((self.time, self.planet, self.lon, self.dec))
+    @classmethod
+    def from_datetime(cls, planet: str, dt: dt):
+        lon, lat, speed = swe_api.get_ecliptic_position(planet, dt)
+        ra, dec = swe_api.get_equatorial_position(planet, dt)
+        return cls(dt, planet, lon, lat, speed, dec, ra)
 
-    def __eq__(self, other):
-        if not isinstance(other, PlanetaryPosition):
-            return False
-        return self.time == other.time and self.planet == other.planet and self.lon == other.lon and self.dec == other.dec
+    @classmethod
+    def from_datetime_range(cls, planet: str, start: dt, end: dt, interval_minutes: int):
+        dts = calculate_intervals(start, end, interval_minutes)
+        return [cls.from_datetime(planet, dt) for dt in dts]
 
     def __repr__(self):
-        return f"[{self.planet}, {self.lon:.3f}, {self.dec:.3f}]"
-
-
-def get_planetary_position(planet_name:str, date: datetime) -> PlanetaryPosition:
-    lon = get_tropical_longitude(planet_name, date)
-    dec = get_declination(planet_name, date)
-    return PlanetaryPosition(date, planet_name, lon.degrees, dec.degrees)
-
-
-def get_planetary_positions(planet_name:str, start_time: datetime, end_time: datetime, interval_minutes: int) -> List[PlanetaryPosition]:
-    return [get_planetary_position(planet_name, time) for time in calculate_intervals(start_time, end_time, interval_minutes)]
-
-
-
+        return f"Planet: {self.planet}\nDatetime: {self.dt.strftime('%Y-%m-%d %H:%M:%S')}\nLongitude: {self.lon:.2f}°\nLatitude: {self.lat:.2f}°\nRight Ascension: {self.ra:.2f}°\nDeclination: {self.dec:.2f}°\nSpeed: {self.speed:.2f}°/day"
