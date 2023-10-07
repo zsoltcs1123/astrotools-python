@@ -23,19 +23,39 @@ class Term(Division):
     pass
 
 
-def get_division(degrees: float, lst: List[Division]) -> Optional[Division]:
+def _get_division(degrees: float, lst: List[Division]) -> Optional[Division]:
     for decan in lst:
         if degrees in decan.degree_range:
             return decan
     return None
 
 
-def get_decan(degrees: float) -> Optional[Decan]:
-    return get_division(degrees, DECANS)
+def map_sign(degrees: float) -> Optional[Sign]:
+    return _get_division(degrees, SIGNS)
 
 
-def get_term(degrees: float) -> Optional[Decan]:
-    return get_division(degrees, TERMS)
+def map_decan(degrees: float) -> Optional[Decan]:
+    return _get_division(degrees, DECANS)
+
+
+def map_term(degrees: float) -> Optional[Term]:
+    return _get_division(degrees, TERMS)
+
+
+SIGNS = [
+    Sign(1, 'Aries', DegreeRange(0, 30)),
+    Sign(2, 'Taurus', DegreeRange(30, 60)),
+    Sign(3, 'Gemini', DegreeRange(60, 90)),
+    Sign(4, 'Cancer', DegreeRange(90, 120)),
+    Sign(5, 'Leo', DegreeRange(120, 150)),
+    Sign(6, 'Virgo', DegreeRange(150, 180)),
+    Sign(7, 'Libra', DegreeRange(180, 210)),
+    Sign(8, 'Scorpio', DegreeRange(210, 240)),
+    Sign(9, 'Sagittarius', DegreeRange(240, 270)),
+    Sign(10, 'Capricorn', DegreeRange(270, 300)),
+    Sign(11, 'Aquarius', DegreeRange(300, 330)),
+    Sign(12, 'Pisces', DegreeRange(330, 360))
+]
 
 
 DECANS = [

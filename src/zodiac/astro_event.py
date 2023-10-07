@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from datetime import datetime
-from typing import List
+from typing import List, Optional
 from core.util import ends_with, find_smallest_elements, group_by
-from zodiac.mapped_position import MappedPosition
+from core.mapped_planetary_position import MappedPlanetaryPosition as mpp
 
 
 @dataclass
@@ -15,23 +15,30 @@ class AstroEvent:
 
 
 @dataclass
-class DecanChange(AstroEvent):
-    current: MappedPosition
-    previous: MappedPosition
+class PositionalEvent(AstroEvent):
+    previous: mpp
+    current: mpp
 
-    def __repr__(self) -> str:
-        return f'{self.current.planet} Decan change at {self.current.time}: {self.previous.decan} -> {self.previous.decan}'
-
-    def __str__(self) -> str:
-        return f'Decan change at {self.current.time.strftime("%Y-%m-%d %H:%M:%S")}: {self.previous.decan.name} -> {self.previous.decan.name}'
 
 @dataclass
-class TermChange(AstroEvent):
-    current: MappedPosition
-    previous: MappedPosition
+class SignChange(PositionalEvent):
 
     def __repr__(self) -> str:
-        f'{self.current.planet} Term change at {self.current.time}: {self.previous.term} -> {self.previous.term}'
+        return f'{self.current.position.planet} Sign change at {self.current.position.dt}: {self.previous.sign.name} -> {self.current.sign.name}'
+
+
+@dataclass
+class DecanChange(PositionalEvent):
+
+    def __repr__(self) -> str:
+        return f'{self.current.position.planet} Decan change at {self.current.position.dt}: {self.previous.decan.name} -> {self.current.decan.name}'
+
+
+@dataclass
+class TermChange(PositionalEvent):
+
+    def __repr__(self) -> str:
+        return f'{self.current.position.planet} Term change at {self.current.position.dt}: {self.previous.term.name} -> {self.current.term.name}'
 
 
 @dataclass
@@ -39,15 +46,46 @@ class Progression(AstroEvent):
     name: str
 
 
-def get_decan_changes(positions: List[MappedPosition]) -> List[AstroEvent]:
-    return [DecanChange(pos.time, pos, prev_pos) for prev_pos, pos in zip(positions, positions[1:]) if pos.decan.id != prev_pos.decan.id]
+def check_decan_change(previous: mpp, current: mpp) -> Optional[DecanChange]:
+    if previous.decan.id != current.decan.id:
+        return DecanChange(current.position.dt, previous, current)
 
 
-def get_term_changes(positions: List[MappedPosition]) -> List[AstroEvent]:
-    return [TermChange(pos.time, pos, prev_pos) for prev_pos, pos in zip(positions, positions[1:]) if pos.term.id != prev_pos.term.id]
+def check_sign_change(previous: mpp, current: mpp) -> Optional[SignChange]:
+    if previous.sign.id != current.sign.id:
+        return SignChange(current.position.dt, previous, current)
 
 
-def get_progressions(positions: List[MappedPosition]) -> List[AstroEvent]:
+def check_term_change(previous: mpp, current: mpp) -> Optional[TermChange]:
+    if previous.term.id != current.term.id:
+        return TermChange(current.position.dt, previous, current)
+
+
+check_functions = [check_decan_change, check_sign_change, check_term_change]
+
+
+def get_astro_events(mpps: List[mpp]) -> List[AstroEvent]:
+    if len(mpps) < 2:
+        return []
+    
+    ret = []
+    for i in range(1, len(mpps)):
+        ret += _check_changes(mpps[i-1], mpps[i])
+    return ret
+    
+
+def _check_changes(previous: mpp, current: mpp):
+    ret = []
+    for check_function in check_functions:
+        event = check_function(previous, current)
+        if event is not None:
+            ret.append(event)
+    return ret
+
+# TBD
+
+
+def get_progressions(positions: List[mpp]) -> List[AstroEvent]:
     events = []
     for pos in positions:
         if (ends_with(5, pos.lon)):
