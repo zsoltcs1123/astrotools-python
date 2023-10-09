@@ -1,7 +1,7 @@
 from util.common import measure
 from datetime import datetime
 from core.planetary_position import PlanetaryPosition as pp
-from core.mapped_planetary_position import MappedPlanetaryPosition as mpp
+from zodiac.mapped_planetary_position import MappedPlanetaryPosition as mpp
 from events.astro_event import get_astro_events
 from core.angle import get_all_angles
 from events.aspect import get_all_aspects
