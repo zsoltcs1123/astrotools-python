@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from datetime import datetime as dt
-from timegen.interval import calculate_intervals
+from util.interval import calculate_intervals
 import core.swisseph_api as swe_api
 
 

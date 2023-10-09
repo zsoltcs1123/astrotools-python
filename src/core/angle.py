@@ -1,10 +1,9 @@
 from dataclasses import dataclass
 from datetime import datetime
 import multiprocessing
-from core.skyfield_api import get_tropical_longitude
 from core.planet import get_outer_planets_map
 from core.planetary_position import PlanetaryPosition as pp
-from timegen.interval import calculate_intervals
+from util.interval import calculate_intervals
 from typing import List
 
 

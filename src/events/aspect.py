@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from itertools import groupby
 from typing import Optional, Tuple, List
-from zodiac.angle import Angle, get_all_angles
-from zodiac.astro_event import AstroEvent
+from core.angle import Angle, get_all_angles
+from events.astro_event import AstroEvent
 from datetime import datetime, timedelta
 
 

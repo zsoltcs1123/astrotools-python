@@ -1,10 +1,10 @@
-from core.util import measure
+from util.common import measure
 from datetime import datetime
 from core.planetary_position import PlanetaryPosition as pp
 from core.mapped_planetary_position import MappedPlanetaryPosition as mpp
-from zodiac.astro_event import get_astro_events
-from zodiac.angle import get_all_angles
-from zodiac.aspect import get_all_aspects
+from events.astro_event import get_astro_events
+from core.angle import get_all_angles
+from events.aspect import get_all_aspects
 from out.file import to_text_file
 from core.planet import PLANETS
 from itertools import groupby
@@ -33,8 +33,8 @@ def main():
 
 def all():
 
-    start = datetime(2023, 10, 1)
-    end = datetime(2023, 10, 10)
+    start = datetime(2023, 10, 10)
+    end = datetime(2023, 10, 20)
     interval = 1
     events = []
     str = ""
@@ -59,7 +59,7 @@ def all():
         str+= f'{formatted_date}:\n'
         str += ''.join([f'{i + 1}. {e.__repr__()} \n------------\n' for i, e in enumerate(group)]) + '\n'
 
-    to_text_file('All oct 1-10.md', str)
+    to_text_file('All oct 10-20.md', str)
 
 if __name__ == "__main__":
     measure(lambda: all())

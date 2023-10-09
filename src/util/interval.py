@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-from skyfield.api import load
 from typing import List
 
 
@@ -13,7 +12,3 @@ def calculate_intervals(start_time: datetime, end_time: datetime, interval_minut
 
     return intervals
 
-
-def generate_skyfield_times(datetimes):
-    ts = load.timescale()
-    return [ts.utc(dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second) for dt in datetimes]

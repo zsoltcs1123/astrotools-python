@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Optional
-from core.util import ends_with, find_smallest_elements, group_by
+from util.common import ends_with, find_smallest_elements, group_by
 from core.mapped_planetary_position import MappedPlanetaryPosition as mpp
 
 
