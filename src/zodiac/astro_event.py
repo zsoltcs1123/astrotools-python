@@ -42,6 +42,13 @@ class TermChange(PositionalEvent):
 
 
 @dataclass
+class DirectionChange(PositionalEvent):
+
+    def __repr__(self) -> str:
+        return f'{self.current.position.planet} Direction change at {self.current.position.dt}: {self.previous.direction} -> {self.current.direction}'
+
+
+@dataclass
 class Progression(AstroEvent):
     name: str
 
@@ -61,18 +68,23 @@ def check_term_change(previous: mpp, current: mpp) -> Optional[TermChange]:
         return TermChange(current.position.dt, previous, current)
 
 
-check_functions = [check_decan_change, check_sign_change, check_term_change]
+def check_direction_change(previous: mpp, current: mpp) -> Optional[DirectionChange]:
+    if previous.direction != current.direction:
+        return DirectionChange(current.position.dt, previous, current)
+
+
+check_functions = [check_decan_change, check_sign_change, check_term_change, check_direction_change]
 
 
 def get_astro_events(mpps: List[mpp]) -> List[AstroEvent]:
     if len(mpps) < 2:
         return []
-    
+
     ret = []
     for i in range(1, len(mpps)):
         ret += _check_changes(mpps[i-1], mpps[i])
     return ret
-    
+
 
 def _check_changes(previous: mpp, current: mpp):
     ret = []

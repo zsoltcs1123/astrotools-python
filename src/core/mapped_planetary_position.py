@@ -16,6 +16,14 @@ class MappedPlanetaryPosition:
     @property
     def retrograde(self) -> bool:
         return self.position.speed < 0
+    
+    @property
+    def stationary(self) -> bool:
+        return self.position.speed == 0
+    
+    @property
+    def direction(self) -> str:
+        return 'retrograde' if self.retrograde else 'stationary' if self.stationary else 'direct'
 
     @property
     def sign(self) -> zd.Sign:
