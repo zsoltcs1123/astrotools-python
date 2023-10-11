@@ -48,6 +48,7 @@ class DirectionChange(PositionalEvent):
         return f'{self.current.position.planet} Direction change at {self.current.position.dt}: {self.previous.direction} -> {self.current.direction}'
 
 
+
 @dataclass
 class Progression(AstroEvent):
     name: str
@@ -73,7 +74,9 @@ def check_direction_change(previous: mpp, current: mpp) -> Optional[DirectionCha
         return DirectionChange(current.position.dt, previous, current)
 
 
-check_functions = [check_decan_change, check_sign_change, check_term_change, check_direction_change]
+
+check_functions = [check_decan_change, check_sign_change,
+                   check_term_change, check_direction_change]
 
 
 def get_astro_events(mpps: List[mpp]) -> List[AstroEvent]:
