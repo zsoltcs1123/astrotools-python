@@ -1,18 +1,14 @@
 from datetime import datetime as dt
 from typing import List, Type
-from enum import Enum, auto
 from astro_event import AstroEvent
-
-class Zodiac(Enum):
-    GEO = auto()
-    HELIO = auto() 
+from zodiac.enums import CoordinateSystem
 
 class AstroEventGenerator:
     start: dt
     end: dt
     interval_minutes: int
     planets: List[str]
-    zodiac: Zodiac
+    coordinate_system: CoordinateSystem
     events: List[Type[AstroEvent]]
     
     def _generate_geo(self):
@@ -22,7 +18,7 @@ class AstroEventGenerator:
         pass
 
     def generate(self):
-        if (self.zodiac == Zodiac.GEO):
+        if (self.zodiac == CoordinateSystem.GEO):
             return self._generate_geo()
         else:
             return self._generate_helio()

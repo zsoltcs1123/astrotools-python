@@ -1,6 +1,7 @@
 from core.planetary_position import PlanetaryPosition
 from typing import List
 from dataclasses import dataclass
+from zodiac.degree_converter import calculate_zodiac_position_dmm
 import zodiac.division as zd
 
 
@@ -14,14 +15,7 @@ class MappedPlanetaryPosition:
         self.sign = zd.map_sign(self.position.lon)
         self.decan = zd.map_decan(self.position.lon)
         self.term = zd.map_term(self.position.lon)
-        self.zodiac_pos = self.calculate_zodiac_position()
-
-    def calculate_zodiac_position(self) -> str:
-        sign_nr = (int)(self.position.lon / 30)
-        deg = (int)(self.position.lon - sign_nr * 30)
-        mins = self.position.zodiac_lon[1]
-        return f"{deg}{self.sign.name[:3]}{mins}"
-    
+        self.zodiac_pos = calculate_zodiac_position_dmm(self.position.lon)
 
     @classmethod
     def from_planetary_positions(cls, planetary_positions: List[PlanetaryPosition]):
