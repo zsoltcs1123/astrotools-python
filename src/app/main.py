@@ -33,8 +33,8 @@ def main():
 
 def all():
 
-    start = datetime(2023, 10, 10)
-    end = datetime(2023, 10, 20)
+    start = datetime(2023, 10, 21)
+    end = datetime(2023, 11, 21)
     interval = 1
     events = []
     str = ""
@@ -59,10 +59,20 @@ def all():
         str+= f'{formatted_date}:\n'
         str += ''.join([f'{i + 1}. {e.__repr__()} \n------------\n' for i, e in enumerate(group)]) + '\n'
 
-    to_text_file('All oct 10-20.md', str)
+    to_text_file('All oct 21 - sep 21.md', str)
 
 if __name__ == "__main__":
-    measure(lambda: all())
+    #measure(lambda: all())
+    from datetime import datetime
+    pos = pp.from_datetime("mars", datetime.now())
+    print(pos.lon)
+    print(pos.zodiac_lon)  
+    
+    mapped = mpp(pos)
+    print(mapped.zodiac_pos)
+    
+    
+  
 
 
 

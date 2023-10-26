@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime as dt
 from util.interval import calculate_intervals
+from typing import Tuple
 import core.swisseph_api as swe_api
 
 
@@ -9,10 +10,20 @@ class PlanetaryPosition:
     dt: dt
     planet: str
     lon: float
+    zodiac_lon: Tuple[int, int, float]  # degrees, minutes, seconds
     lat: float
     speed: float
     dec: float
     ra: float
+
+    def __post_init__(self):
+        self.zodiac_lon = self.calculate_zodiac_lon()
+
+    def calculate_zodiac_lon(self) -> Tuple[int, int, float]:
+        degrees = int(self.lon)
+        minutes = int((self.lon - degrees) * 60)
+        seconds = (self.lon - degrees - minutes / 60) * 3600
+        return (degrees, minutes, seconds)
 
     @classmethod
     def from_datetime(cls, planet: str, dt: dt):
