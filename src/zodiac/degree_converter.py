@@ -15,7 +15,7 @@ def calculate_dms_lon(lon: float) -> Tuple[int, int, float]:
     return (degrees, minutes, seconds)
 
 
-def calculate_zodiac_position_dmm(lon: float) -> str:
+def float_to_zodiacal(lon: float) -> str:
     sign_name = map_sign(lon).name
     sign_nr = (int)(lon / 30)
     deg = (int)(lon - sign_nr * 30)

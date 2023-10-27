@@ -16,6 +16,7 @@ class Aspect(AstroEvent):
         orb_start, orb_end = self.orb(2)
         return f"aspect at {self.angle}, {self.asp_str} ({self.asp_diff})\n Orb of 2 starts at: {orb_start}, ends at: {orb_end}"
     
+    
     def orb(self, orb_value: int) -> Tuple[datetime, datetime]:
     # Determine the direction of movement for each planet
         if self.angle.pos1.speed * self.angle.pos2.speed > 0:

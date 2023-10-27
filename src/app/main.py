@@ -7,10 +7,10 @@ from events.astro_event import get_astro_events
 from core.angle import get_all_angles
 from events.aspect import get_all_aspects
 from out.file import to_text_file
-from core.planet import PLANETS
+from core.planets import PLANETS
 from itertools import groupby
 from zodiac.horoscope import Horoscope
-from zodiac.degree_converter import calculate_zodiac_position_dmm
+from out.horoscope_printer import HoroscopePrinter
 
 def main():
     start = datetime(2023, 10, 1)
@@ -69,26 +69,19 @@ if __name__ == "__main__":
     import pytz
     
     geocoder = Geocoder("ca667b3bd3ba943ee0ba411a150d443f")
-    lat, lon = geocoder.get_lat_lon("kecskemet", "HU")
+    lat, lon = geocoder.get_lat_lon("fort lauderdale", "USA")
     
     tf = TimezoneFinder()
     tz_name = tf.certain_timezone_at(lng=lon, lat=lat)
     tz = pytz.timezone(tz_name)
-    dt = datetime(1992, 7, 21, 3, 20)
+    dt = datetime(1995, 1, 8, 1, 0)
     local_dt = tz.localize(dt)
     utc_dt = local_dt.astimezone(pytz.utc)
     
-    horoscope = Horoscope(utc_dt, lat, lon)
+    horoscope = Horoscope(utc_dt, lat, lon, 'BB')
     
-    print(horoscope.ascendant)
-    print(calculate_zodiac_position_dmm(horoscope.ascendant))
-    print(calculate_zodiac_position_dmm(horoscope.mc))
-    print(horoscope.ic)
-    print(horoscope.dc)
-
-    for mpos in horoscope.planets:
-        print(mpos)
-        print('-------------')
+    horoscope_printer = HoroscopePrinter(horoscope)
+    horoscope_printer.print_to_markdown('BB.md')
 
     
   

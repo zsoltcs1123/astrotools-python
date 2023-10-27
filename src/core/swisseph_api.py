@@ -2,7 +2,7 @@ import swisseph as swe
 from datetime import datetime
 from typing import Tuple
 from zodiac.enums import HouseSystem
-from zodiac.degree_converter import calculate_zodiac_position_dmm
+from zodiac.degree_converter import float_to_zodiacal
 
 
 def get_julian_date(dt: datetime) -> float:

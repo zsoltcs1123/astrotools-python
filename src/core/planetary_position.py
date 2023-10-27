@@ -1,7 +1,6 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime as dt
 from util.interval import calculate_intervals
-from typing import Tuple
 import core.swisseph_api as swe_api
 
 
@@ -14,6 +13,10 @@ class PlanetaryPosition:
     speed: float
     dec: float
     ra: float
+    
+    @classmethod
+    def from_longitude(cls, planet:str, dt: dt, lon: float):
+        return cls(dt, planet, lon, 0, 0)
 
     @classmethod
     def from_datetime(cls, planet: str, dt: dt):
