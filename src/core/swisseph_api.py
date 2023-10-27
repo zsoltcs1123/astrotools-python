@@ -2,6 +2,7 @@ import swisseph as swe
 from datetime import datetime
 from typing import Tuple
 from zodiac.enums import HouseSystem
+from zodiac.degree_converter import calculate_zodiac_position_dmm
 
 
 def get_julian_date(dt: datetime) -> float:
@@ -31,8 +32,7 @@ def get_equatorial_position(planet_name: str, dt: datetime) -> Tuple[float, floa
 def get_houses_and_ascmc(dt: datetime, lat: float, lon: float, house_system: HouseSystem, altitude: float = 0) -> tuple:
     jd_ut = get_julian_date(dt)
     delta_t = swe.deltat(jd_ut)
-    cusps, ascmc = swe.houses(
-        jd_ut + delta_t, lat, lon, _get_house_system_code(house_system))
+    cusps, ascmc = swe.houses(jd_ut + delta_t, lat, lon, _get_house_system_code(house_system))
     return cusps, ascmc
 
 
@@ -43,4 +43,6 @@ def _get_house_system_code(house_system: HouseSystem) -> str:
         return b'W'
     else:
         raise ValueError("Unsupported house system")
+    
+
     

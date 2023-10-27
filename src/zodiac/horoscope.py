@@ -19,7 +19,7 @@ class Horoscope:
         self.zodiac_system = zodiac
         self.coord_system = coord_system
 
-        self.cusps, self.ascmc = swe_api.get_houses_and_ascmc(dt, lon, lon, house_system)
+        self.cusps, self.ascmc = swe_api.get_houses_and_ascmc(dt, lat, lon, house_system)
         
         self.planets = []
         planets = [planet for planet in PLANETS]

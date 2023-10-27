@@ -74,7 +74,7 @@ if __name__ == "__main__":
     tf = TimezoneFinder()
     tz_name = tf.certain_timezone_at(lng=lon, lat=lat)
     tz = pytz.timezone(tz_name)
-    dt = datetime(1992, 7, 21, 3, 20, 0)
+    dt = datetime(1992, 7, 21, 3, 20)
     local_dt = tz.localize(dt)
     utc_dt = local_dt.astimezone(pytz.utc)
     
