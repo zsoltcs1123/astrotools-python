@@ -1,4 +1,4 @@
-from core.planetary_position import PlanetaryPosition
+from core.position import Position
 from typing import List
 from dataclasses import dataclass
 from zodiac.degree_converter import float_to_zodiacal
@@ -6,8 +6,8 @@ import zodiac.division as zd
 
 
 @dataclass
-class MappedPlanetaryPosition:
-    def __init__(self, position: PlanetaryPosition):
+class MappedPosition:
+    def __init__(self, position: Position):
         self.position = position
         self.retrograde = self.position.speed < 0
         self.stationary = self.position.speed == 0
@@ -18,7 +18,7 @@ class MappedPlanetaryPosition:
         self.zodiac_pos = float_to_zodiacal(self.position.lon)
 
     @classmethod
-    def from_planetary_positions(cls, planetary_positions: List[PlanetaryPosition]):
+    def from_planetary_positions(cls, planetary_positions: List[Position]):
         return [cls(position) for position in planetary_positions]
 
     def __repr__(self):

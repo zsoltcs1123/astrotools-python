@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Dict, List, Tuple
-from zodiac.enums import AspectType
-from core.planets import PLANETS
+from core.enums import AspectType
+from points.planets import PLANETS
 
 AspectToOrb = Tuple[AspectType, int]
 

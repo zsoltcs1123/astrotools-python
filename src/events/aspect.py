@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from itertools import groupby
 from typing import Optional, Tuple, List
-from core.angle import Angle, get_all_angles
+from core.angle import Angle, get_all_angles_in_date_range
 from events.astro_event import AstroEvent
 from datetime import datetime, timedelta
 
@@ -94,7 +94,7 @@ def get_aspects_best_fit(angles: List[Angle]) -> List[Aspect]:
 
 
 def get_all_aspects(planet: str, start: datetime, end: datetime, interval: int) -> List[Aspect]:
-    angles = get_all_angles(planet, start, end, interval)
+    angles = get_all_angles_in_date_range(planet, start, end, interval)
     aspects = get_aspects_best_fit(angles)
     return aspects
 

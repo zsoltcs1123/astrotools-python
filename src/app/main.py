@@ -2,15 +2,15 @@ from out.transit_table_printer import TransitTablePrinter
 from util.common import measure
 from util.geocoder import Geocoder
 from datetime import datetime
-from core.planetary_position import PlanetaryPosition as pp
-from zodiac.mapped_planetary_position import MappedPlanetaryPosition as mpp
+from core.position import Position as pp
+from zodiac.mapped_position import MappedPosition as mpp
 from events.astro_event import get_astro_events
-from core.angle import get_all_angles
+from core.angle import get_all_angles_in_date_range
 from events.aspect import get_all_aspects
 from out.file import to_text_file
-from core.planets import PLANETS
+from points.planets import PLANETS
 from itertools import groupby
-from zodiac.horoscope import Horoscope
+from tools.horoscope import Horoscope
 from out.horoscope_printer import HoroscopePrinter
 
 def main():
@@ -21,7 +21,7 @@ def main():
     mapped = mpp.from_planetary_positions(pos)
     events = get_astro_events(mapped)
 
-    angles = get_all_angles('mercury', start, end, 1)
+    angles = get_all_angles_in_date_range('mercury', start, end, 1)
     aspects = get_all_aspects(angles)
     events += aspects
 
@@ -37,8 +37,8 @@ def main():
 
 def all():
 
-    start = datetime(2023, 10, 21)
-    end = datetime(2023, 11, 21)
+    start = datetime(2023, 10, 28)
+    end = datetime(2023, 10, 29)
     interval = 1
     events = []
     str = ""
@@ -49,7 +49,7 @@ def all():
         pos = pp.from_datetime_range(planet, start, end, interval)
         mapped = mpp.from_planetary_positions(pos)
         events += get_astro_events(mapped)
-        angles = get_all_angles(planet, start, end, 1)
+        angles = get_all_angles_in_date_range(planet, start, end, 1)
         aspects = get_all_aspects(angles)
         events += aspects
 
@@ -63,9 +63,10 @@ def all():
         str+= f'{formatted_date}:\n'
         str += ''.join([f'{i + 1}. {e.__repr__()} \n------------\n' for i, e in enumerate(group)]) + '\n'
 
-    to_text_file('All oct 21 - sep 21.md', str)
+    to_text_file(f'All {start.strftime("%m.%d")} - {end.strftime("%m.%d")}.md', str)
 
-if __name__ == "__main__":
+
+def horoscope():
     from timezonefinder import TimezoneFinder 
     import pytz
     
@@ -90,6 +91,13 @@ if __name__ == "__main__":
     
     #horoscope_printer = HoroscopePrinter(natal_horoscope)
     #horoscope_printer.print_to_markdown('BB.md')
+
+
+if __name__ == "__main__":
+    horoscope()
+    
+    
+
 
     
   

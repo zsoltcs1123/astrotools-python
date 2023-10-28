@@ -5,9 +5,9 @@ import core.swisseph_api as swe_api
 
 
 @dataclass
-class PlanetaryPosition:
+class Position:
     dt: dt
-    planet: str
+    point: str
     lon: float
     lat: float
     speed: float
@@ -30,4 +30,4 @@ class PlanetaryPosition:
         return [cls.from_datetime(planet, dt) for dt in dts]
 
     def __repr__(self):
-        return f"Planet: {self.planet}\nDatetime: {self.dt.strftime('%Y-%m-%d %H:%M:%S')}\nLongitude: {self.lon:.2f}°\nLatitude: {self.lat:.2f}°\nRight Ascension: {self.ra:.2f}°\nDeclination: {self.dec:.2f}°\nSpeed: {self.speed:.2f}°/day"
+        return f"Planet: {self.point}\nDatetime: {self.dt.strftime('%Y-%m-%d %H:%M:%S')}\nLongitude: {self.lon:.2f}°\nLatitude: {self.lat:.2f}°\nRight Ascension: {self.ra:.2f}°\nDeclination: {self.dec:.2f}°\nSpeed: {self.speed:.2f}°/day"

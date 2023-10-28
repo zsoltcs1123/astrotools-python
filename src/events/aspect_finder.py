@@ -1,8 +1,8 @@
-from zodiac.enums import AspectType
+from core.enums import AspectType
 from typing import List, Dict
 from core.angle import Angle
 from events.aspect import Aspect
-from zodiac.orb_map import OrbMap
+from points.orb_map import OrbMap
 
 class AspectFinder:
     
@@ -26,7 +26,7 @@ class AspectFinder:
         for planet, angle_list in angles.items():
             aspects[planet] = []
             for angle in angle_list:
-                orbs = self.orb_map.get_aspects_orbs(angle.pos1.planet)
+                orbs = self.orb_map.get_aspects_orbs(angle.pos1.point)
                 for asp_to_orb in orbs:
                     negative = angle.diff - asp_to_orb[1]
                     positive = angle.diff + asp_to_orb[1]

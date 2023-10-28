@@ -4,7 +4,7 @@ import core.swisseph_api as swe_api
 from core.enums import HouseSystem, Zodiac, CoordinateSystem
 from core.position import Position as pp
 from zodiac.mapped_position import MappedPosition as mpp
-from core.angle import get_all_angles_in_date_range
+from core.angle import get_all_angles
 from core.angle import Angle
 from points.planets import PLANETS
 from events.aspect_finder import AspectFinder
@@ -55,7 +55,7 @@ class Horoscope:
             pos = pp.from_datetime(planet, self.dt)
             mpos = mpp(pos)
             self.points.append(mpos)
-            angles = get_all_angles_in_date_range(planet, self.dt, self.dt, 1)
+            angles = get_all_angles(planet, self.dt)
 
             self.angles.update(angles)
 

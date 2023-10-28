@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Optional
 from util.common import ends_with, find_smallest_elements, group_by
-from zodiac.mapped_planetary_position import MappedPlanetaryPosition as mpp
+from zodiac.mapped_position import MappedPosition as mpp
 
 
 @dataclass
@@ -24,28 +24,28 @@ class PositionalEvent(AstroEvent):
 class SignChange(PositionalEvent):
 
     def __repr__(self) -> str:
-        return f'{self.current.position.planet} Sign change at {self.current.position.dt}: {self.previous.sign.name} -> {self.current.sign.name}'
+        return f'{self.current.position.point} Sign change at {self.current.position.dt}: {self.previous.sign.name} -> {self.current.sign.name}'
 
 
 @dataclass
 class DecanChange(PositionalEvent):
 
     def __repr__(self) -> str:
-        return f'{self.current.position.planet} Decan change at {self.current.position.dt}: {self.previous.decan.name} -> {self.current.decan.name}'
+        return f'{self.current.position.point} Decan change at {self.current.position.dt}: {self.previous.decan.name} -> {self.current.decan.name}'
 
 
 @dataclass
 class TermChange(PositionalEvent):
 
     def __repr__(self) -> str:
-        return f'{self.current.position.planet} Term change at {self.current.position.dt}: {self.previous.term.name} -> {self.current.term.name}'
+        return f'{self.current.position.point} Term change at {self.current.position.dt}: {self.previous.term.name} -> {self.current.term.name}'
 
 
 @dataclass
 class DirectionChange(PositionalEvent):
 
     def __repr__(self) -> str:
-        return f'{self.current.position.planet} Direction change at {self.current.position.dt}: {self.previous.direction} -> {self.current.direction}'
+        return f'{self.current.position.point} Direction change at {self.current.position.dt}: {self.previous.direction} -> {self.current.direction}'
 
 
 

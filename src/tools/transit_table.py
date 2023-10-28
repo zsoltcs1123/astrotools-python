@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from typing import List, Dict
 from core.angle import Angle
 from events.aspect import Aspect
-from zodiac.aspect_finder import AspectFinder
-from zodiac.orb_map import OrbMap 
+from events.aspect_finder import AspectFinder
+from points.orb_map import OrbMap 
 
 @dataclass
 class TransitTable:

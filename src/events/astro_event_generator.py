@@ -1,7 +1,7 @@
 from datetime import datetime as dt
 from typing import List, Type
 from astro_event import AstroEvent
-from zodiac.enums import CoordinateSystem
+from core.enums import CoordinateSystem
 
 class AstroEventGenerator:
     start: dt

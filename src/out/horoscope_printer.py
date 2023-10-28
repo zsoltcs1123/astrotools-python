@@ -1,5 +1,5 @@
 from zodiac.degree_converter import float_to_zodiacal
-from zodiac.horoscope import Horoscope
+from tools.horoscope import Horoscope
 
 
 class HoroscopePrinter:
@@ -19,7 +19,7 @@ class HoroscopePrinter:
         print("--------")
         print("Name\t\tDegrees\tHouse\tTerm\tTarot")
         for point in self.horoscope.points:
-            print(f"{point.position.planet}\t{(' R' if point.retrograde else '')}\t{float_to_zodiacal(point.position.lon)}\t{point.house(self.horoscope.cusps)}\t{point.term.name}\t{point.decan.name}")
+            print(f"{point.position.point}\t{(' R' if point.retrograde else '')}\t{float_to_zodiacal(point.position.lon)}\t{point.house(self.horoscope.cusps)}\t{point.term.name}\t{point.decan.name}")
 
         print("\nAspects:")
         print("--------")
@@ -41,7 +41,7 @@ class HoroscopePrinter:
             f.write("| Name | Degrees | House | Term | Tarot |\n")
             f.write("| --- | --- | --- | --- | --- |\n")
             for point in self.horoscope.points:
-                f.write(f"| {point.position.planet} {('R' if point.retrograde else '')} | {float_to_zodiacal(point.position.lon)} | {point.house(self.horoscope.cusps)} | {point.term.name} | {point.decan.name} |\n")
+                f.write(f"| {point.position.point} {('R' if point.retrograde else '')} | {float_to_zodiacal(point.position.lon)} | {point.house(self.horoscope.cusps)} | {point.term.name} | {point.decan.name} |\n")
 
             f.write("\n### Aspects:\n")
             f.write("--------\n")

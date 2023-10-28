@@ -1,7 +1,7 @@
 import swisseph as swe
 from datetime import datetime
 from typing import Tuple
-from zodiac.enums import HouseSystem
+from core.enums import HouseSystem
 from zodiac.degree_converter import float_to_zodiacal
 
 
