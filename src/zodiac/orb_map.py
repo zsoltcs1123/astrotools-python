@@ -20,6 +20,7 @@ class OrbMap:
                 (AspectType.TRINE, 10 if planet in ['sun', 'moon'] else 8),
                 (AspectType.OPPOSITION, 10 if planet in ['sun', 'moon'] else 8),
                 (AspectType.QUINTILE, 8 if planet in ['sun', 'moon'] else 6),
+                (AspectType.INCONJUNCT, 5 if planet in ['sun', 'moon'] else 3),
             ]
             orb_map[planet] = aspect_types_orbs
         return orb_map

@@ -4,7 +4,7 @@ import multiprocessing
 from core.planets import get_outer_planets_map
 from core.planetary_position import PlanetaryPosition as pp
 from util.interval import calculate_intervals
-from typing import List
+from typing import List, Dict
 
 
 @dataclass
@@ -24,9 +24,13 @@ class Angle:
         return f"{self.pos1.planet} [{self.pos1.lon:.3f}], {self.pos2.planet} [{self.pos2.lon:.3f}], {self.diff:.3f}"
 
 
-def get_all_angles(planet: str, start: datetime, end: datetime, interval: int) -> List[Angle]:
+def get_all_angles(planet: str, start: datetime, end: datetime, interval: int) -> Dict[str, List[Angle]]:
     targets = get_outer_planets_map(planet)
-    return [angle for target in targets for angle in get_angles(planet, target, start, end, interval)]
+    angles_dict = {}
+    angles_dict[planet] = []
+    for target in targets:
+        angles_dict[planet].append(get_angle(planet, target, start))
+    return angles_dict
 
 
 def get_angles(planet1: str, planet2: str, start: datetime, end: datetime, interval: int) -> List[Angle]:

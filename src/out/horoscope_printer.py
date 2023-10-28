@@ -47,3 +47,4 @@ class HoroscopePrinter:
             f.write("--------\n")
             for asp in self.horoscope.aspects:
                 f.write(f"- {asp.angle.print_no_time()}, {asp.asp_str}\n")
+

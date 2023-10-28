@@ -1,3 +1,4 @@
+from out.transit_table_printer import TransitTablePrinter
 from util.common import measure
 from util.geocoder import Geocoder
 from datetime import datetime
@@ -78,10 +79,17 @@ if __name__ == "__main__":
     local_dt = tz.localize(dt)
     utc_dt = local_dt.astimezone(pytz.utc)
     
-    horoscope = Horoscope(utc_dt, lat, lon, 'BB')
+    natal_horoscope = Horoscope(utc_dt, lat, lon, 'BB')
+    utc_now = datetime.now(pytz.utc)
+    utc_now_horoscope = Horoscope(utc_now, lat, lon, 'UTC_NOW')
     
-    horoscope_printer = HoroscopePrinter(horoscope)
-    horoscope_printer.print_to_markdown('BB.md')
+    transit_table = natal_horoscope.generate_transit_table(utc_now_horoscope)
+    
+    transit_table_printer = TransitTablePrinter(transit_table)
+    transit_table_printer.print_to_console()
+    
+    #horoscope_printer = HoroscopePrinter(natal_horoscope)
+    #horoscope_printer.print_to_markdown('BB.md')
 
     
   

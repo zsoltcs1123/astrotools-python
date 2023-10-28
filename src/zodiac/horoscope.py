@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import List
+from typing import List, Dict
 import core.swisseph_api as swe_api
 from zodiac.enums import HouseSystem, Zodiac, CoordinateSystem
 from core.planetary_position import PlanetaryPosition as pp
@@ -10,12 +10,15 @@ from core.planets import PLANETS
 from zodiac.aspect_finder import AspectFinder
 from zodiac.orb_map import OrbMap
 from events.aspect import Aspect
+from zodiac.transit_table import TransitTable
 
 
 class Horoscope:
     points: List[mpp]
+    angles: Dict[str, List[Angle]]
     aspects: List[Aspect]
     cusps: List[float]
+    
     
     def __init__(self, dt: datetime, lat: float, lon: float,
                  name: str,
@@ -34,7 +37,7 @@ class Horoscope:
             dt, lat, lon, house_system)
 
         self.points = []
-        self.angles = []
+        self.angles = {}
         self.aspects = []
         planets = [planet for planet in PLANETS]
 
@@ -43,6 +46,9 @@ class Horoscope:
 
         self.points.append(mpp(asc_pos))
         self.points.append(mpp(mc_pos))
+        
+        self.angles['ASC'] = []
+        self.angles['MC'] = []
 
         # angles
         for planet in planets:
@@ -51,16 +57,29 @@ class Horoscope:
             self.points.append(mpos)
             angles = get_all_angles(planet, self.dt, self.dt, 1)
 
-            # ASC and MC
-            angles.append(Angle(self.dt, pos, asc_pos))
-            angles.append(Angle(self.dt, pos, mc_pos))
+            self.angles.update(angles)
 
-            self.angles.append(angles)
+            # ASC and MC
+            self.angles['ASC'].append(Angle(self.dt, pos, asc_pos))
+            self.angles['MC'].append(Angle(self.dt, pos, mc_pos))
+
 
         # aspects
         orb_map = OrbMap()
         asp_finder = AspectFinder(orb_map)
         self.aspects = asp_finder.find_aspects(self.angles)
+        
+    def generate_transit_table(self, transit_horoscope: 'Horoscope') -> TransitTable:
+        angles = {}
+        for point in [p for p in self.points if p.position.planet not in ['ASC', 'MC']]:
+            point_angles = []
+            for transit_point in [tp for tp in transit_horoscope.points if tp.position.planet not in ['ASC', 'MC']]:
+                angle = Angle(transit_point.position.dt, point.position, transit_point.position)
+                point_angles.append(angle)
+            angles[point.position.planet] = point_angles
+        return TransitTable(angles)
+                
+                
 
     @property
     def ascendant(self):
