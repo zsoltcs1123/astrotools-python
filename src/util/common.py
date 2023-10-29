@@ -12,8 +12,11 @@ def measure(func) -> None:
     print(f"Elapsed time: {elapsed_time:.2f} seconds")
 
 
-def ends_with(end: int, num: float) -> bool:
+def integral_ends_with(end: int, num: float) -> bool:
     return str(num).split('.')[0][-1] == str(end)
+
+def decimal_ends_with(end: int, num: float) -> bool:
+    return str(num).split('.')[1][-1] == str(end)
 
 
 def group_by(lst: List[Any], key_func: Callable[[Any], Any]) -> Dict[Any, List[Any]]:

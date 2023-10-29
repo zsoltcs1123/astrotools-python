@@ -1,0 +1,405 @@
+Name: New York
+Date and Time: 2023-10-28 13:30:00+00:00
+Longitude: -74.0060152
+Latitude: 40.7127281
+House System: PLACIDUS
+Zodiac System: TROPICAL
+Coordinate System: GEO
+
+Points:
+--------
+Name         Degrees   House     Term      Tarot     
+ASC          29Sco22   1         Saturn    7C        
+MC           14Vir10   10        Venus     9P        
+sun          4Sco52    11        Mars      5C        
+moon         1Tau3     5         Venus     5P        
+mercury      10Sco15   12        Venus     6C        
+venus        18Vir31   10        Jupiter   9P        
+mars         11Sco11   12        Mercury   6C        
+jupiter    R 11Tau16   6         Mercury   6P        
+saturn     R 0Pis33    3         Venus     8C        
+uranus     R 21Tau43   6         Jupiter   7P        
+neptune    R 25Pis18   4         Mars      10C       
+pluto        27Cap58   2         Mars      4P        
+
+Aspects:
+--------
+sun
+-------
+sun [214.864], mercury [220.244], 5.380, CONJUNCTION
+sun [214.864], mars [221.186], 6.321, CONJUNCTION
+sun [214.864], jupiter [41.273], 173.591, OPPOSITION
+sun [214.864], saturn [330.553], 115.688, TRINE
+sun [214.864], pluto [297.967], 83.102, SQUARE
+
+mercury
+-------
+mercury [220.244], mars [221.186], 0.942, CONJUNCTION
+mercury [220.244], jupiter [41.273], 178.971, OPPOSITION
+mercury [220.244], pluto [297.967], 77.723, QUINTILE
+
+venus
+-------
+venus [168.521], jupiter [41.273], 127.247, TRINE
+venus [168.521], uranus [51.721], 116.799, TRINE
+venus [168.521], neptune [355.296], 186.775, OPPOSITION
+
+mars
+-------
+mars [221.186], jupiter [41.273], 179.912, OPPOSITION
+mars [221.186], pluto [297.967], 76.781, QUINTILE
+
+neptune
+-------
+neptune [355.296], pluto [297.967], 57.329, SEXTILE
+---------------------
+
+
+Name: New York
+Date and Time: 2023-10-29 13:30:00+00:00
+Longitude: -74.0060152
+Latitude: 40.7127281
+House System: PLACIDUS
+Zodiac System: TROPICAL
+Coordinate System: GEO
+
+Points:
+--------
+Name         Degrees   House     Term      Tarot     
+ASC          0Sag9     1         Jupiter   8W        
+MC           15Vir14   10        Venus     9P        
+sun          5Sco52    11        Mars      5C        
+moon         15Tau13   6         Jupiter   6P        
+mercury      11Sco51   12        Mercury   6C        
+venus        19Vir33   10        Jupiter   9P        
+mars         11Sco52   12        Mercury   6C        
+jupiter    R 11Tau8    6         Mercury   6P        
+saturn     R 0Pis33    3         Venus     8C        
+uranus     R 21Tau41   6         Jupiter   7P        
+neptune    R 25Pis17   4         Mars      10C       
+pluto        27Cap59   2         Mars      4P        
+
+Aspects:
+--------
+sun
+-------
+sun [215.862], mercury [221.842], 5.980, CONJUNCTION
+sun [215.862], mars [221.875], 6.013, CONJUNCTION
+sun [215.862], jupiter [41.139], 174.724, OPPOSITION
+sun [215.862], saturn [330.542], 114.679, TRINE
+sun [215.862], pluto [297.976], 82.113, SQUARE
+
+mercury
+-------
+mercury [221.842], mars [221.875], 0.033, CONJUNCTION
+mercury [221.842], jupiter [41.139], 180.704, OPPOSITION
+mercury [221.842], pluto [297.976], 76.133, QUINTILE
+
+venus
+-------
+venus [169.551], uranus [51.682], 117.869, TRINE
+venus [169.551], neptune [355.276], 185.725, OPPOSITION
+
+mars
+-------
+mars [221.875], jupiter [41.139], 180.736, OPPOSITION
+mars [221.875], pluto [297.976], 76.101, QUINTILE
+
+neptune
+-------
+neptune [355.276], pluto [297.976], 57.301, SEXTILE
+---------------------
+
+
+Name: New York
+Date and Time: 2023-10-30 13:30:00+00:00
+Longitude: -74.0060152
+Latitude: 40.7127281
+House System: PLACIDUS
+Zodiac System: TROPICAL
+Coordinate System: GEO
+
+Points:
+--------
+Name         Degrees   House     Term      Tarot     
+ASC          0Sag56    1         Jupiter   8W        
+MC           16Vir18   10        Venus     9P        
+sun          6Sco52    11        Mars      5C        
+moon         29Tau4    6         Mars      7P        
+mercury      13Sco26   12        Mercury   6C        
+venus        20Vir35   10        Jupiter   10P       
+mars         12Sco34   12        Mercury   6C        
+jupiter    R 11Tau0    6         Mercury   6P        
+saturn     R 0Pis32    3         Venus     8C        
+uranus     R 21Tau39   6         Jupiter   7P        
+neptune    R 25Pis15   4         Mars      10C       
+pluto        27Cap59   2         Mars      4P        
+
+Aspects:
+--------
+sun
+-------
+sun [216.861], mercury [223.432], 6.571, CONJUNCTION
+sun [216.861], mars [222.565], 5.704, CONJUNCTION
+sun [216.861], jupiter [41.003], 175.858, OPPOSITION
+sun [216.861], saturn [330.533], 113.672, TRINE
+sun [216.861], pluto [297.985], 81.124, SQUARE
+
+mercury
+-------
+mercury [223.432], mars [222.565], 0.867, CONJUNCTION
+mercury [223.432], jupiter [41.003], 182.429, OPPOSITION
+mercury [223.432], pluto [297.985], 74.552, QUINTILE
+
+venus
+-------
+venus [170.588], uranus [51.642], 118.946, TRINE
+venus [170.588], neptune [355.257], 184.668, OPPOSITION
+venus [170.588], pluto [297.985], 127.396, TRINE
+
+mars
+-------
+mars [222.565], jupiter [41.003], 181.562, OPPOSITION
+mars [222.565], pluto [297.985], 75.420, QUINTILE
+
+neptune
+-------
+neptune [355.257], pluto [297.985], 57.272, SEXTILE
+---------------------
+
+
+Name: New York
+Date and Time: 2023-10-31 13:30:00+00:00
+Longitude: -74.0060152
+Latitude: 40.7127281
+House System: PLACIDUS
+Zodiac System: TROPICAL
+Coordinate System: GEO
+
+Points:
+--------
+Name         Degrees   House     Term      Tarot     
+ASC          1Sag43    1         Jupiter   8W        
+MC           17Vir22   10        Jupiter   9P        
+sun          7Sco52    11        Venus     5C        
+moon         12Gem34   7         Venus     9S        
+mercury      15Sco1    12        Mercury   6C        
+venus        21Vir38   10        Mars      10P       
+mars         13Sco15   12        Mercury   6C        
+jupiter    R 10Tau52   5         Mercury   6P        
+saturn     R 0Pis32    3         Venus     8C        
+uranus     R 21Tau36   6         Jupiter   7P        
+neptune    R 25Pis14   4         Mars      10C       
+pluto        27Cap60   2         Mars      4P        
+
+Aspects:
+--------
+sun
+-------
+sun [217.860], mercury [225.014], 7.154, CONJUNCTION
+sun [217.860], mars [223.256], 5.396, CONJUNCTION
+sun [217.860], jupiter [40.868], 176.992, OPPOSITION
+sun [217.860], saturn [330.526], 112.665, TRINE
+sun [217.860], pluto [297.995], 80.134, SQUARE
+
+mercury
+-------
+mercury [225.014], mars [223.256], 1.758, CONJUNCTION
+mercury [225.014], jupiter [40.868], 184.147, OPPOSITION
+mercury [225.014], uranus [51.603], 173.412, OPPOSITION
+mercury [225.014], pluto [297.995], 72.980, QUINTILE
+
+venus
+-------
+venus [171.632], uranus [51.603], 120.029, TRINE
+venus [171.632], neptune [355.238], 183.606, OPPOSITION
+venus [171.632], pluto [297.995], 126.363, TRINE
+
+mars
+-------
+mars [223.256], jupiter [40.868], 182.388, OPPOSITION
+mars [223.256], pluto [297.995], 74.738, QUINTILE
+
+neptune
+-------
+neptune [355.238], pluto [297.995], 57.244, SEXTILE
+---------------------
+
+
+Name: New York
+Date and Time: 2023-11-01 13:30:00+00:00
+Longitude: -74.0060152
+Latitude: 40.7127281
+House System: PLACIDUS
+Zodiac System: TROPICAL
+Coordinate System: GEO
+
+Points:
+--------
+Name         Degrees   House     Term      Tarot     
+ASC          2Sag30    1         Jupiter   8W        
+MC           18Vir26   10        Jupiter   9P        
+sun          8Sco52    11        Venus     5C        
+moon         25Gem42   7         Saturn    10S       
+mercury      16Sco35   12        Mercury   6C        
+venus        22Vir41   10        Mars      10P       
+mars         13Sco57   12        Mercury   6C        
+jupiter    R 10Tau44   5         Mercury   6P        
+saturn     R 0Pis31    3         Venus     8C        
+uranus     R 21Tau34   6         Jupiter   7P        
+neptune    R 25Pis13   4         Mars      10C       
+pluto        28Cap0    2         Mars      4P        
+
+Aspects:
+--------
+sun
+-------
+sun [218.860], mercury [226.589], 7.729, CONJUNCTION
+sun [218.860], mars [223.948], 5.088, CONJUNCTION
+sun [218.860], jupiter [40.732], 178.128, OPPOSITION
+sun [218.860], saturn [330.520], 111.660, TRINE
+sun [218.860], pluto [298.005], 79.145, QUINTILE
+
+mercury
+-------
+mercury [226.589], mars [223.948], 2.641, CONJUNCTION
+mercury [226.589], jupiter [40.732], 185.857, OPPOSITION
+mercury [226.589], uranus [51.563], 175.026, OPPOSITION
+mercury [226.589], pluto [298.005], 71.416, QUINTILE
+
+venus
+-------
+venus [172.681], uranus [51.563], 121.119, TRINE
+venus [172.681], neptune [355.220], 182.539, OPPOSITION
+venus [172.681], pluto [298.005], 125.323, TRINE
+
+mars
+-------
+mars [223.948], jupiter [40.732], 183.216, OPPOSITION
+mars [223.948], uranus [51.563], 172.386, OPPOSITION
+mars [223.948], pluto [298.005], 74.057, QUINTILE
+
+neptune
+-------
+neptune [355.220], pluto [298.005], 57.215, SEXTILE
+---------------------
+
+
+Name: New York
+Date and Time: 2023-11-02 13:30:00+00:00
+Longitude: -74.0060152
+Latitude: 40.7127281
+House System: PLACIDUS
+Zodiac System: TROPICAL
+Coordinate System: GEO
+
+Points:
+--------
+Name         Degrees   House     Term      Tarot     
+ASC          3Sag17    1         Jupiter   8W        
+MC           19Vir30   10        Jupiter   9P        
+sun          9Sco52    11        Venus     5C        
+moon         8Can28    8         Venus     2C        
+mercury      18Sco9    12        Mercury   6C        
+venus        23Vir44   10        Mars      10P       
+mars         14Sco38   12        Mercury   6C        
+jupiter    R 10Tau36   5         Mercury   6P        
+saturn     R 0Pis31    3         Venus     8C        
+uranus     R 21Tau31   6         Jupiter   7P        
+neptune    R 25Pis12   4         Mars      10C       
+pluto        28Cap1    2         Mars      4P        
+
+Aspects:
+--------
+sun
+-------
+sun [219.860], mercury [228.156], 8.295, CONJUNCTION
+sun [219.860], mars [224.641], 4.781, CONJUNCTION
+sun [219.860], jupiter [40.596], 179.264, OPPOSITION
+sun [219.860], saturn [330.516], 110.656, TRINE
+sun [219.860], pluto [298.015], 78.155, QUINTILE
+
+mercury
+-------
+mercury [228.156], mars [224.641], 3.515, CONJUNCTION
+mercury [228.156], jupiter [40.596], 187.559, OPPOSITION
+mercury [228.156], uranus [51.522], 176.633, OPPOSITION
+mercury [228.156], neptune [355.202], 127.046, TRINE
+mercury [228.156], pluto [298.015], 69.860, QUINTILE
+
+venus
+-------
+venus [173.737], uranus [51.522], 122.214, TRINE
+venus [173.737], neptune [355.202], 181.466, OPPOSITION
+venus [173.737], pluto [298.015], 124.279, TRINE
+
+mars
+-------
+mars [224.641], jupiter [40.596], 184.044, OPPOSITION
+mars [224.641], uranus [51.522], 173.119, OPPOSITION
+mars [224.641], pluto [298.015], 73.375, QUINTILE
+
+neptune
+-------
+neptune [355.202], pluto [298.015], 57.187, SEXTILE
+---------------------
+
+
+Name: New York
+Date and Time: 2023-11-03 13:30:00+00:00
+Longitude: -74.0060152
+Latitude: 40.7127281
+House System: PLACIDUS
+Zodiac System: TROPICAL
+Coordinate System: GEO
+
+Points:
+--------
+Name         Degrees   House     Term      Tarot     
+ASC          4Sag5     1         Jupiter   8W        
+MC           20Vir34   10        Jupiter   10P       
+sun          10Sco52   11        Venus     6C        
+moon         20Can55   8         Jupiter   4C        
+mercury      19Sco43   12        Jupiter   6C        
+venus        24Vir48   10        Mars      10P       
+mars         15Sco20   12        Mercury   6C        
+jupiter    R 10Tau28   5         Mercury   6P        
+saturn     R 0Pis31    3         Venus     8C        
+uranus     R 21Tau29   6         Jupiter   7P        
+neptune    R 25Pis11   4         Mars      10C       
+pluto        28Cap2    2         Mars      4P        
+
+Aspects:
+--------
+sun
+-------
+sun [220.861], mercury [229.715], 8.854, CONJUNCTION
+sun [220.861], mars [225.334], 4.473, CONJUNCTION
+sun [220.861], jupiter [40.460], 180.401, OPPOSITION
+sun [220.861], pluto [298.027], 77.165, QUINTILE
+
+mercury
+-------
+mercury [229.715], mars [225.334], 4.381, CONJUNCTION
+mercury [229.715], uranus [51.482], 178.233, OPPOSITION
+mercury [229.715], neptune [355.185], 125.469, TRINE
+mercury [229.715], pluto [298.027], 68.311, QUINTILE
+
+venus
+-------
+venus [174.797], uranus [51.482], 123.316, TRINE
+venus [174.797], neptune [355.185], 180.387, OPPOSITION
+venus [174.797], pluto [298.027], 123.229, TRINE
+
+mars
+-------
+mars [225.334], jupiter [40.460], 184.874, OPPOSITION
+mars [225.334], uranus [51.482], 173.853, OPPOSITION
+mars [225.334], pluto [298.027], 72.692, QUINTILE
+
+neptune
+-------
+neptune [355.185], pluto [298.027], 57.158, SEXTILE
+---------------------
+
+

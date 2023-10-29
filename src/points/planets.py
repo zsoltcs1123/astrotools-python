@@ -4,6 +4,8 @@ from typing import Dict
 PLANETS = ["sun", "moon", "mercury", "venus", "mars",
            "jupiter", "saturn", "uranus", "neptune", "pluto"]
 
+PLANETS_WITH_ASC_MC = PLANETS + ['ASC', 'MC']
+
 
 PLANETS_MAP = {
     'mercury': 1,

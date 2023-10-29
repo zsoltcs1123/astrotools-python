@@ -1,3 +1,6 @@
+from typing import List
+import pytz
+from timezonefinder import TimezoneFinder
 from out.timeline_printer import TimelinePrinter
 from tools.timeline import Timeline
 from out.transit_table_printer import TransitTablePrinter
@@ -5,7 +8,7 @@ from util.common import measure
 from util.geocoder import Geocoder
 from datetime import datetime
 from core.position import Position as pp
-from zodiac.mapped_position import MappedPosition as mpp
+from zodiac.mapped_position import MappedPosition as mp
 from events.astro_event import get_astro_events
 from core.angle import get_all_angles_in_date_range
 from events.aspect import get_all_aspects
@@ -13,7 +16,7 @@ from out.file import to_text_file
 from points.planets import PLANETS
 from itertools import groupby
 from tools.horoscope import Horoscope
-from out.horoscope_printer import HoroscopePrinter
+from out.horoscope_printer import print_horoscopes_to_console, print_horoscopes_to_file
 
 
 def main():
@@ -21,7 +24,7 @@ def main():
     end = datetime(2023, 10, 10)
     interval = 1
     pos = pp.from_datetime_range('mercury', start, end, interval)
-    mapped = mpp.from_planetary_positions(pos)
+    mapped = mp.from_planetary_positions(pos)
     events = get_astro_events(mapped)
 
     angles = get_all_angles_in_date_range('mercury', start, end, 1)
@@ -47,7 +50,7 @@ def main():
     for i, planet in enumerate(planets):
         print(f'calculating {planet}')
         pos = pp.from_datetime_range(planet, start, end, interval)
-        mapped = mpp.from_planetary_positions(pos)
+        mapped = mp.from_planetary_positions(pos)
         events += get_astro_events(mapped)
         angles = get_all_angles_in_date_range(planet, start, end, 1)
         aspects = get_all_aspects(angles)
@@ -69,8 +72,6 @@ def main():
 
 
 def horoscope():
-    from timezonefinder import TimezoneFinder
-    import pytz
 
     geocoder = Geocoder("ca667b3bd3ba943ee0ba411a150d443f")
     lat, lon = geocoder.get_lat_lon("fort lauderdale", "USA")
@@ -98,14 +99,34 @@ def horoscope():
 
 def timeline():
     start = datetime(2023, 10, 28)
-    end = datetime(2023, 10, 29)
+    end = datetime(2023, 11, 4)
     interval = 1
-    planets = [planet for planet in PLANETS if planet != 'moon']
-
-    timeline = Timeline(start, end, interval, planets)
+    
+    timeline = Timeline(start, end, interval, PLANETS)
     timeline_printer = TimelinePrinter(timeline)
-    timeline_printer.print_to_console()
+    timeline_printer.print_to_file('timeline.txt') 
+    
 
+def generate_nyc_horoscopes():
+    start = datetime(2023, 10, 28, 9, 30)
+    end = datetime(2023, 11, 4, 9, 30)
+    
+    geocoder = Geocoder("ca667b3bd3ba943ee0ba411a150d443f")
+    lat, lon = geocoder.get_lat_lon('New York', "USA")
+    tf = TimezoneFinder()
+    tz_name = tf.certain_timezone_at(lng=lon, lat=lat)
+    tz = pytz.timezone(tz_name)
+    local_start = tz.localize(start)
+    utc_start = local_start.astimezone(pytz.utc)
+    local_end = tz.localize(end)
+    utc_end = local_end.astimezone(pytz.utc)
+    
+    horoscopes = Horoscope.from_datetime_range(utc_start, utc_end, 1440, lat, lon, 'New York')
+    
+    print_horoscopes_to_file(horoscopes, 'horoscopes.txt', aspects_filter=['ASC', 'MC', 'moon']) 
+     
+    
 
 if __name__ == "__main__":
+    #generate_nyc_horoscopes()
     timeline()

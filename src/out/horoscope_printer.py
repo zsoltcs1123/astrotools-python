@@ -1,50 +1,53 @@
+from typing import List
+from out.file import to_text_file
 from zodiac.degree_converter import float_to_zodiacal
 from tools.horoscope import Horoscope
 
 
-class HoroscopePrinter:
-    def __init__(self, horoscope: Horoscope):
-        self.horoscope = horoscope
+def _generate_str(horoscopes: List[Horoscope], points_filter: List[str] = [], aspects_filter: List[str] = []):
+    str = ''
+    for horoscope in horoscopes:
+        str += f"Name: {horoscope.name}"
+        str += f"\nDate and Time: {horoscope.dt}"
+        str += f"\nLongitude: {horoscope.lon}"
+        str += f"\nLatitude: {horoscope.lat}"
+        str += f"\nHouse System: {horoscope.house_system}"
+        str += f"\nZodiac System: {horoscope.zodiac_system}"
+        str += f"\nCoordinate System: {horoscope.coord_system}"
+        str += "\n\nPoints:\n--------\n"
+        str += "{:<10}{:<3}{:<10}{:<10}{:<10}{:<10}".format(
+            "Name", "", "Degrees", "House", "Term", "Tarot")
+        for point in horoscope.points:
+            if (point.position.point in points_filter):
+                continue
+            str += f"\n{point.position.point:<10}{(' R' if point.retrograde else ''):<3}{float_to_zodiacal(point.position.lon):<10}{point.house(horoscope.cusps):<10}{point.term.name:<10}{point.decan.name:<10}"
 
-    def print_to_console(self):
-        print(f"Name: {self.horoscope.name}")
-        print(f"Date and Time: {self.horoscope.dt}")
-        print(f"Longitude: {self.horoscope.lon}")
-        print(f"Latitude: {self.horoscope.lat}")
-        print(f"House System: {self.horoscope.house_system}")
-        print(f"Zodiac System: {self.horoscope.zodiac_system}")
-        print(f"Coordinate System: {self.horoscope.coord_system}")
+        str += "\n\nAspects:\n--------"
+        for k, v in horoscope.aspects.items():
+            if not bool(v) or k in aspects_filter:
+                continue
+            str += f"\n{k}\n-------"
+            for asp in v:
+                str += f"\n{asp.angle.print_no_time()}, {asp.asp_str}"
+            str += '\n'
 
-        print("\nPoints:")
-        print("--------")
-        print("Name\t\tDegrees\tHouse\tTerm\tTarot")
-        for point in self.horoscope.points:
-            print(f"{point.position.point}\t{(' R' if point.retrograde else '')}\t{float_to_zodiacal(point.position.lon)}\t{point.house(self.horoscope.cusps)}\t{point.term.name}\t{point.decan.name}")
+        str += '---------------------\n\n\n'
+    return str
 
-        print("\nAspects:")
-        print("--------")
-        for asp in self.horoscope.aspects:
-            print(f"{asp.angle.print_no_time()}, {asp.asp_str}")
 
-    def print_to_markdown(self, filename: str):
-        with open(filename, 'w') as f:
-            f.write(f"## Name: {self.horoscope.name}\n")
-            f.write(f"## Date and Time: {self.horoscope.dt}\n")
-            f.write(f"## Longitude: {self.horoscope.lon}\n")
-            f.write(f"## Latitude: {self.horoscope.lat}\n")
-            f.write(f"## House System: {self.horoscope.house_system}\n")
-            f.write(f"## Zodiac System: {self.horoscope.zodiac_system}\n")
-            f.write(f"## Coordinate System: {self.horoscope.coord_system}\n")
+def print_horoscope_to_console(horoscope: Horoscope, points_filter: List[str] = [], aspects_filter: List[str] = []):
+    print(_generate_str([horoscope], points_filter, aspects_filter))
 
-            f.write("\n### Points:\n")
-            f.write("--------\n")
-            f.write("| Name | Degrees | House | Term | Tarot |\n")
-            f.write("| --- | --- | --- | --- | --- |\n")
-            for point in self.horoscope.points:
-                f.write(f"| {point.position.point} {('R' if point.retrograde else '')} | {float_to_zodiacal(point.position.lon)} | {point.house(self.horoscope.cusps)} | {point.term.name} | {point.decan.name} |\n")
 
-            f.write("\n### Aspects:\n")
-            f.write("--------\n")
-            for asp in self.horoscope.aspects:
-                f.write(f"- {asp.angle.print_no_time()}, {asp.asp_str}\n")
+def print_horoscopes_to_console(horoscopes: List[Horoscope], points_filter: List[str] = [], aspects_filter: List[str] = []):
+    print(_generate_str(horoscopes, points_filter, aspects_filter))
 
+
+def print_horoscope_to_file(horoscope: Horoscope, filename: str, points_filter: List[str] = [], aspects_filter: List[str] = []):
+    to_text_file(_generate_str(
+        filename, [horoscope], points_filter, aspects_filter))
+
+
+def print_horoscopes_to_file(horoscopes: List[Horoscope], filename: str, points_filter: List[str] = [], aspects_filter: List[str] = []):
+    to_text_file(filename, _generate_str(
+        horoscopes, points_filter, aspects_filter))

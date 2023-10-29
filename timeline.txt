@@ -1,0 +1,236 @@
+Saturday, Oct 28 2023:
+1. 2023-10-28 00:03:00	moon	30% progression at	23Ari0 
+------------
+2. 2023-10-28 01:44:00	moon	quintile [144] vs venus 
+------------
+3. 2023-10-28 03:23:00	moon	Term change	Mars -> Saturn 
+------------
+4. 2023-10-28 03:23:00	moon	50% progression at	25Ari0 
+------------
+5. 2023-10-28 06:43:00	moon	70% progression at	27Ari0 
+------------
+6. 2023-10-28 07:03:00	mars	Term change	Venus -> Mercury 
+------------
+7. 2023-10-28 08:20:00	moon	square [270] vs pluto 
+------------
+8. 2023-10-28 09:51:00	mercury	Decan change	5C -> 6C 
+------------
+9. 2023-10-28 11:45:00	moon	Decan change	4W -> 5P 
+------------
+10. 2023-10-28 11:45:00	moon	Sign change	Aries -> Taurus 
+------------
+11. 2023-10-28 11:45:00	moon	Term change	Saturn -> Venus 
+------------
+12. 2023-10-28 12:40:00	moon	sextile [300] vs saturn 
+------------
+13. 2023-10-28 16:03:00	mars	opposition [180] vs jupiter 
+------------
+14. 2023-10-28 16:46:00	sun	50% progression at	5Sco0 
+------------
+15. 2023-10-28 16:47:00	moon	30% progression at	3Tau0 
+------------
+16. 2023-10-28 20:09:00	moon	50% progression at	5Tau0 
+------------
+17. 2023-10-28 23:32:00	moon	70% progression at	7Tau0 
+------------
+
+Sunday, Oct 29 2023:
+1. 2023-10-29 00:51:00	mercury	Term change	Venus -> Mercury 
+------------
+2. 2023-10-29 01:13:00	moon	Term change	Venus -> Mercury 
+------------
+3. 2023-10-29 03:44:00	mercury	opposition [180] vs jupiter 
+------------
+4. 2023-10-29 04:37:00	moon	Decan change	5P -> 6P 
+------------
+5. 2023-10-29 06:37:00	moon	conjunction [0] vs jupiter 
+------------
+6. 2023-10-29 07:00:00	moon	opposition [180] vs mercury 
+------------
+7. 2023-10-29 07:30:00	moon	opposition [180] vs mars 
+------------
+8. 2023-10-29 08:56:00	moon	quintile [288] vs saturn 
+------------
+9. 2023-10-29 09:43:00	moon	30% progression at	13Tau0 
+------------
+10. 2023-10-29 11:26:00	moon	Term change	Mercury -> Jupiter 
+------------
+11. 2023-10-29 13:08:00	moon	50% progression at	15Tau0 
+------------
+12. 2023-10-29 14:22:00	mercury	conjunction [0] vs mars 
+------------
+13. 2023-10-29 16:34:00	moon	70% progression at	17Tau0 
+------------
+14. 2023-10-29 21:33:00	moon	trine [120] vs venus 
+------------
+15. 2023-10-29 21:44:00	moon	Decan change	6P -> 7P 
+------------
+16. 2023-10-29 23:55:00	venus	Decan change	9P -> 10P 
+------------
+
+Monday, Oct 30 2023:
+1. 2023-10-30 00:36:00	moon	conjunction [0] vs uranus 
+------------
+2. 2023-10-30 01:11:00	moon	Term change	Jupiter -> Saturn 
+------------
+3. 2023-10-30 02:55:00	moon	30% progression at	23Tau0 
+------------
+4. 2023-10-30 06:24:00	moon	50% progression at	25Tau0 
+------------
+5. 2023-10-30 06:51:00	moon	sextile [300] vs neptune 
+------------
+6. 2023-10-30 06:58:00	mercury	30% progression at	13Sco0 
+------------
+7. 2023-10-30 09:53:00	moon	Term change	Saturn -> Mars 
+------------
+8. 2023-10-30 09:53:00	moon	70% progression at	27Tau0 
+------------
+9. 2023-10-30 11:36:00	moon	trine [240] vs pluto 
+------------
+10. 2023-10-30 15:08:00	moon	Decan change	7P -> 8S 
+------------
+11. 2023-10-30 15:08:00	moon	Sign change	Taurus -> Gemini 
+------------
+12. 2023-10-30 15:08:00	moon	Term change	Mars -> Mercury 
+------------
+13. 2023-10-30 16:04:00	moon	square [270] vs saturn 
+------------
+14. 2023-10-30 16:51:00	sun	Term change	Mars -> Venus 
+------------
+15. 2023-10-30 16:51:00	sun	70% progression at	7Sco0 
+------------
+16. 2023-10-30 20:25:00	moon	30% progression at	3Gem0 
+------------
+17. 2023-10-30 22:59:00	venus	Term change	Jupiter -> Mars 
+------------
+18. 2023-10-30 23:58:00	moon	50% progression at	5Gem0 
+------------
+
+Tuesday, Oct 31 2023:
+1. 2023-10-31 01:45:00	moon	Term change	Mercury -> Jupiter 
+------------
+2. 2023-10-31 03:31:00	moon	70% progression at	7Gem0 
+------------
+3. 2023-10-31 03:57:00	moon	quintile [288] vs neptune 
+------------
+4. 2023-10-31 04:37:00	mars	30% progression at	13Sco0 
+------------
+5. 2023-10-31 08:53:00	moon	Decan change	8S -> 9S 
+------------
+6. 2023-10-31 12:29:00	moon	Term change	Jupiter -> Venus 
+------------
+7. 2023-10-31 12:51:00	venus	trine [120] vs uranus 
+------------
+8. 2023-10-31 13:17:00	mercury	50% progression at	15Sco0 
+------------
+9. 2023-10-31 14:17:00	moon	30% progression at	13Gem0 
+------------
+10. 2023-10-31 17:54:00	moon	50% progression at	15Gem0 
+------------
+11. 2023-10-31 21:32:00	moon	Term change	Venus -> Mars 
+------------
+
+Wednesday, Nov 01 2023:
+1. 2023-11-01 02:18:00	moon	quintile [144] vs mars 
+------------
+2. 2023-11-01 03:00:00	moon	Decan change	9S -> 10S 
+------------
+3. 2023-11-01 04:31:00	mercury	quintile [72] vs pluto 
+------------
+4. 2023-11-01 06:40:00	moon	quintile [216] vs pluto 
+------------
+5. 2023-11-01 06:58:00	moon	quintile [144] vs mercury 
+------------
+6. 2023-11-01 07:26:00	moon	square [90] vs venus 
+------------
+7. 2023-11-01 08:31:00	moon	30% progression at	23Gem0 
+------------
+8. 2023-11-01 10:22:00	moon	Term change	Mars -> Saturn 
+------------
+9. 2023-11-01 12:12:00	moon	50% progression at	25Gem0 
+------------
+10. 2023-11-01 12:36:00	moon	square [270] vs neptune 
+------------
+11. 2023-11-01 15:55:00	moon	70% progression at	27Gem0 
+------------
+12. 2023-11-01 19:48:00	mercury	70% progression at	17Sco0 
+------------
+13. 2023-11-01 20:46:00	venus	30% progression at	23Vir0 
+------------
+14. 2023-11-01 21:31:00	moon	Decan change	10S -> 2C 
+------------
+15. 2023-11-01 21:31:00	moon	Sign change	Gemini -> Cancer 
+------------
+16. 2023-11-01 21:31:00	moon	Term change	Saturn -> Mars 
+------------
+17. 2023-11-01 22:29:00	moon	trine [240] vs saturn 
+------------
+
+Thursday, Nov 02 2023:
+1. 2023-11-02 03:09:00	moon	30% progression at	3Can0 
+------------
+2. 2023-11-02 06:55:00	moon	50% progression at	5Can0 
+------------
+3. 2023-11-02 10:43:00	moon	Term change	Mars -> Venus 
+------------
+4. 2023-11-02 10:43:00	moon	70% progression at	7Can0 
+------------
+5. 2023-11-02 16:26:00	moon	Decan change	2C -> 3C 
+------------
+6. 2023-11-02 16:52:00	sun	Decan change	5C -> 6C 
+------------
+7. 2023-11-02 17:31:00	moon	sextile [60] vs jupiter 
+------------
+8. 2023-11-02 20:19:00	moon	quintile [72] vs venus 
+------------
+9. 2023-11-02 22:10:00	moon	Term change	Venus -> Mercury 
+------------
+10. 2023-11-02 22:10:00	moon	30% progression at	13Can0 
+------------
+
+Friday, Nov 03 2023:
+1. 2023-11-03 01:56:00	mars	50% progression at	15Sco0 
+------------
+2. 2023-11-03 02:01:00	moon	trine [120] vs mars 
+------------
+3. 2023-11-03 02:02:00	moon	50% progression at	15Can0 
+------------
+4. 2023-11-03 02:29:00	mercury	Term change	Mercury -> Jupiter 
+------------
+5. 2023-11-03 05:02:00	sun	opposition [180] vs jupiter 
+------------
+6. 2023-11-03 05:54:00	moon	70% progression at	17Can0 
+------------
+7. 2023-11-03 09:46:00	moon	Term change	Mercury -> Jupiter 
+------------
+8. 2023-11-03 10:49:00	moon	trine [120] vs mercury 
+------------
+9. 2023-11-03 11:43:00	moon	Decan change	3C -> 4C 
+------------
+10. 2023-11-03 14:36:00	moon	sextile [60] vs uranus 
+------------
+11. 2023-11-03 16:29:00	moon	quintile [72] vs jupiter 
+------------
+12. 2023-11-03 16:50:00	sun	Term change	Venus -> Mercury 
+------------
+13. 2023-11-03 17:35:00	moon	30% progression at	23Can0 
+------------
+14. 2023-11-03 17:54:00	mercury	Decan change	6C -> 7C 
+------------
+15. 2023-11-03 18:05:00	venus	50% progression at	25Vir0 
+------------
+16. 2023-11-03 20:32:00	moon	quintile [216] vs saturn 
+------------
+17. 2023-11-03 21:30:00	moon	50% progression at	25Can0 
+------------
+18. 2023-11-03 21:49:00	moon	sextile [60] vs venus 
+------------
+19. 2023-11-03 21:51:00	moon	trine [240] vs neptune 
+------------
+20. 2023-11-03 22:05:00	venus	opposition [180] vs neptune 
+------------
+21. 2023-11-03 23:28:00	moon	Term change	Jupiter -> Saturn 
+------------
+22. 2023-11-03 23:59:00	mars	quintile [72] vs pluto 
+------------
+

@@ -14,7 +14,8 @@ class Aspect(AstroEvent):
 
     def __repr__(self):
         orb_start, orb_end = self.orb(2)
-        return f"aspect at {self.angle}, {self.asp_str} ({self.asp_diff})\n Orb of 2 starts at: {orb_start}, ends at: {orb_end}"
+        #return f"aspect at {self.angle}, {self.asp_str} ({self.asp_diff})\n Orb of 2 starts at: {orb_start}, ends at: {orb_end}"
+        return f'{self.time}\t{self.angle.pos1.point}\t{self.asp_str} [{self.asp_diff}] vs {self.angle.pos2.point}'
     
     
     def orb(self, orb_value: int) -> Tuple[datetime, datetime]:

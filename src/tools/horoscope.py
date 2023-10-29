@@ -3,7 +3,8 @@ from typing import List, Dict
 import core.swisseph_api as swe_api
 from core.enums import HouseSystem, Zodiac, CoordinateSystem
 from core.position import Position as pp
-from zodiac.mapped_position import MappedPosition as mpp
+from util.interval import calculate_intervals
+from zodiac.mapped_position import MappedPosition as mp
 from core.angle import get_all_angles
 from core.angle import Angle
 from points.planets import PLANETS
@@ -14,9 +15,9 @@ from tools.transit_table import TransitTable
 
 
 class Horoscope:
-    points: List[mpp]
+    points: List[mp]
     angles: Dict[str, List[Angle]]
-    aspects: List[Aspect]
+    aspects: Dict[str, List[Aspect]]
     cusps: List[float]
     
     
@@ -44,8 +45,8 @@ class Horoscope:
         asc_pos = pp(self.dt, 'ASC', self.ascmc[0], 0, 0, 0, 0)
         mc_pos = pp(self.dt, 'MC', self.ascmc[1], 0, 0, 0, 0)
 
-        self.points.append(mpp(asc_pos))
-        self.points.append(mpp(mc_pos))
+        self.points.append(mp(asc_pos))
+        self.points.append(mp(mc_pos))
         
         self.angles['ASC'] = []
         self.angles['MC'] = []
@@ -53,7 +54,7 @@ class Horoscope:
         # angles
         for planet in planets:
             pos = pp.from_datetime(planet, self.dt)
-            mpos = mpp(pos)
+            mpos = mp(pos)
             self.points.append(mpos)
             angles = get_all_angles(planet, self.dt)
 
@@ -79,7 +80,16 @@ class Horoscope:
             angles[point.position.point] = point_angles
         return TransitTable(angles)
                 
-                
+        
+    @classmethod
+    def from_datetime_range(cls, start: datetime, end: datetime, interval_minutes: int, lat: float, lon: float,
+                 name: str,
+                 house_system: HouseSystem = HouseSystem.PLACIDUS,
+                 zodiac: Zodiac = Zodiac.TROPICAL,
+                 coord_system: CoordinateSystem = CoordinateSystem.GEO):
+        
+        dts = calculate_intervals(start, end, interval_minutes)
+        return [cls(dt, lat, lon, name, house_system, zodiac, coord_system) for dt in dts]
 
     @property
     def ascendant(self):

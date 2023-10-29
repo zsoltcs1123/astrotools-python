@@ -6,7 +6,7 @@ from core.position import Position as pp
 from events.aspect import get_all_aspects
 from events.astro_event import AstroEvent, get_astro_events
 from util.console_logger import ConsoleLogger
-from zodiac.mapped_position import MappedPosition as mpp
+from zodiac.mapped_position import MappedPosition as mp
 from itertools import groupby
 
 
@@ -35,7 +35,7 @@ class Timeline:
         for i, planet in enumerate(self.planets):
             self.logger.info(f'Calculating {planet}')
             pos = pp.from_datetime_range(planet, self.start, self.end, self.interval_minutes)
-            mapped = mpp.from_planetary_positions(pos)
+            mapped = mp.from_planetary_positions(pos)
             events += get_astro_events(mapped)
             angles = get_all_angles_in_date_range(planet, self.start, self.end, 1)
             aspects = get_all_aspects(angles)

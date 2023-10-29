@@ -1,3 +1,4 @@
 - Refactor MPP to inheritance
 - Reorganize folder structure
 - Add dependency injenction
+- Add NN, SN, Lilith, Ceres, Chiron
