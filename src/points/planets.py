@@ -1,10 +1,12 @@
 from typing import Dict
 
 
-PLANETS = ["sun", "moon", "mercury", "venus", "mars",
-           "jupiter", "saturn", "uranus", "neptune", "pluto"]
+PLANETS = ['sun', 'moon', 'mercury', 'venus', 'mars',
+           'jupiter', 'saturn', 'uranus', 'neptune', 'pluto']
 
-PLANETS_WITH_ASC_MC = PLANETS + ['ASC', 'MC']
+NODES = ['north node', 'south node']
+
+ANGULARS = ['ASC', 'MC', 'IC', 'DC']
 
 
 PLANETS_MAP = {
