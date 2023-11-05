@@ -18,10 +18,10 @@ class Angle:
         return abs(self.pos1.lon - self.pos2.lon)
 
     def __repr__(self) -> str:
-        return f"{self.time}: {self.pos1.point} [{self.pos1.lon:.3f}], {self.pos2.point} [{self.pos2.lon:.3f}], {self.diff:.3f}"
+        return f"{self.time}: {self.pos1.name} [{self.pos1.lon:.3f}], {self.pos2.name} [{self.pos2.lon:.3f}], {self.diff:.3f}"
 
     def print_no_time(self):
-        return f"{self.pos1.point} [{self.pos1.lon:.3f}], {self.pos2.point} [{self.pos2.lon:.3f}], {self.diff:.3f}"
+        return f"{self.pos1.name} [{self.pos1.lon:.3f}], {self.pos2.name} [{self.pos2.lon:.3f}], {self.diff:.3f}"
 
 
 def get_all_angles_in_date_range(planet: str, start: datetime, end: datetime, interval: int) -> List[Angle]:

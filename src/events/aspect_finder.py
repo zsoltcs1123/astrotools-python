@@ -26,7 +26,7 @@ class AspectFinder:
         for planet, angle_list in angles.items():
             aspects[planet] = []
             for angle in angle_list:
-                orbs = self.orb_map.get_aspects_orbs(angle.pos1.point)
+                orbs = self.orb_map.get_aspects_orbs(angle.pos1.name)
                 for asp_to_orb in orbs:
                     negative = angle.diff - asp_to_orb[1]
                     positive = angle.diff + asp_to_orb[1]

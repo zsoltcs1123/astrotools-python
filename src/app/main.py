@@ -2,8 +2,10 @@ from typing import List
 import pytz
 from timezonefinder import TimezoneFinder
 from out.timeline_printer import TimelinePrinter
+from out.transit_printer import print_transit_to_console
 from tools.timeline import Timeline
 from out.transit_table_printer import TransitTablePrinter
+from tools.transit import Transit
 from util.common import measure
 from util.geocoder import Geocoder
 from datetime import datetime
@@ -89,27 +91,25 @@ def horoscope():
 
     transit_table = natal_horoscope.generate_transit_table(utc_now_horoscope)
     
-    horoscope_printer = HoroscopePrinter(natal_horoscope)
-    horoscope_printer.print_to_console()
-
     transit_table_printer = TransitTablePrinter(transit_table)
     transit_table_printer.print_to_console()
 
 
 
 def timeline():
-    start = datetime(2023, 10, 28)
-    end = datetime(2023, 11, 4)
+    start = datetime(2023, 11, 4)
+    end = datetime(2023, 11, 13)
     interval = 1
     
-    timeline = Timeline(start, end, interval, PLANETS)
+    planets_without_moon = [planet for planet in PLANETS if planet != 'moon']
+    timeline = Timeline(start, end, interval, planets_without_moon)
     timeline_printer = TimelinePrinter(timeline)
-    timeline_printer.print_to_file('timeline.txt') 
+    timeline_printer.print_to_file('timeline_nov_4_12_no_moon.txt') 
     
 
 def generate_nyc_horoscopes():
-    start = datetime(2023, 10, 28, 9, 30)
-    end = datetime(2023, 11, 4, 9, 30)
+    start = datetime(2023, 11, 5, 9, 30)
+    end = datetime(2023, 11, 13, 9, 30)
     
     geocoder = Geocoder("ca667b3bd3ba943ee0ba411a150d443f")
     lat, lon = geocoder.get_lat_lon('New York', "USA")
@@ -123,10 +123,53 @@ def generate_nyc_horoscopes():
     
     horoscopes = Horoscope.from_datetime_range(utc_start, utc_end, 1440, lat, lon, 'New York')
     
-    print_horoscopes_to_file(horoscopes, 'horoscopes.txt', aspects_filter=['ASC', 'MC', 'moon']) 
+    print_horoscopes_to_file(horoscopes, 'nyc_horoscopes_nov_5_nov_12.txt', aspects_filter=['ASC', 'MC', 'moon']) 
+    
+
+
+def generate_me_horoscopes():
+    start = datetime(2023, 10, 30, 12, 0)
+    end = datetime(2023, 11, 13, 12, 0)
+    
+    geocoder = Geocoder("ca667b3bd3ba943ee0ba411a150d443f")
+    lat, lon = geocoder.get_lat_lon('Kecskemet', "HU")
+    tf = TimezoneFinder()
+    tz_name = tf.certain_timezone_at(lng=lon, lat=lat)
+    tz = pytz.timezone(tz_name)
+    local_start = tz.localize(start)
+    utc_start = local_start.astimezone(pytz.utc)
+    local_end = tz.localize(end)
+    utc_end = local_end.astimezone(pytz.utc)
+    
+    horoscopes = Horoscope.from_datetime_range(utc_start, utc_end, 1440, lat, lon, 'ME')
+    
+    print_horoscopes_to_file(horoscopes, 'me_horoscopes.txt', aspects_filter=['ASC', 'MC', 'moon']) 
      
     
 
+def me_tranits():
+    dt_natal = datetime(1992, 7, 21, 3, 20)
+    dt_transit = datetime(2023, 11, 4, 12, 0)
+    
+    geocoder = Geocoder("ca667b3bd3ba943ee0ba411a150d443f")
+    lat, lon = geocoder.get_lat_lon('Kecskemet', "HU")
+    tf = TimezoneFinder()
+    tz_name = tf.certain_timezone_at(lng=lon, lat=lat)
+    tz = pytz.timezone(tz_name)
+    local_dt_natal = tz.localize(dt_natal)
+    local_dt_transit = tz.localize(dt_transit)
+    utc_natal = local_dt_natal.astimezone(pytz.utc)
+    utc_transit = local_dt_transit.astimezone(pytz.utc)
+    
+    natal_horoscope = Horoscope(utc_natal, lat, lon, "ME")
+    transit_horoscope = Horoscope(utc_transit, lat, lon, "Transit")
+    
+    transit = Transit(natal_horoscope, transit_horoscope)
+    print_transit_to_console(transit)
+    
+
+
 if __name__ == "__main__":
-    #generate_nyc_horoscopes()
-    timeline()
+    generate_nyc_horoscopes()
+    #me_tranits()
+    #timeline()

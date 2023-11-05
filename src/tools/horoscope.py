@@ -72,12 +72,12 @@ class Horoscope:
         
     def generate_transit_table(self, transit_horoscope: 'Horoscope') -> TransitTable:
         angles = {}
-        for point in [p for p in self.points if p.position.point not in ['ASC', 'MC']]:
+        for point in [p for p in self.points if p.position.name not in ['ASC', 'MC']]:
             point_angles = []
-            for transit_point in [tp for tp in transit_horoscope.points if tp.position.point not in ['ASC', 'MC']]:
+            for transit_point in [tp for tp in transit_horoscope.points if tp.position.name not in ['ASC', 'MC']]:
                 angle = Angle(transit_point.position.dt, point.position, transit_point.position)
                 point_angles.append(angle)
-            angles[point.position.point] = point_angles
+            angles[point.position.name] = point_angles
         return TransitTable(angles)
                 
         

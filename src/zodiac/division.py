@@ -16,7 +16,7 @@ class Decan(Division):
 
 
 class Sign(Division):
-    pass
+    ruler: str
 
 
 class Term(Division):
@@ -24,9 +24,9 @@ class Term(Division):
 
 
 def _get_division(degrees: float, lst: List[Division]) -> Optional[Division]:
-    for decan in lst:
-        if degrees in decan.degree_range:
-            return decan
+    for div in lst:
+        if degrees in div.degree_range:
+            return div
     return None
 
 
