@@ -12,7 +12,7 @@ class OrbMap:
         
     def _get_default_orb_map(self) -> Dict[str, List[AspectToOrb]]:
         orb_map = {}
-        for planet in PLANETS:
+        for planet in PLANETS + ['ASC', 'MC']:
             aspect_types_orbs = [
                 (AspectType.CONJUNCTION, 10 if planet in ['sun', 'moon'] else 8),
                 (AspectType.SEXTILE, 6 if planet in ['sun', 'moon'] else 4),

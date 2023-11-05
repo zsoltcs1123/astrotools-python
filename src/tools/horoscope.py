@@ -11,7 +11,6 @@ from points.planets import PLANETS
 from events.aspect_finder import AspectFinder
 from points.orb_map import OrbMap
 from events.aspect import Aspect
-from tools.transit_table import TransitTable
 
 
 class Horoscope:
@@ -19,8 +18,7 @@ class Horoscope:
     angles: Dict[str, List[Angle]]
     aspects: Dict[str, List[Aspect]]
     cusps: List[float]
-    
-    
+
     def __init__(self, dt: datetime, lat: float, lon: float,
                  name: str,
                  house_system: HouseSystem = HouseSystem.PLACIDUS,
@@ -47,7 +45,7 @@ class Horoscope:
 
         self.points.append(mp(asc_pos))
         self.points.append(mp(mc_pos))
-        
+
         self.angles['ASC'] = []
         self.angles['MC'] = []
 
@@ -64,30 +62,18 @@ class Horoscope:
             self.angles['ASC'].append(Angle(self.dt, pos, asc_pos))
             self.angles['MC'].append(Angle(self.dt, pos, mc_pos))
 
-
         # aspects
         orb_map = OrbMap()
         asp_finder = AspectFinder(orb_map)
         self.aspects = asp_finder.find_aspects(self.angles)
-        
-    def generate_transit_table(self, transit_horoscope: 'Horoscope') -> TransitTable:
-        angles = {}
-        for point in [p for p in self.points if p.position.name not in ['ASC', 'MC']]:
-            point_angles = []
-            for transit_point in [tp for tp in transit_horoscope.points if tp.position.name not in ['ASC', 'MC']]:
-                angle = Angle(transit_point.position.dt, point.position, transit_point.position)
-                point_angles.append(angle)
-            angles[point.position.name] = point_angles
-        return TransitTable(angles)
-                
-        
+
     @classmethod
     def from_datetime_range(cls, start: datetime, end: datetime, interval_minutes: int, lat: float, lon: float,
-                 name: str,
-                 house_system: HouseSystem = HouseSystem.PLACIDUS,
-                 zodiac: Zodiac = Zodiac.TROPICAL,
-                 coord_system: CoordinateSystem = CoordinateSystem.GEO):
-        
+                            name: str,
+                            house_system: HouseSystem = HouseSystem.PLACIDUS,
+                            zodiac: Zodiac = Zodiac.TROPICAL,
+                            coord_system: CoordinateSystem = CoordinateSystem.GEO):
+
         dts = calculate_intervals(start, end, interval_minutes)
         return [cls(dt, lat, lon, name, house_system, zodiac, coord_system) for dt in dts]
 

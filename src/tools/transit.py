@@ -1,4 +1,5 @@
 
+from typing import List
 from dataclasses import dataclass
 from core.angle import Angle
 from tools.horoscope import Horoscope
@@ -19,11 +20,11 @@ class Transit:
                 raise Exception('Incompatible horoscopes')
             
     
-    def generate_transit_table(self) -> TransitTable:
+    def generate_transit_table(self, points_filter: List[str] = []) -> TransitTable:
         angles = {}
-        for point in [p for p in self.natal_horoscope.points if p.position.name not in ['ASC', 'MC']]:
+        for point in [p for p in self.natal_horoscope.points if p.position.name not in points_filter]:
             point_angles = []
-            for transit_point in [tp for tp in self.transit_horoscope.points if tp.position.name not in ['ASC', 'MC']]:
+            for transit_point in [tp for tp in self.transit_horoscope.points if tp.position.name not in points_filter]:
                 angle = Angle(transit_point.position.dt, point.position, transit_point.position)
                 point_angles.append(angle)
             angles[point.position.name] = point_angles
