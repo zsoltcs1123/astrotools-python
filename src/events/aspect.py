@@ -60,6 +60,7 @@ def calculate_aspect(diff: float) -> Optional[Tuple[str, int]]:
         90: "square",
         120: "trine",
         144: "quintile",
+        150: "inconjunct",
         180: "opposition",
         216: "quintile",
         240: "trine",
