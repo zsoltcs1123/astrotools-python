@@ -3,7 +3,7 @@ from typing import List, Dict
 from core.angle import Angle
 from events.aspect import Aspect
 from events.aspect_finder import AspectFinder
-from points.orb_map import OrbMap 
+from objects.orb_map import OrbMap 
 
 @dataclass
 class TransitTable:

@@ -14,7 +14,7 @@ from events.astro_event import get_astro_events
 from core.angle import get_all_angles_in_date_range
 from events.aspect import get_all_aspects
 from out.file import to_text_file
-from points.planets import PLANETS
+from objects.points import PLANETS
 from itertools import groupby
 from tools.horoscope import Horoscope
 from out.horoscope_printer import print_horoscopes_to_console, print_horoscopes_to_file

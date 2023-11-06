@@ -2,19 +2,27 @@ import swisseph as swe
 from datetime import datetime
 from typing import Tuple
 from core.enums import HouseSystem
-from zodiac.degree_converter import float_to_zodiacal
 
 
-def get_julian_date(dt: datetime) -> float:
+def _get_julian_date(dt: datetime) -> float:
     """Convert a datetime object to Julian date."""
     return swe.julday(dt.year, dt.month, dt.day, dt.hour + dt.minute/60 + dt.second/3600)
 
 
 def _calculate_xx(planet_name: str, dt: datetime, flag: int) -> Tuple[float, float, float, float]:
-    jd = get_julian_date(dt)
+    jd = _get_julian_date(dt)
     planet = getattr(swe, planet_name.upper())
     xx, _ = swe.calc_ut(jd, planet, flag)
     return xx
+
+
+def _get_house_system_code(house_system: HouseSystem) -> str:
+    if house_system == HouseSystem.PLACIDUS:
+        return b'P'
+    elif house_system == HouseSystem.WHOLE_SIGN:
+        return b'W'
+    else:
+        raise ValueError("Unsupported house system")
 
 
 def get_ecliptic_position(planet_name: str, dt: datetime) -> Tuple[float, float, float]:
@@ -30,19 +38,12 @@ def get_equatorial_position(planet_name: str, dt: datetime) -> Tuple[float, floa
 
 
 def get_houses_and_ascmc(dt: datetime, lat: float, lon: float, house_system: HouseSystem, altitude: float = 0) -> tuple:
-    jd_ut = get_julian_date(dt)
+    jd_ut = _get_julian_date(dt)
     delta_t = swe.deltat(jd_ut)
-    cusps, ascmc = swe.houses(jd_ut + delta_t, lat, lon, _get_house_system_code(house_system))
+    cusps, ascmc = swe.houses(jd_ut + delta_t, lat,
+                              lon, _get_house_system_code(house_system))
     return cusps, ascmc
 
 
-def _get_house_system_code(house_system: HouseSystem) -> str:
-    if house_system == HouseSystem.PLACIDUS:
-        return b'P'
-    elif house_system == HouseSystem.WHOLE_SIGN:
-        return b'W'
-    else:
-        raise ValueError("Unsupported house system")
     
-
     

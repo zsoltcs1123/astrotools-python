@@ -7,9 +7,9 @@ from util.interval import calculate_intervals
 from zodiac.mapped_position import MappedPosition as mp
 from core.angle import get_all_angles
 from core.angle import Angle
-from points.planets import PLANETS
+from objects.points import PLANETS
 from events.aspect_finder import AspectFinder
-from points.orb_map import OrbMap
+from objects.orb_map import OrbMap
 from events.aspect import Aspect
 
 

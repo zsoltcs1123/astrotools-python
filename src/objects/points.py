@@ -4,7 +4,10 @@ from typing import Dict
 PLANETS = ['sun', 'moon', 'mercury', 'venus', 'mars',
            'jupiter', 'saturn', 'uranus', 'neptune', 'pluto']
 
-NODES = ['north node', 'south node']
+NN = 'north node'
+SN = 'south node'
+
+NODES = [NN, SN]
 
 ANGULARS = ['ASC', 'MC', 'IC', 'DC']
 
