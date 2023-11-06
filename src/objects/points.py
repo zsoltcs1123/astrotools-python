@@ -3,6 +3,7 @@ from typing import Dict, List
 NN = "north node"
 SN = "south node"
 MOON = "moon"
+MEAN_NODE = 'MEAN_NODE'
 
 PLANETS = [
     "sun",

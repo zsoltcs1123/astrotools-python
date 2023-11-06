@@ -1,9 +1,8 @@
 from collections import defaultdict
 from datetime import datetime as dt
 from typing import List, Type
-from core.angle_factory import AngleFactory
 from core.enums import CoordinateSystem
-from events.astro_event import AstroEvent, get_astro_events
+from events.astro_event import AstroEvent
 from objects.points import get_default_angle_targets
 from tools.timeline_config import TimelineConfig
 from util.console_logger import ConsoleLogger
@@ -25,7 +24,7 @@ class Timeline:
             return self._generate_geo()
         else:
             return self._generate_helio()
-        
+
     def _generate_helio(self):
         pass
 
@@ -34,6 +33,9 @@ class Timeline:
         return [event for sublist in events for event in sublist]
 
     def _calculate_zodiacal_events(self):
+        if self.config.zodiacal_event_factory is None:
+            return []
+
         return [self._calculate_event(point) for point in self.config.points]
 
     def _calculate_event(self, point):
@@ -42,19 +44,20 @@ class Timeline:
             point, self.config.start, self.config.end, self.config.interval_minutes
         )
         mapped = mp.from_planetary_positions(pos)
-        return get_astro_events(mapped)
+        return self.config.zodiacal_event_factory.create_events(mapped)
 
     def _find_all_aspects(self):
         if self.config.aspect_finder is None:
             return []
 
-        angle_factory = AngleFactory(self.config.position_factory)
-        return [self._find_aspects(point, angle_factory) for point in self.config.points]
+        return [
+            self._find_aspects(point) for point in self.config.points
+        ]
 
-    def _find_aspects(self, point, angle_factory):
+    def _find_aspects(self, point):
         self.logger.info(f"Calculating aspects for {point}")
         targets = get_default_angle_targets(point)
-        angles = angle_factory.get_multiple_angles_in_range(
+        angles = self.config.angle_factory.get_multiple_angles_in_range(
             point,
             targets,
             self.config.start,
@@ -62,7 +65,6 @@ class Timeline:
             self.config.interval_minutes,
         )
         return self.config.aspect_finder.find_exact_aspects(angles)
-
 
     def _group_events_by_date(self):
         grouped_events = defaultdict(list)

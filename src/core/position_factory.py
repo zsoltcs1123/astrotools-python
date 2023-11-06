@@ -7,7 +7,7 @@ import core.swisseph_api as swe_api
 
 
 class PositionFactory:
-    def __init__(self, node_calc='MEAN_NODE'):
+    def __init__(self, node_calc):
         self.node_calc = node_calc
 
     def _planet(self, planet_name: str, dt: dt) -> Position:
