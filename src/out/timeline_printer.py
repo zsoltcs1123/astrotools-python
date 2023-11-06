@@ -12,10 +12,10 @@ class TimelinePrinter():
     def _generate_str(self) -> str:
         str = ""
         
-        for group in self.timeline.grouped_events:
-            formatted_date = group[0].time.strftime('%A, %b %d %Y')
+        for group, events in self.timeline.grouped_events.items():
+            formatted_date = group.strftime('%A, %b %d %Y')
             str+= f'{formatted_date}:\n'
-            str += ''.join([f'{i + 1}. {e.__repr__()} \n------------\n' for i, e in enumerate(group)]) + '\n'
+            str += ''.join([f'{i + 1}. {e.__repr__()} \n------------\n' for i, e in enumerate(events)]) + '\n'
         
         return str
         

@@ -28,7 +28,7 @@ def _generate_str(horoscopes: List[Horoscope], points_filter: List[str] = [], as
                 continue
             str += f"\n{k}\n-------"
             for asp in v:
-                str += f"\n{asp.angle.print_no_time()}, {asp.asp_str}"
+                str += f"\n{asp.angle.print_no_time()}, {asp.type}"
             str += '\n'
 
         str += '---------------------\n\n\n'

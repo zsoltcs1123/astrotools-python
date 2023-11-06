@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 import multiprocessing
-from points.planets import get_outer_planets_map
+from objects.points import get_default_angle_targets
 from core.position import Position as pp
 from util.interval import calculate_intervals
 from typing import List, Dict
@@ -9,28 +9,33 @@ from typing import List, Dict
 
 @dataclass
 class Angle:
-    time: datetime
-    pos1: pp
-    pos2: pp
+    dt: datetime
+    source: pp
+    target: pp
+
+    def __init__(self, source: pp, target: pp):
+        self.source = source
+        self.target = target
+        self.dt = source.dt
 
     @property
     def diff(self):
-        return abs(self.pos1.lon - self.pos2.lon)
+        return abs(self.source.lon - self.target.lon)
 
     def __repr__(self) -> str:
-        return f"{self.time}: {self.pos1.name} [{self.pos1.lon:.3f}], {self.pos2.name} [{self.pos2.lon:.3f}], {self.diff:.3f}"
+        return f"{self.dt}: {self.source.name} [{self.source.lon:.3f}], {self.target.name} [{self.target.lon:.3f}], {self.diff:.3f}"
 
     def print_no_time(self):
-        return f"{self.pos1.name} [{self.pos1.lon:.3f}], {self.pos2.name} [{self.pos2.lon:.3f}], {self.diff:.3f}"
+        return f"{self.source.name} [{self.source.lon:.3f}], {self.target.name} [{self.target.lon:.3f}], {self.diff:.3f}"
 
 
 def get_all_angles_in_date_range(planet: str, start: datetime, end: datetime, interval: int) -> List[Angle]:
-    targets = get_outer_planets_map(planet)
+    targets = get_default_angle_targets(planet)
     return [angle for target in targets for angle in get_angles(planet, target, start, end, interval)]
 
 
 def get_all_angles(planet: str, dt: datetime) -> Dict[str, List[Angle]]:
-    targets = get_outer_planets_map(planet)
+    targets = get_default_angle_targets(planet)
     angles_dict = {}
     angles_dict[planet] = []
     for target in targets:

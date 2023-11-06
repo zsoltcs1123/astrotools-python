@@ -1,31 +1,49 @@
-from typing import Dict
+from typing import Dict, List
 
+NN = "north node"
+SN = "south node"
+MOON = "moon"
 
-PLANETS = ['sun', 'moon', 'mercury', 'venus', 'mars',
-           'jupiter', 'saturn', 'uranus', 'neptune', 'pluto']
+PLANETS = [
+    "sun",
+    MOON,
+    "mercury",
+    "venus",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto",
+]
 
-NN = 'north node'
-SN = 'south node'
 
 NODES = [NN, SN]
 
-ANGULARS = ['ASC', 'MC', 'IC', 'DC']
+ANGULARS = ["ASC", "MC", "IC", "DC"]
 
 
 PLANETS_MAP = {
-    'mercury': 1,
-    'venus': 2,
-    'mars': 3,
-    'jupiter': 4,
-    'saturn': 5,
-    'uranus': 6,
-    'neptune': 7,
-    'pluto': 8
+    "mercury": 1,
+    "venus": 2,
+    "mars": 3,
+    "jupiter": 4,
+    "saturn": 5,
+    "uranus": 6,
+    "neptune": 7,
+    "pluto": 8,
+    NN: 9,
 }
 
+ALL_POINTS = PLANETS + NODES
 
-def get_outer_planets_map(planet: str) -> Dict[str, int]:
-    if planet == 'sun' or planet == 'moon':
-        return PLANETS_MAP
+POINTS_NO_MOON = [planet for planet in PLANETS if planet != MOON] + [NN]
+
+
+def get_default_angle_targets(point: str) -> List[str]:
+    if point == "sun" or point == "moon":
+        return list(PLANETS_MAP.keys())
+    elif point == SN:
+        return []
     else:
-        return {k: v for k, v in PLANETS_MAP.items() if v > PLANETS_MAP[planet]}
+        return [k for k, v in PLANETS_MAP.items() if v > PLANETS_MAP[point]]

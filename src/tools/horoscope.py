@@ -1,5 +1,6 @@
 from datetime import datetime
 from typing import List, Dict
+from core.position_factory import PositionFactory
 import core.swisseph_api as swe_api
 from core.enums import HouseSystem, Zodiac, CoordinateSystem
 from core.position import Position as pp
@@ -21,6 +22,7 @@ class Horoscope:
 
     def __init__(self, dt: datetime, lat: float, lon: float,
                  name: str,
+                 position_factory: PositionFactory,
                  house_system: HouseSystem = HouseSystem.PLACIDUS,
                  zodiac: Zodiac = Zodiac.TROPICAL,
                  coord_system: CoordinateSystem = CoordinateSystem.GEO):
@@ -51,7 +53,7 @@ class Horoscope:
 
         # angles
         for planet in planets:
-            pos = pp.from_datetime(planet, self.dt)
+            pos = position_factory.create_position(planet, self.dt)
             mpos = mp(pos)
             self.points.append(mpos)
             angles = get_all_angles(planet, self.dt)

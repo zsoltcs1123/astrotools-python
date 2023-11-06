@@ -45,7 +45,7 @@ class TermChange(PositionalEvent):
 class DirectionChange(PositionalEvent):
 
     def __repr__(self) -> str:
-        return f'{self.current.position.dt}\t{self.current.position.name}\Direct change\t{self.previous.direction} -> {self.current.direction}'
+        return f'{self.current.position.dt}\t{self.current.position.name}\tDirect change\t{self.previous.direction} -> {self.current.direction}'
 
 
 @dataclass
