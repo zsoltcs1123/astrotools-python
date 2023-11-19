@@ -37,12 +37,17 @@ class TimelineConfig:
     coordinate_system = CoordinateSystem.GEO
 
     @staticmethod
-    def default_no_moon(start: dt, end: dt) -> "TimelineConfig":
+    def default_no_moon(
+        start: dt,
+        end: dt,
+        aspects=DEFAULT_ASPECTS,
+        zodiacal_events=DEFAULT_ZODIACAL_EVENTS,
+    ) -> "TimelineConfig":
         position_factory = PositionFactory(MEAN_NODE)
         angle_factory = AngleFactory(position_factory)
         orb_map = OrbMap.orb_map(0.001)
-        aspect_finder = AspectFinder(orb_map, DEFAULT_ASPECTS)
-        zodiacal_event_factory = ZodiacalEventFactory(DEFAULT_ZODIACAL_EVENTS)
+        aspect_finder = AspectFinder(orb_map, aspects)
+        zodiacal_event_factory = ZodiacalEventFactory(zodiacal_events)
 
         return TimelineConfig(
             start,

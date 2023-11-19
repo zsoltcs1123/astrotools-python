@@ -1,5 +1,5 @@
 from typing import List
-from datetime import datetime as dt
+from datetime import datetime as dt, timezone
 from core.position import Position
 from objects.points import NN, PLANETS, SN
 from util.interval import calculate_intervals
@@ -30,6 +30,7 @@ class PositionFactory:
         return Position(dt, SN, lon, lat, speed, ra, dec)  
 
     def create_position(self, point: str, dt: dt) -> Position:
+        dt = dt.replace(tzinfo=timezone.utc)
         if point in PLANETS:
             return self._planet(point, dt)
         elif point == NN:

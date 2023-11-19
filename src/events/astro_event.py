@@ -4,11 +4,11 @@ from zodiac.mapped_position import MappedPosition as mp
 
 @dataclass
 class AstroEvent:
-    time: datetime
+    time: datetime #UTC
 
     def tv_timestamp(self) -> str:
-        """timestamp("2023-02-27 11:05:00")"""
-        return f'timestamp("{self.time.strftime("%Y-%m-%d %H:%M:%S")}")'
+        """eg. timestamp("2023-02-27 11:05 UTC")"""
+        return f'timestamp("{self.time.strftime("%Y-%m-%d %H:%M UTC")}")'
 
 
 @dataclass

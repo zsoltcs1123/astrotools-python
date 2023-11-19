@@ -10,6 +10,11 @@ TBD:
 - Add sidereal
 - Implement eclipses
 - Implement perigee/apogee
+- Implement Sub Lords
+- Implement Nakshatras
+- Aspect finder: I give an aspect and it lists all the occurences in date range
+- Implement extremes (speed, declination)
+- Speed/declination snapshot
 
 Timeline:
 - Add geo and helio crossings (planet at the same degree)
