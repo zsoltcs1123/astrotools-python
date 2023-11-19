@@ -2,6 +2,7 @@ import swisseph as swe
 from datetime import datetime
 from typing import Tuple
 from core.enums import HouseSystem
+from functools import lru_cache
 
 
 def _get_julian_date(dt: datetime) -> float:
@@ -45,5 +46,9 @@ def get_houses_and_ascmc(dt: datetime, lat: float, lon: float, house_system: Hou
     return cusps, ascmc
 
 
-    
-    
+@lru_cache(maxsize=128)
+def get_ayanamsha(year: int, month: int, ayanamsa: str):
+    swe.set_sid_mode(getattr(swe, f'SIDM_{ayanamsa.upper()}'))
+    jd = swe.julday(year, month, 1)  # Use the first day of the month for caching
+    ayanamsha = swe.get_ayanamsa_ut(jd)
+    return ayanamsha

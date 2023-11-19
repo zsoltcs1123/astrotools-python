@@ -18,9 +18,9 @@ def _generate_str(horoscopes: List[Horoscope], points_filter: List[str] = [], as
         str += "{:<10}{:<3}{:<10}{:<10}{:<10}{:<10}".format(
             "Name", "", "Degrees", "House", "Term", "Tarot")
         for point in horoscope.points:
-            if (point.position.name in points_filter):
+            if (point.base_position.name in points_filter):
                 continue
-            str += f"\n{point.position.name:<10}{(' R' if point.retrograde else ''):<3}{float_to_zodiacal(point.position.lon):<10}{point.house(horoscope.cusps):<10}{point.term.name:<10}{point.decan.name:<10}"
+            str += f"\n{point.base_position.name:<10}{(' R' if point.retrograde else ''):<3}{float_to_zodiacal(point.base_position.lon.dec):<10}{point.house(horoscope.cusps):<10}{point.term.name:<10}{point.decan.name:<10}"
 
         str += "\n\nAspects:\n--------"
         for k, v in horoscope.aspects.items():

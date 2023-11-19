@@ -3,7 +3,7 @@ from typing import List, Dict
 from core.position_factory import PositionFactory
 import core.swisseph_api as swe_api
 from core.enums import HouseSystem, Zodiac, CoordinateSystem
-from core.position import Position as pp
+from core.base_position import BasePosition as bp
 from util.interval import calculate_intervals
 from zodiac.mapped_position import MappedPosition as mp
 from core.angle import get_all_angles
@@ -42,8 +42,8 @@ class Horoscope:
         self.aspects = []
         planets = [planet for planet in PLANETS]
 
-        asc_pos = pp(self.dt, 'ASC', self.ascmc[0], 0, 0, 0, 0)
-        mc_pos = pp(self.dt, 'MC', self.ascmc[1], 0, 0, 0, 0)
+        asc_pos = bp(self.dt, 'ASC', self.ascmc[0], 0, 0, 0, 0)
+        mc_pos = bp(self.dt, 'MC', self.ascmc[1], 0, 0, 0, 0)
 
         self.points.append(mp(asc_pos))
         self.points.append(mp(mc_pos))

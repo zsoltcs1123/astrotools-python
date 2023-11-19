@@ -20,13 +20,13 @@ def _generate_transit_str(transit: Transit, points_filter: List[str] = []):
     str += "{:<10}{:<10}{:<10}{:<10}{:<10}".format(
         "Name", "Natal", "Transit", "Diff", "Transit house")
     
-    transit_points = {mp.position.name : mp for mp in transit.transit_horoscope.points}
+    transit_points = {mp.base_position.name : mp for mp in transit.transit_horoscope.points}
     for point in transit.natal_horoscope.points:
-        if (point.position.name in points_filter):
+        if (point.base_position.name in points_filter):
             continue
-        transit_point = transit_points[point.position.name]
-        angle = Angle(point.position.dt, point.position, transit_point.position)
-        str += f"\n{point.position.name:<10}{float_to_zodiacal(point.position.lon):<10}{float_to_zodiacal(transit_point.position.lon):<10}{round(angle.diff,3):<10}{transit_point.house(transit.natal_horoscope.cusps):<10}"
+        transit_point = transit_points[point.base_position.name]
+        angle = Angle(point.base_position.dt, point.base_position, transit_point.base_position)
+        str += f"\n{point.base_position.name:<10}{float_to_zodiacal(point.base_position.lon.dec):<10}{float_to_zodiacal(transit_point.base_position.lon.dec):<10}{round(angle.diff,3):<10}{transit_point.house(transit.natal_horoscope.cusps):<10}"
         
     str += '\n---------------------\n\n\n'
     return str

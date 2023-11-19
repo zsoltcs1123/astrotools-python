@@ -22,12 +22,12 @@ class Transit:
     
     def generate_transit_table(self, points_filter: List[str] = []) -> TransitTable:
         angles = {}
-        for point in [p for p in self.natal_horoscope.points if p.position.name not in points_filter]:
+        for point in [p for p in self.natal_horoscope.points if p.base_position.name not in points_filter]:
             point_angles = []
-            for transit_point in [tp for tp in self.transit_horoscope.points if tp.position.name not in points_filter]:
-                angle = Angle(transit_point.position.dt, point.position, transit_point.position)
+            for transit_point in [tp for tp in self.transit_horoscope.points if tp.base_position.name not in points_filter]:
+                angle = Angle(transit_point.base_position.dt, point.base_position, transit_point.base_position)
                 point_angles.append(angle)
-            angles[point.position.name] = point_angles
+            angles[point.base_position.name] = point_angles
         return TransitTable(angles)
         
     

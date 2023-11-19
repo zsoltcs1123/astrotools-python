@@ -8,7 +8,7 @@ from tools.transit import Transit
 from util.common import measure
 from util.geocoder import Geocoder
 from datetime import datetime
-from core.position import Position as pp
+from core.base_position import BasePosition as bp
 from zodiac.mapped_position import MappedPosition as mp
 from events.astro_event import get_astro_events
 from core.angle import get_all_angles_in_date_range
@@ -24,7 +24,7 @@ def main():
     start = datetime(2023, 10, 1)
     end = datetime(2023, 10, 10)
     interval = 1
-    pos = pp.from_datetime_range('mercury', start, end, interval)
+    pos = bp.from_datetime_range('mercury', start, end, interval)
     mapped = mp.from_planetary_positions(pos)
     events = get_astro_events(mapped)
 
@@ -50,7 +50,7 @@ def main():
     planets = [planet for planet in PLANETS if planet != 'moon']
     for i, planet in enumerate(planets):
         print(f'calculating {planet}')
-        pos = pp.from_datetime_range(planet, start, end, interval)
+        pos = bp.from_datetime_range(planet, start, end, interval)
         mapped = mp.from_planetary_positions(pos)
         events += get_astro_events(mapped)
         angles = get_all_angles_in_date_range(planet, start, end, 1)

@@ -1,26 +1,26 @@
 from dataclasses import dataclass
 from datetime import datetime
-from core.position import Position as pp
+from core.base_position import BasePosition as bp
 
 
 @dataclass
 class Angle:
     dt: datetime
-    source: pp
-    target: pp
+    source: bp
+    target: bp
 
-    def __init__(self, source: pp, target: pp):
+    def __init__(self, source: bp, target: bp):
         self.source = source
         self.target = target
         self.dt = source.dt
 
     @property
     def diff(self):
-        return abs(self.source.lon - self.target.lon)
+        return abs(self.source.lon.dec - self.target.lon.dec)
 
     def __repr__(self) -> str:
-        return f"{self.dt}: {self.source.name} [{self.source.lon:.3f}], {self.target.name} [{self.target.lon:.3f}], {self.diff:.3f}"
+        return f"{self.dt}: {self.source.name} [{self.source.lon.dec:.3f}], {self.target.name} [{self.target.lon.dec:.3f}], {self.diff:.3f}"
 
     def print_no_time(self):
-        return f"{self.source.name} [{self.source.lon:.3f}], {self.target.name} [{self.target.lon:.3f}], {self.diff:.3f}"
+        return f"{self.source.name} [{self.source.lon.dec:.3f}], {self.target.name} [{self.target.lon.dec:.3f}], {self.diff:.3f}"
 

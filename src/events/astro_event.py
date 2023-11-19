@@ -20,25 +20,25 @@ class ZodiacalEvent(AstroEvent):
 @dataclass
 class SignChange(ZodiacalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.position.dt}\t{self.current.position.name}\tSign change\t{self.previous.sign.name} -> {self.current.sign.name}"
+        return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tSign change\t{self.previous.sign.name} -> {self.current.sign.name}"
 
 
 @dataclass
 class DecanChange(ZodiacalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.position.dt}\t{self.current.position.name}\tDecan change\t{self.previous.decan.name} -> {self.current.decan.name}"
+        return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tDecan change\t{self.previous.decan.name} -> {self.current.decan.name}"
 
 
 @dataclass
 class TermChange(ZodiacalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.position.dt}\t{self.current.position.name}\tTerm change\t{self.previous.term.name} -> {self.current.term.name}"
+        return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tTerm change\t{self.previous.term.name} -> {self.current.term.name}"
 
 
 @dataclass
 class DirectionChange(ZodiacalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.position.dt}\t{self.current.position.name}\tDirection change\t{self.previous.direction} -> {self.current.direction}"
+        return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tDirection change\t{self.previous.direction} -> {self.current.direction}"
 
 
 @dataclass
@@ -47,6 +47,6 @@ class Progression(AstroEvent):
     name: str
 
     def __repr__(self) -> str:
-        return f"{self.time}\t{self.mp.position.name}\t{self.name} progression at\t{self.mp.zodiac_pos}"
+        return f"{self.time}\t{self.mp.base_position.name}\t{self.name} progression at\t{self.mp.tropical_pos}"
 
 

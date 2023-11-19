@@ -1,8 +1,11 @@
 {
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "ms-python.autopep8"
     },
     "python.envFile": "${workspaceFolder}/.env",
     "python.autoComplete.extraPaths": ["./src"],
-    "python.analysis.extraPaths": ["./src"],
+    "python.analysis.extraPaths": [
+        "./src"
+    ],
+    "python.formatting.provider": "none",
 }
