@@ -23,8 +23,11 @@ class MappedPosition:
 
     def calculate_sidereal_lon(self):
         ayanamsa = swe_api.get_ayanamsha(self.base_position.dt.year, self.base_position.dt.month, 'LAHIRI')
-        return Degree.from_decimal(self.base_position.lon.dec - ayanamsa)
-
+        subtracted = self.base_position.lon.dec - ayanamsa
+        if (subtracted < 0):
+            subtracted = 360 + subtracted
+        return Degree.from_decimal(subtracted)
+    
     @staticmethod
     def float_to_zodiacal(lon: Degree) -> str:
         sign_name = zd.map_sign(lon.dec).name

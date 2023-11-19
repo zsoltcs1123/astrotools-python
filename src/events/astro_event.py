@@ -2,9 +2,10 @@ from dataclasses import dataclass
 from datetime import datetime
 from zodiac.mapped_position import MappedPosition as mp
 
+
 @dataclass
 class AstroEvent:
-    time: datetime #UTC
+    time: datetime  # UTC
 
     def tv_timestamp(self) -> str:
         """eg. timestamp("2023-02-27 11:05 UTC")"""
@@ -36,6 +37,12 @@ class TermChange(ZodiacalEvent):
 
 
 @dataclass
+class NakshatraChange(ZodiacalEvent):
+    def __repr__(self) -> str:
+        return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tNakshatra change\t{self.previous.nakshatra.name} -> {self.current.nakshatra.name}"
+
+
+@dataclass
 class DirectionChange(ZodiacalEvent):
     def __repr__(self) -> str:
         return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tDirection change\t{self.previous.direction} -> {self.current.direction}"
@@ -48,5 +55,3 @@ class Progression(AstroEvent):
 
     def __repr__(self) -> str:
         return f"{self.time}\t{self.mp.base_position.name}\t{self.name} progression at\t{self.mp.tropical_pos}"
-
-

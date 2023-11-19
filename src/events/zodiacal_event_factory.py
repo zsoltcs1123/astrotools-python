@@ -6,6 +6,7 @@ from events.astro_event import (
     DecanChange,
     SignChange,
     TermChange,
+    NakshatraChange,
     DirectionChange,
     Progression,
 )
@@ -29,6 +30,8 @@ class ZodiacalEventFactory:
                     self.check_functions.append(ZodiacalEventFactory._check_sign_change)
                 elif event_type == TermChange:
                     self.check_functions.append(ZodiacalEventFactory._check_term_change)
+                elif event_type == NakshatraChange:
+                    self.check_functions.append(ZodiacalEventFactory._check_nakshatra_change)
                 elif event_type == DirectionChange:
                     self.check_functions.append(
                         ZodiacalEventFactory._check_direction_change
@@ -56,6 +59,11 @@ class ZodiacalEventFactory:
     def _check_direction_change(previous: mp, current: mp) -> Optional[DirectionChange]:
         if previous.direction != current.direction:
             return DirectionChange(current.base_position.dt, previous, current)
+        
+    @staticmethod
+    def _check_nakshatra_change(previous: mp, current: mp) -> Optional[NakshatraChange]:
+        if previous.nakshatra.id != current.nakshatra.id:
+            return NakshatraChange(current.base_position.dt, previous, current)
 
     def _check_changes(self, previous: mp, current: mp):
         ret = []
@@ -75,14 +83,14 @@ class ZodiacalEventFactory:
             elif integral_ends_with(3, mp.base_position.lon.dec):
                 events.append(Progression(mp.base_position.dt, mp, "30%"))
 
-        groups = group_by(events, lambda x: int(x.mp.position.lon))
+        groups = group_by(events, lambda x: int(x.mp.base_position.lon.dec))
 
-        closest = find_smallest_elements(groups, lambda x: x.mp.position.lon)
+        closest = find_smallest_elements(groups, lambda x: x.mp.base_position.lon.dec)
 
         filtered_closest = {
-            k: v for k, v in closest.items() if str(v.mp.zodiac_pos).endswith("0")
+            k: v for k, v in closest.items() if str(v.mp.tropical_pos).endswith("0")
         }
-        return sorted(list(filtered_closest.values()), key=lambda x: x.mp.position.dt)
+        return sorted(list(filtered_closest.values()), key=lambda x: x.mp.base_position.dt)
 
     def create_events(self, mps: List[mp]) -> List[AstroEvent]:
         if len(mps) < 2:

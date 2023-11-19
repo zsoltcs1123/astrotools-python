@@ -56,25 +56,5 @@ class Degree:
 
         return Degree(deg, sixty_to_zero(min), sixty_to_zero(sec))
 
-    def __le__(self, other):
-        return self.dec <= other.dec
-
-    def __ge__(self, other):
-        return self.dec >= other.dec
-
-    def __lt__(self, other):
-        return self.dec < other.dec
-
-    def __gt__(self, other):
-        return self.dec > other.dec
-
-    def __add__(self, other):
-        if isinstance(other, Degree):
-            return Degree(self.dec + other.dec)
-        elif isinstance(other, (int, float)):
-            return Degree(self.dec + other)
-        else:
-            raise TypeError("Unsupported operand type for +")
-
     def __str__(self):
         return f"{self.dec:.3f}° [{self.dms}]"
