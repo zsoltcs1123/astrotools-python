@@ -7,8 +7,9 @@ from util.interval import calculate_intervals
 
 
 class AngleFactory:
-    def __init__(self, position_factory: PositionFactory):
+    def __init__(self, position_factory: PositionFactory, angle_targets: Dict[str, List[str]] = {}):
         self.position_factory = position_factory
+        self.angle_targets = angle_targets
 
     def get_single_angle(self, source_point: str, target_point: str, dt: datetime) -> Angle:
         source = self.position_factory.create_position(source_point, dt)
@@ -23,5 +24,5 @@ class AngleFactory:
         datetimes = calculate_intervals(start, end, interval)
         return [self.get_single_angle(source_point, target_point, t) for t in datetimes]
 
-    def get_multiple_angles_in_range(self, source_point: str, target_points: List[str], start: datetime, end: datetime, interval: int) -> List[Angle]:
-        return [angle for target_point in target_points for angle in self.get_single_angle_in_range(source_point, target_point, start, end, interval)]
+    def get_multiple_angles_in_range(self, source_point: str, start: datetime, end: datetime, interval: int) -> List[Angle]:
+        return [angle for target_point in self.angle_targets[source_point] for angle in self.get_single_angle_in_range(source_point, target_point, start, end, interval)]

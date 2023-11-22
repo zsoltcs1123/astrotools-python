@@ -56,10 +56,8 @@ class Timeline:
 
     def _find_aspects(self, point):
         self.logger.info(f"Calculating aspects for {point}")
-        targets = get_default_angle_targets(point)
         angles = self.config.angle_factory.get_multiple_angles_in_range(
             point,
-            targets,
             self.config.start,
             self.config.end,
             self.config.interval_minutes,

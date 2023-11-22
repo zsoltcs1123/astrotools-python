@@ -1,7 +1,7 @@
 from datetime import datetime
 from core.base_position import BasePosition
 from core.position_factory import PositionFactory
-from events.astro_event import SignChange
+from events.astro_event import NakshatraChange, SignChange
 from objects.points import MEAN_NODE
 from out.file import to_text_file
 from out.timeline_printer import TimelinePrinter
@@ -12,14 +12,15 @@ from tools.timeline_config import (
     DEFAULT_ZODIACAL_EVENTS,
     TimelineConfig,
 )
+from util.common import measure
 from zodiac.mapped_position import MappedPosition
 
 
 def timeline():
-    start = datetime(2023, 11, 13)
-    end = datetime(2023, 12, 2)
+    start = datetime(2023, 11, 22)
+    end = datetime(2023, 11, 23)
 
-    timeline_config = TimelineConfig.default_no_moon(start, end, [])
+    timeline_config = TimelineConfig.default_no_moon(start, end)
     timeline = Timeline(timeline_config)
     timeline_printer = TimelinePrinter(timeline)
 
@@ -27,8 +28,8 @@ def timeline():
 
 
 def timeline_tv_script():
-    start = datetime(2023, 11, 13)
-    end = datetime(2023, 11, 20)
+    start = datetime(2023, 11, 20)
+    end = datetime(2023, 11, 27)
 
     zodiacal_events = [
         event for event in DEFAULT_ZODIACAL_EVENTS if event != SignChange
@@ -46,9 +47,10 @@ def timeline_tv_script():
             unique_events.append(event)
             seen_times.add(event.time)
 
-    tv_timestamps = ", ".join([event.tv_timestamp() for event in unique_events])
-    script = generate_pivot_times("Pivot Times nov 13 - nov 20", tv_timestamps)
-    to_text_file("PT nov 13-nov 20.txt", script)
+    tv_timestamps = ", ".join([event.tv_timestamp()
+                              for event in unique_events])
+    script = generate_pivot_times("Pivot Times nov 20 - nov 27", tv_timestamps)
+    to_text_file("PT nov 20-nov 27.txt", script)
 
 
 def mars():
@@ -57,10 +59,22 @@ def mars():
         "mars",
         datetime.now(),
     )
-    
+
     mars_mapped = MappedPosition(mars)
 
     print(mars_mapped)
+    
+def timeline_sun():
+    start = datetime(2023, 8, 1)
+    end = datetime(2023, 11, 21)
+    
+    tcfg = TimelineConfig.default(start, end, ['sun'], {'sun': ['uranus']}, [], [NakshatraChange])
+    timeline = Timeline(tcfg)
+    
+    timeline_printer = TimelinePrinter(timeline)
+
+    timeline_printer.print_to_console()
+
 
 if __name__ == "__main__":
-        timeline()
+    measure(timeline_sun)

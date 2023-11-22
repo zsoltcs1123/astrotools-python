@@ -27,17 +27,21 @@ class ZodiacalEventFactory:
                         ZodiacalEventFactory._check_decan_change
                     )
                 elif event_type == SignChange:
-                    self.check_functions.append(ZodiacalEventFactory._check_sign_change)
+                    self.check_functions.append(
+                        ZodiacalEventFactory._check_sign_change)
                 elif event_type == TermChange:
-                    self.check_functions.append(ZodiacalEventFactory._check_term_change)
+                    self.check_functions.append(
+                        ZodiacalEventFactory._check_term_change)
                 elif event_type == NakshatraChange:
-                    self.check_functions.append(ZodiacalEventFactory._check_nakshatra_change)
+                    self.check_functions.append(
+                        ZodiacalEventFactory._check_nakshatra_change)
                 elif event_type == DirectionChange:
                     self.check_functions.append(
                         ZodiacalEventFactory._check_direction_change
                     )
                 elif event_type == Progression:
-                    self.check_functions.append(ZodiacalEventFactory._get_progressions)
+                    self.check_functions.append(
+                        ZodiacalEventFactory._get_progressions)
         self.event_types = event_types
 
     @staticmethod
@@ -59,7 +63,7 @@ class ZodiacalEventFactory:
     def _check_direction_change(previous: mp, current: mp) -> Optional[DirectionChange]:
         if previous.direction != current.direction:
             return DirectionChange(current.base_position.dt, previous, current)
-        
+
     @staticmethod
     def _check_nakshatra_change(previous: mp, current: mp) -> Optional[NakshatraChange]:
         if previous.nakshatra.id != current.nakshatra.id:
@@ -85,7 +89,8 @@ class ZodiacalEventFactory:
 
         groups = group_by(events, lambda x: int(x.mp.base_position.lon.dec))
 
-        closest = find_smallest_elements(groups, lambda x: x.mp.base_position.lon.dec)
+        closest = find_smallest_elements(
+            groups, lambda x: x.mp.base_position.lon.dec)
 
         filtered_closest = {
             k: v for k, v in closest.items() if str(v.mp.tropical_pos).endswith("0")
@@ -100,6 +105,7 @@ class ZodiacalEventFactory:
         for i in range(1, len(mps)):
             ret += self._check_changes(mps[i - 1], mps[i])
 
-        progs = self._get_progressions(mps)
-        ret += progs
+        if (self.event_types.__contains__(Progression)):
+            progs = self._get_progressions(mps)
+            ret += progs
         return ret

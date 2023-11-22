@@ -48,3 +48,10 @@ def get_default_angle_targets(point: str) -> List[str]:
         return []
     else:
         return [k for k, v in PLANETS_MAP.items() if v > PLANETS_MAP[point]]
+
+
+def get_all_default_angle_targets() -> Dict[str, List[str]]:
+    targets = {}
+    for p in ALL_POINTS:
+        targets[p] = get_default_angle_targets(p)
+    return targets
