@@ -20,16 +20,19 @@ class Horoscope:
     aspects: Dict[str, List[Aspect]]
     cusps: List[float]
 
-    def __init__(self,
-                 dt: datetime,
-                 config: HoroscopeConfig,
-                 position_factory: PositionFactory,
-                 angle_factory: AngleFactory = None,
-                 aspect_finder: AspectFinder = None):
+    def __init__(
+        self,
+        dt: datetime,
+        config: HoroscopeConfig,
+        position_factory: PositionFactory,
+        angle_factory: AngleFactory = None,
+        aspect_finder: AspectFinder = None,
+    ):
         self.dt = dt
         self.config = config
         self.cusps, self.ascmc = swe_api.get_houses_and_ascmc(
-            dt, config.lat, config.lon, config.house_system)
+            dt, config.lat, config.lon, config.house_system
+        )
 
         self.points = []
 
@@ -37,14 +40,14 @@ class Horoscope:
         self.aspects = []
         planets = [planet for planet in PLANETS]
 
-        asc_pos = bp(self.dt, 'ASC', self.ascmc[0], 0, 0, 0, 0)
-        mc_pos = bp(self.dt, 'MC', self.ascmc[1], 0, 0, 0, 0)
+        asc_pos = bp(self.dt, "ASC", self.ascmc[0], 0, 0, 0, 0)
+        mc_pos = bp(self.dt, "MC", self.ascmc[1], 0, 0, 0, 0)
 
         self.points.append(mp(asc_pos))
         self.points.append(mp(mc_pos))
 
-        self.angles['ASC'] = []
-        self.angles['MC'] = []
+        self.angles["ASC"] = []
+        self.angles["MC"] = []
 
         # angles
         for planet in planets:
@@ -56,8 +59,8 @@ class Horoscope:
             self.angles[planet] = angles
 
             # ASC and MC
-            self.angles['ASC'].append(Angle(pos, asc_pos))
-            self.angles['MC'].append(Angle(pos, mc_pos))
+            self.angles["ASC"].append(Angle(pos, asc_pos))
+            self.angles["MC"].append(Angle(pos, mc_pos))
 
         # aspects
         self.aspects = aspect_finder.find_aspects(self.angles)

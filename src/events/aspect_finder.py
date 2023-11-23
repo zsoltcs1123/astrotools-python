@@ -30,9 +30,9 @@ class AspectFinder:
                 orb = orbs[asp_type]
                 negative = angle.diff - orb
                 positive = angle.diff + orb
-                
+
                 asp_values = self.ASPECTS[asp_type]
-                
+
                 for asp_value in asp_values:
                     if asp_value >= negative and asp_value <= positive:
                         asp = Aspect(angle.source.dt, angle, asp_type, asp_value)
@@ -41,7 +41,9 @@ class AspectFinder:
 
     def find_exact_aspects(self, angles: List[Angle]) -> List[Aspect]:
         # sort by dt to ensure that the min function will return the correct element (the first aspect when the diff is smallest)
-        aspects = sorted(self.find_aspects_list(angles), key=lambda aspect: aspect.angle.dt)
+        aspects = sorted(
+            self.find_aspects_list(angles), key=lambda aspect: aspect.angle.dt
+        )
 
         groups = groupby(
             aspects, key=lambda asp: f"{asp.type.name} vs {asp.angle.target.name}"

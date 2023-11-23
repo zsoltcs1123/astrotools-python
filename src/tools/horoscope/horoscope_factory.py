@@ -1,4 +1,3 @@
-
 from datetime import datetime
 from typing import List
 from core.angle_factory import AngleFactory
@@ -25,11 +24,8 @@ def create_horoscope(dt: datetime, config: HoroscopeConfig) -> Horoscope:
 
 
 def create_horoscopes(
-        start: datetime,
-        end: datetime,
-        interval_minutes: int,
-        config: HoroscopeConfig) -> List[Horoscope]:
-
+    start: datetime, end: datetime, interval_minutes: int, config: HoroscopeConfig
+) -> List[Horoscope]:
     dts = calculate_intervals(start, end, interval_minutes)
 
     return [create_horoscope(dt, config) for dt in dts]
