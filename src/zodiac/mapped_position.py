@@ -18,6 +18,7 @@ class MappedPosition:
         self.term = zd.map_term(self.base_position.lon.dec)
         self.tropical_pos = MappedPosition.float_to_zodiacal(self.base_position.lon)
         self.sidereal_lon = self.calculate_sidereal_lon()
+        self.sidereal_sign = zd.map_sign(self.sidereal_lon.dec)
         self.sidereal_pos = MappedPosition.float_to_zodiacal(self.sidereal_lon)
         self.nakshatra = zd.map_nakshatra(self.sidereal_lon.dec)
 

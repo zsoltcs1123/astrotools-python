@@ -1,10 +1,9 @@
 Current:
 
 TBD:
-- Refactor MPP to inheritance
-- Refactor horoscope and tranits to use factories
+- Refactor tranits to use factories
 - Add dependency injenction
-- Add NN, SN, Lilith, Ceres, Chiron
+- Add Lilith, Ceres, Chiron
 - Add helio
 - Implement eclipses
 - Implement perigee/apogee
@@ -13,6 +12,7 @@ TBD:
 - Implement extremes (speed, declination)
 - Speed/declination snapshot
 - Event filtering
+- Investigate discrepancy vs Astrolog
 
 Timeline:
 - Add geo and helio crossings (planet at the same degree)
@@ -40,3 +40,5 @@ Done:
 - Implement Nakshatras
 - Iron out code defficients (mp vs mpp, angle, aspect)
 - Implement transits to a horoscope (basic)
+- Refactor horoscope
+- Add NN, SN

@@ -14,17 +14,20 @@ class Division:
 class Decan(Division):
     pass
 
-
+@dataclass
 class Sign(Division):
-    ruler: str
+    vedic_ruler: str
+    modern_ruler: str
+    uet_ruler: str
 
 
 class Term(Division):
     pass
 
 
+@dataclass
 class Nakshatra(Division):
-    pass
+    lord: str
 
 
 def _get_division(degrees: float, lst: List[Division]) -> Optional[Division]:
@@ -61,50 +64,50 @@ def _dr_degs(start, end) -> Degree:
 
 
 NAKSHATRAS = [
-    Nakshatra(1, 'Aswini', _dr_degs(_deg(0, 0, 0), _deg(13, 20, 0))),
-    Nakshatra(2, 'Bharani', _dr_degs(_deg(13, 20, 0), _deg(26, 40, 0))),
-    Nakshatra(3, 'Krittika', _dr_degs(_deg(26, 40, 0), _deg(40, 0, 0))),
-    Nakshatra(4, 'Rohini', _dr_degs(_deg(40, 0, 0), _deg(53, 20, 0))),
-    Nakshatra(5, 'Mrigashirsha', _dr_degs(_deg(53, 20, 0), _deg(66, 40, 0))),
-    Nakshatra(6, 'Ardra', _dr_degs(_deg(66, 40, 0), _deg(80, 0, 0))),
-    Nakshatra(7, 'Punarvasu', _dr_degs(_deg(80, 0, 0), _deg(93, 20, 0))),
-    Nakshatra(8, 'Pushya', _dr_degs(_deg(93, 20, 0), _deg(106, 40, 0))),
-    Nakshatra(9, 'Ashlesha', _dr_degs(_deg(106, 40, 0), _deg(120, 0, 0))),
-    Nakshatra(10, 'Magha', _dr_degs(_deg(120, 0, 0), _deg(133, 20, 0))),
-    Nakshatra(11, 'Purva Phalguni', _dr_degs(_deg(133, 20, 0), _deg(146, 40, 0))),
-    Nakshatra(12, 'Uttara Phalguni', _dr_degs(_deg(146, 40, 0), _deg(160, 0, 0))),
-    Nakshatra(13, 'Hasta', _dr_degs(_deg(160, 0, 0), _deg(173, 20, 0))),
-    Nakshatra(14, 'Chitra', _dr_degs(_deg(173, 20, 0), _deg(186, 40, 0))),
-    Nakshatra(15, 'Swati', _dr_degs(_deg(186, 40, 0), _deg(200, 0, 0))),
-    Nakshatra(16, 'Vishakha', _dr_degs(_deg(200, 0, 0), _deg(213, 20, 0))),
-    Nakshatra(17, 'Anuradha', _dr_degs(_deg(213, 20, 0), _deg(226, 40, 0))),
-    Nakshatra(18, 'Jyeshtha', _dr_degs(_deg(226, 40, 0), _deg(240, 0, 0))),
-    Nakshatra(19, 'Mula', _dr_degs(_deg(240, 0, 0), _deg(253, 20, 0))),
-    Nakshatra(20, 'Purva Ashadha', _dr_degs(_deg(253, 20, 0), _deg(266, 40, 0))),
-    Nakshatra(21, 'Uttara Ashadha', _dr_degs(_deg(266, 40, 0), _deg(280, 0, 0))),
-    Nakshatra(22, 'Shravana', _dr_degs(_deg(280, 0, 0), _deg(293, 20, 0))),
-    Nakshatra(23, 'Dhanishta', _dr_degs(_deg(293, 20, 0), _deg(306, 40, 0))),
-    Nakshatra(24, 'Shatabhisha', _dr_degs(_deg(306, 40, 0), _deg(320, 0, 0))),
-    Nakshatra(25, 'Purva Bhadrapada', _dr_degs(_deg(320, 0, 0), _deg(333, 20, 0))),
-    Nakshatra(26, 'Uttara Bhadrapada', _dr_degs(_deg(333, 20, 0), _deg(346, 40, 0))),
-    Nakshatra(27, 'Revati', _dr_degs(_deg(346, 40, 0), _deg(360, 0, 0)))
+    Nakshatra(1, 'Aswini', _dr_degs(_deg(0, 0, 0), _deg(13, 20, 0)), 'Ketu'),
+    Nakshatra(2, 'Bharani', _dr_degs(_deg(13, 20, 0), _deg(26, 40, 0)), 'Venus'),
+    Nakshatra(3, 'Krittika', _dr_degs(_deg(26, 40, 0), _deg(40, 0, 0)), 'Sun'),
+    Nakshatra(4, 'Rohini', _dr_degs(_deg(40, 0, 0), _deg(53, 20, 0)), 'Moon'),
+    Nakshatra(5, 'Mrigashirsha', _dr_degs(_deg(53, 20, 0), _deg(66, 40, 0)), 'Mars'),
+    Nakshatra(6, 'Ardra', _dr_degs(_deg(66, 40, 0), _deg(80, 0, 0)), 'Rahu'),
+    Nakshatra(7, 'Punarvasu', _dr_degs(_deg(80, 0, 0), _deg(93, 20, 0)), 'Jupiter'),
+    Nakshatra(8, 'Pushya', _dr_degs(_deg(93, 20, 0), _deg(106, 40, 0)), 'Saturn'),
+    Nakshatra(9, 'Ashlesha', _dr_degs(_deg(106, 40, 0), _deg(120, 0, 0)), 'Mercury'),
+    Nakshatra(10, 'Magha', _dr_degs(_deg(120, 0, 0), _deg(133, 20, 0)), 'Ketu'),
+    Nakshatra(11, 'Purva Phalguni', _dr_degs(_deg(133, 20, 0), _deg(146, 40, 0)), 'Venus'),
+    Nakshatra(12, 'Uttara Phalguni', _dr_degs(_deg(146, 40, 0), _deg(160, 0, 0)), 'Sun'),
+    Nakshatra(13, 'Hasta', _dr_degs(_deg(160, 0, 0), _deg(173, 20, 0)), 'Moon'),
+    Nakshatra(14, 'Chitra', _dr_degs(_deg(173, 20, 0), _deg(186, 40, 0)), 'Mars'),
+    Nakshatra(15, 'Swati', _dr_degs(_deg(186, 40, 0), _deg(200, 0, 0)), 'Rahu'),
+    Nakshatra(16, 'Vishakha', _dr_degs(_deg(200, 0, 0), _deg(213, 20, 0)), 'Jupiter'),
+    Nakshatra(17, 'Anuradha', _dr_degs(_deg(213, 20, 0), _deg(226, 40, 0)), 'Saturn'),
+    Nakshatra(18, 'Jyeshtha', _dr_degs(_deg(226, 40, 0), _deg(240, 0, 0)), 'Mercury'),
+    Nakshatra(19, 'Mula', _dr_degs(_deg(240, 0, 0), _deg(253, 20, 0)), 'Ketu'),
+    Nakshatra(20, 'Purva Ashadha', _dr_degs(_deg(253, 20, 0), _deg(266, 40, 0)), 'Venus'),
+    Nakshatra(21, 'Uttara Ashadha', _dr_degs(_deg(266, 40, 0), _deg(280, 0, 0)), 'Sun'),
+    Nakshatra(22, 'Shravana', _dr_degs(_deg(280, 0, 0), _deg(293, 20, 0)), 'Moon'),
+    Nakshatra(23, 'Dhanishta', _dr_degs(_deg(293, 20, 0), _deg(306, 40, 0)), 'Mars'),
+    Nakshatra(24, 'Shatabhisha', _dr_degs(_deg(306, 40, 0), _deg(320, 0, 0)), 'Rahu'),
+    Nakshatra(25, 'Purva Bhadrapada', _dr_degs(_deg(320, 0, 0), _deg(333, 20, 0)), 'Jupiter'),
+    Nakshatra(26, 'Uttara Bhadrapada', _dr_degs(_deg(333, 20, 0), _deg(346, 40, 0)), 'Saturn'),
+    Nakshatra(27, 'Revati', _dr_degs(_deg(346, 40, 0), _deg(360, 0, 0)), 'Mercury'),
 ]
 
 
 
 SIGNS = [
-    Sign(1, 'Aries', _dr_floats(0, 30)),
-    Sign(2, 'Taurus', _dr_floats(30, 60)),
-    Sign(3, 'Gemini', _dr_floats(60, 90)),
-    Sign(4, 'Cancer', _dr_floats(90, 120)),
-    Sign(5, 'Leo', _dr_floats(120, 150)),
-    Sign(6, 'Virgo', _dr_floats(150, 180)),
-    Sign(7, 'Libra', _dr_floats(180, 210)),
-    Sign(8, 'Scorpio', _dr_floats(210, 240)),
-    Sign(9, 'Sagittarius', _dr_floats(240, 270)),
-    Sign(10, 'Capricorn', _dr_floats(270, 300)),
-    Sign(11, 'Aquarius', _dr_floats(300, 330)),
-    Sign(12, 'Pisces', _dr_floats(330, 360))
+    Sign(1, 'Aries', _dr_floats(0, 30), 'Mars', 'Mars', 'Mars'),
+    Sign(2, 'Taurus', _dr_floats(30, 60), 'Venus', 'Venus', 'X'),
+    Sign(3, 'Gemini', _dr_floats(60, 90), 'Mercury', 'Mercury', 'Mercury'),
+    Sign(4, 'Cancer', _dr_floats(90, 120), 'Moon', 'Moon', 'Moon'),
+    Sign(5, 'Leo', _dr_floats(120, 150), 'Sun', 'Sun', 'Sun'),
+    Sign(6, 'Virgo', _dr_floats(150, 180), 'Mercury', 'Mercury', 'Ceres'),
+    Sign(7, 'Libra', _dr_floats(180, 210), 'Venus', 'Venus', 'Venus'),
+    Sign(8, 'Scorpio', _dr_floats(210, 240), 'Mars', 'Pluto', 'Pluto'),
+    Sign(9, 'Sagittarius', _dr_floats(240, 270), 'Jupiter', 'Jupiter', 'Jupiter'),
+    Sign(10, 'Capricorn', _dr_floats(270, 300), 'Saturn', 'Saturn', 'Saturn'),
+    Sign(11, 'Aquarius', _dr_floats(300, 330), 'Saturn', 'Uranus', 'Uranus'),
+    Sign(12, 'Pisces', _dr_floats(330, 360), 'Jupiter', 'Neptune', 'Neptune')
 ]
 
 

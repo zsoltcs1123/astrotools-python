@@ -1,9 +1,9 @@
 from typing import List
 import pytz
 from timezonefinder import TimezoneFinder
-from out.timeline_printer import TimelinePrinter
+from tools.timeline.timeline_printer import TimelinePrinter
 from out.transit_printer import print_transit_to_console
-from tools.timeline import Timeline
+from tools.timeline.timeline import Timeline
 from tools.transit import Transit
 from util.common import measure
 from util.geocoder import Geocoder
@@ -16,8 +16,8 @@ from events.aspect import get_all_aspects
 from out.file import to_text_file
 from objects.points import PLANETS
 from itertools import groupby
-from tools.horoscope import Horoscope
-from out.horoscope_printer import print_horoscopes_to_console, print_horoscopes_to_file
+from tools.horoscope.horoscope import Horoscope
+from tools.horoscope.horoscope_printer import print_horoscopes_to_console, print_horoscopes_to_file
 
 
 def main():

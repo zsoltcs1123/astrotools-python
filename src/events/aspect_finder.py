@@ -65,12 +65,12 @@ class AspectFinder:
             aspects[point] = []
             for angle in angle_list:
                 orbs = self.orb_map.get_aspects_orbs(angle.source.name)
-                for asp_to_orb in orbs:
-                    negative = angle.diff - asp_to_orb[1]
-                    positive = angle.diff + asp_to_orb[1]
-                    asp_value = self.ASPECTS[asp_to_orb[0]][0]
+                for asp_type, orb in orbs.items():
+                    negative = angle.diff - orb
+                    positive = angle.diff + orb
+                    asp_value = self.ASPECTS[asp_type][0]
 
                     if asp_value >= negative and asp_value <= positive:
-                        asp = Aspect(angle.source.dt, angle, asp_to_orb[0], angle.diff)
+                        asp = Aspect(angle.source.dt, angle, asp_type, angle.diff)
                         aspects[point].append(asp)
         return aspects

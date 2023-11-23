@@ -2,7 +2,7 @@
 from typing import List
 from dataclasses import dataclass
 from core.angle import Angle
-from tools.horoscope import Horoscope
+from tools.horoscope.horoscope import Horoscope
 from tools.transit_table import TransitTable
 
 @dataclass

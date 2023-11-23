@@ -4,6 +4,8 @@ NN = "north node"
 SN = "south node"
 MOON = "moon"
 MEAN_NODE = 'MEAN_NODE'
+ASC = 'asc'
+MC = 'mc'
 
 PLANETS = [
     "sun",

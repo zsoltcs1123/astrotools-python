@@ -6,6 +6,16 @@ from events.astro_event import AstroEvent
 from datetime import datetime, timedelta
 
 
+DEFAULT_ASPECTS = [
+    AspectType.CONJUNCTION,
+    AspectType.OPPOSITION,
+    AspectType.SQUARE,
+    AspectType.TRINE,
+    AspectType.SEXTILE,
+    AspectType.INCONJUNCT,
+    AspectType.QUINTILE,
+]
+
 @dataclass
 class Aspect(AstroEvent):
     angle: Angle

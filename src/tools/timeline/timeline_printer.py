@@ -1,5 +1,5 @@
 
-from tools.timeline import Timeline
+from tools.timeline.timeline import Timeline
 from out.file import to_text_file
 
 

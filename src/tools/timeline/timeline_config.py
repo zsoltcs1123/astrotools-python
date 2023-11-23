@@ -4,6 +4,7 @@ from datetime import datetime as dt
 from core.angle_factory import AngleFactory
 from core.enums import AspectType, CoordinateSystem
 from core.position_factory import PositionFactory
+from events.aspect import DEFAULT_ASPECTS
 from events.aspect_finder import AspectFinder
 from objects.points import get_all_default_angle_targets
 from events.astro_event import AstroEvent, DecanChange, DirectionChange, NakshatraChange, Progression, SignChange, TermChange
@@ -11,16 +12,6 @@ from events.zodiacal_event_factory import ZodiacalEventFactory
 from objects.orb_map import OrbMap
 from objects.points import ALL_POINTS, MEAN_NODE, POINTS_NO_MOON
 
-
-DEFAULT_ASPECTS = [
-    AspectType.CONJUNCTION,
-    AspectType.OPPOSITION,
-    AspectType.SQUARE,
-    AspectType.TRINE,
-    AspectType.SEXTILE,
-    AspectType.INCONJUNCT,
-    AspectType.QUINTILE,
-]
 
 DEFAULT_ZODIACAL_EVENTS = [SignChange, DecanChange,
                            TermChange, NakshatraChange, DirectionChange, Progression]
@@ -47,7 +38,7 @@ class TimelineConfig:
         zodiacal_events :List[type]=DEFAULT_ZODIACAL_EVENTS,
     ) -> "TimelineConfig":
 
-        return TimelineConfig.default(start, end, POINTS_NO_MOON)
+        return TimelineConfig.default(start, end, POINTS_NO_MOON, {}, aspects, zodiacal_events)
 
     @classmethod
     def default(

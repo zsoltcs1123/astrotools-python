@@ -4,7 +4,7 @@ from typing import List, Type
 from core.enums import CoordinateSystem
 from events.astro_event import AstroEvent
 from objects.points import get_default_angle_targets
-from tools.timeline_config import TimelineConfig
+from tools.timeline.timeline_config import TimelineConfig
 from util.console_logger import ConsoleLogger
 from zodiac.mapped_position import MappedPosition as mp
 

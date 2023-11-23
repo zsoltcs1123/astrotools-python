@@ -4,10 +4,10 @@ from core.position_factory import PositionFactory
 from events.astro_event import NakshatraChange, SignChange
 from objects.points import MEAN_NODE
 from out.file import to_text_file
-from out.timeline_printer import TimelinePrinter
+from tools.timeline.timeline_printer import TimelinePrinter
 from out.tv import generate_pivot_times
-from tools.timeline import Timeline
-from tools.timeline_config import (
+from tools.timeline.timeline import Timeline
+from tools.timeline.timeline_config import (
     DEFAULT_ASPECTS,
     DEFAULT_ZODIACAL_EVENTS,
     TimelineConfig,
@@ -68,7 +68,7 @@ def timeline_sun():
     start = datetime(2023, 8, 1)
     end = datetime(2023, 11, 21)
     
-    tcfg = TimelineConfig.default(start, end, ['sun'], {'sun': ['uranus']}, [], [NakshatraChange])
+    tcfg = TimelineConfig.default(start, end, ['sun'], zodiacal_events=[])
     timeline = Timeline(tcfg)
     
     timeline_printer = TimelinePrinter(timeline)
