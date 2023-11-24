@@ -3,9 +3,9 @@ from typing import Dict, List
 NN = "north node"
 SN = "south node"
 MOON = "moon"
-MEAN_NODE = 'MEAN_NODE'
-ASC = 'asc'
-MC = 'mc'
+MEAN_NODE = "MEAN_NODE"
+ASC = "asc"
+MC = "mc"
 
 PLANETS = [
     "sun",
@@ -23,7 +23,7 @@ PLANETS = [
 
 NODES = [NN, SN]
 
-ANGULARS = ["ASC", "MC", "IC", "DC"]
+ANGULARS = [ASC, MC]
 
 
 PLANETS_MAP = {

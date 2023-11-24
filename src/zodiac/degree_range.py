@@ -19,3 +19,6 @@ class DegreeRange:
 
     def __contains__(self, value: float) -> bool:
         return self.start.dec <= value < self.end.dec
+
+    def progress(self, value: float) -> float:
+        return (value - self.start.dec) / (self.end.dec - self.start.dec)

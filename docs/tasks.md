@@ -13,6 +13,8 @@ TBD:
 - Speed/declination snapshot
 - Event filtering
 - Investigate discrepancy vs Astrolog
+- Implement vimshottari
+- Implement sidereal planet strength
 
 Timeline:
 - Add geo and helio crossings (planet at the same degree)

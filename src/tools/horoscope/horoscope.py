@@ -7,7 +7,7 @@ from events.aspect_finder import AspectFinder
 from core.base_position import BasePosition as bp
 from zodiac.mapped_position import MappedPosition as mp
 from core.angle import Angle
-from objects.points import PLANETS
+from objects.points import ANGULARS, ASC, MC, PLANETS
 from events.aspect import Aspect
 import core.swisseph_api as swe_api
 
@@ -38,29 +38,29 @@ class Horoscope:
 
         self.angles = {}
         self.aspects = []
-        planets = [planet for planet in PLANETS]
+        points = [point for point in config.points if point not in ANGULARS]
 
-        asc_pos = bp(self.dt, "ASC", self.ascmc[0], 0, 0, 0, 0)
-        mc_pos = bp(self.dt, "MC", self.ascmc[1], 0, 0, 0, 0)
+        asc_pos = bp(self.dt, ASC, self.ascmc[0], 0, 0, 0, 0)
+        mc_pos = bp(self.dt, MC, self.ascmc[1], 0, 0, 0, 0)
 
         self.points.append(mp(asc_pos))
         self.points.append(mp(mc_pos))
 
-        self.angles["ASC"] = []
-        self.angles["MC"] = []
+        self.angles[ASC] = []
+        self.angles[MC] = []
 
         # angles
-        for planet in planets:
-            pos = position_factory.create_position(planet, self.dt)
+        for point in points:
+            pos = position_factory.create_position(point, self.dt)
             mpos = mp(pos)
             self.points.append(mpos)
-            angles = angle_factory.get_multiple_angles(planet, self.dt)
+            angles = angle_factory.get_multiple_angles(point, self.dt)
 
-            self.angles[planet] = angles
+            self.angles[point] = angles
 
             # ASC and MC
-            self.angles["ASC"].append(Angle(pos, asc_pos))
-            self.angles["MC"].append(Angle(pos, mc_pos))
+            self.angles[ASC].append(Angle(pos, asc_pos))
+            self.angles[MC].append(Angle(pos, mc_pos))
 
         # aspects
         self.aspects = aspect_finder.find_aspects(self.angles)

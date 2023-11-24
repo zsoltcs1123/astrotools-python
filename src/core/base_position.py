@@ -13,7 +13,16 @@ class BasePosition:
     ra: Degree
     dec: Degree
 
-    def __init__(self, dt: dt, name: str, lon: float, lat: float, speed: float, ra: float, dec: float):
+    def __init__(
+        self,
+        dt: dt,
+        name: str,
+        lon: float,
+        lat: float,
+        speed: float,
+        ra: float,
+        dec: float,
+    ):
         self.dt = dt
         self.name = name
         self.lon = Degree.from_decimal(lon)
