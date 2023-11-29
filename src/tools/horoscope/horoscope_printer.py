@@ -32,22 +32,22 @@ def _generate_str(
                 "Star Lord",
             )
         )
-        for point in horoscope.points:
-            if point.base_position.name in points_filter:
+        for mp in horoscope.mps:
+            if mp.point in points_filter:
                 continue
 
             str += (
-                f"\n{point.base_position.name:<10}"
-                f"{(' R' if point.retrograde else ''):<3}"
-                f"{point.tropical_pos:<10}"
-                f"{point.house(horoscope.cusps):<10}"
-                f"{point.sign.modern_ruler:<10}"
-                f"{point.term.name:<10}"
-                f"{point.decan.name:<10}"
-                f"{point.sidereal_pos:<10}"
-                f"{point.sidereal_sign.vedic_lord:<10}"
-                f"{point.nakshatra.name:<20}"
-                f"{point.nakshatra.lord:<10}"
+                f"\n{mp.point:<10}"
+                f"{(' R' if mp.retrograde else ''):<3}"
+                f"{mp.tropical.position:<10}"
+                f"{mp.tropical.house(horoscope.cusps):<10}"
+                f"{mp.tropical.sign_ruler:<10}"
+                f"{mp.tropical.term.name:<10}"
+                f"{mp.tropical.decan.name:<10}"
+                f"{mp.vedic.position:<10}"
+                f"{mp.vedic.sign_ruler:<10}"
+                f"{mp.vedic.nakshatra.name:<20}"
+                f"{mp.vedic.nakshatra.ruler:<10}"
             )
 
         str += "\n\nAspects:\n--------"

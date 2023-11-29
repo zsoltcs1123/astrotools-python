@@ -17,7 +17,7 @@ class Decan(Division):
 
 @dataclass
 class Sign(Division):
-    vedic_lord: str
+    vedic_ruler: str
     modern_ruler: str
     uet_ruler: str
 
@@ -28,14 +28,28 @@ class Term(Division):
 
 @dataclass
 class Nakshatra(Division):
-    lord: str
+    ruler: str
 
 
-def _get_division(degrees: float, lst: List[Division]) -> Optional[Division]:
-    for div in lst:
-        if degrees in div.degree_range:
-            return div
-    return None
+def degree_to_zodiacal(degrees: Degree) -> str:
+    sign_name = map_sign(degrees.dec).name
+    sign_nr = (int)(degrees.dec / 30)
+    deg = (int)(degrees.dec - sign_nr * 30)
+    mins = degrees.dms.minutes
+    return f"{deg}{sign_name[:3]}{mins}"
+
+
+def calculate_house(degrees: float, cusps: List[float]) -> int:
+    # Normalize values relative to the Ascendant (first cusp).
+    normalized_cusps = [(cusp - cusps[0]) % 360 for cusp in cusps]
+    normalized_longitude = (degrees - cusps[0]) % 360
+
+    for i in range(0, 11):  # Only loop until the 11th cusp
+        if normalized_cusps[i] <= normalized_longitude < normalized_cusps[i + 1]:
+            return i + 1
+
+    # If we haven't returned by this point, the planet is in the 12th house
+    return 12
 
 
 def map_sign(degrees: float) -> Optional[Sign]:
@@ -52,6 +66,13 @@ def map_term(degrees: float) -> Optional[Term]:
 
 def map_nakshatra(degrees: float) -> Optional[Nakshatra]:
     return _get_division(degrees, NAKSHATRAS)
+
+
+def _get_division(degrees: float, lst: List[Division]) -> Optional[Division]:
+    for div in lst:
+        if degrees in div.degree_range:
+            return div
+    return None
 
 
 def _deg(d: int, m: int, s: int) -> Degree:

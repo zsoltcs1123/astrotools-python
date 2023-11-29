@@ -7,14 +7,28 @@ from core.position_factory import PositionFactory
 from events.aspect import DEFAULT_ASPECTS
 from events.aspect_finder import AspectFinder
 from objects.points import get_all_default_angle_targets
-from events.astro_event import AstroEvent, DecanChange, DirectionChange, NakshatraChange, Progression, SignChange, TermChange
+from events.astro_event import (
+    AstroEvent,
+    DecanChange,
+    DirectionChange,
+    NakshatraChange,
+    TropicalProgression,
+    TropicalSignChange,
+    TermChange,
+)
 from events.zodiacal_event_factory import ZodiacalEventFactory
 from objects.orb_map import OrbMap
 from objects.points import ALL_POINTS, MEAN_NODE, POINTS_NO_MOON
 
 
-DEFAULT_ZODIACAL_EVENTS = [SignChange, DecanChange,
-                           TermChange, NakshatraChange, DirectionChange, Progression]
+DEFAULT_ZODIACAL_EVENTS = [
+    TropicalSignChange,
+    DecanChange,
+    TermChange,
+    NakshatraChange,
+    DirectionChange,
+    TropicalProgression,
+]
 
 
 @dataclass
@@ -34,11 +48,12 @@ class TimelineConfig:
         cls,
         start: dt,
         end: dt,
-        aspects: List[AspectType]=DEFAULT_ASPECTS,
-        zodiacal_events :List[type]=DEFAULT_ZODIACAL_EVENTS,
+        aspects: List[AspectType] = DEFAULT_ASPECTS,
+        zodiacal_events: List[type] = DEFAULT_ZODIACAL_EVENTS,
     ) -> "TimelineConfig":
-
-        return TimelineConfig.default(start, end, POINTS_NO_MOON, {}, aspects, zodiacal_events)
+        return TimelineConfig.default(
+            start, end, POINTS_NO_MOON, {}, aspects, zodiacal_events
+        )
 
     @classmethod
     def default(
@@ -50,7 +65,6 @@ class TimelineConfig:
         aspects=DEFAULT_ASPECTS,
         zodiacal_events=DEFAULT_ZODIACAL_EVENTS,
     ) -> "TimelineConfig":
-
         if not angle_targets:
             angle_targets = get_all_default_angle_targets()
         else:
@@ -59,10 +73,10 @@ class TimelineConfig:
         position_factory = PositionFactory(MEAN_NODE)
         angle_factory = AngleFactory(position_factory, angle_targets)
         orb_map = OrbMap.orb_map(0.001)
-        aspect_finder = AspectFinder(
-            orb_map, aspects) if len(aspects) > 0 else None
-        zodiacal_event_factory = ZodiacalEventFactory(
-            zodiacal_events) if len(zodiacal_events) > 0 else None
+        aspect_finder = AspectFinder(orb_map, aspects) if len(aspects) > 0 else None
+        zodiacal_event_factory = (
+            ZodiacalEventFactory(zodiacal_events) if len(zodiacal_events) > 0 else None
+        )
 
         return TimelineConfig(
             start,

@@ -15,7 +15,7 @@ import core.swisseph_api as swe_api
 class Horoscope:
     dt: datetime
     config: HoroscopeConfig
-    points: List[mp]
+    mps: List[mp]
     angles: Dict[str, List[Angle]]
     aspects: Dict[str, List[Aspect]]
     cusps: List[float]
@@ -34,7 +34,7 @@ class Horoscope:
             dt, config.lat, config.lon, config.house_system
         )
 
-        self.points = []
+        self.mps = []
 
         self.angles = {}
         self.aspects = []
@@ -43,8 +43,8 @@ class Horoscope:
         asc_pos = bp(self.dt, ASC, self.ascmc[0], 0, 0, 0, 0)
         mc_pos = bp(self.dt, MC, self.ascmc[1], 0, 0, 0, 0)
 
-        self.points.append(mp(asc_pos))
-        self.points.append(mp(mc_pos))
+        self.mps.append(mp(asc_pos))
+        self.mps.append(mp(mc_pos))
 
         self.angles[ASC] = []
         self.angles[MC] = []
@@ -53,7 +53,7 @@ class Horoscope:
         for point in points:
             pos = position_factory.create_position(point, self.dt)
             mpos = mp(pos)
-            self.points.append(mpos)
+            self.mps.append(mpos)
             angles = angle_factory.get_multiple_angles(point, self.dt)
 
             self.angles[point] = angles

@@ -26,7 +26,7 @@ class AspectFinder:
 
         for angle in angles:
             for asp_type in self.aspects_include:
-                orbs = self.orb_map.get_aspects_orbs(angle.source.name)
+                orbs = self.orb_map.get_aspects_orbs(angle.source.point)
                 orb = orbs[asp_type]
                 negative = angle.diff - orb
                 positive = angle.diff + orb
@@ -46,7 +46,7 @@ class AspectFinder:
         )
 
         groups = groupby(
-            aspects, key=lambda asp: f"{asp.type.name} vs {asp.angle.target.name}"
+            aspects, key=lambda asp: f"{asp.type.name} vs {asp.angle.target.point}"
         )
 
         aspects = []
@@ -66,7 +66,7 @@ class AspectFinder:
         for point, angle_list in angles.items():
             aspects[point] = []
             for angle in angle_list:
-                orbs = self.orb_map.get_aspects_orbs(angle.source.name)
+                orbs = self.orb_map.get_aspects_orbs(angle.source.point)
                 for asp_type, orb in orbs.items():
                     negative = angle.diff - orb
                     positive = angle.diff + orb

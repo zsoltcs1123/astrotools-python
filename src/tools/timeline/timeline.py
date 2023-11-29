@@ -15,7 +15,7 @@ class Timeline:
     def __init__(self, config: TimelineConfig):
         self.logger = ConsoleLogger(Timeline.__name__)
         self.config = config
-        self.events = sorted(self._generate(), key=lambda x: x.time)
+        self.events = sorted(self._generate(), key=lambda x: x.dt)
         self.grouped_events = self._group_events_by_date()
 
     def _generate(self):
@@ -64,5 +64,5 @@ class Timeline:
     def _group_events_by_date(self):
         grouped_events = defaultdict(list)
         for event in self.events:
-            grouped_events[event.time.date()].append(event)
+            grouped_events[event.dt.date()].append(event)
         return grouped_events

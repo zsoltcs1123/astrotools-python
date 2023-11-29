@@ -25,7 +25,7 @@ class Aspect(AstroEvent):
 
     def __repr__(self):
         # return f"aspect at {self.angle}, {self.asp_str} ({self.asp_diff})\n Orb of 2 starts at: {orb_start}, ends at: {orb_end}"
-        return f"{self.time}\t{self.angle.source.name}\t{self.type.name.lower()} [{self.angle.diff:.3f}] vs {self.angle.target.name}"
+        return f"{self.dt}\t{self.angle.source.point}\t{self.type.name.lower()} [{self.angle.diff:.3f}] vs {self.angle.target.point}"
 
     def orb(self, orb_value: int) -> Tuple[datetime, datetime]:
         # Determine the direction of movement for each planet

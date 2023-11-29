@@ -1,7 +1,7 @@
 from datetime import datetime
 from core.base_position import BasePosition
 from core.position_factory import PositionFactory
-from events.astro_event import NakshatraChange, SignChange
+from events.astro_event import NakshatraChange, TropicalSignChange
 from objects.points import MEAN_NODE
 from out.file import to_text_file
 from tools.timeline.timeline_printer import TimelinePrinter
@@ -32,7 +32,7 @@ def timeline_tv_script():
     end = datetime(2023, 11, 27)
 
     zodiacal_events = [
-        event for event in DEFAULT_ZODIACAL_EVENTS if event != SignChange
+        event for event in DEFAULT_ZODIACAL_EVENTS if event != TropicalSignChange
     ]
     timeline_config = TimelineConfig.default_no_moon(
         start, end, DEFAULT_ASPECTS, zodiacal_events
@@ -43,12 +43,11 @@ def timeline_tv_script():
     unique_events = []
     seen_times = set()
     for event in timeline.events:
-        if event.time not in seen_times:
+        if event.dt not in seen_times:
             unique_events.append(event)
-            seen_times.add(event.time)
+            seen_times.add(event.dt)
 
-    tv_timestamps = ", ".join([event.tv_timestamp()
-                              for event in unique_events])
+    tv_timestamps = ", ".join([event.tv_timestamp() for event in unique_events])
     script = generate_pivot_times("Pivot Times nov 20 - nov 27", tv_timestamps)
     to_text_file("PT nov 20-nov 27.txt", script)
 
@@ -63,14 +62,15 @@ def mars():
     mars_mapped = MappedPosition(mars)
 
     print(mars_mapped)
-    
+
+
 def timeline_sun():
     start = datetime(2023, 8, 1)
     end = datetime(2023, 11, 21)
-    
-    tcfg = TimelineConfig.default(start, end, ['sun'], zodiacal_events=[])
+
+    tcfg = TimelineConfig.default(start, end, ["sun"], zodiacal_events=[])
     timeline = Timeline(tcfg)
-    
+
     timeline_printer = TimelinePrinter(timeline)
 
     timeline_printer.print_to_console()

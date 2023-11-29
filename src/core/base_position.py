@@ -6,7 +6,7 @@ from core.degree import Degree
 @dataclass
 class BasePosition:
     dt: dt
-    name: str
+    point: str
     lon: Degree
     lat: Degree
     speed: Degree
@@ -16,7 +16,7 @@ class BasePosition:
     def __init__(
         self,
         dt: dt,
-        name: str,
+        point: str,
         lon: float,
         lat: float,
         speed: float,
@@ -24,7 +24,7 @@ class BasePosition:
         dec: float,
     ):
         self.dt = dt
-        self.name = name
+        self.point = point
         self.lon = Degree.from_decimal(lon)
         self.lat = Degree.from_decimal(lat)
         self.speed = Degree.from_decimal(speed)
@@ -33,7 +33,7 @@ class BasePosition:
 
     def __repr__(self):
         return (
-            f"Point: {self.name}\n"
+            f"Point: {self.point}\n"
             f"Datetime: {self.dt.strftime('%Y-%m-%d %H:%M:%S')}\n"
             f"Longitude: {self.lon}\n"
             f"Latitude: {self.lat}\n"

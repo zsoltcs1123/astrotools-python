@@ -21,16 +21,16 @@ def _generate_transit_str(transit: Transit, points_filter: List[str] = []):
     )
 
     transit_points = {
-        mp.base_position.name: mp for mp in transit.transit_horoscope.points
+        mp.base_position.point: mp for mp in transit.transit_horoscope.mps
     }
-    for point in transit.natal_horoscope.points:
-        if point.base_position.name in points_filter:
+    for point in transit.natal_horoscope.mps:
+        if point.base_position.point in points_filter:
             continue
-        transit_point = transit_points[point.base_position.name]
+        transit_point = transit_points[point.base_position.point]
         angle = Angle(
             point.base_position.dt, point.base_position, transit_point.base_position
         )
-        str += f"\n{point.base_position.name:<10}{float_to_zodiacal(point.base_position.lon.dec):<10}{float_to_zodiacal(transit_point.base_position.lon.dec):<10}{round(angle.diff,3):<10}{transit_point.house(transit.natal_horoscope.cusps):<10}"
+        str += f"\n{point.base_position.point:<10}{float_to_zodiacal(point.base_position.lon.dec):<10}{float_to_zodiacal(transit_point.base_position.lon.dec):<10}{round(angle.diff,3):<10}{transit_point.house(transit.natal_horoscope.cusps):<10}"
 
     str += "\n---------------------\n\n\n"
     return str
@@ -48,7 +48,7 @@ def _generate_transit_table_str(transit_table: TransitTable):
                 (
                     angle
                     for angle in transit_table.angles[planet1]
-                    if angle.target.name == planet2
+                    if angle.target.point == planet2
                 ),
                 None,
             )
@@ -68,7 +68,7 @@ def _generate_transit_table_str(transit_table: TransitTable):
                 (
                     aspect
                     for aspect in transit_table.aspects[planet1]
-                    if aspect.angle.target.name == planet2
+                    if aspect.angle.target.point == planet2
                 ),
                 None,
             )

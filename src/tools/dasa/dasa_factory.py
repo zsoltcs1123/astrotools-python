@@ -29,13 +29,13 @@ DASA_TOTAL = 120
 def generate_dasas(
     moon_position: MappedPosition, target_level: DasaLevel
 ) -> List[Dasa]:
-    nakshatra = moon_position.nakshatra
-    sidereal_lon = moon_position.sidereal_lon
+    nakshatra = moon_position.vedic.nakshatra
+    sidereal_lon = moon_position.vedic.lon
     progress = nakshatra.degree_range.progress(sidereal_lon.dec)
 
-    lord = nakshatra.lord
+    lord = nakshatra.ruler
     dasa_length = DASA_LENGTHS[lord]
-    birth_date = moon_position.base_position.dt
+    birth_date = moon_position.dt
     dasa_remaining = (1 - progress) * dasa_length
     dasa_elapsed = progress * dasa_length
     dasa_start = birth_date - timedelta(days=dasa_elapsed * 365.25)

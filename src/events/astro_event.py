@@ -5,11 +5,11 @@ from zodiac.mapped_position import MappedPosition as mp
 
 @dataclass
 class AstroEvent:
-    time: datetime  # UTC
+    dt: datetime  # UTC
 
     def tv_timestamp(self) -> str:
         """eg. timestamp("2023-02-27 11:05 UTC")"""
-        return f'timestamp("{self.time.strftime("%Y-%m-%d %H:%M UTC")}")'
+        return f'timestamp("{self.dt.strftime("%Y-%m-%d %H:%M UTC")}")'
 
 
 @dataclass
@@ -19,39 +19,45 @@ class ZodiacalEvent(AstroEvent):
 
 
 @dataclass
-class SignChange(ZodiacalEvent):
+class TropicalSignChange(ZodiacalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tSign change\t{self.previous.sign.name} -> {self.current.sign.name}"
+        return f"{self.current.dt}\t{self.current.point}\tSign change\t{self.previous.tropical.sign.name} -> {self.current.tropical.sign.name}"
+
+
+@dataclass
+class VedicSignChange(ZodiacalEvent):
+    def __repr__(self) -> str:
+        return f"{self.current.dt}\t{self.current.point}\tSign change\t{self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
 
 
 @dataclass
 class DecanChange(ZodiacalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tDecan change\t{self.previous.decan.name} -> {self.current.decan.name}"
+        return f"{self.current.dt}\t{self.current.point}\tDecan change\t{self.previous.tropical.decan.name} -> {self.current.tropical.decan.name}"
 
 
 @dataclass
 class TermChange(ZodiacalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tTerm change\t{self.previous.term.name} -> {self.current.term.name}"
+        return f"{self.current.dt}\t{self.current.point}\tTerm change\t{self.previous.tropical.term.name} -> {self.current.tropical.term.name}"
 
 
 @dataclass
 class NakshatraChange(ZodiacalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tNakshatra change\t{self.previous.nakshatra.name} -> {self.current.nakshatra.name}"
+        return f"{self.current.dt}\t{self.current.point}\tNakshatra change\t{self.previous.vedic.nakshatra.name} -> {self.current.vedic.nakshatra.name}"
 
 
 @dataclass
 class DirectionChange(ZodiacalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.base_position.dt}\t{self.current.base_position.name}\tDirection change\t{self.previous.direction} -> {self.current.direction}"
+        return f"{self.current.dt}\t{self.current.point}\tDirection change\t{self.previous.direction} -> {self.current.direction}"
 
 
 @dataclass
-class Progression(AstroEvent):
+class TropicalProgression(AstroEvent):
     mp: mp
     name: str
 
     def __repr__(self) -> str:
-        return f"{self.time}\t{self.mp.base_position.name}\t{self.name} progression at\t{self.mp.tropical_pos}"
+        return f"{self.dt}\t{self.mp.point}\t{self.name} progression at\t{self.mp.tropical.position}"

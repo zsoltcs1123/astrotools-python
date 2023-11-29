@@ -33,7 +33,7 @@ if __name__ == "__main__":
     print(moon_mapped.sidereal_lon)
     print(moon_mapped.sidereal_pos)
     print(moon_mapped.nakshatra.name)
-    print(moon_mapped.nakshatra.lord)
+    print(moon_mapped.nakshatra.ruler)
     print(moon_mapped.nakshatra.degree_range)
 
     print_dasas(res)

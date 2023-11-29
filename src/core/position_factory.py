@@ -17,7 +17,7 @@ class PositionFactory:
 
     def _north_node(self, dt: dt) -> BasePosition:
         pos = self._planet(self.node_calc, dt)
-        pos.name = NN
+        pos.point = NN
         return pos
 
     def _south_node(self, dt: dt) -> BasePosition:
