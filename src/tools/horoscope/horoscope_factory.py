@@ -16,7 +16,7 @@ def create_horoscope(dt: datetime, config: HoroscopeConfig) -> Horoscope:
     if config.aspects:
         angle_targets = get_all_default_angle_targets()
         angle_factory = AngleFactory(position_factory, angle_targets)
-        orb_map = OrbMap.orb_map(0.001)
+        orb_map = OrbMap.default()
         aspect_finder = AspectFinder(orb_map, config.aspects)
         return Horoscope(dt, config, position_factory, angle_factory, aspect_finder)
     else:

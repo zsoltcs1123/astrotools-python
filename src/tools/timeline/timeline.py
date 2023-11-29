@@ -3,7 +3,6 @@ from datetime import datetime as dt
 from typing import List, Type
 from core.enums import CoordinateSystem
 from events.astro_event import AstroEvent
-from objects.points import get_default_angle_targets
 from tools.timeline.timeline_config import TimelineConfig
 from util.console_logger import ConsoleLogger
 from zodiac.mapped_position import MappedPosition as mp
@@ -50,9 +49,7 @@ class Timeline:
         if self.config.aspect_finder is None:
             return []
 
-        return [
-            self._find_aspects(point) for point in self.config.points
-        ]
+        return [self._find_aspects(point) for point in self.config.points]
 
     def _find_aspects(self, point):
         self.logger.info(f"Calculating aspects for {point}")

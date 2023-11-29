@@ -2,6 +2,7 @@ import pytz
 
 from datetime import datetime
 from timezonefinder import TimezoneFinder
+from objects.points import ALL_POINTS
 from tools.horoscope.horoscope_config import HoroscopeConfig
 from util.geocoder import Geocoder
 from tools.horoscope.horoscope_factory import create_horoscope
@@ -40,6 +41,14 @@ def me_horoscope():
     utc_dt = local_dt.astimezone(pytz.utc)
 
     config = HoroscopeConfig.default(lat, lon, f"Zsolt {local_dt}")
+    horoscope = create_horoscope(utc_dt, config)
+
+    print_horoscope_to_console(horoscope)
+
+
+def aix_horoscope():
+    utc_dt = datetime(2023, 9, 15, 4, 25, 47, tzinfo=pytz.utc)
+    config = HoroscopeConfig.default(0, 0, f"AIX {utc_dt}")
     horoscope = create_horoscope(utc_dt, config)
 
     print_horoscope_to_console(horoscope)

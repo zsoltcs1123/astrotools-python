@@ -1,12 +1,10 @@
 from datetime import datetime
-from core.base_position import BasePosition
 from core.position_factory import PositionFactory
 from timezonefinder import TimezoneFinder
 import pytz
 from tools.dasa.dasa import DasaLevel
 from tools.dasa.dasa_factory import generate_dasas
 from tools.dasa.dasa_printer import print_dasas
-from tools.horoscope.horoscope import Horoscope
 from util.geocoder import Geocoder
 from objects.points import MEAN_NODE, MOON
 from zodiac.mapped_position import MappedPosition
@@ -24,12 +22,14 @@ if __name__ == "__main__":
     local_dt = tz.localize(dt)
     utc_dt = local_dt.astimezone(pytz.utc)
 
+    utc_dt = datetime(2023, 9, 15, 4, 25, 47, tzinfo=pytz.utc)
+
     moon_position = position_factory.create_position(MOON, utc_dt)
 
     # moon_position = BasePosition(utc_dt, "moon", 7.669722, 0, 0, 0, 0)
     moon_mapped = MappedPosition(moon_position)
 
-    res = generate_dasas(moon_mapped, DasaLevel.Bhukti)
+    res = generate_dasas(moon_mapped, DasaLevel.Pratyantar)
     print(moon_mapped.sidereal_lon)
     print(moon_mapped.sidereal_pos)
     print(moon_mapped.nakshatra.name)

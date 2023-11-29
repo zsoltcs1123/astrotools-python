@@ -17,16 +17,20 @@ def _generate_str(
         str += f"\nHouse System: {horoscope.config.house_system}"
         str += f"\nCoordinate System: {horoscope.config.coord_system}"
         str += "\n\nPoints:\n--------\n"
-        str += "{:<10}{:<3}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format(
-            "Name",
-            "",
-            "Tropical",
-            "House",
-            "Ruler",
-            "Term",
-            "Tarot",
-            "Sidereal",
-            "Ruler",
+        str += (
+            "{:<10}{:<3}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<20}{:<10}".format(
+                "Name",
+                "",
+                "Tropical",
+                "House",
+                "Ruler",
+                "Term",
+                "Tarot",
+                "Sidereal",
+                "Lord",
+                "Star",
+                "Star Lord",
+            )
         )
         for point in horoscope.points:
             if point.base_position.name in points_filter:
@@ -41,9 +45,9 @@ def _generate_str(
                 f"{point.term.name:<10}"
                 f"{point.decan.name:<10}"
                 f"{point.sidereal_pos:<10}"
-                f"{point.sidereal_sign.vedic_ruler:<10}"
-                # f"{point.nakshatra.name:<20}"
-                # f"{point.nakshatra.lord:<10}"
+                f"{point.sidereal_sign.vedic_lord:<10}"
+                f"{point.nakshatra.name:<20}"
+                f"{point.nakshatra.lord:<10}"
             )
 
         str += "\n\nAspects:\n--------"

@@ -6,6 +6,8 @@ MOON = "moon"
 MEAN_NODE = "MEAN_NODE"
 ASC = "asc"
 MC = "mc"
+SUN = "sun"
+MOON = "moon"
 
 PLANETS = [
     "sun",
@@ -25,6 +27,8 @@ NODES = [NN, SN]
 
 ANGULARS = [ASC, MC]
 
+LUMINARIES = [SUN, MOON]
+
 
 PLANETS_MAP = {
     "mercury": 1,
@@ -39,8 +43,9 @@ PLANETS_MAP = {
 }
 
 ALL_POINTS = PLANETS + NODES
+VEDIC_POINTS = NODES + [p for p in PLANETS if p not in ["uranus", "neptune", "pluto"]]
 
-POINTS_NO_MOON = [planet for planet in PLANETS if planet != MOON] + [NN]
+POINTS_NO_MOON = [p for p in PLANETS if p != MOON] + [NN]
 
 
 def get_default_angle_targets(point: str) -> List[str]:
