@@ -19,24 +19,24 @@ class VedicAttributes:
     def __init__(self, base_position: BasePosition):
         self._base_position = base_position
         self.lon = self._calculate_sidereal_lon()
-        self.position = zd.degree_to_zodiacal(base_position.lon)
-        self.sign = zd.map_sign(self.lon.dec)
+        self.position = zd.degree_to_zodiacal(self.lon)
+        self.sign = zd.map_sign(self.lon.decimal)
         self.sign_ruler = self.sign.vedic_ruler
-        self.nakshatra = zd.map_nakshatra(self.lon.dec)
+        self.nakshatra = zd.map_nakshatra(self.lon.decimal)
         self.nakshatra_ruler = self.nakshatra.ruler
 
     def house(self, cusps: List[float] = None) -> int:
         if cusps is None:
             return self.sign.id
 
-        return zd.calculate_house(self.lon.dec)
+        return zd.calculate_house(self.lon.decimal, cusps)
 
     # TODO Lahiri hardcoded
     def _calculate_sidereal_lon(self) -> Degree:
         ayanamsa = swe_api.get_ayanamsha(
             self._base_position.dt.year, self._base_position.dt.month, "LAHIRI"
         )
-        subtracted = self._base_position.lon.dec - ayanamsa
+        subtracted = self._base_position.lon.decimal - ayanamsa
         if subtracted < 0:
             subtracted = 360 + subtracted
         return Degree.from_decimal(subtracted)

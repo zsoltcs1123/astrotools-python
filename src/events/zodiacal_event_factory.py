@@ -45,10 +45,6 @@ class ZodiacalEventFactory:
                     self.check_functions.append(
                         ZodiacalEventFactory._check_direction_change
                     )
-                elif event_type == TropicalProgression:
-                    self.check_functions.append(
-                        ZodiacalEventFactory._get_tropical_progressions
-                    )
         self.event_types = event_types
 
     @staticmethod
@@ -96,16 +92,16 @@ class ZodiacalEventFactory:
     def _get_tropical_progressions(self, mps: List[mp]) -> List[AstroEvent]:
         events = []
         for mp in mps:
-            if integral_ends_with(5, mp.tropical.lon.dec):
+            if integral_ends_with(5, mp.tropical.lon.decimal):
                 events.append(TropicalProgression(mp.dt, mp, "50%"))
-            elif integral_ends_with(7, mp.tropical.lon.dec):
+            elif integral_ends_with(7, mp.tropical.lon.decimal):
                 events.append(TropicalProgression(mp.dt, mp, "70%"))
-            elif integral_ends_with(3, mp.tropical.lon.dec):
+            elif integral_ends_with(3, mp.tropical.lon.decimal):
                 events.append(TropicalProgression(mp.dt, mp, "30%"))
 
-        groups = group_by(events, lambda x: int(x.mp.tropical.lon.dec))
+        groups = group_by(events, lambda x: int(x.mp.tropical.lon.decimal))
 
-        closest = find_smallest_elements(groups, lambda x: x.mp.tropical.lon.dec)
+        closest = find_smallest_elements(groups, lambda x: x.mp.tropical.lon.decimal)
 
         filtered_closest = {
             k: v

@@ -22,11 +22,11 @@ class PositionFactory:
 
     def _south_node(self, dt: dt) -> BasePosition:
         nn = self._north_node(dt)
-        lon = (nn.lon.dec + 180.0) % 360
+        lon = (nn.lon.decimal + 180.0) % 360
         lat = 0
-        speed = -nn.speed.dec
-        ra = (nn.ra.dec + 12.0) % 24.0
-        dec = -nn.dec.dec
+        speed = -nn.speed.decimal
+        ra = (nn.ra.decimal + 12.0) % 24.0
+        dec = -nn.dec.decimal
         return BasePosition(dt, SN, lon, lat, speed, ra, dec)
 
     def create_position(self, point: str, dt: dt) -> BasePosition:

@@ -43,22 +43,24 @@ PLANETS_MAP = {
 }
 
 ALL_POINTS = PLANETS + NODES
-VEDIC_POINTS = NODES + [p for p in PLANETS if p not in ["uranus", "neptune", "pluto"]]
+VEDIC_POINTS = [p for p in PLANETS if p not in ["uranus", "neptune", "pluto"]] + NODES
 
 POINTS_NO_MOON = [p for p in PLANETS if p != MOON] + [NN]
 
 
 def get_default_angle_targets(point: str) -> List[str]:
-    if point == "sun" or point == "moon":
+    if point == SUN or point == MOON:
         return list(PLANETS_MAP.keys())
     elif point == SN:
         return []
+    elif point in ANGULARS:
+        return PLANETS + NODES
     else:
         return [k for k, v in PLANETS_MAP.items() if v > PLANETS_MAP[point]]
 
 
-def get_all_default_angle_targets() -> Dict[str, List[str]]:
+def get_all_default_angle_targets(points: List[str]) -> Dict[str, List[str]]:
     targets = {}
-    for p in ALL_POINTS:
-        targets[p] = get_default_angle_targets(p)
+    for p in points:
+        targets[p] = [p for p in get_default_angle_targets(p) if p in points]
     return targets

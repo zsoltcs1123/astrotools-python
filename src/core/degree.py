@@ -5,7 +5,7 @@ from dataclasses import dataclass
 @dataclass
 class Degree:
     dms: DMS
-    dec: float
+    decimal: float
 
     @classmethod
     def from_decimal(cls, dec: float):
@@ -17,9 +17,7 @@ class Degree:
     @classmethod
     def from_dms(cls, degrees: int, minutes: int, seconds: int):
         if degrees > 360 or minutes > 60 or seconds > 60:
-            raise ValueError(
-                f"Invalid degree values: {degrees}, {minutes}, {seconds}"
-            )
+            raise ValueError(f"Invalid degree values: {degrees}, {minutes}, {seconds}")
         dms = DMS(degrees, minutes, seconds)
         dec = cls._convert_from_zodiacal_to_decimal(dms)
         return cls(dms, dec)
@@ -28,8 +26,7 @@ class Degree:
     def _convert_from_zodiacal_to_decimal(zodiacal):
         sec = 0 if zodiacal.seconds == 0 else 60 / zodiacal.seconds
         min = zodiacal.minutes if sec == 0 else zodiacal.minutes + 1 / sec
-        degree = zodiacal.degrees if min == 0 else zodiacal.degrees + \
-            1 / (60 / min)
+        degree = zodiacal.degrees if min == 0 else zodiacal.degrees + 1 / (60 / min)
         return degree
 
     @staticmethod
@@ -57,4 +54,4 @@ class Degree:
         return Degree(deg, sixty_to_zero(min), sixty_to_zero(sec))
 
     def __str__(self):
-        return f"{self.dec:.3f}° [{self.dms}]"
+        return f"{self.decimal:.3f}° [{self.dms}]"

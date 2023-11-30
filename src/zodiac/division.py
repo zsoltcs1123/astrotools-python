@@ -32,11 +32,11 @@ class Nakshatra(Division):
 
 
 def degree_to_zodiacal(degrees: Degree) -> str:
-    sign_name = map_sign(degrees.dec).name
-    sign_nr = (int)(degrees.dec / 30)
-    deg = (int)(degrees.dec - sign_nr * 30)
+    sign_name = map_sign(degrees.decimal).name
+    sign_nr = (int)(degrees.decimal / 30)
+    deg = (int)(degrees.decimal - sign_nr * 30)
     mins = degrees.dms.minutes
-    return f"{deg}{sign_name[:3]}{mins}"
+    return f"{deg if deg >= 10 else f'0{deg}'}{sign_name[:3]}{mins if mins >= 10 else f'{mins}'}"
 
 
 def calculate_house(degrees: float, cusps: List[float]) -> int:

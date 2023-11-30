@@ -38,7 +38,7 @@ class OrbMap:
         return cls(cls._get_default_orbs())
 
     @classmethod
-    def orb_map(cls, orb: float):
+    def from_float(cls, orb: float):
         return cls(cls._generate_orbs(orb))
 
     def get_aspects_orbs(self, planet: str) -> Dict[AspectType, int]:

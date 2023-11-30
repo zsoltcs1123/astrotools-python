@@ -31,7 +31,7 @@ def generate_dasas(
 ) -> List[Dasa]:
     nakshatra = moon_position.vedic.nakshatra
     sidereal_lon = moon_position.vedic.lon
-    progress = nakshatra.degree_range.progress(sidereal_lon.dec)
+    progress = nakshatra.degree_range.progress(sidereal_lon.decimal)
 
     lord = nakshatra.ruler
     dasa_length = DASA_LENGTHS[lord]

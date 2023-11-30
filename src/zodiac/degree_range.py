@@ -18,7 +18,7 @@ class DegreeRange:
         return cls(Degree.from_decimal(start), Degree.from_decimal(end))
 
     def __contains__(self, value: float) -> bool:
-        return self.start.dec <= value < self.end.dec
+        return self.start.decimal <= value < self.end.decimal
 
     def progress(self, value: float) -> float:
-        return (value - self.start.dec) / (self.end.dec - self.start.dec)
+        return (value - self.start.decimal) / (self.end.decimal - self.start.decimal)

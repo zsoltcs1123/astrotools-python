@@ -23,7 +23,7 @@ def generate_nyc_horoscopes():
     local_end = tz.localize(end)
     utc_end = local_end.astimezone(pytz.utc)
 
-    config = HoroscopeConfig.default(lat, lon, f"NYC {local_start}")
+    config = HoroscopeConfig.default_tropical(lat, lon, f"NYC {local_start}")
     horoscope = create_horoscope(utc_start, config)
 
     print_horoscope_to_console(horoscope)
@@ -40,7 +40,7 @@ def me_horoscope():
     local_dt = tz.localize(dt)
     utc_dt = local_dt.astimezone(pytz.utc)
 
-    config = HoroscopeConfig.default(lat, lon, f"Zsolt {local_dt}")
+    config = HoroscopeConfig.default_tropical(lat, lon, f"Zsolt {local_dt}")
     horoscope = create_horoscope(utc_dt, config)
 
     print_horoscope_to_console(horoscope)
@@ -48,7 +48,7 @@ def me_horoscope():
 
 def aix_horoscope():
     utc_dt = datetime(2023, 9, 15, 4, 25, 47, tzinfo=pytz.utc)
-    config = HoroscopeConfig.default(0, 0, f"AIX {utc_dt}")
+    config = HoroscopeConfig.default_tropical(0, 0, f"AIX {utc_dt}")
     horoscope = create_horoscope(utc_dt, config)
 
     print_horoscope_to_console(horoscope)

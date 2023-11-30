@@ -1,9 +1,9 @@
 from datetime import datetime
-from core.base_position import BasePosition
 from core.position_factory import PositionFactory
-from events.astro_event import NakshatraChange, TropicalSignChange
+from events.astro_event import TropicalSignChange
 from objects.points import MEAN_NODE
 from out.file import to_text_file
+from tools.timeline.timeline_factory import create_timeline
 from tools.timeline.timeline_printer import TimelinePrinter
 from out.tv import generate_pivot_times
 from tools.timeline.timeline import Timeline
@@ -65,11 +65,11 @@ def mars():
 
 
 def timeline_sun():
-    start = datetime(2023, 8, 1)
+    start = datetime(2023, 11, 18)
     end = datetime(2023, 11, 21)
 
-    tcfg = TimelineConfig.default(start, end, ["sun"], zodiacal_events=[])
-    timeline = Timeline(tcfg)
+    tcfg = TimelineConfig.default(start, end, ["sun"])
+    timeline = create_timeline(tcfg)
 
     timeline_printer = TimelinePrinter(timeline)
 

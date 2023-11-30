@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import List
 from core import base_position
 from core.base_position import BasePosition
 from dataclasses import dataclass
@@ -10,11 +11,15 @@ from zodiac.vedic_attributes import VedicAttributes
 class MappedPosition:
     def __init__(self, base_position: BasePosition):
         self.base_position = base_position
-        self.retrograde = self.base_position.speed.dec < 0
-        self.stationary = self.base_position.speed.dec == 0
+        self.retrograde = self.base_position.speed.decimal < 0
+        self.stationary = self.base_position.speed.decimal == 0
         self.direction = "R" if self.retrograde else "S" if self.stationary else "D"
         self._tropical_attributes = None
         self._vedic_attributes = None
+
+    @classmethod
+    def from_planetary_positions(cls, planetary_positions: List[BasePosition]):
+        return [cls(position) for position in planetary_positions]
 
     @property
     def dt(self) -> datetime:
