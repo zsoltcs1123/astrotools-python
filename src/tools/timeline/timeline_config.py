@@ -47,13 +47,7 @@ class TimelineConfig:
         return TimelineConfig.default(
             start,
             end,
-            1,
             POINTS_NO_MOON,
-            MEAN_NODE,
-            DEFAULT_ZODIACAL_EVENTS,
-            DEFAULT_ASPECTS,
-            {},
-            OrbMap.default(0.001),
         )
 
     @classmethod

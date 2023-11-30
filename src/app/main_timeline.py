@@ -17,19 +17,19 @@ from zodiac.mapped_position import MappedPosition
 
 
 def timeline():
-    start = datetime(2023, 11, 22)
-    end = datetime(2023, 11, 23)
+    start = datetime(2023, 12, 2)
+    end = datetime(2023, 12, 12)
 
     timeline_config = TimelineConfig.default_no_moon(start, end)
-    timeline = Timeline(timeline_config)
+    timeline = create_timeline(timeline_config)
     timeline_printer = TimelinePrinter(timeline)
 
-    timeline_printer.print_to_console()
+    timeline_printer.print_to_file("timeline dec 2 - dec 12.txt")
 
 
 def timeline_tv_script():
-    start = datetime(2023, 11, 20)
-    end = datetime(2023, 11, 27)
+    start = datetime(2023, 12, 2)
+    end = datetime(2023, 12, 12)
 
     zodiacal_events = [
         event for event in DEFAULT_ZODIACAL_EVENTS if event != TropicalSignChange
@@ -77,4 +77,4 @@ def timeline_sun():
 
 
 if __name__ == "__main__":
-    measure(timeline_sun)
+    measure(timeline)

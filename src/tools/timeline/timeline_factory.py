@@ -32,6 +32,8 @@ def create_timeline(config: TimelineConfig):
     mps = _generate_positions(position_factory, config)
     zodiacal_events = _generate_zodiacal_events(zodiacal_event_factory, mps)
     angles = _generate_angles(position_factory, mps)
+
+    _logger.info(f"Calculating aspects...")
     aspects = aspect_finder.find_exact_aspects(angles)
 
     return Timeline(zodiacal_events + aspects)
@@ -42,6 +44,7 @@ def _generate_positions(
 ) -> Dict[str, List[mp]]:
     mps = {}
     for point in config.points:
+        _logger.info(f"Generating positions for {point}")
         bps = position_factory.create_positions(
             point, config.start, config.end, config.interval_minutes
         )
@@ -68,6 +71,7 @@ def _generate_angles(
     angles = []
     for p, mp_list in mps.items():
         targets = get_default_angle_targets(p)
+        _logger.info(f"Generating angles for {p}")
 
         for source_mp in mp_list:
             for t in targets:
