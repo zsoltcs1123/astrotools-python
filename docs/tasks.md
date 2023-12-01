@@ -1,4 +1,5 @@
 Current:
+- Implement vedic features
 
 TBD:
 - Refactor tranits to use factories
@@ -13,7 +14,6 @@ TBD:
 - Speed/declination snapshot
 - Event filtering
 - Investigate discrepancy vs Astrolog
-- Implement vimshottari
 - Implement sidereal planet strength
 
 Timeline:
@@ -44,3 +44,4 @@ Done:
 - Implement transits to a horoscope (basic)
 - Refactor horoscope
 - Add NN, SN
+- Implement vimshottari
