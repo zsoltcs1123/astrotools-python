@@ -1,0 +1,214 @@
+//@version=5
+indicator("Template",overlay=true, max_lines_count=500, max_boxes_count=500, max_labels_count=500)
+var int[] subLordBoundaryArray = array.from(timestamp("2023-11-20 01:55 UTC"),timestamp("2023-11-20 03:11 UTC"),timestamp("2023-11-20 04:49 UTC"),timestamp("2023-11-20 09:56 UTC"),timestamp("2023-11-20 21:26 UTC"),timestamp("2023-11-20 22:33 UTC"),timestamp("2023-11-20 23:03 UTC"),timestamp("2023-11-21 14:34 UTC"),timestamp("2023-11-21 14:38 UTC"),timestamp("2023-11-21 19:31 UTC"),timestamp("2023-11-21 19:31 UTC"),timestamp("2023-11-21 20:08 UTC"),timestamp("2023-11-21 21:27 UTC"),timestamp("2023-11-22 01:18 UTC"),timestamp("2023-11-22 14:03 UTC"),timestamp("2023-11-22 14:03 UTC"),timestamp("2023-11-22 14:03 UTC"),timestamp("2023-11-22 14:55 UTC"),timestamp("2023-11-22 22:37 UTC"),timestamp("2023-11-23 02:26 UTC"),timestamp("2023-11-23 09:47 UTC"),timestamp("2023-11-23 14:08 UTC"),timestamp("2023-11-23 22:42 UTC"),timestamp("2023-11-24 01:06 UTC"),timestamp("2023-11-24 04:24 UTC"),timestamp("2023-11-24 10:16 UTC"),timestamp("2023-11-24 10:16 UTC"),timestamp("2023-11-24 10:16 UTC"),timestamp("2023-11-24 16:01 UTC"),timestamp("2023-11-25 13:19 UTC"),timestamp("2023-11-25 23:19 UTC"),timestamp("2023-11-26 03:09 UTC"),timestamp("2023-11-26 04:47 UTC"),timestamp("2023-11-26 15:49 UTC"),timestamp("2023-11-26 21:28 UTC"),timestamp("2023-11-27 00:25 UTC"),timestamp("2023-11-27 01:34 UTC"),timestamp("2023-11-27 12:46 UTC"),timestamp("2023-11-27 13:27 UTC"),timestamp("2023-11-27 15:05 UTC"))
+var string[] subLordLabelArray = array.from("venus 30% progression at 13Lib0","sun NakshatraChange Vishakha -> Anuradha","mars 70% progression at 27Sco0","mercury 50% progression at 15Sag0","sun sextile [60] vs pluto","mars NakshatraChange Vishakha -> Anuradha","venus TermChange Mercury -> Jupiter","venus quintile [144] vs uranus","sun quintile [216] vs north node","mercury TermChange Venus -> Mercury","mercury 70% progression at 17Sag0","venus 50% progression at 15Lib0","north node 30% progression at 23Ari0","mars sextile [60] vs pluto","sun TropicalSignChange Scorpio -> Sagittarius","sun DecanChange 7C -> 8W","sun TermChange Saturn -> Jupiter","jupiter TermChange Mercury -> Venus","mars quintile [216] vs north node","mercury quintile [72] vs saturn","sun square [90] vs saturn","venus 70% progression at 17Lib0","mercury DecanChange 9W -> 10W","venus NakshatraChange Hasta -> Chitra","saturn NakshatraChange Dhanishta -> Shatabhisha","mars TropicalSignChange Scorpio -> Sagittarius","mars DecanChange 7C -> 8W","mars TermChange Saturn -> Jupiter","mercury TermChange Mercury -> Saturn","sun 30% progression at 03Sag0","mercury trine [240] vs north node","mercury 30% progression at 23Sag0","venus DecanChange 3S -> 4S","venus inconjunct [150] vs uranus","jupiter NakshatraChange Bharani -> Aswini","mercury NakshatraChange Jyeshtha -> Mula","venus TermChange Jupiter -> Venus","sun 50% progression at 05Sag0","mercury square [90] vs neptune","mercury 50% progression at 25Sag0")
+
+// Start boilerplate
+// Record the highest and lowest visible price for calculating levels
+var float highestHigh = -1.0
+var float lowestLow = 999999999.9
+var int firstIndex = 999999999
+var int lastIndex = 0
+
+var initialBoxHigh = 0
+var initialBoxLow = 999999999
+var initialPrice = 0.0
+
+// Function to update the high and low price values within the timestamp ranges defining the boxes
+calcHighLowBox(startTS, endTS, boxHigh, boxLow, i, boxHighArrayID, boxLowArrayID) =>
+    if time >= startTS
+        if boxHigh == initialBoxHigh
+            // Range's first bar
+            array.set(boxHighArrayID, i, high)
+        if boxLow == initialBoxLow
+            array.set(boxLowArrayID, i, low)
+            
+        if time <= endTS
+            if low < boxLow
+                array.set(boxLowArrayID, i, low)
+            if high > boxHigh
+                array.set(boxHighArrayID, i, high)
+
+
+calcHighLowLine(ts, lineHigh, lineLow, i, lineHighArrayID, lineLowArrayID, actualTSArrayID) =>
+    // Set the line high & low value to the first bar values after the timestamp
+    // ts = the time of where the line should be drawn
+    // time = the time of the current bar being drawn
+    // If we are on a daily interval, we adjust the ts to strip away the time information
+    adjusted_ts = ts
+    if timeframe.isdwm
+        adjusted_ts := timestamp(year(ts), month(ts), dayofmonth(ts), 0, 0, 0)
+
+    if time >= adjusted_ts
+        // This is the first bar after the timestamp of the line    
+        if lineHigh == initialBoxHigh
+            array.set(lineHighArrayID, i, high)
+            array.set(actualTSArrayID, i, time)
+        if lineLow == initialBoxLow
+            array.set(lineLowArrayID, i, low)
+
+            
+// Sets the prices for a vertical line that draws up from the high price
+// The high price of the line is 5% above the high of the bar
+// The low price of the line is the high of the bar
+calcLineAbove(ts, lineHigh, lineLow, i, lineHighArrayID, lineLowArrayID, actualTSArrayID) =>
+    // Set the line high & low value to the first bar values after the timestamp
+    // ts = the time of where the line should be drawn
+    // time = the time of the current bar being drawn
+    // If we are on a daily interval, we adjust the ts to strip away the time information
+    adjusted_ts = ts
+    if timeframe.isdwm
+        adjusted_ts := timestamp(year(ts), month(ts), dayofmonth(ts), 0, 0, 0)
+
+    if time >= adjusted_ts
+        // This is the first bar after the timestamp of the line    
+        if lineHigh == initialBoxHigh
+            array.set(lineHighArrayID, i, high * 1.05)
+            array.set(actualTSArrayID, i, time)
+        if lineLow == initialBoxLow
+            array.set(lineLowArrayID, i, high)
+
+// Sets the prices for a vertical line
+// The linePrice can be either the high of a bar or the low of a bar
+calcLine(ts, linePrice, i, linePriceArrayID, actualTSArrayID, useLow = false) =>
+    // Set the line high & low value to the first bar values after the timestamp
+    // ts = the time of where the line should be drawn
+    // time = the time of the current bar being drawn
+    // If we are on a daily interval, we adjust the ts to strip away the time information
+    adjusted_ts = ts
+    if timeframe.isdwm
+        adjusted_ts := timestamp(year(ts), month(ts), dayofmonth(ts), 0, 0, 0)
+
+    if time >= adjusted_ts
+        // This is the first bar after the timestamp of the line    
+        if linePrice == initialPrice
+            if useLow
+                array.set(linePriceArrayID, i, low)
+            else
+                array.set(linePriceArrayID, i, high)
+            array.set(actualTSArrayID, i, time)
+
+
+// Sets the prices for a vertical line that draws up from the high price
+// The high price of the line is the low of the bar
+// The low price of the line is 5% below the low of the bar
+calcLineBelow(ts, lineHigh, lineLow, i, lineHighArrayID, lineLowArrayID, actualTSArrayID) =>
+    // Set the line high & low value to the first bar values after the timestamp
+    // ts = the time of where the line should be drawn
+    // time = the time of the current bar being drawn
+    // If we are on a daily interval, we adjust the ts to strip away the time information
+    adjusted_ts = ts
+    if timeframe.isdwm
+        adjusted_ts := timestamp(year(ts), month(ts), dayofmonth(ts), 0, 0, 0)
+
+    if time >= adjusted_ts
+        // This is the first bar after the timestamp of the line    
+        if lineHigh == initialBoxHigh
+            array.set(lineHighArrayID, i, low)
+            array.set(actualTSArrayID, i, time)
+        if lineLow == initialBoxLow
+            array.set(lineLowArrayID, i, low * 0.95)
+
+// Sets the prices and timestamps for a label positioned above the high price of a bar
+// The percent above the high price of a bar is determined by pctAbove
+// pctAbove defaults to 2 pct above the high
+calcLabelAbove(ts, labelPrice, i, labelPriceArrayID, actualTSArrayID, pctAbove=1.01) =>
+    // Set the line high & low value to the first bar values after the timestamp
+    // ts = the time of where the line should be drawn
+    // time = the time of the current bar being drawn
+    // If we are on a daily interval, we adjust the ts to strip away the time information
+    adjusted_ts = ts
+    if timeframe.isdwm
+        adjusted_ts := timestamp(year(ts), month(ts), dayofmonth(ts), 0, 0, 0)
+
+    if time >= adjusted_ts
+        if labelPrice == initialPrice
+            // This is the first bar after the timestamp of the line
+            // And the label price hasn't been set yet
+            array.set(labelPriceArrayID, i, high * pctAbove)
+            array.set(actualTSArrayID, i, time)
+
+tfInMinutes(simple string tf = "") =>
+    float chartTf =
+      timeframe.multiplier * (
+      timeframe.isseconds ? 1. / 60             :
+      timeframe.isminutes ? 1.                  :
+      timeframe.isdaily   ? 60. * 24            :
+      timeframe.isweekly  ? 60. * 24 * 7        :
+      timeframe.ismonthly ? 60. * 24 * 30.4375  : na)
+    float result = tf == "" ? chartTf : request.security(syminfo.tickerid, tf, chartTf)
+
+// Once the price locations are set for lines in the past, we have to
+// set the prices and timestamps to use for lines in the future
+// This function updates the actualTSArrayID with the same TS from defaultTSArrayID
+// And it updates the linePriceArrayID with the default price
+setFutureLineTSPrice(i, linePriceArrayID, defaultTSArrayID, actualTSArrayID, defaultPrice) =>
+    if array.get(actualTSArrayID, i) == 0
+        // This is a future timestamp, so update the timestamp and label price
+        array.set(actualTSArrayID, i, array.get(defaultTSArrayID, i))
+        array.set(linePriceArrayID, i, defaultPrice)
+
+// Once the price locations are set for labels in the past, we have to
+// set the prices and timestamps to use for labels in the future
+// This function updates the actualTSArrayID with the same TS from defaultTSArrayID
+// And it updates the labelPriceArrayID with the default price
+setFutureLabelTSPriceAbove(i, labelPriceArrayID, defaultTSArrayID, actualTSArrayID, defaultPrice) =>
+    if array.get(actualTSArrayID, i) == 0
+        // This is a future timestamp, so update the timestamp and label price
+        array.set(actualTSArrayID, i, array.get(defaultTSArrayID, i))
+        array.set(labelPriceArrayID, i, defaultPrice)
+
+
+// For each bar, update the highestHigh and lowestLow if needed
+if low < lowestLow
+    lowestLow := low
+    
+if high > highestHigh
+    highestHigh := high
+    
+if barstate.isfirst  
+    firstIndex := bar_index
+    
+if barstate.islast
+    lastIndex := bar_index
+
+// Array of prices is where the labels for sub lord boundaries get located
+var float[] subLordLabelPriceArray = array.new_float(array.size(subLordBoundaryArray), initialPrice)
+var int[] subLordLabelActualTSArray = array.new_int(array.size(subLordLabelPriceArray), 0)
+
+labelSlots() => 
+    if tfInMinutes() <= 10
+        5
+    else if tfInMinutes() <= 30
+        10
+    else
+        10
+
+// Calculate the positions of the sub lord labels
+for i = 0 to array.size(subLordBoundaryArray) - 1
+    var float pctAbove = 1.0
+    if labelSlots() == 1
+        pctAbove := 1.01
+    else
+        pctAbove := 1.01 + ((i % labelSlots()) * 0.005)
+    calcLabelAbove(array.get(subLordBoundaryArray, i), array.get(subLordLabelPriceArray, i), i, subLordLabelPriceArray, subLordLabelActualTSArray, pctAbove=pctAbove)
+
+recentHigh = ta.highest(20)
+recentLow = ta.lowest(20)
+
+// Use the recentHigh and recentLow to set the future prices for the labels
+if barstate.islast
+    for i = 0 to array.size(subLordBoundaryArray) - 1
+        var float pctAbove = 1.0
+        if labelSlots() == 1
+            pctAbove := 1.01
+        else
+            pctAbove := 1 + ((i % labelSlots()) * 0.1)
+        setFutureLabelTSPriceAbove(i, subLordLabelPriceArray, subLordBoundaryArray, subLordLabelActualTSArray, recentHigh * pctAbove)
+
+if barstate.islast 
+    for i = 0 to array.size(subLordLabelArray) - 1
+        subLordLabelActualTS = array.get(subLordLabelActualTSArray, i)
+        subLordLabel = array.get(subLordLabelArray, i)
+        var background = color.rgb(184, 182, 177)
+        label.new(subLordLabelActualTS, array.get(subLordLabelPriceArray, i), array.get(subLordLabelArray, i), xloc=xloc.bar_time, color=background,size=size.small)

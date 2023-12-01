@@ -23,11 +23,17 @@ class TropicalSignChange(ZodiacalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tSign change\t{self.previous.tropical.sign.name} -> {self.current.tropical.sign.name}"
 
+    def label(self) -> str:
+        return f"{self.current.point} TropicalSignChange {self.previous.tropical.sign.name} -> {self.current.tropical.sign.name}"
+
 
 @dataclass
 class VedicSignChange(ZodiacalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tSign change\t{self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
+
+    def label(self) -> str:
+        return f"{self.current.point} VedicSignChange {self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
 
 
 @dataclass
@@ -35,11 +41,17 @@ class DecanChange(ZodiacalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tDecan change\t{self.previous.tropical.decan.name} -> {self.current.tropical.decan.name}"
 
+    def label(self) -> str:
+        return f"{self.current.point} DecanChange {self.previous.tropical.decan.name} -> {self.current.tropical.decan.name}"
+
 
 @dataclass
 class TermChange(ZodiacalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tTerm change\t{self.previous.tropical.term.name} -> {self.current.tropical.term.name}"
+
+    def label(self) -> str:
+        return f"{self.current.point} TermChange {self.previous.tropical.term.name} -> {self.current.tropical.term.name}"
 
 
 @dataclass
@@ -47,11 +59,17 @@ class NakshatraChange(ZodiacalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tNakshatra change\t{self.previous.vedic.nakshatra.name} -> {self.current.vedic.nakshatra.name}"
 
+    def label(self) -> str:
+        return f"{self.current.point} NakshatraChange {self.previous.vedic.nakshatra.name} -> {self.current.vedic.nakshatra.name}"
+
 
 @dataclass
 class DirectionChange(ZodiacalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tDirection change\t{self.previous.direction} -> {self.current.direction}"
+
+    def label(self) -> str:
+        return f"{self.current.point} DirectionChange {self.previous.direction} -> {self.current.direction}"
 
 
 @dataclass
@@ -61,3 +79,6 @@ class TropicalProgression(AstroEvent):
 
     def __repr__(self) -> str:
         return f"{self.dt}\t{self.mp.point}\t{self.name} progression at\t{self.mp.tropical.position}"
+
+    def label(self) -> str:
+        return f"{self.mp.point} {self.name} progression at {self.mp.tropical.position}"

@@ -5,7 +5,7 @@ from objects.points import MEAN_NODE
 from out.file import to_text_file
 from tools.timeline.timeline_factory import create_timeline
 from tools.timeline.timeline_printer import TimelinePrinter
-from out.tv import generate_pivot_times
+from out.tv import generate_astro_events_script, generate_pivot_times
 from tools.timeline.timeline import Timeline
 from tools.timeline.timeline_config import (
     DEFAULT_ASPECTS,
@@ -28,28 +28,16 @@ def timeline():
 
 
 def timeline_tv_script():
-    start = datetime(2023, 12, 2)
-    end = datetime(2023, 12, 12)
+    start = datetime(2023, 11, 20)
+    end = datetime(2023, 11, 28)
 
-    zodiacal_events = [
-        event for event in DEFAULT_ZODIACAL_EVENTS if event != TropicalSignChange
-    ]
-    timeline_config = TimelineConfig.default_no_moon(
-        start, end, DEFAULT_ASPECTS, zodiacal_events
+    timeline_config = TimelineConfig.default_no_moon(start, end)
+    timeline = create_timeline(timeline_config)
+
+    script = generate_astro_events_script(
+        timeline.events, "./src/app/resources/tv_template.txt"
     )
-    timeline = Timeline(timeline_config)
-
-    # Filter events where event.time is the same
-    unique_events = []
-    seen_times = set()
-    for event in timeline.events:
-        if event.dt not in seen_times:
-            unique_events.append(event)
-            seen_times.add(event.dt)
-
-    tv_timestamps = ", ".join([event.tv_timestamp() for event in unique_events])
-    script = generate_pivot_times("Pivot Times nov 20 - nov 27", tv_timestamps)
-    to_text_file("PT nov 20-nov 27.txt", script)
+    to_text_file("PT nov 27 - dec 5.txt", script)
 
 
 def mars():
@@ -77,4 +65,4 @@ def timeline_sun():
 
 
 if __name__ == "__main__":
-    measure(timeline)
+    measure(timeline_tv_script)
