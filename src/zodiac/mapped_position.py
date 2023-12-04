@@ -1,8 +1,9 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import List
-from core import base_position
 from core.base_position import BasePosition
 from dataclasses import dataclass
+from core.position_factory import create_position
+from objects.points import ASC, MC
 from zodiac.tropical_attributes import TropicalAttributes
 from zodiac.vedic_attributes import VedicAttributes
 
@@ -16,6 +17,7 @@ class MappedPosition:
         self.direction = "R" if self.retrograde else "S" if self.stationary else "D"
         self._tropical_attributes = None
         self._vedic_attributes = None
+        self.previous_bps = {}
 
     @classmethod
     def from_planetary_positions(cls, planetary_positions: List[BasePosition]):
@@ -40,3 +42,43 @@ class MappedPosition:
         if self._vedic_attributes is None:
             self._vedic_attributes = VedicAttributes(self.base_position)
         return self._vedic_attributes
+
+    @property
+    def daily_speed_index(self) -> str:
+        bp = self._get_previous_base_position()
+
+        if bp is None:
+            return ""
+
+        diff = round(self.base_position.speed.decimal - bp.speed.decimal, 4)
+
+        if diff > 0:
+            return "+"
+        elif diff < 0:
+            return "-"
+        else:
+            return "="
+
+    @property
+    def daily_declination_index(self) -> str:
+        bp = self._get_previous_base_position()
+
+        if bp is None:
+            return ""
+
+        diff = round(self.base_position.lon.decimal - bp.lon.decimal, 4)
+
+        if diff > 0:
+            return "+"
+        elif diff < 0:
+            return "-"
+        else:
+            return "="
+
+    def _get_previous_base_position(self, minutes=1440) -> BasePosition:
+        if self.base_position.point in [ASC, MC]:
+            return None
+
+        return self.previous_bps.get(self.point, None) or create_position(
+            self.point, self.dt - timedelta(minutes=minutes)
+        )

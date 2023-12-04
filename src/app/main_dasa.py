@@ -1,14 +1,12 @@
 from datetime import datetime
 from core import swisseph_api
 from core.base_position import BasePosition
-from core.position_factory import PositionFactory
 from timezonefinder import TimezoneFinder
 import pytz
+from core.position_factory import create_position
 from tools.dasa.dasa import DasaLevel
 from tools.dasa.dasa_factory import generate_dasas
 from tools.dasa.dasa_printer import print_dasas
-from tools.horoscope.horoscope_config import HoroscopeConfig
-from tools.horoscope.horoscope_factory import create_horoscope
 from util.geocoder import Geocoder
 from objects.points import MEAN_NODE, MOON
 from zodiac.mapped_position import MappedPosition
@@ -57,7 +55,7 @@ def me_dasa():
 
     utc_dt = datetime(2023, 9, 15, 16, 25, 47, tzinfo=pytz.utc)
 
-    moon_position = POSITION_FACTORY.create_position(MOON, utc_dt)
+    moon_position = create_position(MOON, utc_dt)
 
     moon_position = BasePosition(utc_dt, "moon", 7.669722, 0, 0, 0, 0)
     moon_mapped = MappedPosition(moon_position)

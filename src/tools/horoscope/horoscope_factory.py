@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Dict, List
 from core.angle import Angle
 from core.enums import HoroscopeType, HouseSystem
-from core.position_factory import PositionFactory
+from core.position_factory import create_position
 from events.aspect_finder import AspectFinder
 from objects.orb_map import OrbMap
 from objects.points import (
@@ -28,12 +28,12 @@ def create_horoscopes(
 
 
 def create_horoscope(dt: datetime, config: HoroscopeConfig) -> Horoscope:
-    position_factory, aspect_finder = _create_factories(config)
+    aspect_finder = _create_asp_finder(config)
     cusps, ascmc = (
         _calculate_cusps_ascmc(dt, config) if ASC or MC in config.points else ([], [])
     )
 
-    mps = _generate_positions(dt, position_factory, config, ascmc)
+    mps = _generate_positions(dt, config, ascmc)
     angles = _generate_angles(mps)
     aspects = _generate_aspects(aspect_finder, angles)
 
@@ -57,20 +57,18 @@ def _transform_cusps(
         return [(asc_sign_start + i * 30) % 360 for i in range(12)]
 
 
-def _create_factories(config: HoroscopeConfig) -> tuple:
-    position_factory = PositionFactory(config.node_calc)
+def _create_asp_finder(config: HoroscopeConfig) -> AspectFinder:
     aspect_finder = None
 
     if config.aspects:
         orb_map = OrbMap.default()
         aspect_finder = AspectFinder(orb_map, config.aspects)
 
-    return (position_factory, aspect_finder)
+    return aspect_finder
 
 
 def _generate_positions(
     dt: datetime,
-    position_factory: PositionFactory,
     config: HoroscopeConfig,
     ascmc: tuple,
 ) -> List[mp]:
@@ -82,7 +80,7 @@ def _generate_positions(
         elif point == MC:
             pos = bp(dt, MC, ascmc[1], 0, 0, 0, 0)
         else:
-            pos = position_factory.create_position(point, dt)
+            pos = create_position(point, dt)
 
         mps.append(mp(pos))
     return mps

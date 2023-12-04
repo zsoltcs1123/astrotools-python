@@ -60,7 +60,7 @@ def _generate_str(
                 continue
             str += f"\n{k}\n-------"
             for asp in v:
-                str += f"\n{_get_aspect_str(horoscope.config.type, asp)}, {asp.type}"
+                str += f"\n{_get_aspect_str(horoscope.config.type, asp)}, {asp.type} ({asp.direction})"
             str += "\n"
 
         str += "---------------------\n\n\n"
@@ -69,9 +69,9 @@ def _generate_str(
 
 def _get_aspect_str(type: HoroscopeType, asp: Aspect):
     if type == HoroscopeType.TROPICAL:
-        return asp.angle.print_tropical_no_time()
+        return asp.print_tropical_no_time()
     elif type == HoroscopeType.VEDIC:
-        return asp.angle.print_vedic_no_time()
+        return asp.print_vedic_no_time()
 
 
 def _get_headers(type: HoroscopeType):
@@ -93,7 +93,7 @@ def _get_values(type: HoroscopeType):
 
 
 def _get_tropical_headers() -> str:
-    return "{:<10}{:<3}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format(
+    return "{:<10}{:<3}{:<10}{:<10}{:<10}{:<10}{:<10}{:<15}{:<15}".format(
         "Name",
         "",
         "Position",
@@ -120,8 +120,8 @@ def _get_tropical_values(horoscope: Horoscope, points_filter: List[str] = []) ->
             f"{mp.tropical.sign_ruler:<10}"
             f"{mp.tropical.term.name:<10}"
             f"{mp.tropical.decan.name:<10}"
-            f"{mp.base_position.speed.str_decimal():<10}"
-            f"{mp.base_position.dec.str_decimal():<10}"
+            f"{f'{mp.base_position.speed.str_decimal()} ({mp.daily_speed_index})':<15}"
+            f"{f'{mp.base_position.dec.str_decimal()} ({mp.daily_declination_index})':<15}"
         )
     return str
 
