@@ -5,28 +5,26 @@ from timezonefinder import TimezoneFinder
 from objects.points import ALL_POINTS
 from tools.horoscope.horoscope_config import HoroscopeConfig
 from util.geocoder import Geocoder
-from tools.horoscope.horoscope_factory import create_horoscope
-from tools.horoscope.horoscope_printer import print_horoscope_to_console
+from tools.horoscope.horoscope_factory import create_horoscope, create_horoscopes
+from tools.horoscope.horoscope_printer import (
+    print_horoscope_to_console,
+    print_horoscopes_to_file,
+)
 
 
 def generate_nyc_horoscopes():
-    start = datetime(2023, 11, 22, 9, 30)
-    end = datetime(2023, 11, 13, 9, 30)
+    start = datetime(2023, 12, 3, 14, 30, tzinfo=pytz.utc)
+    end = datetime(2023, 12, 31, 14, 30, tzinfo=pytz.utc)
 
     geocoder = Geocoder("ca667b3bd3ba943ee0ba411a150d443f")
     lat, lon = geocoder.get_lat_lon("New York", "USA")
-    tf = TimezoneFinder()
-    tz_name = tf.certain_timezone_at(lng=lon, lat=lat)
+
+    tz_name = TimezoneFinder().certain_timezone_at(lng=lon, lat=lat)
     tz = pytz.timezone(tz_name)
-    local_start = tz.localize(start)
-    utc_start = local_start.astimezone(pytz.utc)
-    local_end = tz.localize(end)
-    utc_end = local_end.astimezone(pytz.utc)
+    config = HoroscopeConfig.default_tropical(lat, lon, f"NYC {start.astimezone(tz)}")
+    horoscopes = create_horoscopes(start, end, 1440, config)
 
-    config = HoroscopeConfig.default_tropical(lat, lon, f"NYC {local_start}")
-    horoscope = create_horoscope(utc_start, config)
-
-    print_horoscope_to_console(horoscope)
+    print_horoscopes_to_file(horoscopes, "nyc_horoscopes_dec_3_dec_30.txt")
 
 
 def me_horoscope():
@@ -55,4 +53,4 @@ def aix_horoscope():
 
 
 if __name__ == "__main__":
-    me_horoscope()
+    generate_nyc_horoscopes()

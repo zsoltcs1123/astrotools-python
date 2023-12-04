@@ -55,3 +55,6 @@ class Degree:
 
     def __str__(self):
         return f"{self.decimal:.3f}° [{self.dms}]"
+
+    def str_decimal(self):
+        return f"{self.decimal:.3f}°"

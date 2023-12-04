@@ -1,6 +1,6 @@
 from datetime import datetime
 from core.position_factory import PositionFactory
-from events.astro_event import TropicalSignChange
+from events.astro_event import NakshatraChange, TermChange, TropicalSignChange
 from objects.points import MEAN_NODE
 from out.file import to_text_file
 from tools.timeline.timeline_factory import create_timeline
@@ -28,10 +28,14 @@ def timeline():
 
 
 def timeline_tv_script():
-    start = datetime(2023, 11, 20)
-    end = datetime(2023, 11, 28)
+    start = datetime(2023, 11, 28)
+    end = datetime(2023, 12, 11)
 
-    timeline_config = TimelineConfig.default_no_moon(start, end)
+    zodiacal_events = [
+        e for e in DEFAULT_ZODIACAL_EVENTS if e not in [TermChange, NakshatraChange]
+    ]
+
+    timeline_config = TimelineConfig.default_no_moon(start, end, zodiacal_events)
     timeline = create_timeline(timeline_config)
 
     script = generate_astro_events_script(

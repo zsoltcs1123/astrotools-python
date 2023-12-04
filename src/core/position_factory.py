@@ -24,7 +24,7 @@ class PositionFactory:
         nn = self._north_node(dt)
         lon = (nn.lon.decimal + 180.0) % 360
         lat = 0
-        speed = -nn.speed.decimal
+        speed = nn.speed.decimal
         ra = (nn.ra.decimal + 12.0) % 24.0
         dec = -nn.dec.decimal
         return BasePosition(dt, SN, lon, lat, speed, ra, dec)

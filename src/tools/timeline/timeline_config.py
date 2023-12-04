@@ -43,12 +43,9 @@ class TimelineConfig:
         cls,
         start: dt,
         end: dt,
+        zodiacal_events: List[type] = DEFAULT_ZODIACAL_EVENTS,
     ) -> "TimelineConfig":
-        return TimelineConfig.default(
-            start,
-            end,
-            POINTS_NO_MOON,
-        )
+        return TimelineConfig.default(start, end, POINTS_NO_MOON, zodiacal_events)
 
     @classmethod
     def default(
@@ -56,6 +53,7 @@ class TimelineConfig:
         start: dt,
         end: dt,
         points: List[str] = ALL_POINTS,
+        zodiacal_events: List[type] = DEFAULT_ZODIACAL_EVENTS,
         angle_targets: Dict[str, List[str]] = {},
     ) -> "TimelineConfig":
         if not angle_targets:
@@ -69,7 +67,7 @@ class TimelineConfig:
             1,
             points,
             MEAN_NODE,
-            DEFAULT_ZODIACAL_EVENTS,
+            zodiacal_events,
             DEFAULT_ASPECTS,
             angle_targets,
             OrbMap.from_float(0.001),

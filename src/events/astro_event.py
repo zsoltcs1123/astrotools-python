@@ -60,7 +60,7 @@ class NakshatraChange(ZodiacalEvent):
         return f"{self.current.dt}\t{self.current.point}\tNakshatra change\t{self.previous.vedic.nakshatra.name} -> {self.current.vedic.nakshatra.name}"
 
     def label(self) -> str:
-        return f"{self.current.point} NakshatraChange {self.previous.vedic.nakshatra.name} -> {self.current.vedic.nakshatra.name}"
+        return f"{self.current.point} NakshatraChange {self.previous.vedic.nakshatra.name}[{self.previous.vedic.nakshatra.ruler}] -> {self.current.vedic.nakshatra.name}[{self.current.vedic.nakshatra.ruler}]"
 
 
 @dataclass

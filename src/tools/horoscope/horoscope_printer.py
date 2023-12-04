@@ -93,14 +93,16 @@ def _get_values(type: HoroscopeType):
 
 
 def _get_tropical_headers() -> str:
-    return "{:<10}{:<3}{:<10}{:<10}{:<10}{:<10}{:<10}".format(
+    return "{:<10}{:<3}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format(
         "Name",
         "",
         "Position",
         "House",
         "Ruler",
-        "Tarot",
         "Term",
+        "Tarot",
+        "Speed",
+        "Declination",
     )
 
 
@@ -116,8 +118,10 @@ def _get_tropical_values(horoscope: Horoscope, points_filter: List[str] = []) ->
             f"{mp.tropical.position:<10}"
             f"{mp.tropical.house(horoscope.cusps):<10}"
             f"{mp.tropical.sign_ruler:<10}"
-            f"{mp.tropical.decan.name:<10}"
             f"{mp.tropical.term.name:<10}"
+            f"{mp.tropical.decan.name:<10}"
+            f"{mp.base_position.speed.str_decimal():<10}"
+            f"{mp.base_position.dec.str_decimal():<10}"
         )
     return str
 
