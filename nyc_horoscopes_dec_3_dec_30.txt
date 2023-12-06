@@ -10,18 +10,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          13Cap37   1         Saturn    Jupiter   3P        0.000° ()      0.000° ()      
 mc           08Sco19   10        Pluto     Venus     5C        0.000° ()      0.000° ()      
-sun          11Sag9    11        Jupiter   Jupiter   9W        1.014° (+)     -22.113° (+)   
-moon         23Leo23   7         Sun       Mercury   7W        11.915° (-)    17.935° (+)    
+sun          11Sag9    11        Jupiter   Jupiter   9W        1.014° (+)     -22.113° (-)   
+moon         23Leo23   7         Sun       Mercury   7W        11.915° (-)    17.935° (-)    
 mercury      02Cap16   12        Saturn    Mercury   2P        1.084° (-)     -25.706° (+)   
-venus        28Lib36   9         Venus     Mars      4S        1.172° (+)     -8.926° (+)    
-mars         06Sag33   11        Jupiter   Jupiter   8W        0.719° (+)     -21.670° (+)   
+venus        28Lib36   9         Venus     Mars      4S        1.172° (+)     -8.926° (-)    
+mars         06Sag33   11        Jupiter   Jupiter   8W        0.719° (+)     -21.670° (-)   
 jupiter    R 06Tau51   3         Venus     Venus     5P        -0.090° (+)    12.555° (-)    
 saturn       01Pis15   2         Neptune   Venus     8C        0.050° (+)     -12.597° (+)   
 uranus     R 20Tau15   4         Venus     Jupiter   7P        -0.038° (+)    17.506° (-)    
 neptune    R 24Pis53   2         Neptune   Mars      10C       -0.002° (+)    -3.181° (-)    
 pluto        28Cap33   1         Saturn    Mars      4P        0.024° (+)     -23.137° (+)   
 north node R 22Ari22   3         Mars      Mars      4W        -0.053° (=)    8.711° (-)     
-south node R 22Lib22   9         Venus     Venus     4S        -0.053° (=)    -8.711° (-)    
+south node R 22Lib22   9         Venus     Venus     4S        -0.053° (=)    -8.711° (+)    
 
 Aspects:
 --------
@@ -84,18 +84,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          14Cap39   1         Saturn    Venus     3P        0.000° ()      0.000° ()      
 mc           09Sco19   10        Pluto     Venus     5C        0.000° ()      0.000° ()      
-sun          12Sag9    11        Jupiter   Venus     9W        1.014° (+)     -22.250° (+)   
-moon         05Vir15   8         Mercury   Mercury   8P        11.833° (-)    13.160° (+)    
+sun          12Sag9    11        Jupiter   Venus     9W        1.014° (+)     -22.250° (-)   
+moon         05Vir15   8         Mercury   Mercury   8P        11.833° (-)    13.160° (-)    
 mercury      03Cap19   12        Saturn    Mercury   2P        1.023° (-)     -25.609° (+)   
-venus        29Lib47   9         Venus     Mars      4S        1.175° (+)     -9.325° (+)    
-mars         07Sag17   11        Jupiter   Jupiter   8W        0.720° (+)     -21.800° (+)   
+venus        29Lib47   9         Venus     Mars      4S        1.175° (+)     -9.325° (-)    
+mars         07Sag17   11        Jupiter   Jupiter   8W        0.720° (+)     -21.800° (-)   
 jupiter    R 06Tau46   3         Venus     Venus     5P        -0.087° (+)    12.530° (-)    
 saturn       01Pis18   2         Neptune   Venus     8C        0.051° (+)     -12.577° (+)   
 uranus     R 20Tau13   4         Venus     Jupiter   7P        -0.038° (+)    17.497° (-)    
-neptune    R 24Pis53   2         Neptune   Mars      10C       -0.001° (+)    -3.181° (-)    
+neptune    R 24Pis53   2         Neptune   Mars      10C       -0.001° (+)    -3.181° (=)    
 pluto        28Cap35   1         Saturn    Mars      4P        0.024° (+)     -23.133° (+)   
 north node R 22Ari19   3         Mars      Mars      4W        -0.053° (=)    8.691° (-)     
-south node R 22Lib19   9         Venus     Venus     4S        -0.053° (=)    -8.691° (-)    
+south node R 22Lib19   9         Venus     Venus     4S        -0.053° (=)    -8.691° (+)    
 
 Aspects:
 --------
@@ -156,18 +156,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          15Cap41   1         Saturn    Venus     3P        0.000° ()      0.000° ()      
 mc           10Sco19   10        Pluto     Venus     6C        0.000° ()      0.000° ()      
-sun          13Sag10   11        Jupiter   Venus     9W        1.015° (+)     -22.380° (+)   
-moon         17Vir5    8         Mercury   Jupiter   9P        11.838° (+)    7.923° (+)     
+sun          13Sag10   11        Jupiter   Venus     9W        1.015° (+)     -22.380° (-)   
+moon         17Vir5    8         Mercury   Jupiter   9P        11.838° (+)    7.923° (-)     
 mercury      04Cap18   12        Saturn    Mercury   2P        0.952° (-)     -25.489° (+)   
-venus        00Sco57   9         Pluto     Mars      5C        1.177° (+)     -9.722° (+)    
-mars         08Sag0    11        Jupiter   Jupiter   8W        0.721° (+)     -21.928° (+)   
+venus        00Sco57   9         Pluto     Mars      5C        1.177° (+)     -9.722° (-)    
+mars         08Sag0    11        Jupiter   Jupiter   8W        0.721° (+)     -21.928° (-)   
 jupiter    R 06Tau41   3         Venus     Venus     5P        -0.084° (+)    12.506° (-)    
 saturn       01Pis21   2         Neptune   Venus     8C        0.053° (+)     -12.557° (+)   
 uranus     R 20Tau11   4         Venus     Jupiter   7P        -0.037° (+)    17.487° (-)    
-neptune    R 24Pis53   2         Neptune   Mars      10C       -0.001° (+)    -3.181° (-)    
+neptune    R 24Pis53   2         Neptune   Mars      10C       -0.001° (+)    -3.181° (+)    
 pluto        28Cap36   1         Saturn    Mars      4P        0.025° (+)     -23.128° (+)   
 north node R 22Ari16   3         Mars      Mars      4W        -0.053° (=)    8.671° (-)     
-south node R 22Lib16   9         Venus     Venus     4S        -0.053° (=)    -8.671° (-)    
+south node R 22Lib16   9         Venus     Venus     4S        -0.053° (=)    -8.671° (+)    
 
 Aspects:
 --------
@@ -226,18 +226,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          16Cap43   1         Saturn    Venus     3P        0.000° ()      0.000° ()      
 mc           11Sco19   10        Pluto     Mercury   6C        0.000° ()      0.000° ()      
-sun          14Sag11   11        Jupiter   Venus     9W        1.015° (+)     -22.502° (+)   
-moon         28Vir58   8         Mercury   Saturn    10P       11.930° (+)    2.385° (+)     
+sun          14Sag11   11        Jupiter   Venus     9W        1.015° (+)     -22.502° (-)   
+moon         28Vir58   8         Mercury   Saturn    10P       11.930° (+)    2.385° (-)     
 mercury      05Cap13   12        Saturn    Mercury   2P        0.871° (-)     -25.348° (+)   
-venus        02Sco8    9         Pluto     Mars      5C        1.179° (+)     -10.117° (+)   
-mars         08Sag43   11        Jupiter   Jupiter   8W        0.722° (+)     -22.051° (+)   
+venus        02Sco8    9         Pluto     Mars      5C        1.179° (+)     -10.117° (-)   
+mars         08Sag43   11        Jupiter   Jupiter   8W        0.722° (+)     -22.051° (-)   
 jupiter    R 06Tau36   3         Venus     Venus     5P        -0.081° (+)    12.483° (-)    
 saturn       01Pis24   2         Neptune   Venus     8C        0.054° (+)     -12.536° (+)   
 uranus     R 20Tau8    4         Venus     Jupiter   7P        -0.037° (+)    17.477° (-)    
-neptune      24Pis53   2         Neptune   Mars      10C       0.000° (+)     -3.180° (-)    
+neptune      24Pis53   2         Neptune   Mars      10C       0.000° (+)     -3.180° (+)    
 pluto        28Cap38   1         Saturn    Mars      4P        0.025° (+)     -23.123° (+)   
 north node R 22Ari13   3         Mars      Mars      4W        -0.053° (=)    8.652° (-)     
-south node R 22Lib13   9         Venus     Venus     4S        -0.053° (=)    -8.652° (-)    
+south node R 22Lib13   9         Venus     Venus     4S        -0.053° (=)    -8.652° (+)    
 
 Aspects:
 --------
@@ -299,18 +299,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          17Cap46   1         Saturn    Venus     3P        0.000° ()      0.000° ()      
 mc           12Sco19   10        Pluto     Mercury   6C        0.000° ()      0.000° ()      
-sun          15Sag12   11        Jupiter   Venus     9W        1.015° (+)     -22.618° (+)   
-moon         10Lib58   8         Venus     Mercury   3S        12.110° (+)    -3.304° (+)    
+sun          15Sag12   11        Jupiter   Venus     9W        1.015° (+)     -22.618° (-)   
+moon         10Lib58   8         Venus     Mercury   3S        12.110° (+)    -3.304° (-)    
 mercury      06Cap3    12        Saturn    Mercury   2P        0.780° (-)     -25.188° (+)   
-venus        03Sco19   9         Pluto     Mars      5C        1.181° (+)     -10.509° (+)   
-mars         09Sag26   11        Jupiter   Jupiter   8W        0.723° (+)     -22.172° (+)   
+venus        03Sco19   9         Pluto     Mars      5C        1.181° (+)     -10.509° (-)   
+mars         09Sag26   11        Jupiter   Jupiter   8W        0.723° (+)     -22.172° (-)   
 jupiter    R 06Tau31   3         Venus     Venus     5P        -0.079° (+)    12.461° (-)    
 saturn       01Pis27   1         Neptune   Venus     8C        0.056° (+)     -12.515° (+)   
 uranus     R 20Tau6    4         Venus     Jupiter   7P        -0.036° (+)    17.468° (-)    
 neptune      24Pis53   2         Neptune   Mars      10C       0.001° (+)     -3.180° (+)    
 pluto        28Cap39   1         Saturn    Mars      4P        0.025° (+)     -23.119° (+)   
 north node R 22Ari10   3         Mars      Mars      4W        -0.053° (=)    8.632° (-)     
-south node R 22Lib10   9         Venus     Venus     4S        -0.053° (=)    -8.632° (-)    
+south node R 22Lib10   9         Venus     Venus     4S        -0.053° (=)    -8.632° (+)    
 
 Aspects:
 --------
@@ -371,18 +371,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          18Cap50   1         Saturn    Venus     3P        0.000° ()      0.000° ()      
 mc           13Sco19   10        Pluto     Mercury   6C        0.000° ()      0.000° ()      
-sun          16Sag13   11        Jupiter   Venus     9W        1.016° (+)     -22.726° (+)   
-moon         23Lib12   9         Venus     Venus     4S        12.369° (+)    -8.981° (+)    
+sun          16Sag13   11        Jupiter   Venus     9W        1.016° (+)     -22.726° (-)   
+moon         23Lib12   9         Venus     Venus     4S        12.369° (+)    -8.981° (-)    
 mercury      06Cap46   12        Saturn    Mercury   2P        0.675° (-)     -25.008° (+)   
-venus        04Sco30   9         Pluto     Mars      5C        1.183° (+)     -10.899° (+)   
-mars         10Sag10   11        Jupiter   Jupiter   9W        0.723° (+)     -22.289° (+)   
+venus        04Sco30   9         Pluto     Mars      5C        1.183° (+)     -10.899° (-)   
+mars         10Sag10   11        Jupiter   Jupiter   9W        0.723° (+)     -22.289° (-)   
 jupiter    R 06Tau26   3         Venus     Venus     5P        -0.076° (+)    12.440° (-)    
 saturn       01Pis31   1         Neptune   Venus     8C        0.057° (+)     -12.493° (+)   
 uranus     R 20Tau4    4         Venus     Jupiter   7P        -0.036° (+)    17.458° (-)    
 neptune      24Pis53   2         Neptune   Mars      10C       0.001° (+)     -3.179° (+)    
 pluto        28Cap41   1         Saturn    Mars      4P        0.025° (+)     -23.114° (+)   
 north node R 22Ari6    3         Mars      Mars      4W        -0.053° (=)    8.612° (-)     
-south node R 22Lib6    9         Venus     Venus     4S        -0.053° (=)    -8.612° (-)    
+south node R 22Lib6    9         Venus     Venus     4S        -0.053° (=)    -8.612° (+)    
 
 Aspects:
 --------
@@ -442,18 +442,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          19Cap55   1         Saturn    Venus     3P        0.000° ()      0.000° ()      
 mc           14Sco19   10        Pluto     Mercury   6C        0.000° ()      0.000° ()      
-sun          17Sag14   11        Jupiter   Mercury   9W        1.016° (+)     -22.826° (+)   
-moon         05Sco44   9         Pluto     Mars      5C        12.691° (+)    -14.446° (+)   
+sun          17Sag14   11        Jupiter   Mercury   9W        1.016° (+)     -22.826° (-)   
+moon         05Sco44   9         Pluto     Mars      5C        12.691° (+)    -14.446° (-)   
 mercury      07Cap23   12        Saturn    Jupiter   2P        0.558° (-)     -24.811° (+)   
-venus        05Sco41   9         Pluto     Mars      5C        1.185° (+)     -11.287° (+)   
-mars         10Sag53   11        Jupiter   Jupiter   9W        0.724° (+)     -22.403° (+)   
+venus        05Sco41   9         Pluto     Mars      5C        1.185° (+)     -11.287° (-)   
+mars         10Sag53   11        Jupiter   Jupiter   9W        0.724° (+)     -22.403° (-)   
 jupiter    R 06Tau22   3         Venus     Venus     5P        -0.072° (+)    12.420° (-)    
 saturn       01Pis34   1         Neptune   Venus     8C        0.059° (+)     -12.471° (+)   
 uranus     R 20Tau2    4         Venus     Jupiter   7P        -0.036° (+)    17.449° (-)    
 neptune      24Pis53   2         Neptune   Mars      10C       0.002° (+)     -3.178° (+)    
 pluto        28Cap42   1         Saturn    Mars      4P        0.026° (+)     -23.109° (+)   
 north node R 22Ari3    3         Mars      Mars      4W        -0.053° (=)    8.592° (-)     
-south node R 22Lib3    9         Venus     Venus     4S        -0.053° (=)    -8.592° (-)    
+south node R 22Lib3    9         Venus     Venus     4S        -0.053° (=)    -8.592° (+)    
 
 Aspects:
 --------
@@ -512,18 +512,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          21Cap0    1         Saturn    Venus     4P        0.000° ()      0.000° ()      
 mc           15Sco18   10        Pluto     Mercury   6C        0.000° ()      0.000° ()      
-sun          18Sag15   11        Jupiter   Mercury   9W        1.016° (+)     -22.920° (+)   
-moon         18Sco36   10        Pluto     Mercury   6C        13.055° (+)    -19.438° (+)   
+sun          18Sag15   11        Jupiter   Mercury   9W        1.016° (+)     -22.920° (-)   
+moon         18Sco36   10        Pluto     Mercury   6C        13.055° (+)    -19.438° (-)   
 mercury      07Cap53   12        Saturn    Jupiter   2P        0.426° (-)     -24.597° (+)   
-venus        06Sco52   9         Pluto     Mars      5C        1.187° (+)     -11.671° (+)   
-mars         11Sag37   11        Jupiter   Jupiter   9W        0.725° (+)     -22.513° (+)   
+venus        06Sco52   9         Pluto     Mars      5C        1.187° (+)     -11.671° (-)   
+mars         11Sag37   11        Jupiter   Jupiter   9W        0.725° (+)     -22.513° (-)   
 jupiter    R 06Tau18   3         Venus     Venus     5P        -0.069° (+)    12.401° (-)    
 saturn       01Pis38   1         Neptune   Venus     8C        0.060° (+)     -12.448° (+)   
 uranus     R 20Tau0    4         Venus     Jupiter   7P        -0.035° (+)    17.440° (-)    
 neptune      24Pis53   2         Neptune   Mars      10C       0.002° (+)     -3.176° (+)    
 pluto        28Cap44   1         Saturn    Mars      4P        0.026° (+)     -23.104° (+)   
 north node R 22Ari0    3         Mars      Mars      4W        -0.053° (=)    8.573° (-)     
-south node R 22Lib0    9         Venus     Venus     4S        -0.053° (=)    -8.573° (-)    
+south node R 22Lib0    9         Venus     Venus     4S        -0.053° (=)    -8.573° (+)    
 
 Aspects:
 --------
@@ -581,18 +581,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          22Cap6    1         Saturn    Saturn    4P        0.000° ()      0.000° ()      
 mc           16Sco17   10        Pluto     Mercury   6C        0.000° ()      0.000° ()      
-sun          19Sag16   11        Jupiter   Mercury   9W        1.017° (+)     -23.005° (+)   
-moon         01Sag51   10        Jupiter   Jupiter   8W        13.430° (+)    -23.627° (+)   
+sun          19Sag16   11        Jupiter   Mercury   9W        1.017° (+)     -23.005° (-)   
+moon         01Sag51   10        Jupiter   Jupiter   8W        13.430° (+)    -23.627° (-)   
 mercury      08Cap14   12        Saturn    Jupiter   2P        0.280° (-)     -24.368° (+)   
-venus        08Sco3    9         Pluto     Venus     5C        1.189° (+)     -12.053° (+)   
-mars         12Sag20   11        Jupiter   Venus     9W        0.726° (+)     -22.619° (+)   
+venus        08Sco3    9         Pluto     Venus     5C        1.189° (+)     -12.053° (-)   
+mars         12Sag20   11        Jupiter   Venus     9W        0.726° (+)     -22.619° (-)   
 jupiter    R 06Tau14   3         Venus     Venus     5P        -0.066° (+)    12.383° (-)    
 saturn       01Pis41   1         Neptune   Venus     8C        0.062° (+)     -12.424° (+)   
 uranus     R 19Tau58   4         Venus     Jupiter   6P        -0.035° (+)    17.431° (-)    
 neptune      24Pis53   2         Neptune   Mars      10C       0.003° (+)     -3.175° (+)    
 pluto        28Cap45   1         Saturn    Mars      4P        0.026° (+)     -23.099° (+)   
 north node R 21Ari57   3         Mars      Mars      4W        -0.053° (=)    8.553° (-)     
-south node R 21Lib57   9         Venus     Venus     4S        -0.053° (=)    -8.553° (-)    
+south node R 21Lib57   9         Venus     Venus     4S        -0.053° (=)    -8.553° (+)    
 
 Aspects:
 --------
@@ -648,18 +648,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          23Cap13   1         Saturn    Saturn    4P        0.000° ()      0.000° ()      
 mc           17Sco16   10        Pluto     Mercury   6C        0.000° ()      0.000° ()      
-sun          20Sag17   11        Jupiter   Mercury   10W       1.017° (+)     -23.083° (+)   
-moon         15Sag27   11        Jupiter   Venus     9W        13.783° (+)    -26.630° (+)   
+sun          20Sag17   11        Jupiter   Mercury   10W       1.017° (+)     -23.083° (-)   
+moon         15Sag27   11        Jupiter   Venus     9W        13.783° (+)    -26.630° (-)   
 mercury      08Cap26   12        Saturn    Jupiter   2P        0.119° (-)     -24.126° (+)   
-venus        09Sco15   9         Pluto     Venus     5C        1.191° (+)     -12.431° (+)   
-mars         13Sag4    11        Jupiter   Venus     9W        0.727° (+)     -22.722° (+)   
+venus        09Sco15   9         Pluto     Venus     5C        1.191° (+)     -12.431° (-)   
+mars         13Sag4    11        Jupiter   Venus     9W        0.727° (+)     -22.722° (-)   
 jupiter    R 06Tau10   3         Venus     Venus     5P        -0.063° (+)    12.366° (-)    
 saturn       01Pis45   1         Neptune   Venus     8C        0.063° (+)     -12.400° (+)   
 uranus     R 19Tau56   4         Venus     Jupiter   6P        -0.034° (+)    17.422° (-)    
 neptune      24Pis53   2         Neptune   Mars      10C       0.004° (+)     -3.173° (+)    
 pluto        28Cap47   1         Saturn    Mars      4P        0.027° (+)     -23.094° (+)   
 north node R 21Ari54   3         Mars      Mars      4W        -0.053° (=)    8.533° (-)     
-south node R 21Lib54   9         Venus     Venus     4S        -0.053° (=)    -8.533° (-)    
+south node R 21Lib54   9         Venus     Venus     4S        -0.053° (=)    -8.533° (+)    
 
 Aspects:
 --------
@@ -716,18 +716,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          24Cap20   1         Saturn    Saturn    4P        0.000° ()      0.000° ()      
 mc           18Sco15   10        Pluto     Mercury   6C        0.000° ()      0.000° ()      
-sun          21Sag18   11        Jupiter   Saturn    10W       1.017° (+)     -23.153° (+)   
-moon         29Sag23   11        Jupiter   Mars      10W       14.078° (+)    -28.075° (+)   
+sun          21Sag18   11        Jupiter   Saturn    10W       1.017° (+)     -23.153° (-)   
+moon         29Sag23   11        Jupiter   Mars      10W       14.078° (+)    -28.075° (-)   
 mercury    R 08Cap28   12        Saturn    Jupiter   2P        -0.054° (-)    -23.872° (+)   
-venus        10Sco26   9         Pluto     Venus     6C        1.192° (+)     -12.805° (+)   
-mars         13Sag47   11        Jupiter   Venus     9W        0.727° (+)     -22.822° (+)   
+venus        10Sco26   9         Pluto     Venus     6C        1.192° (+)     -12.805° (-)   
+mars         13Sag47   11        Jupiter   Venus     9W        0.727° (+)     -22.822° (-)   
 jupiter    R 06Tau6    3         Venus     Venus     5P        -0.060° (+)    12.351° (-)    
 saturn       01Pis49   1         Neptune   Venus     8C        0.065° (+)     -12.376° (+)   
 uranus     R 19Tau54   4         Venus     Jupiter   6P        -0.034° (+)    17.413° (-)    
 neptune      24Pis54   2         Neptune   Mars      10C       0.004° (+)     -3.171° (+)    
 pluto        28Cap49   1         Saturn    Mars      4P        0.027° (+)     -23.089° (+)   
 north node R 21Ari51   3         Mars      Mars      4W        -0.053° (=)    8.513° (-)     
-south node R 21Lib51   9         Venus     Venus     4S        -0.053° (=)    -8.513° (-)    
+south node R 21Lib51   9         Venus     Venus     4S        -0.053° (=)    -8.513° (+)    
 
 Aspects:
 --------
@@ -784,18 +784,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          25Cap29   1         Saturn    Saturn    4P        0.000° ()      0.000° ()      
 mc           19Sco14   10        Pluto     Jupiter   6C        0.000° ()      0.000° ()      
-sun          22Sag19   11        Jupiter   Saturn    10W       1.017° (+)     -23.216° (+)   
+sun          22Sag19   11        Jupiter   Saturn    10W       1.017° (+)     -23.216° (-)   
 moon         13Cap35   12        Saturn    Jupiter   3P        14.287° (+)    -27.714° (+)   
-mercury    R 08Cap20   12        Saturn    Jupiter   2P        -0.239° (-)    -23.608° (-)   
-venus        11Sco38   9         Pluto     Mercury   6C        1.194° (+)     -13.176° (+)   
-mars         14Sag31   11        Jupiter   Venus     9W        0.728° (+)     -22.917° (+)   
+mercury    R 08Cap20   12        Saturn    Jupiter   2P        -0.239° (-)    -23.608° (+)   
+venus        11Sco38   9         Pluto     Mercury   6C        1.194° (+)     -13.176° (-)   
+mars         14Sag31   11        Jupiter   Venus     9W        0.728° (+)     -22.917° (-)   
 jupiter    R 06Tau3    3         Venus     Venus     5P        -0.056° (+)    12.336° (-)    
 saturn       01Pis53   1         Neptune   Venus     8C        0.066° (+)     -12.351° (+)   
 uranus     R 19Tau52   4         Venus     Jupiter   6P        -0.033° (+)    17.404° (-)    
 neptune      24Pis54   2         Neptune   Mars      10C       0.005° (+)     -3.168° (+)    
 pluto        28Cap50   1         Saturn    Mars      4P        0.027° (+)     -23.084° (+)   
 north node R 21Ari47   3         Mars      Mars      4W        -0.053° (=)    8.494° (-)     
-south node R 21Lib47   9         Venus     Venus     4S        -0.053° (=)    -8.494° (-)    
+south node R 21Lib47   9         Venus     Venus     4S        -0.053° (=)    -8.494° (+)    
 
 Aspects:
 --------
@@ -857,18 +857,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          26Cap38   1         Saturn    Mars      4P        0.000° ()      0.000° ()      
 mc           20Sco12   10        Pluto     Jupiter   7C        0.000° ()      0.000° ()      
-sun          23Sag20   11        Jupiter   Saturn    10W       1.018° (+)     -23.271° (+)   
+sun          23Sag20   11        Jupiter   Saturn    10W       1.018° (+)     -23.271° (-)   
 moon         27Cap56   1         Saturn    Mars      4P        14.397° (+)    -25.513° (+)   
-mercury    R 08Cap0    12        Saturn    Jupiter   2P        -0.431° (-)    -23.335° (-)   
-venus        12Sco49   9         Pluto     Mercury   6C        1.196° (+)     -13.542° (+)   
-mars         15Sag15   11        Jupiter   Venus     9W        0.729° (+)     -23.009° (+)   
+mercury    R 08Cap0    12        Saturn    Jupiter   2P        -0.431° (-)    -23.335° (+)   
+venus        12Sco49   9         Pluto     Mercury   6C        1.196° (+)     -13.542° (-)   
+mars         15Sag15   11        Jupiter   Venus     9W        0.729° (+)     -23.009° (-)   
 jupiter    R 05Tau59   3         Venus     Venus     5P        -0.053° (+)    12.323° (-)    
 saturn       01Pis57   1         Neptune   Venus     8C        0.068° (+)     -12.325° (+)   
 uranus     R 19Tau50   3         Venus     Jupiter   6P        -0.033° (+)    17.396° (-)    
 neptune      24Pis54   2         Neptune   Mars      10C       0.005° (+)     -3.166° (+)    
 pluto        28Cap52   1         Saturn    Mars      4P        0.028° (+)     -23.079° (+)   
 north node R 21Ari44   2         Mars      Mars      4W        -0.053° (=)    8.474° (-)     
-south node R 21Lib44   8         Venus     Venus     4S        -0.053° (=)    -8.474° (-)    
+south node R 21Lib44   8         Venus     Venus     4S        -0.053° (=)    -8.474° (+)    
 
 Aspects:
 --------
@@ -932,18 +932,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          27Cap48   1         Saturn    Mars      4P        0.000° ()      0.000° ()      
 mc           21Sco11   10        Pluto     Jupiter   7C        0.000° ()      0.000° ()      
-sun          24Sag21   11        Jupiter   Saturn    10W       1.018° (+)     -23.318° (+)   
+sun          24Sag21   11        Jupiter   Saturn    10W       1.018° (+)     -23.318° (-)   
 moon         12Aqu21   1         Uranus    Venus     6S        14.410° (+)    -21.673° (+)   
-mercury    R 07Cap28   12        Saturn    Jupiter   2P        -0.625° (-)    -23.055° (-)   
-venus        14Sco1    9         Pluto     Mercury   6C        1.197° (+)     -13.904° (+)   
-mars         15Sag59   11        Jupiter   Venus     9W        0.730° (+)     -23.098° (+)   
+mercury    R 07Cap28   12        Saturn    Jupiter   2P        -0.625° (-)    -23.055° (+)   
+venus        14Sco1    9         Pluto     Mercury   6C        1.197° (+)     -13.904° (-)   
+mars         15Sag59   11        Jupiter   Venus     9W        0.730° (+)     -23.098° (-)   
 jupiter    R 05Tau56   3         Venus     Venus     5P        -0.050° (+)    12.310° (-)    
 saturn       02Pis1    1         Neptune   Venus     8C        0.069° (+)     -12.299° (+)   
 uranus     R 19Tau48   3         Venus     Jupiter   6P        -0.032° (+)    17.387° (-)    
 neptune      24Pis55   2         Neptune   Mars      10C       0.006° (+)     -3.163° (+)    
 pluto        28Cap54   1         Saturn    Mars      4P        0.028° (+)     -23.074° (+)   
 north node R 21Ari41   2         Mars      Mars      4W        -0.053° (=)    8.454° (-)     
-south node R 21Lib41   8         Venus     Venus     4S        -0.053° (=)    -8.454° (-)    
+south node R 21Lib41   8         Venus     Venus     4S        -0.053° (=)    -8.454° (+)    
 
 Aspects:
 --------
@@ -1003,18 +1003,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          28Cap58   1         Saturn    Mars      4P        0.000° ()      0.000° ()      
 mc           22Sco9    10        Pluto     Jupiter   7C        0.000° ()      0.000° ()      
-sun          25Sag22   11        Jupiter   Saturn    10W       1.018° (+)     -23.358° (+)   
+sun          25Sag22   11        Jupiter   Saturn    10W       1.018° (+)     -23.358° (-)   
 moon         26Aqu44   1         Uranus    Saturn    7S        14.342° (-)    -16.551° (+)   
-mercury    R 06Cap45   12        Saturn    Mercury   2P        -0.813° (-)    -22.769° (-)   
-venus        15Sco13   9         Pluto     Mercury   6C        1.198° (+)     -14.261° (+)   
-mars         16Sag42   11        Jupiter   Venus     9W        0.731° (+)     -23.182° (+)   
+mercury    R 06Cap45   12        Saturn    Mercury   2P        -0.813° (-)    -22.769° (+)   
+venus        15Sco13   9         Pluto     Mercury   6C        1.198° (+)     -14.261° (-)   
+mars         16Sag42   11        Jupiter   Venus     9W        0.731° (+)     -23.182° (-)   
 jupiter    R 05Tau53   3         Venus     Venus     5P        -0.047° (+)    12.299° (-)    
 saturn       02Pis5    1         Neptune   Venus     8C        0.070° (+)     -12.272° (+)   
 uranus     R 19Tau46   3         Venus     Jupiter   6P        -0.031° (+)    17.379° (-)    
 neptune      24Pis55   2         Neptune   Mars      10C       0.006° (+)     -3.160° (+)    
 pluto        28Cap55   12        Saturn    Mars      4P        0.028° (+)     -23.069° (+)   
 north node R 21Ari38   2         Mars      Mars      4W        -0.053° (=)    8.434° (-)     
-south node R 21Lib38   8         Venus     Venus     4S        -0.053° (=)    -8.434° (-)    
+south node R 21Lib38   8         Venus     Venus     4S        -0.053° (=)    -8.434° (+)    
 
 Aspects:
 --------
@@ -1066,18 +1066,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          00Aqu10   1         Uranus    Mercury   5S        0.000° ()      0.000° ()      
 mc           23Sco7    10        Pluto     Jupiter   7C        0.000° ()      0.000° ()      
-sun          26Sag23   11        Jupiter   Mars      10W       1.018° (+)     -23.389° (+)   
+sun          26Sag23   11        Jupiter   Mars      10W       1.018° (+)     -23.389° (-)   
 moon         11Pis0    1         Neptune   Venus     9C        14.218° (-)    -10.555° (+)   
-mercury    R 05Cap51   12        Saturn    Mercury   2P        -0.988° (-)    -22.480° (-)   
-venus        16Sco25   9         Pluto     Mercury   6C        1.200° (+)     -14.614° (+)   
-mars         17Sag26   11        Jupiter   Mercury   9W        0.731° (+)     -23.263° (+)   
+mercury    R 05Cap51   12        Saturn    Mercury   2P        -0.988° (-)    -22.480° (+)   
+venus        16Sco25   9         Pluto     Mercury   6C        1.200° (+)     -14.614° (-)   
+mars         17Sag26   11        Jupiter   Mercury   9W        0.731° (+)     -23.263° (-)   
 jupiter    R 05Tau51   3         Venus     Venus     5P        -0.043° (+)    12.289° (-)    
 saturn       02Pis9    1         Neptune   Venus     8C        0.072° (+)     -12.245° (+)   
 uranus     R 19Tau44   3         Venus     Jupiter   6P        -0.031° (+)    17.371° (-)    
 neptune      24Pis55   2         Neptune   Mars      10C       0.007° (+)     -3.157° (+)    
 pluto        28Cap57   12        Saturn    Mars      4P        0.028° (+)     -23.063° (+)   
 north node R 21Ari35   2         Mars      Mars      4W        -0.053° (=)    8.415° (-)     
-south node R 21Lib35   8         Venus     Venus     4S        -0.053° (=)    -8.415° (-)    
+south node R 21Lib35   8         Venus     Venus     4S        -0.053° (=)    -8.415° (+)    
 
 Aspects:
 --------
@@ -1136,18 +1136,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          01Aqu22   1         Uranus    Mercury   5S        0.000° ()      0.000° ()      
 mc           24Sco5    10        Pluto     Saturn    7C        0.000° ()      0.000° ()      
-sun          27Sag24   11        Jupiter   Mars      10W       1.018° (+)     -23.413° (+)   
+sun          27Sag24   11        Jupiter   Mars      10W       1.018° (+)     -23.413° (-)   
 moon         25Pis9    2         Neptune   Mars      10C       14.064° (-)    -4.076° (+)    
-mercury    R 04Cap46   11        Saturn    Mercury   2P        -1.141° (-)    -22.189° (-)   
-venus        17Sco37   9         Pluto     Mercury   6C        1.201° (+)     -14.962° (+)   
-mars         18Sag10   11        Jupiter   Mercury   9W        0.732° (+)     -23.339° (+)   
+mercury    R 04Cap46   11        Saturn    Mercury   2P        -1.141° (-)    -22.189° (+)   
+venus        17Sco37   9         Pluto     Mercury   6C        1.201° (+)     -14.962° (-)   
+mars         18Sag10   11        Jupiter   Mercury   9W        0.732° (+)     -23.339° (-)   
 jupiter    R 05Tau48   3         Venus     Venus     5P        -0.040° (+)    12.280° (-)    
 saturn       02Pis14   1         Neptune   Venus     8C        0.073° (+)     -12.218° (+)   
 uranus     R 19Tau42   3         Venus     Jupiter   6P        -0.030° (+)    17.363° (-)    
 neptune      24Pis56   2         Neptune   Mars      10C       0.008° (+)     -3.154° (+)    
 pluto        28Cap59   12        Saturn    Mars      4P        0.029° (+)     -23.058° (+)   
 north node R 21Ari31   2         Mars      Mars      4W        -0.053° (=)    8.395° (-)     
-south node R 21Lib31   8         Venus     Venus     4S        -0.053° (=)    -8.395° (-)    
+south node R 21Lib31   8         Venus     Venus     4S        -0.053° (=)    -8.395° (+)    
 
 Aspects:
 --------
@@ -1208,18 +1208,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          02Aqu36   1         Uranus    Mercury   5S        0.000° ()      0.000° ()      
 mc           25Sco3    10        Pluto     Saturn    7C        0.000° ()      0.000° ()      
-sun          28Sag25   11        Jupiter   Mars      10W       1.018° (+)     -23.429° (+)   
-moon         09Ari8    2         Mars      Venus     2W        13.900° (-)    2.534° (-)     
-mercury    R 03Cap34   11        Saturn    Mercury   2P        -1.262° (-)    -21.899° (-)   
-venus        18Sco49   9         Pluto     Mercury   6C        1.203° (+)     -15.304° (+)   
-mars         18Sag54   11        Jupiter   Mercury   9W        0.733° (+)     -23.412° (+)   
+sun          28Sag25   11        Jupiter   Mars      10W       1.018° (+)     -23.429° (-)   
+moon         09Ari8    2         Mars      Venus     2W        13.900° (-)    2.534° (+)     
+mercury    R 03Cap34   11        Saturn    Mercury   2P        -1.262° (-)    -21.899° (+)   
+venus        18Sco49   9         Pluto     Mercury   6C        1.203° (+)     -15.304° (-)   
+mars         18Sag54   11        Jupiter   Mercury   9W        0.733° (+)     -23.412° (-)   
 jupiter    R 05Tau46   3         Venus     Venus     5P        -0.036° (+)    12.272° (-)    
 saturn       02Pis18   1         Neptune   Venus     8C        0.074° (+)     -12.190° (+)   
 uranus     R 19Tau40   3         Venus     Jupiter   6P        -0.030° (+)    17.355° (-)    
 neptune      24Pis56   2         Neptune   Mars      10C       0.008° (+)     -3.150° (+)    
 pluto        29Cap0    12        Saturn    Mars      4P        0.029° (+)     -23.053° (+)   
 north node R 21Ari28   2         Mars      Mars      4W        -0.053° (=)    8.375° (-)     
-south node R 21Lib28   8         Venus     Venus     4S        -0.053° (=)    -8.375° (-)    
+south node R 21Lib28   8         Venus     Venus     4S        -0.053° (=)    -8.375° (+)    
 
 Aspects:
 --------
@@ -1272,18 +1272,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          03Aqu50   1         Uranus    Mercury   5S        0.000° ()      0.000° ()      
 mc           26Sco0    10        Pluto     Saturn    7C        0.000° ()      0.000° ()      
-sun          29Sag27   11        Jupiter   Mars      10W       1.018° (+)     -23.437° (+)   
+sun          29Sag27   11        Jupiter   Mars      10W       1.018° (+)     -23.437° (-)   
 moon         22Ari57   2         Mars      Mars      4W        13.738° (-)    8.955° (+)     
-mercury    R 02Cap16   11        Saturn    Mercury   2P        -1.343° (-)    -21.614° (-)   
-venus        20Sco1    9         Pluto     Jupiter   7C        1.204° (+)     -15.641° (+)   
-mars         19Sag38   11        Jupiter   Mercury   9W        0.734° (+)     -23.481° (+)   
+mercury    R 02Cap16   11        Saturn    Mercury   2P        -1.343° (-)    -21.614° (+)   
+venus        20Sco1    9         Pluto     Jupiter   7C        1.204° (+)     -15.641° (-)   
+mars         19Sag38   11        Jupiter   Mercury   9W        0.734° (+)     -23.481° (-)   
 jupiter    R 05Tau44   3         Venus     Venus     5P        -0.033° (+)    12.265° (-)    
 saturn       02Pis23   1         Neptune   Venus     8C        0.076° (+)     -12.162° (+)   
 uranus     R 19Tau38   3         Venus     Jupiter   6P        -0.029° (+)    17.348° (-)    
 neptune      24Pis57   2         Neptune   Mars      10C       0.009° (+)     -3.146° (+)    
 pluto        29Cap2    12        Saturn    Mars      4P        0.029° (+)     -23.048° (+)   
 north node R 21Ari25   2         Mars      Mars      4W        -0.053° (=)    8.355° (-)     
-south node R 21Lib25   8         Venus     Venus     4S        -0.053° (=)    -8.355° (-)    
+south node R 21Lib25   8         Venus     Venus     4S        -0.053° (=)    -8.355° (+)    
 
 Aspects:
 --------
@@ -1341,18 +1341,18 @@ Points:
 Name         Position  House     Ruler     Term      Tarot     Speed          Declination    
 asc          05Aqu5    1         Uranus    Mercury   5S        0.000° ()      0.000° ()      
 mc           26Sco57   10        Pluto     Saturn    7C        0.000° ()      0.000° ()      
-sun          00Cap28   11        Saturn    Mercury   2P        1.018° (+)     -23.437° (+)   
+sun          00Cap28   11        Saturn    Mercury   2P        1.018° (+)     -23.437° (-)   
 moon         06Tau37   3         Venus     Venus     5P        13.580° (-)    14.886° (+)    
-mercury    R 00Cap54   11        Saturn    Mercury   2P        -1.379° (-)    -21.339° (-)   
-venus        21Sco14   9         Pluto     Jupiter   7C        1.205° (+)     -15.972° (+)   
-mars         20Sag22   11        Jupiter   Mercury   10W       0.734° (+)     -23.546° (+)   
+mercury    R 00Cap54   11        Saturn    Mercury   2P        -1.379° (-)    -21.339° (+)   
+venus        21Sco14   9         Pluto     Jupiter   7C        1.205° (+)     -15.972° (-)   
+mars         20Sag22   11        Jupiter   Mercury   10W       0.734° (+)     -23.546° (-)   
 jupiter    R 05Tau42   3         Venus     Venus     5P        -0.029° (+)    12.260° (-)    
 saturn       02Pis27   1         Neptune   Venus     8C        0.077° (+)     -12.133° (+)   
 uranus     R 19Tau37   3         Venus     Jupiter   6P        -0.028° (+)    17.340° (-)    
 neptune      24Pis57   2         Neptune   Mars      10C       0.009° (+)     -3.142° (+)    
 pluto        29Cap4    12        Saturn    Mars      4P        0.029° (+)     -23.042° (+)   
 north node R 21Ari22   2         Mars      Mars      4W        -0.053° (=)    8.335° (-)     
-south node R 21Lib22   8         Venus     Venus     4S        -0.053° (=)    -8.335° (-)    
+south node R 21Lib22   8         Venus     Venus     4S        -0.053° (=)    -8.335° (+)    
 
 Aspects:
 --------
@@ -1411,16 +1411,16 @@ asc          06Aqu21   1         Uranus    Mercury   5S        0.000° ()      0.
 mc           27Sco55   10        Pluto     Saturn    7C        0.000° ()      0.000° ()      
 sun          01Cap29   11        Saturn    Mercury   2P        1.018° (+)     -23.430° (+)   
 moon         20Tau7    3         Venus     Jupiter   7P        13.422° (-)    20.028° (+)    
-mercury    R 29Sag31   11        Jupiter   Mars      10W       -1.369° (+)    -21.080° (-)   
-venus        22Sco26   9         Pluto     Jupiter   7C        1.206° (+)     -16.298° (+)   
-mars         21Sag6    11        Jupiter   Saturn    10W       0.735° (+)     -23.607° (+)   
+mercury    R 29Sag31   11        Jupiter   Mars      10W       -1.369° (+)    -21.080° (+)   
+venus        22Sco26   9         Pluto     Jupiter   7C        1.206° (+)     -16.298° (-)   
+mars         21Sag6    11        Jupiter   Saturn    10W       0.735° (+)     -23.607° (-)   
 jupiter    R 05Tau40   3         Venus     Venus     5P        -0.026° (+)    12.255° (-)    
 saturn       02Pis32   1         Neptune   Venus     8C        0.078° (+)     -12.103° (+)   
 uranus     R 19Tau35   3         Venus     Jupiter   6P        -0.028° (+)    17.333° (-)    
 neptune      24Pis58   2         Neptune   Mars      10C       0.010° (+)     -3.137° (+)    
 pluto        29Cap6    12        Saturn    Mars      4P        0.030° (+)     -23.037° (+)   
 north node R 21Ari19   2         Mars      Mars      4W        -0.053° (=)    8.316° (-)     
-south node R 21Lib19   8         Venus     Venus     4S        -0.053° (=)    -8.316° (-)    
+south node R 21Lib19   8         Venus     Venus     4S        -0.053° (=)    -8.316° (+)    
 
 Aspects:
 --------
@@ -1480,16 +1480,16 @@ asc          07Aqu38   1         Uranus    Venus     5S        0.000° ()      0.
 mc           28Sco52   10        Pluto     Saturn    7C        0.000° ()      0.000° ()      
 sun          02Cap30   11        Saturn    Mercury   2P        1.018° (+)     -23.414° (+)   
 moon         03Gem27   4         Mercury   Mercury   8S        13.254° (-)    24.094° (+)    
-mercury    R 28Sag11   11        Jupiter   Mars      10W       -1.314° (+)    -20.842° (-)   
-venus        23Sco38   9         Pluto     Jupiter   7C        1.208° (+)     -16.617° (+)   
-mars         21Sag50   11        Jupiter   Saturn    10W       0.736° (+)     -23.665° (+)   
+mercury    R 28Sag11   11        Jupiter   Mars      10W       -1.314° (+)    -20.842° (+)   
+venus        23Sco38   9         Pluto     Jupiter   7C        1.208° (+)     -16.617° (-)   
+mars         21Sag50   11        Jupiter   Saturn    10W       0.736° (+)     -23.665° (-)   
 jupiter    R 05Tau39   3         Venus     Venus     5P        -0.023° (+)    12.252° (-)    
 saturn       02Pis37   1         Neptune   Venus     8C        0.080° (+)     -12.073° (+)   
 uranus     R 19Tau33   3         Venus     Jupiter   6P        -0.027° (+)    17.326° (-)    
 neptune      24Pis58   1         Neptune   Mars      10C       0.010° (+)     -3.133° (+)    
 pluto        29Cap7    12        Saturn    Mars      4P        0.030° (+)     -23.031° (+)   
 north node R 21Ari16   2         Mars      Mars      4W        -0.053° (=)    8.296° (-)     
-south node R 21Lib16   8         Venus     Venus     4S        -0.053° (=)    -8.296° (-)    
+south node R 21Lib16   8         Venus     Venus     4S        -0.053° (=)    -8.296° (+)    
 
 Aspects:
 --------
@@ -1546,16 +1546,16 @@ asc          08Aqu56   1         Uranus    Venus     5S        0.000° ()      0.
 mc           29Sco49   10        Pluto     Saturn    7C        0.000° ()      0.000° ()      
 sun          03Cap31   11        Saturn    Mercury   2P        1.018° (+)     -23.391° (+)   
 moon         16Gem37   4         Mercury   Venus     9S        13.071° (-)    26.831° (+)    
-mercury    R 26Sag54   11        Jupiter   Mars      10W       -1.219° (+)    -20.632° (-)   
-venus        24Sco51   9         Pluto     Saturn    7C        1.209° (+)     -16.930° (+)   
-mars         22Sag34   11        Jupiter   Saturn    10W       0.737° (+)     -23.718° (+)   
+mercury    R 26Sag54   11        Jupiter   Mars      10W       -1.219° (+)    -20.632° (+)   
+venus        24Sco51   9         Pluto     Saturn    7C        1.209° (+)     -16.930° (-)   
+mars         22Sag34   11        Jupiter   Saturn    10W       0.737° (+)     -23.718° (-)   
 jupiter    R 05Tau38   3         Venus     Venus     5P        -0.019° (+)    12.250° (-)    
 saturn       02Pis42   1         Neptune   Venus     8C        0.081° (+)     -12.043° (+)   
 uranus     R 19Tau32   3         Venus     Jupiter   6P        -0.026° (+)    17.319° (-)    
 neptune      24Pis59   1         Neptune   Mars      10C       0.011° (+)     -3.128° (+)    
 pluto        29Cap9    12        Saturn    Mars      4P        0.030° (+)     -23.026° (+)   
 north node R 21Ari12   2         Mars      Mars      4W        -0.053° (=)    8.276° (-)     
-south node R 21Lib12   8         Venus     Venus     4S        -0.053° (=)    -8.276° (-)    
+south node R 21Lib12   8         Venus     Venus     4S        -0.053° (=)    -8.276° (+)    
 
 Aspects:
 --------
@@ -1613,16 +1613,16 @@ asc          10Aqu15   1         Uranus    Venus     6S        0.000° ()      0.
 mc           00Sag45   10        Jupiter   Jupiter   8W        0.000° ()      0.000° ()      
 sun          04Cap32   11        Saturn    Mercury   2P        1.019° (+)     -23.360° (+)   
 moon         29Gem35   5         Mercury   Saturn    10S       12.870° (-)    28.073° (+)    
-mercury    R 25Sag45   11        Jupiter   Saturn    10W       -1.091° (+)    -20.454° (-)   
-venus        26Sco3    9         Pluto     Saturn    7C        1.210° (+)     -17.237° (+)   
-mars         23Sag19   11        Jupiter   Saturn    10W       0.737° (+)     -23.767° (+)   
+mercury    R 25Sag45   11        Jupiter   Saturn    10W       -1.091° (+)    -20.454° (+)   
+venus        26Sco3    9         Pluto     Saturn    7C        1.210° (+)     -17.237° (-)   
+mars         23Sag19   11        Jupiter   Saturn    10W       0.737° (+)     -23.767° (-)   
 jupiter    R 05Tau36   3         Venus     Venus     5P        -0.016° (+)    12.249° (-)    
 saturn       02Pis46   1         Neptune   Venus     8C        0.082° (+)     -12.012° (+)   
 uranus     R 19Tau30   3         Venus     Jupiter   6P        -0.026° (+)    17.312° (-)    
 neptune      25Pis0    1         Neptune   Mars      10C       0.012° (+)     -3.123° (+)    
 pluto        29Cap11   12        Saturn    Mars      4P        0.030° (+)     -23.020° (+)   
 north node R 21Ari9    2         Mars      Mars      4W        -0.053° (=)    8.256° (-)     
-south node R 21Lib9    8         Venus     Venus     4S        -0.053° (=)    -8.256° (-)    
+south node R 21Lib9    8         Venus     Venus     4S        -0.053° (=)    -8.256° (+)    
 
 Aspects:
 --------
@@ -1684,17 +1684,17 @@ Name         Position  House     Ruler     Term      Tarot     Speed          De
 asc          11Aqu35   1         Uranus    Venus     6S        0.000° ()      0.000° ()      
 mc           01Sag42   10        Jupiter   Jupiter   8W        0.000° ()      0.000° ()      
 sun          05Cap33   11        Saturn    Mercury   2P        1.019° (+)     -23.321° (+)   
-moon         12Can21   5         Moon      Venus     3C        12.652° (-)    27.784° (+)    
-mercury    R 24Sag44   11        Jupiter   Saturn    10W       -0.938° (+)    -20.313° (-)   
-venus        27Sco16   9         Pluto     Saturn    7C        1.211° (+)     -17.536° (+)   
-mars         24Sag3    11        Jupiter   Saturn    10W       0.738° (+)     -23.812° (+)   
-jupiter    R 05Tau36   2         Venus     Venus     5P        -0.012° (+)    12.249° (-)    
+moon         12Can21   5         Moon      Venus     3C        12.652° (-)    27.784° (-)    
+mercury    R 24Sag44   11        Jupiter   Saturn    10W       -0.938° (+)    -20.313° (+)   
+venus        27Sco16   9         Pluto     Saturn    7C        1.211° (+)     -17.536° (-)   
+mars         24Sag3    11        Jupiter   Saturn    10W       0.738° (+)     -23.812° (-)   
+jupiter    R 05Tau36   2         Venus     Venus     5P        -0.012° (+)    12.249° (+)    
 saturn       02Pis51   1         Neptune   Venus     8C        0.083° (+)     -11.981° (+)   
 uranus     R 19Tau29   3         Venus     Jupiter   6P        -0.025° (+)    17.306° (-)    
 neptune      25Pis1    1         Neptune   Mars      10C       0.012° (+)     -3.118° (+)    
 pluto        29Cap13   12        Saturn    Mars      4P        0.030° (+)     -23.015° (+)   
 north node R 21Ari6    2         Mars      Mars      4W        -0.053° (=)    8.236° (-)     
-south node R 21Lib6    8         Venus     Venus     4S        -0.053° (=)    -8.236° (-)    
+south node R 21Lib6    8         Venus     Venus     4S        -0.053° (=)    -8.236° (+)    
 
 Aspects:
 --------
@@ -1752,17 +1752,17 @@ Name         Position  House     Ruler     Term      Tarot     Speed          De
 asc          12Aqu56   1         Uranus    Venus     6S        0.000° ()      0.000° ()      
 mc           02Sag38   10        Jupiter   Jupiter   8W        0.000° ()      0.000° ()      
 sun          06Cap34   11        Saturn    Mercury   2P        1.019° (+)     -23.275° (+)   
-moon         24Can53   6         Moon      Jupiter   4C        12.430° (-)    26.066° (+)    
-mercury    R 23Sag53   11        Jupiter   Saturn    10W       -0.770° (+)    -20.211° (-)   
-venus        28Sco29   9         Pluto     Saturn    7C        1.212° (+)     -17.829° (+)   
-mars         24Sag47   11        Jupiter   Saturn    10W       0.739° (+)     -23.853° (+)   
-jupiter    R 05Tau35   2         Venus     Venus     5P        -0.009° (+)    12.251° (-)    
+moon         24Can53   6         Moon      Jupiter   4C        12.430° (-)    26.066° (-)    
+mercury    R 23Sag53   11        Jupiter   Saturn    10W       -0.770° (+)    -20.211° (+)   
+venus        28Sco29   9         Pluto     Saturn    7C        1.212° (+)     -17.829° (-)   
+mars         24Sag47   11        Jupiter   Saturn    10W       0.739° (+)     -23.853° (-)   
+jupiter    R 05Tau35   2         Venus     Venus     5P        -0.009° (+)    12.251° (+)    
 saturn       02Pis56   1         Neptune   Venus     8C        0.085° (+)     -11.949° (+)   
 uranus     R 19Tau27   3         Venus     Jupiter   6P        -0.024° (+)    17.299° (-)    
 neptune      25Pis1    1         Neptune   Mars      10C       0.013° (+)     -3.112° (+)    
 pluto        29Cap15   12        Saturn    Mars      4P        0.030° (+)     -23.009° (+)   
 north node R 21Ari3    2         Mars      Mars      4W        -0.053° (=)    8.216° (-)     
-south node R 21Lib3    8         Venus     Venus     4S        -0.053° (=)    -8.216° (-)    
+south node R 21Lib3    8         Venus     Venus     4S        -0.053° (=)    -8.216° (+)    
 
 Aspects:
 --------
@@ -1826,17 +1826,17 @@ Name         Position  House     Ruler     Term      Tarot     Speed          De
 asc          14Aqu18   1         Uranus    Jupiter   6S        0.000° ()      0.000° ()      
 mc           03Sag35   10        Jupiter   Jupiter   8W        0.000° ()      0.000° ()      
 sun          07Cap35   11        Saturn    Jupiter   2P        1.019° (+)     -23.220° (+)   
-moon         07Leo13   6         Sun       Venus     5W        12.216° (-)    23.129° (+)    
-mercury    R 23Sag12   10        Jupiter   Saturn    10W       -0.595° (+)    -20.149° (-)   
-venus        29Sco42   9         Pluto     Saturn    7C        1.214° (+)     -18.115° (+)   
-mars         25Sag32   11        Jupiter   Saturn    10W       0.740° (+)     -23.890° (+)   
-jupiter    R 05Tau35   2         Venus     Venus     5P        -0.005° (+)    12.253° (-)    
+moon         07Leo13   6         Sun       Venus     5W        12.216° (-)    23.129° (-)    
+mercury    R 23Sag12   10        Jupiter   Saturn    10W       -0.595° (+)    -20.149° (+)   
+venus        29Sco42   9         Pluto     Saturn    7C        1.214° (+)     -18.115° (-)   
+mars         25Sag32   11        Jupiter   Saturn    10W       0.740° (+)     -23.890° (-)   
+jupiter    R 05Tau35   2         Venus     Venus     5P        -0.005° (+)    12.253° (+)    
 saturn       03Pis2    1         Neptune   Venus     8C        0.086° (+)     -11.917° (+)   
 uranus     R 19Tau26   3         Venus     Jupiter   6P        -0.024° (+)    17.293° (-)    
 neptune      25Pis2    1         Neptune   Mars      10C       0.013° (+)     -3.107° (+)    
 pluto        29Cap17   12        Saturn    Mars      4P        0.031° (+)     -23.004° (+)   
 north node R 21Ari0    2         Mars      Mars      4W        -0.053° (=)    8.197° (-)     
-south node R 21Lib0    8         Venus     Venus     4S        -0.053° (=)    -8.197° (-)    
+south node R 21Lib0    8         Venus     Venus     4S        -0.053° (=)    -8.197° (+)    
 
 Aspects:
 --------
@@ -1896,17 +1896,17 @@ Name         Position  House     Ruler     Term      Tarot     Speed          De
 asc          15Aqu40   1         Uranus    Jupiter   6S        0.000° ()      0.000° ()      
 mc           04Sag31   10        Jupiter   Jupiter   8W        0.000° ()      0.000° ()      
 sun          08Cap37   11        Saturn    Jupiter   2P        1.019° (+)     -23.158° (+)   
-moon         19Leo20   7         Sun       Mercury   6W        12.029° (-)    19.225° (+)    
-mercury    R 22Sag41   10        Jupiter   Saturn    10W       -0.418° (+)    -20.125° (-)   
-venus        00Sag54   9         Jupiter   Jupiter   8W        1.215° (+)     -18.393° (+)   
-mars         26Sag16   11        Jupiter   Mars      10W       0.740° (+)     -23.923° (+)   
-jupiter    R 05Tau34   2         Venus     Venus     5P        -0.002° (+)    12.257° (-)    
+moon         19Leo20   7         Sun       Mercury   6W        12.029° (-)    19.225° (-)    
+mercury    R 22Sag41   10        Jupiter   Saturn    10W       -0.418° (+)    -20.125° (+)   
+venus        00Sag54   9         Jupiter   Jupiter   8W        1.215° (+)     -18.393° (-)   
+mars         26Sag16   11        Jupiter   Mars      10W       0.740° (+)     -23.923° (-)   
+jupiter    R 05Tau34   2         Venus     Venus     5P        -0.002° (+)    12.257° (+)    
 saturn       03Pis7    1         Neptune   Venus     8C        0.087° (+)     -11.885° (+)   
 uranus     R 19Tau24   3         Venus     Jupiter   6P        -0.023° (+)    17.287° (-)    
 neptune      25Pis3    1         Neptune   Mars      10C       0.014° (+)     -3.101° (+)    
 pluto        29Cap18   12        Saturn    Mars      4P        0.031° (+)     -22.998° (+)   
 north node R 20Ari57   2         Mars      Mars      4W        -0.053° (=)    8.177° (-)     
-south node R 20Lib57   8         Venus     Jupiter   4S        -0.053° (=)    -8.177° (-)    
+south node R 20Lib57   8         Venus     Jupiter   4S        -0.053° (=)    -8.177° (+)    
 
 Aspects:
 --------

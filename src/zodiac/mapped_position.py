@@ -45,19 +45,19 @@ class MappedPosition:
 
     @property
     def daily_speed_index(self) -> str:
-        bp = self._get_previous_base_position()
+        pbp = self._get_previous_base_position()
 
-        if bp is None:
+        if pbp is None:
             return ""
 
-        diff = round(self.base_position.speed.decimal - bp.speed.decimal, 4)
+        diff = round(self.base_position.speed.decimal - pbp.speed.decimal, 4)
 
-        if diff > 0:
-            return "+"
-        elif diff < 0:
-            return "-"
-        else:
+        if diff == 0:
             return "="
+        elif self.base_position.speed.decimal > pbp.speed.decimal:
+            return "+"
+        elif self.base_position.speed.decimal < pbp.speed.decimal:
+            return "-"
 
     @property
     def daily_declination_index(self) -> str:
@@ -66,14 +66,14 @@ class MappedPosition:
         if bp is None:
             return ""
 
-        diff = round(self.base_position.lon.decimal - bp.lon.decimal, 4)
+        diff = round(self.base_position.dec.decimal - bp.dec.decimal, 4)
 
-        if diff > 0:
-            return "+"
-        elif diff < 0:
-            return "-"
-        else:
+        if diff == 0:
             return "="
+        elif self.base_position.dec.decimal > bp.dec.decimal:
+            return "+"
+        elif self.base_position.dec.decimal < bp.dec.decimal:
+            return "-"
 
     def _get_previous_base_position(self, minutes=1440) -> BasePosition:
         if self.base_position.point in [ASC, MC]:
