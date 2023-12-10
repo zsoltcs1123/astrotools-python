@@ -11,12 +11,10 @@ from util.geocoder import Geocoder
 from objects.points import MEAN_NODE, MOON
 from zodiac.mapped_position import MappedPosition
 
-POSITION_FACTORY = PositionFactory(MEAN_NODE)
 
-
-def aix_dasa():
+def hot_dasa():
     utc_dt = datetime(2023, 9, 15, 16, 25, 47, tzinfo=pytz.utc)
-    moon_position = POSITION_FACTORY.create_position(MOON, utc_dt)
+    moon_position = create_position(MOON, utc_dt)
     ayanamsa = swisseph_api.get_ayanamsha(utc_dt.year, utc_dt.month, "LAHIRI")
     # moon_position = BasePosition(utc_dt, "moon", 149.186694 + ayanamsa, 0, 0, 0, 0)
 
@@ -68,5 +66,33 @@ def me_dasa():
     print(moon_mapped.vedic.nakshatra.degree_range)
 
 
+def hot_dasa():
+    utc_dt = datetime(2018, 2, 1, 1, 21, 9, tzinfo=pytz.utc)
+    moon_position = create_position(MOON, utc_dt)
+    # ayanamsa = swisseph_api.get_ayanamsha(utc_dt.year, utc_dt.month, "LAHIRI")
+    # moon_position = BasePosition(utc_dt, "moon", 149.186694 + ayanamsa, 0, 0, 0, 0)
+
+    moon_mapped = MappedPosition(moon_position)
+
+    res = generate_dasas(moon_mapped, DasaLevel.Pratyantar)
+    print(moon_mapped.vedic.lon)
+    print(moon_mapped.vedic.position)
+    print(moon_mapped.vedic.nakshatra.name)
+    print(moon_mapped.vedic.nakshatra.ruler)
+    print(moon_mapped.vedic.nakshatra.degree_range)
+
+    current_date = datetime.now().astimezone(pytz.utc)
+    current_maha_dasa = [d for d in res if d.start_date <= current_date <= d.end_date][
+        0
+    ]
+    current_bhukti = [
+        d
+        for d in current_maha_dasa.sub_dasas
+        if d.start_date <= current_date <= d.end_date
+    ]
+
+    print_dasas(current_bhukti)
+
+
 if __name__ == "__main__":
-    aix_dasa()
+    hot_dasa()

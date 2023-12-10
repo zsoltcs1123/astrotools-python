@@ -2,8 +2,10 @@ from datetime import datetime, timedelta
 from typing import List
 from core.base_position import BasePosition
 from dataclasses import dataclass
+from core.degree import Degree
 from core.position_factory import create_position
-from objects.points import ASC, MC
+from objects.points import ASC, MC, SUN
+from util.cached_property import CachedProperty
 from zodiac.tropical_attributes import TropicalAttributes
 from zodiac.vedic_attributes import VedicAttributes
 
@@ -43,6 +45,13 @@ class MappedPosition:
             self._vedic_attributes = VedicAttributes(self.base_position)
         return self._vedic_attributes
 
+    @CachedProperty
+    def phase(self) -> Degree:
+        from core.angle import Angle
+
+        sun = MappedPosition(create_position(SUN, self.dt))
+        return Degree.from_decimal(Angle(self, sun).circular_diff)
+
     @property
     def daily_speed_index(self) -> str:
         pbp = self._get_previous_base_position()
@@ -50,29 +59,44 @@ class MappedPosition:
         if pbp is None:
             return ""
 
-        diff = round(self.base_position.speed.decimal - pbp.speed.decimal, 4)
-
-        if diff == 0:
-            return "="
-        elif self.base_position.speed.decimal > pbp.speed.decimal:
-            return "+"
-        elif self.base_position.speed.decimal < pbp.speed.decimal:
-            return "-"
+        return self._get_index(self.base_position.speed.decimal, pbp.speed.decimal)
 
     @property
     def daily_declination_index(self) -> str:
-        bp = self._get_previous_base_position()
+        pbp = self._get_previous_base_position()
 
-        if bp is None:
+        if pbp is None:
             return ""
 
-        diff = round(self.base_position.dec.decimal - bp.dec.decimal, 4)
+        return self._get_index(self.base_position.dec.decimal, pbp.dec.decimal)
+
+    @property
+    def phase_index(self) -> str:
+        pbp = self._get_previous_base_position()
+
+        if pbp is None:
+            return ""
+
+        pmp = MappedPosition(pbp)
+        return self._get_index(self.phase.decimal, pmp.phase.decimal)
+
+    @property
+    def daily_latitude_index(self) -> str:
+        pbp = self._get_previous_base_position()
+
+        if pbp is None:
+            return ""
+
+        return self._get_index(self.base_position.lat.decimal, pbp.lat.decimal)
+
+    def _get_index(self, current_value: float, previous_value: float) -> str:
+        diff = round(current_value - previous_value, 4)
 
         if diff == 0:
             return "="
-        elif self.base_position.dec.decimal > bp.dec.decimal:
+        elif current_value > previous_value:
             return "+"
-        elif self.base_position.dec.decimal < bp.dec.decimal:
+        elif current_value < previous_value:
             return "-"
 
     def _get_previous_base_position(self, minutes=1440) -> BasePosition:

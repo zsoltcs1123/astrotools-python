@@ -23,7 +23,7 @@ class TransitTablePrinter:
                     ),
                     None,
                 )
-                matrix[i, j] = round(angle.abs_diff, 3) if angle else ""
+                matrix[i, j] = round(angle.circular_diff, 3) if angle else ""
         angles_df = pd.DataFrame(matrix, index=planets, columns=planets)
         print("Angles:")
         print("-------")

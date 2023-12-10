@@ -3,6 +3,7 @@ from core.enums import HoroscopeType
 from events.aspect import Aspect
 from out.file import to_text_file
 from tools.horoscope.horoscope import Horoscope
+import pandas as pd
 
 
 def print_horoscope_to_console(
@@ -51,7 +52,7 @@ def _generate_str(
         str += f"\nHouse System: {horoscope.config.house_system}"
         str += f"\nCoordinate System: {horoscope.config.coord_system}"
         str += "\n\nPoints:\n--------\n"
-        str += _get_headers(horoscope.config.type)()
+        # str += _get_headers(horoscope.config.type)()
         str += _get_values(horoscope.config.type)(horoscope, points_filter)
 
         str += "\n\nAspects:\n--------"
@@ -106,24 +107,47 @@ def _get_tropical_headers() -> str:
     )
 
 
+import pandas as pd
+
+
 def _get_tropical_values(horoscope: Horoscope, points_filter: List[str] = []) -> str:
-    str = ""
+    data = []
     for mp in horoscope.mps:
         if mp.point in points_filter:
             continue
+        row = [
+            mp.point,
+            " R" if mp.retrograde else "",
+            mp.tropical.position,
+            mp.tropical.house(horoscope.cusps),
+            mp.tropical.sign_ruler,
+            mp.tropical.term.name,
+            mp.tropical.decan.name,
+            f"{mp.base_position.speed.str_decimal()} ({mp.daily_speed_index})",
+            f"{mp.phase.str_decimal()} ({mp.phase_index})",
+            f"{mp.base_position.dec.str_decimal()} ({mp.daily_declination_index})",
+            f"{mp.base_position.lat.str_decimal()} ({mp.daily_latitude_index})",
+        ]
+        data.append(row)
 
-        str += (
-            f"\n{mp.point:<10}"
-            f"{(' R' if mp.retrograde else ''):<3}"
-            f"{mp.tropical.position:<10}"
-            f"{mp.tropical.house(horoscope.cusps):<10}"
-            f"{mp.tropical.sign_ruler:<10}"
-            f"{mp.tropical.term.name:<10}"
-            f"{mp.tropical.decan.name:<10}"
-            f"{f'{mp.base_position.speed.str_decimal()} ({mp.daily_speed_index})':<15}"
-            f"{f'{mp.base_position.dec.str_decimal()} ({mp.daily_declination_index})':<15}"
-        )
-    return str
+    df = pd.DataFrame(
+        data,
+        columns=[
+            "Name",
+            "",
+            "Position",
+            "House",
+            "Ruler",
+            "Term",
+            "Tarot",
+            "Speed",
+            "Phase",
+            "Declination",
+            "Latitude",
+        ],
+    )
+
+    return df.to_string(index=False)
 
 
 def _get_vedic_headers() -> str:

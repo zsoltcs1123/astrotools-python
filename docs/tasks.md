@@ -1,5 +1,9 @@
 Current:
 - Implement vedic features
+- phase, latitude
+
+Bugs:
+- Dec 08: there is a Merc-Jup Trine (240) in the timeline but it is not showing in the horoscope
 
 TBD:
 - Refactor tranits to use factories
@@ -15,6 +19,7 @@ TBD:
 - Event filtering
 - Investigate discrepancy vs Astrolog
 - Implement sidereal planet strength
+- Implement cycles. For example: there is a Venus - Jupiter aspect coming up on the timeline. Have the option to go into it and show current past and future cycles
 
 Timeline:
 - Add geo and helio crossings (planet at the same degree)

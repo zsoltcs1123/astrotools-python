@@ -28,8 +28,8 @@ class AspectFinder:
             for asp_type in self.aspects_include:
                 orbs = self.orb_map.get_aspects_orbs(angle.source.point)
                 orb = orbs[asp_type]
-                negative = angle.abs_diff - orb
-                positive = angle.abs_diff + orb
+                negative = angle.circular_diff - orb
+                positive = angle.circular_diff + orb
 
                 asp_values = self.ASPECTS[asp_type]
 
@@ -53,7 +53,7 @@ class AspectFinder:
 
         for key, group in groups:
             min_diff_asp = min(
-                group, key=lambda asp: abs(asp.angle.abs_diff - asp.target_diff)
+                group, key=lambda asp: abs(asp.angle.circular_diff - asp.target_diff)
             )
 
             aspects.append(min_diff_asp)
@@ -68,11 +68,13 @@ class AspectFinder:
             for angle in angle_list:
                 orbs = self.orb_map.get_aspects_orbs(angle.source.point)
                 for asp_type, orb in orbs.items():
-                    negative = angle.abs_diff - orb
-                    positive = angle.abs_diff + orb
+                    negative = angle.circular_diff - orb
+                    positive = angle.circular_diff + orb
                     asp_value = self.ASPECTS[asp_type][0]
 
                     if asp_value >= negative and asp_value <= positive:
-                        asp = Aspect(angle.source.dt, angle, asp_type, angle.abs_diff)
+                        asp = Aspect(
+                            angle.source.dt, angle, asp_type, angle.circular_diff
+                        )
                         aspects[point].append(asp)
         return aspects
