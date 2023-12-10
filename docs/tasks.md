@@ -1,6 +1,5 @@
 Current:
 - Implement vedic features
-- phase, latitude
 
 Bugs:
 - Dec 08: there is a Merc-Jup Trine (240) in the timeline but it is not showing in the horoscope
@@ -50,3 +49,5 @@ Done:
 - Refactor horoscope
 - Add NN, SN
 - Implement vimshottari
+- phase, latitude
+- 

@@ -25,7 +25,7 @@ class Aspect(AstroEvent):
 
     @property
     def direction(self) -> str:
-        diff = round(self.angle.circular_diff, 3)
+        diff = round(self.angle.abs_diff, 3)
         if diff > self.target_diff:
             return "s"
         elif diff < self.target_diff:
@@ -35,13 +35,13 @@ class Aspect(AstroEvent):
 
     def __repr__(self):
         # return f"aspect at {self.angle}, {self.asp_str} ({self.asp_diff})\n Orb of 2 starts at: {orb_start}, ends at: {orb_end}"
-        return f"{self.dt}\t{self.angle.source.point}\t{self.type.name.lower()} [{self.angle.circular_diff:.3f}] vs {self.angle.target.point}"
+        return f"{self.dt}\t{self.angle.source.point}\t{self.type.name.lower()} [{self.angle.abs_diff:.3f}] vs {self.angle.target.point}"
 
     def label(self):
-        return f"{self.angle.source.point} {self.type.name.lower()} [{self.angle.circular_diff:.0f}] vs {self.angle.target.point}"
+        return f"{self.angle.source.point} {self.type.name.lower()} [{self.angle.abs_diff:.0f}] vs {self.angle.target.point}"
 
     def print_tropical_no_time(self):
-        return f"{self.angle.source.point} [{self.angle.source.tropical.lon.decimal:.3f}], {self.angle.target.point} [{self.angle.target.tropical.lon.decimal:.3f}], {self.angle.circular_diff:.3f}"
+        return f"{self.angle.source.point} [{self.angle.source.tropical.lon.decimal:.3f}], {self.angle.target.point} [{self.angle.target.tropical.lon.decimal:.3f}], {self.angle.abs_diff:.3f}"
 
     def print_vedic_no_time(self):
         return f"{self.source.point} [{self.source.vedic.lon.decimal:.3f}], {self.target.point} [{self.target.vedic.lon.decimal:.3f}], {self.diff:.3f}"

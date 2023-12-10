@@ -15,7 +15,7 @@ class Angle:
         self.dt = source.dt
 
     @property
-    def circular_diff(self):
+    def abs_diff(self):
         return abs(
             self.source.base_position.lon.decimal
             - self.target.base_position.lon.decimal
