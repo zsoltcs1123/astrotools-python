@@ -1,5 +1,6 @@
 Current:
 - Implement vedic features
+- Square outs
 
 
 TBD:

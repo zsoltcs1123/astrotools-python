@@ -8,11 +8,14 @@ ASC = "asc"
 MC = "mc"
 SUN = "sun"
 MOON = "moon"
+MERCURY = "mercury"
+VENUS = "venus"
+MARS = "mars"
 
 PLANETS = [
-    "sun",
+    SUN,
     MOON,
-    "mercury",
+    MERCURY,
     "venus",
     "mars",
     "jupiter",
