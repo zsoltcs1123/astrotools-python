@@ -7,39 +7,53 @@ import pandas as pd
 
 
 def print_horoscope_to_console(
-    horoscope: Horoscope, points_filter: List[str] = [], aspects_filter: List[str] = []
+    horoscope: Horoscope,
+    columns_filter: List[str] = [],
+    points_filter: List[str] = [],
+    aspects_filter: List[str] = [],
 ):
-    print(_generate_str([horoscope], points_filter, aspects_filter))
+    print(_generate_str([horoscope], columns_filter, points_filter, aspects_filter))
 
 
 def print_horoscopes_to_console(
     horoscopes: List[Horoscope],
+    columns_filter: List[str] = [],
     points_filter: List[str] = [],
     aspects_filter: List[str] = [],
 ):
-    print(_generate_str(horoscopes, points_filter, aspects_filter))
+    print(_generate_str(horoscopes, columns_filter, points_filter, aspects_filter))
 
 
 def print_horoscope_to_file(
     horoscope: Horoscope,
     filename: str,
+    columns_filter: List[str] = [],
     points_filter: List[str] = [],
     aspects_filter: List[str] = [],
 ):
-    to_text_file(_generate_str(filename, [horoscope], points_filter, aspects_filter))
+    to_text_file(
+        _generate_str(
+            filename, [horoscope], columns_filter, points_filter, aspects_filter
+        )
+    )
 
 
 def print_horoscopes_to_file(
     horoscopes: List[Horoscope],
     filename: str,
+    columns_filter: List[str] = [],
     points_filter: List[str] = [],
     aspects_filter: List[str] = [],
 ):
-    to_text_file(filename, _generate_str(horoscopes, points_filter, aspects_filter))
+    to_text_file(
+        filename,
+        _generate_str(horoscopes, columns_filter, points_filter, aspects_filter),
+    )
 
 
 def _generate_str(
     horoscopes: List[Horoscope],
+    columns_filter: List[str] = [],
     points_filter: List[str] = [],
     aspects_filter: List[str] = [],
 ):
@@ -53,7 +67,9 @@ def _generate_str(
         str += f"\nCoordinate System: {horoscope.config.coord_system}"
         str += "\n\nPoints:\n--------\n"
         # str += _get_headers(horoscope.config.type)()
-        str += _get_values(horoscope.config.type)(horoscope, points_filter)
+        str += _get_values(horoscope.config.type)(
+            horoscope, points_filter, columns_filter
+        )
 
         str += "\n\nAspects:\n--------"
         for k, v in horoscope.aspects.items():
@@ -75,26 +91,17 @@ def _get_aspect_str(type: HoroscopeType, asp: Aspect):
         return asp.print_vedic_no_time()
 
 
-def _get_headers(type: HoroscopeType):
-    if type == HoroscopeType.TROPICAL:
-        return _get_tropical_headers
-    elif type == HoroscopeType.VEDIC:
-        return _get_vedic_headers
-    else:
-        return _get_mixed_headers
-
-
 def _get_values(type: HoroscopeType):
     if type == HoroscopeType.TROPICAL:
         return _get_tropical_values
     elif type == HoroscopeType.VEDIC:
         return _get_vedic_values
-    else:
-        return _get_mixed_values
 
 
-def _get_tropical_headers() -> str:
-    return "{:<10}{:<3}{:<10}{:<10}{:<10}{:<10}{:<10}{:<15}{:<15}".format(
+def _get_tropical_values(
+    horoscope: Horoscope, points_filter: List[str] = [], columns_filter: List[str] = []
+) -> str:
+    all_columns = [
         "Name",
         "",
         "Position",
@@ -103,49 +110,35 @@ def _get_tropical_headers() -> str:
         "Term",
         "Tarot",
         "Speed",
+        "Phase",
         "Declination",
-    )
+        "Latitude",
+    ]
 
-
-import pandas as pd
-
-
-def _get_tropical_values(horoscope: Horoscope, points_filter: List[str] = []) -> str:
     data = []
     for mp in horoscope.mps:
         if mp.point in points_filter:
             continue
-        row = [
-            mp.point,
-            " R" if mp.retrograde else "",
-            mp.tropical.position,
-            mp.tropical.house(horoscope.cusps),
-            mp.tropical.sign_ruler,
-            mp.tropical.term.name,
-            mp.tropical.decan.name,
-            f"{mp.base_position.speed.str_decimal()} ({mp.daily_speed_index})",
-            f"{mp.phase.str_decimal()} ({mp.phase_index})",
-            f"{mp.base_position.dec.str_decimal()} ({mp.daily_declination_index})",
-            f"{mp.base_position.lat.str_decimal()} ({mp.daily_latitude_index})",
-        ]
+        row = {
+            "Name": mp.point,
+            "": " R" if mp.retrograde else "",
+            "Position": mp.tropical.position,
+            "House": mp.tropical.house(horoscope.cusps),
+            "Ruler": mp.tropical.sign_ruler,
+            "Term": mp.tropical.term.name,
+            "Tarot": mp.tropical.decan.name,
+            "Speed": f"{mp.base_position.speed.str_decimal()} ({mp.daily_speed_index})",
+            "Phase": f"{mp.phase.str_decimal()} ({mp.phase_index})",
+            "Declination": f"{mp.base_position.dec.str_decimal()} ({mp.daily_declination_index})",
+            "Latitude": f"{mp.base_position.lat.str_decimal()} ({mp.daily_latitude_index})",
+        }
         data.append(row)
 
-    df = pd.DataFrame(
-        data,
-        columns=[
-            "Name",
-            "",
-            "Position",
-            "House",
-            "Ruler",
-            "Term",
-            "Tarot",
-            "Speed",
-            "Phase",
-            "Declination",
-            "Latitude",
-        ],
-    )
+    # Filter columns
+    if columns_filter:
+        all_columns = [col for col in all_columns if col not in columns_filter]
+
+    df = pd.DataFrame(data, columns=all_columns)
 
     return df.to_string(index=False)
 
@@ -176,43 +169,5 @@ def _get_vedic_values(horoscope: Horoscope, points_filter: List[str] = []) -> st
             f"{mp.vedic.sign_ruler:<10}"
             f"{mp.vedic.nakshatra.name:<20}"
             f"{mp.vedic.nakshatra_ruler:<10}"
-        )
-    return str
-
-
-def _get_mixed_headers() -> str:
-    return "{:<10}{:<3}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<20}{:<10}".format(
-        "Name",
-        "",
-        "Tropical",
-        "House",
-        "Ruler",
-        "Term",
-        "Tarot",
-        "Sidereal",
-        "Lord",
-        "Star",
-        "Star Lord",
-    )
-
-
-def _get_mixed_values(horoscope: Horoscope, points_filter: List[str] = []) -> str:
-    str = ""
-    for mp in horoscope.mps:
-        if mp.point in points_filter:
-            continue
-
-        str += (
-            f"\n{mp.point:<10}"
-            f"{(' R' if mp.retrograde else ''):<3}"
-            f"{mp.tropical.position:<10}"
-            f"{mp.tropical.house(horoscope.cusps):<10}"
-            f"{mp.tropical.sign_ruler:<10}"
-            f"{mp.tropical.term.name:<10}"
-            f"{mp.tropical.decan.name:<10}"
-            f"{mp.vedic.position:<10}"
-            f"{mp.vedic.sign_ruler:<10}"
-            f"{mp.vedic.nakshatra.name:<20}"
-            f"{mp.vedic.nakshatra.ruler:<10}"
         )
     return str

@@ -1,12 +1,10 @@
 Current:
 - Implement vedic features
 
-Bugs:
-- Dec 08: there is a Merc-Jup Trine (240) in the timeline but it is not showing in the horoscope
 
 TBD:
 - Refactor tranits to use factories
-- Add dependency injenction
+- Add dependency injenction (maybe)
 - Add Lilith, Ceres, Chiron
 - Add helio
 - Implement eclipses
@@ -16,7 +14,6 @@ TBD:
 - Implement extremes (speed, declination)
 - Speed/declination snapshot
 - Event filtering
-- Investigate discrepancy vs Astrolog
 - Implement sidereal planet strength
 - Implement cycles. For example: there is a Venus - Jupiter aspect coming up on the timeline. Have the option to go into it and show current past and future cycles
 
@@ -50,4 +47,9 @@ Done:
 - Add NN, SN
 - Implement vimshottari
 - phase, latitude
+- Investigate discrepancy vs Astrolog
 - 
+
+
+Fixed bugs:
+- Dec 08: there is a Merc-Jup Trine (240) in the timeline but it is not showing in the horoscope

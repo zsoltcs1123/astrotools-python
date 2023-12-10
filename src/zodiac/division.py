@@ -36,7 +36,7 @@ def degree_to_zodiacal(degrees: Degree) -> str:
     sign_nr = (int)(degrees.decimal / 30)
     deg = (int)(degrees.decimal - sign_nr * 30)
     mins = degrees.dms.minutes
-    return f"{deg if deg >= 10 else f'0{deg}'}{sign_name[:3]}{mins if mins >= 10 else f'{mins}'}"
+    return f"{deg if deg >= 10 else f'0{deg}'}{sign_name[:3]}{mins if mins >= 10 else f'0{mins}'}"
 
 
 def calculate_house(degrees: float, cusps: List[float]) -> int:

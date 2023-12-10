@@ -7,47 +7,47 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed         Phase  Declination    Latitude
-       asc     13Cap37      1  Saturn Jupiter    3P   0.000° ()    32.479° ()    0.000° ()   0.000° ()
-        mc     08Sco19     10   Pluto   Venus    5C   0.000° ()   -32.831° ()    0.000° ()   0.000° ()
-       sun      11Sag9     11 Jupiter Jupiter    9W  1.014° (+)    0.000° (=) -22.113° (-)  0.000° (=)
-      moon     23Leo23      7     Sun Mercury    7W 11.915° (-) -107.755° (+)  17.935° (-)  4.468° (-)
-   mercury     02Cap16     12  Saturn Mercury    2P  1.084° (-)   21.122° (+) -25.706° (+) -2.288° (+)
-     venus     28Lib36      9   Venus    Mars    4S  1.172° (+)  -42.537° (+)  -8.926° (-)  2.198° (+)
-      mars     06Sag33     11 Jupiter Jupiter    8W  0.719° (+)   -4.586° (-) -21.670° (-) -0.269° (-)
-   jupiter  R  06Tau51      3   Venus   Venus    5P -0.090° (+)  145.711° (-)  12.555° (-) -1.323° (+)
-    saturn     01Pis15      2 Neptune   Venus    8C  0.050° (+)   80.102° (-) -12.597° (+) -1.678° (+)
-    uranus  R  20Tau15      4   Venus Jupiter    7P -0.038° (+)  159.110° (-)  17.506° (-) -0.315° (+)
-   neptune  R  24Pis53      2 Neptune    Mars   10C -0.002° (+)  103.740° (-)  -3.181° (-) -1.254° (+)
-     pluto     28Cap33      1  Saturn    Mars    4P  0.024° (+)   47.415° (-) -23.137° (+) -2.748° (-)
-north node  R  22Ari22      3    Mars    Mars    4W -0.053° (=)  131.230° (-)   8.711° (-)  0.000° (=)
-south node  R  22Lib22      9   Venus   Venus    4S -0.053° (=)  -48.770° (-)  -8.711° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed         Phase  Declination    Latitude
+       asc     13Cap37  Saturn Jupiter    3P   0.000° ()    32.479° ()    0.000° ()   0.000° ()
+        mc     08Sco19   Pluto   Venus    5C   0.000° ()   -32.831° ()    0.000° ()   0.000° ()
+       sun     11Sag09 Jupiter Jupiter    9W  1.014° (+)    0.000° (=) -22.113° (-)  0.000° (=)
+      moon     23Leo23     Sun Mercury    7W 11.915° (-) -107.755° (+)  17.935° (-)  4.468° (-)
+   mercury     02Cap16  Saturn Mercury    2P  1.084° (-)   21.122° (+) -25.706° (+) -2.288° (+)
+     venus     28Lib36   Venus    Mars    4S  1.172° (+)  -42.537° (+)  -8.926° (-)  2.198° (+)
+      mars     06Sag33 Jupiter Jupiter    8W  0.719° (+)   -4.586° (-) -21.670° (-) -0.269° (-)
+   jupiter  R  06Tau51   Venus   Venus    5P -0.090° (+)  145.711° (-)  12.555° (-) -1.323° (+)
+    saturn     01Pis15 Neptune   Venus    8C  0.050° (+)   80.102° (-) -12.597° (+) -1.678° (+)
+    uranus  R  20Tau15   Venus Jupiter    7P -0.038° (+)  159.110° (-)  17.506° (-) -0.315° (+)
+   neptune  R  24Pis53 Neptune    Mars   10C -0.002° (+)  103.740° (-)  -3.181° (-) -1.254° (+)
+     pluto     28Cap33  Saturn    Mars    4P  0.024° (+)   47.415° (-) -23.137° (+) -2.748° (-)
+north node  R  22Ari22    Mars    Mars    4W -0.053° (=)  131.230° (-)   8.711° (-)  0.000° (=)
+south node  R  22Lib22   Venus   Venus    4S -0.053° (=)  -48.770° (-)  -8.711° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [283.629], neptune [354.891], 71.261, QUINTILE (a)
+asc [283.629], neptune [354.891], 71.261, QUINTILE
 
 mc
 -------
-mc [218.319], jupiter [36.862], 181.457, OPPOSITION (s)
+mc [218.319], jupiter [36.862], 181.457, OPPOSITION
 
 sun
 -------
-sun [251.150], jupiter [36.862], 214.289, QUINTILE (s)
+sun [251.150], jupiter [36.862], 214.289, QUINTILE
 
 moon
 -------
-moon [143.395], north node [22.380], 121.015, TRINE (s)
+moon [143.395], north node [22.380], 121.015, TRINE
 
 mercury
 -------
-mercury [272.272], saturn [331.253], 58.980, SEXTILE (a)
+mercury [272.272], saturn [331.253], 58.980, SEXTILE
 
 venus
 -------
-venus [208.614], pluto [298.565], 89.952, SQUARE (a)
+venus [208.614], pluto [298.565], 89.952, SQUARE
 ---------------------
 
 
@@ -60,43 +60,43 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     14Cap39      1  Saturn   Venus    3P   0.000° ()   32.487° ()    0.000° ()   0.000° ()
-        mc     09Sco19     10   Pluto   Venus    5C   0.000° ()  -32.838° ()    0.000° ()   0.000° ()
-       sun      12Sag9     11 Jupiter   Venus    9W  1.014° (+)   0.000° (=) -22.250° (-)  0.000° (=)
-      moon     05Vir15      8 Mercury Mercury    8P 11.833° (-) -96.902° (+)  13.160° (-)  3.850° (-)
-   mercury     03Cap19     12  Saturn Mercury    2P  1.023° (-)  21.161° (+) -25.609° (+) -2.213° (+)
-     venus     29Lib47      9   Venus    Mars    4S  1.175° (+) -42.377° (+)  -9.325° (-)  2.213° (+)
-      mars     07Sag17     11 Jupiter Jupiter    8W  0.720° (+)  -4.881° (-) -21.800° (-) -0.279° (-)
-   jupiter  R  06Tau46      3   Venus   Venus    5P -0.087° (+) 144.608° (-)  12.530° (-) -1.319° (+)
-    saturn     01Pis18      2 Neptune   Venus    8C  0.051° (+)  79.138° (-) -12.577° (+) -1.676° (+)
-    uranus  R  20Tau13      4   Venus Jupiter    7P -0.038° (+) 158.057° (-)  17.497° (-) -0.315° (+)
-   neptune  R  24Pis53      2 Neptune    Mars   10C -0.001° (+) 102.725° (-)  -3.181° (=) -1.253° (+)
-     pluto     28Cap35      1  Saturn    Mars    4P  0.024° (+)  46.424° (-) -23.133° (+) -2.749° (-)
-north node  R  22Ari19      3    Mars    Mars    4W -0.053° (=) 130.162° (-)   8.691° (-)  0.000° (=)
-south node  R  22Lib19      9   Venus   Venus    4S -0.053° (=) -49.838° (-)  -8.691° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     14Cap39  Saturn   Venus    3P   0.000° ()   32.487° ()    0.000° ()   0.000° ()
+        mc     09Sco19   Pluto   Venus    5C   0.000° ()  -32.838° ()    0.000° ()   0.000° ()
+       sun     12Sag09 Jupiter   Venus    9W  1.014° (+)   0.000° (=) -22.250° (-)  0.000° (=)
+      moon     05Vir15 Mercury Mercury    8P 11.833° (-) -96.902° (+)  13.160° (-)  3.850° (-)
+   mercury     03Cap19  Saturn Mercury    2P  1.023° (-)  21.161° (+) -25.609° (+) -2.213° (+)
+     venus     29Lib47   Venus    Mars    4S  1.175° (+) -42.377° (+)  -9.325° (-)  2.213° (+)
+      mars     07Sag17 Jupiter Jupiter    8W  0.720° (+)  -4.881° (-) -21.800° (-) -0.279° (-)
+   jupiter  R  06Tau46   Venus   Venus    5P -0.087° (+) 144.608° (-)  12.530° (-) -1.319° (+)
+    saturn     01Pis18 Neptune   Venus    8C  0.051° (+)  79.138° (-) -12.577° (+) -1.676° (+)
+    uranus  R  20Tau13   Venus Jupiter    7P -0.038° (+) 158.057° (-)  17.497° (-) -0.315° (+)
+   neptune  R  24Pis53 Neptune    Mars   10C -0.001° (+) 102.725° (-)  -3.181° (=) -1.253° (+)
+     pluto     28Cap35  Saturn    Mars    4P  0.024° (+)  46.424° (-) -23.133° (+) -2.749° (-)
+north node  R  22Ari19    Mars    Mars    4W -0.053° (=) 130.162° (-)   8.691° (-)  0.000° (=)
+south node  R  22Lib19   Venus   Venus    4S -0.053° (=) -49.838° (-)  -8.691° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [284.652], neptune [354.889], 70.237, QUINTILE (a)
+asc [284.652], neptune [354.889], 70.237, QUINTILE
 
 sun
 -------
-sun [252.165], jupiter [36.773], 215.392, QUINTILE (s)
+sun [252.165], jupiter [36.773], 215.392, QUINTILE
 
 moon
 -------
-moon [155.262], mercury [273.326], 118.064, TRINE (a)
-moon [155.262], jupiter [36.773], 118.489, TRINE (s)
-moon [155.262], pluto [298.589], 143.327, QUINTILE (a)
+moon [155.262], mercury [273.326], 118.064, TRINE
+moon [155.262], jupiter [36.773], 118.489, TRINE
+moon [155.262], pluto [298.589], 143.327, QUINTILE
 
 venus
 -------
-venus [209.787], saturn [331.303], 121.516, TRINE (a)
-venus [209.787], neptune [354.889], 145.102, QUINTILE (a)
-venus [209.787], pluto [298.589], 88.802, SQUARE (a)
+venus [209.787], saturn [331.303], 121.516, TRINE
+venus [209.787], neptune [354.889], 145.102, QUINTILE
+venus [209.787], pluto [298.589], 88.802, SQUARE
 ---------------------
 
 
@@ -109,40 +109,40 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     15Cap41      1  Saturn   Venus    3P   0.000° ()   32.505° ()    0.000° ()   0.000° ()
-        mc     10Sco19     10   Pluto   Venus    6C   0.000° ()  -32.848° ()    0.000° ()   0.000° ()
-       sun     13Sag10     11 Jupiter   Venus    9W  1.015° (+)   0.000° (=) -22.380° (-)  0.000° (=)
-      moon      17Vir5      8 Mercury Jupiter    9P 11.838° (+) -86.089° (+)   7.923° (-)  3.068° (-)
-   mercury     04Cap18     12  Saturn Mercury    2P  0.952° (-)  21.135° (-) -25.489° (+) -2.122° (+)
-     venus     00Sco57      9   Pluto    Mars    5C  1.177° (+) -42.216° (+)  -9.722° (-)  2.225° (+)
-      mars      08Sag0     11 Jupiter Jupiter    8W  0.721° (+)  -5.175° (-) -21.928° (-) -0.289° (-)
-   jupiter  R  06Tau41      3   Venus   Venus    5P -0.084° (+) 143.508° (-)  12.506° (-) -1.314° (+)
-    saturn     01Pis21      2 Neptune   Venus    8C  0.053° (+)  78.176° (-) -12.557° (+) -1.675° (+)
-    uranus  R  20Tau11      4   Venus Jupiter    7P -0.037° (+) 157.005° (-)  17.487° (-) -0.314° (+)
-   neptune  R  24Pis53      2 Neptune    Mars   10C -0.001° (+) 101.709° (-)  -3.181° (+) -1.253° (+)
-     pluto     28Cap36      1  Saturn    Mars    4P  0.025° (+)  45.434° (-) -23.128° (+) -2.749° (-)
-north node  R  22Ari16      3    Mars    Mars    4W -0.053° (=) 129.095° (-)   8.671° (-)  0.000° (=)
-south node  R  22Lib16      9   Venus   Venus    4S -0.053° (=) -50.905° (-)  -8.671° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     15Cap41  Saturn   Venus    3P   0.000° ()   32.505° ()    0.000° ()   0.000° ()
+        mc     10Sco19   Pluto   Venus    6C   0.000° ()  -32.848° ()    0.000° ()   0.000° ()
+       sun     13Sag10 Jupiter   Venus    9W  1.015° (+)   0.000° (=) -22.380° (-)  0.000° (=)
+      moon     17Vir05 Mercury Jupiter    9P 11.838° (+) -86.089° (+)   7.923° (-)  3.068° (-)
+   mercury     04Cap18  Saturn Mercury    2P  0.952° (-)  21.135° (-) -25.489° (+) -2.122° (+)
+     venus     00Sco57   Pluto    Mars    5C  1.177° (+) -42.216° (+)  -9.722° (-)  2.225° (+)
+      mars     08Sag00 Jupiter Jupiter    8W  0.721° (+)  -5.175° (-) -21.928° (-) -0.289° (-)
+   jupiter  R  06Tau41   Venus   Venus    5P -0.084° (+) 143.508° (-)  12.506° (-) -1.314° (+)
+    saturn     01Pis21 Neptune   Venus    8C  0.053° (+)  78.176° (-) -12.557° (+) -1.675° (+)
+    uranus  R  20Tau11   Venus Jupiter    7P -0.037° (+) 157.005° (-)  17.487° (-) -0.314° (+)
+   neptune  R  24Pis53 Neptune    Mars   10C -0.001° (+) 101.709° (-)  -3.181° (+) -1.253° (+)
+     pluto     28Cap36  Saturn    Mars    4P  0.025° (+)  45.434° (-) -23.128° (+) -2.749° (-)
+north node  R  22Ari16    Mars    Mars    4W -0.053° (=) 129.095° (-)   8.671° (-)  0.000° (=)
+south node  R  22Lib16   Venus   Venus    4S -0.053° (=) -50.905° (-)  -8.671° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [285.685], moon [167.091], 118.594, TRINE (s)
+asc [285.685], moon [167.091], 118.594, TRINE
 
 sun
 -------
-sun [253.179], jupiter [36.687], 216.492, QUINTILE (s)
+sun [253.179], jupiter [36.687], 216.492, QUINTILE
 
 moon
 -------
-moon [167.091], north node [22.274], 144.816, QUINTILE (s)
+moon [167.091], north node [22.274], 144.816, QUINTILE
 
 venus
 -------
-venus [210.963], saturn [331.355], 120.392, TRINE (a)
-venus [210.963], neptune [354.888], 143.925, QUINTILE (a)
+venus [210.963], saturn [331.355], 120.392, TRINE
+venus [210.963], neptune [354.888], 143.925, QUINTILE
 ---------------------
 
 
@@ -155,41 +155,41 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     16Cap43      1  Saturn   Venus    3P   0.000° ()   32.534° ()    0.000° ()   0.000° ()
-        mc     11Sco19     10   Pluto Mercury    6C   0.000° ()  -32.861° ()    0.000° ()   0.000° ()
-       sun     14Sag11     11 Jupiter   Venus    9W  1.015° (+)   0.000° (=) -22.502° (-)  0.000° (=)
-      moon     28Vir58      8 Mercury  Saturn   10P 11.930° (+) -75.227° (+)   2.385° (-)  2.152° (-)
-   mercury     05Cap13     12  Saturn Mercury    2P  0.871° (-)  21.033° (-) -25.348° (+) -2.015° (+)
-     venus      02Sco8      9   Pluto    Mars    5C  1.179° (+) -42.053° (+) -10.117° (-)  2.236° (+)
-      mars     08Sag43     11 Jupiter Jupiter    8W  0.722° (+)  -5.469° (-) -22.051° (-) -0.299° (-)
-   jupiter  R  06Tau36      3   Venus   Venus    5P -0.081° (+) 142.410° (-)  12.483° (-) -1.310° (+)
-    saturn     01Pis24      2 Neptune   Venus    8C  0.054° (+)  77.214° (-) -12.536° (+) -1.673° (+)
-    uranus  R   20Tau8      4   Venus Jupiter    7P -0.037° (+) 155.953° (-)  17.477° (-) -0.314° (+)
-   neptune     24Pis53      2 Neptune    Mars   10C  0.000° (+) 100.694° (-)  -3.180° (+) -1.252° (+)
-     pluto     28Cap38      1  Saturn    Mars    4P  0.025° (+)  44.444° (-) -23.123° (+) -2.750° (-)
-north node  R  22Ari13      3    Mars    Mars    4W -0.053° (=) 128.027° (-)   8.652° (-)  0.000° (=)
-south node  R  22Lib13      9   Venus   Venus    4S -0.053° (=) -51.973° (-)  -8.652° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     16Cap43  Saturn   Venus    3P   0.000° ()   32.534° ()    0.000° ()   0.000° ()
+        mc     11Sco19   Pluto Mercury    6C   0.000° ()  -32.861° ()    0.000° ()   0.000° ()
+       sun     14Sag11 Jupiter   Venus    9W  1.015° (+)   0.000° (=) -22.502° (-)  0.000° (=)
+      moon     28Vir58 Mercury  Saturn   10P 11.930° (+) -75.227° (+)   2.385° (-)  2.152° (-)
+   mercury     05Cap13  Saturn Mercury    2P  0.871° (-)  21.033° (-) -25.348° (+) -2.015° (+)
+     venus     02Sco08   Pluto    Mars    5C  1.179° (+) -42.053° (+) -10.117° (-)  2.236° (+)
+      mars     08Sag43 Jupiter Jupiter    8W  0.722° (+)  -5.469° (-) -22.051° (-) -0.299° (-)
+   jupiter  R  06Tau36   Venus   Venus    5P -0.081° (+) 142.410° (-)  12.483° (-) -1.310° (+)
+    saturn     01Pis24 Neptune   Venus    8C  0.054° (+)  77.214° (-) -12.536° (+) -1.673° (+)
+    uranus  R  20Tau08   Venus Jupiter    7P -0.037° (+) 155.953° (-)  17.477° (-) -0.314° (+)
+   neptune     24Pis53 Neptune    Mars   10C  0.000° (+) 100.694° (-)  -3.180° (+) -1.252° (+)
+     pluto     28Cap38  Saturn    Mars    4P  0.025° (+)  44.444° (-) -23.123° (+) -2.750° (-)
+north node  R  22Ari13    Mars    Mars    4W -0.053° (=) 128.027° (-)   8.652° (-)  0.000° (=)
+south node  R  22Lib13   Venus   Venus    4S -0.053° (=) -51.973° (-)  -8.652° (+)  0.000° (=)
 
 Aspects:
 --------
 sun
 -------
-sun [254.194], jupiter [36.604], 217.590, QUINTILE (s)
+sun [254.194], jupiter [36.604], 217.590, QUINTILE
 
 moon
 -------
-moon [178.967], jupiter [36.604], 142.363, QUINTILE (s)
-moon [178.967], pluto [298.638], 119.671, TRINE (a)
+moon [178.967], jupiter [36.604], 142.363, QUINTILE
+moon [178.967], pluto [298.638], 119.671, TRINE
 
 mercury
 -------
-mercury [275.227], jupiter [36.604], 238.622, TRINE (s)
+mercury [275.227], jupiter [36.604], 238.622, TRINE
 
 venus
 -------
-venus [212.141], saturn [331.408], 119.267, TRINE (a)
-venus [212.141], neptune [354.888], 142.747, QUINTILE (a)
+venus [212.141], saturn [331.408], 119.267, TRINE
+venus [212.141], neptune [354.888], 142.747, QUINTILE
 ---------------------
 
 
@@ -202,35 +202,35 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     17Cap46      1  Saturn   Venus    3P   0.000° ()   32.573° ()    0.000° ()   0.000° ()
-        mc     12Sco19     10   Pluto Mercury    6C   0.000° ()  -32.878° ()    0.000° ()   0.000° ()
-       sun     15Sag12     11 Jupiter   Venus    9W  1.015° (+)   0.000° (=) -22.618° (-)  0.000° (=)
-      moon     10Lib58      8   Venus Mercury    3S 12.110° (+) -64.229° (+)  -3.304° (-)  1.131° (-)
-   mercury      06Cap3     12  Saturn Mercury    2P  0.780° (-)  20.844° (-) -25.188° (+) -1.890° (+)
-     venus     03Sco19      9   Pluto    Mars    5C  1.181° (+) -41.888° (+) -10.509° (-)  2.245° (+)
-      mars     09Sag26     11 Jupiter Jupiter    8W  0.723° (+)  -5.762° (-) -22.172° (-) -0.309° (-)
-   jupiter  R  06Tau31      3   Venus   Venus    5P -0.079° (+) 141.315° (-)  12.461° (-) -1.305° (+)
-    saturn     01Pis27      1 Neptune   Venus    8C  0.056° (+)  76.254° (-) -12.515° (+) -1.671° (+)
-    uranus  R   20Tau6      4   Venus Jupiter    7P -0.036° (+) 154.901° (-)  17.468° (-) -0.314° (+)
-   neptune     24Pis53      2 Neptune    Mars   10C  0.001° (+)  99.679° (-)  -3.180° (+) -1.251° (+)
-     pluto     28Cap39      1  Saturn    Mars    4P  0.025° (+)  43.454° (-) -23.119° (+) -2.750° (-)
-north node  R  22Ari10      3    Mars    Mars    4W -0.053° (=) 126.959° (-)   8.632° (-)  0.000° (=)
-south node  R  22Lib10      9   Venus   Venus    4S -0.053° (=) -53.041° (-)  -8.632° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     17Cap46  Saturn   Venus    3P   0.000° ()   32.573° ()    0.000° ()   0.000° ()
+        mc     12Sco19   Pluto Mercury    6C   0.000° ()  -32.878° ()    0.000° ()   0.000° ()
+       sun     15Sag12 Jupiter   Venus    9W  1.015° (+)   0.000° (=) -22.618° (-)  0.000° (=)
+      moon     10Lib58   Venus Mercury    3S 12.110° (+) -64.229° (+)  -3.304° (-)  1.131° (-)
+   mercury     06Cap03  Saturn Mercury    2P  0.780° (-)  20.844° (-) -25.188° (+) -1.890° (+)
+     venus     03Sco19   Pluto    Mars    5C  1.181° (+) -41.888° (+) -10.509° (-)  2.245° (+)
+      mars     09Sag26 Jupiter Jupiter    8W  0.723° (+)  -5.762° (-) -22.172° (-) -0.309° (-)
+   jupiter  R  06Tau31   Venus   Venus    5P -0.079° (+) 141.315° (-)  12.461° (-) -1.305° (+)
+    saturn     01Pis27 Neptune   Venus    8C  0.056° (+)  76.254° (-) -12.515° (+) -1.671° (+)
+    uranus  R  20Tau06   Venus Jupiter    7P -0.036° (+) 154.901° (-)  17.468° (-) -0.314° (+)
+   neptune     24Pis53 Neptune    Mars   10C  0.001° (+)  99.679° (-)  -3.180° (+) -1.251° (+)
+     pluto     28Cap39  Saturn    Mars    4P  0.025° (+)  43.454° (-) -23.119° (+) -2.750° (-)
+north node  R  22Ari10    Mars    Mars    4W -0.053° (=) 126.959° (-)   8.632° (-)  0.000° (=)
+south node  R  22Lib10   Venus   Venus    4S -0.053° (=) -53.041° (-)  -8.632° (+)  0.000° (=)
 
 Aspects:
 --------
 moon
 -------
-moon [190.980], mars [249.447], 58.467, SEXTILE (a)
+moon [190.980], mars [249.447], 58.467, SEXTILE
 
 mercury
 -------
-mercury [276.053], jupiter [36.524], 239.529, TRINE (s)
+mercury [276.053], jupiter [36.524], 239.529, TRINE
 
 venus
 -------
-venus [213.322], saturn [331.463], 118.142, TRINE (a)
+venus [213.322], saturn [331.463], 118.142, TRINE
 ---------------------
 
 
@@ -243,41 +243,41 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     18Cap50      1  Saturn   Venus    3P   0.000° ()   32.622° ()    0.000° ()   0.000° ()
-        mc     13Sco19     10   Pluto Mercury    6C   0.000° ()  -32.898° ()    0.000° ()   0.000° ()
-       sun     16Sag13     11 Jupiter   Venus    9W  1.016° (+)   0.000° (=) -22.726° (-)  0.000° (=)
-      moon     23Lib12      9   Venus   Venus    4S 12.369° (+) -53.011° (+)  -8.981° (-)  0.042° (-)
-   mercury     06Cap46     12  Saturn Mercury    2P  0.675° (-)  20.557° (-) -25.008° (+) -1.746° (+)
-     venus     04Sco30      9   Pluto    Mars    5C  1.183° (+) -41.721° (+) -10.899° (-)  2.252° (+)
-      mars     10Sag10     11 Jupiter Jupiter    9W  0.723° (+)  -6.055° (-) -22.289° (-) -0.319° (-)
-   jupiter  R  06Tau26      3   Venus   Venus    5P -0.076° (+) 140.222° (-)  12.440° (-) -1.301° (+)
-    saturn     01Pis31      1 Neptune   Venus    8C  0.057° (+)  75.295° (-) -12.493° (+) -1.669° (+)
-    uranus  R   20Tau4      4   Venus Jupiter    7P -0.036° (+) 153.850° (-)  17.458° (-) -0.314° (+)
-   neptune     24Pis53      2 Neptune    Mars   10C  0.001° (+)  98.664° (-)  -3.179° (+) -1.251° (+)
-     pluto     28Cap41      1  Saturn    Mars    4P  0.025° (+)  42.463° (-) -23.114° (+) -2.751° (-)
-north node  R   22Ari6      3    Mars    Mars    4W -0.053° (=) 125.890° (-)   8.612° (-)  0.000° (=)
-south node  R   22Lib6      9   Venus   Venus    4S -0.053° (=) -54.110° (-)  -8.612° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     18Cap50  Saturn   Venus    3P   0.000° ()   32.622° ()    0.000° ()   0.000° ()
+        mc     13Sco19   Pluto Mercury    6C   0.000° ()  -32.898° ()    0.000° ()   0.000° ()
+       sun     16Sag13 Jupiter   Venus    9W  1.016° (+)   0.000° (=) -22.726° (-)  0.000° (=)
+      moon     23Lib12   Venus   Venus    4S 12.369° (+) -53.011° (+)  -8.981° (-)  0.042° (-)
+   mercury     06Cap46  Saturn Mercury    2P  0.675° (-)  20.557° (-) -25.008° (+) -1.746° (+)
+     venus     04Sco30   Pluto    Mars    5C  1.183° (+) -41.721° (+) -10.899° (-)  2.252° (+)
+      mars     10Sag10 Jupiter Jupiter    9W  0.723° (+)  -6.055° (-) -22.289° (-) -0.319° (-)
+   jupiter  R  06Tau26   Venus   Venus    5P -0.076° (+) 140.222° (-)  12.440° (-) -1.301° (+)
+    saturn     01Pis31 Neptune   Venus    8C  0.057° (+)  75.295° (-) -12.493° (+) -1.669° (+)
+    uranus  R  20Tau04   Venus Jupiter    7P -0.036° (+) 153.850° (-)  17.458° (-) -0.314° (+)
+   neptune     24Pis53 Neptune    Mars   10C  0.001° (+)  98.664° (-)  -3.179° (+) -1.251° (+)
+     pluto     28Cap41  Saturn    Mars    4P  0.025° (+)  42.463° (-) -23.114° (+) -2.751° (-)
+north node  R  22Ari06    Mars    Mars    4W -0.053° (=) 125.890° (-)   8.612° (-)  0.000° (=)
+south node  R  22Lib06   Venus   Venus    4S -0.053° (=) -54.110° (-)  -8.612° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [288.847], uranus [50.075], 238.773, TRINE (s)
+asc [288.847], uranus [50.075], 238.773, TRINE
 
 moon
 -------
-moon [203.214], mercury [276.782], 73.568, QUINTILE (a)
-moon [203.214], neptune [354.889], 151.676, INCONJUNCT (a)
-moon [203.214], north node [22.115], 181.098, OPPOSITION (s)
+moon [203.214], mercury [276.782], 73.568, QUINTILE
+moon [203.214], neptune [354.889], 151.676, INCONJUNCT
+moon [203.214], north node [22.115], 181.098, OPPOSITION
 
 mercury
 -------
-mercury [276.782], jupiter [36.447], 240.334, TRINE (s)
+mercury [276.782], jupiter [36.447], 240.334, TRINE
 
 venus
 -------
-venus [214.504], jupiter [36.447], 178.056, OPPOSITION (s)
+venus [214.504], jupiter [36.447], 178.056, OPPOSITION
 ---------------------
 
 
@@ -290,46 +290,46 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     19Cap55      1  Saturn   Venus    3P   0.000° ()   32.683° ()    0.000° ()   0.000° ()
-        mc     14Sco19     10   Pluto Mercury    6C   0.000° ()  -32.921° ()    0.000° ()   0.000° ()
-       sun     17Sag14     11 Jupiter Mercury    9W  1.016° (+)   0.000° (=) -22.826° (-)  0.000° (=)
-      moon     05Sco44      9   Pluto    Mars    5C 12.691° (+) -41.502° (+) -14.446° (-) -1.072° (-)
-   mercury     07Cap23     12  Saturn Jupiter    2P  0.558° (-)  20.158° (-) -24.811° (+) -1.581° (+)
-     venus     05Sco41      9   Pluto    Mars    5C  1.185° (+) -41.553° (+) -11.287° (-)  2.258° (+)
-      mars     10Sag53     11 Jupiter Jupiter    9W  0.724° (+)  -6.347° (-) -22.403° (-) -0.329° (-)
-   jupiter  R  06Tau22      3   Venus   Venus    5P -0.072° (+) 139.132° (-)  12.420° (-) -1.296° (+)
-    saturn     01Pis34      1 Neptune   Venus    8C  0.059° (+)  74.337° (-) -12.471° (+) -1.667° (+)
-    uranus  R   20Tau2      4   Venus Jupiter    7P -0.036° (+) 152.798° (-)  17.449° (-) -0.313° (+)
-   neptune     24Pis53      2 Neptune    Mars   10C  0.002° (+)  97.650° (-)  -3.178° (+) -1.250° (+)
-     pluto     28Cap42      1  Saturn    Mars    4P  0.026° (+)  41.473° (-) -23.109° (+) -2.751° (-)
-north node  R   22Ari3      3    Mars    Mars    4W -0.053° (=) 124.821° (-)   8.592° (-)  0.000° (=)
-south node  R   22Lib3      9   Venus   Venus    4S -0.053° (=) -55.179° (-)  -8.592° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     19Cap55  Saturn   Venus    3P   0.000° ()   32.683° ()    0.000° ()   0.000° ()
+        mc     14Sco19   Pluto Mercury    6C   0.000° ()  -32.921° ()    0.000° ()   0.000° ()
+       sun     17Sag14 Jupiter Mercury    9W  1.016° (+)   0.000° (=) -22.826° (-)  0.000° (=)
+      moon     05Sco44   Pluto    Mars    5C 12.691° (+) -41.502° (+) -14.446° (-) -1.072° (-)
+   mercury     07Cap23  Saturn Jupiter    2P  0.558° (-)  20.158° (-) -24.811° (+) -1.581° (+)
+     venus     05Sco41   Pluto    Mars    5C  1.185° (+) -41.553° (+) -11.287° (-)  2.258° (+)
+      mars     10Sag53 Jupiter Jupiter    9W  0.724° (+)  -6.347° (-) -22.403° (-) -0.329° (-)
+   jupiter  R  06Tau22   Venus   Venus    5P -0.072° (+) 139.132° (-)  12.420° (-) -1.296° (+)
+    saturn     01Pis34 Neptune   Venus    8C  0.059° (+)  74.337° (-) -12.471° (+) -1.667° (+)
+    uranus  R  20Tau02   Venus Jupiter    7P -0.036° (+) 152.798° (-)  17.449° (-) -0.313° (+)
+   neptune     24Pis53 Neptune    Mars   10C  0.002° (+)  97.650° (-)  -3.178° (+) -1.250° (+)
+     pluto     28Cap42  Saturn    Mars    4P  0.026° (+)  41.473° (-) -23.109° (+) -2.751° (-)
+north node  R  22Ari03    Mars    Mars    4W -0.053° (=) 124.821° (-)   8.592° (-)  0.000° (=)
+south node  R  22Lib03   Venus   Venus    4S -0.053° (=) -55.179° (-)  -8.592° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [289.924], uranus [50.039], 239.885, TRINE (s)
+asc [289.924], uranus [50.039], 239.885, TRINE
 
 moon
 -------
-moon [215.739], mercury [277.399], 61.660, SEXTILE (a)
-moon [215.739], venus [215.688], 0.051, CONJUNCTION (s)
-moon [215.739], jupiter [36.373], 179.366, OPPOSITION (s)
+moon [215.739], mercury [277.399], 61.660, SEXTILE
+moon [215.739], venus [215.688], 0.051, CONJUNCTION
+moon [215.739], jupiter [36.373], 179.366, OPPOSITION
 
 mercury
 -------
-mercury [277.399], venus [215.688], 61.711, SEXTILE (s)
-mercury [277.399], jupiter [36.373], 241.026, TRINE (s)
+mercury [277.399], venus [215.688], 61.711, SEXTILE
+mercury [277.399], jupiter [36.373], 241.026, TRINE
 
 venus
 -------
-venus [215.688], jupiter [36.373], 179.315, OPPOSITION (s)
+venus [215.688], jupiter [36.373], 179.315, OPPOSITION
 
 mars
 -------
-mars [250.894], jupiter [36.373], 214.521, QUINTILE (s)
+mars [250.894], jupiter [36.373], 214.521, QUINTILE
 ---------------------
 
 
@@ -342,55 +342,55 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc      21Cap0      1  Saturn   Venus    4P   0.000° ()   32.754° ()    0.000° ()   0.000° ()
-        mc     15Sco18     10   Pluto Mercury    6C   0.000° ()  -32.948° ()    0.000° ()   0.000° ()
-       sun     18Sag15     11 Jupiter Mercury    9W  1.016° (+)   0.000° (=) -22.920° (-)  0.000° (=)
-      moon     18Sco36     10   Pluto Mercury    6C 13.055° (+) -29.648° (+) -19.438° (-) -2.160° (-)
-   mercury     07Cap53     12  Saturn Jupiter    2P  0.426° (-)  19.635° (-) -24.597° (+) -1.396° (+)
-     venus     06Sco52      9   Pluto    Mars    5C  1.187° (+) -41.383° (+) -11.671° (-)  2.261° (+)
-      mars     11Sag37     11 Jupiter Jupiter    9W  0.725° (+)  -6.639° (-) -22.513° (-) -0.339° (-)
-   jupiter  R  06Tau18      3   Venus   Venus    5P -0.069° (+) 138.045° (-)  12.401° (-) -1.292° (+)
-    saturn     01Pis38      1 Neptune   Venus    8C  0.060° (+)  73.380° (-) -12.448° (+) -1.666° (+)
-    uranus  R   20Tau0      4   Venus Jupiter    7P -0.035° (+) 151.746° (-)  17.440° (-) -0.313° (+)
-   neptune     24Pis53      2 Neptune    Mars   10C  0.002° (+)  96.636° (-)  -3.176° (+) -1.250° (+)
-     pluto     28Cap44      1  Saturn    Mars    4P  0.026° (+)  40.483° (-) -23.104° (+) -2.752° (-)
-north node  R   22Ari0      3    Mars    Mars    4W -0.053° (=) 123.752° (-)   8.573° (-)  0.000° (=)
-south node  R   22Lib0      9   Venus   Venus    4S -0.053° (=) -56.248° (-)  -8.573° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     21Cap00  Saturn   Venus    4P   0.000° ()   32.754° ()    0.000° ()   0.000° ()
+        mc     15Sco18   Pluto Mercury    6C   0.000° ()  -32.948° ()    0.000° ()   0.000° ()
+       sun     18Sag15 Jupiter Mercury    9W  1.016° (+)   0.000° (=) -22.920° (-)  0.000° (=)
+      moon     18Sco36   Pluto Mercury    6C 13.055° (+) -29.648° (+) -19.438° (-) -2.160° (-)
+   mercury     07Cap53  Saturn Jupiter    2P  0.426° (-)  19.635° (-) -24.597° (+) -1.396° (+)
+     venus     06Sco52   Pluto    Mars    5C  1.187° (+) -41.383° (+) -11.671° (-)  2.261° (+)
+      mars     11Sag37 Jupiter Jupiter    9W  0.725° (+)  -6.639° (-) -22.513° (-) -0.339° (-)
+   jupiter  R  06Tau18   Venus   Venus    5P -0.069° (+) 138.045° (-)  12.401° (-) -1.292° (+)
+    saturn     01Pis38 Neptune   Venus    8C  0.060° (+)  73.380° (-) -12.448° (+) -1.666° (+)
+    uranus  R  20Tau00   Venus Jupiter    7P -0.035° (+) 151.746° (-)  17.440° (-) -0.313° (+)
+   neptune     24Pis53 Neptune    Mars   10C  0.002° (+)  96.636° (-)  -3.176° (+) -1.250° (+)
+     pluto     28Cap44  Saturn    Mars    4P  0.026° (+)  40.483° (-) -23.104° (+) -2.752° (-)
+north node  R  22Ari00    Mars    Mars    4W -0.053° (=) 123.752° (-)   8.573° (-)  0.000° (=)
+south node  R  22Lib00   Venus   Venus    4S -0.053° (=) -56.248° (-)  -8.573° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [291.012], uranus [50.003], 241.008, TRINE (s)
-asc [291.012], north node [22.009], 269.002, SQUARE (s)
-asc [291.012], south node [202.009], 89.002, SQUARE (s)
+asc [291.012], uranus [50.003], 241.008, TRINE
+asc [291.012], north node [22.009], 269.002, SQUARE
+asc [291.012], south node [202.009], 89.002, SQUARE
 
 mc
 -------
-mc [225.310], pluto [298.740], 73.430, QUINTILE (s)
+mc [225.310], pluto [298.740], 73.430, QUINTILE
 
 sun
 -------
-sun [258.257], saturn [331.637], 73.380, QUINTILE (a)
+sun [258.257], saturn [331.637], 73.380, QUINTILE
 
 moon
 -------
-moon [228.610], uranus [50.003], 178.606, OPPOSITION (s)
-moon [228.610], pluto [298.740], 70.130, QUINTILE (a)
+moon [228.610], uranus [50.003], 178.606, OPPOSITION
+moon [228.610], pluto [298.740], 70.130, QUINTILE
 
 mercury
 -------
-mercury [277.892], venus [216.874], 61.018, SEXTILE (s)
-mercury [277.892], jupiter [36.303], 241.590, TRINE (s)
+mercury [277.892], venus [216.874], 61.018, SEXTILE
+mercury [277.892], jupiter [36.303], 241.590, TRINE
 
 venus
 -------
-venus [216.874], jupiter [36.303], 180.572, OPPOSITION (s)
+venus [216.874], jupiter [36.303], 180.572, OPPOSITION
 
 mars
 -------
-mars [251.619], jupiter [36.303], 215.316, QUINTILE (s)
+mars [251.619], jupiter [36.303], 215.316, QUINTILE
 ---------------------
 
 
@@ -403,52 +403,52 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc      22Cap6      1  Saturn  Saturn    4P   0.000° ()   32.838° ()    0.000° ()   0.000° ()
-        mc     16Sco17     10   Pluto Mercury    6C   0.000° ()  -32.977° ()    0.000° ()   0.000° ()
-       sun     19Sag16     11 Jupiter Mercury    9W  1.017° (+)   0.000° (=) -23.005° (-) -0.000° (=)
-      moon     01Sag51     10 Jupiter Jupiter    8W 13.430° (+) -17.421° (+) -23.627° (-) -3.161° (-)
-   mercury     08Cap14     12  Saturn Jupiter    2P  0.280° (-)  18.973° (-) -24.368° (+) -1.188° (+)
-     venus      08Sco3      9   Pluto   Venus    5C  1.189° (+) -41.212° (+) -12.053° (-)  2.263° (+)
-      mars     12Sag20     11 Jupiter   Venus    9W  0.726° (+)  -6.930° (-) -22.619° (-) -0.349° (-)
-   jupiter  R  06Tau14      3   Venus   Venus    5P -0.066° (+) 136.961° (-)  12.383° (-) -1.287° (+)
-    saturn     01Pis41      1 Neptune   Venus    8C  0.062° (+)  72.424° (-) -12.424° (+) -1.664° (+)
-    uranus  R  19Tau58      4   Venus Jupiter    6P -0.035° (+) 150.695° (-)  17.431° (-) -0.313° (+)
-   neptune     24Pis53      2 Neptune    Mars   10C  0.003° (+)  95.622° (-)  -3.175° (+) -1.249° (+)
-     pluto     28Cap45      1  Saturn    Mars    4P  0.026° (+)  39.492° (-) -23.099° (+) -2.752° (-)
-north node  R  21Ari57      3    Mars    Mars    4W -0.053° (=) 122.682° (-)   8.553° (-)  0.000° (=)
-south node  R  21Lib57      9   Venus   Venus    4S -0.053° (=) -57.318° (-)  -8.553° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     22Cap06  Saturn  Saturn    4P   0.000° ()   32.838° ()    0.000° ()   0.000° ()
+        mc     16Sco17   Pluto Mercury    6C   0.000° ()  -32.977° ()    0.000° ()   0.000° ()
+       sun     19Sag16 Jupiter Mercury    9W  1.017° (+)   0.000° (=) -23.005° (-) -0.000° (=)
+      moon     01Sag51 Jupiter Jupiter    8W 13.430° (+) -17.421° (+) -23.627° (-) -3.161° (-)
+   mercury     08Cap14  Saturn Jupiter    2P  0.280° (-)  18.973° (-) -24.368° (+) -1.188° (+)
+     venus     08Sco03   Pluto   Venus    5C  1.189° (+) -41.212° (+) -12.053° (-)  2.263° (+)
+      mars     12Sag20 Jupiter   Venus    9W  0.726° (+)  -6.930° (-) -22.619° (-) -0.349° (-)
+   jupiter  R  06Tau14   Venus   Venus    5P -0.066° (+) 136.961° (-)  12.383° (-) -1.287° (+)
+    saturn     01Pis41 Neptune   Venus    8C  0.062° (+)  72.424° (-) -12.424° (+) -1.664° (+)
+    uranus  R  19Tau58   Venus Jupiter    6P -0.035° (+) 150.695° (-)  17.431° (-) -0.313° (+)
+   neptune     24Pis53 Neptune    Mars   10C  0.003° (+)  95.622° (-)  -3.175° (+) -1.249° (+)
+     pluto     28Cap45  Saturn    Mars    4P  0.026° (+)  39.492° (-) -23.099° (+) -2.752° (-)
+north node  R  21Ari57    Mars    Mars    4W -0.053° (=) 122.682° (-)   8.553° (-)  0.000° (=)
+south node  R  21Lib57   Venus   Venus    4S -0.053° (=) -57.318° (-)  -8.553° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [292.112], north node [21.956], 270.155, SQUARE (s)
-asc [292.112], south node [201.956], 90.155, SQUARE (s)
+asc [292.112], north node [21.956], 270.155, SQUARE
+asc [292.112], south node [201.956], 90.155, SQUARE
 
 mc
 -------
-mc [226.297], pluto [298.766], 72.470, QUINTILE (s)
+mc [226.297], pluto [298.766], 72.470, QUINTILE
 
 sun
 -------
-sun [259.274], saturn [331.698], 72.424, QUINTILE (a)
+sun [259.274], saturn [331.698], 72.424, QUINTILE
 
 moon
 -------
-moon [241.853], saturn [331.698], 89.846, SQUARE (a)
+moon [241.853], saturn [331.698], 89.846, SQUARE
 
 mercury
 -------
-mercury [278.247], venus [218.062], 60.184, SEXTILE (s)
+mercury [278.247], venus [218.062], 60.184, SEXTILE
 
 venus
 -------
-venus [218.062], jupiter [36.235], 181.828, OPPOSITION (s)
+venus [218.062], jupiter [36.235], 181.828, OPPOSITION
 
 mars
 -------
-mars [252.344], jupiter [36.235], 216.109, QUINTILE (s)
+mars [252.344], jupiter [36.235], 216.109, QUINTILE
 ---------------------
 
 
@@ -461,47 +461,47 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     23Cap13      1  Saturn  Saturn    4P   0.000° ()   32.933° ()    0.000° ()   0.000° ()
-        mc     17Sco16     10   Pluto Mercury    6C   0.000° ()  -33.010° ()    0.000° ()   0.000° ()
-       sun     20Sag17     11 Jupiter Mercury   10W  1.017° (+)   0.000° (=) -23.083° (-) -0.000° (=)
-      moon     15Sag27     11 Jupiter   Venus    9W 13.783° (+)  -4.828° (+) -26.630° (-) -4.009° (-)
-   mercury     08Cap26     12  Saturn Jupiter    2P  0.119° (-)  18.156° (-) -24.126° (+) -0.959° (+)
-     venus     09Sco15      9   Pluto   Venus    5C  1.191° (+) -41.039° (+) -12.431° (-)  2.263° (-)
-      mars      13Sag4     11 Jupiter   Venus    9W  0.727° (+)  -7.220° (-) -22.722° (-) -0.359° (-)
-   jupiter  R  06Tau10      3   Venus   Venus    5P -0.063° (+) 135.879° (-)  12.366° (-) -1.282° (+)
-    saturn     01Pis45      1 Neptune   Venus    8C  0.063° (+)  71.470° (-) -12.400° (+) -1.662° (+)
-    uranus  R  19Tau56      4   Venus Jupiter    6P -0.034° (+) 149.643° (-)  17.422° (-) -0.313° (+)
-   neptune     24Pis53      2 Neptune    Mars   10C  0.004° (+)  94.608° (-)  -3.173° (+) -1.248° (+)
-     pluto     28Cap47      1  Saturn    Mars    4P  0.027° (+)  38.502° (-) -23.094° (+) -2.753° (-)
-north node  R  21Ari54      3    Mars    Mars    4W -0.053° (=) 121.613° (-)   8.533° (-)  0.000° (=)
-south node  R  21Lib54      9   Venus   Venus    4S -0.053° (=) -58.387° (-)  -8.533° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     23Cap13  Saturn  Saturn    4P   0.000° ()   32.933° ()    0.000° ()   0.000° ()
+        mc     17Sco16   Pluto Mercury    6C   0.000° ()  -33.010° ()    0.000° ()   0.000° ()
+       sun     20Sag17 Jupiter Mercury   10W  1.017° (+)   0.000° (=) -23.083° (-) -0.000° (=)
+      moon     15Sag27 Jupiter   Venus    9W 13.783° (+)  -4.828° (+) -26.630° (-) -4.009° (-)
+   mercury     08Cap26  Saturn Jupiter    2P  0.119° (-)  18.156° (-) -24.126° (+) -0.959° (+)
+     venus     09Sco15   Pluto   Venus    5C  1.191° (+) -41.039° (+) -12.431° (-)  2.263° (-)
+      mars     13Sag04 Jupiter   Venus    9W  0.727° (+)  -7.220° (-) -22.722° (-) -0.359° (-)
+   jupiter  R  06Tau10   Venus   Venus    5P -0.063° (+) 135.879° (-)  12.366° (-) -1.282° (+)
+    saturn     01Pis45 Neptune   Venus    8C  0.063° (+)  71.470° (-) -12.400° (+) -1.662° (+)
+    uranus  R  19Tau56   Venus Jupiter    6P -0.034° (+) 149.643° (-)  17.422° (-) -0.313° (+)
+   neptune     24Pis53 Neptune    Mars   10C  0.004° (+)  94.608° (-)  -3.173° (+) -1.248° (+)
+     pluto     28Cap47  Saturn    Mars    4P  0.027° (+)  38.502° (-) -23.094° (+) -2.753° (-)
+north node  R  21Ari54    Mars    Mars    4W -0.053° (=) 121.613° (-)   8.533° (-)  0.000° (=)
+south node  R  21Lib54   Venus   Venus    4S -0.053° (=) -58.387° (-)  -8.533° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [293.224], venus [219.252], 73.972, QUINTILE (s)
-asc [293.224], neptune [354.899], 61.675, SEXTILE (s)
-asc [293.224], north node [21.904], 271.321, SQUARE (s)
-asc [293.224], south node [201.904], 91.321, SQUARE (s)
+asc [293.224], venus [219.252], 73.972, QUINTILE
+asc [293.224], neptune [354.899], 61.675, SEXTILE
+asc [293.224], north node [21.904], 271.321, SQUARE
+asc [293.224], south node [201.904], 91.321, SQUARE
 
 mc
 -------
-mc [227.281], pluto [298.793], 71.512, QUINTILE (s)
+mc [227.281], pluto [298.793], 71.512, QUINTILE
 
 sun
 -------
-sun [260.291], saturn [331.761], 71.470, QUINTILE (a)
-sun [260.291], north node [21.904], 238.387, TRINE (s)
+sun [260.291], saturn [331.761], 71.470, QUINTILE
+sun [260.291], north node [21.904], 238.387, TRINE
 
 mercury
 -------
-mercury [278.447], venus [219.252], 59.195, SEXTILE (s)
+mercury [278.447], venus [219.252], 59.195, SEXTILE
 
 mars
 -------
-mars [253.070], jupiter [36.170], 216.900, QUINTILE (s)
+mars [253.070], jupiter [36.170], 216.900, QUINTILE
 ---------------------
 
 
@@ -514,46 +514,46 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     24Cap20      1  Saturn  Saturn    4P   0.000° ()   33.041° ()    0.000° ()   0.000° ()
-        mc     18Sco15     10   Pluto Mercury    6C   0.000° ()  -33.046° ()    0.000° ()   0.000° ()
-       sun     21Sag18     11 Jupiter  Saturn   10W  1.017° (+)   0.000° (=) -23.153° (-) -0.000° (=)
-      moon     29Sag23     11 Jupiter    Mars   10W 14.078° (+)   8.091° (+) -28.075° (-) -4.638° (-)
-   mercury  R  08Cap28     12  Saturn Jupiter    2P -0.054° (-)  17.173° (-) -23.872° (+) -0.706° (+)
-     venus     10Sco26      9   Pluto   Venus    6C  1.192° (+) -40.864° (+) -12.805° (-)  2.261° (-)
-      mars     13Sag47     11 Jupiter   Venus    9W  0.727° (+)  -7.510° (-) -22.822° (-) -0.369° (-)
-   jupiter  R   06Tau6      3   Venus   Venus    5P -0.060° (+) 134.801° (-)  12.351° (-) -1.278° (+)
-    saturn     01Pis49      1 Neptune   Venus    8C  0.065° (+)  70.517° (-) -12.376° (+) -1.661° (+)
-    uranus  R  19Tau54      4   Venus Jupiter    6P -0.034° (+) 148.592° (-)  17.413° (-) -0.312° (+)
-   neptune     24Pis54      2 Neptune    Mars   10C  0.004° (+)  93.595° (-)  -3.171° (+) -1.248° (+)
-     pluto     28Cap49      1  Saturn    Mars    4P  0.027° (+)  37.512° (-) -23.089° (+) -2.753° (-)
-north node  R  21Ari51      3    Mars    Mars    4W -0.053° (=) 120.543° (-)   8.513° (-)  0.000° (=)
-south node  R  21Lib51      9   Venus   Venus    4S -0.053° (=) -59.457° (-)  -8.513° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     24Cap20  Saturn  Saturn    4P   0.000° ()   33.041° ()    0.000° ()   0.000° ()
+        mc     18Sco15   Pluto Mercury    6C   0.000° ()  -33.046° ()    0.000° ()   0.000° ()
+       sun     21Sag18 Jupiter  Saturn   10W  1.017° (+)   0.000° (=) -23.153° (-) -0.000° (=)
+      moon     29Sag23 Jupiter    Mars   10W 14.078° (+)   8.091° (+) -28.075° (-) -4.638° (-)
+   mercury  R  08Cap28  Saturn Jupiter    2P -0.054° (-)  17.173° (-) -23.872° (+) -0.706° (+)
+     venus     10Sco26   Pluto   Venus    6C  1.192° (+) -40.864° (+) -12.805° (-)  2.261° (-)
+      mars     13Sag47 Jupiter   Venus    9W  0.727° (+)  -7.510° (-) -22.822° (-) -0.369° (-)
+   jupiter  R  06Tau06   Venus   Venus    5P -0.060° (+) 134.801° (-)  12.351° (-) -1.278° (+)
+    saturn     01Pis49 Neptune   Venus    8C  0.065° (+)  70.517° (-) -12.376° (+) -1.661° (+)
+    uranus  R  19Tau54   Venus Jupiter    6P -0.034° (+) 148.592° (-)  17.413° (-) -0.312° (+)
+   neptune     24Pis54 Neptune    Mars   10C  0.004° (+)  93.595° (-)  -3.171° (+) -1.248° (+)
+     pluto     28Cap49  Saturn    Mars    4P  0.027° (+)  37.512° (-) -23.089° (+) -2.753° (-)
+north node  R  21Ari51    Mars    Mars    4W -0.053° (=) 120.543° (-)   8.513° (-)  0.000° (=)
+south node  R  21Lib51   Venus   Venus    4S -0.053° (=) -59.457° (-)  -8.513° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [294.349], venus [220.444], 73.905, QUINTILE (s)
-asc [294.349], neptune [354.903], 60.553, SEXTILE (s)
+asc [294.349], venus [220.444], 73.905, QUINTILE
+asc [294.349], neptune [354.903], 60.553, SEXTILE
 
 mc
 -------
-mc [228.262], uranus [49.900], 178.361, OPPOSITION (s)
-mc [228.262], pluto [298.820], 70.558, QUINTILE (s)
+mc [228.262], uranus [49.900], 178.361, OPPOSITION
+mc [228.262], pluto [298.820], 70.558, QUINTILE
 
 sun
 -------
-sun [261.308], saturn [331.825], 70.517, QUINTILE (a)
-sun [261.308], north node [21.851], 239.457, TRINE (s)
+sun [261.308], saturn [331.825], 70.517, QUINTILE
+sun [261.308], north node [21.851], 239.457, TRINE
 
 mercury
 -------
-mercury [278.481], venus [220.444], 58.037, SEXTILE (s)
+mercury [278.481], venus [220.444], 58.037, SEXTILE
 
 mars
 -------
-mars [253.798], jupiter [36.109], 217.689, QUINTILE (s)
+mars [253.798], jupiter [36.109], 217.689, QUINTILE
 ---------------------
 
 
@@ -566,41 +566,41 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     25Cap29      1  Saturn  Saturn    4P   0.000° ()   33.162° ()    0.000° ()   0.000° ()
-        mc     19Sco14     10   Pluto Jupiter    6C   0.000° ()  -33.085° ()    0.000° ()   0.000° ()
-       sun     22Sag19     11 Jupiter  Saturn   10W  1.017° (+)   0.000° (=) -23.216° (-) -0.000° (=)
-      moon     13Cap35     12  Saturn Jupiter    3P 14.287° (+)  21.264° (+) -27.714° (+) -4.996° (-)
-   mercury  R  08Cap20     12  Saturn Jupiter    2P -0.239° (-)  16.009° (-) -23.608° (+) -0.432° (+)
-     venus     11Sco38      9   Pluto Mercury    6C  1.194° (+) -40.688° (+) -13.176° (-)  2.257° (-)
-      mars     14Sag31     11 Jupiter   Venus    9W  0.728° (+)  -7.800° (-) -22.917° (-) -0.379° (-)
-   jupiter  R   06Tau3      3   Venus   Venus    5P -0.056° (+) 133.725° (-)  12.336° (-) -1.273° (+)
-    saturn     01Pis53      1 Neptune   Venus    8C  0.066° (+)  69.565° (-) -12.351° (+) -1.659° (+)
-    uranus  R  19Tau52      4   Venus Jupiter    6P -0.033° (+) 147.542° (-)  17.404° (-) -0.312° (+)
-   neptune     24Pis54      2 Neptune    Mars   10C  0.005° (+)  92.582° (-)  -3.168° (+) -1.247° (+)
-     pluto     28Cap50      1  Saturn    Mars    4P  0.027° (+)  36.522° (-) -23.084° (+) -2.754° (-)
-north node  R  21Ari47      3    Mars    Mars    4W -0.053° (=) 119.472° (-)   8.494° (-)  0.000° (=)
-south node  R  21Lib47      9   Venus   Venus    4S -0.053° (=) -60.528° (-)  -8.494° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     25Cap29  Saturn  Saturn    4P   0.000° ()   33.162° ()    0.000° ()   0.000° ()
+        mc     19Sco14   Pluto Jupiter    6C   0.000° ()  -33.085° ()    0.000° ()   0.000° ()
+       sun     22Sag19 Jupiter  Saturn   10W  1.017° (+)   0.000° (=) -23.216° (-) -0.000° (=)
+      moon     13Cap35  Saturn Jupiter    3P 14.287° (+)  21.264° (+) -27.714° (+) -4.996° (-)
+   mercury  R  08Cap20  Saturn Jupiter    2P -0.239° (-)  16.009° (-) -23.608° (+) -0.432° (+)
+     venus     11Sco38   Pluto Mercury    6C  1.194° (+) -40.688° (+) -13.176° (-)  2.257° (-)
+      mars     14Sag31 Jupiter   Venus    9W  0.728° (+)  -7.800° (-) -22.917° (-) -0.379° (-)
+   jupiter  R  06Tau03   Venus   Venus    5P -0.056° (+) 133.725° (-)  12.336° (-) -1.273° (+)
+    saturn     01Pis53 Neptune   Venus    8C  0.066° (+)  69.565° (-) -12.351° (+) -1.659° (+)
+    uranus  R  19Tau52   Venus Jupiter    6P -0.033° (+) 147.542° (-)  17.404° (-) -0.312° (+)
+   neptune     24Pis54 Neptune    Mars   10C  0.005° (+)  92.582° (-)  -3.168° (+) -1.247° (+)
+     pluto     28Cap50  Saturn    Mars    4P  0.027° (+)  36.522° (-) -23.084° (+) -2.754° (-)
+north node  R  21Ari47    Mars    Mars    4W -0.053° (=) 119.472° (-)   8.494° (-)  0.000° (=)
+south node  R  21Lib47   Venus   Venus    4S -0.053° (=) -60.528° (-)  -8.494° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [295.487], venus [221.637], 73.850, QUINTILE (s)
-asc [295.487], neptune [354.907], 59.420, SEXTILE (s)
+asc [295.487], venus [221.637], 73.850, QUINTILE
+asc [295.487], neptune [354.907], 59.420, SEXTILE
 
 mc
 -------
-mc [229.240], uranus [49.867], 179.373, OPPOSITION (s)
+mc [229.240], uranus [49.867], 179.373, OPPOSITION
 
 sun
 -------
-sun [262.325], north node [21.798], 240.528, TRINE (s)
+sun [262.325], north node [21.798], 240.528, TRINE
 
 moon
 -------
-moon [283.590], venus [221.637], 61.953, SEXTILE (s)
-moon [283.590], neptune [354.907], 71.318, QUINTILE (a)
+moon [283.590], venus [221.637], 61.953, SEXTILE
+moon [283.590], neptune [354.907], 71.318, QUINTILE
 ---------------------
 
 
@@ -613,42 +613,42 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     26Cap38      1  Saturn    Mars    4P   0.000° ()   33.295° ()    0.000° ()   0.000° ()
-        mc     20Sco12     10   Pluto Jupiter    7C   0.000° ()  -33.127° ()    0.000° ()   0.000° ()
-       sun     23Sag20     11 Jupiter  Saturn   10W  1.018° (+)   0.000° (=) -23.271° (-) -0.000° (=)
-      moon     27Cap56      1  Saturn    Mars    4P 14.397° (+)  34.598° (+) -25.513° (+) -5.044° (-)
-   mercury  R   08Cap0     12  Saturn Jupiter    2P -0.431° (-)  14.657° (-) -23.335° (+) -0.138° (+)
-     venus     12Sco49      9   Pluto Mercury    6C  1.196° (+) -40.511° (+) -13.542° (-)  2.252° (-)
-      mars     15Sag15     11 Jupiter   Venus    9W  0.729° (+)  -8.089° (-) -23.009° (-) -0.389° (-)
-   jupiter  R  05Tau59      3   Venus   Venus    5P -0.053° (+) 132.653° (-)  12.323° (-) -1.268° (+)
-    saturn     01Pis57      1 Neptune   Venus    8C  0.068° (+)  68.615° (-) -12.325° (+) -1.657° (+)
-    uranus  R  19Tau50      3   Venus Jupiter    6P -0.033° (+) 146.491° (-)  17.396° (-) -0.312° (+)
-   neptune     24Pis54      2 Neptune    Mars   10C  0.005° (+)  91.569° (-)  -3.166° (+) -1.247° (+)
-     pluto     28Cap52      1  Saturn    Mars    4P  0.028° (+)  35.532° (-) -23.079° (+) -2.755° (-)
-north node  R  21Ari44      2    Mars    Mars    4W -0.053° (=) 118.402° (-)   8.474° (-)  0.000° (=)
-south node  R  21Lib44      8   Venus   Venus    4S -0.053° (=) -61.598° (-)  -8.474° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     26Cap38  Saturn    Mars    4P   0.000° ()   33.295° ()    0.000° ()   0.000° ()
+        mc     20Sco12   Pluto Jupiter    7C   0.000° ()  -33.127° ()    0.000° ()   0.000° ()
+       sun     23Sag20 Jupiter  Saturn   10W  1.018° (+)   0.000° (=) -23.271° (-) -0.000° (=)
+      moon     27Cap56  Saturn    Mars    4P 14.397° (+)  34.598° (+) -25.513° (+) -5.044° (-)
+   mercury  R  08Cap00  Saturn Jupiter    2P -0.431° (-)  14.657° (-) -23.335° (+) -0.138° (+)
+     venus     12Sco49   Pluto Mercury    6C  1.196° (+) -40.511° (+) -13.542° (-)  2.252° (-)
+      mars     15Sag15 Jupiter   Venus    9W  0.729° (+)  -8.089° (-) -23.009° (-) -0.389° (-)
+   jupiter  R  05Tau59   Venus   Venus    5P -0.053° (+) 132.653° (-)  12.323° (-) -1.268° (+)
+    saturn     01Pis57 Neptune   Venus    8C  0.068° (+)  68.615° (-) -12.325° (+) -1.657° (+)
+    uranus  R  19Tau50   Venus Jupiter    6P -0.033° (+) 146.491° (-)  17.396° (-) -0.312° (+)
+   neptune     24Pis54 Neptune    Mars   10C  0.005° (+)  91.569° (-)  -3.166° (+) -1.247° (+)
+     pluto     28Cap52  Saturn    Mars    4P  0.028° (+)  35.532° (-) -23.079° (+) -2.755° (-)
+north node  R  21Ari44    Mars    Mars    4W -0.053° (=) 118.402° (-)   8.474° (-)  0.000° (=)
+south node  R  21Lib44   Venus   Venus    4S -0.053° (=) -61.598° (-)  -8.474° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [296.638], moon [297.941], 1.302, CONJUNCTION (s)
-asc [296.638], venus [222.832], 73.806, QUINTILE (s)
-asc [296.638], neptune [354.912], 58.274, SEXTILE (s)
+asc [296.638], moon [297.941], 1.302, CONJUNCTION
+asc [296.638], venus [222.832], 73.806, QUINTILE
+asc [296.638], neptune [354.912], 58.274, SEXTILE
 
 mc
 -------
-mc [230.215], uranus [49.834], 180.381, OPPOSITION (s)
+mc [230.215], uranus [49.834], 180.381, OPPOSITION
 
 sun
 -------
-sun [263.343], neptune [354.912], 91.569, SQUARE (a)
-sun [263.343], north node [21.745], 241.598, TRINE (s)
+sun [263.343], neptune [354.912], 91.569, SQUARE
+sun [263.343], north node [21.745], 241.598, TRINE
 
 moon
 -------
-moon [297.941], pluto [298.875], 0.934, CONJUNCTION (a)
+moon [297.941], pluto [298.875], 0.934, CONJUNCTION
 ---------------------
 
 
@@ -661,45 +661,45 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     27Cap48      1  Saturn    Mars    4P   0.000° ()   33.442° ()    0.000° ()   0.000° ()
-        mc     21Sco11     10   Pluto Jupiter    7C   0.000° ()  -33.173° ()    0.000° ()   0.000° ()
-       sun     24Sag21     11 Jupiter  Saturn   10W  1.018° (+)   0.000° (=) -23.318° (-) -0.000° (=)
-      moon     12Aqu21      1  Uranus   Venus    6S 14.410° (+)  47.991° (+) -21.673° (+) -4.775° (+)
-   mercury  R  07Cap28     12  Saturn Jupiter    2P -0.625° (-)  13.111° (-) -23.055° (+)  0.173° (+)
-     venus      14Sco1      9   Pluto Mercury    6C  1.197° (+) -40.332° (+) -13.904° (-)  2.245° (-)
-      mars     15Sag59     11 Jupiter   Venus    9W  0.730° (+)  -8.377° (-) -23.098° (-) -0.399° (-)
-   jupiter  R  05Tau56      3   Venus   Venus    5P -0.050° (+) 131.584° (-)  12.310° (-) -1.263° (+)
-    saturn      02Pis1      1 Neptune   Venus    8C  0.069° (+)  67.665° (-) -12.299° (+) -1.656° (+)
-    uranus  R  19Tau48      3   Venus Jupiter    6P -0.032° (+) 145.441° (-)  17.387° (-) -0.311° (+)
-   neptune     24Pis55      2 Neptune    Mars   10C  0.006° (+)  90.557° (-)  -3.163° (+) -1.246° (+)
-     pluto     28Cap54      1  Saturn    Mars    4P  0.028° (+)  34.542° (-) -23.074° (+) -2.755° (-)
-north node  R  21Ari41      2    Mars    Mars    4W -0.053° (=) 117.331° (-)   8.454° (-)  0.000° (=)
-south node  R  21Lib41      8   Venus   Venus    4S -0.053° (=) -62.669° (-)  -8.454° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     27Cap48  Saturn    Mars    4P   0.000° ()   33.442° ()    0.000° ()   0.000° ()
+        mc     21Sco11   Pluto Jupiter    7C   0.000° ()  -33.173° ()    0.000° ()   0.000° ()
+       sun     24Sag21 Jupiter  Saturn   10W  1.018° (+)   0.000° (=) -23.318° (-) -0.000° (=)
+      moon     12Aqu21  Uranus   Venus    6S 14.410° (+)  47.991° (+) -21.673° (+) -4.775° (+)
+   mercury  R  07Cap28  Saturn Jupiter    2P -0.625° (-)  13.111° (-) -23.055° (+)  0.173° (+)
+     venus     14Sco01   Pluto Mercury    6C  1.197° (+) -40.332° (+) -13.904° (-)  2.245° (-)
+      mars     15Sag59 Jupiter   Venus    9W  0.730° (+)  -8.377° (-) -23.098° (-) -0.399° (-)
+   jupiter  R  05Tau56   Venus   Venus    5P -0.050° (+) 131.584° (-)  12.310° (-) -1.263° (+)
+    saturn     02Pis01 Neptune   Venus    8C  0.069° (+)  67.665° (-) -12.299° (+) -1.656° (+)
+    uranus  R  19Tau48   Venus Jupiter    6P -0.032° (+) 145.441° (-)  17.387° (-) -0.311° (+)
+   neptune     24Pis55 Neptune    Mars   10C  0.006° (+)  90.557° (-)  -3.163° (+) -1.246° (+)
+     pluto     28Cap54  Saturn    Mars    4P  0.028° (+)  34.542° (-) -23.074° (+) -2.755° (-)
+north node  R  21Ari41    Mars    Mars    4W -0.053° (=) 117.331° (-)   8.454° (-)  0.000° (=)
+south node  R  21Lib41   Venus   Venus    4S -0.053° (=) -62.669° (-)  -8.454° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [297.803], venus [224.028], 73.775, QUINTILE (s)
-asc [297.803], pluto [298.902], 1.099, CONJUNCTION (s)
+asc [297.803], venus [224.028], 73.775, QUINTILE
+asc [297.803], pluto [298.902], 1.099, CONJUNCTION
 
 mc
 -------
-mc [231.188], uranus [49.802], 181.386, OPPOSITION (s)
+mc [231.188], uranus [49.802], 181.386, OPPOSITION
 
 sun
 -------
-sun [264.361], uranus [49.802], 214.559, QUINTILE (s)
-sun [264.361], neptune [354.918], 90.557, SQUARE (a)
+sun [264.361], uranus [49.802], 214.559, QUINTILE
+sun [264.361], neptune [354.918], 90.557, SQUARE
 
 moon
 -------
-moon [312.352], venus [224.028], 88.324, SQUARE (s)
+moon [312.352], venus [224.028], 88.324, SQUARE
 
 mercury
 -------
-mercury [277.472], jupiter [35.945], 241.528, TRINE (s)
+mercury [277.472], jupiter [35.945], 241.528, TRINE
 ---------------------
 
 
@@ -712,45 +712,45 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     28Cap58      1  Saturn    Mars    4P   0.000° ()   33.603° ()    0.000° ()   0.000° ()
-        mc      22Sco9     10   Pluto Jupiter    7C   0.000° ()  -33.221° ()    0.000° ()   0.000° ()
-       sun     25Sag22     11 Jupiter  Saturn   10W  1.018° (+)   0.000° (=) -23.358° (-) -0.000° (=)
-      moon     26Aqu44      1  Uranus  Saturn    7S 14.342° (-)  61.355° (+) -16.551° (+) -4.204° (+)
-   mercury  R  06Cap45     12  Saturn Mercury    2P -0.813° (-)  11.374° (-) -22.769° (+)  0.498° (+)
-     venus     15Sco13      9   Pluto Mercury    6C  1.198° (+) -40.152° (+) -14.261° (-)  2.237° (-)
-      mars     16Sag42     11 Jupiter   Venus    9W  0.731° (+)  -8.665° (-) -23.182° (-) -0.409° (-)
-   jupiter  R  05Tau53      3   Venus   Venus    5P -0.047° (+) 130.518° (-)  12.299° (-) -1.258° (+)
-    saturn      02Pis5      1 Neptune   Venus    8C  0.070° (+)  66.717° (-) -12.272° (+) -1.654° (+)
-    uranus  R  19Tau46      3   Venus Jupiter    6P -0.031° (+) 144.392° (-)  17.379° (-) -0.311° (+)
-   neptune     24Pis55      2 Neptune    Mars   10C  0.006° (+)  89.546° (-)  -3.160° (+) -1.246° (+)
-     pluto     28Cap55     12  Saturn    Mars    4P  0.028° (+)  33.552° (-) -23.069° (+) -2.756° (-)
-north node  R  21Ari38      2    Mars    Mars    4W -0.053° (=) 116.261° (-)   8.434° (-)  0.000° (=)
-south node  R  21Lib38      8   Venus   Venus    4S -0.053° (=) -63.739° (-)  -8.434° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     28Cap58  Saturn    Mars    4P   0.000° ()   33.603° ()    0.000° ()   0.000° ()
+        mc     22Sco09   Pluto Jupiter    7C   0.000° ()  -33.221° ()    0.000° ()   0.000° ()
+       sun     25Sag22 Jupiter  Saturn   10W  1.018° (+)   0.000° (=) -23.358° (-) -0.000° (=)
+      moon     26Aqu44  Uranus  Saturn    7S 14.342° (-)  61.355° (+) -16.551° (+) -4.204° (+)
+   mercury  R  06Cap45  Saturn Mercury    2P -0.813° (-)  11.374° (-) -22.769° (+)  0.498° (+)
+     venus     15Sco13   Pluto Mercury    6C  1.198° (+) -40.152° (+) -14.261° (-)  2.237° (-)
+      mars     16Sag42 Jupiter   Venus    9W  0.731° (+)  -8.665° (-) -23.182° (-) -0.409° (-)
+   jupiter  R  05Tau53   Venus   Venus    5P -0.047° (+) 130.518° (-)  12.299° (-) -1.258° (+)
+    saturn     02Pis05 Neptune   Venus    8C  0.070° (+)  66.717° (-) -12.272° (+) -1.654° (+)
+    uranus  R  19Tau46   Venus Jupiter    6P -0.031° (+) 144.392° (-)  17.379° (-) -0.311° (+)
+   neptune     24Pis55 Neptune    Mars   10C  0.006° (+)  89.546° (-)  -3.160° (+) -1.246° (+)
+     pluto     28Cap55  Saturn    Mars    4P  0.028° (+)  33.552° (-) -23.069° (+) -2.756° (-)
+north node  R  21Ari38    Mars    Mars    4W -0.053° (=) 116.261° (-)   8.434° (-)  0.000° (=)
+south node  R  21Lib38   Venus   Venus    4S -0.053° (=) -63.739° (-)  -8.434° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [298.981], venus [225.226], 73.755, QUINTILE (s)
-asc [298.981], pluto [298.930], 0.051, CONJUNCTION (s)
+asc [298.981], venus [225.226], 73.755, QUINTILE
+asc [298.981], pluto [298.930], 0.051, CONJUNCTION
 
 sun
 -------
-sun [265.378], uranus [49.770], 215.608, QUINTILE (s)
-sun [265.378], neptune [354.924], 89.546, SQUARE (a)
+sun [265.378], uranus [49.770], 215.608, QUINTILE
+sun [265.378], neptune [354.924], 89.546, SQUARE
 
 moon
 -------
-moon [326.733], mars [256.714], 70.020, QUINTILE (s)
+moon [326.733], mars [256.714], 70.020, QUINTILE
 
 mercury
 -------
-mercury [276.752], jupiter [35.896], 240.856, TRINE (s)
+mercury [276.752], jupiter [35.896], 240.856, TRINE
 
 venus
 -------
-venus [225.226], pluto [298.930], 73.704, QUINTILE (a)
+venus [225.226], pluto [298.930], 73.704, QUINTILE
 ---------------------
 
 
@@ -763,45 +763,45 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     00Aqu10      1  Uranus Mercury    5S   0.000° ()   33.777° ()    0.000° ()   0.000° ()
-        mc      23Sco7     10   Pluto Jupiter    7C   0.000° ()  -33.272° ()    0.000° ()   0.000° ()
-       sun     26Sag23     11 Jupiter    Mars   10W  1.018° (+)   0.000° (=) -23.389° (-) -0.000° (=)
-      moon      11Pis0      1 Neptune   Venus    9C 14.218° (-)  74.620° (+) -10.555° (+) -3.375° (+)
-   mercury  R  05Cap51     12  Saturn Mercury    2P -0.988° (-)   9.454° (-) -22.480° (+)  0.830° (+)
-     venus     16Sco25      9   Pluto Mercury    6C  1.200° (+) -39.971° (+) -14.614° (-)  2.227° (-)
-      mars     17Sag26     11 Jupiter Mercury    9W  0.731° (+)  -8.952° (-) -23.263° (-) -0.419° (-)
-   jupiter  R  05Tau51      3   Venus   Venus    5P -0.043° (+) 129.455° (-)  12.289° (-) -1.253° (+)
-    saturn      02Pis9      1 Neptune   Venus    8C  0.072° (+)  65.770° (-) -12.245° (+) -1.653° (+)
-    uranus  R  19Tau44      3   Venus Jupiter    6P -0.031° (+) 143.343° (-)  17.371° (-) -0.311° (+)
-   neptune     24Pis55      2 Neptune    Mars   10C  0.007° (+)  88.534° (-)  -3.157° (+) -1.245° (+)
-     pluto     28Cap57     12  Saturn    Mars    4P  0.028° (+)  32.562° (-) -23.063° (+) -2.756° (-)
-north node  R  21Ari35      2    Mars    Mars    4W -0.053° (=) 115.190° (-)   8.415° (-)  0.000° (=)
-south node  R  21Lib35      8   Venus   Venus    4S -0.053° (=) -64.810° (-)  -8.415° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     00Aqu10  Uranus Mercury    5S   0.000° ()   33.777° ()    0.000° ()   0.000° ()
+        mc     23Sco07   Pluto Jupiter    7C   0.000° ()  -33.272° ()    0.000° ()   0.000° ()
+       sun     26Sag23 Jupiter    Mars   10W  1.018° (+)   0.000° (=) -23.389° (-) -0.000° (=)
+      moon     11Pis00 Neptune   Venus    9C 14.218° (-)  74.620° (+) -10.555° (+) -3.375° (+)
+   mercury  R  05Cap51  Saturn Mercury    2P -0.988° (-)   9.454° (-) -22.480° (+)  0.830° (+)
+     venus     16Sco25   Pluto Mercury    6C  1.200° (+) -39.971° (+) -14.614° (-)  2.227° (-)
+      mars     17Sag26 Jupiter Mercury    9W  0.731° (+)  -8.952° (-) -23.263° (-) -0.419° (-)
+   jupiter  R  05Tau51   Venus   Venus    5P -0.043° (+) 129.455° (-)  12.289° (-) -1.253° (+)
+    saturn     02Pis09 Neptune   Venus    8C  0.072° (+)  65.770° (-) -12.245° (+) -1.653° (+)
+    uranus  R  19Tau44   Venus Jupiter    6P -0.031° (+) 143.343° (-)  17.371° (-) -0.311° (+)
+   neptune     24Pis55 Neptune    Mars   10C  0.007° (+)  88.534° (-)  -3.157° (+) -1.245° (+)
+     pluto     28Cap57  Saturn    Mars    4P  0.028° (+)  32.562° (-) -23.063° (+) -2.756° (-)
+north node  R  21Ari35    Mars    Mars    4W -0.053° (=) 115.190° (-)   8.415° (-)  0.000° (=)
+south node  R  21Lib35   Venus   Venus    4S -0.053° (=) -64.810° (-)  -8.415° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [300.174], venus [226.425], 73.749, QUINTILE (s)
-asc [300.174], pluto [298.958], 1.215, CONJUNCTION (s)
+asc [300.174], venus [226.425], 73.749, QUINTILE
+asc [300.174], pluto [298.958], 1.215, CONJUNCTION
 
 mc
 -------
-mc [233.125], neptune [354.931], 121.806, TRINE (s)
+mc [233.125], neptune [354.931], 121.806, TRINE
 
 sun
 -------
-sun [266.396], uranus [49.739], 216.657, QUINTILE (s)
-sun [266.396], neptune [354.931], 88.534, SQUARE (a)
+sun [266.396], uranus [49.739], 216.657, QUINTILE
+sun [266.396], neptune [354.931], 88.534, SQUARE
 
 mercury
 -------
-mercury [275.850], jupiter [35.852], 239.999, TRINE (s)
+mercury [275.850], jupiter [35.852], 239.999, TRINE
 
 venus
 -------
-venus [226.425], pluto [298.958], 72.533, QUINTILE (a)
+venus [226.425], pluto [298.958], 72.533, QUINTILE
 ---------------------
 
 
@@ -814,48 +814,48 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     01Aqu22      1  Uranus Mercury    5S   0.000° ()   33.966° ()    0.000° ()   0.000° ()
-        mc      24Sco5     10   Pluto  Saturn    7C   0.000° ()  -33.325° ()    0.000° ()   0.000° ()
-       sun     27Sag24     11 Jupiter    Mars   10W  1.018° (+)   0.000° (=) -23.413° (-) -0.000° (=)
-      moon      25Pis9      2 Neptune    Mars   10C 14.064° (-)  87.744° (+)  -4.076° (+) -2.345° (+)
-   mercury  R  04Cap46     11  Saturn Mercury    2P -1.141° (-)   7.369° (-) -22.189° (+)  1.164° (+)
-     venus     17Sco37      9   Pluto Mercury    6C  1.201° (+) -39.788° (+) -14.962° (-)  2.215° (-)
-      mars     18Sag10     11 Jupiter Mercury    9W  0.732° (+)  -9.238° (-) -23.339° (-) -0.429° (-)
-   jupiter  R  05Tau48      3   Venus   Venus    5P -0.040° (+) 128.396° (-)  12.280° (-) -1.248° (+)
-    saturn     02Pis14      1 Neptune   Venus    8C  0.073° (+)  64.825° (-) -12.218° (+) -1.651° (+)
-    uranus  R  19Tau42      3   Venus Jupiter    6P -0.030° (+) 142.294° (-)  17.363° (-) -0.310° (+)
-   neptune     24Pis56      2 Neptune    Mars   10C  0.008° (+)  87.524° (-)  -3.154° (+) -1.244° (+)
-     pluto     28Cap59     12  Saturn    Mars    4P  0.029° (+)  31.573° (-) -23.058° (+) -2.757° (-)
-north node  R  21Ari31      2    Mars    Mars    4W -0.053° (=) 114.119° (-)   8.395° (-)  0.000° (=)
-south node  R  21Lib31      8   Venus   Venus    4S -0.053° (=) -65.881° (-)  -8.395° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     01Aqu22  Uranus Mercury    5S   0.000° ()   33.966° ()    0.000° ()   0.000° ()
+        mc     24Sco05   Pluto  Saturn    7C   0.000° ()  -33.325° ()    0.000° ()   0.000° ()
+       sun     27Sag24 Jupiter    Mars   10W  1.018° (+)   0.000° (=) -23.413° (-) -0.000° (=)
+      moon     25Pis09 Neptune    Mars   10C 14.064° (-)  87.744° (+)  -4.076° (+) -2.345° (+)
+   mercury  R  04Cap46  Saturn Mercury    2P -1.141° (-)   7.369° (-) -22.189° (+)  1.164° (+)
+     venus     17Sco37   Pluto Mercury    6C  1.201° (+) -39.788° (+) -14.962° (-)  2.215° (-)
+      mars     18Sag10 Jupiter Mercury    9W  0.732° (+)  -9.238° (-) -23.339° (-) -0.429° (-)
+   jupiter  R  05Tau48   Venus   Venus    5P -0.040° (+) 128.396° (-)  12.280° (-) -1.248° (+)
+    saturn     02Pis14 Neptune   Venus    8C  0.073° (+)  64.825° (-) -12.218° (+) -1.651° (+)
+    uranus  R  19Tau42   Venus Jupiter    6P -0.030° (+) 142.294° (-)  17.363° (-) -0.310° (+)
+   neptune     24Pis56 Neptune    Mars   10C  0.008° (+)  87.524° (-)  -3.154° (+) -1.244° (+)
+     pluto     28Cap59  Saturn    Mars    4P  0.029° (+)  31.573° (-) -23.058° (+) -2.757° (-)
+north node  R  21Ari31    Mars    Mars    4W -0.053° (=) 114.119° (-)   8.395° (-)  0.000° (=)
+south node  R  21Lib31   Venus   Venus    4S -0.053° (=) -65.881° (-)  -8.395° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [301.381], venus [227.626], 73.755, QUINTILE (s)
+asc [301.381], venus [227.626], 73.755, QUINTILE
 
 mc
 -------
-mc [234.089], moon [355.159], 121.070, TRINE (s)
-mc [234.089], neptune [354.938], 120.849, TRINE (s)
+mc [234.089], moon [355.159], 121.070, TRINE
+mc [234.089], neptune [354.938], 120.849, TRINE
 
 sun
 -------
-sun [267.414], uranus [49.709], 217.706, QUINTILE (s)
+sun [267.414], uranus [49.709], 217.706, QUINTILE
 
 moon
 -------
-moon [355.159], neptune [354.938], 0.221, CONJUNCTION (s)
+moon [355.159], neptune [354.938], 0.221, CONJUNCTION
 
 mercury
 -------
-mercury [274.783], jupiter [35.810], 238.973, TRINE (s)
+mercury [274.783], jupiter [35.810], 238.973, TRINE
 
 venus
 -------
-venus [227.626], pluto [298.987], 71.361, QUINTILE (a)
+venus [227.626], pluto [298.987], 71.361, QUINTILE
 ---------------------
 
 
@@ -868,48 +868,48 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     02Aqu36      1  Uranus Mercury    5S   0.000° ()   34.170° ()    0.000° ()   0.000° ()
-        mc      25Sco3     10   Pluto  Saturn    7C   0.000° ()  -33.382° ()    0.000° ()   0.000° ()
-       sun     28Sag25     11 Jupiter    Mars   10W  1.018° (+)   0.000° (=) -23.429° (-)  0.000° (=)
-      moon      09Ari8      2    Mars   Venus    2W 13.900° (-) 100.709° (+)   2.534° (+) -1.185° (+)
-   mercury  R  03Cap34     11  Saturn Mercury    2P -1.262° (-)   5.147° (-) -21.899° (+)  1.492° (+)
-     venus     18Sco49      9   Pluto Mercury    6C  1.203° (+) -39.605° (+) -15.304° (-)  2.202° (-)
-      mars     18Sag54     11 Jupiter Mercury    9W  0.733° (+)  -9.524° (-) -23.412° (-) -0.439° (-)
-   jupiter  R  05Tau46      3   Venus   Venus    5P -0.036° (+) 127.340° (-)  12.272° (-) -1.243° (+)
-    saturn     02Pis18      1 Neptune   Venus    8C  0.074° (+)  63.881° (-) -12.190° (+) -1.650° (+)
-    uranus  R  19Tau40      3   Venus Jupiter    6P -0.030° (+) 141.246° (-)  17.355° (-) -0.310° (+)
-   neptune     24Pis56      2 Neptune    Mars   10C  0.008° (+)  86.514° (-)  -3.150° (+) -1.244° (+)
-     pluto      29Cap0     12  Saturn    Mars    4P  0.029° (+)  30.583° (-) -23.053° (+) -2.758° (-)
-north node  R  21Ari28      2    Mars    Mars    4W -0.053° (=) 113.048° (-)   8.375° (-)  0.000° (=)
-south node  R  21Lib28      8   Venus   Venus    4S -0.053° (=) -66.952° (-)  -8.375° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     02Aqu36  Uranus Mercury    5S   0.000° ()   34.170° ()    0.000° ()   0.000° ()
+        mc     25Sco03   Pluto  Saturn    7C   0.000° ()  -33.382° ()    0.000° ()   0.000° ()
+       sun     28Sag25 Jupiter    Mars   10W  1.018° (+)   0.000° (=) -23.429° (-)  0.000° (=)
+      moon     09Ari08    Mars   Venus    2W 13.900° (-) 100.709° (+)   2.534° (+) -1.185° (+)
+   mercury  R  03Cap34  Saturn Mercury    2P -1.262° (-)   5.147° (-) -21.899° (+)  1.492° (+)
+     venus     18Sco49   Pluto Mercury    6C  1.203° (+) -39.605° (+) -15.304° (-)  2.202° (-)
+      mars     18Sag54 Jupiter Mercury    9W  0.733° (+)  -9.524° (-) -23.412° (-) -0.439° (-)
+   jupiter  R  05Tau46   Venus   Venus    5P -0.036° (+) 127.340° (-)  12.272° (-) -1.243° (+)
+    saturn     02Pis18 Neptune   Venus    8C  0.074° (+)  63.881° (-) -12.190° (+) -1.650° (+)
+    uranus  R  19Tau40   Venus Jupiter    6P -0.030° (+) 141.246° (-)  17.355° (-) -0.310° (+)
+   neptune     24Pis56 Neptune    Mars   10C  0.008° (+)  86.514° (-)  -3.150° (+) -1.244° (+)
+     pluto     29Cap00  Saturn    Mars    4P  0.029° (+)  30.583° (-) -23.053° (+) -2.758° (-)
+north node  R  21Ari28    Mars    Mars    4W -0.053° (=) 113.048° (-)   8.375° (-)  0.000° (=)
+south node  R  21Lib28   Venus   Venus    4S -0.053° (=) -66.952° (-)  -8.375° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [302.602], venus [228.828], 73.775, QUINTILE (s)
+asc [302.602], venus [228.828], 73.775, QUINTILE
 
 mc
 -------
-mc [235.050], neptune [354.946], 119.896, TRINE (s)
+mc [235.050], neptune [354.946], 119.896, TRINE
 
 moon
 -------
-moon [9.141], pluto [299.016], 289.875, QUINTILE (a)
+moon [9.141], pluto [299.016], 289.875, QUINTILE
 
 mercury
 -------
-mercury [273.579], saturn [332.313], 58.734, SEXTILE (s)
+mercury [273.579], saturn [332.313], 58.734, SEXTILE
 
 venus
 -------
-venus [228.828], uranus [49.679], 179.149, OPPOSITION (s)
-venus [228.828], pluto [299.016], 70.188, QUINTILE (a)
+venus [228.828], uranus [49.679], 179.149, OPPOSITION
+venus [228.828], pluto [299.016], 70.188, QUINTILE
 
 mars
 -------
-mars [258.909], saturn [332.313], 73.404, QUINTILE (a)
+mars [258.909], saturn [332.313], 73.404, QUINTILE
 ---------------------
 
 
@@ -922,50 +922,50 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     03Aqu50      1  Uranus Mercury    5S   0.000° ()   34.389° ()    0.000° ()   0.000° ()
-        mc      26Sco0     10   Pluto  Saturn    7C   0.000° ()  -33.441° ()    0.000° ()   0.000° ()
-       sun     29Sag27     11 Jupiter    Mars   10W  1.018° (+)   0.000° (=) -23.437° (-)  0.000° (=)
-      moon     22Ari57      2    Mars    Mars    4W 13.738° (-) 113.510° (+)   8.955° (+)  0.031° (+)
-   mercury  R  02Cap16     11  Saturn Mercury    2P -1.343° (-)   2.823° (-) -21.614° (+)  1.805° (+)
-     venus      20Sco1      9   Pluto Jupiter    7C  1.204° (+) -39.419° (+) -15.641° (-)  2.187° (-)
-      mars     19Sag38     11 Jupiter Mercury    9W  0.734° (+)  -9.809° (-) -23.481° (-) -0.448° (-)
-   jupiter  R  05Tau44      3   Venus   Venus    5P -0.033° (+) 126.287° (-)  12.265° (-) -1.238° (+)
-    saturn     02Pis23      1 Neptune   Venus    8C  0.076° (+)  62.938° (-) -12.162° (+) -1.648° (+)
-    uranus  R  19Tau38      3   Venus Jupiter    6P -0.029° (+) 140.199° (-)  17.348° (-) -0.310° (+)
-   neptune     24Pis57      2 Neptune    Mars   10C  0.009° (+)  85.504° (-)  -3.146° (+) -1.243° (+)
-     pluto      29Cap2     12  Saturn    Mars    4P  0.029° (+)  29.594° (-) -23.048° (+) -2.759° (-)
-north node  R  21Ari25      2    Mars    Mars    4W -0.053° (=) 111.977° (-)   8.355° (-)  0.000° (=)
-south node  R  21Lib25      8   Venus   Venus    4S -0.053° (=) -68.023° (-)  -8.355° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     03Aqu50  Uranus Mercury    5S   0.000° ()   34.389° ()    0.000° ()   0.000° ()
+        mc     26Sco00   Pluto  Saturn    7C   0.000° ()  -33.441° ()    0.000° ()   0.000° ()
+       sun     29Sag27 Jupiter    Mars   10W  1.018° (+)   0.000° (=) -23.437° (-)  0.000° (=)
+      moon     22Ari57    Mars    Mars    4W 13.738° (-) 113.510° (+)   8.955° (+)  0.031° (+)
+   mercury  R  02Cap16  Saturn Mercury    2P -1.343° (-)   2.823° (-) -21.614° (+)  1.805° (+)
+     venus     20Sco01   Pluto Jupiter    7C  1.204° (+) -39.419° (+) -15.641° (-)  2.187° (-)
+      mars     19Sag38 Jupiter Mercury    9W  0.734° (+)  -9.809° (-) -23.481° (-) -0.448° (-)
+   jupiter  R  05Tau44   Venus   Venus    5P -0.033° (+) 126.287° (-)  12.265° (-) -1.238° (+)
+    saturn     02Pis23 Neptune   Venus    8C  0.076° (+)  62.938° (-) -12.162° (+) -1.648° (+)
+    uranus  R  19Tau38   Venus Jupiter    6P -0.029° (+) 140.199° (-)  17.348° (-) -0.310° (+)
+   neptune     24Pis57 Neptune    Mars   10C  0.009° (+)  85.504° (-)  -3.146° (+) -1.243° (+)
+     pluto     29Cap02  Saturn    Mars    4P  0.029° (+)  29.594° (-) -23.048° (+) -2.759° (-)
+north node  R  21Ari25    Mars    Mars    4W -0.053° (=) 111.977° (-)   8.355° (-)  0.000° (=)
+south node  R  21Lib25   Venus   Venus    4S -0.053° (=) -68.023° (-)  -8.355° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [303.839], venus [230.031], 73.808, QUINTILE (s)
-asc [303.839], jupiter [35.737], 268.102, SQUARE (s)
+asc [303.839], venus [230.031], 73.808, QUINTILE
+asc [303.839], jupiter [35.737], 268.102, SQUARE
 
 mc
 -------
-mc [236.009], neptune [354.954], 118.945, TRINE (s)
-mc [236.009], north node [21.427], 214.582, QUINTILE (s)
+mc [236.009], neptune [354.954], 118.945, TRINE
+mc [236.009], north node [21.427], 214.582, QUINTILE
 
 moon
 -------
-moon [22.960], north node [21.427], 1.533, CONJUNCTION (s)
+moon [22.960], north node [21.427], 1.533, CONJUNCTION
 
 mercury
 -------
-mercury [272.273], saturn [332.388], 60.115, SEXTILE (s)
+mercury [272.273], saturn [332.388], 60.115, SEXTILE
 
 venus
 -------
-venus [230.031], uranus [49.649], 180.382, OPPOSITION (s)
+venus [230.031], uranus [49.649], 180.382, OPPOSITION
 
 mars
 -------
-mars [259.642], saturn [332.388], 72.746, QUINTILE (a)
-mars [259.642], north node [21.427], 238.215, TRINE (s)
+mars [259.642], saturn [332.388], 72.746, QUINTILE
+mars [259.642], north node [21.427], 238.215, TRINE
 ---------------------
 
 
@@ -978,55 +978,55 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc      05Aqu5      1  Uranus Mercury    5S   0.000° ()   34.622° ()    0.000° ()   0.000° ()
-        mc     26Sco57     10   Pluto  Saturn    7C   0.000° ()  -33.503° ()    0.000° ()   0.000° ()
-       sun     00Cap28     11  Saturn Mercury    2P  1.018° (+)   0.000° (=) -23.437° (-)  0.000° (=)
-      moon     06Tau37      3   Venus   Venus    5P 13.580° (-) 126.151° (+)  14.886° (+)  1.229° (+)
-   mercury  R  00Cap54     11  Saturn Mercury    2P -1.379° (-)   0.440° (-) -21.339° (+)  2.096° (+)
-     venus     21Sco14      9   Pluto Jupiter    7C  1.205° (+) -39.233° (+) -15.972° (-)  2.171° (-)
-      mars     20Sag22     11 Jupiter Mercury   10W  0.734° (+) -10.093° (-) -23.546° (-) -0.458° (-)
-   jupiter  R  05Tau42      3   Venus   Venus    5P -0.029° (+) 125.238° (-)  12.260° (-) -1.233° (+)
-    saturn     02Pis27      1 Neptune   Venus    8C  0.077° (+)  61.996° (-) -12.133° (+) -1.647° (+)
-    uranus  R  19Tau37      3   Venus Jupiter    6P -0.028° (+) 139.152° (-)  17.340° (-) -0.309° (+)
-   neptune     24Pis57      2 Neptune    Mars   10C  0.009° (+)  84.495° (-)  -3.142° (+) -1.243° (+)
-     pluto      29Cap4     12  Saturn    Mars    4P  0.029° (+)  28.605° (-) -23.042° (+) -2.759° (-)
-north node  R  21Ari22      2    Mars    Mars    4W -0.053° (=) 110.906° (-)   8.335° (-)  0.000° (=)
-south node  R  21Lib22      8   Venus   Venus    4S -0.053° (=) -69.094° (-)  -8.335° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     05Aqu05  Uranus Mercury    5S   0.000° ()   34.622° ()    0.000° ()   0.000° ()
+        mc     26Sco57   Pluto  Saturn    7C   0.000° ()  -33.503° ()    0.000° ()   0.000° ()
+       sun     00Cap28  Saturn Mercury    2P  1.018° (+)   0.000° (=) -23.437° (-)  0.000° (=)
+      moon     06Tau37   Venus   Venus    5P 13.580° (-) 126.151° (+)  14.886° (+)  1.229° (+)
+   mercury  R  00Cap54  Saturn Mercury    2P -1.379° (-)   0.440° (-) -21.339° (+)  2.096° (+)
+     venus     21Sco14   Pluto Jupiter    7C  1.205° (+) -39.233° (+) -15.972° (-)  2.171° (-)
+      mars     20Sag22 Jupiter Mercury   10W  0.734° (+) -10.093° (-) -23.546° (-) -0.458° (-)
+   jupiter  R  05Tau42   Venus   Venus    5P -0.029° (+) 125.238° (-)  12.260° (-) -1.233° (+)
+    saturn     02Pis27 Neptune   Venus    8C  0.077° (+)  61.996° (-) -12.133° (+) -1.647° (+)
+    uranus  R  19Tau37   Venus Jupiter    6P -0.028° (+) 139.152° (-)  17.340° (-) -0.309° (+)
+   neptune     24Pis57 Neptune    Mars   10C  0.009° (+)  84.495° (-)  -3.142° (+) -1.243° (+)
+     pluto     29Cap04  Saturn    Mars    4P  0.029° (+)  28.605° (-) -23.042° (+) -2.759° (-)
+north node  R  21Ari22    Mars    Mars    4W -0.053° (=) 110.906° (-)   8.335° (-)  0.000° (=)
+south node  R  21Lib22   Venus   Venus    4S -0.053° (=) -69.094° (-)  -8.335° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [305.091], moon [36.619], 268.472, SQUARE (s)
-asc [305.091], venus [231.235], 73.855, QUINTILE (s)
-asc [305.091], jupiter [35.706], 269.385, SQUARE (s)
+asc [305.091], moon [36.619], 268.472, SQUARE
+asc [305.091], venus [231.235], 73.855, QUINTILE
+asc [305.091], jupiter [35.706], 269.385, SQUARE
 
 mc
 -------
-mc [236.965], north node [21.374], 215.591, QUINTILE (s)
+mc [236.965], north node [21.374], 215.591, QUINTILE
 
 sun
 -------
-sun [270.469], mercury [270.908], 0.440, CONJUNCTION (a)
-sun [270.469], saturn [332.464], 61.996, SEXTILE (a)
+sun [270.469], mercury [270.908], 0.440, CONJUNCTION
+sun [270.469], saturn [332.464], 61.996, SEXTILE
 
 moon
 -------
-moon [36.619], jupiter [35.706], 0.913, CONJUNCTION (s)
+moon [36.619], jupiter [35.706], 0.913, CONJUNCTION
 
 mercury
 -------
-mercury [270.908], saturn [332.464], 61.556, SEXTILE (s)
+mercury [270.908], saturn [332.464], 61.556, SEXTILE
 
 venus
 -------
-venus [231.235], uranus [49.621], 181.615, OPPOSITION (s)
+venus [231.235], uranus [49.621], 181.615, OPPOSITION
 
 mars
 -------
-mars [260.376], saturn [332.464], 72.089, QUINTILE (a)
-mars [260.376], north node [21.374], 239.001, TRINE (s)
+mars [260.376], saturn [332.464], 72.089, QUINTILE
+mars [260.376], north node [21.374], 239.001, TRINE
 ---------------------
 
 
@@ -1039,47 +1039,47 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     06Aqu21      1  Uranus Mercury    5S   0.000° ()   34.872° ()    0.000° ()   0.000° ()
-        mc     27Sco55     10   Pluto  Saturn    7C   0.000° ()  -33.568° ()    0.000° ()   0.000° ()
-       sun     01Cap29     11  Saturn Mercury    2P  1.018° (+)   0.000° (=) -23.430° (+)  0.000° (=)
-      moon      20Tau7      3   Venus Jupiter    7P 13.422° (-) 138.634° (+)  20.028° (+)  2.342° (+)
-   mercury  R  29Sag31     11 Jupiter    Mars   10W -1.369° (+)  -1.957° (-) -21.080° (+)  2.358° (+)
-     venus     22Sco26      9   Pluto Jupiter    7C  1.206° (+) -39.045° (+) -16.298° (-)  2.153° (-)
-      mars      21Sag6     11 Jupiter  Saturn   10W  0.735° (+) -10.376° (-) -23.607° (-) -0.468° (-)
-   jupiter  R  05Tau40      3   Venus   Venus    5P -0.026° (+) 124.192° (-)  12.255° (-) -1.228° (+)
-    saturn     02Pis32      1 Neptune   Venus    8C  0.078° (+)  61.055° (-) -12.103° (+) -1.645° (+)
-    uranus  R  19Tau35      3   Venus Jupiter    6P -0.028° (+) 138.106° (-)  17.333° (-) -0.309° (+)
-   neptune     24Pis58      2 Neptune    Mars   10C  0.010° (+)  83.486° (-)  -3.137° (+) -1.242° (+)
-     pluto      29Cap6     12  Saturn    Mars    4P  0.030° (+)  27.616° (-) -23.037° (+) -2.760° (-)
-north node  R  21Ari19      2    Mars    Mars    4W -0.053° (=) 109.834° (-)   8.316° (-)  0.000° (=)
-south node  R  21Lib19      8   Venus   Venus    4S -0.053° (=) -70.166° (-)  -8.316° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     06Aqu21  Uranus Mercury    5S   0.000° ()   34.872° ()    0.000° ()   0.000° ()
+        mc     27Sco55   Pluto  Saturn    7C   0.000° ()  -33.568° ()    0.000° ()   0.000° ()
+       sun     01Cap29  Saturn Mercury    2P  1.018° (+)   0.000° (=) -23.430° (+)  0.000° (=)
+      moon     20Tau07   Venus Jupiter    7P 13.422° (-) 138.634° (+)  20.028° (+)  2.342° (+)
+   mercury  R  29Sag31 Jupiter    Mars   10W -1.369° (+)  -1.957° (-) -21.080° (+)  2.358° (+)
+     venus     22Sco26   Pluto Jupiter    7C  1.206° (+) -39.045° (+) -16.298° (-)  2.153° (-)
+      mars     21Sag06 Jupiter  Saturn   10W  0.735° (+) -10.376° (-) -23.607° (-) -0.468° (-)
+   jupiter  R  05Tau40   Venus   Venus    5P -0.026° (+) 124.192° (-)  12.255° (-) -1.228° (+)
+    saturn     02Pis32 Neptune   Venus    8C  0.078° (+)  61.055° (-) -12.103° (+) -1.645° (+)
+    uranus  R  19Tau35   Venus Jupiter    6P -0.028° (+) 138.106° (-)  17.333° (-) -0.309° (+)
+   neptune     24Pis58 Neptune    Mars   10C  0.010° (+)  83.486° (-)  -3.137° (+) -1.242° (+)
+     pluto     29Cap06  Saturn    Mars    4P  0.030° (+)  27.616° (-) -23.037° (+) -2.760° (-)
+north node  R  21Ari19    Mars    Mars    4W -0.053° (=) 109.834° (-)   8.316° (-)  0.000° (=)
+south node  R  21Lib19   Venus   Venus    4S -0.053° (=) -70.166° (-)  -8.316° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [306.358], venus [232.441], 73.917, QUINTILE (s)
-asc [306.358], jupiter [35.679], 270.680, SQUARE (s)
+asc [306.358], venus [232.441], 73.917, QUINTILE
+asc [306.358], jupiter [35.679], 270.680, SQUARE
 
 mc
 -------
-mc [237.919], pluto [299.103], 61.184, SEXTILE (s)
-mc [237.919], north node [21.321], 216.597, QUINTILE (s)
+mc [237.919], pluto [299.103], 61.184, SEXTILE
+mc [237.919], north node [21.321], 216.597, QUINTILE
 
 sun
 -------
-sun [271.487], mercury [269.530], 1.957, CONJUNCTION (s)
-sun [271.487], saturn [332.542], 61.055, SEXTILE (a)
+sun [271.487], mercury [269.530], 1.957, CONJUNCTION
+sun [271.487], saturn [332.542], 61.055, SEXTILE
 
 moon
 -------
-moon [50.121], uranus [49.593], 0.528, CONJUNCTION (s)
+moon [50.121], uranus [49.593], 0.528, CONJUNCTION
 
 mars
 -------
-mars [261.110], saturn [332.542], 71.432, QUINTILE (a)
-mars [261.110], north node [21.321], 239.789, TRINE (s)
+mars [261.110], saturn [332.542], 71.432, QUINTILE
+mars [261.110], north node [21.321], 239.789, TRINE
 ---------------------
 
 
@@ -1092,51 +1092,51 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     07Aqu38      1  Uranus   Venus    5S   0.000° ()   35.136° ()    0.000° ()   0.000° ()
-        mc     28Sco52     10   Pluto  Saturn    7C   0.000° ()  -33.635° ()    0.000° ()   0.000° ()
-       sun     02Cap30     11  Saturn Mercury    2P  1.018° (+)   0.000° (=) -23.414° (+)  0.000° (=)
-      moon     03Gem27      4 Mercury Mercury    8S 13.254° (-) 150.955° (+)  24.094° (+)  3.310° (+)
-   mercury  R  28Sag11     11 Jupiter    Mars   10W -1.314° (+)  -4.320° (-) -20.842° (+)  2.584° (+)
-     venus     23Sco38      9   Pluto Jupiter    7C  1.208° (+) -38.857° (+) -16.617° (-)  2.134° (-)
-      mars     21Sag50     11 Jupiter  Saturn   10W  0.736° (+) -10.659° (-) -23.665° (-) -0.478° (-)
-   jupiter  R  05Tau39      3   Venus   Venus    5P -0.023° (+) 123.149° (-)  12.252° (-) -1.223° (+)
-    saturn     02Pis37      1 Neptune   Venus    8C  0.080° (+)  60.116° (-) -12.073° (+) -1.644° (+)
-    uranus  R  19Tau33      3   Venus Jupiter    6P -0.027° (+) 137.060° (-)  17.326° (-) -0.309° (+)
-   neptune     24Pis58      1 Neptune    Mars   10C  0.010° (+)  82.478° (-)  -3.133° (+) -1.241° (+)
-     pluto      29Cap7     12  Saturn    Mars    4P  0.030° (+)  26.628° (-) -23.031° (+) -2.761° (-)
-north node  R  21Ari16      2    Mars    Mars    4W -0.053° (=) 108.763° (-)   8.296° (-)  0.000° (=)
-south node  R  21Lib16      8   Venus   Venus    4S -0.053° (=) -71.237° (-)  -8.296° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     07Aqu38  Uranus   Venus    5S   0.000° ()   35.136° ()    0.000° ()   0.000° ()
+        mc     28Sco52   Pluto  Saturn    7C   0.000° ()  -33.635° ()    0.000° ()   0.000° ()
+       sun     02Cap30  Saturn Mercury    2P  1.018° (+)   0.000° (=) -23.414° (+)  0.000° (=)
+      moon     03Gem27 Mercury Mercury    8S 13.254° (-) 150.955° (+)  24.094° (+)  3.310° (+)
+   mercury  R  28Sag11 Jupiter    Mars   10W -1.314° (+)  -4.320° (-) -20.842° (+)  2.584° (+)
+     venus     23Sco38   Pluto Jupiter    7C  1.208° (+) -38.857° (+) -16.617° (-)  2.134° (-)
+      mars     21Sag50 Jupiter  Saturn   10W  0.736° (+) -10.659° (-) -23.665° (-) -0.478° (-)
+   jupiter  R  05Tau39   Venus   Venus    5P -0.023° (+) 123.149° (-)  12.252° (-) -1.223° (+)
+    saturn     02Pis37 Neptune   Venus    8C  0.080° (+)  60.116° (-) -12.073° (+) -1.644° (+)
+    uranus  R  19Tau33   Venus Jupiter    6P -0.027° (+) 137.060° (-)  17.326° (-) -0.309° (+)
+   neptune     24Pis58 Neptune    Mars   10C  0.010° (+)  82.478° (-)  -3.133° (+) -1.241° (+)
+     pluto     29Cap07  Saturn    Mars    4P  0.030° (+)  26.628° (-) -23.031° (+) -2.761° (-)
+north node  R  21Ari16    Mars    Mars    4W -0.053° (=) 108.763° (-)   8.296° (-)  0.000° (=)
+south node  R  21Lib16   Venus   Venus    4S -0.053° (=) -71.237° (-)  -8.296° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [307.642], venus [233.648], 73.993, QUINTILE (s)
-asc [307.642], jupiter [35.654], 271.987, SQUARE (s)
-asc [307.642], north node [21.268], 286.373, QUINTILE (s)
+asc [307.642], venus [233.648], 73.993, QUINTILE
+asc [307.642], jupiter [35.654], 271.987, SQUARE
+asc [307.642], north node [21.268], 286.373, QUINTILE
 
 mc
 -------
-mc [238.870], pluto [299.133], 60.263, SEXTILE (s)
-mc [238.870], north node [21.268], 217.601, QUINTILE (s)
+mc [238.870], pluto [299.133], 60.263, SEXTILE
+mc [238.870], north node [21.268], 217.601, QUINTILE
 
 sun
 -------
-sun [272.505], saturn [332.621], 60.116, SEXTILE (a)
+sun [272.505], saturn [332.621], 60.116, SEXTILE
 
 moon
 -------
-moon [63.460], saturn [332.621], 269.161, SQUARE (a)
+moon [63.460], saturn [332.621], 269.161, SQUARE
 
 venus
 -------
-venus [233.648], neptune [354.983], 121.335, TRINE (a)
+venus [233.648], neptune [354.983], 121.335, TRINE
 
 mars
 -------
-mars [261.846], saturn [332.621], 70.775, QUINTILE (a)
-mars [261.846], north node [21.268], 240.577, TRINE (s)
+mars [261.846], saturn [332.621], 70.775, QUINTILE
+mars [261.846], north node [21.268], 240.577, TRINE
 ---------------------
 
 
@@ -1149,49 +1149,49 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     08Aqu56      1  Uranus   Venus    5S   0.000° ()   35.417° ()    0.000° ()   0.000° ()
-        mc     29Sco49     10   Pluto  Saturn    7C   0.000° ()  -33.705° ()    0.000° ()   0.000° ()
-       sun     03Cap31     11  Saturn Mercury    2P  1.018° (+)   0.000° (=) -23.391° (+)  0.000° (=)
-      moon     16Gem37      4 Mercury   Venus    9S 13.071° (-) 163.101° (+)  26.831° (+)  4.086° (+)
-   mercury  R  26Sag54     11 Jupiter    Mars   10W -1.219° (+)  -6.608° (-) -20.632° (+)  2.771° (+)
-     venus     24Sco51      9   Pluto  Saturn    7C  1.209° (+) -38.667° (+) -16.930° (-)  2.113° (-)
-      mars     22Sag34     11 Jupiter  Saturn   10W  0.737° (+) -10.942° (-) -23.718° (-) -0.488° (-)
-   jupiter  R  05Tau38      3   Venus   Venus    5P -0.019° (+) 122.110° (-)  12.250° (-) -1.218° (+)
-    saturn     02Pis42      1 Neptune   Venus    8C  0.081° (+)  59.178° (-) -12.043° (+) -1.642° (+)
-    uranus  R  19Tau32      3   Venus Jupiter    6P -0.026° (+) 136.015° (-)  17.319° (-) -0.308° (+)
-   neptune     24Pis59      1 Neptune    Mars   10C  0.011° (+)  81.471° (-)  -3.128° (+) -1.241° (+)
-     pluto      29Cap9     12  Saturn    Mars    4P  0.030° (+)  25.639° (-) -23.026° (+) -2.762° (-)
-north node  R  21Ari12      2    Mars    Mars    4W -0.053° (=) 107.692° (-)   8.276° (-)  0.000° (=)
-south node  R  21Lib12      8   Venus   Venus    4S -0.053° (=) -72.308° (-)  -8.276° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     08Aqu56  Uranus   Venus    5S   0.000° ()   35.417° ()    0.000° ()   0.000° ()
+        mc     29Sco49   Pluto  Saturn    7C   0.000° ()  -33.705° ()    0.000° ()   0.000° ()
+       sun     03Cap31  Saturn Mercury    2P  1.018° (+)   0.000° (=) -23.391° (+)  0.000° (=)
+      moon     16Gem37 Mercury   Venus    9S 13.071° (-) 163.101° (+)  26.831° (+)  4.086° (+)
+   mercury  R  26Sag54 Jupiter    Mars   10W -1.219° (+)  -6.608° (-) -20.632° (+)  2.771° (+)
+     venus     24Sco51   Pluto  Saturn    7C  1.209° (+) -38.667° (+) -16.930° (-)  2.113° (-)
+      mars     22Sag34 Jupiter  Saturn   10W  0.737° (+) -10.942° (-) -23.718° (-) -0.488° (-)
+   jupiter  R  05Tau38   Venus   Venus    5P -0.019° (+) 122.110° (-)  12.250° (-) -1.218° (+)
+    saturn     02Pis42 Neptune   Venus    8C  0.081° (+)  59.178° (-) -12.043° (+) -1.642° (+)
+    uranus  R  19Tau32   Venus Jupiter    6P -0.026° (+) 136.015° (-)  17.319° (-) -0.308° (+)
+   neptune     24Pis59 Neptune    Mars   10C  0.011° (+)  81.471° (-)  -3.128° (+) -1.241° (+)
+     pluto     29Cap09  Saturn    Mars    4P  0.030° (+)  25.639° (-) -23.026° (+) -2.762° (-)
+north node  R  21Ari12    Mars    Mars    4W -0.053° (=) 107.692° (-)   8.276° (-)  0.000° (=)
+south node  R  21Lib12   Venus   Venus    4S -0.053° (=) -72.308° (-)  -8.276° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [308.941], north node [21.215], 287.725, QUINTILE (s)
+asc [308.941], north node [21.215], 287.725, QUINTILE
 
 mc
 -------
-mc [239.818], pluto [299.162], 59.344, SEXTILE (s)
+mc [239.818], pluto [299.162], 59.344, SEXTILE
 
 sun
 -------
-sun [273.523], saturn [332.701], 59.178, SEXTILE (a)
+sun [273.523], saturn [332.701], 59.178, SEXTILE
 
 mercury
 -------
-mercury [266.915], uranus [49.538], 217.377, QUINTILE (s)
-mercury [266.915], neptune [354.994], 88.079, SQUARE (s)
+mercury [266.915], uranus [49.538], 217.377, QUINTILE
+mercury [266.915], neptune [354.994], 88.079, SQUARE
 
 venus
 -------
-venus [234.857], neptune [354.994], 120.137, TRINE (a)
+venus [234.857], neptune [354.994], 120.137, TRINE
 
 mars
 -------
-mars [262.582], saturn [332.701], 70.120, QUINTILE (a)
-mars [262.582], north node [21.215], 241.366, TRINE (s)
+mars [262.582], saturn [332.701], 70.120, QUINTILE
+mars [262.582], north node [21.215], 241.366, TRINE
 ---------------------
 
 
@@ -1204,51 +1204,51 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
-       asc     10Aqu15      1  Uranus   Venus    6S   0.000° ()   35.714° ()    0.000° ()   0.000° ()
-        mc     00Sag45     10 Jupiter Jupiter    8W   0.000° ()  -33.778° ()    0.000° ()   0.000° ()
-       sun     04Cap32     11  Saturn Mercury    2P  1.019° (+)   0.000° (=) -23.360° (+)  0.000° (=)
-      moon     29Gem35      5 Mercury  Saturn   10S 12.870° (-) 175.054° (+)  28.073° (+)  4.636° (+)
-   mercury  R  25Sag45     11 Jupiter  Saturn   10W -1.091° (+)  -8.784° (-) -20.454° (+)  2.918° (+)
-     venus      26Sco3      9   Pluto  Saturn    7C  1.210° (+) -38.476° (+) -17.237° (-)  2.091° (-)
-      mars     23Sag19     11 Jupiter  Saturn   10W  0.737° (+) -11.223° (-) -23.767° (-) -0.498° (-)
-   jupiter  R  05Tau36      3   Venus   Venus    5P -0.016° (+) 121.074° (-)  12.249° (-) -1.213° (+)
-    saturn     02Pis46      1 Neptune   Venus    8C  0.082° (+)  58.241° (-) -12.012° (+) -1.641° (+)
-    uranus  R  19Tau30      3   Venus Jupiter    6P -0.026° (+) 134.970° (-)  17.312° (-) -0.308° (+)
-   neptune      25Pis0      1 Neptune    Mars   10C  0.012° (+)  80.463° (-)  -3.123° (+) -1.240° (+)
-     pluto     29Cap11     12  Saturn    Mars    4P  0.030° (+)  24.651° (-) -23.020° (+) -2.763° (-)
-north node  R   21Ari9      2    Mars    Mars    4W -0.053° (=) 106.621° (-)   8.256° (-)  0.000° (=)
-south node  R   21Lib9      8   Venus   Venus    4S -0.053° (=) -73.379° (-)  -8.256° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed        Phase  Declination    Latitude
+       asc     10Aqu15  Uranus   Venus    6S   0.000° ()   35.714° ()    0.000° ()   0.000° ()
+        mc     00Sag45 Jupiter Jupiter    8W   0.000° ()  -33.778° ()    0.000° ()   0.000° ()
+       sun     04Cap32  Saturn Mercury    2P  1.019° (+)   0.000° (=) -23.360° (+)  0.000° (=)
+      moon     29Gem35 Mercury  Saturn   10S 12.870° (-) 175.054° (+)  28.073° (+)  4.636° (+)
+   mercury  R  25Sag45 Jupiter  Saturn   10W -1.091° (+)  -8.784° (-) -20.454° (+)  2.918° (+)
+     venus     26Sco03   Pluto  Saturn    7C  1.210° (+) -38.476° (+) -17.237° (-)  2.091° (-)
+      mars     23Sag19 Jupiter  Saturn   10W  0.737° (+) -11.223° (-) -23.767° (-) -0.498° (-)
+   jupiter  R  05Tau36   Venus   Venus    5P -0.016° (+) 121.074° (-)  12.249° (-) -1.213° (+)
+    saturn     02Pis46 Neptune   Venus    8C  0.082° (+)  58.241° (-) -12.012° (+) -1.641° (+)
+    uranus  R  19Tau30   Venus Jupiter    6P -0.026° (+) 134.970° (-)  17.312° (-) -0.308° (+)
+   neptune     25Pis00 Neptune    Mars   10C  0.012° (+)  80.463° (-)  -3.123° (+) -1.240° (+)
+     pluto     29Cap11  Saturn    Mars    4P  0.030° (+)  24.651° (-) -23.020° (+) -2.763° (-)
+north node  R  21Ari09    Mars    Mars    4W -0.053° (=) 106.621° (-)   8.256° (-)  0.000° (=)
+south node  R  21Lib09   Venus   Venus    4S -0.053° (=) -73.379° (-)  -8.256° (+)  0.000° (=)
 
 Aspects:
 --------
 asc
 -------
-asc [310.256], north node [21.162], 289.094, QUINTILE (s)
+asc [310.256], north node [21.162], 289.094, QUINTILE
 
 mc
 -------
-mc [240.764], moon [89.596], 151.168, INCONJUNCT (s)
-mc [240.764], pluto [299.193], 58.428, SEXTILE (s)
+mc [240.764], moon [89.596], 151.168, INCONJUNCT
+mc [240.764], pluto [299.193], 58.428, SEXTILE
 
 sun
 -------
-sun [274.542], jupiter [35.616], 238.926, TRINE (s)
-sun [274.542], saturn [332.783], 58.241, SEXTILE (a)
+sun [274.542], jupiter [35.616], 238.926, TRINE
+sun [274.542], saturn [332.783], 58.241, SEXTILE
 
 mercury
 -------
-mercury [265.758], uranus [49.512], 216.246, QUINTILE (s)
-mercury [265.758], neptune [355.005], 89.247, SQUARE (s)
+mercury [265.758], uranus [49.512], 216.246, QUINTILE
+mercury [265.758], neptune [355.005], 89.247, SQUARE
 
 venus
 -------
-venus [236.066], neptune [355.005], 118.939, TRINE (a)
-venus [236.066], north node [21.162], 214.904, QUINTILE (s)
+venus [236.066], neptune [355.005], 118.939, TRINE
+venus [236.066], north node [21.162], 214.904, QUINTILE
 
 mars
 -------
-mars [263.319], neptune [355.005], 91.687, SQUARE (a)
+mars [263.319], neptune [355.005], 91.687, SQUARE
 ---------------------
 
 
@@ -1261,47 +1261,47 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed         Phase  Declination    Latitude
-       asc     11Aqu35      1  Uranus   Venus    6S   0.000° ()    36.027° ()    0.000° ()   0.000° ()
-        mc     01Sag42     10 Jupiter Jupiter    8W   0.000° ()   -33.852° ()    0.000° ()   0.000° ()
-       sun     05Cap33     11  Saturn Mercury    2P  1.019° (+)    0.000° (=) -23.321° (+)  0.000° (=)
-      moon     12Can21      5    Moon   Venus    3C 12.652° (-) -173.202° (-)  27.784° (-)  4.942° (+)
-   mercury  R  24Sag44     11 Jupiter  Saturn   10W -0.938° (+)  -10.818° (-) -20.313° (+)  3.023° (+)
-     venus     27Sco16      9   Pluto  Saturn    7C  1.211° (+)  -38.283° (+) -17.536° (-)  2.068° (-)
-      mars      24Sag3     11 Jupiter  Saturn   10W  0.738° (+)  -11.504° (-) -23.812° (-) -0.508° (-)
-   jupiter  R  05Tau36      2   Venus   Venus    5P -0.012° (+)  120.042° (-)  12.249° (+) -1.208° (+)
-    saturn     02Pis51      1 Neptune   Venus    8C  0.083° (+)   57.305° (-) -11.981° (+) -1.640° (+)
-    uranus  R  19Tau29      3   Venus Jupiter    6P -0.025° (+)  133.927° (-)  17.306° (-) -0.308° (+)
-   neptune      25Pis1      1 Neptune    Mars   10C  0.012° (+)   79.457° (-)  -3.118° (+) -1.240° (+)
-     pluto     29Cap13     12  Saturn    Mars    4P  0.030° (+)   23.662° (-) -23.015° (+) -2.763° (-)
-north node  R   21Ari6      2    Mars    Mars    4W -0.053° (=)  105.549° (-)   8.236° (-)  0.000° (=)
-south node  R   21Lib6      8   Venus   Venus    4S -0.053° (=)  -74.451° (-)  -8.236° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed         Phase  Declination    Latitude
+       asc     11Aqu35  Uranus   Venus    6S   0.000° ()    36.027° ()    0.000° ()   0.000° ()
+        mc     01Sag42 Jupiter Jupiter    8W   0.000° ()   -33.852° ()    0.000° ()   0.000° ()
+       sun     05Cap33  Saturn Mercury    2P  1.019° (+)    0.000° (=) -23.321° (+)  0.000° (=)
+      moon     12Can21    Moon   Venus    3C 12.652° (-) -173.202° (-)  27.784° (-)  4.942° (+)
+   mercury  R  24Sag44 Jupiter  Saturn   10W -0.938° (+)  -10.818° (-) -20.313° (+)  3.023° (+)
+     venus     27Sco16   Pluto  Saturn    7C  1.211° (+)  -38.283° (+) -17.536° (-)  2.068° (-)
+      mars     24Sag03 Jupiter  Saturn   10W  0.738° (+)  -11.504° (-) -23.812° (-) -0.508° (-)
+   jupiter  R  05Tau36   Venus   Venus    5P -0.012° (+)  120.042° (-)  12.249° (+) -1.208° (+)
+    saturn     02Pis51 Neptune   Venus    8C  0.083° (+)   57.305° (-) -11.981° (+) -1.640° (+)
+    uranus  R  19Tau29   Venus Jupiter    6P -0.025° (+)  133.927° (-)  17.306° (-) -0.308° (+)
+   neptune     25Pis01 Neptune    Mars   10C  0.012° (+)   79.457° (-)  -3.118° (+) -1.240° (+)
+     pluto     29Cap13  Saturn    Mars    4P  0.030° (+)   23.662° (-) -23.015° (+) -2.763° (-)
+north node  R  21Ari06    Mars    Mars    4W -0.053° (=)  105.549° (-)   8.236° (-)  0.000° (=)
+south node  R  21Lib06   Venus   Venus    4S -0.053° (=)  -74.451° (-)  -8.236° (+)  0.000° (=)
 
 Aspects:
 --------
 mc
 -------
-mc [241.708], saturn [332.866], 91.158, SQUARE (s)
+mc [241.708], saturn [332.866], 91.158, SQUARE
 
 sun
 -------
-sun [275.561], jupiter [35.602], 239.958, TRINE (s)
+sun [275.561], jupiter [35.602], 239.958, TRINE
 
 mercury
 -------
-mercury [264.742], mars [264.057], 0.686, CONJUNCTION (s)
-mercury [264.742], uranus [49.487], 215.255, QUINTILE (s)
-mercury [264.742], neptune [355.017], 90.275, SQUARE (s)
+mercury [264.742], mars [264.057], 0.686, CONJUNCTION
+mercury [264.742], uranus [49.487], 215.255, QUINTILE
+mercury [264.742], neptune [355.017], 90.275, SQUARE
 
 venus
 -------
-venus [237.277], pluto [299.223], 61.946, SEXTILE (a)
-venus [237.277], north node [21.110], 216.167, QUINTILE (s)
+venus [237.277], pluto [299.223], 61.946, SEXTILE
+venus [237.277], north node [21.110], 216.167, QUINTILE
 
 mars
 -------
-mars [264.057], uranus [49.487], 214.569, QUINTILE (s)
-mars [264.057], neptune [355.017], 90.961, SQUARE (a)
+mars [264.057], uranus [49.487], 214.569, QUINTILE
+mars [264.057], neptune [355.017], 90.961, SQUARE
 ---------------------
 
 
@@ -1314,53 +1314,53 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed         Phase  Declination    Latitude
-       asc     12Aqu56      1  Uranus   Venus    6S   0.000° ()    36.357° ()    0.000° ()   0.000° ()
-        mc     02Sag38     10 Jupiter Jupiter    8W   0.000° ()   -33.930° ()    0.000° ()   0.000° ()
-       sun     06Cap34     11  Saturn Mercury    2P  1.019° (+)    0.000° (=) -23.275° (+)  0.000° (=)
-      moon     24Can53      6    Moon Jupiter    4C 12.430° (-) -161.680° (+)  26.066° (-)  5.002° (+)
-   mercury  R  23Sag53     11 Jupiter  Saturn   10W -0.770° (+)  -12.692° (-) -20.211° (+)  3.089° (+)
-     venus     28Sco29      9   Pluto  Saturn    7C  1.212° (+)  -38.090° (+) -17.829° (-)  2.043° (-)
-      mars     24Sag47     11 Jupiter  Saturn   10W  0.739° (+)  -11.784° (-) -23.853° (-) -0.517° (-)
-   jupiter  R  05Tau35      2   Venus   Venus    5P -0.009° (+)  119.013° (-)  12.251° (+) -1.203° (+)
-    saturn     02Pis56      1 Neptune   Venus    8C  0.085° (+)   56.371° (-) -11.949° (+) -1.638° (+)
-    uranus  R  19Tau27      3   Venus Jupiter    6P -0.024° (+)  132.883° (-)  17.299° (-) -0.307° (+)
-   neptune      25Pis1      1 Neptune    Mars   10C  0.013° (+)   78.451° (-)  -3.112° (+) -1.239° (+)
-     pluto     29Cap15     12  Saturn    Mars    4P  0.030° (+)   22.674° (-) -23.009° (+) -2.764° (-)
-north node  R   21Ari3      2    Mars    Mars    4W -0.053° (=)  104.477° (-)   8.216° (-)  0.000° (=)
-south node  R   21Lib3      8   Venus   Venus    4S -0.053° (=)  -75.523° (-)  -8.216° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed         Phase  Declination    Latitude
+       asc     12Aqu56  Uranus   Venus    6S   0.000° ()    36.357° ()    0.000° ()   0.000° ()
+        mc     02Sag38 Jupiter Jupiter    8W   0.000° ()   -33.930° ()    0.000° ()   0.000° ()
+       sun     06Cap34  Saturn Mercury    2P  1.019° (+)    0.000° (=) -23.275° (+)  0.000° (=)
+      moon     24Can53    Moon Jupiter    4C 12.430° (-) -161.680° (+)  26.066° (-)  5.002° (+)
+   mercury  R  23Sag53 Jupiter  Saturn   10W -0.770° (+)  -12.692° (-) -20.211° (+)  3.089° (+)
+     venus     28Sco29   Pluto  Saturn    7C  1.212° (+)  -38.090° (+) -17.829° (-)  2.043° (-)
+      mars     24Sag47 Jupiter  Saturn   10W  0.739° (+)  -11.784° (-) -23.853° (-) -0.517° (-)
+   jupiter  R  05Tau35   Venus   Venus    5P -0.009° (+)  119.013° (-)  12.251° (+) -1.203° (+)
+    saturn     02Pis56 Neptune   Venus    8C  0.085° (+)   56.371° (-) -11.949° (+) -1.638° (+)
+    uranus  R  19Tau27   Venus Jupiter    6P -0.024° (+)  132.883° (-)  17.299° (-) -0.307° (+)
+   neptune     25Pis01 Neptune    Mars   10C  0.013° (+)   78.451° (-)  -3.112° (+) -1.239° (+)
+     pluto     29Cap15  Saturn    Mars    4P  0.030° (+)   22.674° (-) -23.009° (+) -2.764° (-)
+north node  R  21Ari03    Mars    Mars    4W -0.053° (=)  104.477° (-)   8.216° (-)  0.000° (=)
+south node  R  21Lib03   Venus   Venus    4S -0.053° (=)  -75.523° (-)  -8.216° (+)  0.000° (=)
 
 Aspects:
 --------
 mc
 -------
-mc [242.649], saturn [332.950], 90.300, SQUARE (s)
+mc [242.649], saturn [332.950], 90.300, SQUARE
 
 sun
 -------
-sun [276.579], jupiter [35.592], 240.987, TRINE (s)
+sun [276.579], jupiter [35.592], 240.987, TRINE
 
 moon
 -------
-moon [114.899], mercury [263.887], 148.988, INCONJUNCT (a)
-moon [114.899], mars [264.795], 149.896, INCONJUNCT (a)
-moon [114.899], neptune [355.030], 240.131, TRINE (a)
+moon [114.899], mercury [263.887], 148.988, INCONJUNCT
+moon [114.899], mars [264.795], 149.896, INCONJUNCT
+moon [114.899], neptune [355.030], 240.131, TRINE
 
 mercury
 -------
-mercury [263.887], mars [264.795], 0.908, CONJUNCTION (s)
-mercury [263.887], uranus [49.462], 214.425, QUINTILE (s)
-mercury [263.887], neptune [355.030], 91.143, SQUARE (s)
+mercury [263.887], mars [264.795], 0.908, CONJUNCTION
+mercury [263.887], uranus [49.462], 214.425, QUINTILE
+mercury [263.887], neptune [355.030], 91.143, SQUARE
 
 venus
 -------
-venus [238.489], pluto [299.253], 60.764, SEXTILE (a)
-venus [238.489], north node [21.057], 217.432, QUINTILE (s)
+venus [238.489], pluto [299.253], 60.764, SEXTILE
+venus [238.489], north node [21.057], 217.432, QUINTILE
 
 mars
 -------
-mars [264.795], uranus [49.462], 215.333, QUINTILE (s)
-mars [264.795], neptune [355.030], 90.235, SQUARE (a)
+mars [264.795], uranus [49.462], 215.333, QUINTILE
+mars [264.795], neptune [355.030], 90.235, SQUARE
 ---------------------
 
 
@@ -1373,44 +1373,44 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed         Phase  Declination    Latitude
-       asc     14Aqu18      1  Uranus Jupiter    6S   0.000° ()    36.703° ()    0.000° ()   0.000° ()
-        mc     03Sag35     10 Jupiter Jupiter    8W   0.000° ()   -34.009° ()    0.000° ()   0.000° ()
-       sun     07Cap35     11  Saturn Jupiter    2P  1.019° (+)    0.000° (=) -23.220° (+)  0.000° (=)
-      moon     07Leo13      6     Sun   Venus    5W 12.216° (-) -150.377° (+)  23.129° (-)  4.825° (-)
-   mercury  R  23Sag12     10 Jupiter  Saturn   10W -0.595° (+)  -14.394° (-) -20.149° (+)  3.119° (+)
-     venus     29Sco42      9   Pluto  Saturn    7C  1.214° (+)  -37.896° (+) -18.115° (-)  2.017° (-)
-      mars     25Sag32     11 Jupiter  Saturn   10W  0.740° (+)  -12.064° (-) -23.890° (-) -0.527° (-)
-   jupiter  R  05Tau35      2   Venus   Venus    5P -0.005° (+)  117.987° (-)  12.253° (+) -1.198° (+)
-    saturn      03Pis2      1 Neptune   Venus    8C  0.086° (+)   55.437° (-) -11.917° (+) -1.637° (+)
-    uranus  R  19Tau26      3   Venus Jupiter    6P -0.024° (+)  131.841° (-)  17.293° (-) -0.307° (+)
-   neptune      25Pis2      1 Neptune    Mars   10C  0.013° (+)   77.445° (-)  -3.107° (+) -1.239° (+)
-     pluto     29Cap17     12  Saturn    Mars    4P  0.031° (+)   21.686° (-) -23.004° (+) -2.765° (-)
-north node  R   21Ari0      2    Mars    Mars    4W -0.053° (=)  103.406° (-)   8.197° (-)  0.000° (=)
-south node  R   21Lib0      8   Venus   Venus    4S -0.053° (=)  -76.594° (-)  -8.197° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed         Phase  Declination    Latitude
+       asc     14Aqu18  Uranus Jupiter    6S   0.000° ()    36.703° ()    0.000° ()   0.000° ()
+        mc     03Sag35 Jupiter Jupiter    8W   0.000° ()   -34.009° ()    0.000° ()   0.000° ()
+       sun     07Cap35  Saturn Jupiter    2P  1.019° (+)    0.000° (=) -23.220° (+)  0.000° (=)
+      moon     07Leo13     Sun   Venus    5W 12.216° (-) -150.377° (+)  23.129° (-)  4.825° (-)
+   mercury  R  23Sag12 Jupiter  Saturn   10W -0.595° (+)  -14.394° (-) -20.149° (+)  3.119° (+)
+     venus     29Sco42   Pluto  Saturn    7C  1.214° (+)  -37.896° (+) -18.115° (-)  2.017° (-)
+      mars     25Sag32 Jupiter  Saturn   10W  0.740° (+)  -12.064° (-) -23.890° (-) -0.527° (-)
+   jupiter  R  05Tau35   Venus   Venus    5P -0.005° (+)  117.987° (-)  12.253° (+) -1.198° (+)
+    saturn     03Pis02 Neptune   Venus    8C  0.086° (+)   55.437° (-) -11.917° (+) -1.637° (+)
+    uranus  R  19Tau26   Venus Jupiter    6P -0.024° (+)  131.841° (-)  17.293° (-) -0.307° (+)
+   neptune     25Pis02 Neptune    Mars   10C  0.013° (+)   77.445° (-)  -3.107° (+) -1.239° (+)
+     pluto     29Cap17  Saturn    Mars    4P  0.031° (+)   21.686° (-) -23.004° (+) -2.765° (-)
+north node  R  21Ari00    Mars    Mars    4W -0.053° (=)  103.406° (-)   8.197° (-)  0.000° (=)
+south node  R  21Lib00   Venus   Venus    4S -0.053° (=)  -76.594° (-)  -8.197° (+)  0.000° (=)
 
 Aspects:
 --------
 mc
 -------
-mc [243.589], saturn [333.035], 89.446, SQUARE (s)
+mc [243.589], saturn [333.035], 89.446, SQUARE
 
 moon
 -------
-moon [127.221], jupiter [35.585], 91.636, SQUARE (s)
+moon [127.221], jupiter [35.585], 91.636, SQUARE
 
 mercury
 -------
-mercury [263.204], neptune [355.043], 91.839, SQUARE (s)
+mercury [263.204], neptune [355.043], 91.839, SQUARE
 
 venus
 -------
-venus [239.702], pluto [299.284], 59.582, SEXTILE (a)
+venus [239.702], pluto [299.284], 59.582, SEXTILE
 
 mars
 -------
-mars [265.534], uranus [49.438], 216.096, QUINTILE (s)
-mars [265.534], neptune [355.043], 89.509, SQUARE (a)
+mars [265.534], uranus [49.438], 216.096, QUINTILE
+mars [265.534], neptune [355.043], 89.509, SQUARE
 ---------------------
 
 
@@ -1423,47 +1423,47 @@ Coordinate System: GEO
 
 Points:
 --------
-      Name    Position  House   Ruler    Term Tarot       Speed         Phase  Declination    Latitude
-       asc     15Aqu40      1  Uranus Jupiter    6S   0.000° ()    37.066° ()    0.000° ()   0.000° ()
-        mc     04Sag31     10 Jupiter Jupiter    8W   0.000° ()   -34.091° ()    0.000° ()   0.000° ()
-       sun     08Cap37     11  Saturn Jupiter    2P  1.019° (+)    0.000° (=) -23.158° (+)  0.000° (=)
-      moon     19Leo20      7     Sun Mercury    6W 12.029° (-) -139.276° (+)  19.225° (-)  4.431° (-)
-   mercury  R  22Sag41     10 Jupiter  Saturn   10W -0.418° (+)  -15.919° (-) -20.125° (+)  3.116° (-)
-     venus     00Sag54      9 Jupiter Jupiter    8W  1.215° (+)  -37.701° (+) -18.393° (-)  1.990° (-)
-      mars     26Sag16     11 Jupiter    Mars   10W  0.740° (+)  -12.343° (-) -23.923° (-) -0.537° (-)
-   jupiter  R  05Tau34      2   Venus   Venus    5P -0.002° (+)  116.965° (-)  12.257° (+) -1.193° (+)
-    saturn      03Pis7      1 Neptune   Venus    8C  0.087° (+)   54.504° (-) -11.885° (+) -1.636° (+)
-    uranus  R  19Tau24      3   Venus Jupiter    6P -0.023° (+)  130.798° (-)  17.287° (-) -0.307° (+)
-   neptune      25Pis3      1 Neptune    Mars   10C  0.014° (+)   76.440° (-)  -3.101° (+) -1.238° (+)
-     pluto     29Cap18     12  Saturn    Mars    4P  0.031° (+)   20.698° (-) -22.998° (+) -2.766° (-)
-north node  R  20Ari57      2    Mars    Mars    4W -0.053° (=)  102.334° (-)   8.177° (-)  0.000° (=)
-south node  R  20Lib57      8   Venus Jupiter    4S -0.053° (=)  -77.666° (-)  -8.177° (+)  0.000° (=)
+      Name    Position   Ruler    Term Tarot       Speed         Phase  Declination    Latitude
+       asc     15Aqu40  Uranus Jupiter    6S   0.000° ()    37.066° ()    0.000° ()   0.000° ()
+        mc     04Sag31 Jupiter Jupiter    8W   0.000° ()   -34.091° ()    0.000° ()   0.000° ()
+       sun     08Cap37  Saturn Jupiter    2P  1.019° (+)    0.000° (=) -23.158° (+)  0.000° (=)
+      moon     19Leo20     Sun Mercury    6W 12.029° (-) -139.276° (+)  19.225° (-)  4.431° (-)
+   mercury  R  22Sag41 Jupiter  Saturn   10W -0.418° (+)  -15.919° (-) -20.125° (+)  3.116° (-)
+     venus     00Sag54 Jupiter Jupiter    8W  1.215° (+)  -37.701° (+) -18.393° (-)  1.990° (-)
+      mars     26Sag16 Jupiter    Mars   10W  0.740° (+)  -12.343° (-) -23.923° (-) -0.537° (-)
+   jupiter  R  05Tau34   Venus   Venus    5P -0.002° (+)  116.965° (-)  12.257° (+) -1.193° (+)
+    saturn     03Pis07 Neptune   Venus    8C  0.087° (+)   54.504° (-) -11.885° (+) -1.636° (+)
+    uranus  R  19Tau24   Venus Jupiter    6P -0.023° (+)  130.798° (-)  17.287° (-) -0.307° (+)
+   neptune     25Pis03 Neptune    Mars   10C  0.014° (+)   76.440° (-)  -3.101° (+) -1.238° (+)
+     pluto     29Cap18  Saturn    Mars    4P  0.031° (+)   20.698° (-) -22.998° (+) -2.766° (-)
+north node  R  20Ari57    Mars    Mars    4W -0.053° (=)  102.334° (-)   8.177° (-)  0.000° (=)
+south node  R  20Lib57   Venus Jupiter    4S -0.053° (=)  -77.666° (-)  -8.177° (+)  0.000° (=)
 
 Aspects:
 --------
 mc
 -------
-mc [244.525], saturn [333.121], 88.596, SQUARE (s)
+mc [244.525], saturn [333.121], 88.596, SQUARE
 
 moon
 -------
-moon [139.340], uranus [49.415], 89.925, SQUARE (s)
-moon [139.340], neptune [355.056], 215.716, QUINTILE (a)
-moon [139.340], north node [20.951], 118.389, TRINE (s)
+moon [139.340], uranus [49.415], 89.925, SQUARE
+moon [139.340], neptune [355.056], 215.716, QUINTILE
+moon [139.340], north node [20.951], 118.389, TRINE
 
 mercury
 -------
-mercury [262.698], saturn [333.121], 70.423, QUINTILE (s)
-mercury [262.698], north node [20.951], 241.747, TRINE (s)
+mercury [262.698], saturn [333.121], 70.423, QUINTILE
+mercury [262.698], north node [20.951], 241.747, TRINE
 
 venus
 -------
-venus [240.916], pluto [299.314], 58.398, SEXTILE (a)
+venus [240.916], pluto [299.314], 58.398, SEXTILE
 
 mars
 -------
-mars [266.274], uranus [49.415], 216.859, QUINTILE (s)
-mars [266.274], neptune [355.056], 88.782, SQUARE (a)
+mars [266.274], uranus [49.415], 216.859, QUINTILE
+mars [266.274], neptune [355.056], 88.782, SQUARE
 ---------------------
 
 

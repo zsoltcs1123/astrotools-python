@@ -2,7 +2,6 @@ import pytz
 
 from datetime import datetime
 from timezonefinder import TimezoneFinder
-from objects.points import ALL_POINTS
 from tools.horoscope.horoscope_config import HoroscopeConfig
 from util.geocoder import Geocoder
 from tools.horoscope.horoscope_factory import create_horoscope, create_horoscopes
@@ -26,7 +25,9 @@ def generate_nyc_horoscopes():
     )
     horoscopes = create_horoscopes(start, end, 1440, config)
 
-    print_horoscopes_to_file(horoscopes, "nyc_horoscopes_dec_3_dec_30.txt")
+    print_horoscopes_to_file(
+        horoscopes, "nyc_horoscopes_dec_3_dec_30.txt", columns_filter=["House"]
+    )
 
 
 def me_horoscope():
