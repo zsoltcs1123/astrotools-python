@@ -21,7 +21,9 @@ def generate_nyc_horoscopes():
 
     tz_name = TimezoneFinder().certain_timezone_at(lng=lon, lat=lat)
     tz = pytz.timezone(tz_name)
-    config = HoroscopeConfig.default_tropical(lat, lon, f"NYC {start.astimezone(tz)}")
+    config = HoroscopeConfig.default_tropical_snapshot(
+        lat, lon, f"NYC {start.astimezone(tz)}"
+    )
     horoscopes = create_horoscopes(start, end, 1440, config)
 
     print_horoscopes_to_file(horoscopes, "nyc_horoscopes_dec_3_dec_30.txt")

@@ -27,59 +27,27 @@ Aspects:
 --------
 asc
 -------
-asc [283.629], moon [143.395], 140.234, QUINTILE (a)
-asc [283.629], venus [208.614], 75.016, QUINTILE (s)
-asc [283.629], jupiter [36.862], 246.767, TRINE (s)
-asc [283.629], uranus [50.260], 233.369, TRINE (a)
 asc [283.629], neptune [354.891], 71.261, QUINTILE (a)
 
 mc
 -------
-mc [218.319], moon [143.395], 74.924, QUINTILE (s)
 mc [218.319], jupiter [36.862], 181.457, OPPOSITION (s)
-mc [218.319], saturn [331.253], 112.933, TRINE (a)
 
 sun
 -------
-sun [251.150], mars [246.564], 4.586, CONJUNCTION (s)
-sun [251.150], jupiter [36.862], 214.289, QUINTILE (a)
-sun [251.150], saturn [331.253], 80.102, SQUARE (a)
+sun [251.150], jupiter [36.862], 214.289, QUINTILE (s)
 
 moon
 -------
-moon [143.395], mercury [272.272], 128.877, TRINE (s)
-moon [143.395], venus [208.614], 65.218, SEXTILE (s)
-moon [143.395], venus [208.614], 65.218, QUINTILE (a)
-moon [143.395], saturn [331.253], 187.857, OPPOSITION (s)
-moon [143.395], uranus [50.260], 93.135, SQUARE (s)
-moon [143.395], neptune [354.891], 211.495, QUINTILE (a)
 moon [143.395], north node [22.380], 121.015, TRINE (s)
 
 mercury
 -------
-mercury [272.272], venus [208.614], 63.659, SEXTILE (s)
-mercury [272.272], jupiter [36.862], 235.410, TRINE (a)
 mercury [272.272], saturn [331.253], 58.980, SEXTILE (a)
-mercury [272.272], neptune [354.891], 82.619, SQUARE (a)
 
 venus
 -------
-venus [208.614], saturn [331.253], 122.639, TRINE (s)
-venus [208.614], neptune [354.891], 146.277, QUINTILE (s)
 venus [208.614], pluto [298.565], 89.952, SQUARE (a)
-venus [208.614], north node [22.380], 186.233, OPPOSITION (s)
-
-mars
--------
-mars [246.564], saturn [331.253], 84.688, SQUARE (a)
-
-neptune
--------
-neptune [354.891], pluto [298.565], 56.325, SEXTILE (a)
-
-pluto
--------
-pluto [298.565], north node [22.380], 276.185, SQUARE (s)
 ---------------------
 
 
@@ -112,58 +80,23 @@ Aspects:
 --------
 asc
 -------
-asc [284.652], venus [209.787], 74.865, QUINTILE (s)
-asc [284.652], jupiter [36.773], 247.879, TRINE (s)
-asc [284.652], uranus [50.222], 234.430, TRINE (a)
 asc [284.652], neptune [354.889], 70.237, QUINTILE (a)
-asc [284.652], north node [22.327], 262.325, SQUARE (a)
-asc [284.652], south node [202.327], 82.325, SQUARE (a)
-
-mc
--------
-mc [219.327], jupiter [36.773], 182.553, OPPOSITION (s)
 
 sun
 -------
-sun [252.165], mars [247.284], 4.881, CONJUNCTION (s)
-sun [252.165], jupiter [36.773], 215.392, QUINTILE (a)
-sun [252.165], saturn [331.303], 79.138, QUINTILE (s)
+sun [252.165], jupiter [36.773], 215.392, QUINTILE (s)
 
 moon
 -------
 moon [155.262], mercury [273.326], 118.064, TRINE (a)
-moon [155.262], venus [209.787], 54.525, SEXTILE (a)
-moon [155.262], mars [247.284], 92.021, SQUARE (s)
-moon [155.262], jupiter [36.773], 118.489, TRINE (a)
-moon [155.262], saturn [331.303], 176.040, OPPOSITION (a)
+moon [155.262], jupiter [36.773], 118.489, TRINE (s)
 moon [155.262], pluto [298.589], 143.327, QUINTILE (a)
-
-mercury
--------
-mercury [273.326], venus [209.787], 63.539, SEXTILE (s)
-mercury [273.326], jupiter [36.773], 236.553, TRINE (a)
-mercury [273.326], saturn [331.303], 57.977, SEXTILE (a)
 
 venus
 -------
-venus [209.787], jupiter [36.773], 173.014, OPPOSITION (a)
-venus [209.787], saturn [331.303], 121.516, TRINE (s)
-venus [209.787], neptune [354.889], 145.102, QUINTILE (s)
+venus [209.787], saturn [331.303], 121.516, TRINE (a)
+venus [209.787], neptune [354.889], 145.102, QUINTILE (a)
 venus [209.787], pluto [298.589], 88.802, SQUARE (a)
-venus [209.787], north node [22.327], 187.460, OPPOSITION (s)
-
-mars
--------
-mars [247.284], jupiter [36.773], 210.511, QUINTILE (a)
-mars [247.284], saturn [331.303], 84.019, SQUARE (a)
-
-neptune
--------
-neptune [354.889], pluto [298.589], 56.300, SEXTILE (a)
-
-pluto
--------
-pluto [298.589], north node [22.327], 276.262, SQUARE (s)
 ---------------------
 
 
@@ -196,56 +129,20 @@ Aspects:
 --------
 asc
 -------
-asc [285.685], moon [167.091], 118.594, TRINE (a)
-asc [285.685], venus [210.963], 74.722, QUINTILE (s)
-asc [285.685], uranus [50.185], 235.500, TRINE (a)
-asc [285.685], neptune [354.888], 69.204, QUINTILE (a)
-asc [285.685], north node [22.274], 263.411, SQUARE (a)
-asc [285.685], south node [202.274], 83.411, SQUARE (a)
-
-mc
--------
-mc [220.331], jupiter [36.687], 183.644, OPPOSITION (s)
+asc [285.685], moon [167.091], 118.594, TRINE (s)
 
 sun
 -------
-sun [253.179], mars [248.004], 5.175, CONJUNCTION (s)
 sun [253.179], jupiter [36.687], 216.492, QUINTILE (s)
-sun [253.179], saturn [331.355], 78.176, QUINTILE (s)
-sun [253.179], north node [22.274], 230.905, TRINE (a)
 
 moon
 -------
-moon [167.091], mars [248.004], 80.914, SQUARE (a)
-moon [167.091], uranus [50.185], 116.906, TRINE (a)
-moon [167.091], neptune [354.888], 187.798, OPPOSITION (s)
 moon [167.091], north node [22.274], 144.816, QUINTILE (s)
-
-mercury
--------
-mercury [274.314], venus [210.963], 63.351, SEXTILE (s)
-mercury [274.314], jupiter [36.687], 237.627, TRINE (a)
-mercury [274.314], saturn [331.355], 57.041, SEXTILE (a)
 
 venus
 -------
-venus [210.963], jupiter [36.687], 174.276, OPPOSITION (a)
-venus [210.963], saturn [331.355], 120.392, TRINE (s)
+venus [210.963], saturn [331.355], 120.392, TRINE (a)
 venus [210.963], neptune [354.888], 143.925, QUINTILE (a)
-venus [210.963], pluto [298.613], 87.650, SQUARE (a)
-
-mars
--------
-mars [248.004], jupiter [36.687], 211.317, QUINTILE (a)
-mars [248.004], saturn [331.355], 83.351, SQUARE (a)
-
-neptune
--------
-neptune [354.888], pluto [298.613], 56.275, SEXTILE (a)
-
-pluto
--------
-pluto [298.613], north node [22.274], 276.339, SQUARE (s)
 ---------------------
 
 
@@ -276,65 +173,23 @@ south node  R  22Lib13      9   Venus   Venus    4S -0.053° (=) -51.973° (-)  -8
 
 Aspects:
 --------
-asc
--------
-asc [286.728], venus [212.141], 74.587, QUINTILE (s)
-asc [286.728], uranus [50.148], 236.580, TRINE (a)
-asc [286.728], neptune [354.888], 68.160, QUINTILE (a)
-asc [286.728], north node [22.221], 264.507, SQUARE (a)
-asc [286.728], south node [202.221], 84.507, SQUARE (a)
-
-mc
--------
-mc [221.333], jupiter [36.604], 184.728, OPPOSITION (s)
-mc [221.333], pluto [298.638], 77.305, QUINTILE (s)
-
 sun
 -------
-sun [254.194], mars [248.725], 5.469, CONJUNCTION (s)
 sun [254.194], jupiter [36.604], 217.590, QUINTILE (s)
-sun [254.194], saturn [331.408], 77.214, QUINTILE (s)
-sun [254.194], north node [22.221], 231.973, TRINE (a)
 
 moon
 -------
-moon [178.967], mercury [275.227], 96.260, SQUARE (s)
-moon [178.967], mars [248.725], 69.758, QUINTILE (a)
-moon [178.967], jupiter [36.604], 142.363, QUINTILE (a)
-moon [178.967], saturn [331.408], 152.441, INCONJUNCT (s)
-moon [178.967], uranus [50.148], 128.820, TRINE (s)
-moon [178.967], neptune [354.888], 175.921, OPPOSITION (a)
+moon [178.967], jupiter [36.604], 142.363, QUINTILE (s)
 moon [178.967], pluto [298.638], 119.671, TRINE (a)
 
 mercury
 -------
-mercury [275.227], venus [212.141], 63.086, SEXTILE (s)
-mercury [275.227], jupiter [36.604], 238.622, TRINE (a)
-mercury [275.227], saturn [331.408], 56.181, SEXTILE (a)
+mercury [275.227], jupiter [36.604], 238.622, TRINE (s)
 
 venus
 -------
-venus [212.141], jupiter [36.604], 175.537, OPPOSITION (a)
 venus [212.141], saturn [331.408], 119.267, TRINE (a)
 venus [212.141], neptune [354.888], 142.747, QUINTILE (a)
-venus [212.141], pluto [298.638], 86.497, SQUARE (a)
-
-mars
--------
-mars [248.725], jupiter [36.604], 212.121, QUINTILE (a)
-mars [248.725], saturn [331.408], 82.683, SQUARE (a)
-
-jupiter
--------
-jupiter [36.604], pluto [298.638], 262.034, SQUARE (a)
-
-neptune
--------
-neptune [354.888], pluto [298.638], 56.250, SEXTILE (a)
-
-pluto
--------
-pluto [298.638], north node [22.221], 276.417, SQUARE (s)
 ---------------------
 
 
@@ -365,65 +220,17 @@ south node  R  22Lib10      9   Venus   Venus    4S -0.053° (=) -53.041° (-)  -8
 
 Aspects:
 --------
-asc
--------
-asc [287.782], moon [190.980], 96.802, SQUARE (s)
-asc [287.782], venus [213.322], 74.461, QUINTILE (s)
-asc [287.782], uranus [50.111], 237.671, TRINE (a)
-asc [287.782], neptune [354.888], 67.106, QUINTILE (a)
-asc [287.782], north node [22.168], 265.614, SQUARE (a)
-asc [287.782], south node [202.168], 85.614, SQUARE (a)
-
-mc
--------
-mc [222.331], jupiter [36.524], 185.807, OPPOSITION (s)
-mc [222.331], uranus [50.111], 172.220, OPPOSITION (a)
-mc [222.331], pluto [298.663], 76.332, QUINTILE (s)
-
-sun
--------
-sun [255.209], mars [249.447], 5.762, CONJUNCTION (s)
-sun [255.209], jupiter [36.524], 218.685, QUINTILE (s)
-sun [255.209], saturn [331.463], 76.254, QUINTILE (s)
-sun [255.209], neptune [354.888], 99.679, SQUARE (s)
-sun [255.209], north node [22.168], 233.041, TRINE (a)
-
 moon
 -------
-moon [190.980], mercury [276.053], 85.073, SQUARE (a)
 moon [190.980], mars [249.447], 58.467, SEXTILE (a)
-moon [190.980], jupiter [36.524], 154.456, INCONJUNCT (s)
-moon [190.980], saturn [331.463], 140.483, QUINTILE (a)
-moon [190.980], uranus [50.111], 140.870, QUINTILE (a)
 
 mercury
 -------
-mercury [276.053], venus [213.322], 62.732, SEXTILE (s)
-mercury [276.053], jupiter [36.524], 239.529, TRINE (a)
+mercury [276.053], jupiter [36.524], 239.529, TRINE (s)
 
 venus
 -------
-venus [213.322], jupiter [36.524], 176.797, OPPOSITION (a)
 venus [213.322], saturn [331.463], 118.142, TRINE (a)
-venus [213.322], neptune [354.888], 141.567, QUINTILE (a)
-venus [213.322], pluto [298.663], 85.342, SQUARE (a)
-
-mars
--------
-mars [249.447], jupiter [36.524], 212.923, QUINTILE (a)
-mars [249.447], saturn [331.463], 82.016, SQUARE (a)
-
-jupiter
--------
-jupiter [36.524], pluto [298.663], 262.139, SQUARE (a)
-
-neptune
--------
-neptune [354.888], pluto [298.663], 56.225, SEXTILE (a)
-
-pluto
--------
-pluto [298.663], north node [22.168], 276.495, SQUARE (s)
 ---------------------
 
 
@@ -456,64 +263,21 @@ Aspects:
 --------
 asc
 -------
-asc [288.847], moon [203.214], 85.633, SQUARE (a)
-asc [288.847], venus [214.504], 74.343, QUINTILE (s)
-asc [288.847], uranus [50.075], 238.773, TRINE (a)
-asc [288.847], neptune [354.889], 66.042, QUINTILE (a)
-asc [288.847], north node [22.115], 266.732, SQUARE (a)
-asc [288.847], south node [202.115], 86.732, SQUARE (a)
-
-mc
--------
-mc [223.327], jupiter [36.447], 186.880, OPPOSITION (s)
-mc [223.327], uranus [50.075], 173.252, OPPOSITION (a)
-mc [223.327], pluto [298.688], 75.361, QUINTILE (s)
-
-sun
--------
-sun [256.225], mars [250.170], 6.055, CONJUNCTION (s)
-sun [256.225], jupiter [36.447], 219.778, QUINTILE (s)
-sun [256.225], saturn [331.520], 75.295, QUINTILE (s)
-sun [256.225], neptune [354.889], 98.664, SQUARE (s)
-sun [256.225], north node [22.115], 234.110, TRINE (a)
+asc [288.847], uranus [50.075], 238.773, TRINE (s)
 
 moon
 -------
-moon [203.214], mercury [276.782], 73.568, QUINTILE (s)
-moon [203.214], saturn [331.520], 128.306, TRINE (s)
-moon [203.214], uranus [50.075], 153.139, INCONJUNCT (s)
-moon [203.214], neptune [354.889], 151.676, INCONJUNCT (s)
-moon [203.214], neptune [354.889], 151.676, QUINTILE (s)
-moon [203.214], pluto [298.688], 95.475, SQUARE (s)
+moon [203.214], mercury [276.782], 73.568, QUINTILE (a)
+moon [203.214], neptune [354.889], 151.676, INCONJUNCT (a)
 moon [203.214], north node [22.115], 181.098, OPPOSITION (s)
 
 mercury
 -------
-mercury [276.782], venus [214.504], 62.278, SEXTILE (s)
 mercury [276.782], jupiter [36.447], 240.334, TRINE (s)
 
 venus
 -------
-venus [214.504], jupiter [36.447], 178.056, OPPOSITION (a)
-venus [214.504], saturn [331.520], 117.016, TRINE (a)
-venus [214.504], neptune [354.889], 140.386, QUINTILE (a)
-venus [214.504], pluto [298.688], 84.185, SQUARE (a)
-
-mars
--------
-mars [250.170], jupiter [36.447], 213.723, QUINTILE (a)
-
-jupiter
--------
-jupiter [36.447], pluto [298.688], 262.241, SQUARE (a)
-
-neptune
--------
-neptune [354.889], pluto [298.688], 56.201, SEXTILE (a)
-
-pluto
--------
-pluto [298.688], north node [22.115], 276.573, SQUARE (s)
+venus [214.504], jupiter [36.447], 178.056, OPPOSITION (s)
 ---------------------
 
 
@@ -546,63 +310,26 @@ Aspects:
 --------
 asc
 -------
-asc [289.924], moon [215.739], 74.185, QUINTILE (s)
-asc [289.924], venus [215.688], 74.236, QUINTILE (s)
-asc [289.924], uranus [50.039], 239.885, TRINE (a)
-asc [289.924], north node [22.062], 267.861, SQUARE (a)
-asc [289.924], south node [202.062], 87.861, SQUARE (a)
-
-mc
--------
-mc [224.320], jupiter [36.373], 187.946, OPPOSITION (s)
-mc [224.320], uranus [50.039], 174.281, OPPOSITION (a)
-mc [224.320], pluto [298.714], 74.394, QUINTILE (s)
-
-sun
--------
-sun [257.241], mars [250.894], 6.347, CONJUNCTION (s)
-sun [257.241], jupiter [36.373], 220.868, QUINTILE (s)
-sun [257.241], saturn [331.578], 74.337, QUINTILE (s)
-sun [257.241], neptune [354.891], 97.650, SQUARE (s)
-sun [257.241], north node [22.062], 235.179, TRINE (a)
+asc [289.924], uranus [50.039], 239.885, TRINE (s)
 
 moon
 -------
-moon [215.739], mercury [277.399], 61.660, SEXTILE (s)
+moon [215.739], mercury [277.399], 61.660, SEXTILE (a)
 moon [215.739], venus [215.688], 0.051, CONJUNCTION (s)
-moon [215.739], jupiter [36.373], 179.366, OPPOSITION (a)
-moon [215.739], saturn [331.578], 115.839, TRINE (a)
-moon [215.739], neptune [354.891], 139.152, QUINTILE (a)
-moon [215.739], pluto [298.714], 82.975, SQUARE (a)
+moon [215.739], jupiter [36.373], 179.366, OPPOSITION (s)
 
 mercury
 -------
 mercury [277.399], venus [215.688], 61.711, SEXTILE (s)
 mercury [277.399], jupiter [36.373], 241.026, TRINE (s)
-mercury [277.399], neptune [354.891], 77.491, QUINTILE (s)
 
 venus
 -------
-venus [215.688], jupiter [36.373], 179.315, OPPOSITION (a)
-venus [215.688], saturn [331.578], 115.890, TRINE (a)
-venus [215.688], neptune [354.891], 139.203, QUINTILE (a)
-venus [215.688], pluto [298.714], 83.026, SQUARE (a)
+venus [215.688], jupiter [36.373], 179.315, OPPOSITION (s)
 
 mars
 -------
-mars [250.894], jupiter [36.373], 214.521, QUINTILE (a)
-
-jupiter
--------
-jupiter [36.373], pluto [298.714], 262.341, SQUARE (a)
-
-neptune
--------
-neptune [354.891], pluto [298.714], 56.177, SEXTILE (a)
-
-pluto
--------
-pluto [298.714], north node [22.062], 276.652, SQUARE (s)
+mars [250.894], jupiter [36.373], 214.521, QUINTILE (s)
 ---------------------
 
 
@@ -635,62 +362,35 @@ Aspects:
 --------
 asc
 -------
-asc [291.012], moon [228.610], 62.402, SEXTILE (s)
-asc [291.012], venus [216.874], 74.137, QUINTILE (s)
 asc [291.012], uranus [50.003], 241.008, TRINE (s)
-asc [291.012], neptune [354.893], 63.881, SEXTILE (s)
-asc [291.012], pluto [298.740], 7.728, CONJUNCTION (s)
-asc [291.012], north node [22.009], 269.002, SQUARE (a)
-asc [291.012], south node [202.009], 89.002, SQUARE (a)
+asc [291.012], north node [22.009], 269.002, SQUARE (s)
+asc [291.012], south node [202.009], 89.002, SQUARE (s)
 
 mc
 -------
-mc [225.310], moon [228.610], 3.300, CONJUNCTION (s)
-mc [225.310], uranus [50.003], 175.306, OPPOSITION (a)
 mc [225.310], pluto [298.740], 73.430, QUINTILE (s)
 
 sun
 -------
-sun [258.257], mars [251.619], 6.639, CONJUNCTION (s)
-sun [258.257], jupiter [36.303], 221.955, QUINTILE (s)
-sun [258.257], saturn [331.637], 73.380, QUINTILE (s)
-sun [258.257], uranus [50.003], 208.254, QUINTILE (a)
-sun [258.257], neptune [354.893], 96.636, SQUARE (s)
-sun [258.257], north node [22.009], 236.248, TRINE (a)
+sun [258.257], saturn [331.637], 73.380, QUINTILE (a)
 
 moon
 -------
-moon [228.610], uranus [50.003], 178.606, OPPOSITION (a)
-moon [228.610], neptune [354.893], 126.283, TRINE (s)
+moon [228.610], uranus [50.003], 178.606, OPPOSITION (s)
 moon [228.610], pluto [298.740], 70.130, QUINTILE (a)
 
 mercury
 -------
 mercury [277.892], venus [216.874], 61.018, SEXTILE (s)
 mercury [277.892], jupiter [36.303], 241.590, TRINE (s)
-mercury [277.892], neptune [354.893], 77.000, QUINTILE (s)
 
 venus
 -------
 venus [216.874], jupiter [36.303], 180.572, OPPOSITION (s)
-venus [216.874], saturn [331.637], 114.763, TRINE (a)
-venus [216.874], neptune [354.893], 138.019, QUINTILE (a)
 
 mars
 -------
-mars [251.619], jupiter [36.303], 215.316, QUINTILE (a)
-
-jupiter
--------
-jupiter [36.303], pluto [298.740], 262.437, SQUARE (a)
-
-neptune
--------
-neptune [354.893], pluto [298.740], 56.153, SEXTILE (a)
-
-pluto
--------
-pluto [298.740], north node [22.009], 276.731, SQUARE (s)
+mars [251.619], jupiter [36.303], 215.316, QUINTILE (s)
 ---------------------
 
 
@@ -723,60 +423,32 @@ Aspects:
 --------
 asc
 -------
-asc [292.112], venus [218.062], 74.049, QUINTILE (s)
-asc [292.112], uranus [49.969], 242.143, TRINE (s)
-asc [292.112], neptune [354.896], 62.784, SEXTILE (s)
-asc [292.112], pluto [298.766], 6.654, CONJUNCTION (s)
 asc [292.112], north node [21.956], 270.155, SQUARE (s)
 asc [292.112], south node [201.956], 90.155, SQUARE (s)
 
 mc
 -------
-mc [226.297], uranus [49.969], 176.328, OPPOSITION (a)
 mc [226.297], pluto [298.766], 72.470, QUINTILE (s)
 
 sun
 -------
-sun [259.274], mars [252.344], 6.930, CONJUNCTION (s)
-sun [259.274], jupiter [36.235], 223.039, QUINTILE (s)
-sun [259.274], saturn [331.698], 72.424, QUINTILE (s)
-sun [259.274], uranus [49.969], 209.305, QUINTILE (a)
-sun [259.274], neptune [354.896], 95.622, SQUARE (s)
-sun [259.274], north node [21.956], 237.318, TRINE (a)
+sun [259.274], saturn [331.698], 72.424, QUINTILE (a)
 
 moon
 -------
 moon [241.853], saturn [331.698], 89.846, SQUARE (a)
-moon [241.853], neptune [354.896], 113.043, TRINE (a)
-moon [241.853], pluto [298.766], 56.913, SEXTILE (a)
-moon [241.853], north node [21.956], 219.896, QUINTILE (s)
 
 mercury
 -------
 mercury [278.247], venus [218.062], 60.184, SEXTILE (s)
-mercury [278.247], jupiter [36.235], 242.012, TRINE (s)
-mercury [278.247], neptune [354.896], 76.649, QUINTILE (s)
 
 venus
 -------
 venus [218.062], jupiter [36.235], 181.828, OPPOSITION (s)
-venus [218.062], saturn [331.698], 113.636, TRINE (a)
 
 mars
 -------
 mars [252.344], jupiter [36.235], 216.109, QUINTILE (s)
-
-jupiter
--------
-jupiter [36.235], pluto [298.766], 262.531, SQUARE (a)
-
-neptune
--------
-neptune [354.896], pluto [298.766], 56.129, SEXTILE (a)
-
-pluto
--------
-pluto [298.766], north node [21.956], 276.810, SQUARE (s)
 ---------------------
 
 
@@ -810,60 +482,26 @@ Aspects:
 asc
 -------
 asc [293.224], venus [219.252], 73.972, QUINTILE (s)
-asc [293.224], uranus [49.934], 243.290, TRINE (s)
 asc [293.224], neptune [354.899], 61.675, SEXTILE (s)
-asc [293.224], pluto [298.793], 5.569, CONJUNCTION (s)
 asc [293.224], north node [21.904], 271.321, SQUARE (s)
 asc [293.224], south node [201.904], 91.321, SQUARE (s)
 
 mc
 -------
-mc [227.281], uranus [49.934], 177.346, OPPOSITION (a)
-mc [227.281], neptune [354.899], 127.618, TRINE (s)
-mc [227.281], pluto [298.793], 71.512, QUINTILE (a)
+mc [227.281], pluto [298.793], 71.512, QUINTILE (s)
 
 sun
 -------
-sun [260.291], mars [253.070], 7.220, CONJUNCTION (s)
 sun [260.291], saturn [331.761], 71.470, QUINTILE (a)
-sun [260.291], uranus [49.934], 210.357, QUINTILE (a)
-sun [260.291], neptune [354.899], 94.608, SQUARE (s)
-sun [260.291], north node [21.904], 238.387, TRINE (a)
-
-moon
--------
-moon [255.463], mars [253.070], 2.392, CONJUNCTION (s)
-moon [255.463], jupiter [36.170], 219.293, QUINTILE (s)
-moon [255.463], saturn [331.761], 76.298, QUINTILE (s)
-moon [255.463], neptune [354.899], 99.436, SQUARE (s)
-moon [255.463], north node [21.904], 233.559, TRINE (a)
+sun [260.291], north node [21.904], 238.387, TRINE (s)
 
 mercury
 -------
-mercury [278.447], venus [219.252], 59.195, SEXTILE (a)
-mercury [278.447], jupiter [36.170], 242.277, TRINE (s)
-mercury [278.447], neptune [354.899], 76.452, QUINTILE (s)
-
-venus
--------
-venus [219.252], jupiter [36.170], 183.082, OPPOSITION (s)
-venus [219.252], saturn [331.761], 112.509, TRINE (a)
+mercury [278.447], venus [219.252], 59.195, SEXTILE (s)
 
 mars
 -------
 mars [253.070], jupiter [36.170], 216.900, QUINTILE (s)
-
-jupiter
--------
-jupiter [36.170], pluto [298.793], 262.623, SQUARE (a)
-
-neptune
--------
-neptune [354.899], pluto [298.793], 56.106, SEXTILE (a)
-
-pluto
--------
-pluto [298.793], north node [21.904], 276.889, SQUARE (s)
 ---------------------
 
 
@@ -897,61 +535,25 @@ Aspects:
 asc
 -------
 asc [294.349], venus [220.444], 73.905, QUINTILE (s)
-asc [294.349], uranus [49.900], 244.449, TRINE (s)
 asc [294.349], neptune [354.903], 60.553, SEXTILE (s)
-asc [294.349], pluto [298.820], 4.471, CONJUNCTION (s)
-asc [294.349], north node [21.851], 272.499, SQUARE (s)
-asc [294.349], south node [201.851], 92.499, SQUARE (s)
 
 mc
 -------
-mc [228.262], venus [220.444], 7.818, CONJUNCTION (s)
-mc [228.262], uranus [49.900], 178.361, OPPOSITION (a)
-mc [228.262], neptune [354.903], 126.641, TRINE (s)
-mc [228.262], pluto [298.820], 70.558, QUINTILE (a)
+mc [228.262], uranus [49.900], 178.361, OPPOSITION (s)
+mc [228.262], pluto [298.820], 70.558, QUINTILE (s)
 
 sun
 -------
-sun [261.308], mars [253.798], 7.510, CONJUNCTION (s)
 sun [261.308], saturn [331.825], 70.517, QUINTILE (a)
-sun [261.308], uranus [49.900], 211.408, QUINTILE (a)
-sun [261.308], neptune [354.903], 93.595, SQUARE (s)
-sun [261.308], north node [21.851], 239.457, TRINE (a)
-
-moon
--------
-moon [269.399], mercury [278.481], 9.081, CONJUNCTION (s)
-moon [269.399], jupiter [36.109], 233.290, TRINE (a)
-moon [269.399], saturn [331.825], 62.426, SEXTILE (s)
-moon [269.399], uranus [49.900], 219.499, QUINTILE (s)
-moon [269.399], neptune [354.903], 85.504, SQUARE (a)
-moon [269.399], north node [21.851], 247.549, TRINE (s)
+sun [261.308], north node [21.851], 239.457, TRINE (s)
 
 mercury
 -------
-mercury [278.481], venus [220.444], 58.037, SEXTILE (a)
-mercury [278.481], jupiter [36.109], 242.372, TRINE (s)
-mercury [278.481], neptune [354.903], 76.422, QUINTILE (s)
-
-venus
--------
-venus [220.444], jupiter [36.109], 184.335, OPPOSITION (s)
+mercury [278.481], venus [220.444], 58.037, SEXTILE (s)
 
 mars
 -------
 mars [253.798], jupiter [36.109], 217.689, QUINTILE (s)
-
-jupiter
--------
-jupiter [36.109], pluto [298.820], 262.711, SQUARE (a)
-
-neptune
--------
-neptune [354.903], pluto [298.820], 56.083, SEXTILE (a)
-
-pluto
--------
-pluto [298.820], north node [21.851], 276.969, SQUARE (s)
 ---------------------
 
 
@@ -985,68 +587,20 @@ Aspects:
 asc
 -------
 asc [295.487], venus [221.637], 73.850, QUINTILE (s)
-asc [295.487], uranus [49.867], 245.620, TRINE (s)
-asc [295.487], neptune [354.907], 59.420, SEXTILE (a)
-asc [295.487], pluto [298.847], 3.360, CONJUNCTION (s)
-asc [295.487], north node [21.798], 273.689, SQUARE (s)
-asc [295.487], south node [201.798], 93.689, SQUARE (s)
+asc [295.487], neptune [354.907], 59.420, SEXTILE (s)
 
 mc
 -------
-mc [229.240], venus [221.637], 7.603, CONJUNCTION (s)
-mc [229.240], uranus [49.867], 179.373, OPPOSITION (a)
-mc [229.240], neptune [354.907], 125.667, TRINE (s)
-mc [229.240], pluto [298.847], 69.607, QUINTILE (a)
+mc [229.240], uranus [49.867], 179.373, OPPOSITION (s)
 
 sun
 -------
-sun [262.325], mars [254.525], 7.800, CONJUNCTION (s)
-sun [262.325], saturn [331.891], 69.565, QUINTILE (a)
-sun [262.325], uranus [49.867], 212.458, QUINTILE (a)
-sun [262.325], neptune [354.907], 92.582, SQUARE (s)
 sun [262.325], north node [21.798], 240.528, TRINE (s)
 
 moon
 -------
-moon [283.590], mercury [278.335], 5.255, CONJUNCTION (s)
 moon [283.590], venus [221.637], 61.953, SEXTILE (s)
-moon [283.590], jupiter [36.051], 247.539, TRINE (s)
-moon [283.590], uranus [49.867], 233.723, TRINE (a)
 moon [283.590], neptune [354.907], 71.318, QUINTILE (a)
-moon [283.590], north node [21.798], 261.792, SQUARE (a)
-
-mercury
--------
-mercury [278.335], venus [221.637], 56.697, SEXTILE (a)
-mercury [278.335], jupiter [36.051], 242.284, TRINE (s)
-mercury [278.335], neptune [354.907], 76.573, QUINTILE (s)
-
-venus
--------
-venus [221.637], jupiter [36.051], 185.586, OPPOSITION (s)
-venus [221.637], pluto [298.847], 77.210, QUINTILE (s)
-
-mars
--------
-mars [254.525], jupiter [36.051], 218.475, QUINTILE (s)
-mars [254.525], saturn [331.891], 77.365, QUINTILE (s)
-mars [254.525], north node [21.798], 232.728, TRINE (a)
-
-jupiter
--------
-jupiter [36.051], pluto [298.847], 262.796, SQUARE (a)
-
-saturn
--------
-saturn [331.891], uranus [49.867], 282.023, QUINTILE (a)
-
-neptune
--------
-neptune [354.907], pluto [298.847], 56.060, SEXTILE (a)
-
-pluto
--------
-pluto [298.847], north node [21.798], 277.049, SQUARE (s)
 ---------------------
 
 
@@ -1081,69 +635,20 @@ asc
 -------
 asc [296.638], moon [297.941], 1.302, CONJUNCTION (s)
 asc [296.638], venus [222.832], 73.806, QUINTILE (s)
-asc [296.638], uranus [49.834], 246.804, TRINE (s)
-asc [296.638], neptune [354.912], 58.274, SEXTILE (a)
-asc [296.638], pluto [298.875], 2.236, CONJUNCTION (s)
-asc [296.638], north node [21.745], 274.893, SQUARE (s)
-asc [296.638], south node [201.745], 94.893, SQUARE (s)
+asc [296.638], neptune [354.912], 58.274, SEXTILE (s)
 
 mc
 -------
-mc [230.215], moon [297.941], 67.725, QUINTILE (a)
-mc [230.215], venus [222.832], 7.384, CONJUNCTION (s)
 mc [230.215], uranus [49.834], 180.381, OPPOSITION (s)
-mc [230.215], neptune [354.912], 124.697, TRINE (s)
-mc [230.215], pluto [298.875], 68.659, QUINTILE (a)
 
 sun
 -------
-sun [263.343], mars [255.254], 8.089, CONJUNCTION (s)
-sun [263.343], saturn [331.957], 68.615, QUINTILE (a)
-sun [263.343], uranus [49.834], 213.509, QUINTILE (a)
-sun [263.343], neptune [354.912], 91.569, SQUARE (s)
+sun [263.343], neptune [354.912], 91.569, SQUARE (a)
 sun [263.343], north node [21.745], 241.598, TRINE (s)
 
 moon
 -------
-moon [297.941], venus [222.832], 75.109, QUINTILE (s)
-moon [297.941], jupiter [35.996], 261.945, SQUARE (a)
-moon [297.941], uranus [49.834], 248.106, TRINE (s)
-moon [297.941], neptune [354.912], 56.972, SEXTILE (a)
-moon [297.941], pluto [298.875], 0.934, CONJUNCTION (s)
-moon [297.941], north node [21.745], 276.196, SQUARE (s)
-
-mercury
--------
-mercury [278.000], jupiter [35.996], 242.004, TRINE (s)
-mercury [278.000], neptune [354.912], 76.912, QUINTILE (s)
-
-venus
--------
-venus [222.832], jupiter [35.996], 186.836, OPPOSITION (s)
-venus [222.832], uranus [49.834], 172.998, OPPOSITION (a)
-venus [222.832], pluto [298.875], 76.043, QUINTILE (s)
-
-mars
--------
-mars [255.254], jupiter [35.996], 219.258, QUINTILE (s)
-mars [255.254], saturn [331.957], 76.703, QUINTILE (s)
-mars [255.254], north node [21.745], 233.509, TRINE (a)
-
-jupiter
--------
-jupiter [35.996], pluto [298.875], 262.879, SQUARE (a)
-
-saturn
--------
-saturn [331.957], uranus [49.834], 282.123, QUINTILE (a)
-
-neptune
--------
-neptune [354.912], pluto [298.875], 56.038, SEXTILE (a)
-
-pluto
--------
-pluto [298.875], north node [21.745], 277.130, SQUARE (s)
+moon [297.941], pluto [298.875], 0.934, CONJUNCTION (a)
 ---------------------
 
 
@@ -1177,66 +682,24 @@ Aspects:
 asc
 -------
 asc [297.803], venus [224.028], 73.775, QUINTILE (s)
-asc [297.803], neptune [354.918], 57.115, SEXTILE (a)
 asc [297.803], pluto [298.902], 1.099, CONJUNCTION (s)
-asc [297.803], north node [21.692], 276.111, SQUARE (s)
-asc [297.803], south node [201.692], 96.111, SQUARE (s)
 
 mc
 -------
-mc [231.188], venus [224.028], 7.160, CONJUNCTION (s)
 mc [231.188], uranus [49.802], 181.386, OPPOSITION (s)
-mc [231.188], neptune [354.918], 123.730, TRINE (s)
-mc [231.188], pluto [298.902], 67.714, QUINTILE (a)
 
 sun
 -------
-sun [264.361], mars [255.984], 8.377, CONJUNCTION (s)
-sun [264.361], saturn [332.026], 67.665, QUINTILE (a)
-sun [264.361], uranus [49.802], 214.559, QUINTILE (a)
-sun [264.361], neptune [354.918], 90.557, SQUARE (s)
-sun [264.361], north node [21.692], 242.669, TRINE (s)
+sun [264.361], uranus [49.802], 214.559, QUINTILE (s)
+sun [264.361], neptune [354.918], 90.557, SQUARE (a)
 
 moon
 -------
-moon [312.352], venus [224.028], 88.324, SQUARE (a)
-moon [312.352], mars [255.984], 56.368, SEXTILE (a)
-moon [312.352], jupiter [35.945], 276.407, SQUARE (s)
-moon [312.352], uranus [49.802], 262.550, SQUARE (a)
-moon [312.352], north node [21.692], 290.660, QUINTILE (s)
+moon [312.352], venus [224.028], 88.324, SQUARE (s)
 
 mercury
 -------
 mercury [277.472], jupiter [35.945], 241.528, TRINE (s)
-mercury [277.472], neptune [354.918], 77.446, QUINTILE (s)
-
-venus
--------
-venus [224.028], uranus [49.802], 174.226, OPPOSITION (a)
-venus [224.028], pluto [298.902], 74.874, QUINTILE (s)
-
-mars
--------
-mars [255.984], jupiter [35.945], 220.039, QUINTILE (s)
-mars [255.984], saturn [332.026], 76.042, QUINTILE (s)
-mars [255.984], north node [21.692], 234.292, TRINE (a)
-
-jupiter
--------
-jupiter [35.945], saturn [332.026], 296.081, SEXTILE (a)
-jupiter [35.945], pluto [298.902], 262.958, SQUARE (a)
-
-saturn
--------
-saturn [332.026], uranus [49.802], 282.224, QUINTILE (a)
-
-neptune
--------
-neptune [354.918], pluto [298.902], 56.016, SEXTILE (a)
-
-pluto
--------
-pluto [298.902], north node [21.692], 277.210, SQUARE (s)
 ---------------------
 
 
@@ -1270,35 +733,16 @@ Aspects:
 asc
 -------
 asc [298.981], venus [225.226], 73.755, QUINTILE (s)
-asc [298.981], jupiter [35.896], 263.085, SQUARE (a)
 asc [298.981], pluto [298.930], 0.051, CONJUNCTION (s)
-asc [298.981], north node [21.639], 277.342, SQUARE (s)
-asc [298.981], south node [201.639], 97.342, SQUARE (s)
-
-mc
--------
-mc [232.158], moon [326.733], 94.576, SQUARE (s)
-mc [232.158], venus [225.226], 6.932, CONJUNCTION (s)
-mc [232.158], uranus [49.770], 182.387, OPPOSITION (s)
-mc [232.158], neptune [354.924], 122.766, TRINE (s)
-mc [232.158], pluto [298.930], 66.772, QUINTILE (a)
-mc [232.158], north node [21.639], 210.519, QUINTILE (a)
 
 sun
 -------
-sun [265.378], mars [256.714], 8.665, CONJUNCTION (s)
-sun [265.378], saturn [332.096], 66.717, QUINTILE (a)
-sun [265.378], uranus [49.770], 215.608, QUINTILE (a)
+sun [265.378], uranus [49.770], 215.608, QUINTILE (s)
 sun [265.378], neptune [354.924], 89.546, SQUARE (a)
-sun [265.378], north node [21.639], 243.739, TRINE (s)
 
 moon
 -------
-moon [326.733], mars [256.714], 70.020, QUINTILE (a)
-moon [326.733], jupiter [35.896], 290.837, QUINTILE (s)
-moon [326.733], saturn [332.096], 5.362, CONJUNCTION (s)
-moon [326.733], uranus [49.770], 276.963, SQUARE (s)
-moon [326.733], north node [21.639], 305.094, SEXTILE (s)
+moon [326.733], mars [256.714], 70.020, QUINTILE (s)
 
 mercury
 -------
@@ -1306,27 +750,7 @@ mercury [276.752], jupiter [35.896], 240.856, TRINE (s)
 
 venus
 -------
-venus [225.226], uranus [49.770], 175.456, OPPOSITION (a)
-venus [225.226], pluto [298.930], 73.704, QUINTILE (s)
-
-mars
--------
-mars [256.714], jupiter [35.896], 220.817, QUINTILE (s)
-mars [256.714], saturn [332.096], 75.382, QUINTILE (s)
-mars [256.714], north node [21.639], 235.075, TRINE (a)
-
-jupiter
--------
-jupiter [35.896], saturn [332.096], 296.199, SEXTILE (a)
-jupiter [35.896], pluto [298.930], 263.034, SQUARE (a)
-
-saturn
--------
-saturn [332.096], uranus [49.770], 282.325, QUINTILE (a)
-
-pluto
--------
-pluto [298.930], north node [21.639], 277.291, SQUARE (s)
+venus [225.226], pluto [298.930], 73.704, QUINTILE (a)
 ---------------------
 
 
@@ -1360,66 +784,24 @@ Aspects:
 asc
 -------
 asc [300.174], venus [226.425], 73.749, QUINTILE (s)
-asc [300.174], jupiter [35.852], 264.322, SQUARE (a)
 asc [300.174], pluto [298.958], 1.215, CONJUNCTION (s)
 
 mc
 -------
-mc [233.125], venus [226.425], 6.699, CONJUNCTION (s)
-mc [233.125], uranus [49.739], 183.385, OPPOSITION (s)
 mc [233.125], neptune [354.931], 121.806, TRINE (s)
-mc [233.125], north node [21.586], 211.539, QUINTILE (a)
 
 sun
 -------
-sun [266.396], mercury [275.850], 9.454, CONJUNCTION (s)
-sun [266.396], mars [257.445], 8.952, CONJUNCTION (s)
-sun [266.396], jupiter [35.852], 230.545, TRINE (a)
-sun [266.396], saturn [332.167], 65.770, SEXTILE (s)
-sun [266.396], saturn [332.167], 65.770, QUINTILE (a)
 sun [266.396], uranus [49.739], 216.657, QUINTILE (s)
 sun [266.396], neptune [354.931], 88.534, SQUARE (a)
-sun [266.396], north node [21.586], 244.810, TRINE (s)
-
-moon
--------
-moon [341.016], mercury [275.850], 65.166, SEXTILE (s)
-moon [341.016], mercury [275.850], 65.166, QUINTILE (a)
-moon [341.016], venus [226.425], 114.591, TRINE (a)
-moon [341.016], mars [257.445], 83.572, SQUARE (a)
-moon [341.016], jupiter [35.852], 305.165, SEXTILE (s)
-moon [341.016], saturn [332.167], 8.850, CONJUNCTION (s)
-moon [341.016], uranus [49.739], 291.277, QUINTILE (s)
 
 mercury
 -------
-mercury [275.850], jupiter [35.852], 239.999, TRINE (a)
-mercury [275.850], saturn [332.167], 56.316, SEXTILE (a)
+mercury [275.850], jupiter [35.852], 239.999, TRINE (s)
 
 venus
 -------
-venus [226.425], uranus [49.739], 176.686, OPPOSITION (a)
-venus [226.425], pluto [298.958], 72.533, QUINTILE (s)
-
-mars
--------
-mars [257.445], jupiter [35.852], 221.593, QUINTILE (s)
-mars [257.445], saturn [332.167], 74.722, QUINTILE (s)
-mars [257.445], neptune [354.931], 97.486, SQUARE (s)
-mars [257.445], north node [21.586], 235.859, TRINE (a)
-
-jupiter
--------
-jupiter [35.852], saturn [332.167], 296.315, SEXTILE (a)
-jupiter [35.852], pluto [298.958], 263.107, SQUARE (a)
-
-saturn
--------
-saturn [332.167], uranus [49.739], 282.427, QUINTILE (a)
-
-pluto
--------
-pluto [298.958], north node [21.586], 277.372, SQUARE (s)
+venus [226.425], pluto [298.958], 72.533, QUINTILE (a)
 ---------------------
 
 
@@ -1453,66 +835,27 @@ Aspects:
 asc
 -------
 asc [301.381], venus [227.626], 73.755, QUINTILE (s)
-asc [301.381], jupiter [35.810], 265.571, SQUARE (a)
-asc [301.381], pluto [298.987], 2.394, CONJUNCTION (s)
 
 mc
 -------
 mc [234.089], moon [355.159], 121.070, TRINE (s)
-mc [234.089], venus [227.626], 6.463, CONJUNCTION (s)
-mc [234.089], uranus [49.709], 184.380, OPPOSITION (s)
 mc [234.089], neptune [354.938], 120.849, TRINE (s)
-mc [234.089], north node [21.533], 212.556, QUINTILE (a)
 
 sun
 -------
-sun [267.414], mercury [274.783], 7.369, CONJUNCTION (s)
-sun [267.414], mars [258.176], 9.238, CONJUNCTION (s)
-sun [267.414], jupiter [35.810], 231.604, TRINE (a)
-sun [267.414], saturn [332.239], 64.825, SEXTILE (s)
-sun [267.414], saturn [332.239], 64.825, QUINTILE (a)
 sun [267.414], uranus [49.709], 217.706, QUINTILE (s)
-sun [267.414], neptune [354.938], 87.524, SQUARE (a)
-sun [267.414], north node [21.533], 245.881, TRINE (s)
 
 moon
 -------
-moon [355.159], mercury [274.783], 80.375, SQUARE (a)
-moon [355.159], venus [227.626], 127.533, TRINE (s)
-moon [355.159], mars [258.176], 96.982, SQUARE (s)
-moon [355.159], uranus [49.709], 305.450, SEXTILE (s)
 moon [355.159], neptune [354.938], 0.221, CONJUNCTION (s)
-moon [355.159], pluto [298.987], 56.172, SEXTILE (a)
 
 mercury
 -------
-mercury [274.783], jupiter [35.810], 238.973, TRINE (a)
-mercury [274.783], saturn [332.239], 57.456, SEXTILE (a)
+mercury [274.783], jupiter [35.810], 238.973, TRINE (s)
 
 venus
 -------
-venus [227.626], uranus [49.709], 177.917, OPPOSITION (a)
-venus [227.626], neptune [354.938], 127.312, TRINE (s)
 venus [227.626], pluto [298.987], 71.361, QUINTILE (a)
-
-mars
--------
-mars [258.176], saturn [332.239], 74.063, QUINTILE (s)
-mars [258.176], neptune [354.938], 96.762, SQUARE (s)
-mars [258.176], north node [21.533], 236.643, TRINE (a)
-
-jupiter
--------
-jupiter [35.810], saturn [332.239], 296.429, SEXTILE (a)
-jupiter [35.810], pluto [298.987], 263.177, SQUARE (a)
-
-saturn
--------
-saturn [332.239], uranus [49.709], 282.530, QUINTILE (a)
-
-pluto
--------
-pluto [298.987], north node [21.533], 277.454, SQUARE (s)
 ---------------------
 
 
@@ -1545,66 +888,28 @@ Aspects:
 --------
 asc
 -------
-asc [302.602], moon [9.141], 293.461, QUINTILE (s)
 asc [302.602], venus [228.828], 73.775, QUINTILE (s)
-asc [302.602], jupiter [35.772], 266.830, SQUARE (a)
-asc [302.602], pluto [299.016], 3.587, CONJUNCTION (s)
 
 mc
 -------
-mc [235.050], venus [228.828], 6.223, CONJUNCTION (s)
-mc [235.050], saturn [332.313], 97.263, SQUARE (s)
-mc [235.050], uranus [49.679], 185.372, OPPOSITION (s)
-mc [235.050], neptune [354.946], 119.896, TRINE (a)
-mc [235.050], pluto [299.016], 63.965, SEXTILE (s)
-mc [235.050], north node [21.480], 213.570, QUINTILE (a)
-
-sun
--------
-sun [268.432], mercury [273.579], 5.147, CONJUNCTION (s)
-sun [268.432], mars [258.909], 9.524, CONJUNCTION (s)
-sun [268.432], jupiter [35.772], 232.660, TRINE (a)
-sun [268.432], saturn [332.313], 63.881, SEXTILE (s)
-sun [268.432], uranus [49.679], 218.754, QUINTILE (s)
-sun [268.432], neptune [354.946], 86.514, SQUARE (a)
-sun [268.432], north node [21.480], 246.952, TRINE (s)
+mc [235.050], neptune [354.946], 119.896, TRINE (s)
 
 moon
 -------
-moon [9.141], mercury [273.579], 264.438, SQUARE (a)
-moon [9.141], venus [228.828], 219.687, QUINTILE (s)
-moon [9.141], mars [258.909], 249.768, TRINE (s)
-moon [9.141], pluto [299.016], 289.875, QUINTILE (s)
+moon [9.141], pluto [299.016], 289.875, QUINTILE (a)
 
 mercury
 -------
-mercury [273.579], jupiter [35.772], 237.807, TRINE (a)
-mercury [273.579], saturn [332.313], 58.734, SEXTILE (a)
+mercury [273.579], saturn [332.313], 58.734, SEXTILE (s)
 
 venus
 -------
-venus [228.828], uranus [49.679], 179.149, OPPOSITION (a)
-venus [228.828], neptune [354.946], 126.118, TRINE (s)
+venus [228.828], uranus [49.679], 179.149, OPPOSITION (s)
 venus [228.828], pluto [299.016], 70.188, QUINTILE (a)
 
 mars
 -------
-mars [258.909], saturn [332.313], 73.404, QUINTILE (s)
-mars [258.909], neptune [354.946], 96.037, SQUARE (s)
-mars [258.909], north node [21.480], 237.429, TRINE (a)
-
-jupiter
--------
-jupiter [35.772], saturn [332.313], 296.541, SEXTILE (a)
-jupiter [35.772], pluto [299.016], 263.244, SQUARE (a)
-
-saturn
--------
-saturn [332.313], uranus [49.679], 282.634, QUINTILE (a)
-
-pluto
--------
-pluto [299.016], north node [21.480], 277.535, SQUARE (s)
+mars [258.909], saturn [332.313], 73.404, QUINTILE (a)
 ---------------------
 
 
@@ -1638,67 +943,29 @@ Aspects:
 asc
 -------
 asc [303.839], venus [230.031], 73.808, QUINTILE (s)
-asc [303.839], jupiter [35.737], 268.102, SQUARE (a)
-asc [303.839], pluto [299.044], 4.794, CONJUNCTION (s)
-asc [303.839], north node [21.427], 282.412, QUINTILE (a)
+asc [303.839], jupiter [35.737], 268.102, SQUARE (s)
 
 mc
 -------
-mc [236.009], moon [22.960], 213.049, QUINTILE (a)
-mc [236.009], venus [230.031], 5.978, CONJUNCTION (s)
-mc [236.009], saturn [332.388], 96.379, SQUARE (s)
-mc [236.009], uranus [49.649], 186.360, OPPOSITION (s)
-mc [236.009], neptune [354.954], 118.945, TRINE (a)
-mc [236.009], pluto [299.044], 63.036, SEXTILE (s)
-mc [236.009], north node [21.427], 214.582, QUINTILE (a)
-
-sun
--------
-sun [269.450], mercury [272.273], 2.823, CONJUNCTION (s)
-sun [269.450], mars [259.642], 9.809, CONJUNCTION (s)
-sun [269.450], jupiter [35.737], 233.713, TRINE (a)
-sun [269.450], saturn [332.388], 62.938, SEXTILE (s)
-sun [269.450], uranus [49.649], 219.801, QUINTILE (s)
-sun [269.450], neptune [354.954], 85.504, SQUARE (a)
-sun [269.450], north node [21.427], 248.023, TRINE (s)
+mc [236.009], neptune [354.954], 118.945, TRINE (s)
+mc [236.009], north node [21.427], 214.582, QUINTILE (s)
 
 moon
 -------
-moon [22.960], mercury [272.273], 249.313, TRINE (s)
-moon [22.960], mars [259.642], 236.682, TRINE (a)
-moon [22.960], pluto [299.044], 276.084, SQUARE (s)
 moon [22.960], north node [21.427], 1.533, CONJUNCTION (s)
 
 mercury
 -------
-mercury [272.273], jupiter [35.737], 236.536, TRINE (a)
 mercury [272.273], saturn [332.388], 60.115, SEXTILE (s)
-mercury [272.273], neptune [354.954], 82.681, SQUARE (a)
 
 venus
 -------
 venus [230.031], uranus [49.649], 180.382, OPPOSITION (s)
-venus [230.031], neptune [354.954], 124.923, TRINE (s)
-venus [230.031], pluto [299.044], 69.014, QUINTILE (a)
 
 mars
 -------
-mars [259.642], saturn [332.388], 72.746, QUINTILE (s)
-mars [259.642], neptune [354.954], 95.313, SQUARE (s)
-mars [259.642], north node [21.427], 238.215, TRINE (a)
-
-jupiter
--------
-jupiter [35.737], saturn [332.388], 296.651, SEXTILE (a)
-jupiter [35.737], pluto [299.044], 263.307, SQUARE (a)
-
-saturn
--------
-saturn [332.388], uranus [49.649], 282.739, QUINTILE (a)
-
-pluto
--------
-pluto [299.044], north node [21.427], 277.617, SQUARE (s)
+mars [259.642], saturn [332.388], 72.746, QUINTILE (a)
+mars [259.642], north node [21.427], 238.215, TRINE (s)
 ---------------------
 
 
@@ -1731,71 +998,35 @@ Aspects:
 --------
 asc
 -------
-asc [305.091], moon [36.619], 268.472, SQUARE (a)
+asc [305.091], moon [36.619], 268.472, SQUARE (s)
 asc [305.091], venus [231.235], 73.855, QUINTILE (s)
-asc [305.091], jupiter [35.706], 269.385, SQUARE (a)
-asc [305.091], pluto [299.074], 6.017, CONJUNCTION (s)
-asc [305.091], north node [21.374], 283.717, QUINTILE (a)
+asc [305.091], jupiter [35.706], 269.385, SQUARE (s)
 
 mc
 -------
-mc [236.965], venus [231.235], 5.730, CONJUNCTION (s)
-mc [236.965], saturn [332.464], 95.499, SQUARE (s)
-mc [236.965], uranus [49.621], 187.345, OPPOSITION (s)
-mc [236.965], neptune [354.963], 117.998, TRINE (a)
-mc [236.965], pluto [299.074], 62.109, SEXTILE (s)
-mc [236.965], north node [21.374], 215.591, QUINTILE (a)
+mc [236.965], north node [21.374], 215.591, QUINTILE (s)
 
 sun
 -------
-sun [270.469], mercury [270.908], 0.440, CONJUNCTION (s)
-sun [270.469], jupiter [35.706], 234.762, TRINE (a)
-sun [270.469], saturn [332.464], 61.996, SEXTILE (s)
-sun [270.469], uranus [49.621], 220.848, QUINTILE (s)
-sun [270.469], neptune [354.963], 84.495, SQUARE (a)
-sun [270.469], north node [21.374], 249.094, TRINE (s)
+sun [270.469], mercury [270.908], 0.440, CONJUNCTION (a)
+sun [270.469], saturn [332.464], 61.996, SEXTILE (a)
 
 moon
 -------
-moon [36.619], mercury [270.908], 234.289, TRINE (a)
-moon [36.619], mars [260.376], 223.756, QUINTILE (s)
 moon [36.619], jupiter [35.706], 0.913, CONJUNCTION (s)
-moon [36.619], saturn [332.464], 295.845, SEXTILE (a)
-moon [36.619], saturn [332.464], 295.845, QUINTILE (s)
-moon [36.619], pluto [299.074], 262.454, SQUARE (a)
 
 mercury
 -------
-mercury [270.908], jupiter [35.706], 235.202, TRINE (a)
 mercury [270.908], saturn [332.464], 61.556, SEXTILE (s)
-mercury [270.908], uranus [49.621], 221.288, QUINTILE (s)
-mercury [270.908], neptune [354.963], 84.055, SQUARE (a)
 
 venus
 -------
 venus [231.235], uranus [49.621], 181.615, OPPOSITION (s)
-venus [231.235], neptune [354.963], 123.728, TRINE (s)
-venus [231.235], pluto [299.074], 67.838, QUINTILE (a)
 
 mars
 -------
-mars [260.376], saturn [332.464], 72.089, QUINTILE (s)
-mars [260.376], uranus [49.621], 210.755, QUINTILE (a)
-mars [260.376], neptune [354.963], 94.588, SQUARE (s)
-mars [260.376], north node [21.374], 239.001, TRINE (a)
-
-jupiter
--------
-jupiter [35.706], saturn [332.464], 296.758, SEXTILE (a)
-jupiter [35.706], pluto [299.074], 263.367, SQUARE (a)
-
-saturn
--------
-saturn [332.464], uranus [49.621], 282.844, QUINTILE (a)
-
-pluto
--------
-pluto [299.074], north node [21.374], 277.699, SQUARE (s)
+mars [260.376], saturn [332.464], 72.089, QUINTILE (a)
+mars [260.376], north node [21.374], 239.001, TRINE (s)
 ---------------------
 
 
@@ -1830,69 +1061,25 @@ asc
 -------
 asc [306.358], venus [232.441], 73.917, QUINTILE (s)
 asc [306.358], jupiter [35.679], 270.680, SQUARE (s)
-asc [306.358], pluto [299.103], 7.255, CONJUNCTION (s)
-asc [306.358], north node [21.321], 285.037, QUINTILE (a)
 
 mc
 -------
-mc [237.919], moon [50.121], 187.798, OPPOSITION (s)
-mc [237.919], venus [232.441], 5.477, CONJUNCTION (s)
-mc [237.919], saturn [332.542], 94.623, SQUARE (s)
-mc [237.919], neptune [354.973], 117.054, TRINE (a)
 mc [237.919], pluto [299.103], 61.184, SEXTILE (s)
 mc [237.919], north node [21.321], 216.597, QUINTILE (s)
 
 sun
 -------
 sun [271.487], mercury [269.530], 1.957, CONJUNCTION (s)
-sun [271.487], jupiter [35.679], 235.808, TRINE (a)
-sun [271.487], saturn [332.542], 61.055, SEXTILE (s)
-sun [271.487], uranus [49.593], 221.894, QUINTILE (s)
-sun [271.487], neptune [354.973], 83.486, SQUARE (a)
+sun [271.487], saturn [332.542], 61.055, SEXTILE (a)
 
 moon
 -------
-moon [50.121], mercury [269.530], 219.409, QUINTILE (s)
-moon [50.121], venus [232.441], 182.320, OPPOSITION (s)
-moon [50.121], mars [261.110], 210.989, QUINTILE (a)
-moon [50.121], saturn [332.542], 282.421, QUINTILE (a)
 moon [50.121], uranus [49.593], 0.528, CONJUNCTION (s)
-moon [50.121], neptune [354.973], 304.852, SEXTILE (s)
-moon [50.121], pluto [299.103], 248.982, TRINE (s)
-
-mercury
--------
-mercury [269.530], jupiter [35.679], 233.851, TRINE (a)
-mercury [269.530], saturn [332.542], 63.012, SEXTILE (s)
-mercury [269.530], uranus [49.593], 219.937, QUINTILE (s)
-mercury [269.530], neptune [354.973], 85.443, SQUARE (a)
-
-venus
--------
-venus [232.441], uranus [49.593], 182.849, OPPOSITION (s)
-venus [232.441], neptune [354.973], 122.532, TRINE (s)
-venus [232.441], pluto [299.103], 66.662, QUINTILE (a)
-venus [232.441], north node [21.321], 211.120, QUINTILE (a)
 
 mars
 -------
 mars [261.110], saturn [332.542], 71.432, QUINTILE (a)
-mars [261.110], uranus [49.593], 211.518, QUINTILE (a)
-mars [261.110], neptune [354.973], 93.863, SQUARE (s)
-mars [261.110], north node [21.321], 239.789, TRINE (a)
-
-jupiter
--------
-jupiter [35.679], saturn [332.542], 296.864, SEXTILE (a)
-jupiter [35.679], pluto [299.103], 263.425, SQUARE (a)
-
-saturn
--------
-saturn [332.542], uranus [49.593], 282.950, QUINTILE (a)
-
-pluto
--------
-pluto [299.103], north node [21.321], 277.782, SQUARE (s)
+mars [261.110], north node [21.321], 239.789, TRINE (s)
 ---------------------
 
 
@@ -1925,68 +1112,31 @@ Aspects:
 --------
 asc
 -------
-asc [307.642], moon [63.460], 244.182, TRINE (s)
 asc [307.642], venus [233.648], 73.993, QUINTILE (s)
 asc [307.642], jupiter [35.654], 271.987, SQUARE (s)
-asc [307.642], north node [21.268], 286.373, QUINTILE (a)
+asc [307.642], north node [21.268], 286.373, QUINTILE (s)
 
 mc
 -------
-mc [238.870], moon [63.460], 175.410, OPPOSITION (a)
-mc [238.870], venus [233.648], 5.221, CONJUNCTION (s)
-mc [238.870], saturn [332.621], 93.751, SQUARE (s)
-mc [238.870], neptune [354.983], 116.114, TRINE (a)
 mc [238.870], pluto [299.133], 60.263, SEXTILE (s)
 mc [238.870], north node [21.268], 217.601, QUINTILE (s)
 
 sun
 -------
-sun [272.505], mercury [268.185], 4.320, CONJUNCTION (s)
-sun [272.505], jupiter [35.654], 236.851, TRINE (a)
-sun [272.505], saturn [332.621], 60.116, SEXTILE (s)
-sun [272.505], uranus [49.565], 222.940, QUINTILE (s)
-sun [272.505], neptune [354.983], 82.478, SQUARE (a)
+sun [272.505], saturn [332.621], 60.116, SEXTILE (a)
 
 moon
 -------
-moon [63.460], venus [233.648], 170.188, OPPOSITION (a)
 moon [63.460], saturn [332.621], 269.161, SQUARE (a)
-moon [63.460], neptune [354.983], 291.523, QUINTILE (s)
-moon [63.460], pluto [299.133], 235.673, TRINE (a)
-
-mercury
--------
-mercury [268.185], mars [261.846], 6.339, CONJUNCTION (s)
-mercury [268.185], jupiter [35.654], 232.530, TRINE (a)
-mercury [268.185], uranus [49.565], 218.620, QUINTILE (s)
-mercury [268.185], neptune [354.983], 86.799, SQUARE (a)
-mercury [268.185], north node [21.268], 246.916, TRINE (s)
 
 venus
 -------
-venus [233.648], uranus [49.565], 184.083, OPPOSITION (s)
-venus [233.648], neptune [354.983], 121.335, TRINE (s)
-venus [233.648], north node [21.268], 212.380, QUINTILE (a)
+venus [233.648], neptune [354.983], 121.335, TRINE (a)
 
 mars
 -------
 mars [261.846], saturn [332.621], 70.775, QUINTILE (a)
-mars [261.846], uranus [49.565], 212.281, QUINTILE (a)
-mars [261.846], neptune [354.983], 93.138, SQUARE (s)
 mars [261.846], north node [21.268], 240.577, TRINE (s)
-
-jupiter
--------
-jupiter [35.654], saturn [332.621], 296.967, SEXTILE (a)
-jupiter [35.654], pluto [299.133], 263.478, SQUARE (a)
-
-saturn
--------
-saturn [332.621], uranus [49.565], 283.056, QUINTILE (a)
-
-pluto
--------
-pluto [299.133], north node [21.268], 277.864, SQUARE (s)
 ---------------------
 
 
@@ -2019,67 +1169,29 @@ Aspects:
 --------
 asc
 -------
-asc [308.941], moon [76.624], 232.316, TRINE (a)
-asc [308.941], venus [234.857], 74.084, QUINTILE (s)
-asc [308.941], jupiter [35.633], 273.307, SQUARE (s)
-asc [308.941], north node [21.215], 287.725, QUINTILE (a)
+asc [308.941], north node [21.215], 287.725, QUINTILE (s)
 
 mc
 -------
-mc [239.818], venus [234.857], 4.961, CONJUNCTION (s)
-mc [239.818], saturn [332.701], 92.883, SQUARE (s)
-mc [239.818], neptune [354.994], 115.176, TRINE (a)
-mc [239.818], pluto [299.162], 59.344, SEXTILE (a)
-mc [239.818], north node [21.215], 218.603, QUINTILE (s)
+mc [239.818], pluto [299.162], 59.344, SEXTILE (s)
 
 sun
 -------
-sun [273.523], mercury [266.915], 6.608, CONJUNCTION (s)
-sun [273.523], jupiter [35.633], 237.890, TRINE (a)
 sun [273.523], saturn [332.701], 59.178, SEXTILE (a)
-sun [273.523], uranus [49.538], 223.985, QUINTILE (s)
-sun [273.523], neptune [354.994], 81.471, SQUARE (a)
-
-moon
--------
-moon [76.624], mars [262.582], 185.958, OPPOSITION (s)
-moon [76.624], neptune [354.994], 278.370, SQUARE (s)
-moon [76.624], pluto [299.162], 222.538, QUINTILE (s)
-moon [76.624], north node [21.215], 55.409, SEXTILE (a)
 
 mercury
 -------
-mercury [266.915], mars [262.582], 4.333, CONJUNCTION (s)
 mercury [266.915], uranus [49.538], 217.377, QUINTILE (s)
-mercury [266.915], neptune [354.994], 88.079, SQUARE (a)
-mercury [266.915], north node [21.215], 245.700, TRINE (s)
+mercury [266.915], neptune [354.994], 88.079, SQUARE (s)
 
 venus
 -------
-venus [234.857], saturn [332.701], 97.845, SQUARE (s)
-venus [234.857], uranus [49.538], 185.318, OPPOSITION (s)
-venus [234.857], neptune [354.994], 120.137, TRINE (s)
-venus [234.857], north node [21.215], 213.641, QUINTILE (a)
+venus [234.857], neptune [354.994], 120.137, TRINE (a)
 
 mars
 -------
 mars [262.582], saturn [332.701], 70.120, QUINTILE (a)
-mars [262.582], uranus [49.538], 213.043, QUINTILE (a)
-mars [262.582], neptune [354.994], 92.412, SQUARE (s)
 mars [262.582], north node [21.215], 241.366, TRINE (s)
-
-jupiter
--------
-jupiter [35.633], saturn [332.701], 297.068, SEXTILE (a)
-jupiter [35.633], pluto [299.162], 263.529, SQUARE (a)
-
-saturn
--------
-saturn [332.701], uranus [49.538], 283.163, QUINTILE (a)
-
-pluto
--------
-pluto [299.162], north node [21.215], 277.947, SQUARE (s)
 ---------------------
 
 
@@ -2112,69 +1224,31 @@ Aspects:
 --------
 asc
 -------
-asc [310.256], moon [89.596], 220.660, QUINTILE (s)
-asc [310.256], venus [236.066], 74.190, QUINTILE (s)
-asc [310.256], jupiter [35.616], 274.640, SQUARE (s)
 asc [310.256], north node [21.162], 289.094, QUINTILE (s)
 
 mc
 -------
 mc [240.764], moon [89.596], 151.168, INCONJUNCT (s)
-mc [240.764], venus [236.066], 4.698, CONJUNCTION (s)
-mc [240.764], saturn [332.783], 92.019, SQUARE (s)
-mc [240.764], neptune [355.005], 114.241, TRINE (a)
-mc [240.764], pluto [299.193], 58.428, SEXTILE (a)
-mc [240.764], north node [21.162], 219.602, QUINTILE (s)
+mc [240.764], pluto [299.193], 58.428, SEXTILE (s)
 
 sun
 -------
-sun [274.542], mercury [265.758], 8.784, CONJUNCTION (s)
-sun [274.542], jupiter [35.616], 238.926, TRINE (a)
+sun [274.542], jupiter [35.616], 238.926, TRINE (s)
 sun [274.542], saturn [332.783], 58.241, SEXTILE (a)
-sun [274.542], neptune [355.005], 80.463, SQUARE (a)
-
-moon
--------
-moon [89.596], mercury [265.758], 176.162, OPPOSITION (a)
-moon [89.596], venus [236.066], 146.470, INCONJUNCT (a)
-moon [89.596], venus [236.066], 146.470, QUINTILE (s)
-moon [89.596], mars [263.319], 173.723, OPPOSITION (a)
-moon [89.596], saturn [332.783], 243.187, TRINE (s)
-moon [89.596], neptune [355.005], 265.409, SQUARE (a)
-moon [89.596], pluto [299.193], 209.596, QUINTILE (a)
-moon [89.596], north node [21.162], 68.434, QUINTILE (a)
 
 mercury
 -------
-mercury [265.758], mars [263.319], 2.439, CONJUNCTION (s)
-mercury [265.758], saturn [332.783], 67.025, QUINTILE (a)
 mercury [265.758], uranus [49.512], 216.246, QUINTILE (s)
-mercury [265.758], neptune [355.005], 89.247, SQUARE (a)
-mercury [265.758], north node [21.162], 244.596, TRINE (s)
+mercury [265.758], neptune [355.005], 89.247, SQUARE (s)
 
 venus
 -------
-venus [236.066], saturn [332.783], 96.717, SQUARE (s)
-venus [236.066], uranus [49.512], 186.554, OPPOSITION (s)
 venus [236.066], neptune [355.005], 118.939, TRINE (a)
-venus [236.066], pluto [299.193], 63.126, SEXTILE (s)
-venus [236.066], north node [21.162], 214.904, QUINTILE (a)
+venus [236.066], north node [21.162], 214.904, QUINTILE (s)
 
 mars
 -------
-mars [263.319], saturn [332.783], 69.464, QUINTILE (a)
-mars [263.319], uranus [49.512], 213.806, QUINTILE (a)
-mars [263.319], neptune [355.005], 91.687, SQUARE (s)
-mars [263.319], north node [21.162], 242.156, TRINE (s)
-
-jupiter
--------
-jupiter [35.616], saturn [332.783], 297.167, SEXTILE (a)
-jupiter [35.616], pluto [299.193], 263.576, SQUARE (a)
-
-saturn
--------
-saturn [332.783], uranus [49.512], 283.271, QUINTILE (a)
+mars [263.319], neptune [355.005], 91.687, SQUARE (a)
 ---------------------
 
 
@@ -2205,65 +1279,29 @@ south node  R   21Lib6      8   Venus   Venus    4S -0.053° (=)  -74.451° (-)  -
 
 Aspects:
 --------
-asc
--------
-asc [311.588], venus [237.277], 74.311, QUINTILE (s)
-asc [311.588], jupiter [35.602], 275.986, SQUARE (s)
-asc [311.588], uranus [49.487], 262.101, SQUARE (a)
-asc [311.588], north node [21.110], 290.478, QUINTILE (s)
-
 mc
 -------
-mc [241.708], moon [102.358], 139.350, QUINTILE (a)
-mc [241.708], venus [237.277], 4.431, CONJUNCTION (s)
 mc [241.708], saturn [332.866], 91.158, SQUARE (s)
-mc [241.708], neptune [355.017], 113.309, TRINE (a)
-mc [241.708], pluto [299.223], 57.515, SEXTILE (a)
-mc [241.708], north node [21.110], 220.598, QUINTILE (s)
 
 sun
 -------
-sun [275.561], jupiter [35.602], 239.958, TRINE (a)
-sun [275.561], saturn [332.866], 57.305, SEXTILE (a)
-sun [275.561], neptune [355.017], 79.457, QUINTILE (s)
-
-moon
--------
-moon [102.358], jupiter [35.602], 66.756, QUINTILE (a)
-moon [102.358], saturn [332.866], 230.508, TRINE (a)
-moon [102.358], north node [21.110], 81.249, SQUARE (a)
+sun [275.561], jupiter [35.602], 239.958, TRINE (s)
 
 mercury
 -------
 mercury [264.742], mars [264.057], 0.686, CONJUNCTION (s)
-mercury [264.742], saturn [332.866], 68.124, QUINTILE (a)
-mercury [264.742], uranus [49.487], 215.255, QUINTILE (a)
+mercury [264.742], uranus [49.487], 215.255, QUINTILE (s)
 mercury [264.742], neptune [355.017], 90.275, SQUARE (s)
-mercury [264.742], north node [21.110], 243.632, TRINE (s)
 
 venus
 -------
-venus [237.277], saturn [332.866], 95.589, SQUARE (s)
-venus [237.277], uranus [49.487], 187.790, OPPOSITION (s)
-venus [237.277], neptune [355.017], 117.740, TRINE (a)
-venus [237.277], pluto [299.223], 61.946, SEXTILE (s)
+venus [237.277], pluto [299.223], 61.946, SEXTILE (a)
 venus [237.277], north node [21.110], 216.167, QUINTILE (s)
 
 mars
 -------
-mars [264.057], saturn [332.866], 68.809, QUINTILE (a)
-mars [264.057], uranus [49.487], 214.569, QUINTILE (a)
-mars [264.057], neptune [355.017], 90.961, SQUARE (s)
-mars [264.057], north node [21.110], 242.947, TRINE (s)
-
-jupiter
--------
-jupiter [35.602], saturn [332.866], 297.263, SEXTILE (a)
-jupiter [35.602], pluto [299.223], 263.620, SQUARE (a)
-
-saturn
--------
-saturn [332.866], uranus [49.487], 283.379, QUINTILE (a)
+mars [264.057], uranus [49.487], 214.569, QUINTILE (s)
+mars [264.057], neptune [355.017], 90.961, SQUARE (a)
 ---------------------
 
 
@@ -2294,73 +1332,35 @@ south node  R   21Lib3      8   Venus   Venus    4S -0.053° (=)  -75.523° (-)  -
 
 Aspects:
 --------
-asc
--------
-asc [312.936], venus [238.489], 74.447, QUINTILE (s)
-asc [312.936], jupiter [35.592], 277.344, SQUARE (s)
-asc [312.936], uranus [49.462], 263.474, SQUARE (a)
-asc [312.936], north node [21.057], 291.880, QUINTILE (s)
-
 mc
 -------
-mc [242.649], moon [114.899], 127.750, TRINE (s)
-mc [242.649], venus [238.489], 4.160, CONJUNCTION (s)
 mc [242.649], saturn [332.950], 90.300, SQUARE (s)
-mc [242.649], neptune [355.030], 112.380, TRINE (a)
-mc [242.649], pluto [299.253], 56.604, SEXTILE (a)
-mc [242.649], north node [21.057], 221.593, QUINTILE (s)
 
 sun
 -------
 sun [276.579], jupiter [35.592], 240.987, TRINE (s)
-sun [276.579], saturn [332.950], 56.371, SEXTILE (a)
-sun [276.579], neptune [355.030], 78.451, QUINTILE (s)
 
 moon
 -------
 moon [114.899], mercury [263.887], 148.988, INCONJUNCT (a)
-moon [114.899], mercury [263.887], 148.988, QUINTILE (s)
-moon [114.899], venus [238.489], 123.590, TRINE (s)
 moon [114.899], mars [264.795], 149.896, INCONJUNCT (a)
-moon [114.899], mars [264.795], 149.896, QUINTILE (s)
-moon [114.899], jupiter [35.592], 79.307, QUINTILE (s)
-moon [114.899], saturn [332.950], 218.051, QUINTILE (s)
-moon [114.899], uranus [49.462], 65.437, SEXTILE (s)
-moon [114.899], uranus [49.462], 65.437, QUINTILE (a)
-moon [114.899], neptune [355.030], 240.131, TRINE (s)
-moon [114.899], pluto [299.253], 184.354, OPPOSITION (s)
-moon [114.899], north node [21.057], 93.843, SQUARE (s)
+moon [114.899], neptune [355.030], 240.131, TRINE (a)
 
 mercury
 -------
 mercury [263.887], mars [264.795], 0.908, CONJUNCTION (s)
-mercury [263.887], saturn [332.950], 69.063, QUINTILE (a)
-mercury [263.887], uranus [49.462], 214.425, QUINTILE (a)
+mercury [263.887], uranus [49.462], 214.425, QUINTILE (s)
 mercury [263.887], neptune [355.030], 91.143, SQUARE (s)
-mercury [263.887], north node [21.057], 242.830, TRINE (s)
 
 venus
 -------
-venus [238.489], saturn [332.950], 94.461, SQUARE (s)
-venus [238.489], neptune [355.030], 116.541, TRINE (a)
-venus [238.489], pluto [299.253], 60.764, SEXTILE (s)
+venus [238.489], pluto [299.253], 60.764, SEXTILE (a)
 venus [238.489], north node [21.057], 217.432, QUINTILE (s)
 
 mars
 -------
-mars [264.795], saturn [332.950], 68.155, QUINTILE (a)
-mars [264.795], uranus [49.462], 215.333, QUINTILE (a)
-mars [264.795], neptune [355.030], 90.235, SQUARE (s)
-mars [264.795], north node [21.057], 243.738, TRINE (s)
-
-jupiter
--------
-jupiter [35.592], saturn [332.950], 297.358, SEXTILE (a)
-jupiter [35.592], pluto [299.253], 263.661, SQUARE (a)
-
-saturn
--------
-saturn [332.950], uranus [49.462], 283.487, QUINTILE (a)
+mars [264.795], uranus [49.462], 215.333, QUINTILE (s)
+mars [264.795], neptune [355.030], 90.235, SQUARE (a)
 ---------------------
 
 
@@ -2391,64 +1391,26 @@ south node  R   21Lib0      8   Venus   Venus    4S -0.053° (=)  -76.594° (-)  -
 
 Aspects:
 --------
-asc
--------
-asc [314.301], moon [127.221], 187.081, OPPOSITION (s)
-asc [314.301], venus [239.702], 74.599, QUINTILE (s)
-asc [314.301], uranus [49.438], 264.863, SQUARE (a)
-asc [314.301], north node [21.004], 293.297, QUINTILE (s)
-asc [314.301], south node [201.004], 113.297, TRINE (a)
-
 mc
 -------
-mc [243.589], moon [127.221], 116.368, TRINE (a)
-mc [243.589], venus [239.702], 3.887, CONJUNCTION (s)
-mc [243.589], saturn [333.035], 89.446, SQUARE (a)
-
-sun
--------
-sun [277.598], jupiter [35.585], 242.013, TRINE (s)
-sun [277.598], saturn [333.035], 55.437, SEXTILE (a)
-sun [277.598], neptune [355.043], 77.445, QUINTILE (s)
+mc [243.589], saturn [333.035], 89.446, SQUARE (s)
 
 moon
 -------
-moon [127.221], venus [239.702], 112.481, TRINE (a)
-moon [127.221], mars [265.534], 138.314, QUINTILE (a)
 moon [127.221], jupiter [35.585], 91.636, SQUARE (s)
-moon [127.221], uranus [49.438], 77.782, QUINTILE (s)
-moon [127.221], pluto [299.284], 172.063, OPPOSITION (a)
 
 mercury
 -------
-mercury [263.204], mars [265.534], 2.330, CONJUNCTION (s)
-mercury [263.204], saturn [333.035], 69.831, QUINTILE (a)
-mercury [263.204], uranus [49.438], 213.766, QUINTILE (a)
 mercury [263.204], neptune [355.043], 91.839, SQUARE (s)
-mercury [263.204], north node [21.004], 242.200, TRINE (s)
 
 venus
 -------
-venus [239.702], saturn [333.035], 93.333, SQUARE (s)
-venus [239.702], neptune [355.043], 115.341, TRINE (a)
 venus [239.702], pluto [299.284], 59.582, SEXTILE (a)
-venus [239.702], north node [21.004], 218.698, QUINTILE (s)
 
 mars
 -------
-mars [265.534], saturn [333.035], 67.501, QUINTILE (a)
 mars [265.534], uranus [49.438], 216.096, QUINTILE (s)
 mars [265.534], neptune [355.043], 89.509, SQUARE (a)
-mars [265.534], north node [21.004], 244.530, TRINE (s)
-
-jupiter
--------
-jupiter [35.585], saturn [333.035], 297.450, SEXTILE (a)
-jupiter [35.585], pluto [299.284], 263.699, SQUARE (a)
-
-saturn
--------
-saturn [333.035], uranus [49.438], 283.596, QUINTILE (a)
 ---------------------
 
 
@@ -2479,62 +1441,29 @@ south node  R  20Lib57      8   Venus Jupiter    4S -0.053° (=)  -77.666° (-)  -
 
 Aspects:
 --------
-asc
--------
-asc [315.683], moon [139.340], 176.343, OPPOSITION (a)
-asc [315.683], venus [240.916], 74.767, QUINTILE (s)
-asc [315.683], uranus [49.415], 266.268, SQUARE (a)
-asc [315.683], south node [200.951], 114.732, TRINE (a)
-
 mc
 -------
-mc [244.525], venus [240.916], 3.609, CONJUNCTION (s)
-mc [244.525], saturn [333.121], 88.596, SQUARE (a)
-
-sun
--------
-sun [278.617], jupiter [35.581], 243.035, TRINE (s)
-sun [278.617], saturn [333.121], 54.504, SEXTILE (a)
-sun [278.617], neptune [355.056], 76.440, QUINTILE (s)
+mc [244.525], saturn [333.121], 88.596, SQUARE (s)
 
 moon
 -------
-moon [139.340], mercury [262.698], 123.358, TRINE (s)
-moon [139.340], mars [266.274], 126.934, TRINE (s)
-moon [139.340], uranus [49.415], 89.925, SQUARE (a)
+moon [139.340], uranus [49.415], 89.925, SQUARE (s)
 moon [139.340], neptune [355.056], 215.716, QUINTILE (a)
-moon [139.340], north node [20.951], 118.389, TRINE (a)
+moon [139.340], north node [20.951], 118.389, TRINE (s)
 
 mercury
 -------
-mercury [262.698], mars [266.274], 3.576, CONJUNCTION (s)
-mercury [262.698], saturn [333.121], 70.423, QUINTILE (a)
-mercury [262.698], uranus [49.415], 213.283, QUINTILE (a)
-mercury [262.698], neptune [355.056], 92.358, SQUARE (s)
+mercury [262.698], saturn [333.121], 70.423, QUINTILE (s)
 mercury [262.698], north node [20.951], 241.747, TRINE (s)
 
 venus
 -------
-venus [240.916], saturn [333.121], 92.205, SQUARE (s)
-venus [240.916], neptune [355.056], 114.140, TRINE (a)
 venus [240.916], pluto [299.314], 58.398, SEXTILE (a)
-venus [240.916], north node [20.951], 219.965, QUINTILE (s)
 
 mars
 -------
-mars [266.274], saturn [333.121], 66.847, QUINTILE (a)
 mars [266.274], uranus [49.415], 216.859, QUINTILE (s)
 mars [266.274], neptune [355.056], 88.782, SQUARE (a)
-mars [266.274], north node [20.951], 245.323, TRINE (s)
-
-jupiter
--------
-jupiter [35.581], saturn [333.121], 297.540, SEXTILE (a)
-jupiter [35.581], pluto [299.314], 263.733, SQUARE (a)
-
-saturn
--------
-saturn [333.121], uranus [49.415], 283.706, QUINTILE (a)
 ---------------------
 
 

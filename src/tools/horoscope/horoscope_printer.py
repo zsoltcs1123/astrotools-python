@@ -61,7 +61,7 @@ def _generate_str(
                 continue
             str += f"\n{k}\n-------"
             for asp in v:
-                str += f"\n{_get_aspect_str(horoscope.config.type, asp)}, {asp.type} ({asp.direction})"
+                str += f"\n{_get_aspect_str(horoscope.config.type, asp)}, {asp.type}"
             str += "\n"
 
         str += "---------------------\n\n\n"

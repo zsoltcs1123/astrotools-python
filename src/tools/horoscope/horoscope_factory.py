@@ -61,7 +61,7 @@ def _create_asp_finder(config: HoroscopeConfig) -> AspectFinder:
     aspect_finder = None
 
     if config.aspects:
-        orb_map = OrbMap.default()
+        orb_map = config.orb_map if config.orb_map else OrbMap.default()
         aspect_finder = AspectFinder(orb_map, config.aspects)
 
     return aspect_finder
