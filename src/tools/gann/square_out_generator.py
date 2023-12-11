@@ -8,13 +8,41 @@ from core.position_factory import create_helio_position, create_position
 from objects.points import ASC, MC, MERCURY, MOON, VENUS
 
 
+def find_lon_increases(
+    start_time: datetime,
+    degrees: float,
+    times: int,
+    planets: List[str],
+    coord_system: CoordinateSystem,
+) -> Dict[str, List[Tuple[BasePosition, BasePosition]]]:
+    lon_increases = {}
+
+    for p in planets:
+        lon_increases[p] = []
+
+        bp = (
+            create_position(p, start_time)
+            if coord_system == CoordinateSystem.GEO
+            else create_helio_position(p, start_time)
+        )
+
+        for t in range(times):
+            sq = _find_square_out(bp, degrees, _get_interval(p))
+            lon_increases[p].append((bp, sq))
+
+            bp = sq
+
+    return lon_increases
+
+
 def generate_square_outs(
     start_time: datetime,
     degrees: float,
     planets: List[str],
     coord_system: CoordinateSystem,
-) -> Dict[str, Tuple]:
+) -> Dict[str, Tuple[BasePosition, BasePosition]]:
     square_outs = {}
+
     for p in planets:
         bp = (
             create_position(p, start_time)
