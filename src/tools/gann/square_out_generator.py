@@ -68,7 +68,9 @@ def _find_square_out(
     while True:
         current_time += timedelta(hours=interval_hours)
         np = creator_func(starting_position.point, current_time)
-        cum_degrees += abs(pp.speed.decimal)
+        cum_degrees += abs(
+            pp.speed.decimal * (interval_hours / 24)
+        )  # should this really be abs? do we want to increase in case of retro too?
         if cum_degrees >= degrees:
             return pp
 

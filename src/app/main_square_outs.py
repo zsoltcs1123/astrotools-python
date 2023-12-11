@@ -32,4 +32,4 @@ def lons():
 
 
 if __name__ == "__main__":
-    measure(sq)
+    measure(lons)
