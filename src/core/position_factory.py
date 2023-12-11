@@ -41,8 +41,8 @@ def create_helio_position(point: str, dt: dt) -> HelioPosition:
 
 
 def _helio(point: str, dt: dt) -> HelioPosition:
-    lon, lat, distance = swe_api.get_helio_position(point, dt)
-    return HelioPosition(dt, point, lon, lat)
+    lon, lat, speed = swe_api.get_helio_position(point, dt)
+    return HelioPosition(dt, point, lon, lat, speed)
 
 
 def _planet(planet_name: str, dt: dt) -> GeoPosition:

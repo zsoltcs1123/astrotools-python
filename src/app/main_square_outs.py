@@ -7,11 +7,9 @@ from util.common import measure
 
 
 def sq():
-    dt = datetime(2021, 4, 14, 0, 0, 0, tzinfo=pytz.utc)
-    degrees = 648
-    square_outs = generate_square_outs(
-        dt, degrees, ["mercury", "venus", "mars"], CoordinateSystem.HELIO
-    )
+    dt = datetime(2007, 11, 7, 0, 0, 0, tzinfo=pytz.utc)
+    degrees = 747
+    square_outs = generate_square_outs(dt, degrees, ["mars"], CoordinateSystem.HELIO)
 
     for p, so in square_outs.items():
         print(f"{p} [{so[0].lon}]")
@@ -20,10 +18,10 @@ def sq():
 
 
 def lons():
-    dt = datetime(2021, 4, 14, 0, 0, 0, tzinfo=pytz.utc)
+    dt = datetime(2023, 9, 11, 0, 0, 0, tzinfo=pytz.utc)
     degrees = 90
     lon_increases = find_lon_increases(
-        dt, degrees, 4, ["mercury"], CoordinateSystem.HELIO
+        dt, degrees, 5, ["mercury"], CoordinateSystem.HELIO
     )
 
     for p, sl in lon_increases.items():
@@ -34,4 +32,4 @@ def lons():
 
 
 if __name__ == "__main__":
-    measure(lons)
+    measure(sq)

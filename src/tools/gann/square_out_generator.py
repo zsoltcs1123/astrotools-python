@@ -68,10 +68,9 @@ def _find_square_out(
     while True:
         current_time += timedelta(hours=interval_hours)
         np = creator_func(starting_position.point, current_time)
-        cum_degrees += abs(np.lon.decimal - pp.lon.decimal)
-
+        cum_degrees += abs(pp.speed.decimal)
         if cum_degrees >= degrees:
-            return np
+            return pp
 
         pp = np
 

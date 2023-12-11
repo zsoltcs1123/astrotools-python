@@ -9,3 +9,4 @@ class BasePosition:
     point: str
     lon: Degree
     lat: Degree
+    speed: Degree
