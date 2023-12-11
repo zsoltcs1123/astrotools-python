@@ -14,7 +14,7 @@ from tools.horoscope.horoscope import Horoscope
 from tools.horoscope.horoscope_config import HoroscopeConfig
 from tools.horoscope.vedic_horoscope import VedicHoroscope
 from util.interval import calculate_intervals
-from core.base_position import BasePosition as bp
+from core.geo_position import GeoPosition as bp
 from zodiac.mapped_position import MappedPosition as mp
 import core.swisseph_api as swe_api
 

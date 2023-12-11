@@ -46,6 +46,17 @@ def get_ayanamsha(year: int, month: int, ayanamsa: str) -> float:
     return ayanamsha
 
 
+def get_helio_position(planet_name: str, dt: datetime) -> Tuple[float, float, float]:
+    jd = _get_julian_date(dt)
+    helio_position = swe.calc(jd, getattr(swe, planet_name.upper()), swe.FLG_HELCTR)
+
+    return (
+        helio_position[0][0],
+        helio_position[0][1],
+        helio_position[0][2],
+    )  # lon, lat, distance from sun
+
+
 def _get_julian_date(dt: datetime) -> float:
     """Convert a datetime object to Julian date."""
     return swe.julday(

@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from typing import List
-from core.base_position import BasePosition
+from core.geo_position import GeoPosition
 from dataclasses import dataclass
 from core.degree import Degree
 from core.position_factory import create_position
@@ -12,7 +12,7 @@ from zodiac.vedic_attributes import VedicAttributes
 
 @dataclass
 class MappedPosition:
-    def __init__(self, base_position: BasePosition):
+    def __init__(self, base_position: GeoPosition):
         self.base_position = base_position
         self.retrograde = self.base_position.speed.decimal < 0
         self.stationary = self.base_position.speed.decimal == 0
@@ -22,7 +22,7 @@ class MappedPosition:
         self.previous_bps = {}
 
     @classmethod
-    def from_planetary_positions(cls, planetary_positions: List[BasePosition]):
+    def from_planetary_positions(cls, planetary_positions: List[GeoPosition]):
         return [cls(position) for position in planetary_positions]
 
     @property
@@ -99,7 +99,7 @@ class MappedPosition:
         elif current_value < previous_value:
             return "-"
 
-    def _get_previous_base_position(self, minutes=1440) -> BasePosition:
+    def _get_previous_base_position(self, minutes=1440) -> GeoPosition:
         if self.base_position.point in [ASC, MC]:
             return None
 

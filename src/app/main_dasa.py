@@ -1,6 +1,6 @@
 from datetime import datetime
 from core import swisseph_api
-from core.base_position import BasePosition
+from core.geo_position import GeoPosition
 from timezonefinder import TimezoneFinder
 import pytz
 from core.position_factory import create_position
@@ -55,7 +55,7 @@ def me_dasa():
 
     moon_position = create_position(MOON, utc_dt)
 
-    moon_position = BasePosition(utc_dt, "moon", 7.669722, 0, 0, 0, 0)
+    moon_position = GeoPosition(utc_dt, "moon", 7.669722, 0, 0, 0, 0)
     moon_mapped = MappedPosition(moon_position)
 
     res = generate_dasas(moon_mapped, DasaLevel.Pratyantar)

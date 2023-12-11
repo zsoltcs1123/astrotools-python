@@ -1,5 +1,6 @@
 from typing import Dict, List
 
+EARTH = "earth"
 NN = "north node"
 SN = "south node"
 MOON = "moon"
