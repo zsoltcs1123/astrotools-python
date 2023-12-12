@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from datetime import datetime
-from zodiac.mapped_position import MappedPosition as mp
+from zodiac.mapped_geo_position import MappedGeoPosition as mp
 
 
 @dataclass

@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import List
+from core.base_position import BasePosition
 from core.geo_position import GeoPosition
 from core.degree import Degree
 import zodiac.division as zd
@@ -8,7 +9,7 @@ import core.swisseph_api as swe_api
 
 @dataclass
 class VedicAttributes:
-    _base_position: GeoPosition
+    _base_position: BasePosition
     lon: Degree
     position: str
     sign: zd.Sign
@@ -16,7 +17,7 @@ class VedicAttributes:
     nakshatra: zd.Nakshatra
     nakshatra_ruler: str
 
-    def __init__(self, base_position: GeoPosition):
+    def __init__(self, base_position: BasePosition):
         self._base_position = base_position
         self.lon = self._calculate_sidereal_lon()
         self.position = zd.degree_to_zodiacal(self.lon)

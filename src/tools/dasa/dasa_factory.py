@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from typing import List
 
 from tools.dasa.dasa import DasaLevel, Dasa
-from zodiac.mapped_position import MappedPosition
+from zodiac.mapped_geo_position import MappedGeoPosition
 
 
 DASA_LENGTHS = {
@@ -27,7 +27,7 @@ DASA_TOTAL = 120
 
 
 def generate_dasas(
-    moon_position: MappedPosition, target_level: DasaLevel
+    moon_position: MappedGeoPosition, target_level: DasaLevel
 ) -> List[Dasa]:
     nakshatra = moon_position.vedic.nakshatra
     sidereal_lon = moon_position.vedic.lon

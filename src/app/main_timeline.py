@@ -13,7 +13,7 @@ from tools.timeline.timeline_config import (
     TimelineConfig,
 )
 from util.common import measure
-from zodiac.mapped_position import MappedPosition
+from zodiac.mapped_geo_position import MappedGeoPosition
 
 
 def timeline():
@@ -29,7 +29,7 @@ def timeline():
 
 def timeline_tv_script():
     start = datetime(2023, 11, 28)
-    end = datetime(2023, 12, 11)
+    end = datetime(2023, 12, 1)
 
     zodiacal_events = [
         e for e in DEFAULT_ZODIACAL_EVENTS if e not in [TermChange, NakshatraChange]
@@ -50,7 +50,7 @@ def mars():
         datetime.now(),
     )
 
-    mars_mapped = MappedPosition(mars)
+    mars_mapped = MappedGeoPosition(mars)
 
     print(mars_mapped)
 

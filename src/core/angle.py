@@ -1,15 +1,16 @@
 from dataclasses import dataclass
 from datetime import datetime
-from zodiac.mapped_position import MappedPosition as mp
+
+from zodiac.mapped_position import MappedPosition
 
 
 @dataclass
 class Angle:
     dt: datetime
-    source: mp
-    target: mp
+    source: MappedPosition
+    target: MappedPosition
 
-    def __init__(self, source: mp, target: mp):
+    def __init__(self, source: MappedPosition, target: MappedPosition):
         self.source = source
         self.target = target
         self.dt = source.dt

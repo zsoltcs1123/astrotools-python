@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import Dict, List
 from core.angle import Angle
+from core.angle_factory import generate_angles_dict
 from core.enums import HoroscopeType, HouseSystem
 from core.position_factory import create_geo_position
 from events.aspect_finder import AspectFinder
@@ -15,7 +16,7 @@ from tools.horoscope.horoscope_config import HoroscopeConfig
 from tools.horoscope.vedic_horoscope import VedicHoroscope
 from util.interval import calculate_intervals
 from core.geo_position import GeoPosition as bp
-from zodiac.mapped_position import MappedPosition as mp
+from zodiac.mapped_geo_position import MappedGeoPosition as mp
 import core.swisseph_api as swe_api
 
 
@@ -34,7 +35,7 @@ def create_horoscope(dt: datetime, config: HoroscopeConfig) -> Horoscope:
     )
 
     mps = _generate_positions(dt, config, ascmc)
-    angles = _generate_angles(mps)
+    angles = generate_angles_dict(mps, get_default_angle_targets)
     aspects = _generate_aspects(aspect_finder, angles)
 
     if config.type == HoroscopeType.TROPICAL:
@@ -90,21 +91,6 @@ def _calculate_cusps_ascmc(dt: datetime, config: HoroscopeConfig) -> tuple:
     return swe_api.get_tropical_houses_and_ascmc(
         dt, config.lat, config.lon, config.house_system
     )
-
-
-def _generate_angles(mps: List[mp]) -> Dict[str, List[Angle]]:
-    angles = {}
-    for mp in mps:
-        targets = get_default_angle_targets(mp.point)
-        angles[mp.point] = []
-
-        for t in targets:
-            target_mp = next((p for p in mps if p.point == t), None)
-            if target_mp != None:
-                angle = Angle(mp, target_mp)
-                angles[mp.point].append(angle)
-
-    return angles
 
 
 def _generate_aspects(aspect_finder: AspectFinder, angles: Dict[str, List[Angle]]):

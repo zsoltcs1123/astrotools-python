@@ -1,7 +1,7 @@
 from datetime import datetime
 import pytz
 from core.enums import CoordinateSystem
-from objects.points import PLANETS
+from objects.points import PLANETS, SUN, MOON, SN, NN
 from tools.gann.angle_table import AngleTable
 from tools.gann.square_out_generator import find_lon_increases, generate_square_outs
 
@@ -35,8 +35,12 @@ def lons():
 
 
 def angles():
-    dt = datetime(2021, 11, 10, 0, 0, 0, tzinfo=pytz.utc)
-    angle_table = AngleTable(dt, PLANETS, CoordinateSystem.GEO)
+    dt = datetime(2023, 9, 11, 0, 0, 0, tzinfo=pytz.utc)
+    planets = [p for p in PLANETS if p not in [SUN, MOON, SN, NN]]
+    angle_table = AngleTable(dt, planets, CoordinateSystem.HELIO)
+
+    for p in angle_table.mps:
+        print(f"{p.point} [{p.base_position.lon.str_decimal()}]")
 
     print_dict_as_table(
         angle_table.angles,

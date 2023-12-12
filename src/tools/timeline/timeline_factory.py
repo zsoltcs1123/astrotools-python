@@ -1,10 +1,6 @@
 from typing import Dict, List, Type
-from core.angle import Angle
-from core.position_factory import (
-    PositionFactory,
-    create_geo_position,
-    create_geo_positions,
-)
+from core.angle_factory import generate_angles_list
+from core.position_factory import create_geo_positions
 from events.aspect_finder import AspectFinder
 from events.astro_event import AstroEvent
 from events.zodiacal_event_factory import ZodiacalEventFactory
@@ -12,7 +8,7 @@ from objects.points import get_default_angle_targets
 from tools.timeline.timeline import Timeline
 from tools.timeline.timeline_config import TimelineConfig
 from util.console_logger import ConsoleLogger
-from zodiac.mapped_position import MappedPosition as mp
+from zodiac.mapped_geo_position import MappedGeoPosition as mp
 
 
 _logger = ConsoleLogger("TimelineFactory")
@@ -33,7 +29,8 @@ def create_timeline(config: TimelineConfig):
 
     mps = _generate_positions(config)
     zodiacal_events = _generate_zodiacal_events(zodiacal_event_factory, mps)
-    angles = _generate_angles(mps)
+    _logger.info(f"Generating angles")
+    angles = generate_angles_list(mps, get_default_angle_targets)
 
     _logger.info(f"Calculating aspects...")
     aspects = aspect_finder.find_exact_aspects(angles)
@@ -63,19 +60,3 @@ def _generate_zodiacal_events(
         _logger.info(f"Generating zodiacal events for {p}")
         events += zodiacal_event_factory.create_events(mp_list)
     return events
-
-
-def _generate_angles(mps: Dict[str, List[mp]]) -> List[Angle]:
-    angles = []
-    for p, mp_list in mps.items():
-        targets = get_default_angle_targets(p)
-        _logger.info(f"Generating angles for {p}")
-
-        for source_mp in mp_list:
-            for t in targets:
-                target_bp = create_geo_position(t, source_mp.dt)
-                target_mp = mp(target_bp)
-                angle = Angle(source_mp, target_mp)
-                angles.append(angle)
-
-    return angles

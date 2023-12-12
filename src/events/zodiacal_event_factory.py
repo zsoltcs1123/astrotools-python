@@ -1,6 +1,6 @@
 from typing import List, Optional
 from util.common import find_smallest_elements, group_by, integral_ends_with
-from zodiac.mapped_position import MappedPosition as mp
+from zodiac.mapped_geo_position import MappedGeoPosition as mp
 from events.astro_event import (
     AstroEvent,
     DecanChange,

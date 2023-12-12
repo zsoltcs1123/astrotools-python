@@ -9,7 +9,7 @@ from tools.dasa.dasa_factory import generate_dasas
 from tools.dasa.dasa_printer import print_dasas
 from util.geocoder import Geocoder
 from objects.points import MEAN_NODE, MOON
-from zodiac.mapped_position import MappedPosition
+from zodiac.mapped_geo_position import MappedGeoPosition
 
 
 def hot_dasa():
@@ -18,7 +18,7 @@ def hot_dasa():
     ayanamsa = swisseph_api.get_ayanamsha(utc_dt.year, utc_dt.month, "LAHIRI")
     # moon_position = BasePosition(utc_dt, "moon", 149.186694 + ayanamsa, 0, 0, 0, 0)
 
-    moon_mapped = MappedPosition(moon_position)
+    moon_mapped = MappedGeoPosition(moon_position)
 
     res = generate_dasas(moon_mapped, DasaLevel.Sookshma)
     print(moon_mapped.vedic.lon)
@@ -56,7 +56,7 @@ def me_dasa():
     moon_position = create_geo_position(MOON, utc_dt)
 
     moon_position = GeoPosition(utc_dt, "moon", 7.669722, 0, 0, 0, 0)
-    moon_mapped = MappedPosition(moon_position)
+    moon_mapped = MappedGeoPosition(moon_position)
 
     res = generate_dasas(moon_mapped, DasaLevel.Pratyantar)
     print(moon_mapped.vedic.lon)
@@ -72,7 +72,7 @@ def hot_dasa():
     # ayanamsa = swisseph_api.get_ayanamsha(utc_dt.year, utc_dt.month, "LAHIRI")
     # moon_position = BasePosition(utc_dt, "moon", 149.186694 + ayanamsa, 0, 0, 0, 0)
 
-    moon_mapped = MappedPosition(moon_position)
+    moon_mapped = MappedGeoPosition(moon_position)
 
     res = generate_dasas(moon_mapped, DasaLevel.Pratyantar)
     print(moon_mapped.vedic.lon)

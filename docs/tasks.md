@@ -1,11 +1,11 @@
 Current:
 - Implement vedic features
 - Square outs
+- Integrate helio
 
 
 TBD:
 - Refactor tranits to use factories
-- Add dependency injenction (maybe)
 - Add Lilith, Ceres, Chiron
 - Add helio
 - Implement eclipses
@@ -13,7 +13,6 @@ TBD:
 - Implement Sub Lords
 - Aspect finder: I give an aspect and it lists all the occurences in date range
 - Implement extremes (speed, declination)
-- Speed/declination snapshot
 - Event filtering
 - Implement sidereal planet strength
 - Implement cycles. For example: there is a Venus - Jupiter aspect coming up on the timeline. Have the option to go into it and show current past and future cycles
@@ -50,6 +49,7 @@ Done:
 - Implement vimshottari
 - phase, latitude
 - Investigate discrepancy vs Astrolog
+- Speed/declination snapshot
 - 
 
 
