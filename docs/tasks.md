@@ -17,6 +17,7 @@ TBD:
 - Event filtering
 - Implement sidereal planet strength
 - Implement cycles. For example: there is a Venus - Jupiter aspect coming up on the timeline. Have the option to go into it and show current past and future cycles
+- Write functional OrbMap
 
 Timeline:
 - Add geo and helio crossings (planet at the same degree)

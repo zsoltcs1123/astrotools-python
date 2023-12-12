@@ -1,5 +1,5 @@
 from datetime import datetime
-from core.position_factory import create_position
+from core.position_factory import create_geo_position
 from events.astro_event import NakshatraChange, TermChange, TropicalSignChange
 from objects.points import MEAN_NODE
 from out.file import to_text_file
@@ -45,7 +45,7 @@ def timeline_tv_script():
 
 
 def mars():
-    mars = create_position(
+    mars = create_geo_position(
         "mars",
         datetime.now(),
     )

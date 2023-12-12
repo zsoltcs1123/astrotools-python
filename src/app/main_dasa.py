@@ -3,7 +3,7 @@ from core import swisseph_api
 from core.geo_position import GeoPosition
 from timezonefinder import TimezoneFinder
 import pytz
-from core.position_factory import create_position
+from core.position_factory import create_geo_position
 from tools.dasa.dasa import DasaLevel
 from tools.dasa.dasa_factory import generate_dasas
 from tools.dasa.dasa_printer import print_dasas
@@ -14,7 +14,7 @@ from zodiac.mapped_position import MappedPosition
 
 def hot_dasa():
     utc_dt = datetime(2023, 9, 15, 16, 25, 47, tzinfo=pytz.utc)
-    moon_position = create_position(MOON, utc_dt)
+    moon_position = create_geo_position(MOON, utc_dt)
     ayanamsa = swisseph_api.get_ayanamsha(utc_dt.year, utc_dt.month, "LAHIRI")
     # moon_position = BasePosition(utc_dt, "moon", 149.186694 + ayanamsa, 0, 0, 0, 0)
 
@@ -53,7 +53,7 @@ def me_dasa():
 
     utc_dt = datetime(2023, 9, 15, 16, 25, 47, tzinfo=pytz.utc)
 
-    moon_position = create_position(MOON, utc_dt)
+    moon_position = create_geo_position(MOON, utc_dt)
 
     moon_position = GeoPosition(utc_dt, "moon", 7.669722, 0, 0, 0, 0)
     moon_mapped = MappedPosition(moon_position)
@@ -68,7 +68,7 @@ def me_dasa():
 
 def hot_dasa():
     utc_dt = datetime(2018, 2, 1, 1, 21, 9, tzinfo=pytz.utc)
-    moon_position = create_position(MOON, utc_dt)
+    moon_position = create_geo_position(MOON, utc_dt)
     # ayanamsa = swisseph_api.get_ayanamsha(utc_dt.year, utc_dt.month, "LAHIRI")
     # moon_position = BasePosition(utc_dt, "moon", 149.186694 + ayanamsa, 0, 0, 0, 0)
 

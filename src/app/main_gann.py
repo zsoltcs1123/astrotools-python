@@ -1,9 +1,12 @@
 from datetime import datetime
 import pytz
 from core.enums import CoordinateSystem
+from objects.points import PLANETS
+from tools.gann.angle_table import AngleTable
 from tools.gann.square_out_generator import find_lon_increases, generate_square_outs
 
 from util.common import measure
+from util.dictionary_printer import print_dict_as_table
 
 
 def sq():
@@ -31,5 +34,16 @@ def lons():
             print("------")
 
 
+def angles():
+    dt = datetime(2021, 11, 10, 0, 0, 0, tzinfo=pytz.utc)
+    angle_table = AngleTable(dt, PLANETS, CoordinateSystem.GEO)
+
+    print_dict_as_table(
+        angle_table.angles,
+        lambda angle: abs(angle.circular_diff),
+        lambda obj, key: obj.target.point == key,
+    )
+
+
 if __name__ == "__main__":
-    measure(lons)
+    measure(angles)

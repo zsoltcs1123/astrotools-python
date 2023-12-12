@@ -739,6 +739,7 @@ sun
 -------
 sun [265.378], uranus [49.770], 215.608, QUINTILE
 sun [265.378], neptune [354.924], 89.546, SQUARE
+sun [265.378], moon [326.733], 61.355, SEXTILE
 
 moon
 -------
@@ -1394,6 +1395,10 @@ Aspects:
 mc
 -------
 mc [243.589], saturn [333.035], 89.446, SQUARE
+
+sun
+-------
+sun [277.598], moon [127.221], 150.377, INCONJUNCT
 
 moon
 -------

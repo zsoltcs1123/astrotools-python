@@ -1,6 +1,10 @@
 from typing import Dict, List, Type
 from core.angle import Angle
-from core.position_factory import PositionFactory, create_position, create_positions
+from core.position_factory import (
+    PositionFactory,
+    create_geo_position,
+    create_geo_positions,
+)
 from events.aspect_finder import AspectFinder
 from events.astro_event import AstroEvent
 from events.zodiacal_event_factory import ZodiacalEventFactory
@@ -41,7 +45,9 @@ def _generate_positions(config: TimelineConfig) -> Dict[str, List[mp]]:
     mps = {}
     for point in config.points:
         _logger.info(f"Generating positions for {point}")
-        bps = create_positions(point, config.start, config.end, config.interval_minutes)
+        bps = create_geo_positions(
+            point, config.start, config.end, config.interval_minutes
+        )
         mp_list = [mp(bp) for bp in bps]
         mps[point] = mp_list
 
@@ -67,7 +73,7 @@ def _generate_angles(mps: Dict[str, List[mp]]) -> List[Angle]:
 
         for source_mp in mp_list:
             for t in targets:
-                target_bp = create_position(t, source_mp.dt)
+                target_bp = create_geo_position(t, source_mp.dt)
                 target_mp = mp(target_bp)
                 angle = Angle(source_mp, target_mp)
                 angles.append(angle)

@@ -1,10 +1,8 @@
 from datetime import datetime, timedelta
 from typing import Dict, List, Tuple
 from core.base_position import BasePosition
-from core.geo_position import GeoPosition
 from core.enums import CoordinateSystem
-
-from core.position_factory import create_helio_position, create_position
+from core.position_factory import create_position
 from objects.points import ASC, MC, MERCURY, MOON, VENUS
 
 
@@ -20,14 +18,10 @@ def find_lon_increases(
     for p in planets:
         lon_increases[p] = []
 
-        bp = (
-            create_position(p, start_time)
-            if coord_system == CoordinateSystem.GEO
-            else create_helio_position(p, start_time)
-        )
+        bp = create_position(p, start_time, coord_system)
 
         for t in range(times):
-            sq = _find_square_out(bp, degrees, _get_interval(p))
+            sq = _find_square_out(bp, degrees, _get_interval(p), coord_system)
             lon_increases[p].append((bp, sq))
 
             bp = sq
@@ -44,11 +38,7 @@ def generate_square_outs(
     square_outs = {}
 
     for p in planets:
-        bp = (
-            create_position(p, start_time)
-            if coord_system == CoordinateSystem.GEO
-            else create_helio_position(p, start_time)
-        )
+        bp = create_position(p, start_time, coord_system)
         square_out = _find_square_out(bp, degrees, _get_interval(p))
         square_outs[p] = (bp, square_out)
 
@@ -56,18 +46,18 @@ def generate_square_outs(
 
 
 def _find_square_out(
-    starting_position: BasePosition, degrees: float, interval_hours: int
+    starting_position: BasePosition,
+    degrees: float,
+    interval_hours: int,
+    coord_system: CoordinateSystem,
 ) -> BasePosition:
     current_time = starting_position.dt
     cum_degrees = 0
     pp = starting_position
-    creator_func = (
-        create_position if isinstance(pp, GeoPosition) else create_helio_position
-    )
 
     while True:
         current_time += timedelta(hours=interval_hours)
-        np = creator_func(starting_position.point, current_time)
+        np = create_position(starting_position.point, current_time, coord_system)
         cum_degrees += abs(
             pp.speed.decimal * (interval_hours / 24)
         )  # should this really be abs? do we want to increase in case of retro too?

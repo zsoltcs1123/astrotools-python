@@ -1,6 +1,8 @@
 from platform import node
 from typing import List
 from datetime import datetime as dt, timezone
+from core.base_position import BasePosition
+from core.enums import CoordinateSystem
 from core.geo_position import GeoPosition
 from core.helio_position import HelioPosition
 from objects.points import EARTH, MEAN_NODE, MOON, NN, PLANETS, SN, SUN
@@ -8,7 +10,15 @@ from util.interval import calculate_intervals
 import core.swisseph_api as swe_api
 
 
-def create_positions(
+def create_position(point: str, dt: dt, coord_system: CoordinateSystem) -> BasePosition:
+    return (
+        create_geo_position(point, dt)
+        if coord_system == CoordinateSystem.GEO
+        else create_helio_position(point, dt)
+    )
+
+
+def create_geo_positions(
     point: str,
     start: dt,
     end: dt,
@@ -16,13 +26,13 @@ def create_positions(
     node_calc: str = MEAN_NODE,
 ) -> List[GeoPosition]:
     dts = calculate_intervals(start, end, interval_minutes)
-    return [create_position(point, dt, node_calc) for dt in dts]
+    return [create_geo_position(point, dt, node_calc) for dt in dts]
 
 
-def create_position(point: str, dt: dt, node_calc: str = MEAN_NODE) -> GeoPosition:
+def create_geo_position(point: str, dt: dt, node_calc: str = MEAN_NODE) -> GeoPosition:
     dt = dt.replace(tzinfo=timezone.utc)
     if point in PLANETS:
-        return _planet(point, dt)
+        return _geo(point, dt)
     elif point == NN:
         return _north_node(dt, node_calc)
     elif point == SN:
@@ -45,14 +55,14 @@ def _helio(point: str, dt: dt) -> HelioPosition:
     return HelioPosition(dt, point, lon, lat, speed)
 
 
-def _planet(planet_name: str, dt: dt) -> GeoPosition:
+def _geo(planet_name: str, dt: dt) -> GeoPosition:
     lon, lat, speed = swe_api.get_ecliptic_position(planet_name, dt)
     ra, dec = swe_api.get_equatorial_position(planet_name, dt)
     return GeoPosition(dt, planet_name, lon, lat, speed, ra, dec)
 
 
 def _north_node(dt: dt, node_calc: str) -> GeoPosition:
-    pos = _planet(node_calc, dt)
+    pos = _geo(node_calc, dt)
     pos.point = NN
     return pos
 

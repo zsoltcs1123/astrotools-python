@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Dict, List
 from core.angle import Angle
 from core.enums import HoroscopeType, HouseSystem
-from core.position_factory import create_position
+from core.position_factory import create_geo_position
 from events.aspect_finder import AspectFinder
 from objects.orb_map import OrbMap
 from objects.points import (
@@ -80,7 +80,7 @@ def _generate_positions(
         elif point == MC:
             pos = bp(dt, MC, ascmc[1], 0, 0, 0, 0)
         else:
-            pos = create_position(point, dt)
+            pos = create_geo_position(point, dt)
 
         mps.append(mp(pos))
     return mps

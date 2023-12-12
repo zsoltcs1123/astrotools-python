@@ -3,7 +3,7 @@ from typing import List
 from core.geo_position import GeoPosition
 from dataclasses import dataclass
 from core.degree import Degree
-from core.position_factory import create_position
+from core.position_factory import create_geo_position
 from objects.points import ASC, MC, SUN
 from util.cached_property import CachedProperty
 from zodiac.tropical_attributes import TropicalAttributes
@@ -49,7 +49,7 @@ class MappedPosition:
     def phase(self) -> Degree:
         from core.angle import Angle
 
-        sun = MappedPosition(create_position(SUN, self.dt))
+        sun = MappedPosition(create_geo_position(SUN, self.dt))
         return Degree.from_decimal(Angle(self, sun).circular_diff)
 
     @property
@@ -103,6 +103,6 @@ class MappedPosition:
         if self.base_position.point in [ASC, MC]:
             return None
 
-        return self.previous_bps.get(self.point, None) or create_position(
+        return self.previous_bps.get(self.point, None) or create_geo_position(
             self.point, self.dt - timedelta(minutes=minutes)
         )
