@@ -2,9 +2,9 @@ from typing import List, Dict
 from dataclasses import dataclass
 from datetime import datetime as dt
 from core.enums import AspectType
-from events.aspect import DEFAULT_ASPECTS
-from objects.points import get_default_angle_targets
-from events.astro_event import (
+from events.aspects.aspect import DEFAULT_ASPECTS
+from core.objects.points import get_default_angle_targets
+from events.zodiacal.astro_event import (
     DecanChange,
     DirectionChange,
     NakshatraChange,
@@ -12,8 +12,8 @@ from events.astro_event import (
     TropicalSignChange,
     TermChange,
 )
-from objects.orb_map import OrbMap
-from objects.points import ALL_POINTS, MEAN_NODE, POINTS_NO_MOON
+from events.aspects.orb_map import OrbMap
+from core.objects.points import ALL_POINTS, MEAN_NODE, POINTS_NO_MOON
 
 
 DEFAULT_ZODIACAL_EVENTS = [

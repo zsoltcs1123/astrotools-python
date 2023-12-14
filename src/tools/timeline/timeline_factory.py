@@ -1,14 +1,14 @@
 from typing import Dict, List, Type
-from core.angle_factory import generate_angles_list
-from core.position_factory import create_geo_positions
-from events.aspect_finder import AspectFinder
-from events.astro_event import AstroEvent
-from events.zodiacal_event_factory import ZodiacalEventFactory
-from objects.points import get_default_angle_targets
+from core.angles.angle_factory import generate_angles_list
+from core.positions.root_position_factory import create_geo_positions
+from events.aspects.aspect_finder import AspectFinder
+from events.zodiacal.astro_event import AstroEvent
+from events.zodiacal.zodiacal_event_factory import ZodiacalEventFactory
+from core.objects.points import get_default_angle_targets
 from tools.timeline.timeline import Timeline
 from tools.timeline.timeline_config import TimelineConfig
 from util.console_logger import ConsoleLogger
-from zodiac.mapped_geo_position import MappedGeoPosition as mp
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
 
 
 _logger = ConsoleLogger("TimelineFactory")

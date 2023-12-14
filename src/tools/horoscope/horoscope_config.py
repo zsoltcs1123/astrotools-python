@@ -1,9 +1,9 @@
 from typing import List
 from dataclasses import dataclass
 from core.enums import AspectType, CoordinateSystem, HoroscopeType, HouseSystem
-from events.aspect import DEFAULT_ASPECTS
-from objects.orb_map import OrbMap
-from objects.points import ALL_POINTS, ANGULARS, MEAN_NODE, VEDIC_POINTS
+from events.aspects.aspect import DEFAULT_ASPECTS
+from events.aspects.orb_map import OrbMap
+from core.objects.points import ALL_POINTS, ANGULARS, MEAN_NODE, VEDIC_POINTS
 
 
 @dataclass

@@ -1,12 +1,12 @@
 from datetime import datetime
 from typing import Dict, List
-from core.angle import Angle
-from core.angle_factory import generate_angles_dict
+from core.angles.angle import Angle
+from core.angles.angle_factory import generate_angles_dict
 from core.enums import HoroscopeType, HouseSystem
-from core.position_factory import create_geo_position
-from events.aspect_finder import AspectFinder
-from objects.orb_map import OrbMap
-from objects.points import (
+from core.positions.root_position_factory import create_geo_position
+from events.aspects.aspect_finder import AspectFinder
+from events.aspects.orb_map import OrbMap
+from core.objects.points import (
     ASC,
     MC,
     get_default_angle_targets,
@@ -15,9 +15,9 @@ from tools.horoscope.horoscope import Horoscope
 from tools.horoscope.horoscope_config import HoroscopeConfig
 from tools.horoscope.vedic_horoscope import VedicHoroscope
 from util.interval import calculate_intervals
-from core.geo_position import GeoPosition as bp
-from zodiac.mapped_geo_position import MappedGeoPosition as mp
-import core.swisseph_api as swe_api
+from core.positions.geo_position import GeoPosition as bp
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
+import core.ephemeris.swisseph_api as swe_api
 
 
 def create_horoscopes(

@@ -1,12 +1,12 @@
 from typing import List
 from dataclasses import dataclass
 from datetime import datetime
-from core.angle_factory import generate_angles_dict
+from core.angles.angle_factory import generate_angles_dict
 from core.enums import CoordinateSystem
-from core.position_factory import create_position
-from objects.points import get_default_angle_targets
-from zodiac.mapped_geo_position import MappedGeoPosition
-from zodiac.mapped_position import MappedPosition
+from core.positions.root_position_factory import create_position
+from core.objects.points import get_default_angle_targets
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition
+from core.zodiac.positions.mapped_position import MappedPosition
 
 
 @dataclass

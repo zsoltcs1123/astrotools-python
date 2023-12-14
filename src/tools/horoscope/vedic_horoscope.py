@@ -1,7 +1,7 @@
-from objects.points import NN
+from core.objects.points import NN
 from tools.horoscope.horoscope import Horoscope
 from util.cached_property import CachedProperty
-from zodiac.mapped_geo_position import MappedGeoPosition as mp
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
 
 
 class VedicHoroscope(Horoscope):

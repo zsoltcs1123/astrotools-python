@@ -1,7 +1,7 @@
 from datetime import datetime
 import pytz
 from core.enums import CoordinateSystem
-from objects.points import PLANETS, SUN, MOON, SN, NN
+from core.objects.points import PLANETS, SUN, MOON, SN, NN
 from tools.gann.angle_table import AngleTable
 from tools.gann.square_out_generator import find_lon_increases, generate_square_outs
 
@@ -10,13 +10,22 @@ from util.dictionary_printer import print_dict_as_table
 
 
 def sq():
-    dt = datetime(2007, 11, 7, 0, 0, 0, tzinfo=pytz.utc)
-    degrees = 747
-    square_outs = generate_square_outs(dt, degrees, ["mars"], CoordinateSystem.HELIO)
+    dt = datetime(2023, 10, 27, 11, 0, 0, tzinfo=pytz.utc)
+    degrees = 45.34
+    square_outs = generate_square_outs(
+        dt,
+        degrees,
+        [
+            "mercury",
+            "venus",
+            "mars",
+        ],
+        CoordinateSystem.HELIO,
+    )
 
     for p, so in square_outs.items():
-        print(f"{p} [{so[0].lon}]")
-        print(f"{so[1].dt} [{so[1].lon}]")
+        print(f"{p} [{so[0].lon.str_decimal()}]")
+        print(f"{so[1].dt.strftime('%Y-%m-%d %H:%M')} [{so[1].lon.str_decimal()}]")
         print("------")
 
 
@@ -35,7 +44,7 @@ def lons():
 
 
 def angles():
-    dt = datetime(2023, 9, 11, 0, 0, 0, tzinfo=pytz.utc)
+    dt = datetime(2023, 12, 13, 22, 0, 0, tzinfo=pytz.utc)
     planets = [p for p in PLANETS if p not in [SUN, MOON, SN, NN]]
     angle_table = AngleTable(dt, planets, CoordinateSystem.HELIO)
 
@@ -50,4 +59,4 @@ def angles():
 
 
 if __name__ == "__main__":
-    measure(angles)
+    measure(sq)

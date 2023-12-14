@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from typing import List
 
 from tools.dasa.dasa import DasaLevel, Dasa
-from zodiac.mapped_geo_position import MappedGeoPosition
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition
 
 
 DASA_LENGTHS = {

@@ -1,9 +1,9 @@
 from datetime import datetime
 from typing import List, Dict
 from tools.horoscope.horoscope_config import HoroscopeConfig
-from zodiac.mapped_geo_position import MappedGeoPosition as mp
-from core.angle import Angle
-from events.aspect import Aspect
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
+from core.angles.angle import Angle
+from events.aspects.aspect import Aspect
 
 
 class Horoscope:

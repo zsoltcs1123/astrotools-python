@@ -2,6 +2,7 @@ Current:
 - Implement vedic features
 - Square outs
 - Integrate helio
+- folder reorg
 
 
 TBD:

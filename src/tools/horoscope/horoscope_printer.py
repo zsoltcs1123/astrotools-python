@@ -1,6 +1,6 @@
 from typing import List
 from core.enums import HoroscopeType
-from events.aspect import Aspect
+from events.aspects.aspect import Aspect
 from out.file import to_text_file
 from tools.horoscope.horoscope import Horoscope
 import pandas as pd

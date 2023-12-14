@@ -1,15 +1,15 @@
 from datetime import datetime
-from core import swisseph_api
-from core.geo_position import GeoPosition
+from core.ephemeris import swisseph_api
+from core.positions.geo_position import GeoPosition
 from timezonefinder import TimezoneFinder
 import pytz
-from core.position_factory import create_geo_position
+from core.positions.root_position_factory import create_geo_position
 from tools.dasa.dasa import DasaLevel
 from tools.dasa.dasa_factory import generate_dasas
 from tools.dasa.dasa_printer import print_dasas
 from util.geocoder import Geocoder
-from objects.points import MEAN_NODE, MOON
-from zodiac.mapped_geo_position import MappedGeoPosition
+from core.objects.points import MEAN_NODE, MOON
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition
 
 
 def hot_dasa():

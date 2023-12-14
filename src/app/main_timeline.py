@@ -1,30 +1,27 @@
 from datetime import datetime
-from core.position_factory import create_geo_position
-from events.astro_event import NakshatraChange, TermChange, TropicalSignChange
-from objects.points import MEAN_NODE
+from core.positions.root_position_factory import create_geo_position
+from events.zodiacal.astro_event import NakshatraChange, TermChange
 from out.file import to_text_file
 from tools.timeline.timeline_factory import create_timeline
 from tools.timeline.timeline_printer import TimelinePrinter
-from out.tv import generate_astro_events_script, generate_pivot_times
-from tools.timeline.timeline import Timeline
+from out.tv import generate_astro_events_script
 from tools.timeline.timeline_config import (
-    DEFAULT_ASPECTS,
     DEFAULT_ZODIACAL_EVENTS,
     TimelineConfig,
 )
 from util.common import measure
-from zodiac.mapped_geo_position import MappedGeoPosition
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition
 
 
 def timeline():
-    start = datetime(2023, 12, 2)
-    end = datetime(2023, 12, 12)
+    start = datetime(2023, 12, 12)
+    end = datetime(2023, 12, 24)
 
     timeline_config = TimelineConfig.default_no_moon(start, end)
     timeline = create_timeline(timeline_config)
     timeline_printer = TimelinePrinter(timeline)
 
-    timeline_printer.print_to_file("timeline dec 2 - dec 12.txt")
+    timeline_printer.print_to_file("timeline dec 12 - dec 24.txt")
 
 
 def timeline_tv_script():
@@ -68,4 +65,4 @@ def timeline_sun():
 
 
 if __name__ == "__main__":
-    measure(timeline_tv_script)
+    measure(timeline)

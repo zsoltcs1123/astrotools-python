@@ -1,7 +1,7 @@
 from collections import defaultdict
 from datetime import datetime as dt
 from typing import List, Type
-from events.astro_event import AstroEvent
+from events.zodiacal.astro_event import AstroEvent
 
 
 class Timeline:
