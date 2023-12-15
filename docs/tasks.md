@@ -2,7 +2,7 @@ Current:
 - Implement vedic features
 - Square outs
 - Integrate helio
-- folder reorg
+- LinkedGeoPosition implementation
 
 
 TBD:
@@ -51,6 +51,7 @@ Done:
 - phase, latitude
 - Investigate discrepancy vs Astrolog
 - Speed/declination snapshot
+- folder reorg
 - 
 
 
