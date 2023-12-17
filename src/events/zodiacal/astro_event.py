@@ -73,6 +73,36 @@ class DirectionChange(ZodiacalEvent):
 
 
 @dataclass
+class ExtremeEvent(AstroEvent):
+    mp: mp
+    type: str  # min, max
+
+
+@dataclass
+class DeclinationExtreme(ExtremeEvent):
+    def __repr__(self) -> str:
+        return f"{self.dt}\t{self.mp.point}\t Declination {self.type} of {self.mp.root_position.dec.str_decimal()} at \t{self.mp.tropical.position}"
+
+
+@dataclass
+class LatitudeExtreme(ExtremeEvent):
+    def __repr__(self) -> str:
+        return f"{self.dt}\t{self.mp.point}\t Latitude {self.type} of {self.mp.root_position.lat.str_decimal()} at\t{self.mp.tropical.position}"
+
+
+@dataclass
+class SpeedExtreme(ExtremeEvent):
+    def __repr__(self) -> str:
+        return f"{self.dt}\t{self.mp.point}\t Speed {self.type} of {self.mp.root_position.speed.str_decimal()} at\t{self.mp.tropical.position}"
+
+
+@dataclass
+class PhaseExtreme(ExtremeEvent):
+    def __repr__(self) -> str:
+        return f"{self.dt}\t{self.mp.point}\t Phase {self.type} of {self.mp.phase.str_decimal()} at\t{self.mp.tropical.position}"
+
+
+@dataclass
 class TropicalProgression(AstroEvent):
     mp: mp
     name: str

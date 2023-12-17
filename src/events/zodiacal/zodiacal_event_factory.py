@@ -4,6 +4,10 @@ from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mgp
 from events.zodiacal.astro_event import (
     AstroEvent,
     DecanChange,
+    DeclinationExtreme,
+    LatitudeExtreme,
+    PhaseExtreme,
+    SpeedExtreme,
     TropicalSignChange,
     VedicSignChange,
     TermChange,

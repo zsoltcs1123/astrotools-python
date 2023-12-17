@@ -29,11 +29,3 @@ class MappedGeoPosition(MappedPosition):
     @classmethod
     def from_planetary_positions(cls, planetary_positions: List[GeoPosition]):
         return [cls(position) for position in planetary_positions]
-
-    @CachedProperty
-    def phase(self) -> Optional[Degree]:
-        from core.angles.angle import Angle
-
-        if self.sun_position is None:
-            return None
-        return Degree.from_decimal(Angle(self, self.sun_position).circular_diff)

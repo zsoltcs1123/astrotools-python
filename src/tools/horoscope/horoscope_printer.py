@@ -116,7 +116,7 @@ def _get_tropical_values(
     ]
 
     data = []
-    for mp in horoscope.mps:
+    for mp in horoscope.mgps:
         if mp.point in points_filter:
             continue
         row = {
@@ -127,10 +127,10 @@ def _get_tropical_values(
             "Ruler": mp.tropical.sign_ruler,
             "Term": mp.tropical.term.name,
             "Tarot": mp.tropical.decan.name,
-            "Speed": f"{mp.root_position.speed.str_decimal()} ({mp.get_root_attr_index('speed')})",
-            "Phase": f"{mp.phase.str_decimal()} ({mp.get_self_attr_index('phase')})",
-            "Declination": f"{mp.root_position.dec.str_decimal()} ({mp.get_root_attr_index('dec')})",
-            "Latitude": f"{mp.root_position.lat.str_decimal()} ({mp.get_root_attr_index('lat')})",
+            "Speed": f"{mp.root_position.speed.str_decimal()} ({horoscope.get_daily_index(mp.point, 'speed')})",
+            "Phase": f"{horoscope.phase(mp.point).str_decimal()} ({horoscope.get_daily_index(mp.point, 'phase')})",
+            "Declination": f"{mp.root_position.dec.str_decimal()} ({horoscope.get_daily_index(mp.point, 'dec')})",
+            "Latitude": f"{mp.root_position.lat.str_decimal()} ({horoscope.get_daily_index(mp.point, 'lat')})",
         }
         data.append(row)
 
@@ -157,7 +157,7 @@ def _get_vedic_headers() -> str:
 
 def _get_vedic_values(horoscope: Horoscope, points_filter: List[str] = []) -> str:
     str = ""
-    for mp in horoscope.mps:
+    for mp in horoscope.mgps:
         if mp.point in points_filter:
             continue
 

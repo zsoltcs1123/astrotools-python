@@ -35,35 +35,3 @@ class MappedPosition:
     @CachedProperty
     def vedic(self) -> VedicAttributes:
         return VedicAttributes(self.root_position)
-
-    def get_root_attr_index(self, field_name: str) -> str:
-        if self.previous_position is None:
-            return ""
-
-        self_value = getattr(self.root_position, field_name)
-        prev_value = getattr(self.previous_position.root_position, field_name)
-
-        if not isinstance(self_value, Degree) or not isinstance(prev_value, Degree):
-            return ""
-
-        return self._get_index(self_value, prev_value)
-
-    def get_self_attr_index(self, field_name: str) -> str:
-        if self.previous_position is None:
-            return ""
-
-        self_value = getattr(self, field_name)
-        prev_value = getattr(self.previous_position, field_name)
-
-        if not isinstance(self_value, Degree) or not isinstance(prev_value, Degree):
-            return ""
-
-        return self._get_index(self_value, prev_value)
-
-    def _get_index(self, current_degree: Degree, previous_degree: Degree) -> str:
-        if current_degree == previous_degree:
-            return "="
-        elif current_degree > previous_degree:
-            return "+"
-        elif current_degree < previous_degree:
-            return "-"

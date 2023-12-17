@@ -6,8 +6,12 @@ from events.aspects.aspect import DEFAULT_ASPECTS
 from core.objects.points import get_default_angle_targets
 from events.zodiacal.astro_event import (
     DecanChange,
+    DeclinationExtreme,
     DirectionChange,
+    LatitudeExtreme,
     NakshatraChange,
+    PhaseExtreme,
+    SpeedExtreme,
     TropicalProgression,
     TropicalSignChange,
     TermChange,
@@ -15,15 +19,17 @@ from events.zodiacal.astro_event import (
 from events.aspects.orb_map import OrbMap
 from core.objects.points import ALL_POINTS, MEAN_NODE, POINTS_NO_MOON
 
+EXTREME_EVENTS = [DeclinationExtreme, LatitudeExtreme, SpeedExtreme, PhaseExtreme]
 
-DEFAULT_ZODIACAL_EVENTS = [
+
+DEFAULT_ASTRO_EVENTS = [
     TropicalSignChange,
     DecanChange,
     TermChange,
     NakshatraChange,
     DirectionChange,
     TropicalProgression,
-]
+] + EXTREME_EVENTS
 
 
 @dataclass
@@ -32,28 +38,30 @@ class TimelineConfig:
     end: dt
     interval_minutes: int
     points: List[str]
-    node_calc: str
-    zodiacal_events: List[type]
+    astro_events: List[type]
     aspects: List[AspectType]
     angle_targets: Dict[str, List[str]]
     orb_map: OrbMap
+    node_calc: str
 
     @classmethod
     def default_no_moon(
         cls,
         start: dt,
         end: dt,
-        zodiacal_events: List[type] = DEFAULT_ZODIACAL_EVENTS,
+        astro_events: List[type] = DEFAULT_ASTRO_EVENTS,
     ) -> "TimelineConfig":
-        return TimelineConfig.default(start, end, POINTS_NO_MOON, zodiacal_events)
+        return TimelineConfig.default(start, end, POINTS_NO_MOON, astro_events)
 
     @classmethod
     def default(
         cls,
         start: dt,
         end: dt,
+        interval_minutes: int = 1,
         points: List[str] = ALL_POINTS,
-        zodiacal_events: List[type] = DEFAULT_ZODIACAL_EVENTS,
+        astro_events: List[type] = DEFAULT_ASTRO_EVENTS,
+        aspects: List[AspectType] = DEFAULT_ASPECTS,
         angle_targets: Dict[str, List[str]] = {},
     ) -> "TimelineConfig":
         if not angle_targets:
@@ -64,13 +72,13 @@ class TimelineConfig:
         return TimelineConfig(
             start,
             end,
-            1,
+            interval_minutes,
             points,
-            MEAN_NODE,
-            zodiacal_events,
-            DEFAULT_ASPECTS,
+            astro_events,
+            aspects,
             angle_targets,
             OrbMap.from_float(0.001),
+            MEAN_NODE,
         )
 
     @classmethod

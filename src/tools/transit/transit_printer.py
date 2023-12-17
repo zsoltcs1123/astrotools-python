@@ -21,9 +21,9 @@ def _generate_transit_str(transit: Transit, points_filter: List[str] = []):
     )
 
     transit_points = {
-        mp.root_position.point: mp for mp in transit.transit_horoscope.mps
+        mp.root_position.point: mp for mp in transit.transit_horoscope.mgps
     }
-    for point in transit.natal_horoscope.mps:
+    for point in transit.natal_horoscope.mgps:
         if point.root_position.point in points_filter:
             continue
         transit_point = transit_points[point.root_position.point]
