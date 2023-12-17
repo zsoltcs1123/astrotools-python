@@ -1,6 +1,6 @@
 from typing import List, Optional
 from util.common import find_smallest_elements, group_by, integral_ends_with
-from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mgp
 from events.zodiacal.astro_event import (
     AstroEvent,
     DecanChange,
@@ -48,40 +48,44 @@ class ZodiacalEventFactory:
         self.event_types = event_types
 
     @staticmethod
-    def _check_decan_change(previous: mp, current: mp) -> Optional[DecanChange]:
+    def _check_decan_change(previous: mgp, current: mgp) -> Optional[DecanChange]:
         if previous.tropical.decan.id != current.tropical.decan.id:
             return DecanChange(current.dt, previous, current)
 
     @staticmethod
     def _check_tropical_sign_change(
-        previous: mp, current: mp
+        previous: mgp, current: mgp
     ) -> Optional[TropicalSignChange]:
         if previous.tropical.sign.id != current.tropical.sign.id:
             return TropicalSignChange(current.dt, previous, current)
 
     @staticmethod
     def _check_vedic_sign_change(
-        previous: mp, current: mp
+        previous: mgp, current: mgp
     ) -> Optional[VedicSignChange]:
         if previous.vedic.sign.id != current.vedic.sign.id:
             return VedicSignChange(current.dt, previous, current)
 
     @staticmethod
-    def _check_term_change(previous: mp, current: mp) -> Optional[TermChange]:
+    def _check_term_change(previous: mgp, current: mgp) -> Optional[TermChange]:
         if previous.tropical.term.id != current.tropical.term.id:
             return TermChange(current.dt, previous, current)
 
     @staticmethod
-    def _check_direction_change(previous: mp, current: mp) -> Optional[DirectionChange]:
+    def _check_direction_change(
+        previous: mgp, current: mgp
+    ) -> Optional[DirectionChange]:
         if previous.direction != current.direction:
             return DirectionChange(current.dt, previous, current)
 
     @staticmethod
-    def _check_nakshatra_change(previous: mp, current: mp) -> Optional[NakshatraChange]:
+    def _check_nakshatra_change(
+        previous: mgp, current: mgp
+    ) -> Optional[NakshatraChange]:
         if previous.vedic.nakshatra.id != current.vedic.nakshatra.id:
             return NakshatraChange(current.dt, previous, current)
 
-    def _check_changes(self, previous: mp, current: mp):
+    def _check_changes(self, previous: mgp, current: mgp):
         ret = []
         for check_function in self.check_functions:
             event = check_function(previous, current)
@@ -89,7 +93,7 @@ class ZodiacalEventFactory:
                 ret.append(event)
         return ret
 
-    def _get_tropical_progressions(self, mps: List[mp]) -> List[AstroEvent]:
+    def _get_tropical_progressions(self, mps: List[mgp]) -> List[AstroEvent]:
         events = []
         for mp in mps:
             if integral_ends_with(5, mp.tropical.lon.decimal):
@@ -110,7 +114,7 @@ class ZodiacalEventFactory:
         }
         return sorted(list(filtered_closest.values()), key=lambda x: x.mp.dt)
 
-    def create_events(self, mps: List[mp]) -> List[AstroEvent]:
+    def create_events(self, mps: List[mgp]) -> List[AstroEvent]:
         if len(mps) < 2:
             return []
 

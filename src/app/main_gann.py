@@ -49,7 +49,7 @@ def angles():
     angle_table = AngleTable(dt, planets, CoordinateSystem.HELIO)
 
     for p in angle_table.mps:
-        print(f"{p.point} [{p.base_position.lon.str_decimal()}]")
+        print(f"{p.point} [{p.root_position.lon.str_decimal()}]")
 
     print_dict_as_table(
         angle_table.angles,

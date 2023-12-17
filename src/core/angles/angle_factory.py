@@ -1,11 +1,11 @@
 from core.angles.angle import Angle
 from core.positions.root_position_factory import create_geo_position
-from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mgp
 from typing import Callable, Dict, List
 
 
 def generate_angles_dict(
-    mps: List[mp], target_selector: Callable[[str], List[str]]
+    mps: List[mgp], target_selector: Callable[[str], List[str]]
 ) -> Dict[str, List[Angle]]:
     angles = {}
     for mp in mps:
@@ -23,7 +23,7 @@ def generate_angles_dict(
 
 
 def generate_angles_list(
-    mps: Dict[str, List[mp]], target_selector: Callable[[str], List[str]]
+    mps: Dict[str, List[mgp]], target_selector: Callable[[str], List[str]]
 ) -> List[Angle]:
     angles = []
     for p, mp_list in mps.items():
@@ -32,7 +32,7 @@ def generate_angles_list(
         for source_mp in mp_list:
             for t in targets:
                 target_bp = create_geo_position(t, source_mp.dt)
-                target_mp = mp(target_bp)
+                target_mp = mgp(target_bp)
                 angle = Angle(source_mp, target_mp)
                 angles.append(angle)
 

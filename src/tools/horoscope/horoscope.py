@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import List, Dict
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition
 from tools.horoscope.horoscope_config import HoroscopeConfig
-from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
 from core.angles.angle import Angle
 from events.aspects.aspect import Aspect
 
@@ -9,7 +9,7 @@ from events.aspects.aspect import Aspect
 class Horoscope:
     dt: datetime
     config: HoroscopeConfig
-    mps: List[mp]
+    mps: List[MappedGeoPosition]
     angles: Dict[str, List[Angle]]
     aspects: Dict[str, List[Aspect]]
     cusps: List[float]
@@ -18,7 +18,7 @@ class Horoscope:
         self,
         dt: datetime,
         config: HoroscopeConfig,
-        mps: List[mp],
+        mps: List[MappedGeoPosition],
         angles: Dict[str, List[Angle]],
         aspects: Dict[str, List[Aspect]],
         cusps: List[float],

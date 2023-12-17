@@ -8,7 +8,7 @@ from core.objects.points import get_default_angle_targets
 from tools.timeline.timeline import Timeline
 from tools.timeline.timeline_config import TimelineConfig
 from util.console_logger import ConsoleLogger
-from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mgp
 
 
 _logger = ConsoleLogger("TimelineFactory")
@@ -38,14 +38,14 @@ def create_timeline(config: TimelineConfig):
     return Timeline(zodiacal_events + aspects)
 
 
-def _generate_positions(config: TimelineConfig) -> Dict[str, List[mp]]:
+def _generate_positions(config: TimelineConfig) -> Dict[str, List[mgp]]:
     mps = {}
     for point in config.points:
         _logger.info(f"Generating positions for {point}")
         bps = create_geo_positions(
             point, config.start, config.end, config.interval_minutes
         )
-        mp_list = [mp(bp) for bp in bps]
+        mp_list = [mgp(bp) for bp in bps]
         mps[point] = mp_list
 
     return mps
@@ -53,7 +53,7 @@ def _generate_positions(config: TimelineConfig) -> Dict[str, List[mp]]:
 
 def _generate_zodiacal_events(
     zodiacal_event_factory: ZodiacalEventFactory,
-    mps: Dict[str, List[mp]],
+    mps: Dict[str, List[mgp]],
 ) -> List[Type[AstroEvent]]:
     events = []
     for p, mp_list in mps.items():

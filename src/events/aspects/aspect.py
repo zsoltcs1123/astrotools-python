@@ -35,21 +35,3 @@ class Aspect(AstroEvent):
 
     def print_vedic_no_time(self):
         return f"{self.source.point} [{self.source.vedic.lon.decimal:.3f}], {self.target.point} [{self.target.vedic.lon.decimal:.3f}], {self.diff:.3f}"
-
-    def orb(self, orb_value: int) -> Tuple[datetime, datetime]:
-        # Determine the direction of movement for each planet
-        if self.angle.source.speed * self.angle.target.speed > 0:
-            # Both planets are moving in the same direction
-            combined_speed = abs(self.angle.source.speed - self.angle.target.speed)
-        else:
-            # Planets are moving in opposite directions
-            combined_speed = abs(self.angle.source.speed + self.angle.target.speed)
-
-        # Calculate the number of days for the aspect to move out of orb
-        days_out_of_orb = orb_value / combined_speed
-
-        # Calculate the start and end dates based on the exact aspect time
-        start_date = self.angle.dt - timedelta(days=days_out_of_orb)
-        end_date = self.angle.dt + timedelta(days=days_out_of_orb)
-
-        return start_date, end_date

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from datetime import datetime
-from core.zodiac.mapped_positions.mapped_geo_position import MappedGeoPosition as mp
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
 
 
 @dataclass

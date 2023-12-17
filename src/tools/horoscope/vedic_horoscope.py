@@ -1,7 +1,7 @@
 from core.objects.points import NN
 from tools.horoscope.horoscope import Horoscope
 from util.cached_property import CachedProperty
-from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
+from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mgp
 
 
 class VedicHoroscope(Horoscope):
@@ -10,7 +10,7 @@ class VedicHoroscope(Horoscope):
         result = self.calculate_atmakaraka()
         return result
 
-    def calculate_atmakaraka(self) -> mp:
+    def calculate_atmakaraka(self) -> mgp:
         sorted_mps = sorted(
             self.mps,
             key=lambda mp: int(mp.vedic.position[2:])

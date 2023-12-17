@@ -127,10 +127,10 @@ def _get_tropical_values(
             "Ruler": mp.tropical.sign_ruler,
             "Term": mp.tropical.term.name,
             "Tarot": mp.tropical.decan.name,
-            "Speed": f"{mp.base_position.speed.str_decimal()} ({mp.daily_speed_index})",
-            "Phase": f"{mp.phase.str_decimal()} ({mp.phase_index})",
-            "Declination": f"{mp.base_position.dec.str_decimal()} ({mp.daily_declination_index})",
-            "Latitude": f"{mp.base_position.lat.str_decimal()} ({mp.daily_latitude_index})",
+            "Speed": f"{mp.root_position.speed.str_decimal()} ({mp.get_root_attr_index('speed')})",
+            "Phase": f"{mp.phase.str_decimal()} ({mp.get_self_attr_index('phase')})",
+            "Declination": f"{mp.root_position.dec.str_decimal()} ({mp.get_root_attr_index('dec')})",
+            "Latitude": f"{mp.root_position.lat.str_decimal()} ({mp.get_root_attr_index('lat')})",
         }
         data.append(row)
 
