@@ -7,7 +7,11 @@ from events.zodiacal.zodiacal_event_factory import ZodiacalEventFactory
 from events.extremes.extreme_event_factory import create_extreme_events
 from core.objects.points import get_default_angle_targets
 from tools.timeline.timeline import Timeline
-from tools.timeline.timeline_config import EXTREME_EVENTS, TimelineConfig
+from tools.timeline.timeline_config import (
+    EXTREME_EVENTS,
+    ZODIACAL_EVENTS,
+    TimelineConfig,
+)
 from util.console_logger import ConsoleLogger
 from core.zodiac.positions.mapped_geo_position import (
     MappedGeoPosition as MappedGeoPosition,
@@ -18,27 +22,17 @@ _logger = ConsoleLogger("TimelineFactory")
 
 
 def create_timeline(config: TimelineConfig):
-    zodiacal_event_factory = (
-        ZodiacalEventFactory(config.astro_events)
-        if len(config.astro_events) > 0
-        else None
-    )
-
-    aspect_finder = (
-        AspectFinder(config.orb_map, config.aspects)
-        if len(config.aspects) > 0
-        else None
-    )
-
     mps = _generate_positions(config)
 
     zodiacal_events = []
 
-    if not zodiacal_event_factory is None:
+    if set(config.astro_events) & set(ZODIACAL_EVENTS):
+        zodiacal_event_factory = ZodiacalEventFactory(config.astro_events)
         zodiacal_events = _generate_zodiacal_events(zodiacal_event_factory, mps)
 
     aspects = []
-    if not aspect_finder is None:
+    if config.aspects:
+        aspect_finder = AspectFinder(config.orb_map, config.aspects)
         _logger.info(f"Generating angles")
         angles = generate_angles_list(mps, get_default_angle_targets)
         _logger.info(f"Calculating aspects...")

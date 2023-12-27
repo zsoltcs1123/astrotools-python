@@ -67,7 +67,7 @@ def timeline_moon():
         start,
         end,
         60,
-        ["moon"],
+        ["mercury"],
         [DeclinationExtreme, LatitudeExtreme, SpeedExtreme],
         [],
     )

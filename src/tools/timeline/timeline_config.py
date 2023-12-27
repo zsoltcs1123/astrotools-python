@@ -15,21 +15,24 @@ from events.zodiacal.astro_event import (
     TropicalProgression,
     TropicalSignChange,
     TermChange,
+    VedicSignChange,
 )
 from events.aspects.orb_map import OrbMap
 from core.objects.points import ALL_POINTS, MEAN_NODE, POINTS_NO_MOON
 
-EXTREME_EVENTS = [DeclinationExtreme, LatitudeExtreme, SpeedExtreme, PhaseExtreme]
-
-
-DEFAULT_ASTRO_EVENTS = [
+ZODIACAL_EVENTS = [
     TropicalSignChange,
     DecanChange,
     TermChange,
     NakshatraChange,
-    DirectionChange,
+    VedicSignChange,
     TropicalProgression,
-] + EXTREME_EVENTS
+    DirectionChange,
+]
+EXTREME_EVENTS = [DeclinationExtreme, LatitudeExtreme, SpeedExtreme, PhaseExtreme]
+
+
+DEFAULT_ASTRO_EVENTS = ZODIACAL_EVENTS + EXTREME_EVENTS
 
 
 @dataclass
