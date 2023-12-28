@@ -1,31 +1,30 @@
 from datetime import datetime
-from core.ephemeris import swisseph_api
-from core.positions.geo_position import GeoPosition
-from timezonefinder import TimezoneFinder
+
+import requests
 import pytz
 from core.positions.root_position_factory import create_geo_position
-from tools.dasa.dasa import DasaLevel
+from out.file import to_text_file
+from tools.dasa.dasa import Dasa, DasaLevel
 from tools.dasa.dasa_factory import generate_dasas
 from tools.dasa.dasa_printer import print_dasas
-from util.geocoder import Geocoder
-from core.objects.points import MEAN_NODE, MOON
+from core.objects.points import MOON
 from core.zodiac.positions.mapped_geo_position import MappedGeoPosition
 
 
-def hot_dasa():
-    utc_dt = datetime(2023, 9, 15, 16, 25, 47, tzinfo=pytz.utc)
-    moon_position = create_geo_position(MOON, utc_dt)
-    ayanamsa = swisseph_api.get_ayanamsha(utc_dt.year, utc_dt.month, "LAHIRI")
-    # moon_position = BasePosition(utc_dt, "moon", 149.186694 + ayanamsa, 0, 0, 0, 0)
+def get_coin_dasa(symbol: str):
+    response = requests.get(f"http://localhost:8001/birthdate?symbol={symbol}")
+    birth_date = response.json()["birth_date"]
 
+    if birth_date is None:
+        return
+
+    birth_date = datetime.strptime(birth_date, "%Y-%m-%dT%H:%M:%S%z").astimezone(
+        pytz.utc
+    )
+
+    moon_position = create_geo_position(MOON, birth_date)
     moon_mapped = MappedGeoPosition(moon_position)
-
-    res = generate_dasas(moon_mapped, DasaLevel.Sookshma)
-    print(moon_mapped.vedic.lon)
-    print(moon_mapped.vedic.position)
-    print(moon_mapped.vedic.nakshatra.name)
-    print(moon_mapped.vedic.nakshatra.ruler)
-    print(moon_mapped.vedic.nakshatra.degree_range)
+    res = generate_dasas(moon_mapped, DasaLevel.Pratyantar)
 
     current_date = datetime.now().astimezone(pytz.utc)
     current_maha_dasa = [d for d in res if d.start_date <= current_date <= d.end_date][
@@ -37,62 +36,31 @@ def hot_dasa():
         if d.start_date <= current_date <= d.end_date
     ]
 
-    print_dasas(current_bhukti)
+    dasa_str = ""
+    dasa_str += f"Coin: {symbol}\n"
+    dasa_str += f"Birth date: {birth_date}\n"
+    dasa_str += f"Moon longitude: {moon_mapped.vedic.lon}\n"
+    dasa_str += f"Moon position: {moon_mapped.vedic.position}\n"
+    dasa_str += f"Moon Nakshatra: {moon_mapped.vedic.nakshatra.name}\n"
+    dasa_str += f"Moon Nakshatra ruler: {moon_mapped.vedic.nakshatra.ruler}\n"
+    dasa_str += f"Current Maha dasa: {current_maha_dasa}\n"
+    dasa_str += "\n"
 
+    dasa_str += print_dasas(current_bhukti)
 
-def me_dasa():
-    dt = datetime(1992, 7, 21, 3, 20)
-
-    geocoder = Geocoder("ca667b3bd3ba943ee0ba411a150d443f")
-    lat, lon = geocoder.get_lat_lon("Kecskemet", "Hungary")
-    tf = TimezoneFinder()
-    tz_name = tf.certain_timezone_at(lng=lon, lat=lat)
-    tz = pytz.timezone(tz_name)
-    local_dt = tz.localize(dt)
-    utc_dt = local_dt.astimezone(pytz.utc)
-
-    utc_dt = datetime(2023, 9, 15, 16, 25, 47, tzinfo=pytz.utc)
-
-    moon_position = create_geo_position(MOON, utc_dt)
-
-    moon_position = GeoPosition(utc_dt, "moon", 7.669722, 0, 0, 0, 0)
-    moon_mapped = MappedGeoPosition(moon_position)
-
-    res = generate_dasas(moon_mapped, DasaLevel.Pratyantar)
-    print(moon_mapped.vedic.lon)
-    print(moon_mapped.vedic.position)
-    print(moon_mapped.vedic.nakshatra.name)
-    print(moon_mapped.vedic.nakshatra.ruler)
-    print(moon_mapped.vedic.nakshatra.degree_range)
-
-
-def hot_dasa():
-    utc_dt = datetime(2018, 2, 1, 1, 21, 9, tzinfo=pytz.utc)
-    moon_position = create_geo_position(MOON, utc_dt)
-    # ayanamsa = swisseph_api.get_ayanamsha(utc_dt.year, utc_dt.month, "LAHIRI")
-    # moon_position = BasePosition(utc_dt, "moon", 149.186694 + ayanamsa, 0, 0, 0, 0)
-
-    moon_mapped = MappedGeoPosition(moon_position)
-
-    res = generate_dasas(moon_mapped, DasaLevel.Pratyantar)
-    print(moon_mapped.vedic.lon)
-    print(moon_mapped.vedic.position)
-    print(moon_mapped.vedic.nakshatra.name)
-    print(moon_mapped.vedic.nakshatra.ruler)
-    print(moon_mapped.vedic.nakshatra.degree_range)
-
-    current_date = datetime.now().astimezone(pytz.utc)
-    current_maha_dasa = [d for d in res if d.start_date <= current_date <= d.end_date][
-        0
-    ]
-    current_bhukti = [
-        d
-        for d in current_maha_dasa.sub_dasas
-        if d.start_date <= current_date <= d.end_date
-    ]
-
-    print_dasas(current_bhukti)
+    to_text_file(f"dasa_{symbol}.txt", dasa_str)
 
 
 if __name__ == "__main__":
-    hot_dasa()
+    for symbol in [
+        "aix",
+        "cre",
+        "hot",
+        "olas",
+        "unibot",
+        "xgpt",
+        "wik",
+        "trendx",
+    ]:
+        print(f"Getting dasa for {symbol}")
+        get_coin_dasa(symbol)

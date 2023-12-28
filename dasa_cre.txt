@@ -1,0 +1,18 @@
+Coin: cre
+Birth date: 2018-06-24 06:18:49+00:00
+Moon longitude: 204.425° [204°25'29'']
+Moon position: 24Lib25
+Moon Nakshatra: Vishakha
+Moon Nakshatra ruler: Jupiter
+Current Maha dasa: Jupiter, start: Mar 02, 2013, end: Mar 02, 2029
+
+Bhukti: Sun, start: Sep 14, 2023, end: Jul 02, 2024
+  Pratyantar: Sun, start: Sep 14, 2023, end: Sep 28, 2023
+  Pratyantar: Moon, start: Sep 28, 2023, end: Oct 23, 2023
+  Pratyantar: Mars, start: Oct 23, 2023, end: Nov 09, 2023
+  Pratyantar: Rahu, start: Nov 09, 2023, end: Dec 22, 2023
+  Pratyantar: Jupiter, start: Dec 22, 2023, end: Jan 30, 2024
+  Pratyantar: Saturn, start: Jan 30, 2024, end: Mar 17, 2024
+  Pratyantar: Mercury, start: Mar 17, 2024, end: Apr 27, 2024
+  Pratyantar: Ketu, start: Apr 27, 2024, end: May 14, 2024
+  Pratyantar: Venus, start: May 14, 2024, end: Jul 02, 2024

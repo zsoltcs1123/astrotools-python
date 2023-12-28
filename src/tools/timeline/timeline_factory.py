@@ -5,7 +5,7 @@ from events.aspects.aspect_finder import AspectFinder
 from events.zodiacal.astro_event import AstroEvent
 from events.zodiacal.zodiacal_event_factory import ZodiacalEventFactory
 from events.extremes.extreme_event_factory import create_extreme_events
-from core.objects.points import get_default_angle_targets
+from core.objects.points import NN, SN, SUN, get_default_angle_targets
 from tools.timeline.timeline import Timeline
 from tools.timeline.timeline_config import (
     EXTREME_EVENTS,
@@ -74,6 +74,8 @@ def _generate_extreme_events(
 ) -> List[AstroEvent]:
     events = []
     for p, mp_list in mps.items():
+        if p == NN or p == SN or p == SUN:
+            continue
         _logger.info(f"Generating extreme events for {p}")
         events += create_extreme_events(mp_list, config.astro_events)
     return events

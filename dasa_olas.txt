@@ -1,0 +1,18 @@
+Coin: olas
+Birth date: 2022-06-30 10:26:47+00:00
+Moon longitude: 88.791° [88°47'26'']
+Moon position: 28Gem47
+Moon Nakshatra: Punarvasu
+Moon Nakshatra ruler: Jupiter
+Current Maha dasa: Jupiter, start: Dec 12, 2011, end: Dec 12, 2027
+
+Bhukti: Moon, start: Apr 12, 2023, end: Aug 11, 2024
+  Pratyantar: Moon, start: Apr 12, 2023, end: May 23, 2023
+  Pratyantar: Mars, start: May 23, 2023, end: Jun 20, 2023
+  Pratyantar: Rahu, start: Jun 20, 2023, end: Sep 02, 2023
+  Pratyantar: Jupiter, start: Sep 02, 2023, end: Nov 05, 2023
+  Pratyantar: Saturn, start: Nov 05, 2023, end: Jan 22, 2024
+  Pratyantar: Mercury, start: Jan 22, 2024, end: Mar 31, 2024
+  Pratyantar: Ketu, start: Mar 31, 2024, end: Apr 28, 2024
+  Pratyantar: Venus, start: Apr 28, 2024, end: Jul 18, 2024
+  Pratyantar: Sun, start: Jul 18, 2024, end: Aug 11, 2024

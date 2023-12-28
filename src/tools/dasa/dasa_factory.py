@@ -59,7 +59,7 @@ def calculate_dasa_periods(
     dasas.append(
         (
             Dasa(
-                DasaLevel.Dasa,
+                DasaLevel.MahaDasa,
                 lord,
                 current_date,
                 end_date,
@@ -68,7 +68,7 @@ def calculate_dasa_periods(
                     end_date,
                     lord,
                     target_level,
-                    DasaLevel.Dasa,
+                    DasaLevel.MahaDasa,
                 ),
             )
         )
@@ -80,9 +80,11 @@ def calculate_dasa_periods(
         lord = DASA_SEQUENCE[i % len(DASA_SEQUENCE)]
         end_date = current_date + timedelta(days=DASA_LENGTHS[lord] * 365.25)
         sub_periods = calculate_sub_periods(
-            current_date, end_date, lord, target_level, DasaLevel.Dasa
+            current_date, end_date, lord, target_level, DasaLevel.MahaDasa
         )
-        dasas.append(Dasa(DasaLevel.Dasa, lord, current_date, end_date, sub_periods))
+        dasas.append(
+            Dasa(DasaLevel.MahaDasa, lord, current_date, end_date, sub_periods)
+        )
 
         current_date = end_date
 
@@ -130,7 +132,7 @@ def calculate_sub_periods(
 
 
 def next_level(level) -> DasaLevel:
-    if level == DasaLevel.Dasa:
+    if level == DasaLevel.MahaDasa:
         return DasaLevel.Bhukti
     elif level == DasaLevel.Bhukti:
         return DasaLevel.Pratyantar

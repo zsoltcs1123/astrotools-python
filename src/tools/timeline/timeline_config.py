@@ -29,7 +29,7 @@ ZODIACAL_EVENTS = [
     TropicalProgression,
     DirectionChange,
 ]
-EXTREME_EVENTS = [DeclinationExtreme, LatitudeExtreme, SpeedExtreme, PhaseExtreme]
+EXTREME_EVENTS = [DeclinationExtreme, LatitudeExtreme, SpeedExtreme]
 
 
 DEFAULT_ASTRO_EVENTS = ZODIACAL_EVENTS + EXTREME_EVENTS
@@ -54,7 +54,7 @@ class TimelineConfig:
         end: dt,
         astro_events: List[type] = DEFAULT_ASTRO_EVENTS,
     ) -> "TimelineConfig":
-        return TimelineConfig.default(start, end, POINTS_NO_MOON, astro_events)
+        return TimelineConfig.default(start, end, 1, POINTS_NO_MOON, astro_events)
 
     @classmethod
     def default(

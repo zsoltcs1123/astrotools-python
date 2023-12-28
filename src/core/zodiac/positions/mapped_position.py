@@ -10,11 +10,8 @@ from core.zodiac.attributes.vedic_attributes import VedicAttributes
 
 @dataclass
 class MappedPosition:
-    def __init__(
-        self, root_position: RootPosition, previous_position: "MappedPosition" = None
-    ):
+    def __init__(self, root_position: RootPosition):
         self.root_position = root_position
-        self.previous_position = previous_position
 
     @classmethod
     def from_planetary_positions(cls, planetary_positions: List[RootPosition]):

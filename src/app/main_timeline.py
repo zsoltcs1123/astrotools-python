@@ -21,14 +21,14 @@ from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mgp
 
 
 def timeline():
-    start = datetime(2023, 12, 12)
-    end = datetime(2023, 12, 24)
+    start = datetime(2023, 12, 24)
+    end = datetime(2024, 1, 10)
 
     timeline_config = TimelineConfig.default_no_moon(start, end)
     timeline = create_timeline(timeline_config)
     timeline_printer = TimelinePrinter(timeline)
 
-    timeline_printer.print_to_file("timeline dec 12 - dec 24.txt")
+    timeline_printer.print_to_file("timeline dec 24 - jan 10.txt")
 
 
 def timeline_tv_script():
@@ -95,4 +95,4 @@ def timeline_sun():
 
 
 if __name__ == "__main__":
-    measure(timeline_moon)
+    measure(timeline)

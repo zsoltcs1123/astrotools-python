@@ -5,7 +5,7 @@ from typing import List
 
 
 class DasaLevel(Enum):
-    Dasa = (1,)
+    MahaDasa = (1,)
     Bhukti = (2,)
     Pratyantar = (3,)
     Sookshma = (4,)
@@ -29,7 +29,7 @@ class Dasa:
         self.sub_dasas = sub_dasas if sub_dasas is not None else []
 
     def __repr__(self):
-        return f"DasaPeriod([{self.level}] {self.planet}, start: {self.start_date}, end: {self.end_date}, count of sub-dasas: {self.count_sub_periods()})"
+        return f"{self.planet}, start: {self.start_date.strftime('%b %d, %Y')}, end: {self.end_date.strftime('%b %d, %Y')}"
 
     def count_sub_periods(self):
         count = len(self.sub_dasas)  # count this dasa

@@ -1,0 +1,18 @@
+Coin: hot
+Birth date: 2018-02-01 01:21:09+00:00
+Moon longitude: 114.907° [114°54'26'']
+Moon position: 24Can54
+Moon Nakshatra: Ashlesha
+Moon Nakshatra ruler: Mercury
+Current Maha dasa: Mercury, start: Jul 31, 2007, end: Jul 30, 2024
+
+Bhukti: Saturn, start: Nov 20, 2021, end: Jul 30, 2024
+  Pratyantar: Saturn, start: Nov 20, 2021, end: Apr 24, 2022
+  Pratyantar: Mercury, start: Apr 24, 2022, end: Sep 11, 2022
+  Pratyantar: Ketu, start: Sep 11, 2022, end: Nov 07, 2022
+  Pratyantar: Venus, start: Nov 07, 2022, end: Apr 20, 2023
+  Pratyantar: Sun, start: Apr 20, 2023, end: Jun 08, 2023
+  Pratyantar: Moon, start: Jun 08, 2023, end: Aug 29, 2023
+  Pratyantar: Mars, start: Aug 29, 2023, end: Oct 25, 2023
+  Pratyantar: Rahu, start: Oct 25, 2023, end: Mar 21, 2024
+  Pratyantar: Jupiter, start: Mar 21, 2024, end: Jul 30, 2024
