@@ -2,7 +2,6 @@ Current:
 - Implement vedic features
 - Square outs
 - Integrate helio
-- LinkedGeoPosition implementation
 
 
 TBD:
