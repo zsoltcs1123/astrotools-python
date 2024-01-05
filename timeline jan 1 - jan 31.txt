@@ -1,0 +1,178 @@
+Monday, Jan 01 2024:
+1. 2024-01-01 08:59:00+00:00	sun	trine [119.999] vs moon 
+------------
+2. 2024-01-01 13:26:00+00:00	venus	square [90.000] vs saturn 
+------------
+
+Tuesday, Jan 02 2024:
+1. 2024-01-02 03:08:00+00:00	mercury	Direction change	R -> D 
+------------
+
+Thursday, Jan 04 2024:
+1. 2024-01-04 14:59:00+00:00	mars	Sign change	Sagittarius -> Capricorn 
+------------
+2. 2024-01-04 14:59:00+00:00	mars	Decan change	10W -> 2P 
+------------
+3. 2024-01-04 14:59:00+00:00	mars	Term change	Mars -> Mercury 
+------------
+4. 2024-01-04 21:17:00+00:00	sun	Term change	Jupiter -> Venus 
+------------
+
+Sunday, Jan 07 2024:
+1. 2024-01-07 01:29:00+00:00	venus	Decan change	8W -> 9W 
+------------
+
+Monday, Jan 08 2024:
+1. 2024-01-08 16:45:00+00:00	venus	Term change	Jupiter -> Venus 
+------------
+
+Tuesday, Jan 09 2024:
+1. 2024-01-09 01:24:00+00:00	mercury	square [90.000] vs neptune 
+------------
+
+Wednesday, Jan 10 2024:
+1. 2024-01-10 00:07:00+00:00	sun	trine [240.000] vs uranus 
+------------
+2. 2024-01-10 00:30:00+00:00	mercury	Term change	Saturn -> Mars 
+------------
+3. 2024-01-10 02:40:00+00:00	mars	sextile [60.000] vs saturn 
+------------
+4. 2024-01-10 18:32:00+00:00	sun	Decan change	3P -> 4P 
+------------
+
+Thursday, Jan 11 2024:
+1. 2024-01-11 02:35:00+00:00	sun	square [270.000] vs north node 
+------------
+
+Friday, Jan 12 2024:
+1. 2024-01-12 10:42:00+00:00	mars	trine [240.000] vs jupiter 
+------------
+2. 2024-01-12 17:38:00+00:00	sun	Term change	Venus -> Saturn 
+------------
+3. 2024-01-12 18:47:00+00:00	venus	Term change	Venus -> Mercury 
+------------
+
+Saturday, Jan 13 2024:
+1. 2024-01-13 23:42:00+00:00	mars	Term change	Mercury -> Jupiter 
+------------
+
+Sunday, Jan 14 2024:
+1. 2024-01-14 02:50:00+00:00	mercury	Sign change	Sagittarius -> Capricorn 
+------------
+2. 2024-01-14 02:50:00+00:00	mercury	Decan change	10W -> 2P 
+------------
+3. 2024-01-14 02:50:00+00:00	mercury	Term change	Mars -> Mercury 
+------------
+
+Monday, Jan 15 2024:
+1. 2024-01-15 05:30:00+00:00	venus	Decan change	9W -> 10W 
+------------
+2. 2024-01-15 07:49:00+00:00	venus	trine [240.000] vs north node 
+------------
+3. 2024-01-15 20:47:00+00:00	sun	sextile [59.999] vs moon 
+------------
+
+Tuesday, Jan 16 2024:
+1. 2024-01-16 00:38:00+00:00	sun	sextile [60.000] vs neptune 
+------------
+2. 2024-01-16 01:04:00+00:00	venus	Term change	Mercury -> Saturn 
+------------
+3. 2024-01-16 15:50:00+00:00	sun	Term change	Saturn -> Mars 
+------------
+
+Wednesday, Jan 17 2024:
+1. 2024-01-17 13:31:00+00:00	north node	Decan change	4W -> 3W 
+------------
+2. 2024-01-17 13:31:00+00:00	north node	Term change	Mars -> Mercury 
+------------
+3. 2024-01-17 23:26:00+00:00	mars	Decan change	2P -> 3P 
+------------
+
+Thursday, Jan 18 2024:
+1. 2024-01-18 08:49:00+00:00	mercury	sextile [60.000] vs saturn 
+------------
+
+Friday, Jan 19 2024:
+1. 2024-01-19 09:31:00+00:00	mercury	trine [240.000] vs jupiter 
+------------
+2. 2024-01-19 15:49:00+00:00	venus	square [90.000] vs neptune 
+------------
+
+Saturday, Jan 20 2024:
+1. 2024-01-20 00:20:00+00:00	mercury	Term change	Mercury -> Jupiter 
+------------
+2. 2024-01-20 02:47:00+00:00	venus	Term change	Saturn -> Mars 
+------------
+3. 2024-01-20 13:46:00+00:00	sun	conjunction [0.000] vs pluto 
+------------
+4. 2024-01-20 14:08:00+00:00	sun	Sign change	Capricorn -> Aquarius 
+------------
+5. 2024-01-20 14:08:00+00:00	sun	Decan change	4P -> 5S 
+------------
+6. 2024-01-20 14:08:00+00:00	sun	Term change	Mars -> Mercury 
+------------
+
+Sunday, Jan 21 2024:
+1. 2024-01-21 00:59:00+00:00	pluto	Sign change	Capricorn -> Aquarius 
+------------
+2. 2024-01-21 00:59:00+00:00	pluto	Decan change	4P -> 5S 
+------------
+3. 2024-01-21 00:59:00+00:00	pluto	Term change	Mars -> Mercury 
+------------
+
+Monday, Jan 22 2024:
+1. 2024-01-22 07:39:00+00:00	mercury	Decan change	2P -> 3P 
+------------
+
+Tuesday, Jan 23 2024:
+1. 2024-01-23 06:36:00+00:00	mars	Term change	Jupiter -> Venus 
+------------
+2. 2024-01-23 08:51:00+00:00	venus	Sign change	Sagittarius -> Capricorn 
+------------
+3. 2024-01-23 08:51:00+00:00	venus	Decan change	10W -> 2P 
+------------
+4. 2024-01-23 08:51:00+00:00	venus	Term change	Mars -> Mercury 
+------------
+
+Thursday, Jan 25 2024:
+1. 2024-01-25 06:30:00+00:00	mercury	Term change	Jupiter -> Venus 
+------------
+2. 2024-01-25 17:54:00+00:00	sun	opposition [180.000] vs moon 
+------------
+
+Saturday, Jan 27 2024:
+1. 2024-01-27 07:19:00+00:00	sun	square [270.000] vs jupiter 
+------------
+2. 2024-01-27 07:35:00+00:00	uranus	Direction change	R -> D 
+------------
+3. 2024-01-27 11:21:00+00:00	sun	Term change	Mercury -> Venus 
+------------
+4. 2024-01-27 14:59:00+00:00	mercury	conjunction [0.000] vs mars 
+------------
+
+Sunday, Jan 28 2024:
+1. 2024-01-28 06:04:00+00:00	venus	sextile [60.000] vs saturn 
+------------
+2. 2024-01-28 21:07:00+00:00	mercury	trine [240.000] vs uranus 
+------------
+
+Monday, Jan 29 2024:
+1. 2024-01-29 01:02:00+00:00	venus	trine [240.000] vs jupiter 
+------------
+2. 2024-01-29 01:15:00+00:00	venus	Term change	Mercury -> Jupiter 
+------------
+3. 2024-01-29 02:07:00+00:00	mercury	square [270.000] vs north node 
+------------
+4. 2024-01-29 12:16:00+00:00	mercury	Decan change	3P -> 4P 
+------------
+5. 2024-01-29 23:41:00+00:00	mars	trine [240.000] vs uranus 
+------------
+
+Tuesday, Jan 30 2024:
+1. 2024-01-30 07:04:00+00:00	mars	square [270.000] vs north node 
+------------
+2. 2024-01-30 10:14:00+00:00	sun	Decan change	5S -> 6S 
+------------
+3. 2024-01-30 21:14:00+00:00	mercury	Term change	Venus -> Saturn 
+------------
+

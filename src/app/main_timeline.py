@@ -1,12 +1,18 @@
 from datetime import datetime
+from core.enums import AspectType
+from core.objects.points import POINTS_NO_MOON
 from core.positions.root_position_factory import create_geo_position
+from events.aspects.aspect import DEFAULT_ASPECTS
 from events.zodiacal.astro_event import (
+    DecanChange,
     DeclinationExtreme,
+    DirectionChange,
     LatitudeExtreme,
     NakshatraChange,
     PhaseExtreme,
     SpeedExtreme,
     TermChange,
+    TropicalSignChange,
 )
 from out.file import to_text_file
 from tools.timeline.timeline_factory import create_timeline
@@ -21,14 +27,21 @@ from core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mgp
 
 
 def timeline():
-    start = datetime(2023, 12, 24)
-    end = datetime(2024, 1, 10)
+    start = datetime(2024, 1, 1)
+    end = datetime(2024, 1, 31)
 
-    timeline_config = TimelineConfig.default_no_moon(start, end)
+    timeline_config = TimelineConfig.default(
+        start,
+        end,
+        1,
+        POINTS_NO_MOON,
+        [TropicalSignChange, DecanChange, TermChange, DirectionChange],
+        [a for a in DEFAULT_ASPECTS if a != AspectType.QUINTILE],
+    )
     timeline = create_timeline(timeline_config)
     timeline_printer = TimelinePrinter(timeline)
 
-    timeline_printer.print_to_file("timeline dec 24 - jan 10.txt")
+    timeline_printer.print_to_file("timeline jan 1 - jan 31.txt")
 
 
 def timeline_tv_script():

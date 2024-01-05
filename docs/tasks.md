@@ -1,34 +1,31 @@
 Current:
 - Implement vedic features
-- Square outs
-- Integrate helio
+  - To effectively analyze dasa, additional Vedic features needed
+- Implementing Jenkins techniques (gann module)
+- Integrating helio
+  - Helio is integrated in gann module
+  - Helio needs to be integrated with timeline and horoscope modules
+- Ongoing positions refactor keep messing up working modules. Put an end to it
+- Timeline config in JSON
+- Fix extreme events
 
 
 TBD:
-- Refactor tranits to use factories
+- Re-implement Transits
 - Add Lilith, Ceres, Chiron
-- Add helio
 - Implement eclipses
 - Implement perigee/apogee
 - Implement Sub Lords
-- Aspect finder: I give an aspect and it lists all the occurences in date range
-- Implement extremes (speed, declination)
-- Event filtering
-- Implement sidereal planet strength
 - Implement cycles. For example: there is a Venus - Jupiter aspect coming up on the timeline. Have the option to go into it and show current past and future cycles
 - Write functional OrbMap
 
 Timeline:
 - Add geo and helio crossings (planet at the same degree)
-- Add declination extremes
-- Add latitude extremes
-- Add speed extremes
+- Phase extremes (min/max elongations)
 - Helio changes
-- Sidereal changes
-- make it multithreaded
+- Make it multithreaded
 
 Horoscope:
-- Add speed
 - Printers: configure the fields to display
 
 
@@ -51,8 +48,7 @@ Done:
 - Investigate discrepancy vs Astrolog
 - Speed/declination snapshot
 - folder reorg
-- 
-
+- extreme events
 
 Fixed bugs:
 - Dec 08: there is a Merc-Jup Trine (240) in the timeline but it is not showing in the horoscope
