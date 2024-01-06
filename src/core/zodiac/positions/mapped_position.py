@@ -34,5 +34,5 @@ class MappedPosition:
         return TropicalAttributes(self.base_position)
 
     @CachedProperty
-    def sidereal(self) -> VedicAttributes:
+    def vedic(self) -> VedicAttributes:
         return VedicAttributes(self.base_position)

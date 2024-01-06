@@ -15,8 +15,8 @@ class VedicHoroscope(Horoscope):
     def calculate_atmakaraka(self) -> MappedGeoPosition:
         sorted_mps = sorted(
             self.mgps,
-            key=lambda mp: int(mp.sidereal.position[2:])
+            key=lambda mp: int(mp.vedic.position[2:])
             if mp.point != NN
-            else int(30 - mp.sidereal.position[2:]),
+            else int(30 - mp.vedic.position[2:]),
         )
         return sorted_mps[0]

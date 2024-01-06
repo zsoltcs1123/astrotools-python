@@ -28,12 +28,12 @@ class TropicalSignChange(PositionalEvent):
 
 
 @dataclass
-class VedicSignChange(PositionalEvent):
+class SiderealSignChange(PositionalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.cs}\tSidereal\tSign change\t{self.previous.sidereal.sign.name} -> {self.current.sidereal.sign.name}"
+        return f"{self.current.dt}\t{self.current.point}\t{self.current.cs}\tSidereal\tSign change\t{self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
 
     def label(self) -> str:
-        return f"{self.current.point} VedicSignChange {self.previous.sidereal.sign.name} -> {self.current.sidereal.sign.name}"
+        return f"{self.current.point} SiderealSignChange {self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
 
 
 @dataclass
@@ -57,10 +57,10 @@ class TermChange(PositionalEvent):
 @dataclass
 class NakshatraChange(PositionalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.cs}\tSidereal\tNakshatra change\t{self.previous.sidereal.nakshatra.name} -> {self.current.sidereal.nakshatra.name}"
+        return f"{self.current.dt}\t{self.current.point}\t{self.current.cs}\tSidereal\tNakshatra change\t{self.previous.vedic.nakshatra.name} -> {self.current.vedic.nakshatra.name}"
 
     def label(self) -> str:
-        return f"{self.current.point} NakshatraChange {self.previous.sidereal.nakshatra.name}[{self.previous.sidereal.nakshatra.ruler}] -> {self.current.sidereal.nakshatra.name}[{self.current.sidereal.nakshatra.ruler}]"
+        return f"{self.current.point} NakshatraChange {self.previous.vedic.nakshatra.name}[{self.previous.vedic.nakshatra.ruler}] -> {self.current.vedic.nakshatra.name}[{self.current.vedic.nakshatra.ruler}]"
 
 
 @dataclass

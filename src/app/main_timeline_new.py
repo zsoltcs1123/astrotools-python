@@ -33,6 +33,22 @@ multi_cfg = """
 {
   "configurations": [
     {
+      "coordinateSystem": "geo",
+      "startDate": "2024-01-01",
+      "endDate": "2024-01-10",
+      "intervalMinutes": 1,
+      "points": ["sun", "moon", "mercury", "north node"],
+      "nodeCalc": "mean",
+      "events": [
+        "TropicalSignChange",
+        "SiderealSignChange",
+        "TermChange",
+        "NakshatraChange",
+        "DecanChange",
+        "DirectionChange"
+      ]
+    },
+    {
       "coordinateSystem": "helio",
       "startDate": "2024-01-01",
       "endDate": "2024-01-10",
@@ -41,7 +57,7 @@ multi_cfg = """
       "nodeCalc": "mean",
       "events": [
         "TropicalSignChange",
-        "VedicSignChange"
+        "SiderealSignChange"
       ]
     }
   ]

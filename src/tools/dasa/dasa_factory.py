@@ -29,8 +29,8 @@ DASA_TOTAL = 120
 def generate_dasas(
     moon_position: MappedGeoPosition, target_level: DasaLevel
 ) -> List[Dasa]:
-    nakshatra = moon_position.sidereal.nakshatra
-    sidereal_lon = moon_position.sidereal.lon
+    nakshatra = moon_position.vedic.nakshatra
+    sidereal_lon = moon_position.vedic.lon
     progress = nakshatra.degree_range.progress(sidereal_lon.decimal)
 
     lord = nakshatra.ruler

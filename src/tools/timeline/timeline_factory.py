@@ -33,8 +33,9 @@ def create_timelines(
     position_factory: PositionFactory,
     positional_event_factory: EventFactory,
     extreme_event_factory: EventFactory,
+    aggregate: bool = True,
 ) -> List[Timeline]:
-    return [
+    timelines = [
         create_timeline(
             config,
             position_factory,
@@ -43,6 +44,11 @@ def create_timelines(
         )
         for config in configs
     ]
+
+    if aggregate:
+        return [_aggregate_timelines(timelines)]
+    else:
+        return timelines
 
 
 def create_timeline(
@@ -139,3 +145,11 @@ def _generate_extreme_events(
         _logger.info(f"Generating {tl_config.coordinate_system} extreme events for {p}")
         events += factory(mp_list, event_types)
     return events
+
+
+def _aggregate_timelines(timelines: List[Timeline]) -> Timeline:
+    _logger.info("Aggregating timelines...")
+    events = []
+    for timeline in timelines:
+        events += timeline.events
+    return Timeline(events)
