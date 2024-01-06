@@ -83,7 +83,7 @@ def _check_tropical_sign_change(
 
 
 def _check_vedic_sign_change(previous: mp, current: mp) -> Optional[VedicSignChange]:
-    if previous.vedic.sign.id != current.vedic.sign.id:
+    if previous.sidereal.sign.id != current.sidereal.sign.id:
         return VedicSignChange(current.dt, previous, current)
 
 
@@ -98,7 +98,7 @@ def _check_direction_change(previous: mp, current: mp) -> Optional[DirectionChan
 
 
 def _check_nakshatra_change(previous: mp, current: mp) -> Optional[NakshatraChange]:
-    if previous.vedic.nakshatra.id != current.vedic.nakshatra.id:
+    if previous.sidereal.nakshatra.id != current.sidereal.nakshatra.id:
         return NakshatraChange(current.dt, previous, current)
 
 

@@ -19,16 +19,21 @@ def create_position(point: str, dt: dt, coord_system: CoordinateSystem) -> BaseP
     )
 
 
-def create_geo_position(point: str, dt: dt, node_calc: str = MEAN_NODE) -> GeoPosition:
-    dt = dt.replace(tzinfo=timezone.utc)
-    if point in PLANETS:
-        return _geo(point, dt)
-    elif point == NN:
-        return _north_node(dt, node_calc)
-    elif point == SN:
-        return _south_node(dt, node_calc)
+def create_positions(config: PositionFactoryConfig) -> List[BasePosition]:
+    if config.coordinate_system == CoordinateSystem.HELIO:
+        return create_helio_positions(config)
     else:
-        raise (ValueError(f"{point} not supported"))
+        return create_geo_positions(config)
+
+
+def create_helio_positions(config: PositionFactoryConfig) -> List[HelioPosition]:
+    dts = calculate_intervals(config.start, config.end, config.interval_minutes)
+    return [create_helio_position(config.point, dt) for dt in dts]
+
+
+def create_geo_positions(config: PositionFactoryConfig) -> List[GeoPosition]:
+    dts = calculate_intervals(config.start, config.end, config.interval_minutes)
+    return [create_geo_position(config.point, dt, config.node_calc) for dt in dts]
 
 
 def create_helio_position(point: str, dt: dt) -> HelioPosition:
@@ -40,16 +45,16 @@ def create_helio_position(point: str, dt: dt) -> HelioPosition:
         return _helio(point, dt)
 
 
-def create_helio_positions(config: PositionFactoryConfig) -> List[HelioPosition]:
-    dts = calculate_intervals(config.start, config.end, config.interval_minutes)
-    return [
-        create_helio_position(config.point, dt, config.coordinate_system) for dt in dts
-    ]
-
-
-def create_geo_positions(config: PositionFactoryConfig) -> List[GeoPosition]:
-    dts = calculate_intervals(config.start, config.end, config.interval_minutes)
-    return [create_geo_position(config.point, dt, config.node_calc) for dt in dts]
+def create_geo_position(point: str, dt: dt, node_calc: str = MEAN_NODE) -> GeoPosition:
+    dt = dt.replace(tzinfo=timezone.utc)
+    if point in PLANETS:
+        return _geo(point, dt)
+    elif point == NN:
+        return _north_node(dt, node_calc)
+    elif point == SN:
+        return _south_node(dt, node_calc)
+    else:
+        raise (ValueError(f"{point} not supported"))
 
 
 def _helio(point: str, dt: dt) -> HelioPosition:

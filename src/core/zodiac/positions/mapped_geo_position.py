@@ -1,4 +1,5 @@
 from typing import List
+from core.enums import CoordinateSystem
 from core.positions.geo_position import GeoPosition
 from dataclasses import dataclass
 from core.zodiac.positions.mapped_position import MappedPosition
@@ -23,6 +24,7 @@ class MappedGeoPosition(MappedPosition):
         self.retrograde = self.base_position.speed.decimal < 0
         self.stationary = self.base_position.speed.decimal == 0
         self.direction = "R" if self.retrograde else "S" if self.stationary else "D"
+        self.cs = CoordinateSystem.GEO
 
     @classmethod
     def from_planetary_positions(cls, planetary_positions: List[GeoPosition]):

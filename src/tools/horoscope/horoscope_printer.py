@@ -164,10 +164,10 @@ def _get_vedic_values(horoscope: Horoscope, points_filter: List[str] = []) -> st
         str += (
             f"\n{mp.point:<10}"
             f"{(' R' if mp.retrograde else ''):<3}"
-            f"{mp.vedic.position:<10}"
-            f"{mp.vedic.house(horoscope.cusps):<10}"
-            f"{mp.vedic.sign_ruler:<10}"
-            f"{mp.vedic.nakshatra.name:<20}"
-            f"{mp.vedic.nakshatra_ruler:<10}"
+            f"{mp.sidereal.position:<10}"
+            f"{mp.sidereal.house(horoscope.cusps):<10}"
+            f"{mp.sidereal.sign_ruler:<10}"
+            f"{mp.sidereal.nakshatra.name:<20}"
+            f"{mp.sidereal.nakshatra_ruler:<10}"
         )
     return str

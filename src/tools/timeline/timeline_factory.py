@@ -28,12 +28,29 @@ PositionFactory = Callable[[PositionFactoryConfig], List[bp]]
 EventFactory = Callable[[List[mp], List[type]], List[AstroEvent]]
 
 
+def create_timelines(
+    configs: List[TimelineConfig],
+    position_factory: PositionFactory,
+    positional_event_factory: EventFactory,
+    extreme_event_factory: EventFactory,
+) -> List[Timeline]:
+    return [
+        create_timeline(
+            config,
+            position_factory,
+            positional_event_factory,
+            extreme_event_factory,
+        )
+        for config in configs
+    ]
+
+
 def create_timeline(
     config: TimelineConfig,
     position_factory: PositionFactory,
     positional_event_factory: EventFactory,
     extreme_event_factory: EventFactory,
-):
+) -> Timeline:
     mps = _generate_mapped_positions(config, position_factory)
 
     events = []
@@ -46,14 +63,14 @@ def create_timeline(
 
     if positional_event_types:
         events += _generate_positional_events(
-            mps, positional_event_types, positional_event_factory
+            config, mps, positional_event_types, positional_event_factory
         )
 
     extreme_event_types = [e for e in config.events if e == ExtremeEvent]
 
     if extreme_event_types:
         events += _generate_extreme_events(
-            mps, extreme_event_types, extreme_event_factory
+            config, mps, extreme_event_types, extreme_event_factory
         )
 
     aspects = []
@@ -74,7 +91,7 @@ def _generate_mapped_positions(
 ) -> Dict[str, List[mp]]:
     mps = {}
     for point in tl_config.points:
-        _logger.info(f"Generating positions for {point}")
+        _logger.info(f"Generating {tl_config.coordinate_system} positions for {point}")
         factory_config = PositionFactoryConfig(
             tl_config.coordinate_system,
             point,
@@ -95,24 +112,30 @@ def _generate_mapped_positions(
 
 
 def _generate_positional_events(
+    tl_config: TimelineConfig,
     mps: Dict[str, List[mp]],
     event_types: List[type],
     factory: EventFactory,
 ) -> List[Type[AstroEvent]]:
     events = []
     for p, mp_list in mps.items():
-        _logger.info(f"Generating positional events for {p}")
+        _logger.info(
+            f"Generating {tl_config.coordinate_system} positional events for {p}"
+        )
         events += factory(mp_list, event_types)
     return events
 
 
 def _generate_extreme_events(
-    mps: Dict[str, List[mp]], event_types: List[type], factory: EventFactory
+    tl_config: TimelineConfig,
+    mps: Dict[str, List[mp]],
+    event_types: List[type],
+    factory: EventFactory,
 ) -> List[AstroEvent]:
     events = []
     for p, mp_list in mps.items():
         if p == NN or p == SN or p == SUN:
             continue
-        _logger.info(f"Generating extreme events for {p}")
+        _logger.info(f"Generating {tl_config.coordinate_system} extreme events for {p}")
         events += factory(mp_list, event_types)
     return events

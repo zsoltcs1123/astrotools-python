@@ -45,7 +45,7 @@ def create_horoscope(dt: datetime, config: HoroscopeConfig) -> Horoscope:
         return Horoscope(dt, config, mgps, pmgps, angles, aspects, cusps)
     else:
         mp_asc = next(mp for mp in mgps if mp.point == ASC)
-        cusps = _transform_cusps(dt, config, cusps, mp_asc.vedic.lon.decimal)
+        cusps = _transform_cusps(dt, config, cusps, mp_asc.sidereal.lon.decimal)
         return VedicHoroscope(dt, config, mgps, angles, aspects, cusps)
 
 
