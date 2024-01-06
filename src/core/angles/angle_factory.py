@@ -1,13 +1,17 @@
 from core.angles.angle import Angle
-from core.positions.position_factory import create_geo_position
-from core.zodiac.positions.mapped_geo_position import (
-    MappedGeoPosition as MappedGeoPosition,
-)
+from core.enums import NodeCalc
+from core.factories import MappedPositionFactory, PositionFactory
 from typing import Callable, Dict, List
+
+from core.zodiac.positions.mapped_position import MappedPosition
+from util.console_logger import ConsoleLogger
+
+
+_logger = ConsoleLogger("AngleFactory")
 
 
 def generate_angles_dict(
-    mps: List[MappedGeoPosition], target_selector: Callable[[str], List[str]]
+    mps: List[MappedPosition], target_selector: Callable[[str], List[str]]
 ) -> Dict[str, List[Angle]]:
     angles = {}
     for mp in mps:
@@ -25,16 +29,25 @@ def generate_angles_dict(
 
 
 def generate_angles_list(
-    mps: Dict[str, List[MappedGeoPosition]], target_selector: Callable[[str], List[str]]
+    mps: Dict[str, List[MappedPosition]],
+    targets: Dict[str, List[str]],
+    p_factory: PositionFactory,
+    mp_factory: MappedPositionFactory,
+    node_calc: NodeCalc,
 ) -> List[Angle]:
     angles = []
     for p, mp_list in mps.items():
-        targets = target_selector(p)
+        current_targets = targets[p]
+
+        _logger.info(f"Generating angles for {p}")
 
         for source_mp in mp_list:
-            for t in targets:
-                target_bp = create_geo_position(t, source_mp.dt)
-                target_mp = MappedGeoPosition(target_bp)
+            for t in current_targets:
+                if t == source_mp.point:
+                    continue
+
+                target_bp = p_factory(t, source_mp.dt, node_calc)
+                target_mp = mp_factory(target_bp)
                 angle = Angle(source_mp, target_mp)
                 angles.append(angle)
 

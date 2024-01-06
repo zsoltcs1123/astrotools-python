@@ -7,8 +7,11 @@ from core.positions.helio_position import HelioPosition
 from core.enums import CoordinateSystem, NodeCalc
 from core.objects.points import EARTH, MEAN_NODE, MOON, NN, PLANETS, SN, SUN
 from core.units.degree import Degree
+from util.console_logger import ConsoleLogger
 from util.interval import calculate_intervals
 import core.ephemeris.swisseph_api as swe_api
+
+_logger = ConsoleLogger("PositionFactory")
 
 
 def create_position(point: str, dt: dt, coord_system: CoordinateSystem) -> BasePosition:
@@ -27,11 +30,13 @@ def create_positions(config: PositionFactoryConfig) -> List[BasePosition]:
 
 
 def create_helio_positions(config: PositionFactoryConfig) -> List[HelioPosition]:
+    _logger.debug(f"Generating positions for config: {config}")
     dts = calculate_intervals(config.start, config.end, config.interval_minutes)
     return [create_helio_position(config.point, dt) for dt in dts]
 
 
 def create_geo_positions(config: PositionFactoryConfig) -> List[GeoPosition]:
+    _logger.debug(f"Generating positions for config: {config}")
     dts = calculate_intervals(config.start, config.end, config.interval_minutes)
     return [create_geo_position(config.point, dt, config.node_calc) for dt in dts]
 
@@ -45,7 +50,7 @@ def create_helio_position(point: str, dt: dt) -> HelioPosition:
         return _helio(point, dt)
 
 
-def create_geo_position(point: str, dt: dt, node_calc: str = MEAN_NODE) -> GeoPosition:
+def create_geo_position(point: str, dt: dt, node_calc: NodeCalc) -> GeoPosition:
     dt = dt.replace(tzinfo=timezone.utc)
     if point in PLANETS:
         return _geo(point, dt)

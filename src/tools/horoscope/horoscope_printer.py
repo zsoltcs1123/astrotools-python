@@ -1,6 +1,6 @@
 from typing import List
 from core.enums import HoroscopeType
-from events.aspects.aspect import Aspect
+from core.events.aspects.aspect import Aspect
 from out.file import to_text_file
 from tools.horoscope.horoscope import Horoscope
 import pandas as pd
@@ -77,7 +77,9 @@ def _generate_str(
                 continue
             str += f"\n{k}\n-------"
             for asp in v:
-                str += f"\n{_get_aspect_str(horoscope.config.type, asp)}, {asp.type}"
+                str += (
+                    f"\n{_get_aspect_str(horoscope.config.type, asp)}, {asp.asp_type}"
+                )
             str += "\n"
 
         str += "---------------------\n\n\n"

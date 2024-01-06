@@ -4,8 +4,8 @@ from core.angles.angle import Angle
 from core.angles.angle_factory import generate_angles_dict
 from core.enums import HoroscopeType, HouseSystem
 from core.positions.position_factory import create_geo_position
-from events.aspects.aspect_finder import AspectFinder
-from events.aspects.orb_map import OrbMap
+from core.events.aspects.aspect_finder import AspectFinder
+from core.events.aspects.orb_map import OrbMap
 from core.objects.points import (
     ASC,
     MC,

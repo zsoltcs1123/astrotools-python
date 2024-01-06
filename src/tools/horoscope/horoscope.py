@@ -5,7 +5,7 @@ from core.units.degree import Degree
 from core.zodiac.positions.mapped_geo_position import MappedGeoPosition
 from tools.horoscope.horoscope_config import HoroscopeConfig
 from core.angles.angle import Angle
-from events.aspects.aspect import Aspect
+from core.events.aspects.aspect import Aspect
 
 
 class Horoscope:

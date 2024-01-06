@@ -1,7 +1,7 @@
 from typing import Callable, List, Optional
 from core.zodiac.positions.mapped_position import MappedPosition as mp
 from util.common import find_smallest_elements, group_by, integral_ends_with
-from events.astro_event import (
+from core.events.astro_event import (
     AstroEvent,
     DecanChange,
     TropicalSignChange,

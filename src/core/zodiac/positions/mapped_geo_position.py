@@ -14,18 +14,10 @@ class MappedGeoPosition(MappedPosition):
 
     def __init__(
         self,
-        root_position: GeoPosition,
-        previous_position: "MappedGeoPosition" = None,
-        sun_position: GeoPosition = None,
+        base_position: GeoPosition,
     ):
-        self.base_position = root_position
-        self.previous_position = previous_position
-        self.sun_position = sun_position
+        self.base_position = base_position
         self.retrograde = self.base_position.speed.decimal < 0
         self.stationary = self.base_position.speed.decimal == 0
         self.direction = "R" if self.retrograde else "S" if self.stationary else "D"
         self.cs = CoordinateSystem.GEO
-
-    @classmethod
-    def from_planetary_positions(cls, planetary_positions: List[GeoPosition]):
-        return [cls(position) for position in planetary_positions]

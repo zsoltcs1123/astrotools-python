@@ -1,0 +1,200 @@
+Monday, Jan 01 2024:
+1. 2024-01-01 13:00:00+00:00	venus	square [90.021] vs saturn 
+------------
+2. 2024-01-01 08:59:00+00:00	moon	trine [119.999] vs sun 
+------------
+
+Tuesday, Jan 02 2024:
+1. 2024-01-02 04:00:00+00:00	mercury	GEO	Direction change	R -> D 
+------------
+
+Wednesday, Jan 03 2024:
+1. 2024-01-03 11:00:00+00:00	venus	inconjunct [210.004] vs jupiter 
+------------
+2. 2024-01-03 21:00:00+00:00	mars	semi-sextile [30.004] vs pluto 
+------------
+
+Thursday, Jan 04 2024:
+1. 2024-01-04 15:00:00+00:00	mars	GEO	Tropical	Sign change	Sagittarius -> Capricorn 
+------------
+2. 2024-01-04 15:00:00+00:00	mars	GEO	Tropical	Term change	Mars -> Mercury 
+------------
+3. 2024-01-04 15:00:00+00:00	mars	GEO	Tropical	Decan change	10W -> 2P 
+------------
+4. 2024-01-04 00:00:00+00:00	mars	semi-sextile [29.915] vs pluto 
+------------
+5. 2024-01-04 03:30:00+00:00	moon	square [90.004] vs sun 
+------------
+
+Saturday, Jan 06 2024:
+1. 2024-01-06 19:12:00+00:00	moon	sextile [60.002] vs sun 
+------------
+
+Sunday, Jan 07 2024:
+1. 2024-01-07 02:00:00+00:00	venus	GEO	Tropical	Decan change	8W -> 9W 
+------------
+
+Monday, Jan 08 2024:
+1. 2024-01-08 17:00:00+00:00	venus	GEO	Tropical	Term change	Jupiter -> Venus 
+------------
+2. 2024-01-08 23:00:00+00:00	mercury	square [90.076] vs neptune 
+------------
+
+Tuesday, Jan 09 2024:
+1. 2024-01-09 01:00:00+00:00	mercury	square [90.013] vs neptune 
+------------
+2. 2024-01-09 23:00:00+00:00	mars	sextile [60.099] vs saturn 
+------------
+3. 2024-01-09 23:00:00+00:00	uranus	trine [239.952] vs sun 
+------------
+4. 2024-01-09 05:48:00+00:00	moon	semi-sextile [29.999] vs sun 
+------------
+
+Wednesday, Jan 10 2024:
+1. 2024-01-10 01:00:00+00:00	mercury	GEO	Tropical	Term change	Saturn -> Mars 
+------------
+2. 2024-01-10 00:00:00+00:00	uranus	trine [239.995] vs sun 
+------------
+3. 2024-01-10 03:00:00+00:00	mars	sextile [59.991] vs saturn 
+------------
+
+Friday, Jan 12 2024:
+1. 2024-01-12 19:00:00+00:00	venus	GEO	Tropical	Term change	Venus -> Mercury 
+------------
+2. 2024-01-12 11:00:00+00:00	mars	trine [240.009] vs jupiter 
+------------
+
+Saturday, Jan 13 2024:
+1. 2024-01-13 22:00:00+00:00	mercury	semi-sextile [29.985] vs pluto 
+------------
+2. 2024-01-13 16:05:00+00:00	moon	semi-sextile [29.998] vs sun 
+------------
+
+Sunday, Jan 14 2024:
+1. 2024-01-14 03:00:00+00:00	mercury	GEO	Tropical	Sign change	Sagittarius -> Capricorn 
+------------
+2. 2024-01-14 03:00:00+00:00	mercury	GEO	Tropical	Term change	Mars -> Mercury 
+------------
+3. 2024-01-14 03:00:00+00:00	mercury	GEO	Tropical	Decan change	10W -> 2P 
+------------
+4. 2024-01-14 00:00:00+00:00	mars	GEO	Tropical	Term change	Mercury -> Jupiter 
+------------
+5. 2024-01-14 13:00:00+00:00	venus	inconjunct [209.998] vs uranus 
+------------
+
+Monday, Jan 15 2024:
+1. 2024-01-15 06:00:00+00:00	venus	GEO	Tropical	Decan change	9W -> 10W 
+------------
+2. 2024-01-15 08:00:00+00:00	venus	trine [240.010] vs north node 
+------------
+3. 2024-01-15 23:00:00+00:00	neptune	sextile [60.067] vs sun 
+------------
+4. 2024-01-15 20:47:00+00:00	moon	sextile [59.999] vs sun 
+------------
+
+Tuesday, Jan 16 2024:
+1. 2024-01-16 02:00:00+00:00	venus	GEO	Tropical	Term change	Mercury -> Saturn 
+------------
+2. 2024-01-16 01:00:00+00:00	neptune	sextile [59.984] vs sun 
+------------
+
+Thursday, Jan 18 2024:
+1. 2024-01-18 00:00:00+00:00	mars	GEO	Tropical	Decan change	2P -> 3P 
+------------
+2. 2024-01-18 09:00:00+00:00	mercury	sextile [59.992] vs saturn 
+------------
+3. 2024-01-18 03:53:00+00:00	moon	square [269.996] vs sun 
+------------
+
+Friday, Jan 19 2024:
+1. 2024-01-19 10:00:00+00:00	mercury	trine [240.024] vs jupiter 
+------------
+2. 2024-01-19 16:00:00+00:00	venus	square [89.991] vs neptune 
+------------
+
+Saturday, Jan 20 2024:
+1. 2024-01-20 01:00:00+00:00	mercury	GEO	Tropical	Term change	Mercury -> Jupiter 
+------------
+2. 2024-01-20 03:00:00+00:00	venus	GEO	Tropical	Term change	Saturn -> Mars 
+------------
+3. 2024-01-20 13:57:00+00:00	moon	trine [240.001] vs sun 
+------------
+
+Sunday, Jan 21 2024:
+1. 2024-01-21 01:00:00+00:00	pluto	GEO	Tropical	Sign change	Capricorn -> Aquarius 
+------------
+2. 2024-01-21 01:00:00+00:00	pluto	GEO	Tropical	Term change	Mars -> Mercury 
+------------
+3. 2024-01-21 01:00:00+00:00	pluto	GEO	Tropical	Decan change	4P -> 5S 
+------------
+
+Monday, Jan 22 2024:
+1. 2024-01-22 08:00:00+00:00	mercury	GEO	Tropical	Decan change	2P -> 3P 
+------------
+
+Tuesday, Jan 23 2024:
+1. 2024-01-23 09:00:00+00:00	venus	GEO	Tropical	Sign change	Sagittarius -> Capricorn 
+------------
+2. 2024-01-23 09:00:00+00:00	venus	GEO	Tropical	Term change	Mars -> Mercury 
+------------
+3. 2024-01-23 09:00:00+00:00	venus	GEO	Tropical	Decan change	10W -> 2P 
+------------
+4. 2024-01-23 07:00:00+00:00	mars	GEO	Tropical	Term change	Jupiter -> Venus 
+------------
+5. 2024-01-23 10:00:00+00:00	venus	semi-sextile [30.018] vs pluto 
+------------
+6. 2024-01-23 02:43:00+00:00	moon	inconjunct [210.002] vs sun 
+------------
+
+Thursday, Jan 25 2024:
+1. 2024-01-25 07:00:00+00:00	mercury	GEO	Tropical	Term change	Jupiter -> Venus 
+------------
+2. 2024-01-25 17:54:00+00:00	moon	opposition [180.000] vs sun 
+------------
+
+Friday, Jan 26 2024:
+1. 2024-01-26 07:00:00+00:00	saturn	semi-sextile [29.995] vs sun 
+------------
+
+Saturday, Jan 27 2024:
+1. 2024-01-27 08:00:00+00:00	uranus	GEO	Direction change	R -> D 
+------------
+2. 2024-01-27 07:00:00+00:00	jupiter	square [269.988] vs sun 
+------------
+
+Sunday, Jan 28 2024:
+1. 2024-01-28 06:00:00+00:00	venus	sextile [60.003] vs saturn 
+------------
+2. 2024-01-28 21:00:00+00:00	mercury	trine [239.993] vs uranus 
+------------
+3. 2024-01-28 23:00:00+00:00	venus	trine [239.904] vs jupiter 
+------------
+4. 2024-01-28 11:23:00+00:00	moon	inconjunct [149.997] vs sun 
+------------
+
+Monday, Jan 29 2024:
+1. 2024-01-29 13:00:00+00:00	mercury	GEO	Tropical	Decan change	3P -> 4P 
+------------
+2. 2024-01-29 02:00:00+00:00	venus	GEO	Tropical	Term change	Mercury -> Jupiter 
+------------
+3. 2024-01-29 01:00:00+00:00	venus	trine [239.998] vs jupiter 
+------------
+4. 2024-01-29 02:00:00+00:00	mercury	square [269.993] vs north node 
+------------
+5. 2024-01-29 23:00:00+00:00	mars	trine [239.979] vs uranus 
+------------
+
+Tuesday, Jan 30 2024:
+1. 2024-01-30 22:00:00+00:00	mercury	GEO	Tropical	Term change	Venus -> Saturn 
+------------
+2. 2024-01-30 00:00:00+00:00	mars	trine [240.010] vs uranus 
+------------
+3. 2024-01-30 07:00:00+00:00	mars	square [269.997] vs north node 
+------------
+
+Wednesday, Jan 31 2024:
+1. 2024-01-31 12:00:00+00:00	venus	GEO	Tropical	Decan change	2P -> 3P 
+------------
+2. 2024-01-31 05:00:00+00:00	mars	GEO	Tropical	Decan change	3P -> 4P 
+------------
+

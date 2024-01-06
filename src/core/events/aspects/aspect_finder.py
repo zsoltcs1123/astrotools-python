@@ -46,7 +46,7 @@ class AspectFinder:
         )
 
         groups = groupby(
-            aspects, key=lambda asp: f"{asp.type.name} vs {asp.angle.target.point}"
+            aspects, key=lambda asp: f"{asp.asp_type.name} vs {asp.angle.target.point}"
         )
 
         aspects = []

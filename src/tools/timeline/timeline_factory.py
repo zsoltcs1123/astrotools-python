@@ -1,18 +1,25 @@
-from typing import Callable, Dict, List, Type
-from core.enums import CoordinateSystem
-from core.positions.base_position import BasePosition as bp
+from typing import Dict, List, Type
+from core.angles.angle import Angle
+from core.angles.angle_factory import generate_angles_list
+from core.events.aspects.aspect import Aspect
+from core.events.aspects.aspect_factory import find_exact_aspects
+from core.events.positional.positional_event_factory import create_positional_events
+from core.factories import (
+    MappedPositionsFactory,
+    PositionsFactory,
+)
 from core.positions.position_factory_config import PositionFactoryConfig
-from core.zodiac.positions.mapped_helio_position import MappedHelioPosition
 from core.zodiac.positions.mapped_position import MappedPosition as mp
-from events.astro_event import (
+from core.events.astro_event import (
     AstroEvent,
     ExtremeEvent,
     PositionalEvent,
     TropicalProgression,
 )
-from core.objects.points import NN, SN, SUN
+from core.objects.points import SUN, get_default_angle_targets
 from tools.timeline.timeline import Timeline
 from tools.timeline.timeline_config import (
+    AspectsConfig,
     TimelineConfig,
 )
 from util.console_logger import ConsoleLogger
@@ -24,26 +31,11 @@ from core.zodiac.positions.mapped_geo_position import (
 _logger = ConsoleLogger("TimelineFactory")
 
 
-PositionFactory = Callable[[PositionFactoryConfig], List[bp]]
-EventFactory = Callable[[List[mp], List[type]], List[AstroEvent]]
-
-
 def create_timelines(
     configs: List[TimelineConfig],
-    position_factory: PositionFactory,
-    positional_event_factory: EventFactory,
-    extreme_event_factory: EventFactory,
     aggregate: bool = True,
 ) -> List[Timeline]:
-    timelines = [
-        create_timeline(
-            config,
-            position_factory,
-            positional_event_factory,
-            extreme_event_factory,
-        )
-        for config in configs
-    ]
+    timelines = [create_timeline(config) for config in configs]
 
     if aggregate:
         return [_aggregate_timelines(timelines)]
@@ -53,11 +45,10 @@ def create_timelines(
 
 def create_timeline(
     config: TimelineConfig,
-    position_factory: PositionFactory,
-    positional_event_factory: EventFactory,
-    extreme_event_factory: EventFactory,
 ) -> Timeline:
-    mps = _generate_mapped_positions(config, position_factory)
+    mps = _generate_mapped_positions(
+        config, config.positions_factory, config.mapped_positions_factory
+    )
 
     events = []
 
@@ -68,32 +59,32 @@ def create_timeline(
     ]
 
     if positional_event_types:
-        events += _generate_positional_events(
-            config, mps, positional_event_types, positional_event_factory
-        )
+        events += _generate_positional_events(config, mps, positional_event_types)
 
     extreme_event_types = [e for e in config.events if e == ExtremeEvent]
 
     if extreme_event_types:
         events += _generate_extreme_events(
-            config, mps, extreme_event_types, extreme_event_factory
+            config,
+            mps,
+            extreme_event_types,
         )
 
     aspects = []
 
-    # if config.aspects:
-    #     aspect_finder = AspectFinder(config.orb_map, config.aspects)
-    #     _logger.info(f"Generating angles")
-    #     angles = generate_angles_list(mps, get_default_angle_targets)
-    #     _logger.info(f"Calculating aspects...")
-    #     aspects = aspect_finder.find_exact_aspects(angles)
+    if config.aspects:
+        for aspc in config.aspects:
+            angles = _generate_angles(config, aspc, mps)
+            aspects += _generate_aspects(aspc, angles)
 
+    _logger.debug(f"Identified {len(aspects)} aspects")
     return Timeline(events + aspects)
 
 
 def _generate_mapped_positions(
     tl_config: TimelineConfig,
-    factory: PositionFactory,
+    p_factory: PositionsFactory,
+    mp_factory: MappedPositionsFactory,
 ) -> Dict[str, List[mp]]:
     mps = {}
     for point in tl_config.points:
@@ -106,12 +97,8 @@ def _generate_mapped_positions(
             tl_config.interval_minutes,
             tl_config.node_calc,
         )
-        bps = factory(factory_config)
-        mp_list = (
-            [MappedGeoPosition(bp) for bp in bps]
-            if tl_config.coordinate_system == CoordinateSystem.GEO
-            else [MappedHelioPosition(bp) for bp in bps]
-        )
+        bps = p_factory(factory_config)
+        mp_list = mp_factory(bps)
         mps[point] = mp_list
 
     return mps
@@ -121,14 +108,13 @@ def _generate_positional_events(
     tl_config: TimelineConfig,
     mps: Dict[str, List[mp]],
     event_types: List[type],
-    factory: EventFactory,
 ) -> List[Type[AstroEvent]]:
     events = []
     for p, mp_list in mps.items():
         _logger.info(
             f"Generating {tl_config.coordinate_system} positional events for {p}"
         )
-        events += factory(mp_list, event_types)
+        events += create_positional_events(mp_list, event_types)
     return events
 
 
@@ -136,14 +122,11 @@ def _generate_extreme_events(
     tl_config: TimelineConfig,
     mps: Dict[str, List[mp]],
     event_types: List[type],
-    factory: EventFactory,
 ) -> List[AstroEvent]:
     events = []
     for p, mp_list in mps.items():
-        if p == NN or p == SN or p == SUN:
-            continue
         _logger.info(f"Generating {tl_config.coordinate_system} extreme events for {p}")
-        events += factory(mp_list, event_types)
+        events += _generate_extreme_events(mp_list, event_types)
     return events
 
 
@@ -153,3 +136,52 @@ def _aggregate_timelines(timelines: List[Timeline]) -> Timeline:
     for timeline in timelines:
         events += timeline.events
     return Timeline(events)
+
+
+def _generate_angles(
+    tl_config: TimelineConfig,
+    asp_config: AspectsConfig,
+    mps: List[mp],
+) -> List[Angle]:
+    _logger.info(f"Generating angles")
+    targets = _get_angle_targets(tl_config, asp_config)
+    return generate_angles_list(
+        mps,
+        targets,
+        tl_config.position_factory,
+        tl_config.mapped_position_factory,
+        tl_config.node_calc,
+    )
+
+
+def _get_angle_targets(
+    tl_config: TimelineConfig,
+    asp_config: AspectsConfig,
+) -> Dict[str, List[str]]:
+    ret = {}
+
+    for p in tl_config.points:
+        if not asp_config.targets:
+            targets = get_default_angle_targets(p)
+            if not SUN in tl_config.points:
+                targets.append(SUN)
+            ret[p] = targets
+        else:
+            ret[p] = asp_config.targets
+        _logger.debug(f"Identified angle targets for {p}: {ret[p]}")
+
+    return ret
+
+
+def _generate_aspects(asp_config: AspectsConfig, angles: List[Angle]) -> List[Aspect]:
+    _logger.info(f"Calculating aspects...")
+    asp_values = []
+    if not asp_config.family:
+        asp_values.append(asp_config.angle)
+    else:
+        asp_values = _generate_asp_family(asp_config.angle)
+    return find_exact_aspects(angles, asp_config.orb, asp_values)
+
+
+def _generate_asp_family(root: float) -> List[float]:
+    return [multiple for multiple in range(root, 361, root)]

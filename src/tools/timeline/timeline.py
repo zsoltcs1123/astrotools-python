@@ -1,7 +1,7 @@
 from collections import defaultdict
 from datetime import datetime as dt
 from typing import List, Type
-from events.astro_event import AstroEvent
+from core.events.astro_event import AstroEvent
 from util.cached_property import CachedProperty
 
 

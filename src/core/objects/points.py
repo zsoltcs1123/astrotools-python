@@ -61,9 +61,9 @@ POINTS_NO_MOON = [p for p in PLANETS if p != MOON] + [NN]
 
 def get_default_angle_targets(point: str) -> List[str]:
     if point == SUN:
-        return list(PLANETS_MAP.keys()) + [MOON]
-    elif point == MOON:
         return list(PLANETS_MAP.keys())
+    elif point == MOON:
+        return list(PLANETS_MAP.keys()) + [SUN]
     elif point == SN:
         return []
     elif point in ANGULARS:

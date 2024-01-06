@@ -1,28 +1,47 @@
-from core.positions.position_factory import create_positions
-from events.extremes.extreme_event_factory import create_extreme_events
-from events.zodiacal.positional_event_factory import create_positional_events
 from tools.timeline.timeline_config_parser import parse_json_to_timeline_configs
 from tools.timeline.timeline_factory import create_timelines
 from tools.timeline.timeline_printer import TimelinePrinter
+from util.common import measure
 
 
 single_cfg = """
 {
   "configurations": [
     {
-      "coordinateSystem": "helio",
+      "coordinateSystem": "geo",
       "startDate": "2024-01-01",
-      "endDate": "2024-01-31",
-      "intervalMinutes": 1,
-      "points": ["sun", "moon", "mercury", "north node"],
+      "endDate": "2024-02-01",
+      "intervalMinutes": 60,
+      "points": ["mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"],
       "nodeCalc": "mean",
       "events": [
         "TropicalSignChange",
-        "VedicSignChange",
         "TermChange",
-        "NakshatraChange",
         "DecanChange",
         "DirectionChange"
+      ],
+      "aspects": [
+          {
+              "angle": 30,
+              "family": true,
+              "orb": 0.1
+          }
+      ]
+    },
+    {
+      "coordinateSystem": "geo",
+      "startDate": "2024-01-01",
+      "endDate": "2024-01-31",
+      "intervalMinutes": 1,
+      "points": ["moon"],
+      "nodeCalc": "mean",
+      "aspects": [
+          {
+              "angle": 30,
+              "family": true,
+              "orb": 0.01,
+              "targets": ["sun"]
+          }
       ]
     }
   ]
@@ -71,14 +90,12 @@ def timeline(json_data: str):
     for cfg in cfgs:
         cfg.validate()
 
-    timelines = create_timelines(
-        cfgs, create_positions, create_positional_events, create_extreme_events
-    )
+    timelines = create_timelines(cfgs)
 
     for tl in timelines:
         printer = TimelinePrinter(tl)
-        printer.print_to_console()
+        printer.print_to_file("tropical_january.txt")
 
 
 if __name__ == "__main__":
-    timeline(multi_cfg)
+    measure(lambda: timeline(single_cfg))
