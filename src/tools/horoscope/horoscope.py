@@ -69,11 +69,11 @@ class Horoscope:
             return ""
 
         if field_name == "dec":
-            return self._get_index(mgp.root_position.dec, pmgp.root_position.dec)
+            return self._get_index(mgp.base_position.dec, pmgp.base_position.dec)
         elif field_name == "lat":
-            return self._get_index(mgp.root_position.lat, pmgp.root_position.lat)
+            return self._get_index(mgp.base_position.lat, pmgp.base_position.lat)
         elif field_name == "speed":
-            return self._get_index(mgp.root_position.speed, pmgp.root_position.speed)
+            return self._get_index(mgp.base_position.speed, pmgp.base_position.speed)
         elif field_name == "phase":
             phase_today = self.phase(point)
             phase_yesterday = self._phase(point, self.pmgps)

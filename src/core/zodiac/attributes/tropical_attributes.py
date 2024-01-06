@@ -1,13 +1,13 @@
 from dataclasses import dataclass
 from typing import List
-from core.positions.root_position import RootPosition
+from core.positions.base_position import BasePosition
 from core.units.degree import Degree
 import core.zodiac.division as zd
 
 
 @dataclass
 class TropicalAttributes:
-    _base_position: RootPosition
+    _base_position: BasePosition
     lon: Degree
     position: str
     sign: zd.Sign
@@ -15,7 +15,7 @@ class TropicalAttributes:
     decan: zd.Decan
     term: zd.Term
 
-    def __init__(self, base_position: RootPosition):
+    def __init__(self, base_position: BasePosition):
         self._base_position = base_position
         self.lon = base_position.lon
         self.position = zd.degree_to_zodiacal(base_position.lon)

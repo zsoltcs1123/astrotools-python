@@ -1,9 +1,9 @@
 from datetime import datetime
 from core.enums import AspectType
 from core.objects.points import POINTS_NO_MOON
-from core.positions.root_position_factory import create_geo_position
+from core.positions.position_factory import create_geo_position
 from events.aspects.aspect import DEFAULT_ASPECTS
-from events.zodiacal.astro_event import (
+from events.astro_event import (
     DecanChange,
     DeclinationExtreme,
     DirectionChange,

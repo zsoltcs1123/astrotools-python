@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Tuple
 from core.angles.angle import Angle
 from core.enums import AspectType
-from events.zodiacal.astro_event import AstroEvent
+from events.astro_event import AstroEvent
 from datetime import datetime, timedelta
 
 

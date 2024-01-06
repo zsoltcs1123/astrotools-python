@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta
 from typing import Dict, List, Tuple
-from core.positions.root_position import RootPosition
+from core.positions.base_position import BasePosition
 from core.enums import CoordinateSystem
-from core.positions.root_position_factory import create_position
+from core.positions.position_factory import create_position
 from core.objects.points import ASC, MC, MERCURY, MOON, VENUS
 
 
@@ -12,7 +12,7 @@ def find_lon_increases(
     times: int,
     planets: List[str],
     coord_system: CoordinateSystem,
-) -> Dict[str, List[Tuple[RootPosition, RootPosition]]]:
+) -> Dict[str, List[Tuple[BasePosition, BasePosition]]]:
     lon_increases = {}
 
     for p in planets:
@@ -34,7 +34,7 @@ def generate_square_outs(
     degrees: float,
     planets: List[str],
     coord_system: CoordinateSystem,
-) -> Dict[str, Tuple[RootPosition, RootPosition]]:
+) -> Dict[str, Tuple[BasePosition, BasePosition]]:
     square_outs = {}
 
     for p in planets:
@@ -46,11 +46,11 @@ def generate_square_outs(
 
 
 def _find_square_out(
-    starting_position: RootPosition,
+    starting_position: BasePosition,
     degrees: float,
     interval_hours: int,
     coord_system: CoordinateSystem,
-) -> RootPosition:
+) -> BasePosition:
     current_time = starting_position.dt
     cum_degrees = 0
     pp = starting_position

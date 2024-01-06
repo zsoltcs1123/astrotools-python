@@ -2,7 +2,7 @@ from datetime import datetime
 
 import requests
 import pytz
-from core.positions.root_position_factory import create_geo_position
+from core.positions.position_factory import create_geo_position
 from out.file import to_text_file
 from tools.dasa.dasa import Dasa, DasaLevel
 from tools.dasa.dasa_factory import generate_dasas

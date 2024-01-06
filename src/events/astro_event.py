@@ -13,13 +13,13 @@ class AstroEvent:
 
 
 @dataclass
-class ZodiacalEvent(AstroEvent):
+class PositionalEvent(AstroEvent):
     previous: mp
     current: mp
 
 
 @dataclass
-class TropicalSignChange(ZodiacalEvent):
+class TropicalSignChange(PositionalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tSign change\t{self.previous.tropical.sign.name} -> {self.current.tropical.sign.name}"
 
@@ -28,7 +28,7 @@ class TropicalSignChange(ZodiacalEvent):
 
 
 @dataclass
-class VedicSignChange(ZodiacalEvent):
+class VedicSignChange(PositionalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tSign change\t{self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
 
@@ -37,7 +37,7 @@ class VedicSignChange(ZodiacalEvent):
 
 
 @dataclass
-class DecanChange(ZodiacalEvent):
+class DecanChange(PositionalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tDecan change\t{self.previous.tropical.decan.name} -> {self.current.tropical.decan.name}"
 
@@ -46,7 +46,7 @@ class DecanChange(ZodiacalEvent):
 
 
 @dataclass
-class TermChange(ZodiacalEvent):
+class TermChange(PositionalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tTerm change\t{self.previous.tropical.term.name} -> {self.current.tropical.term.name}"
 
@@ -55,7 +55,7 @@ class TermChange(ZodiacalEvent):
 
 
 @dataclass
-class NakshatraChange(ZodiacalEvent):
+class NakshatraChange(PositionalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tNakshatra change\t{self.previous.vedic.nakshatra.name} -> {self.current.vedic.nakshatra.name}"
 
@@ -64,7 +64,7 @@ class NakshatraChange(ZodiacalEvent):
 
 
 @dataclass
-class DirectionChange(ZodiacalEvent):
+class DirectionChange(PositionalEvent):
     def __repr__(self) -> str:
         return f"{self.current.dt}\t{self.current.point}\tDirection change\t{self.previous.direction} -> {self.current.direction}"
 
@@ -81,19 +81,19 @@ class ExtremeEvent(AstroEvent):
 @dataclass
 class DeclinationExtreme(ExtremeEvent):
     def __repr__(self) -> str:
-        return f"{self.dt}\t{self.mp.point}\t Declination {self.type} of {self.mp.root_position.dec.str_decimal()} at \t{self.mp.tropical.position}"
+        return f"{self.dt}\t{self.mp.point}\t Declination {self.type} of {self.mp.base_position.dec.str_decimal()} at \t{self.mp.tropical.position}"
 
 
 @dataclass
 class LatitudeExtreme(ExtremeEvent):
     def __repr__(self) -> str:
-        return f"{self.dt}\t{self.mp.point}\t Latitude {self.type} of {self.mp.root_position.lat.str_decimal()} at\t{self.mp.tropical.position}"
+        return f"{self.dt}\t{self.mp.point}\t Latitude {self.type} of {self.mp.base_position.lat.str_decimal()} at\t{self.mp.tropical.position}"
 
 
 @dataclass
 class SpeedExtreme(ExtremeEvent):
     def __repr__(self) -> str:
-        return f"{self.dt}\t{self.mp.point}\t Speed {self.type} of {self.mp.root_position.speed.str_decimal()} at\t{self.mp.tropical.position}"
+        return f"{self.dt}\t{self.mp.point}\t Speed {self.type} of {self.mp.base_position.speed.str_decimal()} at\t{self.mp.tropical.position}"
 
 
 @dataclass
@@ -104,11 +104,10 @@ class PhaseExtreme(ExtremeEvent):
 
 @dataclass
 class TropicalProgression(AstroEvent):
-    mp: mp
     name: str
 
     def __repr__(self) -> str:
-        return f"{self.dt}\t{self.mp.point}\t{self.name} progression at\t{self.mp.tropical.position}"
+        return f"{self.dt}\t{self.current.point}\t{self.name} progression at\t{self.current.tropical.position}"
 
     def label(self) -> str:
-        return f"{self.mp.point} {self.name} progression at {self.mp.tropical.position}"
+        return f"{self.current.point} {self.name} progression at {self.current.tropical.position}"

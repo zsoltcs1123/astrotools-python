@@ -1,10 +1,10 @@
 from typing import Dict, List
 
-EARTH = "earth"
-NN = "north node"
-SN = "south node"
-MOON = "moon"
 MEAN_NODE = "MEAN_NODE"
+
+
+EARTH = "earth"
+MOON = "moon"
 ASC = "asc"
 MC = "mc"
 SUN = "sun"
@@ -12,20 +12,27 @@ MOON = "moon"
 MERCURY = "mercury"
 VENUS = "venus"
 MARS = "mars"
+JUPITER = "jupiter"
+SATURN = "saturn"
+URANUS = "uranus"
+NEPTUNE = "neptune"
+PLUTO = "pluto"
+NN = "north node"
+SN = "south node"
+
 
 PLANETS = [
     SUN,
     MOON,
     MERCURY,
-    "venus",
-    "mars",
-    "jupiter",
-    "saturn",
-    "uranus",
-    "neptune",
-    "pluto",
+    VENUS,
+    MARS,
+    JUPITER,
+    SATURN,
+    URANUS,
+    NEPTUNE,
+    PLUTO,
 ]
-
 
 NODES = [NN, SN]
 

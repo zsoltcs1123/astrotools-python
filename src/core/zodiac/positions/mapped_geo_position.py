@@ -1,14 +1,12 @@
-from typing import List, Optional
+from typing import List
 from core.positions.geo_position import GeoPosition
 from dataclasses import dataclass
-from core.units.degree import Degree
-from util.cached_property import CachedProperty
 from core.zodiac.positions.mapped_position import MappedPosition
 
 
 @dataclass
 class MappedGeoPosition(MappedPosition):
-    root_position: GeoPosition
+    base_position: GeoPosition
     retrograde: bool
     stationary: bool
     direction: str
@@ -19,11 +17,11 @@ class MappedGeoPosition(MappedPosition):
         previous_position: "MappedGeoPosition" = None,
         sun_position: GeoPosition = None,
     ):
-        self.root_position = root_position
+        self.base_position = root_position
         self.previous_position = previous_position
         self.sun_position = sun_position
-        self.retrograde = self.root_position.speed.decimal < 0
-        self.stationary = self.root_position.speed.decimal == 0
+        self.retrograde = self.base_position.speed.decimal < 0
+        self.stationary = self.base_position.speed.decimal == 0
         self.direction = "R" if self.retrograde else "S" if self.stationary else "D"
 
     @classmethod

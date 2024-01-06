@@ -1,6 +1,6 @@
 from typing import List, Tuple
 
-from events.zodiacal.astro_event import AstroEvent
+from events.astro_event import AstroEvent
 
 
 def generate_decans(title: str, timestamps: str) -> str:

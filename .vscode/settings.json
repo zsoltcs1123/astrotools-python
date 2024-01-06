@@ -10,4 +10,7 @@
         "./src"
     ],
     "python.defaultInterpreterPath": "/env/Scripts/python.exe",
+    "files.exclude": {
+        "**/.mypy_cache": true
+    }
 }

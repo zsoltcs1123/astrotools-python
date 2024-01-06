@@ -1,5 +1,5 @@
 from core.angles.angle import Angle
-from core.positions.root_position_factory import create_geo_position
+from core.positions.position_factory import create_geo_position
 from core.zodiac.positions.mapped_geo_position import (
     MappedGeoPosition as MappedGeoPosition,
 )

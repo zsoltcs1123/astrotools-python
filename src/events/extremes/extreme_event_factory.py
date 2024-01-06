@@ -1,5 +1,5 @@
 from core.zodiac.positions.mapped_position import MappedPosition
-from events.zodiacal.astro_event import (
+from events.astro_event import (
     DeclinationExtreme,
     ExtremeEvent,
     LatitudeExtreme,
@@ -11,7 +11,7 @@ from typing import List, Callable, Any
 
 
 def create_extreme_events(
-    mgps: List[MappedPosition], event_types: List[type]
+    mps: List[MappedPosition], event_types: List[type]
 ) -> List[ExtremeEvent]:
     events = []
     for event_type in event_types:
@@ -19,13 +19,13 @@ def create_extreme_events(
             continue
 
         events += _create_events(
-            _find_local_extrema(mgps, _event_type_to_attribute(event_type), np.greater),
+            _find_local_extrema(mps, _event_type_to_attribute(event_type), np.greater),
             event_type,
             "max",
         )
 
         events += _create_events(
-            _find_local_extrema(mgps, _event_type_to_attribute(event_type), np.less),
+            _find_local_extrema(mps, _event_type_to_attribute(event_type), np.less),
             event_type,
             "min",
         )
@@ -52,7 +52,7 @@ def _find_local_extrema(
     attribute: str,
     comparator: Callable[[Any, Any], bool],
 ) -> List[MappedPosition]:
-    values = [getattr(mp.root_position, attribute) for mp in mapped_positions]
+    values = [getattr(mp.base_position, attribute) for mp in mapped_positions]
     values_array = np.array(values)
     extrema_indices = argrelextrema(values_array, comparator)
     extrema = [mapped_positions[i] for i in extrema_indices[0]]

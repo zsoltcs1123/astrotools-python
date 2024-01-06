@@ -4,7 +4,7 @@ from core.units.degree import Degree
 
 
 @dataclass
-class RootPosition:
+class BasePosition:
     dt: datetime
     point: str
     lon: Degree

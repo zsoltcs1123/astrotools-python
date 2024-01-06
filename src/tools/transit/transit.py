@@ -27,19 +27,19 @@ class Transit:
         for point in [
             p
             for p in self.natal_horoscope.mgps
-            if p.root_position.point not in points_filter
+            if p.base_position.point not in points_filter
         ]:
             point_angles = []
             for transit_point in [
                 tp
                 for tp in self.transit_horoscope.mgps
-                if tp.root_position.point not in points_filter
+                if tp.base_position.point not in points_filter
             ]:
                 angle = Angle(
-                    transit_point.root_position.dt,
-                    point.root_position,
-                    transit_point.root_position,
+                    transit_point.base_position.dt,
+                    point.base_position,
+                    transit_point.base_position,
                 )
                 point_angles.append(angle)
-            angles[point.root_position.point] = point_angles
+            angles[point.base_position.point] = point_angles
         return TransitTable(angles)
