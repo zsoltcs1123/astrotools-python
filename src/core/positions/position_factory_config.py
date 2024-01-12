@@ -8,6 +8,14 @@ from core.enums import CoordinateSystem, NodeCalc
 class PositionFactoryConfig:
     coordinate_system: CoordinateSystem
     point: str
+    dt: datetime
+    node_calc: NodeCalc = None
+
+
+@dataclass
+class PositionsFactoryConfig:
+    coordinate_system: CoordinateSystem
+    point: str
     start: datetime
     end: datetime
     interval_minutes: int

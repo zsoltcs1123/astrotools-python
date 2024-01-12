@@ -1,5 +1,7 @@
 from typing import Dict, List
 
+from core.enums import CoordinateSystem
+
 MEAN_NODE = "MEAN_NODE"
 
 
@@ -50,7 +52,6 @@ PLANETS_MAP = {
     "uranus": 6,
     "neptune": 7,
     "pluto": 8,
-    NN: 9,
 }
 
 ALL_POINTS = PLANETS + NODES
@@ -59,11 +60,19 @@ VEDIC_POINTS = [p for p in PLANETS if p not in ["uranus", "neptune", "pluto"]] +
 POINTS_NO_MOON = [p for p in PLANETS if p != MOON] + [NN]
 
 
-def get_default_angle_targets(point: str) -> List[str]:
+def get_default_angle_targets(
+    point: str, coordinate_system: CoordinateSystem
+) -> List[str]:
     if point == SUN:
-        return list(PLANETS_MAP.keys())
+        return list(PLANETS_MAP.keys()) + (
+            [NN] if coordinate_system == CoordinateSystem.GEO else []
+        )
     elif point == MOON:
-        return list(PLANETS_MAP.keys()) + [SUN]
+        return (
+            list(PLANETS_MAP.keys())
+            + [SUN]
+            + ([NN] if coordinate_system == CoordinateSystem.GEO else [])
+        )
     elif point == SN:
         return []
     elif point in ANGULARS:

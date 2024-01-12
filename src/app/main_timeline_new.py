@@ -4,7 +4,7 @@ from tools.timeline.timeline_printer import TimelinePrinter
 from util.common import measure
 
 
-single_cfg = """
+geo = """
 {
   "configurations": [
     {
@@ -48,35 +48,45 @@ single_cfg = """
 }
 """
 
-multi_cfg = """
+moon_sun = """
 {
   "configurations": [
     {
       "coordinateSystem": "geo",
       "startDate": "2024-01-01",
-      "endDate": "2024-01-10",
+      "endDate": "2024-01-31",
       "intervalMinutes": 1,
-      "points": ["sun", "moon", "mercury", "north node"],
+      "points": ["moon"],
       "nodeCalc": "mean",
-      "events": [
-        "TropicalSignChange",
-        "SiderealSignChange",
-        "TermChange",
-        "NakshatraChange",
-        "DecanChange",
-        "DirectionChange"
+      "aspects": [
+          {
+              "angle": 30,
+              "family": true,
+              "orb": 0.01,
+              "targets": ["sun"]
+          }
       ]
-    },
+    }
+  ]
+}
+"""
+
+helio = """
+{
+  "configurations": [
     {
       "coordinateSystem": "helio",
       "startDate": "2024-01-01",
-      "endDate": "2024-01-10",
-      "intervalMinutes": 1,
-      "points": ["mercury"],
+      "endDate": "2024-02-01",
+      "intervalMinutes": 60,
+      "points": ["mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"],
       "nodeCalc": "mean",
-      "events": [
-        "TropicalSignChange",
-        "SiderealSignChange"
+      "aspects": [
+          {
+              "angle": 30,
+              "family": true,
+              "orb": 0.1
+          }
       ]
     }
   ]
@@ -94,8 +104,8 @@ def timeline(json_data: str):
 
     for tl in timelines:
         printer = TimelinePrinter(tl)
-        printer.print_to_file("tropical_january.txt")
+        printer.print_to_console()
 
 
 if __name__ == "__main__":
-    measure(lambda: timeline(single_cfg))
+    measure(lambda: timeline(moon_sun))

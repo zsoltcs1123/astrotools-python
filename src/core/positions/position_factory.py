@@ -1,11 +1,14 @@
 from typing import List
 from datetime import datetime as dt, timezone
-from core.positions.position_factory_config import PositionFactoryConfig
+from core.positions.position_factory_config import (
+    PositionFactoryConfig,
+    PositionsFactoryConfig,
+)
 from core.positions.base_position import BasePosition
 from core.positions.geo_position import GeoPosition
 from core.positions.helio_position import HelioPosition
 from core.enums import CoordinateSystem, NodeCalc
-from core.objects.points import EARTH, MEAN_NODE, MOON, NN, PLANETS, SN, SUN
+from core.objects.points import MOON, NN, PLANETS, SN, SUN
 from core.units.degree import Degree
 from util.console_logger import ConsoleLogger
 from util.interval import calculate_intervals
@@ -22,44 +25,55 @@ def create_position(point: str, dt: dt, coord_system: CoordinateSystem) -> BaseP
     )
 
 
-def create_positions(config: PositionFactoryConfig) -> List[BasePosition]:
+def create_positions(config: PositionsFactoryConfig) -> List[BasePosition]:
     if config.coordinate_system == CoordinateSystem.HELIO:
         return create_helio_positions(config)
     else:
         return create_geo_positions(config)
 
 
-def create_helio_positions(config: PositionFactoryConfig) -> List[HelioPosition]:
+def create_helio_positions(config: PositionsFactoryConfig) -> List[HelioPosition]:
     _logger.debug(f"Generating positions for config: {config}")
     dts = calculate_intervals(config.start, config.end, config.interval_minutes)
-    return [create_helio_position(config.point, dt) for dt in dts]
+    return [
+        create_helio_position(
+            PositionFactoryConfig(config.coordinate_system, config.point, dt)
+        )
+        for dt in dts
+    ]
 
 
-def create_geo_positions(config: PositionFactoryConfig) -> List[GeoPosition]:
+def create_geo_positions(config: PositionsFactoryConfig) -> List[GeoPosition]:
     _logger.debug(f"Generating positions for config: {config}")
     dts = calculate_intervals(config.start, config.end, config.interval_minutes)
-    return [create_geo_position(config.point, dt, config.node_calc) for dt in dts]
+    return [
+        create_geo_position(
+            PositionFactoryConfig(
+                config.coordinate_system, config.point, dt, config.node_calc
+            )
+        )
+        for dt in dts
+    ]
 
 
-def create_helio_position(point: str, dt: dt) -> HelioPosition:
-    if point == SUN:
-        raise (ValueError(f"{point} not supported"))
-    if point in [MOON, SN, NN]:
-        return _helio(EARTH, dt)
+def create_helio_position(config: PositionFactoryConfig) -> HelioPosition:
+    config.dt = config.dt.replace(tzinfo=timezone.utc)
+    if config.point in [SUN, MOON, NN, SN]:
+        raise (ValueError(f"{config.point} not supported"))
     else:
-        return _helio(point, dt)
+        return _helio(config.point, config.dt)
 
 
-def create_geo_position(point: str, dt: dt, node_calc: NodeCalc) -> GeoPosition:
-    dt = dt.replace(tzinfo=timezone.utc)
-    if point in PLANETS:
-        return _geo(point, dt)
-    elif point == NN:
-        return _north_node(dt, node_calc)
-    elif point == SN:
-        return _south_node(dt, node_calc)
+def create_geo_position(config: PositionFactoryConfig) -> GeoPosition:
+    config.dt = config.dt.replace(tzinfo=timezone.utc)
+    if config.point in PLANETS:
+        return _geo(config.point, config.dt)
+    elif config.point == NN:
+        return _north_node(config.dt, config.node_calc)
+    elif config.point == SN:
+        return _south_node(config.dt, config.node_calc)
     else:
-        raise (ValueError(f"{point} not supported"))
+        raise (ValueError(f"{config.point} not supported"))
 
 
 def _helio(point: str, dt: dt) -> HelioPosition:

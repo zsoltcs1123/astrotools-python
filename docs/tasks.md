@@ -5,10 +5,16 @@ Current:
 - Integrating helio
   - Helio is integrated in gann module
   - Helio needs to be integrated with timeline and horoscope modules
-- Ongoing positions refactor keep messing up working modules. Put an end to it
-- Timeline config in JSON
-- Fix extreme events
 
+
+TIMELINE:
+- Double entries due to grouping by date problem
+- Fix extreme events
+- Fix helio
+- Indicate GEO/HELIO aspects
+- Conjunction missing
+- Keep testing & looking for bugs
+- nodecalc optional
 
 TBD:
 - Re-implement Transits

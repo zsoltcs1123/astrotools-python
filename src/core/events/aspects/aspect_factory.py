@@ -67,7 +67,7 @@ def find_aspects_list(
 
 
 def _get_asp_text(asp_value: int) -> str:
-    if asp_value == 0:
+    if asp_value in [0, 360]:
         return "conjunction"
     if asp_value in [30, 330]:
         return "semi-sextile"

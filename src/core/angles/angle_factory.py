@@ -1,7 +1,8 @@
 from core.angles.angle import Angle
-from core.enums import NodeCalc
+from core.enums import CoordinateSystem, NodeCalc
 from core.factories import MappedPositionFactory, PositionFactory
 from typing import Callable, Dict, List
+from core.positions.position_factory_config import PositionFactoryConfig
 
 from core.zodiac.positions.mapped_position import MappedPosition
 from util.console_logger import ConsoleLogger
@@ -46,7 +47,11 @@ def generate_angles_list(
                 if t == source_mp.point:
                     continue
 
-                target_bp = p_factory(t, source_mp.dt, node_calc)
+                cfg = PositionFactoryConfig(
+                    CoordinateSystem.GEO, t, source_mp.dt, node_calc
+                )
+
+                target_bp = p_factory(cfg)
                 target_mp = mp_factory(target_bp)
                 angle = Angle(source_mp, target_mp)
                 angles.append(angle)

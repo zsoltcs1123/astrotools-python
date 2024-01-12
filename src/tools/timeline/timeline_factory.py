@@ -1,6 +1,7 @@
 from typing import Dict, List, Type
 from core.angles.angle import Angle
 from core.angles.angle_factory import generate_angles_list
+from core.enums import CoordinateSystem
 from core.events.aspects.aspect import Aspect
 from core.events.aspects.aspect_factory import find_exact_aspects
 from core.events.positional.positional_event_factory import create_positional_events
@@ -8,7 +9,7 @@ from core.factories import (
     MappedPositionsFactory,
     PositionsFactory,
 )
-from core.positions.position_factory_config import PositionFactoryConfig
+from core.positions.position_factory_config import PositionsFactoryConfig
 from core.zodiac.positions.mapped_position import MappedPosition as mp
 from core.events.astro_event import (
     AstroEvent,
@@ -89,7 +90,7 @@ def _generate_mapped_positions(
     mps = {}
     for point in tl_config.points:
         _logger.info(f"Generating {tl_config.coordinate_system} positions for {point}")
-        factory_config = PositionFactoryConfig(
+        factory_config = PositionsFactoryConfig(
             tl_config.coordinate_system,
             point,
             tl_config.start_date,
@@ -162,8 +163,11 @@ def _get_angle_targets(
 
     for p in tl_config.points:
         if not asp_config.targets:
-            targets = get_default_angle_targets(p)
-            if not SUN in tl_config.points:
+            targets = get_default_angle_targets(p, tl_config.coordinate_system)
+            if (
+                not SUN in tl_config.points
+                and tl_config.coordinate_system == CoordinateSystem.GEO
+            ):
                 targets.append(SUN)
             ret[p] = targets
         else:
