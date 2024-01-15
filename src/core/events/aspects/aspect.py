@@ -1,10 +1,8 @@
 from dataclasses import dataclass
-from typing import Tuple
+
 from core.angles.angle import Angle
 from core.enums import AspectType
 from core.events.astro_event import AstroEvent
-from datetime import datetime, timedelta
-
 
 DEFAULT_ASPECTS = [
     AspectType.CONJUNCTION,

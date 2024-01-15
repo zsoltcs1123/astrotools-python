@@ -1,7 +1,7 @@
-from typing import List
+from dataclasses import dataclass
+
 from core.enums import CoordinateSystem
 from core.positions.geo_position import GeoPosition
-from dataclasses import dataclass
 from core.zodiac.positions.mapped_position import MappedPosition
 
 

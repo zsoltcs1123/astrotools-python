@@ -1,8 +1,9 @@
-from typing import List
 from dataclasses import dataclass
+from typing import List
+
 from core.enums import AspectType, CoordinateSystem, HoroscopeType, HouseSystem
-from events.aspects.aspect import DEFAULT_ASPECTS
-from events.aspects.orb_map import OrbMap
+from core.events.aspects.aspect import DEFAULT_ASPECTS
+from core.events.aspects.orb_map import OrbMap
 from core.objects.points import ALL_POINTS, ANGULARS, MEAN_NODE, VEDIC_POINTS
 
 
@@ -29,21 +30,6 @@ class HoroscopeConfig:
             ANGULARS + ALL_POINTS,
             DEFAULT_ASPECTS,
             OrbMap.default(),
-            HouseSystem.PLACIDUS,
-            CoordinateSystem.GEO,
-            MEAN_NODE,
-        )
-
-    @classmethod
-    def default_tropical_snapshot(cls, lat, lon, name):
-        return cls(
-            lat,
-            lon,
-            name,
-            HoroscopeType.TROPICAL,
-            ANGULARS + ALL_POINTS,
-            DEFAULT_ASPECTS,
-            OrbMap.from_float(2),
             HouseSystem.PLACIDUS,
             CoordinateSystem.GEO,
             MEAN_NODE,

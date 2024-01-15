@@ -1,33 +1,33 @@
 from typing import Dict, List, Type
+
 from core.angles.angle import Angle
 from core.angles.angle_factory import generate_angles_list
 from core.enums import CoordinateSystem
 from core.events.aspects.aspect import Aspect
 from core.events.aspects.aspect_factory import find_exact_aspects
-from core.events.positional.positional_event_factory import create_positional_events
-from core.factories import (
-    MappedPositionsFactory,
-    PositionsFactory,
-)
-from core.positions.position_factory_config import PositionsFactoryConfig
-from core.zodiac.positions.mapped_position import MappedPosition as mp
 from core.events.astro_event import (
     AstroEvent,
     ExtremeEvent,
     PositionalEvent,
     TropicalProgression,
 )
+from core.events.positional.positional_event_factory import create_positional_events
+from core.factories import (
+    MappedPositionsFactory,
+    PositionsFactory,
+)
 from core.objects.points import SUN, get_default_angle_targets
+from core.positions.position_factory_config import PositionsFactoryConfig
+from core.zodiac.positions.mapped_geo_position import (
+    MappedGeoPosition as MappedGeoPosition,
+)
+from core.zodiac.positions.mapped_position import MappedPosition as mp
 from tools.timeline.timeline import Timeline
 from tools.timeline.timeline_config import (
     AspectsConfig,
     TimelineConfig,
 )
 from util.console_logger import ConsoleLogger
-from core.zodiac.positions.mapped_geo_position import (
-    MappedGeoPosition as MappedGeoPosition,
-)
-
 
 _logger = ConsoleLogger("TimelineFactory")
 
@@ -144,7 +144,7 @@ def _generate_angles(
     asp_config: AspectsConfig,
     mps: List[mp],
 ) -> List[Angle]:
-    _logger.info(f"Generating angles")
+    _logger.info("Generating angles")
     targets = _get_angle_targets(tl_config, asp_config)
     return generate_angles_list(
         mps,
@@ -165,7 +165,7 @@ def _get_angle_targets(
         if not asp_config.targets:
             targets = get_default_angle_targets(p, tl_config.coordinate_system)
             if (
-                not SUN in tl_config.points
+                SUN not in tl_config.points
                 and tl_config.coordinate_system == CoordinateSystem.GEO
             ):
                 targets.append(SUN)
@@ -178,7 +178,7 @@ def _get_angle_targets(
 
 
 def _generate_aspects(asp_config: AspectsConfig, angles: List[Angle]) -> List[Aspect]:
-    _logger.info(f"Calculating aspects...")
+    _logger.info("Calculating aspects...")
     asp_values = []
     if not asp_config.family:
         asp_values.append(asp_config.angle)

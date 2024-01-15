@@ -1,10 +1,11 @@
 import json
-import humps
 from datetime import datetime
-from typing import List, Dict, Any
+from typing import Any, Dict, List
+
+import humps
 from core.enums import CoordinateSystem, NodeCalc
-from tools.timeline.timeline_config import AspectsConfig, TimelineConfig
 from core.events.astro_event import *
+from tools.timeline.timeline_config import AspectsConfig, TimelineConfig
 
 
 def parse_json_to_timeline_configs(json_str: str) -> List[TimelineConfig]:
