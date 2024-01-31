@@ -1,9 +1,8 @@
-from typing import Dict, List, Any, Callable
 import time
-from typing import List
 from typing import Any, Callable, Dict, List
 
 import pytz
+from core.units.degree import Degree
 
 
 def measure(func) -> None:
@@ -15,10 +14,11 @@ def measure(func) -> None:
 
 
 def integral_ends_with(end: int, num: float) -> bool:
-    return str(num).split('.')[0][-1] == str(end)
+    return str(num).split(".")[0][-1] == str(end)
+
 
 def decimal_ends_with(end: int, num: float) -> bool:
-    return str(num).split('.')[1][-1] == str(end)
+    return str(num).split(".")[1][-1] == str(end)
 
 
 def group_by(lst: List[Any], key_func: Callable[[Any], Any]) -> Dict[Any, List[Any]]:
@@ -31,7 +31,13 @@ def group_by(lst: List[Any], key_func: Callable[[Any], Any]) -> Dict[Any, List[A
     return result
 
 
-def find_smallest_elements(d: Dict[Any, List[Any]], key_func: Callable[[Any], float]) -> Dict[Any, Any]:
+def _to_degree(*args: float) -> List[Degree]:
+    return [Degree.from_decimal(arg) for arg in args]
+
+
+def find_smallest_elements(
+    d: Dict[Any, List[Any]], key_func: Callable[[Any], float]
+) -> Dict[Any, Any]:
     return {k: min(v, key=key_func) for k, v in d.items()}
 
 

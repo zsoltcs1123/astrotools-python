@@ -4,7 +4,6 @@ from typing import Any, Dict, List
 
 import humps
 from core.enums import CoordinateSystem, NodeCalc
-from core.events.astro_event import *
 from tools.timeline.timeline_config import AspectsConfig, TimelineConfig
 
 
