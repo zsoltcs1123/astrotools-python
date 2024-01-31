@@ -15,6 +15,7 @@ TIMELINE:
 - Conjunction missing
 - Keep testing & looking for bugs
 - nodecalc optional
+- Write object oriented factories
 
 TBD:
 - Re-implement Transits

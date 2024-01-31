@@ -76,7 +76,7 @@ def create_timeline(
     if config.aspects:
         for aspc in config.aspects:
             angles = _generate_angles(config, aspc, mps)
-            aspects += _generate_aspects(aspc, angles)
+            aspects += _generate_aspects(aspc, angles, config.coordinate_system)
 
     _logger.debug(f"Identified {len(aspects)} aspects")
     return Timeline(events + aspects)
@@ -177,15 +177,17 @@ def _get_angle_targets(
     return ret
 
 
-def _generate_aspects(asp_config: AspectsConfig, angles: List[Angle]) -> List[Aspect]:
+def _generate_aspects(
+    asp_config: AspectsConfig, angles: List[Angle], coord_system: CoordinateSystem
+) -> List[Aspect]:
     _logger.info("Calculating aspects...")
     asp_values = []
     if not asp_config.family:
         asp_values.append(asp_config.angle)
     else:
         asp_values = _generate_asp_family(asp_config.angle)
-    return find_exact_aspects(angles, asp_config.orb, asp_values)
+    return find_exact_aspects(angles, asp_config.orb, asp_values, coord_system)
 
 
 def _generate_asp_family(root: float) -> List[float]:
-    return [multiple for multiple in range(root, 361, root)]
+    return [multiple for multiple in range(0, 361, root)]

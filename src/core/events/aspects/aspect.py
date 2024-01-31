@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from core.angles.angle import Angle
-from core.enums import AspectType
+from core.enums import AspectType, CoordinateSystem
 from core.events.astro_event import AstroEvent
 
 DEFAULT_ASPECTS = [
@@ -20,6 +20,7 @@ class Aspect(AstroEvent):
     angle: Angle
     asp_type: str
     target_diff: int
+    coord_system: CoordinateSystem
 
     @property
     def asp_text(self):
@@ -27,7 +28,7 @@ class Aspect(AstroEvent):
 
     def __repr__(self):
         # return f"aspect at {self.angle}, {self.asp_str} ({self.asp_diff})\n Orb of 2 starts at: {orb_start}, ends at: {orb_end}"
-        return f"{self.dt}\t{self.angle.source.point}\t{self.asp_type.lower()} [{self.angle.abs_diff:.3f}] vs {self.angle.target.point}"
+        return f"{self.dt}\t{self.angle.source.point}\t{self.coord_system}\t{self.asp_type.lower()} [{self.angle.abs_diff:.3f}] vs {self.angle.target.point}"
 
     def label(self):
         return f"{self.angle.source.point} {self.asp_type.lower()} [{self.angle.abs_diff:.0f}] vs {self.angle.target.point}"

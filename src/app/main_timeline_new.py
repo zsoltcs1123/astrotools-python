@@ -3,16 +3,15 @@ from tools.timeline.timeline_factory import create_timelines
 from tools.timeline.timeline_printer import TimelinePrinter
 from util.common import measure
 
-
 geo = """
 {
   "configurations": [
     {
       "coordinateSystem": "geo",
-      "startDate": "2024-01-01",
-      "endDate": "2024-02-01",
+      "startDate": "2024-02-01",
+      "endDate": "2024-03-01",
       "intervalMinutes": 60,
-      "points": ["mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"],
+      "points": ["sun", "mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto", "north node"],
       "nodeCalc": "mean",
       "events": [
         "TropicalSignChange",
@@ -30,8 +29,8 @@ geo = """
     },
     {
       "coordinateSystem": "geo",
-      "startDate": "2024-01-01",
-      "endDate": "2024-01-31",
+      "startDate": "2024-02-02",
+      "endDate": "2024-03-01",
       "intervalMinutes": 1,
       "points": ["moon"],
       "nodeCalc": "mean",
@@ -76,8 +75,8 @@ helio = """
   "configurations": [
     {
       "coordinateSystem": "helio",
-      "startDate": "2024-01-01",
-      "endDate": "2024-02-01",
+      "startDate": "2024-02-01",
+      "endDate": "2024-03-01",
       "intervalMinutes": 60,
       "points": ["mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"],
       "nodeCalc": "mean",
@@ -104,8 +103,8 @@ def timeline(json_data: str):
 
     for tl in timelines:
         printer = TimelinePrinter(tl)
-        printer.print_to_console()
+        printer.print_to_file("timeline_feb_helio.txt")
 
 
 if __name__ == "__main__":
-    measure(lambda: timeline(moon_sun))
+    measure(lambda: timeline(helio))

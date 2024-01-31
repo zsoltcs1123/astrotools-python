@@ -1,7 +1,8 @@
 from itertools import groupby
-from core.enums import AspectType
-from typing import List, Dict
+from typing import Dict, List
+
 from core.angles.angle import Angle
+from core.enums import AspectType, CoordinateSystem
 from events.aspects.aspect import Aspect
 from events.aspects.orb_map import OrbMap
 
@@ -21,7 +22,9 @@ class AspectFinder:
         self.orb_map = orb_map
         self.aspects_include = aspects_include
 
-    def find_aspects_list(self, angles: List[Angle]) -> List[Aspect]:
+    def find_aspects_list(
+        self, angles: List[Angle], coord_system: CoordinateSystem
+    ) -> List[Aspect]:
         aspects = []
 
         for angle in angles:
@@ -35,7 +38,9 @@ class AspectFinder:
 
                 for asp_value in asp_values:
                     if asp_value >= negative and asp_value <= positive:
-                        asp = Aspect(angle.source.dt, angle, asp_type, asp_value)
+                        asp = Aspect(
+                            angle.source.dt, angle, asp_type, asp_value, coord_system
+                        )
                         aspects.append(asp)
         return aspects
 
@@ -60,9 +65,11 @@ class AspectFinder:
 
         return aspects
 
-    def find_aspects(self, angles: Dict[str, List[Angle]]) -> Dict[str, List[Aspect]]:
+    def find_aspects(
+        self, angles: Dict[str, List[Angle]], coord_system: CoordinateSystem
+    ) -> Dict[str, List[Aspect]]:
         aspects = {}
 
         for point, angle_list in angles.items():
-            aspects[point] = self.find_aspects_list(angle_list)
+            aspects[point] = self.find_aspects_list(angle_list, coord_system)
         return aspects

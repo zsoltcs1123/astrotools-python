@@ -1,6 +1,8 @@
-from typing import List
 from itertools import groupby
+from typing import List
+
 from core.angles.angle import Angle
+from core.enums import CoordinateSystem
 from core.events.aspects.aspect import Aspect
 from util.console_logger import ConsoleLogger
 
@@ -8,10 +10,13 @@ _logger = ConsoleLogger("AspectFactory")
 
 
 def find_exact_aspects(
-    angles: List[Angle], orb: float, aspects_include: List[int]
+    angles: List[Angle],
+    orb: float,
+    aspects_include: List[int],
+    coord_system: CoordinateSystem,
 ) -> List[Aspect]:
     # Find all aspects first
-    all_aspects = find_aspects_list(angles, orb, aspects_include)
+    all_aspects = find_aspects_list(angles, orb, aspects_include, coord_system)
     _logger.debug("All aspects found")
 
     # Group by date (year, month, day) first
@@ -48,7 +53,10 @@ def find_exact_aspects(
 
 
 def find_aspects_list(
-    angles: List[Angle], orb: float, aspects_include: List[int]
+    angles: List[Angle],
+    orb: float,
+    aspects_include: List[int],
+    coord_system: CoordinateSystem,
 ) -> List[Aspect]:
     aspects = []
 
@@ -58,7 +66,11 @@ def find_aspects_list(
         for asp_value in aspects_include:
             if asp_value >= negative and asp_value <= positive:
                 asp = Aspect(
-                    angle.source.dt, angle, _get_asp_text(asp_value), asp_value
+                    angle.source.dt,
+                    angle,
+                    _get_asp_text(asp_value),
+                    asp_value,
+                    coord_system,
                 )
                 _logger.debug(f"Found aspect: {asp}")
                 aspects.append(asp)

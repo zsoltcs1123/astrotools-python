@@ -73,12 +73,16 @@ def get_default_angle_targets(
             + [SUN]
             + ([NN] if coordinate_system == CoordinateSystem.GEO else [])
         )
-    elif point == SN:
+    elif point == SN or point == NN:
         return []
     elif point in ANGULARS:
         return PLANETS + NODES
     else:
-        return [k for k, v in PLANETS_MAP.items() if v > PLANETS_MAP[point]]
+        return (
+            [k for k, v in PLANETS_MAP.items() if v > PLANETS_MAP[point]] + [NN]
+            if coordinate_system == CoordinateSystem.GEO
+            else []
+        )
 
 
 def get_all_default_angle_targets(points: List[str]) -> Dict[str, List[str]]:
