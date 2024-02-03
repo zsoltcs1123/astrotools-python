@@ -1,0 +1,144 @@
+Friday, Jan 10 2020:
+1. 2020-01-10 15:00:00+00:00	mercury	GEO	conjunction [0.008] vs sun at [289.811] 
+------------
+
+Wednesday, Feb 26 2020:
+1. 2020-02-26 02:00:00+00:00	mercury	GEO	conjunction [0.022] vs sun at [336.907] 
+------------
+
+Monday, May 04 2020:
+1. 2020-05-04 22:00:00+00:00	mercury	GEO	conjunction [0.015] vs sun at [44.900] 
+------------
+
+Wednesday, Jul 01 2020:
+1. 2020-07-01 03:00:00+00:00	mercury	GEO	conjunction [0.008] vs sun at [99.741] 
+------------
+
+Monday, Aug 17 2020:
+1. 2020-08-17 15:00:00+00:00	mercury	GEO	conjunction [0.005] vs sun at [145.150] 
+------------
+
+Sunday, Oct 25 2020:
+1. 2020-10-25 18:00:00+00:00	mercury	GEO	conjunction [0.036] vs sun at [212.818] 
+------------
+
+Sunday, Dec 20 2020:
+1. 2020-12-20 03:00:00+00:00	mercury	GEO	conjunction [0.010] vs sun at [268.673] 
+------------
+
+Monday, Feb 08 2021:
+1. 2021-02-08 14:00:00+00:00	mercury	GEO	conjunction [0.019] vs sun at [320.008] 
+------------
+
+Monday, Apr 19 2021:
+1. 2021-04-19 02:00:00+00:00	mercury	GEO	conjunction [0.008] vs sun at [29.253] 
+------------
+
+Friday, Jun 11 2021:
+1. 2021-06-11 01:00:00+00:00	mercury	GEO	conjunction [0.014] vs sun at [80.361] 
+------------
+
+Sunday, Aug 01 2021:
+1. 2021-08-01 14:00:00+00:00	mercury	GEO	conjunction [0.006] vs sun at [129.531] 
+------------
+
+Saturday, Oct 09 2021:
+1. 2021-10-09 16:00:00+00:00	mercury	GEO	conjunction [0.027] vs sun at [196.606] 
+------------
+
+Monday, Nov 29 2021:
+1. 2021-11-29 05:00:00+00:00	mercury	GEO	conjunction [0.008] vs sun at [247.191] 
+------------
+
+Sunday, Jan 23 2022:
+1. 2022-01-23 10:00:00+00:00	mercury	GEO	conjunction [0.045] vs sun at [303.408] 
+------------
+
+Saturday, Apr 02 2022:
+1. 2022-04-02 23:00:00+00:00	mercury	GEO	conjunction [0.008] vs sun at [13.171] 
+------------
+
+Sunday, Apr 03 2022:
+1. 2022-04-03 00:00:00+00:00	mercury	GEO	conjunction [0.036] vs sun at [13.256] 
+------------
+
+Saturday, May 21 2022:
+1. 2022-05-21 19:00:00+00:00	mercury	GEO	conjunction [0.019] vs sun at [60.726] 
+------------
+
+Saturday, Jul 16 2022:
+1. 2022-07-16 20:00:00+00:00	mercury	GEO	conjunction [0.018] vs sun at [114.288] 
+------------
+
+Friday, Sep 23 2022:
+1. 2022-09-23 07:00:00+00:00	mercury	GEO	conjunction [0.015] vs sun at [180.228] 
+------------
+
+Tuesday, Nov 08 2022:
+1. 2022-11-08 17:00:00+00:00	mercury	GEO	conjunction [0.007] vs sun at [226.272] 
+------------
+
+Saturday, Jan 07 2023:
+1. 2023-01-07 13:00:00+00:00	mercury	GEO	conjunction [0.005] vs sun at [286.944] 
+------------
+
+Friday, Mar 17 2023:
+1. 2023-03-17 11:00:00+00:00	mercury	GEO	conjunction [0.010] vs sun at [356.594] 
+------------
+
+Monday, May 01 2023:
+1. 2023-05-01 23:00:00+00:00	mercury	GEO	conjunction [0.031] vs sun at [41.342] 
+------------
+
+Tuesday, May 02 2023:
+1. 2023-05-02 00:00:00+00:00	mercury	GEO	conjunction [0.036] vs sun at [41.315] 
+------------
+
+Saturday, Jul 01 2023:
+1. 2023-07-01 05:00:00+00:00	mercury	GEO	conjunction [0.005] vs sun at [99.137] 
+------------
+
+Wednesday, Sep 06 2023:
+1. 2023-09-06 11:00:00+00:00	mercury	GEO	conjunction [0.012] vs sun at [163.620] 
+------------
+
+Friday, Oct 20 2023:
+1. 2023-10-20 06:00:00+00:00	mercury	GEO	conjunction [0.011] vs sun at [206.598] 
+------------
+
+Friday, Dec 22 2023:
+1. 2023-12-22 19:00:00+00:00	mercury	GEO	conjunction [0.010] vs sun at [270.649] 
+------------
+
+Wednesday, Feb 28 2024:
+1. 2024-02-28 09:00:00+00:00	mercury	GEO	conjunction [0.010] vs sun at [339.268] 
+------------
+
+Thursday, Apr 11 2024:
+1. 2024-04-11 23:00:00+00:00	mercury	GEO	conjunction [0.004] vs sun at [22.541] 
+------------
+
+Friday, Apr 12 2024:
+1. 2024-04-12 00:00:00+00:00	mercury	GEO	conjunction [0.069] vs sun at [22.509] 
+------------
+
+Friday, Jun 14 2024:
+1. 2024-06-14 17:00:00+00:00	mercury	GEO	conjunction [0.024] vs sun at [84.144] 
+------------
+
+Monday, Aug 19 2024:
+1. 2024-08-19 02:00:00+00:00	mercury	GEO	conjunction [0.002] vs sun at [146.592] 
+------------
+
+Monday, Sep 30 2024:
+1. 2024-09-30 21:00:00+00:00	mercury	GEO	conjunction [0.005] vs sun at [188.180] 
+------------
+
+Tuesday, Oct 01 2024:
+1. 2024-10-01 00:00:00+00:00	mercury	GEO	conjunction [0.094] vs sun at [188.401] 
+------------
+
+Friday, Dec 06 2024:
+1. 2024-12-06 02:00:00+00:00	mercury	GEO	conjunction [0.030] vs sun at [254.468] 
+------------
+
