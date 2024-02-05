@@ -1,11 +1,14 @@
-from core.enums import CoordinateSystem, NodeCalc
 from events.astro_event import (
     DecanChange,
     DeclinationExtreme,
     SpeedExtreme,
     TropicalSignChange,
 )
-from tools.timeline.timeline_config_parser import parse_json_to_timeline_configs
+
+from astrotoolz.core.enums import CoordinateSystem, NodeCalc
+from astrotoolz.tools.timeline.timeline_config_parser import (
+    parse_json_to_timeline_configs,
+)
 
 
 def test_parse_json_to_timeline_configs():
