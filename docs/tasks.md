@@ -12,7 +12,6 @@ TIMELINE:
 - Fix extreme events
 - Fix helio
 - Indicate GEO/HELIO aspects
-- Conjunction missing
 - Keep testing & looking for bugs
 - nodecalc optional
 - Write object oriented factories
