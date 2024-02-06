@@ -14,23 +14,23 @@ class Angle:
         self.source = source
         self.target = target
         self.dt = source.dt
+        self.abs_diff = self.calculate_abs_diff()
+        self.real_diff = self.calculate_real_diff()
+        self.circular_diff = self.calculate_circular_diff()
 
-    @property
-    def abs_diff(self):
+    def calculate_abs_diff(self) -> float:
         return abs(
             self.source.base_position.lon.decimal
             - self.target.base_position.lon.decimal
         )
 
-    @property
-    def real_diff(self):
+    def calculate_real_diff(self) -> float:
         return (
             self.source.base_position.lon.decimal
             - self.target.base_position.lon.decimal
         )
 
-    @property
-    def circular_diff(self):
+    def calculate_circular_diff(self) -> float:
         diff = (
             self.source.base_position.lon.decimal
             - self.target.base_position.lon.decimal

@@ -31,7 +31,7 @@ def _generate_transit_str(transit: Transit, points_filter: List[str] = []):
         angle = Angle(
             point.base_position.dt, point.base_position, transit_point.base_position
         )
-        str += f"\n{point.base_position.point:<10}{float_to_zodiacal(point.base_position.lon.decimal):<10}{float_to_zodiacal(transit_point.base_position.lon.decimal):<10}{round(angle.abs_diff,3):<10}{transit_point.house(transit.natal_horoscope.cusps):<10}"
+        str += f"\n{point.base_position.point:<10}{float_to_zodiacal(point.base_position.lon.decimal):<10}{float_to_zodiacal(transit_point.base_position.lon.decimal):<10}{round(angle.calculate_abs_diff,3):<10}{transit_point.house(transit.natal_horoscope.cusps):<10}"
 
     str += "\n---------------------\n\n\n"
     return str
@@ -53,7 +53,7 @@ def _generate_transit_table_str(transit_table: TransitTable):
                 ),
                 None,
             )
-            matrix[i, j] = round(angle.abs_diff, 3) if angle else ""
+            matrix[i, j] = round(angle.calculate_abs_diff, 3) if angle else ""
     angles_df = pd.DataFrame(matrix, index=planets, columns=planets)
     str += "Angles:\n"
     str += "-------\n"
