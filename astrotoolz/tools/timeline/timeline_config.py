@@ -4,16 +4,7 @@ from typing import List, Optional
 
 from astrotoolz.core.enums import CoordinateSystem, NodeCalc
 from astrotoolz.core.events.astro_event import DirectionChange
-from astrotoolz.core.factories import MappedPositionsFactory, PositionFactory
-from astrotoolz.core.objects.points import ALL_POINTS, MOON, NN, SN, SUN
-from astrotoolz.core.positions.position_factory import (
-    create_geo_position,
-    create_geo_positions,
-    create_helio_position,
-    create_helio_positions,
-)
-from astrotoolz.core.zodiac.positions.mapped_geo_position import MappedGeoPosition
-from astrotoolz.core.zodiac.positions.mapped_helio_position import MappedHelioPosition
+from astrotoolz.core.points import ALL_POINTS, MOON, NN, SN, SUN
 
 
 @dataclass
@@ -67,31 +58,3 @@ class TimelineConfig:
         ]
 
         self.events = [event for event in self.events if event not in [DirectionChange]]
-
-    @property
-    def positions_factory(self) -> PositionFactory:
-        if self.coordinate_system == CoordinateSystem.GEO:
-            return create_geo_positions
-        else:
-            return create_helio_positions
-
-    @property
-    def position_factory(self) -> PositionFactory:
-        if self.coordinate_system == CoordinateSystem.GEO:
-            return create_geo_position
-        else:
-            return create_helio_position
-
-    @property
-    def mapped_positions_factory(self) -> MappedPositionsFactory:
-        if self.coordinate_system == CoordinateSystem.GEO:
-            return MappedGeoPosition.from_planetary_positions
-        else:
-            return MappedHelioPosition.from_planetary_positions
-
-    @property
-    def mapped_position_factory(self) -> MappedPositionsFactory:
-        if self.coordinate_system == CoordinateSystem.GEO:
-            return MappedGeoPosition
-        else:
-            return MappedHelioPosition

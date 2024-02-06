@@ -1,19 +1,22 @@
 from datetime import datetime
 from typing import List
 
-import core.ephemeris.swisseph_api as swe_api
-from core.enums import NodeCalc
-from core.objects.points import NN, PLANETS, SN
-from core.positions.geo_position import GeoPosition
-from pytz import timezone
-from util.common import _to_degree
-from util.interval import calculate_intervals
+import pytz
+
+import astrotoolz.core.ephemeris.swisseph_api as swe_api
+from astrotoolz.core.enums import NodeCalc
+from astrotoolz.core.points import NN, PLANETS, SN
+from astrotoolz.core.positions.factory.position_factory import PositionFactory
+from astrotoolz.core.positions.geo_position import GeoPosition
+from astrotoolz.util.common import to_degree
+from astrotoolz.util.interval import calculate_intervals
 
 
-class GeoFactory:
+class GeoFactory(PositionFactory):
     node_calc: NodeCalc
 
     def __init__(self, node_calc: NodeCalc):
+        super().__init__()
         self.node_calc = node_calc
 
     def create_positions(
@@ -26,7 +29,7 @@ class GeoFactory:
         return [self.create_position(point, dt) for dt in dts]
 
     def create_position(self, point: str, dt: datetime) -> GeoPosition:
-        dt = dt.replace(tzinfo=timezone.utc)
+        dt = dt.replace(tzinfo=pytz.utc)
         if point in PLANETS:
             return self._geo(point, dt)
         elif point == NN:
@@ -39,7 +42,7 @@ class GeoFactory:
     def _geo(self, planet_name: str, dt: datetime) -> GeoPosition:
         lon, lat, speed = swe_api.get_ecliptic_position(planet_name, dt)
         ra, dec = swe_api.get_equatorial_position(planet_name, dt)
-        lon, lat, speed, ra, dec = _to_degree(lon, lat, speed, ra, dec)
+        lon, lat, speed, ra, dec = to_degree(lon, lat, speed, ra, dec)
         return GeoPosition(dt, planet_name, lon, lat, speed, ra, dec)
 
     def _north_node(self, dt: datetime) -> GeoPosition:
@@ -47,12 +50,12 @@ class GeoFactory:
         pos.point = NN
         return pos
 
-    def _south_node(self, dt: datetime, node_calc: NodeCalc) -> GeoPosition:
-        nn = self._north_node(dt, node_calc.swe_flag())
+    def _south_node(self, dt: datetime) -> GeoPosition:
+        nn = self._north_node(dt)
         lon = (nn.lon.decimal + 180.0) % 360
         lat = 0
         speed = nn.speed.decimal
         ra = (nn.ra.decimal + 12.0) % 24.0
         dec = -nn.dec.decimal
-        lon, lat, speed, ra, dec = _to_degree(lon, lat, speed)
+        lon, lat, speed, ra, dec = to_degree(lon, lat, speed)
         return GeoPosition(dt, SN, lon, lat, speed, ra, dec)

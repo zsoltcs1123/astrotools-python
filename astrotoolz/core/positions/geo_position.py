@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from datetime import datetime as dt
 
 from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.units.degree import Degree

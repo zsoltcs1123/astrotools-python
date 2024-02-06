@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from astrotoolz.core.zodiac.positions.mapped_position import MappedPosition
+from astrotoolz.core.zodiac.mapped_position import MappedPosition
 
 
 @dataclass

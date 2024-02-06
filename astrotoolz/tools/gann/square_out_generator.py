@@ -2,9 +2,9 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Tuple
 
 from astrotoolz.core.enums import CoordinateSystem
-from astrotoolz.core.objects.points import ASC, MC, MERCURY, MOON, VENUS
+from astrotoolz.core.points import ASC, MC, MERCURY, MOON, VENUS
 from astrotoolz.core.positions.base_position import BasePosition
-from astrotoolz.core.positions.position_factory import create_position
+from astrotoolz.core.positions.factory import create_position
 
 
 def find_lon_increases(

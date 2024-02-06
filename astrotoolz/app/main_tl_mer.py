@@ -1,46 +1,32 @@
-from astrotoolz.tools.timeline.timeline_config_parser import (
-    parse_json_to_timeline_configs,
-)
-from astrotoolz.tools.timeline.timeline_factory import create_timelines
+from datetime import datetime
+
+from astrotoolz.core.enums import CoordinateSystem
+from astrotoolz.tools.timeline.timeline_config import AspectsConfig, TimelineConfig
+from astrotoolz.tools.timeline.timeline_factory_builder import build_timeline_factory
 from astrotoolz.tools.timeline.timeline_printer import TimelinePrinter
 from astrotoolz.util.common import measure
 
-mer_sun = """
-{
-  "configurations": [
-    {
-      "coordinateSystem": "geo",
-      "startDate": "2020-01-01",
-      "endDate": "2025-01-01",
-      "intervalMinutes": 60,
-      "points": ["mercury"],
-      "nodeCalc": "mean",
-      "aspects": [
-          {
-              "angle": 360,
-              "family": true,
-              "orb": 0.1,
-              "targets": ["sun"]
-          }
-      ]
-    }
-  ]
-}
-"""
 
+def timeline():
 
-def timeline(json_data: str):
-    cfgs = parse_json_to_timeline_configs(json_data)
+    cfg = TimelineConfig(
+        CoordinateSystem.GEO,
+        datetime(2024, 1, 1),
+        datetime(2025, 1, 1),
+        60,
+        ["mercury"],
+        "mean",
+        [],
+        [AspectsConfig(360, True, 0.1, ["sun"])],
+    )
 
-    for cfg in cfgs:
-        cfg.validate()
+    factory = build_timeline_factory(cfg)
 
-    timelines = create_timelines(cfgs)
+    timeline = factory.create_timeline(cfg)
 
-    for tl in timelines:
-        printer = TimelinePrinter(tl)
-        printer.print_to_file("tl_mer_sun.txt")
+    printer = TimelinePrinter(timeline)
+    printer.print_to_file("tl_mer_sun.txt")
 
 
 if __name__ == "__main__":
-    measure(lambda: timeline(mer_sun))
+    measure(lambda: timeline())

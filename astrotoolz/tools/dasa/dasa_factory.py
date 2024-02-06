@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from typing import List
 
-from astrotoolz.core.zodiac.positions.mapped_geo_position import MappedGeoPosition
+from astrotoolz.core.zodiac.mapped_geo_position import MappedGeoPosition
 from astrotoolz.tools.dasa.dasa import Dasa, DasaLevel
 
 DASA_LENGTHS = {

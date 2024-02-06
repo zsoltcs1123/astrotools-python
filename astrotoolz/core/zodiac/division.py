@@ -2,6 +2,11 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 from astrotoolz.core.units.degree import Degree
+from astrotoolz.core.units.degree_converter import (
+    degree_from_dms,
+    degree_range_from_degrees,
+    degree_range_from_floats,
+)
 from astrotoolz.core.units.degree_range import DegreeRange as DR
 
 
@@ -77,15 +82,15 @@ def _get_division(degrees: float, lst: List[Division]) -> Optional[Division]:
 
 
 def _deg(d: int, m: int, s: int) -> Degree:
-    return Degree.from_dms(d, m, s)
+    return degree_from_dms(d, m, s)
 
 
-def _dr_floats(start, end) -> Degree:
-    return DR.from_floats(start, end)
+def _dr_floats(start, end) -> DR:
+    return degree_range_from_floats(start, end)
 
 
-def _dr_degs(start, end) -> Degree:
-    return DR.from_degrees(start, end)
+def _dr_degs(start, end) -> DR:
+    return degree_range_from_degrees(start, end)
 
 
 NAKSHATRAS = [

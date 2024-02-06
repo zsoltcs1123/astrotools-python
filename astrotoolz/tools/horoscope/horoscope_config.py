@@ -7,9 +7,9 @@ from astrotoolz.core.enums import (
     HoroscopeType,
     HouseSystem,
 )
-from astrotoolz.core.events.aspects.aspect import DEFAULT_ASPECTS
-from astrotoolz.core.events.aspects.orb_map import OrbMap
-from astrotoolz.core.objects.points import ALL_POINTS, ANGULARS, MEAN_NODE, VEDIC_POINTS
+from astrotoolz.core.events.aspect import DEFAULT_ASPECTS
+from astrotoolz.core.events.orb_map import OrbMap
+from astrotoolz.core.points import ALL_POINTS, ANGULARS, MEAN_NODE, VEDIC_POINTS
 
 
 @dataclass

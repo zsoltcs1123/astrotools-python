@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from astrotoolz.core.zodiac.positions.mapped_geo_position import MappedGeoPosition as mp
+from astrotoolz.core.zodiac.mapped_geo_position import MappedGeoPosition as mp
 
 
 @dataclass
@@ -22,7 +22,7 @@ class PositionalEvent(AstroEvent):
 @dataclass
 class TropicalSignChange(PositionalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.cs}\tTropical\tSign change\t{self.previous.tropical.sign.name} -> {self.current.tropical.sign.name}"
+        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tTropical\tSign change\t{self.previous.tropical.sign.name} -> {self.current.tropical.sign.name}"
 
     def label(self) -> str:
         return f"{self.current.point} TropicalSignChange {self.previous.tropical.sign.name} -> {self.current.tropical.sign.name}"
@@ -31,7 +31,7 @@ class TropicalSignChange(PositionalEvent):
 @dataclass
 class SiderealSignChange(PositionalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.cs}\tSidereal\tSign change\t{self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
+        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tSidereal\tSign change\t{self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
 
     def label(self) -> str:
         return f"{self.current.point} SiderealSignChange {self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
@@ -40,7 +40,7 @@ class SiderealSignChange(PositionalEvent):
 @dataclass
 class DecanChange(PositionalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.cs}\tTropical\tDecan change\t{self.previous.tropical.decan.name} -> {self.current.tropical.decan.name}"
+        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tTropical\tDecan change\t{self.previous.tropical.decan.name} -> {self.current.tropical.decan.name}"
 
     def label(self) -> str:
         return f"{self.current.point} DecanChange {self.previous.tropical.decan.name} -> {self.current.tropical.decan.name}"
@@ -49,7 +49,7 @@ class DecanChange(PositionalEvent):
 @dataclass
 class TermChange(PositionalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.cs}\tTropical\tTerm change\t{self.previous.tropical.term.name} -> {self.current.tropical.term.name}"
+        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tTropical\tTerm change\t{self.previous.tropical.term.name} -> {self.current.tropical.term.name}"
 
     def label(self) -> str:
         return f"{self.current.point} TermChange {self.previous.tropical.term.name} -> {self.current.tropical.term.name}"
@@ -58,7 +58,7 @@ class TermChange(PositionalEvent):
 @dataclass
 class NakshatraChange(PositionalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.cs}\tSidereal\tNakshatra change\t{self.previous.vedic.nakshatra.name} -> {self.current.vedic.nakshatra.name}"
+        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tSidereal\tNakshatra change\t{self.previous.vedic.nakshatra.name} -> {self.current.vedic.nakshatra.name}"
 
     def label(self) -> str:
         return f"{self.current.point} NakshatraChange {self.previous.vedic.nakshatra.name}[{self.previous.vedic.nakshatra.ruler}] -> {self.current.vedic.nakshatra.name}[{self.current.vedic.nakshatra.ruler}]"
@@ -67,7 +67,7 @@ class NakshatraChange(PositionalEvent):
 @dataclass
 class DirectionChange(PositionalEvent):
     def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.cs}\tDirection change\t{self.previous.direction} -> {self.current.direction}"
+        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tDirection change\t{self.previous.direction} -> {self.current.direction}"
 
     def label(self) -> str:
         return f"{self.current.point} DirectionChange {self.previous.direction} -> {self.current.direction}"

@@ -1,14 +1,15 @@
 from datetime import datetime, timezone
 from typing import List
 
-import core.ephemeris.swisseph_api as swe_api
-from core.objects.points import MOON, NN, SN, SUN
-from core.positions.helio_position import HelioPosition
-from util.common import _to_degree
-from util.interval import calculate_intervals
+import astrotoolz.core.ephemeris.swisseph_api as swe_api
+from astrotoolz.core.points import MOON, NN, SN, SUN
+from astrotoolz.core.positions.factory.position_factory import PositionFactory
+from astrotoolz.core.positions.helio_position import HelioPosition
+from astrotoolz.util.common import to_degree
+from astrotoolz.util.interval import calculate_intervals
 
 
-class HelioFactory:
+class HelioFactory(PositionFactory):
     def create_positions(
         self, point: str, start: datetime, end: datetime, interval_minutes: int
     ) -> List[HelioPosition]:
@@ -27,5 +28,5 @@ class HelioFactory:
 
     def _helio(self, point: str, dt: datetime) -> HelioPosition:
         lon, lat, speed = swe_api.get_helio_position(point, dt)
-        lon, lat, speed = _to_degree(lon, lat, speed)
+        lon, lat, speed = to_degree(lon, lat, speed)
         return HelioPosition(dt, point, lon, lat, speed)

@@ -2,7 +2,9 @@ import time
 from typing import Any, Callable, Dict, List
 
 import pytz
-from core.units.degree import Degree
+
+from astrotoolz.core.units.degree import Degree
+from astrotoolz.core.units.degree_converter import degree_from_decimal
 
 
 def measure(func) -> None:
@@ -31,8 +33,8 @@ def group_by(lst: List[Any], key_func: Callable[[Any], Any]) -> Dict[Any, List[A
     return result
 
 
-def _to_degree(*args: float) -> List[Degree]:
-    return [Degree.from_decimal(arg) for arg in args]
+def to_degree(*args: float) -> List[Degree]:
+    return [degree_from_decimal(arg) for arg in args]
 
 
 def find_smallest_elements(

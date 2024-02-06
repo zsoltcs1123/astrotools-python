@@ -1,58 +1,57 @@
 from typing import Callable, Dict, List
 
 from astrotoolz.core.angles.angle import Angle
-from astrotoolz.core.enums import CoordinateSystem, NodeCalc
-from astrotoolz.core.factories import MappedPositionFactory, PositionFactory
-from astrotoolz.core.positions.position_factory_config import PositionFactoryConfig
-from astrotoolz.core.zodiac.positions.mapped_position import MappedPosition
-from astrotoolz.util.console_logger import ConsoleLogger
-
-_logger = ConsoleLogger("AngleFactory")
+from astrotoolz.core.positions.factory.position_factory import PositionFactory
+from astrotoolz.core.zodiac.mapped_position import MappedPosition
+from astrotoolz.core.zodiac.mapper.position_mapper import PositionMapper
+from astrotoolz.util.logger_base import LoggerBase
 
 
-def generate_angles_dict(
-    mps: List[MappedPosition], target_selector: Callable[[str], List[str]]
-) -> Dict[str, List[Angle]]:
-    angles = {}
-    for mp in mps:
-        targets = target_selector(mp.point)
+class AngleFactory(LoggerBase):
 
-        angles[mp.point] = []
+    def __init__(
+        self, position_factory: PositionFactory, position_mapper: PositionMapper
+    ):
+        super().__init__()
+        self.position_factory = position_factory
+        self.position_mapper = position_mapper
 
-        for t in targets:
-            target_mp = next((p for p in mps if p.point == t), None)
-            if target_mp is not None:
-                angle = Angle(mp, target_mp)
-                angles[mp.point].append(angle)
+    def create_angles_dict(
+        self, mps: List[MappedPosition], target_selector: Callable[[str], List[str]]
+    ) -> Dict[str, List[Angle]]:
+        angles = {}
+        for mp in mps:
+            targets = target_selector(mp.point)
 
-    return angles
+            angles[mp.point] = []
 
+            for t in targets:
+                target_mp = next((p for p in mps if p.point == t), None)
+                if target_mp is not None:
+                    angle = Angle(mp, target_mp)
+                    angles[mp.point].append(angle)
 
-def generate_angles_list(
-    mps: Dict[str, List[MappedPosition]],
-    targets: Dict[str, List[str]],
-    p_factory: PositionFactory,
-    mp_factory: MappedPositionFactory,
-    node_calc: NodeCalc,
-) -> List[Angle]:
-    angles = []
-    for p, mp_list in mps.items():
-        current_targets = targets[p]
+        return angles
 
-        _logger.info(f"Generating angles for {p}")
+    def create_angles_list(
+        self,
+        mps: Dict[str, List[MappedPosition]],
+        targets: Dict[str, List[str]],
+    ) -> List[Angle]:
+        angles = []
+        for p, mp_list in mps.items():
+            current_targets = targets[p]
 
-        for source_mp in mp_list:
-            for t in current_targets:
-                if t == source_mp.point:
-                    continue
+            self._logger.info(f"Generating angles for {p}")
 
-                cfg = PositionFactoryConfig(
-                    CoordinateSystem.GEO, t, source_mp.dt, node_calc
-                )
+            for source_mp in mp_list:
+                for t in current_targets:
+                    if t == source_mp.point:
+                        continue
 
-                target_bp = p_factory(cfg)
-                target_mp = mp_factory(target_bp)
-                angle = Angle(source_mp, target_mp)
-                angles.append(angle)
+                    target_bp = self.position_factory.create_position(t, source_mp.dt)
+                    target_mp = self.position_mapper.map_position(target_bp)
+                    angle = Angle(source_mp, target_mp)
+                    angles.append(angle)
 
-    return angles
+        return angles
