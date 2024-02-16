@@ -31,13 +31,13 @@ def timeline():
 
     cfg = TimelineConfig(
         CoordinateSystem.GEO,
-        datetime(2024, 1, 1),
+        datetime(2014, 1, 1),
         datetime(2025, 1, 1),
         60,
         ["mercury"],
         "mean",
         [],
-        [AspectsConfig(60, True, 0.1, ["saturn"])],
+        [AspectsConfig(30, True, 0.1, ["sun"])],
     )
 
     factory = build_timeline_factory(cfg)
