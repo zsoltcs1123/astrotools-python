@@ -34,7 +34,7 @@ def timeline():
         ["mercury"],
         "mean",
         [],
-        [AspectsConfig(30, True, 0.1, ["sun"])],
+        [AspectsConfig(30, True, 0.1, ["saturn"])],
     )
 
     factory = build_timeline_factory(cfg)

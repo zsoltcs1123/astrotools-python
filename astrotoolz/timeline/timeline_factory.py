@@ -1,4 +1,3 @@
-import logging
 from typing import Dict, List, Type
 
 from astrotoolz.core.angles.angle import Angle
