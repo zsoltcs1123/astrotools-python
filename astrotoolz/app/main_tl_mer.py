@@ -11,6 +11,11 @@ from types import (
 )
 
 from astrotoolz.core.enums import CoordinateSystem
+from astrotoolz.core.events.astro_event import (
+    DeclinationExtreme,
+    LatitudeExtreme,
+    SpeedExtreme,
+)
 from astrotoolz.core.positions.geo_position import GeoPosition
 from astrotoolz.core.zodiac.division import Division
 from astrotoolz.core.zodiac.tropical_attributes import TropicalAttributes
@@ -28,13 +33,11 @@ def timeline():
 
     cfg = TimelineConfig(
         CoordinateSystem.GEO,
+        datetime(2023, 1, 1),
         datetime(2024, 1, 1),
-        datetime(2025, 1, 1),
-        60,
+        10,
         ["mercury"],
-        "mean",
-        [],
-        [AspectsConfig(5, True, 0.1, ["sun"])],
+        events=[SpeedExtreme],
     )
 
     factory = build_timeline_factory(cfg)
@@ -52,7 +55,7 @@ def timeline():
 
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
-        logging.debug(f"Trying to serialize an object of type: {type(obj)}")
+        # logging.debug(f"Trying to serialize an object of type: {type(obj)}")
 
         if isinstance(obj, Timeline):
             return {"events": obj.events}

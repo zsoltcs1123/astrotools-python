@@ -10,7 +10,6 @@ Current:
 TIMELINE:
 - Double entries due to grouping by date problem
 - Fix extreme events
-- Fix helio
 
 TBD:
 - Re-implement Transits

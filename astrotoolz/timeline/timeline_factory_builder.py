@@ -51,7 +51,7 @@ def build_timeline_factory(config: TimelineConfig) -> TimelineFactory:
         else None
     )
 
-    extreme_event_types = [e for e in config.events if e == ExtremeEvent]
+    extreme_event_types = [e for e in config.events if issubclass(e, ExtremeEvent)]
 
     extreme_event_factory = (
         ExtremeEventFactory(extreme_event_types) if extreme_event_types else None

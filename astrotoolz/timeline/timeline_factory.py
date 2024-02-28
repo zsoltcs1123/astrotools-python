@@ -55,19 +55,20 @@ class TimelineFactory(LoggerBase):
 
         bps = self._generate_bps(config)
         mps = self.position_mapper.map_positions(bps)
+        grouped_mps = self._group_mps(mps)
 
         events = []
 
         if self.positional_event_factory:
             events += self._generate_positional_events(
                 config,
-                mps,
+                grouped_mps,
             )
 
         if self.extreme_event_factory:
             events += self._generate_extreme_events(
                 config,
-                mps,
+                grouped_mps,
             )
 
         aspects = []
@@ -90,13 +91,19 @@ class TimelineFactory(LoggerBase):
 
         bps = []
         for point in config.points:
-            self._logger.info(
-                f"Generating {config.coordinate_system} positions for {point}"
-            )
             bps += self.position_factory.create_positions(
                 point, config.start_date, config.end_date, config.interval_minutes
             )
         return bps
+
+    def _group_mps(self, mps: List[mp]) -> Dict[str, List[mp]]:
+        grouped_mps = {}
+        for mpp in mps:
+            if mpp.point not in grouped_mps:
+                grouped_mps[mpp.point] = [mpp]
+            else:
+                grouped_mps[mpp.point].append(mpp)
+        return grouped_mps
 
     def _generate_positional_events(
         self,
@@ -130,21 +137,11 @@ class TimelineFactory(LoggerBase):
         self,
         tl_config: TimelineConfig,
         asp_config: AspectsConfig,
-        mps: List[mp],
+        mps: Dict[str, List[mp]],
     ) -> List[Angle]:
-        self._logger.info("Generating angles")
-        grouped_mps = {}
-
-        for mp in mps:
-            if mp.point not in grouped_mps:
-                grouped_mps[mp.point] = [mp]
-            else:
-                grouped_mps[mp.point].append(mp)
-        mps = grouped_mps
-
         targets = self._get_angle_targets(tl_config, asp_config)
         return self.angle_factory.create_angles_list(
-            grouped_mps,
+            mps,
             targets,
         )
 

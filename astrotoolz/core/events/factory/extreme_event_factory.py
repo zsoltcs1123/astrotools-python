@@ -24,20 +24,24 @@ class ExtremeEventFactory(LoggerBase):
             if not issubclass(event_type, ExtremeEvent):
                 continue
 
+            attribute = self._event_type_to_attribute(event_type)
+
             events += self._create_events(
-                self._find_local_extrema(
-                    mps, self._event_type_to_attribute(event_type), np.greater
-                ),
+                self._find_local_extrema(mps, attribute, np.greater),
                 event_type,
-                "max",
+                f"{attribute} max positive",
             )
 
             events += self._create_events(
-                self._find_local_extrema(
-                    mps, self._event_type_to_attribute(event_type), np.less
-                ),
+                self._find_local_extrema(mps, attribute, np.less),
                 event_type,
-                "min",
+                f"{attribute} max negative",
+            )
+
+            events += self._create_events(
+                self._find_closest_to_zero(mps, attribute),
+                event_type,
+                f"{attribute} min",
             )
         return events
 
@@ -54,7 +58,7 @@ class ExtremeEventFactory(LoggerBase):
     def _create_events(
         extremes: List[MappedPosition], event_type: type, type: str
     ) -> List[ExtremeEvent]:
-        return [event_type(mp.dt, mp, type) for mp in extremes]
+        return [event_type(mp.dt, type, mp) for mp in extremes]
 
     @staticmethod
     def _find_local_extrema(
@@ -67,3 +71,17 @@ class ExtremeEventFactory(LoggerBase):
         extrema_indices = argrelextrema(values_array, comparator)
         extrema = [mapped_positions[i] for i in extrema_indices[0]]
         return extrema
+
+    @staticmethod
+    def _find_closest_to_zero(
+        mapped_positions: List[MappedPosition],
+        attribute: str,
+    ) -> List[MappedPosition]:
+        values = [
+            getattr(mp.base_position, attribute).decimal for mp in mapped_positions
+        ]
+        values_array = np.array(values)
+        signs = np.sign(values_array)
+        sign_diff = np.diff(signs)
+        shift_indices = np.where(sign_diff != 0)[0]
+        return [mapped_positions[i] for i in shift_indices]

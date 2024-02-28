@@ -75,8 +75,8 @@ class DirectionChange(PositionalEvent):
 
 @dataclass
 class ExtremeEvent(AstroEvent):
-    mp: mp
     type: str  # min, max
+    mp: mp
 
 
 @dataclass
