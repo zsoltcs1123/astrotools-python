@@ -9,7 +9,7 @@ from astrotoolz.core.events.astro_event import (
     LatitudeExtreme,
     SpeedExtreme,
 )
-from astrotoolz.core.zodiac.mapped_position import MappedPosition
+from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.util.logger_base import LoggerBase
 
 
@@ -19,7 +19,7 @@ class ExtremeEventFactory(LoggerBase):
         super().__init__()
         self.event_types = event_types
 
-    def create_events(self, mps: List[MappedPosition]) -> List[ExtremeEvent]:
+    def create_events(self, mps: List[BasePosition]) -> List[ExtremeEvent]:
         events = []
         for event_type in self.event_types:
             if not issubclass(event_type, ExtremeEvent):
@@ -32,19 +32,19 @@ class ExtremeEventFactory(LoggerBase):
             events += self._create_events(
                 self._find_local_extrema(mps, attribute, np.greater),
                 event_type,
-                f"{attribute} local max",
+                f"{attribute.capitalize()}LocalMax",
             )
 
             events += self._create_events(
                 self._find_local_extrema(mps, attribute, np.less),
                 event_type,
-                f"{attribute} local min",
+                f"{attribute.capitalize()}LocalMin",
             )
 
             events += self._create_events(
                 self._find_closest_to_zero(mps, attribute),
                 event_type,
-                f"{attribute} zero",
+                f"{attribute.capitalize()}Zero",
             )
         return events
 
@@ -59,32 +59,30 @@ class ExtremeEventFactory(LoggerBase):
 
     @staticmethod
     def _create_events(
-        extremes: List[MappedPosition], event_type: type, type: str
+        bps: List[BasePosition], event_type: type, type: str
     ) -> List[ExtremeEvent]:
-        return [event_type(mp.dt, type, mp) for mp in extremes]
+        return [event_type(bp.dt, type, bp) for bp in bps]
 
     @staticmethod
     def _find_local_extrema(
-        mapped_positions: List[MappedPosition],
+        positions: List[BasePosition],
         attribute: str,
         comparator: Callable[[Any, Any], bool],
-    ) -> List[MappedPosition]:
-        values = [getattr(mp.base_position, attribute) for mp in mapped_positions]
+    ) -> List[BasePosition]:
+        values = [getattr(position, attribute) for position in positions]
         values_array = np.array(values)
         extrema_indices = argrelextrema(values_array, comparator)
-        extrema = [mapped_positions[i] for i in extrema_indices[0]]
+        extrema = [positions[i] for i in extrema_indices[0]]
         return extrema
 
     @staticmethod
     def _find_closest_to_zero(
-        mapped_positions: List[MappedPosition],
+        positions: List[BasePosition],
         attribute: str,
-    ) -> List[MappedPosition]:
-        values = [
-            getattr(mp.base_position, attribute).decimal for mp in mapped_positions
-        ]
+    ) -> List[BasePosition]:
+        values = [getattr(position, attribute).decimal for position in positions]
         values_array = np.array(values)
         signs = np.sign(values_array)
         sign_diff = np.diff(signs)
         shift_indices = np.where(sign_diff != 0)[0]
-        return [mapped_positions[i] for i in shift_indices]
+        return [positions[i] for i in shift_indices]

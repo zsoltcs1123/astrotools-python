@@ -10,6 +10,7 @@ from astrotoolz.core.events.astro_event import (
     TropicalProgression,
     TropicalSignChange,
 )
+from astrotoolz.core.zodiac.division import Decan
 from astrotoolz.core.zodiac.mapped_position import MappedPosition as mp
 from astrotoolz.util.common import find_smallest_elements, group_by, integral_ends_with
 from astrotoolz.util.logger_base import LoggerBase
@@ -76,47 +77,55 @@ class PositionalEventFactory(LoggerBase):
     @staticmethod
     def _check_decan_change(previous: mp, current: mp) -> Optional[DecanChange]:
         if previous.tropical.decan.id != current.tropical.decan.id:
-            return DecanChange(current.dt, previous, current)
+            return DecanChange(current.dt, DecanChange.__name__, current, previous)
 
     @staticmethod
     def _check_tropical_sign_change(
         previous: mp, current: mp
     ) -> Optional[TropicalSignChange]:
         if previous.tropical.sign.id != current.tropical.sign.id:
-            return TropicalSignChange(current.dt, previous, current)
+            return TropicalSignChange(
+                current.dt, TropicalSignChange.__name__, current, previous
+            )
 
     @staticmethod
     def _check_sidereal_sign_change(
         previous: mp, current: mp
     ) -> Optional[SiderealSignChange]:
         if previous.vedic.sign.id != current.vedic.sign.id:
-            return SiderealSignChange(current.dt, previous, current)
+            return SiderealSignChange(
+                current.dt, SiderealSignChange.__name__, current, previous
+            )
 
     @staticmethod
     def _check_term_change(previous: mp, current: mp) -> Optional[TermChange]:
         if previous.tropical.term.id != current.tropical.term.id:
-            return TermChange(current.dt, previous, current)
+            return TermChange(current.dt, TermChange.__name__, current, previous)
 
     @staticmethod
     def _check_direction_change(previous: mp, current: mp) -> Optional[DirectionChange]:
         if previous.direction != current.direction:
-            return DirectionChange(current.dt, previous, current)
+            return DirectionChange(
+                current.dt, DirectionChange.__name__, current, previous
+            )
 
     @staticmethod
     def _check_nakshatra_change(previous: mp, current: mp) -> Optional[NakshatraChange]:
         if previous.vedic.nakshatra.id != current.vedic.nakshatra.id:
-            return NakshatraChange(current.dt, previous, current)
+            return NakshatraChange(
+                current.dt, NakshatraChange.__name__, current, previous
+            )
 
     @staticmethod
     def _get_tropical_progressions(mps: List[mp]) -> List[AstroEvent]:
         events = []
         for mp in enumerate(mps):
             if integral_ends_with(5, mp.tropical.lon.decimal):
-                events.append(TropicalProgression(mp.dt, mp, "50%"))
+                events.append(TropicalProgression(mp.dt, "50%", mp))
             elif integral_ends_with(7, mp.tropical.lon.decimal):
-                events.append(TropicalProgression(mp.dt, mp, "70%"))
+                events.append(TropicalProgression(mp.dt, "70%", mp))
             elif integral_ends_with(3, mp.tropical.lon.decimal):
-                events.append(TropicalProgression(mp.dt, mp, "30%"))
+                events.append(TropicalProgression(mp.dt, "30%", mp))
 
         groups = group_by(events, lambda x: int(x.mp.tropical.lon.decimal))
 

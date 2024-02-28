@@ -10,14 +10,16 @@ from types import (
     WrapperDescriptorType,
 )
 
-from astrotoolz.core.enums import CoordinateSystem
+from astrotoolz.core.enums import CoordinateSystem, Zodiac
 from astrotoolz.core.events.astro_event import (
     DeclinationExtreme,
     LatitudeExtreme,
     SpeedExtreme,
+    TropicalSignChange,
 )
-from astrotoolz.core.positions.geo_position import GeoPosition
+from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.zodiac.division import Division
+from astrotoolz.core.zodiac.mapped_position import MappedPosition
 from astrotoolz.core.zodiac.tropical_attributes import TropicalAttributes
 from astrotoolz.core.zodiac.vedic_attributes import VedicAttributes
 from astrotoolz.out.file import to_text_file
@@ -37,7 +39,7 @@ def timeline():
         datetime(2024, 1, 1),
         10,
         ["mercury"],
-        events=[DeclinationExtreme],
+        events=[TropicalSignChange, DeclinationExtreme],
     )
 
     factory = build_timeline_factory(cfg)
@@ -63,7 +65,18 @@ class CustomJSONEncoder(json.JSONEncoder):
         if isinstance(obj, Division):
             return {"name": obj.name}
 
-        if isinstance(obj, GeoPosition):
+        if isinstance(obj, MappedPosition):
+            return {
+                "lon": obj.lon.decimal,
+                "lat": obj.lat.decimal,
+                "speed": obj.speed.decimal,
+                "ra": obj.ra.decimal if obj.ra is not None else None,
+                "dec": obj.dec.decimal if obj.dec is not None else None,
+                "tropical": obj.tropical,
+                "vedic": obj.vedic,
+            }
+
+        if isinstance(obj, BasePosition):
             return {
                 "lon": obj.lon.decimal,
                 "lat": obj.lat.decimal,

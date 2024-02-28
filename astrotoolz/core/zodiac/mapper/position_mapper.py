@@ -1,8 +1,9 @@
-from abc import ABC, abstractmethod
 from typing import List
 
 import astrotoolz.core.ephemeris.swisseph_api as swe_api
 import astrotoolz.core.zodiac.division as zodiac
+from astrotoolz.core.enums import Zodiac
+from astrotoolz.core.events.astro_event import AstroEvent
 from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.units.degree import Degree
 from astrotoolz.core.units.degree_converter import degree_from_decimal
@@ -12,19 +13,38 @@ from astrotoolz.core.zodiac.vedic_attributes import VedicAttributes
 from astrotoolz.util.logger_base import LoggerBase
 
 
-class PositionMapper(LoggerBase, ABC):
+class PositionMapper(LoggerBase):
 
     def __init__(self, ayanamsa: str = "LAHIRI"):
         super().__init__()
         self._ayanamsa = ayanamsa
 
-    def map_positions(self, positions: List[BasePosition]) -> List[BasePosition]:
+    def _map_events(self, events: List[AstroEvent], zodiacs: List[Zodiac]):
         self._logger.info("Mapping astrological data...")
-        return [self.map_position(position) for position in positions]
+        for e in events:
+            e.current = self.map_position(e.current, zodiacs)
 
-    @abstractmethod
-    def map_position(self, position: BasePosition) -> MappedPosition:
-        pass
+    def map_positions(
+        self, positions: List[BasePosition], zodiacs: [List[Zodiac]]
+    ) -> List[BasePosition]:
+        self._logger.info("Mapping astrological data...")
+        return [self.map_position(position, zodiacs) for position in positions]
+
+    def map_position(
+        self, position: BasePosition, zodiacs: List[Zodiac]
+    ) -> MappedPosition:
+
+        tropical_attributes = (
+            self.map_tropical_attributes(position)
+            if Zodiac.TROPICAL in zodiacs
+            else None
+        )
+
+        vedic_attributes = (
+            self.map_vedic_attributes(position) if Zodiac.SIDEREAL in zodiacs else None
+        )
+
+        return MappedPosition(position, tropical_attributes, vedic_attributes)
 
     def map_tropical_attributes(self, position: BasePosition) -> TropicalAttributes:
 

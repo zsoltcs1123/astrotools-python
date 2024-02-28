@@ -1,12 +1,15 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from astrotoolz.core.zodiac.mapped_geo_position import MappedGeoPosition as mp
+from astrotoolz.core.positions.base_position import BasePosition
+from astrotoolz.core.zodiac.mapped_position import MappedPosition
 
 
 @dataclass
 class AstroEvent:
     dt: datetime  # UTC
+    type: str
+    current: BasePosition
 
     def tv_timestamp(self) -> str:
         """eg. timestamp("2023-02-27 11:05 UTC")"""
@@ -15,100 +18,74 @@ class AstroEvent:
 
 @dataclass
 class PositionalEvent(AstroEvent):
-    previous: mp
-    current: mp
+    previous: MappedPosition
 
 
 @dataclass
-class TropicalSignChange(PositionalEvent):
-    def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tTropical\tSign change\t{self.previous.tropical.sign.name} -> {self.current.tropical.sign.name}"
-
-    def label(self) -> str:
-        return f"{self.current.point} TropicalSignChange {self.previous.tropical.sign.name} -> {self.current.tropical.sign.name}"
+class TropicalEvent(PositionalEvent):
+    pass
 
 
 @dataclass
-class SiderealSignChange(PositionalEvent):
-    def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tSidereal\tSign change\t{self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
-
-    def label(self) -> str:
-        return f"{self.current.point} SiderealSignChange {self.previous.vedic.sign.name} -> {self.current.vedic.sign.name}"
+class SiderealEvent(PositionalEvent):
+    pass
 
 
 @dataclass
-class DecanChange(PositionalEvent):
-    def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tTropical\tDecan change\t{self.previous.tropical.decan.name} -> {self.current.tropical.decan.name}"
-
-    def label(self) -> str:
-        return f"{self.current.point} DecanChange {self.previous.tropical.decan.name} -> {self.current.tropical.decan.name}"
+class TropicalSignChange(TropicalEvent):
+    pass
 
 
 @dataclass
-class TermChange(PositionalEvent):
-    def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tTropical\tTerm change\t{self.previous.tropical.term.name} -> {self.current.tropical.term.name}"
-
-    def label(self) -> str:
-        return f"{self.current.point} TermChange {self.previous.tropical.term.name} -> {self.current.tropical.term.name}"
+class SiderealSignChange(SiderealEvent):
+    pass
 
 
 @dataclass
-class NakshatraChange(PositionalEvent):
-    def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tSidereal\tNakshatra change\t{self.previous.vedic.nakshatra.name} -> {self.current.vedic.nakshatra.name}"
+class DecanChange(TropicalEvent):
+    pass
 
-    def label(self) -> str:
-        return f"{self.current.point} NakshatraChange {self.previous.vedic.nakshatra.name}[{self.previous.vedic.nakshatra.ruler}] -> {self.current.vedic.nakshatra.name}[{self.current.vedic.nakshatra.ruler}]"
+
+@dataclass
+class TermChange(TropicalEvent):
+    pass
+
+
+@dataclass
+class NakshatraChange(SiderealEvent):
+    pass
 
 
 @dataclass
 class DirectionChange(PositionalEvent):
-    def __repr__(self) -> str:
-        return f"{self.current.dt}\t{self.current.point}\t{self.current.coord_system}\tDirection change\t{self.previous.direction} -> {self.current.direction}"
-
-    def label(self) -> str:
-        return f"{self.current.point} DirectionChange {self.previous.direction} -> {self.current.direction}"
+    pass
 
 
 @dataclass
 class ExtremeEvent(AstroEvent):
-    type: str  # min, max
-    mp: mp
+    pass
 
 
 @dataclass
 class DeclinationExtreme(ExtremeEvent):
-    def __repr__(self) -> str:
-        return f"{self.dt}\t{self.mp.point}\t Declination {self.type} of {self.mp.base_position.dec.str_decimal()} at \t{self.mp.tropical.position}"
+    pass
 
 
 @dataclass
 class LatitudeExtreme(ExtremeEvent):
-    def __repr__(self) -> str:
-        return f"{self.dt}\t{self.mp.point}\t Latitude {self.type} of {self.mp.base_position.lat.str_decimal()} at\t{self.mp.tropical.position}"
+    pass
 
 
 @dataclass
 class SpeedExtreme(ExtremeEvent):
-    def __repr__(self) -> str:
-        return f"{self.dt}\t{self.mp.point}\t Speed {self.type} of {self.mp.base_position.speed.str_decimal()} at\t{self.mp.tropical.position}"
+    pass
 
 
 @dataclass
 class PhaseExtreme(ExtremeEvent):
-    def __repr__(self) -> str:
-        return f"{self.dt}\t{self.mp.point}\t Phase {self.type} of {self.mp.phase.str_decimal()} at\t{self.mp.tropical.position}"
+    pass
 
 
 @dataclass
 class TropicalProgression(AstroEvent):
-    name: str
-
-    def __repr__(self) -> str:
-        return f"{self.dt}\t{self.current.point}\t{self.name} progression at\t{self.current.tropical.position}"
-
-    def label(self) -> str:
-        return f"{self.current.point} {self.name} progression at {self.current.tropical.position}"
+    pass

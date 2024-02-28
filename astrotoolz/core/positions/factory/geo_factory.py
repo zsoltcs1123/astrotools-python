@@ -5,8 +5,8 @@ import pytz
 import astrotoolz.core.ephemeris.swisseph_api as swe_api
 from astrotoolz.core.enums import NodeCalc
 from astrotoolz.core.points import NN, PLANETS, SN
+from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.positions.factory.position_factory import PositionFactory
-from astrotoolz.core.positions.geo_position import GeoPosition
 from astrotoolz.util.common import to_degree
 
 
@@ -17,7 +17,7 @@ class GeoFactory(PositionFactory):
         super().__init__()
         self.node_calc = node_calc
 
-    def create_position(self, point: str, dt: datetime) -> GeoPosition:
+    def create_position(self, point: str, dt: datetime) -> BasePosition:
         dt = dt.replace(tzinfo=pytz.utc)
         if point in PLANETS:
             return self._geo(point, dt)
@@ -28,18 +28,18 @@ class GeoFactory(PositionFactory):
         else:
             raise (ValueError(f"{point} not supported"))
 
-    def _geo(self, planet_name: str, dt: datetime) -> GeoPosition:
+    def _geo(self, planet_name: str, dt: datetime) -> BasePosition:
         lon, lat, speed = swe_api.get_ecliptic_position(planet_name, dt)
         ra, dec = swe_api.get_equatorial_position(planet_name, dt)
         lon, lat, speed, ra, dec = to_degree(lon, lat, speed, ra, dec)
-        return GeoPosition(dt, planet_name, lon, lat, speed, ra, dec)
+        return BasePosition(dt, planet_name, lon, lat, speed, ra, dec)
 
-    def _north_node(self, dt: datetime) -> GeoPosition:
+    def _north_node(self, dt: datetime) -> BasePosition:
         pos = self._geo(self.node_calc.swe_flag(), dt)
         pos.point = NN
         return pos
 
-    def _south_node(self, dt: datetime) -> GeoPosition:
+    def _south_node(self, dt: datetime) -> BasePosition:
         nn = self._north_node(dt)
         lon = (nn.lon.decimal + 180.0) % 360
         lat = 0
@@ -47,4 +47,4 @@ class GeoFactory(PositionFactory):
         ra = (nn.ra.decimal + 12.0) % 24.0
         dec = -nn.dec.decimal
         lon, lat, speed, ra, dec = to_degree(lon, lat, speed)
-        return GeoPosition(dt, SN, lon, lat, speed, ra, dec)
+        return BasePosition(dt, SN, lon, lat, speed, ra, dec)

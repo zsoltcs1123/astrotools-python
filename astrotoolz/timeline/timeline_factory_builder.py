@@ -13,8 +13,7 @@ from astrotoolz.core.events.factory.positional_event_factory import (
 )
 from astrotoolz.core.positions.factory.geo_factory import GeoFactory
 from astrotoolz.core.positions.factory.helio_factory import HelioFactory
-from astrotoolz.core.zodiac.mapper.geo_mapper import GeoMapper
-from astrotoolz.core.zodiac.mapper.helio_mapper import HelioMapper
+from astrotoolz.core.zodiac.mapper.position_mapper import PositionMapper
 from astrotoolz.timeline.timeline_config import TimelineConfig
 from astrotoolz.timeline.timeline_factory import TimelineFactory
 
@@ -29,11 +28,7 @@ def build_timeline_factory(config: TimelineConfig) -> TimelineFactory:
         else HelioFactory()
     )
 
-    position_mapper = (
-        GeoMapper()
-        if config.coordinate_system == CoordinateSystem.GEO
-        else HelioMapper()
-    )
+    position_mapper = PositionMapper()
 
     angle_target_calculator = AngleTargetCalculator(config.coordinate_system)
 

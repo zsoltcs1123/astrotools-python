@@ -3,9 +3,12 @@ from typing import Dict, List, Type
 from astrotoolz.core.angles.angle import Angle
 from astrotoolz.core.angles.angle_factory import AngleFactory
 from astrotoolz.core.angles.angle_target_calculator import AngleTargetCalculator
+from astrotoolz.core.enums import Zodiac
 from astrotoolz.core.events.aspect import Aspect
 from astrotoolz.core.events.astro_event import (
     AstroEvent,
+    SiderealEvent,
+    TropicalEvent,
 )
 from astrotoolz.core.events.factory.aspect_factory import AspectFactory
 from astrotoolz.core.events.factory.extreme_event_factory import ExtremeEventFactory
@@ -14,9 +17,6 @@ from astrotoolz.core.events.factory.positional_event_factory import (
 )
 from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.positions.factory.position_factory import PositionFactory
-from astrotoolz.core.zodiac.mapped_geo_position import (
-    MappedGeoPosition as MappedGeoPosition,
-)
 from astrotoolz.core.zodiac.mapped_position import MappedPosition as mp
 from astrotoolz.core.zodiac.mapper.position_mapper import PositionMapper
 from astrotoolz.timeline.timeline import Timeline
@@ -56,35 +56,49 @@ class TimelineFactory(LoggerBase):
         self._logger.info(f"Timeline generation initiated with config: {config}")
 
         bps = self._generate_bps(config)
-        mps = self.position_mapper.map_positions(bps)
-        grouped_mps = self._group_mps(mps)
+        grouped_bps = self._group_bps(bps)
+        premapped = False
 
         events = []
 
         if self.positional_event_factory:
+            zodiacs = []
+
+            for e in config.events:
+                if issubclass(e, TropicalEvent):
+                    zodiacs.append(Zodiac.TROPICAL)
+                if issubclass(e, SiderealEvent):
+                    zodiacs.append(Zodiac.SIDEREAL)
+
+            mps = self.position_mapper.map_positions(bps, zodiacs)
+            grouped_mps = self._group_bps(mps)
             events += self._generate_positional_events(
-                config,
                 grouped_mps,
             )
+            premapped = True
 
         if self.extreme_event_factory:
             events += self._generate_extreme_events(
-                config,
-                grouped_mps,
+                grouped_bps,
             )
 
         aspects = []
 
         if config.aspects:
             for aspc in config.aspects:
-                angles = self._generate_angles(config, aspc, mps)
+                angles = self._generate_angles(config, aspc, grouped_bps)
                 aspects += self._generate_aspects(
                     aspc,
                     angles,
                 )
             self._logger.debug(f"Identified {len(aspects)} aspects")
 
-        return Timeline(events + aspects)
+        all_events = events + aspects
+
+        if config.zodiacs and not premapped:
+            self.position_mapper._map_events(all_events, config.zodiacs)
+
+        return Timeline(all_events)
 
     def _generate_bps(
         self,
@@ -98,9 +112,9 @@ class TimelineFactory(LoggerBase):
             )
         return bps
 
-    def _group_mps(self, mps: List[mp]) -> Dict[str, List[mp]]:
+    def _group_bps(self, bps: List[BasePosition]) -> Dict[str, List[BasePosition]]:
         grouped_mps = {}
-        for mpp in mps:
+        for mpp in bps:
             if mpp.point not in grouped_mps:
                 grouped_mps[mpp.point] = [mpp]
             else:
@@ -109,7 +123,6 @@ class TimelineFactory(LoggerBase):
 
     def _generate_positional_events(
         self,
-        tl_config: TimelineConfig,
         mps: Dict[str, List[mp]],
     ) -> List[Type[AstroEvent]]:
         events = []
@@ -120,7 +133,6 @@ class TimelineFactory(LoggerBase):
 
     def _generate_extreme_events(
         self,
-        tl_config: TimelineConfig,
         mps: Dict[str, List[mp]],
     ) -> List[AstroEvent]:
         events = []
@@ -136,11 +148,11 @@ class TimelineFactory(LoggerBase):
         self,
         tl_config: TimelineConfig,
         asp_config: AspectsConfig,
-        mps: Dict[str, List[mp]],
+        bps: Dict[str, List[BasePosition]],
     ) -> List[Angle]:
         targets = self._get_angle_targets(tl_config, asp_config)
         return self.angle_factory.create_angles_list(
-            mps,
+            bps,
             targets,
         )
 
