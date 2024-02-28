@@ -9,7 +9,7 @@ class AspectsConfig:
     angle: int
     family: bool
     orb: float
-    targets: Optional[List[str]] = field(default_factory=list)
+    targets: Optional[List[str]]
 
     def __init__(
         self, angle: int, family: bool, orb: float, targets: Optional[List[str]] = None
