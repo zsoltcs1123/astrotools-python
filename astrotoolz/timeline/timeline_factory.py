@@ -181,4 +181,6 @@ class TimelineFactory(LoggerBase):
         )
 
     def _generate_asp_family(self, root: float) -> List[float]:
+        if root == 0:
+            root = 360
         return [multiple for multiple in range(0, 361, root)]
