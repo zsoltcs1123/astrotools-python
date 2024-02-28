@@ -11,10 +11,6 @@ TIMELINE:
 - Double entries due to grouping by date problem
 - Fix extreme events
 - Fix helio
-- Indicate GEO/HELIO aspects
-- Keep testing & looking for bugs
-- nodecalc optional
-- Write object oriented factories
 
 TBD:
 - Re-implement Transits

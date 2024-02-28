@@ -1,9 +1,9 @@
+import logging
 from typing import Dict, List, Type
 
 from astrotoolz.core.angles.angle import Angle
 from astrotoolz.core.angles.angle_factory import AngleFactory
 from astrotoolz.core.angles.angle_target_calculator import AngleTargetCalculator
-from astrotoolz.core.enums import CoordinateSystem
 from astrotoolz.core.events.aspect import Aspect
 from astrotoolz.core.events.astro_event import (
     AstroEvent,
@@ -20,8 +20,8 @@ from astrotoolz.core.zodiac.mapped_geo_position import (
 )
 from astrotoolz.core.zodiac.mapped_position import MappedPosition as mp
 from astrotoolz.core.zodiac.mapper.position_mapper import PositionMapper
-from astrotoolz.tools.timeline.timeline import Timeline
-from astrotoolz.tools.timeline.timeline_config import (
+from astrotoolz.timeline.timeline import Timeline
+from astrotoolz.timeline.timeline_config import (
     AspectsConfig,
     TimelineConfig,
 )

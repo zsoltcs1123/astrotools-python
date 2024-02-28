@@ -11,17 +11,14 @@ from types import (
 )
 
 from astrotoolz.core.enums import CoordinateSystem
-from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.positions.geo_position import GeoPosition
-from astrotoolz.core.units.degree import Degree
 from astrotoolz.core.zodiac.division import Division
 from astrotoolz.core.zodiac.tropical_attributes import TropicalAttributes
 from astrotoolz.core.zodiac.vedic_attributes import VedicAttributes
 from astrotoolz.out.file import to_text_file
-from astrotoolz.tools.timeline.timeline import Timeline
-from astrotoolz.tools.timeline.timeline_config import AspectsConfig, TimelineConfig
-from astrotoolz.tools.timeline.timeline_factory_builder import build_timeline_factory
-from astrotoolz.tools.timeline.timeline_printer import TimelinePrinter
+from astrotoolz.timeline.timeline import Timeline
+from astrotoolz.timeline.timeline_config import AspectsConfig, TimelineConfig
+from astrotoolz.timeline.timeline_factory_builder import build_timeline_factory
 from astrotoolz.util.common import measure
 
 logging.basicConfig(level=logging.DEBUG)
@@ -30,8 +27,8 @@ logging.basicConfig(level=logging.DEBUG)
 def timeline():
 
     cfg = TimelineConfig(
-        CoordinateSystem.GEO,
-        datetime(2014, 1, 1),
+        CoordinateSystem.HELIO,
+        datetime(2024, 1, 1),
         datetime(2025, 1, 1),
         60,
         ["mercury"],
@@ -44,8 +41,6 @@ def timeline():
 
     timeline = factory.create_timeline(cfg)
 
-    printer = TimelinePrinter(timeline)
-    # printer.print_to_file("tl_mer_sun.txt")
     timeline_json = json.dumps(timeline, cls=CustomJSONEncoder)
 
     to_text_file(
