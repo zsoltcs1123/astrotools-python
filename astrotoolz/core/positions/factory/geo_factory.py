@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import List
 
 import pytz
 
@@ -9,7 +8,6 @@ from astrotoolz.core.points import NN, PLANETS, SN
 from astrotoolz.core.positions.factory.position_factory import PositionFactory
 from astrotoolz.core.positions.geo_position import GeoPosition
 from astrotoolz.util.common import to_degree
-from astrotoolz.util.interval import calculate_intervals
 
 
 class GeoFactory(PositionFactory):
@@ -18,15 +16,6 @@ class GeoFactory(PositionFactory):
     def __init__(self, node_calc: NodeCalc):
         super().__init__()
         self.node_calc = node_calc
-
-    def create_positions(
-        self, point: str, start: datetime, end: datetime, interval_minutes: int
-    ) -> List[GeoPosition]:
-        self._logger.debug(
-            f"Generating positions for config: {point}, {start}, {end}, {interval_minutes}"
-        )
-        dts = calculate_intervals(start, end, interval_minutes)
-        return [self.create_position(point, dt) for dt in dts]
 
     def create_position(self, point: str, dt: datetime) -> GeoPosition:
         dt = dt.replace(tzinfo=pytz.utc)

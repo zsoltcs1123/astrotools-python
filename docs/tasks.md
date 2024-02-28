@@ -10,6 +10,7 @@ Current:
 TIMELINE:
 - Double entries due to grouping by date problem
 - Fix extreme events
+- Make the inclusion of astrological data optional
 
 TBD:
 - Re-implement Transits

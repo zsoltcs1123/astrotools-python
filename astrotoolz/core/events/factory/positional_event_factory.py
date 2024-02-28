@@ -52,7 +52,7 @@ class PositionalEventFactory(LoggerBase):
                 elif event_type == TropicalSignChange:
                     check_functions.append(self._check_tropical_sign_change)
                 elif event_type == SiderealSignChange:
-                    check_functions.append(self._check_vedic_sign_change)
+                    check_functions.append(self._check_sidereal_sign_change)
                 elif event_type == TermChange:
                     check_functions.append(self._check_term_change)
                 elif event_type == NakshatraChange:
@@ -86,7 +86,7 @@ class PositionalEventFactory(LoggerBase):
             return TropicalSignChange(current.dt, previous, current)
 
     @staticmethod
-    def _check_vedic_sign_change(
+    def _check_sidereal_sign_change(
         previous: mp, current: mp
     ) -> Optional[SiderealSignChange]:
         if previous.vedic.sign.id != current.vedic.sign.id:

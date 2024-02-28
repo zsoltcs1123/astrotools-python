@@ -16,6 +16,7 @@ from astrotoolz.util.logger_base import LoggerBase
 class ExtremeEventFactory(LoggerBase):
 
     def __init__(self, event_types: List[type]):
+        super().__init__()
         self.event_types = event_types
 
     def create_events(self, mps: List[MappedPosition]) -> List[ExtremeEvent]:
@@ -26,22 +27,24 @@ class ExtremeEventFactory(LoggerBase):
 
             attribute = self._event_type_to_attribute(event_type)
 
+            self._logger.info(f"Generating {attribute} extreme events")
+
             events += self._create_events(
                 self._find_local_extrema(mps, attribute, np.greater),
                 event_type,
-                f"{attribute} max positive",
+                f"{attribute} local max",
             )
 
             events += self._create_events(
                 self._find_local_extrema(mps, attribute, np.less),
                 event_type,
-                f"{attribute} max negative",
+                f"{attribute} local min",
             )
 
             events += self._create_events(
                 self._find_closest_to_zero(mps, attribute),
                 event_type,
-                f"{attribute} min",
+                f"{attribute} zero",
             )
         return events
 

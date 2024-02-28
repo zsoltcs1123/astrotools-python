@@ -35,7 +35,7 @@ def build_timeline_factory(config: TimelineConfig) -> TimelineFactory:
         else HelioMapper()
     )
 
-    angle_target_calculator = AngleTargetCalculator(CoordinateSystem.GEO)
+    angle_target_calculator = AngleTargetCalculator(config.coordinate_system)
 
     angle_factory = AngleFactory(position_factory, position_mapper)
 

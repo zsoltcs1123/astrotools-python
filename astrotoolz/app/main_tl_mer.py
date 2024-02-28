@@ -37,7 +37,7 @@ def timeline():
         datetime(2024, 1, 1),
         10,
         ["mercury"],
-        events=[SpeedExtreme],
+        events=[DeclinationExtreme],
     )
 
     factory = build_timeline_factory(cfg)

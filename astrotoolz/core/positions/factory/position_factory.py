@@ -12,7 +12,7 @@ class PositionFactory(LoggerBase, ABC):
     def create_positions(
         self, point: str, start: datetime, end: datetime, interval_minutes: int
     ) -> List[BasePosition]:
-        self._logger.debug(
+        self._logger.info(
             f"Generating positions for config: {point}, {start}, {end}, {interval_minutes}"
         )
         dts = calculate_intervals(start, end, interval_minutes)

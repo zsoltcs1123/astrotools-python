@@ -53,6 +53,8 @@ class TimelineFactory(LoggerBase):
         config: TimelineConfig,
     ) -> Timeline:
 
+        self._logger.info(f"Timeline generation initiated with config: {config}")
+
         bps = self._generate_bps(config)
         mps = self.position_mapper.map_positions(bps)
         grouped_mps = self._group_mps(mps)
@@ -80,8 +82,8 @@ class TimelineFactory(LoggerBase):
                     aspc,
                     angles,
                 )
+            self._logger.debug(f"Identified {len(aspects)} aspects")
 
-        self._logger.debug(f"Identified {len(aspects)} aspects")
         return Timeline(events + aspects)
 
     def _generate_bps(
@@ -112,9 +114,7 @@ class TimelineFactory(LoggerBase):
     ) -> List[Type[AstroEvent]]:
         events = []
         for p, mp_list in mps.items():
-            self._logger.info(
-                f"Generating {tl_config.coordinate_system} positional events for {p}"
-            )
+            self._logger.info(f"Generating positional events for {p}")
             events += self.positional_event_factory.create_events(mp_list)
         return events
 
@@ -125,12 +125,11 @@ class TimelineFactory(LoggerBase):
     ) -> List[AstroEvent]:
         events = []
         for p, mp_list in mps.items():
-            self._logger.info(
-                f"Generating {tl_config.coordinate_system} extreme events for {p}"
-            )
+            self._logger.info(f"Generating extreme events for {p}")
             events += self.extreme_event_factory.create_events(
                 mp_list,
             )
+            self._logger.info(f"Identified {len(events)} extreme events")
         return events
 
     def _generate_angles(

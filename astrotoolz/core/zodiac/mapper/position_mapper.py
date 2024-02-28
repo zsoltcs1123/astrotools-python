@@ -19,6 +19,7 @@ class PositionMapper(LoggerBase, ABC):
         self._ayanamsa = ayanamsa
 
     def map_positions(self, positions: List[BasePosition]) -> List[BasePosition]:
+        self._logger.info("Mapping astrological data...")
         return [self.map_position(position) for position in positions]
 
     @abstractmethod
