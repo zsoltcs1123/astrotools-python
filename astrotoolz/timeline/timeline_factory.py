@@ -71,9 +71,9 @@ class TimelineFactory(LoggerBase):
                     zodiacs.append(Zodiac.SIDEREAL)
 
             mps = self.position_mapper.map_positions(bps, zodiacs)
-            grouped_mps = self._group_bps(mps)
+            grouped_bps = self._group_bps(mps)
             events += self._generate_positional_events(
-                grouped_mps,
+                grouped_bps,
             )
             premapped = True
 
@@ -91,14 +91,15 @@ class TimelineFactory(LoggerBase):
                     aspc,
                     angles,
                 )
+
+            if config.zodiacs:
+                self.position_mapper.map_aspects(aspects, config.zodiacs)
             self._logger.debug(f"Identified {len(aspects)} aspects")
 
-        all_events = events + aspects
-
         if config.zodiacs and not premapped:
-            self.position_mapper._map_events(all_events, config.zodiacs)
+            self.position_mapper.map_events(events, config.zodiacs)
 
-        return Timeline(all_events)
+        return Timeline(events + aspects)
 
     def _generate_bps(
         self,

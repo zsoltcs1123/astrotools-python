@@ -10,13 +10,17 @@ from types import (
     WrapperDescriptorType,
 )
 
-from astrotoolz.core.enums import CoordinateSystem, Zodiac
+from astrotoolz.core.enums import CoordinateSystem, NodeCalc, Zodiac
 from astrotoolz.core.events.astro_event import (
+    DecanChange,
     DeclinationExtreme,
+    DirectionChange,
     LatitudeExtreme,
     SpeedExtreme,
+    TermChange,
     TropicalSignChange,
 )
+from astrotoolz.core.points import NN
 from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.zodiac.division import Division
 from astrotoolz.core.zodiac.mapped_position import MappedPosition
@@ -38,8 +42,32 @@ def timeline():
         datetime(2024, 3, 1),
         datetime(2024, 4, 1),
         60,
-        ["mercury"],
-        events=[TropicalSignChange, DeclinationExtreme],
+        [
+            "sun",
+            "mercury",
+            "venus",
+            "mars",
+            "jupiter",
+            "saturn",
+            "uranus",
+            "neptune",
+            "pluto",
+            NN,
+        ],
+        [
+            TropicalSignChange,
+            DecanChange,
+            TermChange,
+            DeclinationExtreme,
+            LatitudeExtreme,
+            SpeedExtreme,
+            DirectionChange,
+        ],
+        [
+            AspectsConfig(30, True, 0.1),
+        ],
+        [Zodiac.TROPICAL],
+        NodeCalc.MEAN,
     )
 
     factory = build_timeline_factory(cfg)
@@ -49,7 +77,7 @@ def timeline():
     timeline_json = json.dumps(timeline, cls=CustomJSONEncoder)
 
     to_text_file(
-        "json.txt",
+        "json_march.txt",
         timeline_json,
     )
     # print(timeline_json)
@@ -66,24 +94,40 @@ class CustomJSONEncoder(json.JSONEncoder):
             return {"name": obj.name}
 
         if isinstance(obj, MappedPosition):
-            return {
+            dic = {
+                "point": obj.point,
                 "lon": obj.lon.decimal,
                 "lat": obj.lat.decimal,
                 "speed": obj.speed.decimal,
                 "ra": obj.ra.decimal if obj.ra is not None else None,
                 "dec": obj.dec.decimal if obj.dec is not None else None,
-                "tropical": obj.tropical,
-                "vedic": obj.vedic,
             }
 
+            if obj.vedic:
+                dic["vedic"]: obj.vedic
+
+            if obj.tropical:
+                dic["tropical"]: obj.tropical
+
+            return dic
+
         if isinstance(obj, BasePosition):
-            return {
+            dic = {
+                "point": obj.point,
                 "lon": obj.lon.decimal,
                 "lat": obj.lat.decimal,
                 "speed": obj.speed.decimal,
                 "ra": obj.ra.decimal,
                 "dec": obj.dec.decimal,
             }
+
+            if obj.vedic:
+                dic["vedic"]: obj.vedic
+
+            if obj.tropical:
+                dic["tropical"]: obj.tropical
+
+            return dic
 
         if isinstance(obj, TropicalAttributes):
             return {

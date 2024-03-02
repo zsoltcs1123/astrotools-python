@@ -22,9 +22,9 @@ class GeoFactory(PositionFactory):
         if point in PLANETS:
             return self._geo(point, dt)
         elif point == NN:
-            return self._north_node(dt, self.node_calc)
+            return self._north_node(dt)
         elif point == SN:
-            return self._south_node(dt, self.node_calc)
+            return self._south_node(dt)
         else:
             raise (ValueError(f"{point} not supported"))
 

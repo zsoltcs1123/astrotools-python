@@ -61,7 +61,7 @@ class ExtremeEventFactory(LoggerBase):
     def _create_events(
         bps: List[BasePosition], event_type: type, type: str
     ) -> List[ExtremeEvent]:
-        return [event_type(bp.dt, type, bp) for bp in bps]
+        return [event_type(type, bp) for bp in bps]
 
     @staticmethod
     def _find_local_extrema(

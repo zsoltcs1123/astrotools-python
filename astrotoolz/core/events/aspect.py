@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime
 
 from astrotoolz.core.angles.angle import Angle
 from astrotoolz.core.enums import AspectType, CoordinateSystem
@@ -22,16 +23,29 @@ class Aspect(AstroEvent):
     target_diff: int
     coord_system: CoordinateSystem
 
+    def __init__(
+        self,
+        angle: Angle,
+        asp_type: str,
+        target_diff: int,
+        coord_system: CoordinateSystem,
+    ):
+        super().__init__(angle.dt, "Aspect")
+        self.angle = angle
+        self.asp_type = asp_type
+        self.target_diff = target_diff
+        self.coord_system = coord_system
+
     @property
     def asp_text(self):
         return f"{self.angle.source.point} {self.asp_type} vs {self.angle.target.point}"
 
     def __repr__(self):
         # return f"aspect at {self.angle}, {self.asp_str} ({self.asp_diff})\n Orb of 2 starts at: {orb_start}, ends at: {orb_end}"
-        return f"{self.dt}\t{self.angle.source.point}\t{self.coord_system}\t{self.asp_type.lower()} [{self.angle.abs_diff:.3f}] vs {self.angle.target.point} at [{self.angle.source.tropical.lon.decimal:.3f}]"
+        return f"{self.dt}\t{self.angle.source.point}\t{self.coord_system}\t{self.asp_text.lower()} [{self.angle.abs_diff:.3f}] vs {self.angle.target.point} at [{self.angle.source.lon.decimal:.3f}]"
 
     def label(self):
-        return f"{self.angle.source.point} {self.asp_type.lower()} [{self.angle.abs_diff:.0f}] vs {self.angle.target.point} at [{self.angle.source.tropical.lon.decimal:.3f}]"
+        return f"{self.angle.source.point} {self.asp_text.lower()} [{self.angle.abs_diff:.0f}] vs {self.angle.target.point} at [{self.angle.source.tropical.lon.decimal:.3f}]"
 
     def print_tropical_no_time(self):
         return f"{self.angle.source.point} [{self.angle.source.tropical.lon.decimal:.3f}], {self.angle.target.point} [{self.angle.target.tropical.lon.decimal:.3f}], {self.angle.abs_diff:.3f}"

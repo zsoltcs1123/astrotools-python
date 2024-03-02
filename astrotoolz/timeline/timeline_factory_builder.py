@@ -3,7 +3,7 @@ from astrotoolz.core.angles.angle_target_calculator import AngleTargetCalculator
 from astrotoolz.core.enums import CoordinateSystem
 from astrotoolz.core.events.astro_event import (
     ExtremeEvent,
-    PositionalEvent,
+    PositionChangeEvent,
     TropicalProgression,
 )
 from astrotoolz.core.events.factory.aspect_factory import AspectFactory
@@ -37,7 +37,7 @@ def build_timeline_factory(config: TimelineConfig) -> TimelineFactory:
     positional_event_types = [
         e
         for e in config.events
-        if issubclass(e, PositionalEvent) or e is TropicalProgression
+        if issubclass(e, PositionChangeEvent) or e is TropicalProgression
     ]
 
     positional_event_factory = (

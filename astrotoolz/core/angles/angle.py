@@ -22,7 +22,7 @@ class Angle:
         return abs(self.source.lon.decimal - self.target.lon.decimal)
 
     def calculate_real_diff(self) -> float:
-        return self.source.base_position.lon.decimal - self.target.lon.decimal
+        return self.source.lon.decimal - self.target.lon.decimal
 
     def calculate_circular_diff(self) -> float:
         diff = self.source.lon.decimal - self.target.lon.decimal

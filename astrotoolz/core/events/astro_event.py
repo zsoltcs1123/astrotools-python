@@ -2,14 +2,12 @@ from dataclasses import dataclass
 from datetime import datetime
 
 from astrotoolz.core.positions.base_position import BasePosition
-from astrotoolz.core.zodiac.mapped_position import MappedPosition
 
 
 @dataclass
 class AstroEvent:
     dt: datetime  # UTC
     type: str
-    current: BasePosition
 
     def tv_timestamp(self) -> str:
         """eg. timestamp("2023-02-27 11:05 UTC")"""
@@ -18,74 +16,115 @@ class AstroEvent:
 
 @dataclass
 class PositionalEvent(AstroEvent):
-    previous: MappedPosition
+    current: BasePosition
+
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(current.dt, type)
+        self.current = current
 
 
 @dataclass
-class TropicalEvent(PositionalEvent):
-    pass
+class PositionChangeEvent(PositionalEvent):
+    previous: BasePosition
+
+    def __init__(self, type: str, current: BasePosition, previous: BasePosition):
+        super().__init__(type, current)
+        self.previous = previous
 
 
 @dataclass
-class SiderealEvent(PositionalEvent):
-    pass
+class TropicalEvent(PositionChangeEvent):
+
+    def __init__(self, type: str, current: BasePosition, previous: BasePosition):
+        super().__init__(type, current, previous)
+
+
+@dataclass
+class SiderealEvent(PositionChangeEvent):
+
+    def __init__(self, type: str, current: BasePosition, previous: BasePosition):
+        super().__init__(type, current, previous)
 
 
 @dataclass
 class TropicalSignChange(TropicalEvent):
-    pass
+
+    def __init__(self, current: BasePosition, previous: BasePosition):
+        super().__init__(TropicalSignChange.__name__, current, previous)
 
 
 @dataclass
 class SiderealSignChange(SiderealEvent):
-    pass
+
+    def __init__(self, current: BasePosition, previous: BasePosition):
+        super().__init__(SiderealSignChange.__name__, current, previous)
 
 
 @dataclass
 class DecanChange(TropicalEvent):
-    pass
+
+    def __init__(self, current: BasePosition, previous: BasePosition):
+        super().__init__(DecanChange.__name__, current, previous)
 
 
 @dataclass
 class TermChange(TropicalEvent):
-    pass
+
+    def __init__(self, current: BasePosition, previous: BasePosition):
+        super().__init__(TermChange.__name__, current, previous)
 
 
 @dataclass
 class NakshatraChange(SiderealEvent):
-    pass
+
+    def __init__(self, current: BasePosition, previous: BasePosition):
+        super().__init__(NakshatraChange.__name__, current, previous)
 
 
 @dataclass
-class DirectionChange(PositionalEvent):
-    pass
+class DirectionChange(PositionChangeEvent):
+
+    def __init__(self, type: str, current: BasePosition, previous: BasePosition):
+        super().__init__(type, current, previous)
 
 
 @dataclass
-class ExtremeEvent(AstroEvent):
-    pass
+class ExtremeEvent(PositionalEvent):
+
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)
 
 
 @dataclass
 class DeclinationExtreme(ExtremeEvent):
-    pass
+
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)
 
 
 @dataclass
 class LatitudeExtreme(ExtremeEvent):
-    pass
+
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)
 
 
 @dataclass
 class SpeedExtreme(ExtremeEvent):
-    pass
+
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)
 
 
 @dataclass
 class PhaseExtreme(ExtremeEvent):
-    pass
+
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)
 
 
 @dataclass
-class TropicalProgression(AstroEvent):
-    pass
+class TropicalProgression(PositionalEvent):
+
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)

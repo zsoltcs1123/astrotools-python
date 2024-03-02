@@ -69,7 +69,6 @@ class AspectFactory(LoggerBase):
             for asp_value in aspects_include:
                 if asp_value >= negative and asp_value <= positive:
                     asp = Aspect(
-                        angle.source.dt,
                         angle,
                         self._get_asp_text(asp_value),
                         asp_value,

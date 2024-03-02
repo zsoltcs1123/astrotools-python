@@ -3,7 +3,12 @@ from typing import List
 import astrotoolz.core.ephemeris.swisseph_api as swe_api
 import astrotoolz.core.zodiac.division as zodiac
 from astrotoolz.core.enums import Zodiac
-from astrotoolz.core.events.astro_event import AstroEvent
+from astrotoolz.core.events.aspect import Aspect
+from astrotoolz.core.events.astro_event import (
+    AstroEvent,
+    PositionalEvent,
+    PositionChangeEvent,
+)
 from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.units.degree import Degree
 from astrotoolz.core.units.degree_converter import degree_from_decimal
@@ -19,10 +24,20 @@ class PositionMapper(LoggerBase):
         super().__init__()
         self._ayanamsa = ayanamsa
 
-    def _map_events(self, events: List[AstroEvent], zodiacs: List[Zodiac]):
+    def map_events(self, events: List[AstroEvent], zodiacs: List[Zodiac]):
         self._logger.info("Mapping astrological data...")
         for e in events:
-            e.current = self.map_position(e.current, zodiacs)
+            if isinstance(e, PositionalEvent):
+                e.current = self.map_position(e.current, zodiacs)
+            if isinstance(e, PositionChangeEvent):
+                e.current = self.map_position(e.current, zodiacs)
+                e.previous = self.map_position(e.previous, zodiacs)
+
+    def map_aspects(self, aspects: List[Aspect], zodiacs: List[Zodiac]):
+        self._logger.info("Mapping astrological data...")
+        for e in aspects:
+            e.angle.source = self.map_position(e.angle.source, zodiacs)
+            e.angle.target = self.map_position(e.angle.target, zodiacs)
 
     def map_positions(
         self, positions: List[BasePosition], zodiacs: [List[Zodiac]]

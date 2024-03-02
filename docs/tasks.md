@@ -9,8 +9,7 @@ Current:
 
 TIMELINE:
 - Double entries due to grouping by date problem
-- Fix extreme events
-- Make the inclusion of astrological data optional
+- AstroEvent init itself (type)
 
 TBD:
 - Re-implement Transits
@@ -51,6 +50,9 @@ Done:
 - Speed/declination snapshot
 - folder reorg
 - extreme events
+- Make the inclusion of astrological data optional
+- Fix extreme events
+  
 
 Fixed bugs:
 - Dec 08: there is a Merc-Jup Trine (240) in the timeline but it is not showing in the horoscope

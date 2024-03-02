@@ -18,7 +18,7 @@ class AngleTargetCalculator:
     @staticmethod
     def _calculate_geo_targets(point: str) -> List[str]:
         if point == SUN:
-            return list(PLANETS_MAP.keys()) + [NN]
+            return list(PLANETS_MAP.keys()) + [NN, MOON]
         elif point == MOON:
             return list(PLANETS_MAP.keys()) + [SUN] + [NN]
         elif point in NODES:
