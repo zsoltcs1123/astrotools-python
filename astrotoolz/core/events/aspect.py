@@ -18,10 +18,9 @@ DEFAULT_ASPECTS = [
 
 @dataclass
 class Aspect(AstroEvent):
-    angle: Angle
     asp_type: str
     target_diff: int
-    coord_system: CoordinateSystem
+    angle: Angle
 
     def __init__(
         self,
@@ -30,11 +29,10 @@ class Aspect(AstroEvent):
         target_diff: int,
         coord_system: CoordinateSystem,
     ):
-        super().__init__(angle.dt, "Aspect")
-        self.angle = angle
+        super().__init__(angle.dt, "Aspect", coord_system)
         self.asp_type = asp_type
         self.target_diff = target_diff
-        self.coord_system = coord_system
+        self.angle = angle
 
     @property
     def asp_text(self):

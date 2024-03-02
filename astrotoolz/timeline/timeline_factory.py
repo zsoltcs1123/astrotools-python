@@ -56,26 +56,20 @@ class TimelineFactory(LoggerBase):
         self._logger.info(f"Timeline generation initiated with config: {config}")
 
         bps = self._generate_bps(config)
-        grouped_bps = self._group_bps(bps)
         premapped = False
+
+        if self._premap_required(config):
+            bps = self._premap_positions(bps, config)
+            premapped = True
+
+        grouped_bps = self._group_bps(bps)
 
         events = []
 
         if self.positional_event_factory:
-            zodiacs = []
-
-            for e in config.events:
-                if issubclass(e, TropicalEvent):
-                    zodiacs.append(Zodiac.TROPICAL)
-                if issubclass(e, SiderealEvent):
-                    zodiacs.append(Zodiac.SIDEREAL)
-
-            mps = self.position_mapper.map_positions(bps, zodiacs)
-            grouped_bps = self._group_bps(mps)
             events += self._generate_positional_events(
                 grouped_bps,
             )
-            premapped = True
 
         if self.extreme_event_factory:
             events += self._generate_extreme_events(
@@ -101,6 +95,26 @@ class TimelineFactory(LoggerBase):
 
         return Timeline(events + aspects)
 
+    @staticmethod
+    def _premap_required(config: TimelineConfig) -> bool:
+        return any(
+            issubclass(event, TropicalEvent) or issubclass(event, SiderealEvent)
+            for event in config.events
+        )
+
+    def _premap_positions(
+        self, bps: List[BasePosition], config: TimelineConfig
+    ) -> List[BasePosition]:
+        zodiacs = []
+
+        for e in config.events:
+            if issubclass(e, TropicalEvent):
+                zodiacs.append(Zodiac.TROPICAL)
+            if issubclass(e, SiderealEvent):
+                zodiacs.append(Zodiac.SIDEREAL)
+
+        return self.position_mapper.map_positions(bps, zodiacs) if zodiacs else bps
+
     def _generate_bps(
         self,
         config: TimelineConfig,
@@ -113,7 +127,8 @@ class TimelineFactory(LoggerBase):
             )
         return bps
 
-    def _group_bps(self, bps: List[BasePosition]) -> Dict[str, List[BasePosition]]:
+    @staticmethod
+    def _group_bps(bps: List[BasePosition]) -> Dict[str, List[BasePosition]]:
         grouped_mps = {}
         for mpp in bps:
             if mpp.point not in grouped_mps:
@@ -189,7 +204,8 @@ class TimelineFactory(LoggerBase):
             angles, asp_config.orb, asp_values
         )
 
-    def _generate_asp_family(self, root: float) -> List[float]:
+    @staticmethod
+    def _generate_asp_family(root: float) -> List[float]:
         if root == 0:
             root = 360
         return [multiple for multiple in range(0, 361, root)]

@@ -9,7 +9,6 @@ Current:
 
 TIMELINE:
 - Double entries due to grouping by date problem
-- AstroEvent init itself (type)
 
 TBD:
 - Re-implement Transits

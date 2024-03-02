@@ -3,6 +3,7 @@ from typing import Any, Callable, List
 import numpy as np
 from scipy.signal import argrelextrema
 
+from astrotoolz.core.enums import CoordinateSystem
 from astrotoolz.core.events.astro_event import (
     DeclinationExtreme,
     ExtremeEvent,
@@ -15,8 +16,9 @@ from astrotoolz.util.logger_base import LoggerBase
 
 class ExtremeEventFactory(LoggerBase):
 
-    def __init__(self, event_types: List[type]):
+    def __init__(self, event_types: List[type], coord_system: CoordinateSystem):
         super().__init__()
+        self.coord_system = coord_system
         self.event_types = event_types
 
     def create_events(self, mps: List[BasePosition]) -> List[ExtremeEvent]:
@@ -57,11 +59,13 @@ class ExtremeEventFactory(LoggerBase):
         elif event_type == SpeedExtreme:
             return "speed"
 
-    @staticmethod
     def _create_events(
-        bps: List[BasePosition], event_type: type, type: str
+        self,
+        bps: List[BasePosition],
+        event_type: type,
+        type: str,
     ) -> List[ExtremeEvent]:
-        return [event_type(type, bp) for bp in bps]
+        return [event_type(type, bp, self.coord_system) for bp in bps]
 
     @staticmethod
     def _find_local_extrema(

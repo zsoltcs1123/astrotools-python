@@ -104,15 +104,15 @@ class CustomJSONEncoder(json.JSONEncoder):
             }
 
             if obj.vedic:
-                dic["vedic"]: obj.vedic
+                dic["vedic"] = obj.vedic
 
             if obj.tropical:
-                dic["tropical"]: obj.tropical
+                dic["tropical"] = obj.tropical
 
             return dic
 
         if isinstance(obj, BasePosition):
-            dic = {
+            return {
                 "point": obj.point,
                 "lon": obj.lon.decimal,
                 "lat": obj.lat.decimal,
@@ -120,14 +120,6 @@ class CustomJSONEncoder(json.JSONEncoder):
                 "ra": obj.ra.decimal,
                 "dec": obj.dec.decimal,
             }
-
-            if obj.vedic:
-                dic["vedic"]: obj.vedic
-
-            if obj.tropical:
-                dic["tropical"]: obj.tropical
-
-            return dic
 
         if isinstance(obj, TropicalAttributes):
             return {
