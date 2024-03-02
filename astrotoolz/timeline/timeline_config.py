@@ -7,7 +7,6 @@ from astrotoolz.core.events.astro_event import (
     DeclinationExtreme,
     DirectionChange,
     LatitudeExtreme,
-    PositionChangeEvent,
 )
 from astrotoolz.core.points import ALL_POINTS, MOON, NN, SN, SUN
 from astrotoolz.timeline.aspect_config import AspectsConfig

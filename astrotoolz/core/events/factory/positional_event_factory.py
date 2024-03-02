@@ -123,12 +123,12 @@ class PositionalEventFactory(LoggerBase):
         mps: List[mp], coord_system: CoordinateSystem
     ) -> List[PositionalEvent]:
         events = []
-        for mp in enumerate(mps):
-            if integral_ends_with(5, mp.tropical.lon.decimal):
+        for mpos in enumerate(mps):
+            if integral_ends_with(5, mpos.tropical.lon.decimal):
                 events.append(TropicalProgression("50%", mp, coord_system))
-            elif integral_ends_with(7, mp.tropical.lon.decimal):
+            elif integral_ends_with(7, mpos.tropical.lon.decimal):
                 events.append(TropicalProgression("70%", mp, coord_system))
-            elif integral_ends_with(3, mp.tropical.lon.decimal):
+            elif integral_ends_with(3, mpos.tropical.lon.decimal):
                 events.append(TropicalProgression("30%", mp, coord_system))
 
         groups = group_by(events, lambda x: int(x.mp.tropical.lon.decimal))

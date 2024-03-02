@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from datetime import datetime
 
 from astrotoolz.core.angles.angle import Angle
 from astrotoolz.core.enums import AspectType, CoordinateSystem

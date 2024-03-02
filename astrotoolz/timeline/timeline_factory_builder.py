@@ -4,7 +4,6 @@ from astrotoolz.core.enums import CoordinateSystem
 from astrotoolz.core.events.astro_event import (
     ExtremeEvent,
     PositionalEvent,
-    PositionChangeEvent,
     TropicalProgression,
 )
 from astrotoolz.core.events.factory.aspect_factory import AspectFactory
