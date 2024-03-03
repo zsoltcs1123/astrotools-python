@@ -5,8 +5,8 @@ from astrotoolz.core.events.factory.aspect_factory import AspectFactory
 from astrotoolz.core.positions.factory.geo_factory import GeoFactory
 from astrotoolz.core.positions.factory.helio_factory import HelioFactory
 from astrotoolz.core.zodiac.mapper.position_mapper import PositionMapper
-from astrotoolz.tools.horoscope.factory.horoscope_factory import HoroscopeFactory
-from astrotoolz.tools.horoscope.factory.horoscope_factory_config import (
+from astrotoolz.horoscope.factory.horoscope_factory import HoroscopeFactory
+from astrotoolz.horoscope.factory.horoscope_factory_config import (
     HoroscopeFactoryConfig,
 )
 

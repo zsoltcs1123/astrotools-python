@@ -1,19 +1,35 @@
-from typing import List
+from typing import Dict, List, Optional
 
 from astrotoolz.core.enums import CoordinateSystem
 from astrotoolz.core.points import ANGULARS, MOON, NN, NODES, PLANETS, PLANETS_MAP, SUN
+from astrotoolz.util.logger_base import LoggerBase
 
 
-class AngleTargetCalculator:
+class AngleTargetCalculator(LoggerBase):
 
     def __init__(self, coordinate_system: str):
+        super().__init__()
         self.coordinate_system = coordinate_system
 
-    def calculate(self, point: str) -> List[str]:
+    def calculate(
+        self, point: str, include_targets: Optional[List[str]] = None
+    ) -> List[str]:
+        targets = []
         if self.coordinate_system == CoordinateSystem.GEO:
-            return self._calculate_geo_targets(point)
+            targets = self._calculate_geo_targets(point)
         else:
-            return self._calculate_helio_targets(point)
+            targets = self._calculate_helio_targets(point)
+
+        if include_targets:
+            targets = [target for target in targets if target in include_targets]
+
+        self._logger.debug(f"Identified angle targets for {point}: {targets}")
+        return targets
+
+    def calculate_dict(
+        self, points: List[str], include_targets: Optional[List[str]] = None
+    ) -> Dict[str, List[str]]:
+        return {p: self.calculate(p, include_targets) for p in points}
 
     @staticmethod
     def _calculate_geo_targets(point: str) -> List[str]:

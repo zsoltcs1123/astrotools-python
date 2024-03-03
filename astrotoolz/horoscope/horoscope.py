@@ -8,7 +8,7 @@ from astrotoolz.core.points import SUN
 from astrotoolz.core.units.degree import Degree
 from astrotoolz.core.units.degree_converter import degree_from_decimal
 from astrotoolz.core.zodiac.mapped_position import MappedPosition
-from astrotoolz.tools.horoscope.horoscope_config import HoroscopeConfig
+from astrotoolz.horoscope.horoscope_config import HoroscopeConfig
 
 
 class Horoscope:

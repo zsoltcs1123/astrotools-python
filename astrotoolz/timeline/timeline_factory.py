@@ -185,7 +185,7 @@ class TimelineFactory(LoggerBase):
                 ret[p] = targets
             else:
                 ret[p] = asp_config.targets
-            self._logger.debug(f"Identified angle targets for {p}: {ret[p]}")
+                self._logger.debug(f"Angle targets from config: {p}: {ret[p]}")
 
         return ret
 

@@ -1,21 +1,24 @@
+import logging
 from datetime import datetime
 
 import pytz
 from timezonefinder import TimezoneFinder
 
 from astrotoolz.core.enums import CoordinateSystem, NodeCalc
-from astrotoolz.tools.horoscope.factory.horoscope_factory_builder import (
+from astrotoolz.horoscope.factory.horoscope_factory_builder import (
     build_horoscope_factory,
 )
-from astrotoolz.tools.horoscope.factory.horoscope_factory_config import (
+from astrotoolz.horoscope.factory.horoscope_factory_config import (
     HoroscopeFactoryConfig,
 )
-from astrotoolz.tools.horoscope.horoscope_config import HoroscopeConfig
-from astrotoolz.tools.horoscope.horoscope_printer import (
+from astrotoolz.horoscope.horoscope_config import HoroscopeConfig
+from astrotoolz.horoscope.horoscope_printer import (
     print_horoscope_to_console,
     print_horoscopes_to_file,
 )
 from astrotoolz.util.geocoder import Geocoder
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 def generate_nyc_horoscopes():
@@ -51,7 +54,7 @@ def me_horoscope():
     local_dt = tz.localize(dt)
     utc_dt = local_dt.astimezone(pytz.utc)
 
-    config = HoroscopeConfig.default_tropical(lat, lon, f"Zsolt {local_dt}")
+    config = HoroscopeConfig.default_vedic(lat, lon, f"Zsolt {local_dt}")
 
     horoscope_factory_config = HoroscopeFactoryConfig(
         CoordinateSystem.GEO, True, NodeCalc.MEAN

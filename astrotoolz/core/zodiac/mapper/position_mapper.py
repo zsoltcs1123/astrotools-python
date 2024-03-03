@@ -79,14 +79,16 @@ class PositionMapper(LoggerBase):
             lon, zodiacal_position, sign, sign_ruler, decan, term, house
         )
 
-    def map_vedic_attributes(self, position: BasePosition) -> VedicAttributes:
+    def map_vedic_attributes(
+        self, position: BasePosition, cusps: List[float] = None
+    ) -> VedicAttributes:
         lon = self._calculate_sidereal_lon(position)
         zodiacal_position = zodiac.degree_to_zodiacal(lon)
         sign = zodiac.map_sign(lon.decimal)
         sign_ruler = sign.classic_ruler
         nakshatra = zodiac.map_nakshatra(lon.decimal)
         nakshatra_ruler = nakshatra.ruler
-        house = self._house(lon, sign)
+        house = self._house(lon, sign, cusps)
 
         return VedicAttributes(
             lon, zodiacal_position, sign, sign_ruler, nakshatra, nakshatra_ruler, house

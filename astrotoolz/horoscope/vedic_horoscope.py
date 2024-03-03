@@ -1,6 +1,6 @@
 from astrotoolz.core.points import NN
 from astrotoolz.core.zodiac.mapped_position import MappedPosition
-from astrotoolz.tools.horoscope.horoscope import Horoscope
+from astrotoolz.horoscope.horoscope import Horoscope
 from astrotoolz.util.cached_property import CachedProperty
 
 
