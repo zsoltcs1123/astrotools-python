@@ -70,7 +70,7 @@ class PositionMapper(LoggerBase):
         lon = position.lon
         zodiacal_position = zodiac.degree_to_zodiacal(lon)
         sign = zodiac.map_sign(lon.decimal)
-        sign_ruler = sign.modern_ruler
+        sign_ruler = sign.classic_ruler
         decan = zodiac.map_decan(lon.decimal)
         term = zodiac.map_term(lon.decimal)
         house = self._house(lon, sign, cusps)
@@ -83,7 +83,7 @@ class PositionMapper(LoggerBase):
         lon = self._calculate_sidereal_lon(position)
         zodiacal_position = zodiac.degree_to_zodiacal(lon)
         sign = zodiac.map_sign(lon.decimal)
-        sign_ruler = sign.vedic_ruler
+        sign_ruler = sign.classic_ruler
         nakshatra = zodiac.map_nakshatra(lon.decimal)
         nakshatra_ruler = nakshatra.ruler
         house = self._house(lon, sign)

@@ -2,16 +2,14 @@ from itertools import groupby
 from typing import List
 
 from astrotoolz.core.angles.angle import Angle
-from astrotoolz.core.enums import CoordinateSystem
 from astrotoolz.core.events.aspect import Aspect
 from astrotoolz.util.logger_base import LoggerBase
 
 
 class AspectFactory(LoggerBase):
 
-    def __init__(self, coord_system: CoordinateSystem):
+    def __init__(self):
         super().__init__()
-        self.coord_system = coord_system
 
     def find_exact_aspects(
         self,
@@ -72,7 +70,6 @@ class AspectFactory(LoggerBase):
                         angle,
                         self._get_asp_text(asp_value),
                         asp_value,
-                        self.coord_system,
                     )
                     self._logger.debug(f"Found aspect: {asp}")
                     aspects.append(asp)

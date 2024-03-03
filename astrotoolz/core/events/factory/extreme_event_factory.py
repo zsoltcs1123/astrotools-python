@@ -16,9 +16,8 @@ from astrotoolz.util.logger_base import LoggerBase
 
 class ExtremeEventFactory(LoggerBase):
 
-    def __init__(self, event_types: List[type], coord_system: CoordinateSystem):
+    def __init__(self, event_types: List[type]):
         super().__init__()
-        self.coord_system = coord_system
         self.event_types = event_types
 
     def create_events(self, mps: List[BasePosition]) -> List[ExtremeEvent]:
@@ -65,7 +64,7 @@ class ExtremeEventFactory(LoggerBase):
         event_type: type,
         type: str,
     ) -> List[ExtremeEvent]:
-        return [event_type(type, bp, self.coord_system) for bp in bps]
+        return [event_type(type, bp) for bp in bps]
 
     @staticmethod
     def _find_local_extrema(

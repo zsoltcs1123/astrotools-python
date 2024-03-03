@@ -20,10 +20,8 @@ class AstroEvent:
 class PositionalEvent(AstroEvent):
     current: BasePosition
 
-    def __init__(
-        self, type: str, current: BasePosition, coord_system: CoordinateSystem
-    ):
-        super().__init__(current.dt, type, coord_system)
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(current.dt, type, current.coord_system)
         self.current = current
 
 
@@ -36,9 +34,8 @@ class PositionChangeEvent(PositionalEvent):
         type: str,
         current: BasePosition,
         previous: BasePosition,
-        coord_system: CoordinateSystem,
     ):
-        super().__init__(type, current, coord_system)
+        super().__init__(type, current)
         self.previous = previous
 
 
@@ -50,9 +47,8 @@ class TropicalEvent(PositionChangeEvent):
         type: str,
         current: BasePosition,
         previous: BasePosition,
-        coord_system: CoordinateSystem,
     ):
-        super().__init__(type, current, previous, coord_system)
+        super().__init__(type, current, previous)
 
 
 @dataclass
@@ -63,9 +59,8 @@ class SiderealEvent(PositionChangeEvent):
         type: str,
         current: BasePosition,
         previous: BasePosition,
-        coord_system: CoordinateSystem,
     ):
-        super().__init__(type, current, previous, coord_system)
+        super().__init__(type, current, previous)
 
 
 @dataclass
@@ -75,9 +70,8 @@ class TropicalSignChange(TropicalEvent):
         self,
         current: BasePosition,
         previous: BasePosition,
-        coord_system: CoordinateSystem,
     ):
-        super().__init__(TropicalSignChange.__name__, current, previous, coord_system)
+        super().__init__(TropicalSignChange.__name__, current, previous)
 
 
 @dataclass
@@ -87,9 +81,8 @@ class SiderealSignChange(SiderealEvent):
         self,
         current: BasePosition,
         previous: BasePosition,
-        coord_system: CoordinateSystem,
     ):
-        super().__init__(SiderealSignChange.__name__, current, previous, coord_system)
+        super().__init__(SiderealSignChange.__name__, current, previous)
 
 
 @dataclass
@@ -99,9 +92,8 @@ class DecanChange(TropicalEvent):
         self,
         current: BasePosition,
         previous: BasePosition,
-        coord_system: CoordinateSystem,
     ):
-        super().__init__(DecanChange.__name__, current, previous, coord_system)
+        super().__init__(DecanChange.__name__, current, previous)
 
 
 @dataclass
@@ -111,9 +103,8 @@ class TermChange(TropicalEvent):
         self,
         current: BasePosition,
         previous: BasePosition,
-        coord_system: CoordinateSystem,
     ):
-        super().__init__(TermChange.__name__, current, previous, coord_system)
+        super().__init__(TermChange.__name__, current, previous)
 
 
 @dataclass
@@ -123,9 +114,8 @@ class NakshatraChange(SiderealEvent):
         self,
         current: BasePosition,
         previous: BasePosition,
-        coord_system: CoordinateSystem,
     ):
-        super().__init__(NakshatraChange.__name__, current, previous, coord_system)
+        super().__init__(NakshatraChange.__name__, current, previous)
 
 
 @dataclass
@@ -136,60 +126,47 @@ class DirectionChange(PositionChangeEvent):
         type: str,
         current: BasePosition,
         previous: BasePosition,
-        coord_system: CoordinateSystem,
     ):
-        super().__init__(type, current, previous, coord_system)
+        super().__init__(type, current, previous)
 
 
 @dataclass
 class ExtremeEvent(PositionalEvent):
 
-    def __init__(
-        self, type: str, current: BasePosition, coord_system: CoordinateSystem
-    ):
-        super().__init__(type, current, coord_system)
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)
 
 
 @dataclass
 class DeclinationExtreme(ExtremeEvent):
 
-    def __init__(
-        self, type: str, current: BasePosition, coord_system: CoordinateSystem
-    ):
-        super().__init__(type, current, coord_system)
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)
 
 
 @dataclass
 class LatitudeExtreme(ExtremeEvent):
 
-    def __init__(
-        self, type: str, current: BasePosition, coord_system: CoordinateSystem
-    ):
-        super().__init__(type, current, coord_system)
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)
 
 
 @dataclass
 class SpeedExtreme(ExtremeEvent):
 
-    def __init__(
-        self, type: str, current: BasePosition, coord_system: CoordinateSystem
-    ):
-        super().__init__(type, current, coord_system)
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)
 
 
 @dataclass
 class PhaseExtreme(ExtremeEvent):
 
-    def __init__(
-        self, type: str, current: BasePosition, coord_system: CoordinateSystem
-    ):
-        super().__init__(type, current, coord_system)
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)
 
 
 @dataclass
 class TropicalProgression(PositionalEvent):
 
-    def __init__(
-        self, type: str, current: BasePosition, coord_system: CoordinateSystem
-    ):
-        super().__init__(type, current, coord_system)
+    def __init__(self, type: str, current: BasePosition):
+        super().__init__(type, current)

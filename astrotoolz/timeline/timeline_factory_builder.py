@@ -41,7 +41,7 @@ def build_timeline_factory(config: TimelineConfig) -> TimelineFactory:
     ]
 
     positional_event_factory = (
-        PositionalEventFactory(positional_event_types, config.coordinate_system)
+        PositionalEventFactory(positional_event_types)
         if positional_event_types
         else None
     )
@@ -49,12 +49,10 @@ def build_timeline_factory(config: TimelineConfig) -> TimelineFactory:
     extreme_event_types = [e for e in config.events if issubclass(e, ExtremeEvent)]
 
     extreme_event_factory = (
-        ExtremeEventFactory(extreme_event_types, config.coordinate_system)
-        if extreme_event_types
-        else None
+        ExtremeEventFactory(extreme_event_types) if extreme_event_types else None
     )
 
-    aspect_factory = AspectFactory(config.coordinate_system)
+    aspect_factory = AspectFactory()
 
     return TimelineFactory(
         position_factory,

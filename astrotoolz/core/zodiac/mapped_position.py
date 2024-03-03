@@ -20,6 +20,7 @@ class MappedPosition(BasePosition):
         vedic_attributes: Optional[VedicAttributes],
     ):
         self.dt = base_position.dt
+        self.coord_system = base_position.coord_system
         self.point = base_position.point
         self.lon = base_position.lon
         self.lat = base_position.lat

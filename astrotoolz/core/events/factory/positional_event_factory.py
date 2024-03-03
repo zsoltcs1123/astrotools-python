@@ -16,14 +16,13 @@ from astrotoolz.core.zodiac.mapped_position import MappedPosition as mp
 from astrotoolz.util.common import find_smallest_elements, group_by, integral_ends_with
 from astrotoolz.util.logger_base import LoggerBase
 
-CheckFunction = Callable[[mp, mp, CoordinateSystem], Optional[AstroEvent]]
+CheckFunction = Callable[[mp, mp], Optional[AstroEvent]]
 
 
 class PositionalEventFactory(LoggerBase):
 
-    def __init__(self, event_types: List[type], coord_system: CoordinateSystem):
+    def __init__(self, event_types: List[type]):
         self.event_types = event_types
-        self.coord_system = coord_system
         self.check_functions = self._get_check_functions()
 
     def create_events(self, mps: List[mp]) -> List[PositionalEvent]:
@@ -71,65 +70,55 @@ class PositionalEventFactory(LoggerBase):
     ) -> List:
         ret = []
         for check_function in self.check_functions:
-            event = check_function(previous, current, self.coord_system)
+            event = check_function(previous, current)
             if event is not None:
                 ret.append(event)
         return ret
 
     @staticmethod
-    def _check_decan_change(
-        previous: mp, current: mp, coord_system: CoordinateSystem
-    ) -> Optional[DecanChange]:
+    def _check_decan_change(previous: mp, current: mp) -> Optional[DecanChange]:
         if previous.tropical.decan.id != current.tropical.decan.id:
-            return DecanChange(current, previous, coord_system)
+            return DecanChange(current, previous)
 
     @staticmethod
     def _check_tropical_sign_change(
-        previous: mp, current: mp, coord_system: CoordinateSystem
+        previous: mp, current: mp
     ) -> Optional[TropicalSignChange]:
         if previous.tropical.sign.id != current.tropical.sign.id:
-            return TropicalSignChange(current, previous, coord_system)
+            return TropicalSignChange(current, previous)
 
     @staticmethod
     def _check_sidereal_sign_change(
-        previous: mp, current: mp, coord_system: CoordinateSystem
+        previous: mp, current: mp
     ) -> Optional[SiderealSignChange]:
         if previous.vedic.sign.id != current.vedic.sign.id:
-            return SiderealSignChange(current, previous, coord_system)
+            return SiderealSignChange(current, previous)
 
     @staticmethod
-    def _check_term_change(
-        previous: mp, current: mp, coord_system: CoordinateSystem
-    ) -> Optional[TermChange]:
+    def _check_term_change(previous: mp, current: mp) -> Optional[TermChange]:
         if previous.tropical.term.id != current.tropical.term.id:
-            return TermChange(current, previous, coord_system)
+            return TermChange(current, previous)
 
     @staticmethod
-    def _check_direction_change(
-        previous: mp, current: mp, coord_system: CoordinateSystem
-    ) -> Optional[DirectionChange]:
+    def _check_direction_change(previous: mp, current: mp) -> Optional[DirectionChange]:
         if previous.direction != current.direction:
-            return DirectionChange(current, previous, coord_system)
+            return DirectionChange(current, previous)
 
     @staticmethod
-    def _check_nakshatra_change(
-        previous: mp, current: mp, coord_system: CoordinateSystem
-    ) -> Optional[NakshatraChange]:
+    def _check_nakshatra_change(previous: mp, current: mp) -> Optional[NakshatraChange]:
         if previous.vedic.nakshatra.id != current.vedic.nakshatra.id:
-            return NakshatraChange(current, previous, coord_system)
+            return NakshatraChange(current, previous)
 
     @staticmethod
-    def _get_tropical_progressions(
-        mps: List[mp], coord_system: CoordinateSystem
-    ) -> List[PositionalEvent]:
+    def _get_tropical_progressions(mps: List[mp]) -> List[PositionalEvent]:
         events = []
         for mpos in enumerate(mps):
             if integral_ends_with(5, mpos.tropical.lon.decimal):
-                events.append(TropicalProgression("50%", mp, coord_system))
+                events.append(TropicalProgression("50%", mp))
             elif integral_ends_with(7, mpos.tropical.lon.decimal):
-                events.append(TropicalProgression("70%", mp, coord_system))
+                events.append(TropicalProgression("70%", mp))
             elif integral_ends_with(3, mpos.tropical.lon.decimal):
-                events.append(TropicalProgression("30%", mp, coord_system))
+                events.append(TropicalProgression("30%", mp))
 
         groups = group_by(events, lambda x: int(x.mp.tropical.lon.decimal))
 

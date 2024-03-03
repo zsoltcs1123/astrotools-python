@@ -23,7 +23,7 @@ class Decan(Division):
 
 @dataclass
 class Sign(Division):
-    vedic_ruler: str
+    classic_ruler: str
     modern_ruler: str
     uet_ruler: str
 

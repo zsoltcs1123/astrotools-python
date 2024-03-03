@@ -31,9 +31,7 @@ def build_horoscope_factory(config: HoroscopeFactoryConfig) -> HoroscopeFactory:
         else None
     )
 
-    aspect_factory = (
-        AspectFactory(config.coord_system) if config.include_aspects else None
-    )
+    aspect_factory = AspectFactory() if config.include_aspects else None
 
     return HoroscopeFactory(
         config.coord_system,

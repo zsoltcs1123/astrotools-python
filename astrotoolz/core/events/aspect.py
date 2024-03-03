@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from astrotoolz.core.angles.angle import Angle
-from astrotoolz.core.enums import AspectType, CoordinateSystem
+from astrotoolz.core.enums import AspectType
 from astrotoolz.core.events.astro_event import AstroEvent
 
 DEFAULT_ASPECTS = [
@@ -26,9 +26,8 @@ class Aspect(AstroEvent):
         angle: Angle,
         asp_type: str,
         target_diff: int,
-        coord_system: CoordinateSystem,
     ):
-        super().__init__(angle.dt, "Aspect", coord_system)
+        super().__init__(angle.dt, "Aspect", angle.source.coord_system)
         self.asp_type = asp_type
         self.target_diff = target_diff
         self.angle = angle
