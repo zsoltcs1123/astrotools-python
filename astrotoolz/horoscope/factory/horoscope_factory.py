@@ -8,7 +8,7 @@ from astrotoolz.core.angles.angle_target_calculator import AngleTargetCalculator
 from astrotoolz.core.enums import CoordinateSystem, HouseSystem, Zodiac
 from astrotoolz.core.events.aspect import Aspect
 from astrotoolz.core.events.factory.aspect_factory import AspectFactory
-from astrotoolz.core.points import ASC, LUMINARIES, MC
+from astrotoolz.core.points import ANGULARS, ASC, LUMINARIES, MC
 from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.positions.factory.position_factory import PositionFactory
 from astrotoolz.core.zodiac.mapped_position import MappedPosition
@@ -52,7 +52,7 @@ class HoroscopeFactory:
     def create_horoscope(self, dt: datetime, config: HoroscopeConfig) -> Horoscope:
         cusps, ascmc = (
             self._calculate_cusps_ascmc(dt, config)
-            if ASC or MC in config.points
+            if any(point in ANGULARS for point in config.points)
             else ([], [])
         )
 
@@ -76,8 +76,12 @@ class HoroscopeFactory:
                 dt, self.coord_system, config, mps, pmps, angles, aspects, cusps
             )
         else:
-            mp_asc = next(mp for mp in mps if mp.point == ASC)
-            cusps = self._transform_cusps(dt, config, cusps, mp_asc.vedic.lon.decimal)
+
+            if ASC in config.points:
+                mp_asc = next(mp for mp in mps if mp.point == ASC)
+                cusps = self._transform_cusps(
+                    dt, config, cusps, mp_asc.vedic.lon.decimal
+                )
             return VedicHoroscope(
                 dt, self.coord_system, config, mps, pmps, angles, aspects, cusps
             )

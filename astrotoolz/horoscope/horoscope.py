@@ -90,7 +90,8 @@ class Horoscope:
 
     def _phase(self, point: str, list: List[MappedPosition]) -> Optional[Degree]:
         source = next(mgp for mgp in list if mgp.point == point)
-        sun = next(mgp for mgp in list if mgp.point == SUN)
+
+        sun = next((mgp for mgp in list if mgp.point == SUN), None)
 
         if sun is None:
             return None

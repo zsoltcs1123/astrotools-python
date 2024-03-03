@@ -189,7 +189,7 @@ def _get_vedic_values(
             "Nakshatra": mp.vedic.nakshatra.name,
             "Nakshatra Ruler": mp.vedic.nakshatra_ruler,
             "Speed": f"{mp.speed.str_decimal()} ({horoscope.get_daily_index(mp.point, 'speed')})",
-            "Phase": f"{horoscope.phase(mp.point).str_decimal()} ({horoscope.get_daily_index(mp.point, 'phase')})",
+            "Phase": f"{horoscope.phase(mp.point).str_decimal() if horoscope.phase(mp.point) is not None else ''} ({horoscope.get_daily_index(mp.point, 'phase')})",
             "Declination": f"{mp.dec.str_decimal()} ({horoscope.get_daily_index(mp.point, 'dec')})",
             "Latitude": f"{mp.lat.str_decimal()} ({horoscope.get_daily_index(mp.point, 'lat')})",
         }

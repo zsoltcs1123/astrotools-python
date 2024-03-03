@@ -105,7 +105,7 @@ class PositionMapper(LoggerBase):
         return degree_from_decimal(subtracted)
 
     def _house(self, lon: Degree, sign: zodiac.Sign, cusps: List[float] = None) -> int:
-        if cusps is None:
+        if cusps is None or not cusps:
             return sign.id
 
         return zodiac.calculate_house(lon.decimal, cusps)
