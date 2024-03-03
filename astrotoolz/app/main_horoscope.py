@@ -3,11 +3,14 @@ from datetime import datetime
 import pytz
 from timezonefinder import TimezoneFinder
 
-from astrotoolz.tools.horoscope.horoscope_config import HoroscopeConfig
-from astrotoolz.tools.horoscope.horoscope_factory import (
-    create_horoscope,
-    create_horoscopes,
+from astrotoolz.core.enums import CoordinateSystem, NodeCalc
+from astrotoolz.tools.horoscope.factory.horoscope_factory_builder import (
+    build_horoscope_factory,
 )
+from astrotoolz.tools.horoscope.factory.horoscope_factory_config import (
+    HoroscopeFactoryConfig,
+)
+from astrotoolz.tools.horoscope.horoscope_config import HoroscopeConfig
 from astrotoolz.tools.horoscope.horoscope_printer import (
     print_horoscope_to_console,
     print_horoscopes_to_file,
@@ -24,10 +27,13 @@ def generate_nyc_horoscopes():
 
     tz_name = TimezoneFinder().certain_timezone_at(lng=lon, lat=lat)
     tz = pytz.timezone(tz_name)
-    config = HoroscopeConfig.default_tropical_snapshot(
-        lat, lon, f"NYC {start.astimezone(tz)}"
+    config = HoroscopeConfig.default_tropical(lat, lon, f"NYC {start.astimezone(tz)}")
+
+    horoscope_factory_config = HoroscopeFactoryConfig(
+        CoordinateSystem.GEO, True, NodeCalc.MEAN
     )
-    horoscopes = create_horoscopes(start, end, 1440, config)
+    horoscope_factory = build_horoscope_factory(horoscope_factory_config)
+    horoscopes = horoscope_factory.create_horoscopes(start, end, 1440, config)
 
     print_horoscopes_to_file(
         horoscopes, "nyc_horoscopes_dec_3_dec_30.txt", columns_filter=["House"]
@@ -45,8 +51,13 @@ def me_horoscope():
     local_dt = tz.localize(dt)
     utc_dt = local_dt.astimezone(pytz.utc)
 
-    config = HoroscopeConfig.default_vedic(lat, lon, f"Zsolt {local_dt}")
-    horoscope = create_horoscope(utc_dt, config)
+    config = HoroscopeConfig.default_tropical(lat, lon, f"Zsolt {local_dt}")
+
+    horoscope_factory_config = HoroscopeFactoryConfig(
+        CoordinateSystem.GEO, True, NodeCalc.MEAN
+    )
+    horoscope_factory = build_horoscope_factory(horoscope_factory_config)
+    horoscope = horoscope_factory.create_horoscope(utc_dt, config)
 
     print_horoscope_to_console(horoscope)
 
@@ -54,10 +65,15 @@ def me_horoscope():
 def aix_horoscope():
     utc_dt = datetime(2023, 9, 15, 4, 25, 47, tzinfo=pytz.utc)
     config = HoroscopeConfig.default_vedic(0, 0, f"AIX {utc_dt}")
-    horoscope = create_horoscope(utc_dt, config)
+
+    horoscope_factory_config = HoroscopeFactoryConfig(
+        CoordinateSystem.GEO, True, NodeCalc.MEAN
+    )
+    horoscope_factory = build_horoscope_factory(horoscope_factory_config)
+    horoscope = horoscope_factory.create_horoscope(utc_dt, config)
 
     print_horoscope_to_console(horoscope)
 
 
 if __name__ == "__main__":
-    generate_nyc_horoscopes()
+    me_horoscope()

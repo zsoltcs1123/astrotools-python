@@ -24,7 +24,7 @@ class AngleTargetCalculator:
         elif point in NODES:
             return []
         elif point in ANGULARS:
-            return PLANETS + NODES
+            return PLANETS + [NN]
         else:
             return [k for k, v in PLANETS_MAP.items() if v > PLANETS_MAP[point]] + [NN]
 

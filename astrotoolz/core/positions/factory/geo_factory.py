@@ -4,7 +4,7 @@ import pytz
 
 import astrotoolz.core.ephemeris.swisseph_api as swe_api
 from astrotoolz.core.enums import NodeCalc
-from astrotoolz.core.points import NN, PLANETS, SN
+from astrotoolz.core.points import ANGULARS, NN, PLANETS, SN
 from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.positions.factory.position_factory import PositionFactory
 from astrotoolz.util.common import to_degree
@@ -46,5 +46,10 @@ class GeoFactory(PositionFactory):
         speed = nn.speed.decimal
         ra = (nn.ra.decimal + 12.0) % 24.0
         dec = -nn.dec.decimal
-        lon, lat, speed, ra, dec = to_degree(lon, lat, speed)
+        lon, lat, speed, ra, dec = to_degree(lon, lat, speed, ra, dec)
         return BasePosition(dt, SN, lon, lat, speed, ra, dec)
+
+    def create_angular(self, point: str, dt: datetime, lon: float) -> BasePosition:
+        lon, lat, speed, ra, dec = to_degree(lon, 0, 0, 0, 0)
+
+        return BasePosition(dt, point, lon, lat, speed, ra, dec)

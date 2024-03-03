@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Dict
 
 from astrotoolz.core.enums import AspectType
-from astrotoolz.core.objects.points import ALL_POINTS, ANGULARS, LUMINARIES
+from astrotoolz.core.points import ALL_POINTS, ANGULARS, LUMINARIES
 
 
 @dataclass

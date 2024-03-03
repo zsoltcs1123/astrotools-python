@@ -61,8 +61,3 @@ class AspectType(Enum):
 
     def __str__(self):
         return self.name
-
-
-class HoroscopeType(Enum):
-    TROPICAL = auto()
-    VEDIC = auto()

@@ -2,18 +2,21 @@ from datetime import datetime
 from typing import Dict, List, Optional
 
 from astrotoolz.core.angles.angle import Angle
-from astrotoolz.core.events.aspects.aspect import Aspect
-from astrotoolz.core.objects.points import SUN
+from astrotoolz.core.enums import CoordinateSystem
+from astrotoolz.core.events.aspect import Aspect
+from astrotoolz.core.points import SUN
 from astrotoolz.core.units.degree import Degree
-from astrotoolz.core.zodiac.positions.mapped_geo_position import MappedGeoPosition
+from astrotoolz.core.units.degree_converter import degree_from_decimal
+from astrotoolz.core.zodiac.mapped_position import MappedPosition
 from astrotoolz.tools.horoscope.horoscope_config import HoroscopeConfig
 
 
 class Horoscope:
     dt: datetime
+    coord_system: CoordinateSystem
     config: HoroscopeConfig
-    mgps: List[MappedGeoPosition]
-    pmgps: List[MappedGeoPosition]
+    mgps: List[MappedPosition]
+    pmgps: List[MappedPosition]
     angles: Dict[str, List[Angle]]
     aspects: Dict[str, List[Aspect]]
     cusps: List[float]
@@ -21,14 +24,16 @@ class Horoscope:
     def __init__(
         self,
         dt: datetime,
+        coord_system: CoordinateSystem,
         config: HoroscopeConfig,
-        mps: List[MappedGeoPosition],
-        pmgps: List[MappedGeoPosition],
+        mps: List[MappedPosition],
+        pmgps: List[MappedPosition],
         angles: Dict[str, List[Angle]],
         aspects: Dict[str, List[Aspect]],
         cusps: List[float],
     ):
         self.dt = dt
+        self.coord_system = coord_system
         self.config = config
         self.mgps = mps
         self.pmgps = pmgps
@@ -70,11 +75,11 @@ class Horoscope:
             return ""
 
         if field_name == "dec":
-            return self._get_index(mgp.base_position.dec, pmgp.base_position.dec)
+            return self._get_index(mgp.dec, pmgp.dec)
         elif field_name == "lat":
-            return self._get_index(mgp.base_position.lat, pmgp.base_position.lat)
+            return self._get_index(mgp.lat, pmgp.lat)
         elif field_name == "speed":
-            return self._get_index(mgp.base_position.speed, pmgp.base_position.speed)
+            return self._get_index(mgp.speed, pmgp.speed)
         elif field_name == "phase":
             phase_today = self.phase(point)
             phase_yesterday = self._phase(point, self.pmgps)
@@ -83,13 +88,13 @@ class Horoscope:
     def phase(self, point: str) -> Optional[Degree]:
         return self._phase(point, self.mgps)
 
-    def _phase(self, point: str, list: List[MappedGeoPosition]) -> Optional[Degree]:
+    def _phase(self, point: str, list: List[MappedPosition]) -> Optional[Degree]:
         source = next(mgp for mgp in list if mgp.point == point)
         sun = next(mgp for mgp in list if mgp.point == SUN)
 
         if sun is None:
             return None
-        return Degree.from_decimal(Angle(source, sun).circular_diff)
+        return degree_from_decimal(Angle(source, sun).circular_diff)
 
     def _get_index(self, current_degree: Degree, previous_degree: Degree) -> str:
         if current_degree == previous_degree:

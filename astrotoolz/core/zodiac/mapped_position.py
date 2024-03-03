@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional
 
+from astrotoolz.core.points import ANGULARS
 from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.zodiac.tropical_attributes import TropicalAttributes
 from astrotoolz.core.zodiac.vedic_attributes import VedicAttributes
@@ -29,5 +30,11 @@ class MappedPosition(BasePosition):
         self.tropical = tropical_attributes
         self.vedic = vedic_attributes
         self.direction = (
-            "R" if self.speed.decimal < 0 else "S" if self.speed.decimal == 0 else "D"
+            "D"
+            if self.point in ANGULARS
+            else (
+                "R"
+                if self.speed.decimal < 0
+                else "S" if self.speed.decimal == 0 else "D"
+            )
         )

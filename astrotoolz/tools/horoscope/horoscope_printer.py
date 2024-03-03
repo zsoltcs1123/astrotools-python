@@ -2,8 +2,8 @@ from typing import List
 
 import pandas as pd
 
-from astrotoolz.core.enums import HoroscopeType
-from astrotoolz.core.events.aspects.aspect import Aspect
+from astrotoolz.core.enums import Zodiac
+from astrotoolz.core.events.aspect import Aspect
 from astrotoolz.out.file import to_text_file
 from astrotoolz.tools.horoscope.horoscope import Horoscope
 
@@ -66,10 +66,10 @@ def _generate_str(
         str += f"\nLongitude: {horoscope.config.lon}"
         str += f"\nLatitude: {horoscope.config.lat}"
         str += f"\nHouse System: {horoscope.config.house_system}"
-        str += f"\nCoordinate System: {horoscope.config.coord_system}"
+        str += f"\nCoordinate System: {horoscope.coord_system}"
         str += "\n\nPoints:\n--------\n"
         # str += _get_headers(horoscope.config.type)()
-        str += _get_values(horoscope.config.type)(
+        str += _get_values(horoscope.config.zodiac)(
             horoscope, points_filter, columns_filter
         )
 
@@ -80,7 +80,7 @@ def _generate_str(
             str += f"\n{k}\n-------"
             for asp in v:
                 str += (
-                    f"\n{_get_aspect_str(horoscope.config.type, asp)}, {asp.asp_type}"
+                    f"\n{_get_aspect_str(horoscope.config.zodiac, asp)}, {asp.asp_type}"
                 )
             str += "\n"
 
@@ -88,17 +88,17 @@ def _generate_str(
     return str
 
 
-def _get_aspect_str(type: HoroscopeType, asp: Aspect):
-    if type == HoroscopeType.TROPICAL:
+def _get_aspect_str(zodiac: Zodiac, asp: Aspect):
+    if zodiac == Zodiac.TROPICAL:
         return asp.print_tropical_no_time()
-    elif type == HoroscopeType.VEDIC:
+    elif zodiac == Zodiac.VEDIC:
         return asp.print_vedic_no_time()
 
 
-def _get_values(type: HoroscopeType):
-    if type == HoroscopeType.TROPICAL:
+def _get_values(type: Zodiac):
+    if type == Zodiac.TROPICAL:
         return _get_tropical_values
-    elif type == HoroscopeType.VEDIC:
+    elif type == Zodiac.VEDIC:
         return _get_vedic_values
 
 
@@ -125,16 +125,16 @@ def _get_tropical_values(
             continue
         row = {
             "Name": mp.point,
-            "": " R" if mp.retrograde else "",
-            "Position": mp.tropical.position,
-            "House": mp.tropical.house(horoscope.cusps),
+            "": " R" if mp.direction == "R" else "",
+            "Position": mp.tropical.zodiacal_position,
+            "House": mp.tropical.house,
             "Ruler": mp.tropical.sign_ruler,
             "Term": mp.tropical.term.name,
             "Tarot": mp.tropical.decan.name,
-            "Speed": f"{mp.base_position.speed.str_decimal()} ({horoscope.get_daily_index(mp.point, 'speed')})",
+            "Speed": f"{mp.speed.str_decimal()} ({horoscope.get_daily_index(mp.point, 'speed')})",
             "Phase": f"{horoscope.phase(mp.point).str_decimal()} ({horoscope.get_daily_index(mp.point, 'phase')})",
-            "Declination": f"{mp.base_position.dec.str_decimal()} ({horoscope.get_daily_index(mp.point, 'dec')})",
-            "Latitude": f"{mp.base_position.lat.str_decimal()} ({horoscope.get_daily_index(mp.point, 'lat')})",
+            "Declination": f"{mp.dec.str_decimal()} ({horoscope.get_daily_index(mp.point, 'dec')})",
+            "Latitude": f"{mp.lat.str_decimal()} ({horoscope.get_daily_index(mp.point, 'lat')})",
         }
         data.append(row)
 

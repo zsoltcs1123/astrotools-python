@@ -21,3 +21,7 @@ class PositionFactory(LoggerBase, ABC):
     @abstractmethod
     def create_position(self, point: str, dt: datetime) -> BasePosition:
         pass
+
+    @abstractmethod
+    def create_angular(self, point, dt: datetime, lon: float) -> BasePosition:
+        pass

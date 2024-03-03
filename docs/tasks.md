@@ -9,6 +9,7 @@ Current:
 
 TIMELINE:
 - Double entries due to grouping by date problem
+- remove geo from event level and put on position level
 
 TBD:
 - Re-implement Transits

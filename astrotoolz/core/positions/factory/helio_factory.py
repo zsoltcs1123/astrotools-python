@@ -20,3 +20,6 @@ class HelioFactory(PositionFactory):
         lon, lat, speed = swe_api.get_helio_position(point, dt)
         lon, lat, speed = to_degree(lon, lat, speed)
         return BasePosition(dt, point, lon, lat, speed, None, None)
+
+    def create_angular(self, point, dt: datetime, lon: float) -> BasePosition:
+        raise (ValueError(f"{point} not supported"))

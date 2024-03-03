@@ -1,15 +1,13 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 
 from astrotoolz.core.enums import (
-    AspectType,
-    CoordinateSystem,
-    HoroscopeType,
     HouseSystem,
+    NodeCalc,
+    Zodiac,
 )
-from astrotoolz.core.events.aspect import DEFAULT_ASPECTS
-from astrotoolz.core.events.orb_map import OrbMap
 from astrotoolz.core.points import ALL_POINTS, ANGULARS, MEAN_NODE, VEDIC_POINTS
+from astrotoolz.timeline.aspect_config import AspectsConfig
 
 
 @dataclass
@@ -17,27 +15,26 @@ class HoroscopeConfig:
     lat: float
     lon: float
     name: str
-    type: HoroscopeType
+    zodiac: Zodiac
     points: List[str]
-    aspects: List[AspectType]
-    orb_map: OrbMap
+    node_calc: Optional[NodeCalc]
+    aspects: Optional[List[AspectsConfig]]
     house_system: HouseSystem
-    coord_system: CoordinateSystem
-    node_calc: str
+
+    def validate(self):
+        pass
 
     @classmethod
-    def default_tropical_snapshot(cls, lat, lon, name):
+    def default_tropical(cls, lat, lon, name):
         return cls(
             lat,
             lon,
             name,
-            HoroscopeType.TROPICAL,
+            Zodiac.TROPICAL,
             ANGULARS + ALL_POINTS,
-            DEFAULT_ASPECTS,
-            OrbMap.default(),
-            HouseSystem.PLACIDUS,
-            CoordinateSystem.GEO,
             MEAN_NODE,
+            [AspectsConfig(30, True)],
+            HouseSystem.PLACIDUS,
         )
 
     @classmethod
@@ -46,10 +43,9 @@ class HoroscopeConfig:
             lat,
             lon,
             name,
-            HoroscopeType.VEDIC,
+            Zodiac.SIDEREAL,
             ANGULARS + VEDIC_POINTS,
-            DEFAULT_ASPECTS,
-            HouseSystem.WHOLE_SIGN,
-            CoordinateSystem.GEO,
             MEAN_NODE,
+            [AspectsConfig(30, True)],
+            HouseSystem.WHOLE_SIGN,
         )

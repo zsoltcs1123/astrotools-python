@@ -18,21 +18,14 @@ class AngleFactory(LoggerBase):
         self.position_mapper = position_mapper
 
     def create_angles_dict(
-        self, mps: List[MappedPosition], target_selector: Callable[[str], List[str]]
+        self, mps: Dict[str, List[BasePosition]], targets: Dict[str, List[Angle]]
     ) -> Dict[str, List[Angle]]:
-        angles = {}
-        for mp in mps:
-            targets = target_selector(mp.point)
+        angles_list = self.create_angles_list(mps, targets)
 
-            angles[mp.point] = []
-
-            for t in targets:
-                target_mp = next((p for p in mps if p.point == t), None)
-                if target_mp is not None:
-                    angle = Angle(mp, target_mp)
-                    angles[mp.point].append(angle)
-
-        return angles
+        angles_dict = {angle.source.point: [] for angle in angles_list}
+        for angle in angles_list:
+            angles_dict[angle.source.point].append(angle)
+        return angles_dict
 
     def create_angles_list(
         self,

@@ -46,22 +46,26 @@ class PositionMapper(LoggerBase):
         return [self.map_position(position, zodiacs) for position in positions]
 
     def map_position(
-        self, position: BasePosition, zodiacs: List[Zodiac]
+        self, position: BasePosition, zodiacs: List[Zodiac], cusps: List[float] = None
     ) -> MappedPosition:
 
         tropical_attributes = (
-            self.map_tropical_attributes(position)
+            self.map_tropical_attributes(position, cusps)
             if Zodiac.TROPICAL in zodiacs
             else None
         )
 
         vedic_attributes = (
-            self.map_vedic_attributes(position) if Zodiac.SIDEREAL in zodiacs else None
+            self.map_vedic_attributes(position, cusps)
+            if Zodiac.SIDEREAL in zodiacs
+            else None
         )
 
         return MappedPosition(position, tropical_attributes, vedic_attributes)
 
-    def map_tropical_attributes(self, position: BasePosition) -> TropicalAttributes:
+    def map_tropical_attributes(
+        self, position: BasePosition, cusps: List[float] = None
+    ) -> TropicalAttributes:
 
         lon = position.lon
         zodiacal_position = zodiac.degree_to_zodiacal(lon)
@@ -69,7 +73,7 @@ class PositionMapper(LoggerBase):
         sign_ruler = sign.modern_ruler
         decan = zodiac.map_decan(lon.decimal)
         term = zodiac.map_term(lon.decimal)
-        house = self._house(lon, sign)
+        house = self._house(lon, sign, cusps)
 
         return TropicalAttributes(
             lon, zodiacal_position, sign, sign_ruler, decan, term, house
