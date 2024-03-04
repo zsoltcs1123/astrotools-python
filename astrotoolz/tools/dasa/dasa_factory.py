@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from typing import List
 
-from astrotoolz.core.zodiac.mapped_geo_position import MappedGeoPosition
+from astrotoolz.core.zodiac.mapped_position import MappedPosition
 from astrotoolz.tools.dasa.dasa import Dasa, DasaLevel
 
 DASA_LENGTHS = {
@@ -26,7 +26,7 @@ DASA_TOTAL = 120
 
 
 def generate_dasas(
-    moon_position: MappedGeoPosition, target_level: DasaLevel
+    moon_position: MappedPosition, target_level: DasaLevel
 ) -> List[Dasa]:
     nakshatra = moon_position.vedic.nakshatra
     sidereal_lon = moon_position.vedic.lon
@@ -139,3 +139,5 @@ def next_level(level) -> DasaLevel:
         return DasaLevel.Sookshma
     elif level == DasaLevel.Sookshma:
         return DasaLevel.Prana
+    else:
+        return None

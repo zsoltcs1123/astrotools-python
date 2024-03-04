@@ -32,12 +32,13 @@ class DynamicOrbCalculator(OrbCalculator):
     def calculate_orb(
         self, point: Optional[str] = None, angle: Optional[int] = None
     ) -> float:
-
         if point is None or angle is None:
             raise ValueError("Point and angle must be provided")
 
         if self.orb_map is None:
             return self.default_orbs(point, angle)
+        else:
+            return 0  # TODO implement
 
     def default_orbs(self, point: str, angle: int) -> float:
         if angle in [30, 60, 300, 330]:

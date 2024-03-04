@@ -57,6 +57,8 @@ class ExtremeEventFactory(LoggerBase):
             return "lat"
         elif event_type == SpeedExtreme:
             return "speed"
+        else:
+            return ""
 
     def _create_events(
         self,

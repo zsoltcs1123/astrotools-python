@@ -17,6 +17,7 @@ from astrotoolz.horoscope.horoscope import Horoscope
 from astrotoolz.horoscope.horoscope_config import HoroscopeConfig
 from astrotoolz.horoscope.vedic_horoscope import VedicHoroscope
 from astrotoolz.timeline.aspect_config import AspectsConfig
+from astrotoolz.util.common import group_by
 from astrotoolz.util.interval import calculate_intervals
 
 
@@ -61,7 +62,7 @@ class HoroscopeFactory:
             dt - timedelta(days=1), config, ascmc, cusps
         )
 
-        grouped_mapped_positions = self._group_positions(mapped_positions)
+        grouped_mapped_positions = group_by(mapped_positions, lambda mp: mp.point)
 
         angle_targets = self.angle_target_calculator.calculate_dict(
             config.points, config.points

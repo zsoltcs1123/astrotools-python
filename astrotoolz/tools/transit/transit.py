@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import List
 
 from astrotoolz.core.angles.angle import Angle
-from astrotoolz.tools.horoscope.horoscope import Horoscope
+from astrotoolz.horoscope.horoscope import Horoscope
 from astrotoolz.tools.transit.transit_table import TransitTable
 
 

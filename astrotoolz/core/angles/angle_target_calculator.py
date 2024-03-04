@@ -7,7 +7,7 @@ from astrotoolz.util.logger_base import LoggerBase
 
 class AngleTargetCalculator(LoggerBase):
 
-    def __init__(self, coordinate_system: str):
+    def __init__(self, coordinate_system: CoordinateSystem):
         super().__init__()
         self.coordinate_system = coordinate_system
 

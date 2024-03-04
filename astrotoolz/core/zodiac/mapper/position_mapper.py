@@ -40,7 +40,7 @@ class PositionMapper(LoggerBase):
             e.angle.target = self.map_position(e.angle.target, zodiacs)
 
     def map_positions(
-        self, positions: List[BasePosition], zodiacs: [List[Zodiac]]
+        self, positions: List[BasePosition], zodiacs: List[Zodiac]
     ) -> List[BasePosition]:
         self._logger.info("Mapping astrological data...")
         return [self.map_position(position, zodiacs) for position in positions]

@@ -38,7 +38,8 @@ class Nakshatra(Division):
 
 
 def degree_to_zodiacal(degrees: Degree) -> str:
-    sign_name = map_sign(degrees.decimal).name
+    sign = map_sign(degrees.decimal)
+    sign_name = sign.name if sign is not None else ""
     sign_nr = (int)(degrees.decimal / 30)
     deg = (int)(degrees.decimal - sign_nr * 30)
     mins = degrees.dms.minutes
@@ -58,27 +59,27 @@ def calculate_house(degrees: float, cusps: List[float]) -> int:
     return 12
 
 
-def map_sign(degrees: float) -> Optional[Sign]:
+def map_sign(degrees: float) -> Sign:
     return _get_division(degrees, SIGNS)
 
 
-def map_decan(degrees: float) -> Optional[Decan]:
+def map_decan(degrees: float) -> Decan:
     return _get_division(degrees, DECANS)
 
 
-def map_term(degrees: float) -> Optional[Term]:
+def map_term(degrees: float) -> Term:
     return _get_division(degrees, TERMS)
 
 
-def map_nakshatra(degrees: float) -> Optional[Nakshatra]:
+def map_nakshatra(degrees: float) -> Nakshatra:
     return _get_division(degrees, NAKSHATRAS)
 
 
-def _get_division(degrees: float, lst: List[Division]) -> Optional[Division]:
+def _get_division(degrees: float, lst: List[Division]) -> Division:
     for div in lst:
         if degrees in div.degree_range:
             return div
-    return None
+    return Division(-1, "Unkown", degree_range_from_degrees(0, 0))
 
 
 def _deg(d: int, m: int, s: int) -> Degree:

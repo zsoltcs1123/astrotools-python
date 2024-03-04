@@ -77,7 +77,7 @@ def _calculate_xx(
     return xx
 
 
-def _get_house_system_code(house_system: HouseSystem) -> str:
+def _get_house_system_code(house_system: HouseSystem) -> bytes:
     if house_system == HouseSystem.PLACIDUS:
         return b"P"
     elif house_system == HouseSystem.WHOLE_SIGN:

@@ -24,7 +24,7 @@ def decimal_ends_with(end: int, num: float) -> bool:
 
 
 def group_by(lst: List[Any], key_func: Callable[[Any], Any]) -> Dict[Any, List[Any]]:
-    result = {}
+    result: Dict[Any, List[Any]] = {}
     for item in lst:
         key = key_func(item)
         if key not in result:

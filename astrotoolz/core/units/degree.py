@@ -15,17 +15,17 @@ class Degree:
     def str_decimal(self):
         return f"{self.decimal:.3f}°"
 
-    def __lt__(self, other):
+    def __lt__(self, other: object):
         if not isinstance(other, Degree):
             return NotImplemented
         return self.decimal < other.decimal
 
-    def __gt__(self, other):
+    def __gt__(self, other: object):
         if not isinstance(other, Degree):
             return NotImplemented
         return self.decimal > other.decimal
 
-    def __eq__(self, other: "Degree"):
+    def __eq__(self, other: object):
         if not isinstance(other, Degree):
             return NotImplemented
 
@@ -33,5 +33,5 @@ class Degree:
 
         return diff == 0
 
-    def __ne__(self, other: "Degree", decimals: int = 4):
-        return not self.__eq__(other, decimals)
+    def __ne__(self, other: object):
+        return not self.__eq__(other)

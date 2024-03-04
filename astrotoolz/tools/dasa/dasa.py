@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-import datetime
+from datetime import datetime
 from enum import Enum
-from typing import List
+from typing import List, Optional
 
 
 class DasaLevel(Enum):
@@ -20,7 +20,7 @@ class Dasa:
         planet: str,
         start_date: datetime,
         end_date: datetime,
-        sub_dasas: List["Dasa"] = None,
+        sub_dasas: Optional[List["Dasa"]] = None,
     ):
         self.level = level
         self.planet = planet
