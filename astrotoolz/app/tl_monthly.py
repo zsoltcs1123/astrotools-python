@@ -20,6 +20,7 @@ from astrotoolz.core.events.astro_event import (
     TermChange,
     TropicalSignChange,
 )
+from astrotoolz.core.events.orb_calculator import StaticOrbCalculator
 from astrotoolz.core.points import NN
 from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.zodiac.division import Division
@@ -64,7 +65,11 @@ def timeline():
             DirectionChange,
         ],
         [
-            AspectsConfig(30, True, 0.1),
+            AspectsConfig(
+                30,
+                True,
+                StaticOrbCalculator(0.1),
+            ),
         ],
         [Zodiac.TROPICAL],
         NodeCalc.MEAN,

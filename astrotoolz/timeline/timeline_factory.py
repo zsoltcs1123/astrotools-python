@@ -62,7 +62,10 @@ class TimelineFactory(LoggerBase):
             bps = self._premap_positions(bps, config)
             premapped = True
 
-        grouped_bps = self._group_bps(bps)
+        grouped_bps = {
+            point: [bp for bp in bps if bp.point == point]
+            for point in set(bp.point for bp in bps)
+        }
 
         events = []
 
@@ -201,7 +204,7 @@ class TimelineFactory(LoggerBase):
         else:
             asp_values = self._generate_asp_family(asp_config.angle)
         return self.aspect_factory.find_exact_aspects(
-            angles, asp_config.orb, asp_values
+            angles, asp_config.orb_calculator.calculate_orb(), asp_values
         )
 
     @staticmethod

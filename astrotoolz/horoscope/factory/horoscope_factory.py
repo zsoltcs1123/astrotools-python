@@ -8,7 +8,7 @@ from astrotoolz.core.angles.angle_target_calculator import AngleTargetCalculator
 from astrotoolz.core.enums import CoordinateSystem, HouseSystem, Zodiac
 from astrotoolz.core.events.aspect import Aspect
 from astrotoolz.core.events.factory.aspect_factory import AspectFactory
-from astrotoolz.core.points import ANGULARS, ASC, LUMINARIES, MC
+from astrotoolz.core.points import ANGULARS, ASC, MC
 from astrotoolz.core.positions.base_position import BasePosition
 from astrotoolz.core.positions.factory.position_factory import PositionFactory
 from astrotoolz.core.zodiac.mapped_position import MappedPosition
@@ -56,37 +56,61 @@ class HoroscopeFactory:
             else ([], [])
         )
 
-        mps = self._generate_mps(dt, config, ascmc, cusps)
-        pmps = self._generate_mps(dt - timedelta(days=1), config, ascmc, cusps)
-        grouped_mps = self._group_bps(mps)
+        mapped_positions = self._generate_mapped_positions(dt, config, ascmc, cusps)
+        previous_mapped_positions = self._generate_mapped_positions(
+            dt - timedelta(days=1), config, ascmc, cusps
+        )
+
+        grouped_mapped_positions = self._group_positions(mapped_positions)
 
         angle_targets = self.angle_target_calculator.calculate_dict(
             config.points, config.points
         )
         angle_targets = {k: v for k, v in angle_targets.items() if k in config.points}
 
-        angles = self.angle_factory.create_angles_dict(grouped_mps, angle_targets)
-        aspects = self._generate_aspects_dict(angles, config.aspects)
+        angles = self.angle_factory.create_angles_dict(
+            grouped_mapped_positions, angle_targets
+        )
 
+        aspects = self._generate_aspects_dict(angles, config.aspects)
         for p, asp_list in aspects.items():
             self.position_mapper.map_aspects(asp_list, [config.zodiac])
 
         if config.zodiac == Zodiac.TROPICAL:
             return Horoscope(
-                dt, self.coord_system, config, mps, pmps, angles, aspects, cusps
+                dt,
+                self.coord_system,
+                config,
+                mapped_positions,
+                previous_mapped_positions,
+                angles,
+                aspects,
+                cusps,
             )
         else:
-
             if ASC in config.points:
-                mp_asc = next(mp for mp in mps if mp.point == ASC)
+                mp_asc = next(mp for mp in mapped_positions if mp.point == ASC)
                 cusps = self._transform_cusps(
                     dt, config, cusps, mp_asc.vedic.lon.decimal
                 )
             return VedicHoroscope(
-                dt, self.coord_system, config, mps, pmps, angles, aspects, cusps
+                dt,
+                self.coord_system,
+                config,
+                mapped_positions,
+                previous_mapped_positions,
+                angles,
+                aspects,
+                cusps,
             )
 
-    def _generate_mps(
+    @staticmethod
+    def _calculate_cusps_ascmc(dt: datetime, config: HoroscopeConfig) -> tuple:
+        return swe_api.get_tropical_houses_and_ascmc(
+            dt, config.lat, config.lon, config.house_system
+        )
+
+    def _generate_mapped_positions(
         self, dt: datetime, config: HoroscopeConfig, ascmc: tuple, cusps: tuple
     ) -> List[MappedPosition]:
         mps = []
@@ -104,21 +128,13 @@ class HoroscopeFactory:
         else:
             return self.position_factory.create_position(point, dt)
 
-    @staticmethod  # TODO duplicated across timeline_factory
-    def _group_bps(bps: List[BasePosition]) -> Dict[str, List[BasePosition]]:
-        grouped_mps = {}
-        for mpp in bps:
-            if mpp.point not in grouped_mps:
-                grouped_mps[mpp.point] = [mpp]
-            else:
-                grouped_mps[mpp.point].append(mpp)
-        return grouped_mps
-
-    @staticmethod
-    def _calculate_cusps_ascmc(dt: datetime, config: HoroscopeConfig) -> tuple:
-        return swe_api.get_tropical_houses_and_ascmc(
-            dt, config.lat, config.lon, config.house_system
-        )
+    def _group_positions(
+        self, mps: List[MappedPosition]
+    ) -> Dict[str, List[MappedPosition]]:
+        return {
+            point: [mp for mp in mps if mp.point == point]
+            for point in set(mp.point for mp in mps)
+        }
 
     def _generate_aspects_dict(
         self, angles: Dict[str, List[Angle]], configs: List[AspectsConfig]
@@ -131,34 +147,17 @@ class HoroscopeFactory:
 
         for p, angle_list in angles.items():
             for config in configs:
-                asp_angles = self._generate_asp_family(config.angle)
+                asp_angles = config.generate_asp_family()
                 aspects = []
 
                 for asp_angle in asp_angles:
-                    orb = self._calculate_orb(p, asp_angle)
+                    orb = config.orb_calculator.calculate_orb(p, asp_angle)
                     aspects += self.aspect_factory.find_aspects_list(
                         angle_list, orb, [asp_angle]
                     )
                 aspects_dict[p] = aspects
 
         return aspects_dict
-
-    @staticmethod
-    def _calculate_orb(point: str, angle: int) -> float:
-        if angle in [30, 60, 300, 330]:
-            return 6 if point in LUMINARIES else 4
-        elif angle in [0, 90, 120, 180, 360]:
-            return 10 if point in LUMINARIES else 8
-        elif angle in [150, 210]:
-            return 5 if point in LUMINARIES else 3
-        else:
-            return 8 if point in LUMINARIES else 6
-
-    @staticmethod
-    def _generate_asp_family(root: float) -> List[float]:
-        if root == 0:
-            root = 360
-        return [multiple for multiple in range(0, 361, root)]
 
     @staticmethod
     def _transform_cusps(

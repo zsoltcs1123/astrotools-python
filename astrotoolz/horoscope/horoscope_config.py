@@ -6,6 +6,7 @@ from astrotoolz.core.enums import (
     NodeCalc,
     Zodiac,
 )
+from astrotoolz.core.events.orb_calculator import DynamicOrbCalculator
 from astrotoolz.core.points import ALL_POINTS, ANGULARS, MEAN_NODE, VEDIC_POINTS
 from astrotoolz.timeline.aspect_config import AspectsConfig
 
@@ -33,7 +34,7 @@ class HoroscopeConfig:
             Zodiac.TROPICAL,
             ANGULARS + ALL_POINTS,
             MEAN_NODE,
-            [AspectsConfig(30, True)],
+            [AspectsConfig(30, True, DynamicOrbCalculator())],
             HouseSystem.PLACIDUS,
         )
 
@@ -44,9 +45,8 @@ class HoroscopeConfig:
             lon,
             name,
             Zodiac.SIDEREAL,
-            # ANGULARS + VEDIC_POINTS,
-            ["saturn"],
+            ANGULARS + VEDIC_POINTS,
             MEAN_NODE,
-            [AspectsConfig(30, True)],
+            [AspectsConfig(30, True, DynamicOrbCalculator())],
             HouseSystem.WHOLE_SIGN,
         )
