@@ -1,6 +1,6 @@
 from astrotoolz.core.angles.angle_factory import AngleFactory
 from astrotoolz.core.angles.angle_target_calculator import AngleTargetCalculator
-from astrotoolz.core.enums import CoordinateSystem
+from astrotoolz.core.enums import CoordinateSystem, NodeCalc
 from astrotoolz.core.events.factory.aspect_factory import AspectFactory
 from astrotoolz.core.positions.factory.geo_factory import GeoFactory
 from astrotoolz.core.positions.factory.helio_factory import HelioFactory
@@ -12,6 +12,8 @@ from astrotoolz.horoscope.factory.horoscope_factory_config import (
 
 
 def build_horoscope_factory(config: HoroscopeFactoryConfig) -> HoroscopeFactory:
+
+    config.node_calc = config.node_calc if config.node_calc else NodeCalc.MEAN
 
     position_factory = (
         GeoFactory(config.node_calc)
@@ -34,7 +36,7 @@ def build_horoscope_factory(config: HoroscopeFactoryConfig) -> HoroscopeFactory:
     aspect_factory = AspectFactory() if config.include_aspects else None
 
     return HoroscopeFactory(
-        config.coord_system,
+        config,
         position_factory,
         position_mapper,
         angle_target_calculator,

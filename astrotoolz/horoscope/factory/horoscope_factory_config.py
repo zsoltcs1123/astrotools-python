@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Optional
 
 from astrotoolz.core.enums import CoordinateSystem, NodeCalc
 
@@ -7,4 +8,4 @@ from astrotoolz.core.enums import CoordinateSystem, NodeCalc
 class HoroscopeFactoryConfig:
     coord_system: CoordinateSystem
     include_aspects: bool
-    node_calc: NodeCalc
+    node_calc: Optional[NodeCalc]

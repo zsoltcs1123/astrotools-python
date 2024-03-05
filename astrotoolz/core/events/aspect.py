@@ -1,18 +1,7 @@
 from dataclasses import dataclass
 
 from astrotoolz.core.angles.angle import Angle
-from astrotoolz.core.enums import AspectType
 from astrotoolz.core.events.astro_event import AstroEvent
-
-DEFAULT_ASPECTS = [
-    AspectType.CONJUNCTION,
-    AspectType.OPPOSITION,
-    AspectType.SQUARE,
-    AspectType.TRINE,
-    AspectType.SEXTILE,
-    AspectType.INCONJUNCT,
-    AspectType.QUINTILE,
-]
 
 
 @dataclass

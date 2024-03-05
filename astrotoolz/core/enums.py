@@ -1,16 +1,18 @@
 from enum import Enum, auto
 
 
-class NodeCalc(Enum):
+class EnumBase(Enum):
+    @classmethod
+    def from_string(cls, s: str):
+        try:
+            return cls[s.upper()]
+        except KeyError:
+            raise ValueError(f"'{s}' is not a valid {cls.__name__}")
+
+
+class NodeCalc(EnumBase):
     MEAN = "mean"
     TRUE = "true"
-
-    @staticmethod
-    def from_string(s: str):
-        try:
-            return NodeCalc[s.upper()]
-        except KeyError:
-            raise ValueError(f"'{s}' is not a valid NodeCalc")
 
     def swe_flag(self) -> str:
         return "MEAN_NODE" if self == NodeCalc.MEAN else "TRUE_NODE"
@@ -19,7 +21,7 @@ class NodeCalc(Enum):
         return self.name
 
 
-class HouseSystem(Enum):
+class HouseSystem(EnumBase):
     PLACIDUS = auto()
     WHOLE_SIGN = auto()
 
@@ -27,7 +29,7 @@ class HouseSystem(Enum):
         return self.name
 
 
-class Zodiac(Enum):
+class Zodiac(EnumBase):
     TROPICAL = auto()
     SIDEREAL = auto()
 
@@ -35,29 +37,9 @@ class Zodiac(Enum):
         return self.name
 
 
-class CoordinateSystem(Enum):
+class CoordinateSystem(EnumBase):
     GEO = "geo"
     HELIO = "helio"
-
-    @staticmethod
-    def from_string(s: str):
-        try:
-            return CoordinateSystem[s.upper()]
-        except KeyError:
-            raise ValueError(f"'{s}' is not a valid CoordinateSystem")
-
-    def __str__(self):
-        return self.name
-
-
-class AspectType(Enum):
-    CONJUNCTION = 1
-    OPPOSITION = 2
-    SEXTILE = 3
-    SQUARE = 4
-    TRINE = 5
-    QUINTILE = 6
-    INCONJUNCT = 7
 
     def __str__(self):
         return self.name

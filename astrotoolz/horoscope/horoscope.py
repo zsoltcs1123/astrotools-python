@@ -1,8 +1,8 @@
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 from astrotoolz.core.angles.angle import Angle
-from astrotoolz.core.enums import CoordinateSystem
+from astrotoolz.core.enums import CoordinateSystem, NodeCalc
 from astrotoolz.core.events.aspect import Aspect
 from astrotoolz.core.points import SUN
 from astrotoolz.core.units.degree import Degree
@@ -14,6 +14,7 @@ from astrotoolz.horoscope.horoscope_config import HoroscopeConfig
 class Horoscope:
     dt: datetime
     coord_system: CoordinateSystem
+    node_calc: NodeCalc
     config: HoroscopeConfig
     mgps: List[MappedPosition]
     pmgps: List[MappedPosition]
@@ -25,6 +26,7 @@ class Horoscope:
         self,
         dt: datetime,
         coord_system: CoordinateSystem,
+        node_calc: NodeCalc,
         config: HoroscopeConfig,
         mps: List[MappedPosition],
         pmgps: List[MappedPosition],
@@ -34,6 +36,7 @@ class Horoscope:
     ):
         self.dt = dt
         self.coord_system = coord_system
+        self.node_calc = node_calc
         self.config = config
         self.mgps = mps
         self.pmgps = pmgps
@@ -41,27 +44,12 @@ class Horoscope:
         self.aspects = aspects
         self.cusps = cusps
 
-    @property
-    def ascendant(self):
-        return self.ascmc[0]
+        self.indices = {}
 
-    @property
-    def mc(self):
-        return self.ascmc[1]
-
-    @property
-    def ic(self):
-        ic = self.mc + 180
-        if ic > 360:
-            ic -= 360
-        return ic
-
-    @property
-    def dc(self):
-        dc = self.ascendant + 180
-        if dc > 360:
-            dc -= 360
-        return dc
+        for p in config.points:
+            self.indices[p] = {}
+            for f in ["dec", "lat", "speed", "phase"]:
+                self.indices[p][f] = self.get_daily_index(p, f)
 
     def get_daily_index(self, point: str, field_name: str) -> str:
         mgp = next(mgp for mgp in self.mgps if mgp.point == point)

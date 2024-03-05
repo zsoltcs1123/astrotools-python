@@ -1,36 +1,46 @@
 from dataclasses import dataclass
 from typing import List, Optional
 
-from astrotoolz.core.enums import (
-    HouseSystem,
-    NodeCalc,
-    Zodiac,
-)
+from astrotoolz.core.enums import HouseSystem, Zodiac
 from astrotoolz.core.events.orb_calculator import DynamicOrbCalculator
-from astrotoolz.core.points import ALL_POINTS, ANGULARS, MEAN_NODE, VEDIC_POINTS
+from astrotoolz.core.points import (
+    ALL_POINTS,
+    ANGULARS,
+    MEAN_NODE,
+    VEDIC_POINTS,
+)
 from astrotoolz.timeline.aspect_config import AspectsConfig
 
 
 @dataclass
 class HoroscopeConfig:
-    lat: float
-    lon: float
     name: str
-    zodiac: Zodiac
     points: List[str]
-    node_calc: Optional[NodeCalc]
+    lat: Optional[float]
+    lon: Optional[float]
     aspects: Optional[List[AspectsConfig]]
-    house_system: HouseSystem
+    zodiac: Optional[Zodiac]
+    house_system: Optional[HouseSystem]
 
     def validate(self):
-        pass
+
+        angulars = True if any(point in ANGULARS for point in self.points) else False
+
+        if angulars and (self.lat is None or self.lon is None):
+            raise ValueError(
+                "Latitude and longitude must be provided for angular points"
+            )
+
+        for p in self.points:
+            if p not in ALL_POINTS:
+                raise ValueError(f"{p} is not a valid point")
 
     @classmethod
     def default_tropical(cls, lat, lon, name):
         return cls(
+            name,
             lat,
             lon,
-            name,
             Zodiac.TROPICAL,
             ANGULARS + ALL_POINTS,
             MEAN_NODE,
@@ -41,9 +51,9 @@ class HoroscopeConfig:
     @classmethod
     def default_vedic(cls, lat, lon, name):
         return cls(
+            name,
             lat,
             lon,
-            name,
             Zodiac.SIDEREAL,
             ANGULARS + VEDIC_POINTS,
             MEAN_NODE,
