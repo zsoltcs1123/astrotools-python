@@ -7,10 +7,10 @@ from astrotoolz.core.enums import NodeCalc, Zodiac
 from astrotoolz.core.points import MOON
 from astrotoolz.core.positions.factory.geo_factory import GeoFactory
 from astrotoolz.core.zodiac.mapper.position_mapper import PositionMapper
+from astrotoolz.dasa.dasa import DasaLevel
+from astrotoolz.dasa.dasa_factory import generate_dasas
+from astrotoolz.dasa.dasa_printer import print_dasas
 from astrotoolz.out.file import to_text_file
-from astrotoolz.tools.dasa.dasa import DasaLevel
-from astrotoolz.tools.dasa.dasa_factory import generate_dasas
-from astrotoolz.tools.dasa.dasa_printer import print_dasas
 
 
 def get_coin_dasa(symbol: str):
