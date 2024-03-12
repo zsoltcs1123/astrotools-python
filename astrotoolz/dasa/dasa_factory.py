@@ -134,8 +134,8 @@ def next_level(level) -> DasaLevel:
     elif level == DasaLevel.BHUKTI:
         return DasaLevel.PRATYANTAR
     elif level == DasaLevel.PRATYANTAR:
-        return DasaLevel.Sookshma
-    elif level == DasaLevel.Sookshma:
-        return DasaLevel.Prana
+        return DasaLevel.SOOKSHMA
+    elif level == DasaLevel.SOOKSHMA:
+        return DasaLevel.PRANA
     else:
         return None
