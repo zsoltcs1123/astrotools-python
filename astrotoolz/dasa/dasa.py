@@ -1,10 +1,11 @@
 from dataclasses import dataclass
 from datetime import datetime
-from enum import Enum
 from typing import List, Optional
 
+from astrotoolz.core.enums import EnumBase
 
-class DasaLevel(Enum):
+
+class DasaLevel(EnumBase):
     MahaDasa = (1,)
     Bhukti = (2,)
     Pratyantar = (3,)
