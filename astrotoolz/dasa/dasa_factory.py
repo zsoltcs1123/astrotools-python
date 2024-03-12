@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from typing import List
 
 from astrotoolz.core.zodiac.mapped_position import MappedPosition
-from astrotoolz.tools.dasa.dasa import Dasa, DasaLevel
+from astrotoolz.dasa.dasa import Dasa, DasaLevel
 
 DASA_LENGTHS = {
     "Ketu": 7,
