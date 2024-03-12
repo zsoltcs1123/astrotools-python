@@ -1,6 +1,6 @@
 from typing import List
 
-from astrotoolz.tools.dasa.dasa import Dasa
+from astrotoolz.dasa.dasa import Dasa
 
 
 def print_dasas(dasas: List[Dasa], level: int = 0) -> str:
