@@ -7,11 +7,11 @@ from astrotoolz.core.enums import EnumBase
 
 
 class DasaLevel(EnumBase):
-    MahaDasa = auto()
-    Bhukti = auto()
-    Pratyantar = auto()
-    Sookshma = auto()
-    Prana = auto()
+    MAHA = auto()
+    BHUKTI = auto()
+    PRATYANTAR = auto()
+    SOOKSHMA = auto()
+    PRANA = auto()
 
 
 @dataclass

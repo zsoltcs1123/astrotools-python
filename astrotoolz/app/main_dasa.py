@@ -31,7 +31,7 @@ def get_coin_dasa(symbol: str):
     moon_position = position_factory.create_position(MOON, birth_date)
     moon_mapped = position_mapper.map_position(moon_position, [Zodiac.SIDEREAL])
 
-    res = generate_dasas(moon_mapped, DasaLevel.Pratyantar)
+    res = generate_dasas(moon_mapped, DasaLevel.PRATYANTAR)
 
     current_date = datetime.now().astimezone(pytz.utc)
     current_maha_dasa = [d for d in res if d.start_date <= current_date <= d.end_date][
